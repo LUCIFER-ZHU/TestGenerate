@@ -1,0 +1,212 @@
+{
+  "codeName" : "Info",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/SampleVer/PSFORMS/Info.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "信息",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/SampleVer.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "SAMPLEVERID",
+      "codeName" : "SampleVerId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "SAMPLEVERNAME",
+      "codeName" : "SampleVerName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "samplevername",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "SAMPLEVERNAME",
+      "codeName" : "SampleVerName"
+    }
+  }, {
+    "id" : "content",
+    "dataType" : 21,
+    "getPSAppDEField" : {
+      "name" : "CONTENT",
+      "codeName" : "Content"
+    }
+  }, {
+    "id" : "sampleverid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "SAMPLEVERID",
+      "codeName" : "SampleVerId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "示例版本基本信息",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "标题",
+        "codeName" : "samplevername",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "NONE",
+        "labelWidth" : 0,
+        "name" : "samplevername",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "SAMPLEVERNAME",
+          "codeName" : "SampleVerName"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "samplevername",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "getPSSysCss" : {
+          "cssName" : "h2-title"
+        },
+        "allowEmpty" : true
+      }, {
+        "caption" : "内容",
+        "codeName" : "content",
+        "dataType" : 21,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "NONE",
+        "labelWidth" : 0,
+        "name" : "content",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CONTENT",
+          "codeName" : "Content"
+        },
+        "getPSEditor" : {
+          "contentType" : "MARKDOWN",
+          "editorParams" : {
+            "CONTENTTYPE" : "MARKDOWN"
+          },
+          "editorType" : "RAW",
+          "name" : "content"
+        },
+        "getPSLayoutPos" : {
+          "grow" : 1,
+          "layout" : "FLEX"
+        },
+        "allowEmpty" : true
+      } ],
+      "getPSLayout" : {
+        "dir" : "column",
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getPSSysCss" : {
+    "cssName" : "formitem-full-height"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "C654468B-6857-491A-A4A0-C95780D13372",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

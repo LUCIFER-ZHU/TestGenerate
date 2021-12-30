@@ -1,0 +1,21 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "SCRIPT",
+  "codeName" : "Click2",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click2.json",
+  "logicName" : "Click2",
+  "name" : "Click2",
+  "getPSDEActionInput" : {
+    "name" : "Click2Input",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CalculatorDTO"
+    },
+    "type" : "DTO"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "Click2Result",
+    "type" : "VOID"
+  },
+  "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'2';"
+}

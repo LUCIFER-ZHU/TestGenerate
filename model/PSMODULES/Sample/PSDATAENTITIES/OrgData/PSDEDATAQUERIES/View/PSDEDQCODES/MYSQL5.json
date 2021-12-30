@@ -1,0 +1,40 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DEPTID`",
+    "name" : "DEPTID"
+  }, {
+    "expression" : "t1.`ORGDATACODE`",
+    "name" : "ORGDATACODE"
+  }, {
+    "expression" : "t1.`ORGDATAID`",
+    "name" : "ORGDATAID"
+  }, {
+    "expression" : "t1.`ORGDATANAME`",
+    "name" : "ORGDATANAME"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`PORGDATAID`",
+    "name" : "PORGDATAID"
+  }, {
+    "expression" : "t11.`ORGDATANAME`",
+    "name" : "PORGDATANAME"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DEPTID`,\nt1.`ORGDATACODE`,\nt1.`ORGDATAID`,\nt1.`ORGDATANAME`,\nt1.`ORGID`,\nt1.`PORGDATAID`,\nt11.`ORGDATANAME` AS `PORGDATANAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_ORGDATA` t1 \nLEFT JOIN `T_ORGDATA` t11 ON t1.`PORGDATAID` = t11.`ORGDATAID` \n",
+  "id" : "PSMODULES/Sample/PSDATAENTITIES/OrgData/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

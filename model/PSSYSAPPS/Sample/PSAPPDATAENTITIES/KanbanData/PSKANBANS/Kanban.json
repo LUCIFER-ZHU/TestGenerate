@@ -1,0 +1,110 @@
+{
+  "codeName" : "Kanban",
+  "controlType" : "KANBAN",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData/PSKANBANS/Kanban.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupLayout" : "ROW",
+  "groupMode" : "CODELIST",
+  "getGroupPSAppDEField" : {
+    "name" : "TASKSTATUS",
+    "codeName" : "Taskstatus"
+  },
+  "getGroupPSCodeList" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "看板模式",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "kanban",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_kanban",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEDataViewDataItems" : [ {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+    },
+    "name" : "taskstatus",
+    "getPSAppDEField" : {
+      "name" : "TASKSTATUS",
+      "codeName" : "Taskstatus"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATANAME",
+      "codeName" : "KanbanDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATAID",
+      "codeName" : "KanbanDataId"
+    }
+  } ],
+  "getPSDEDataViewItems" : [ {
+    "cLConvertMode" : "FRONT",
+    "caption" : "任务状态",
+    "dataItemName" : "taskstatus",
+    "itemType" : "DATAITEM",
+    "name" : "TASKSTATUS",
+    "getPSAppDEField" : {
+      "name" : "TASKSTATUS",
+      "codeName" : "Taskstatus"
+    },
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+    },
+    "enableSort" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdateGroupPSControlAction" : {
+    "modelref" : true,
+    "id" : "updategroup"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "appendDEItems" : true,
+  "enableCardEdit" : false,
+  "enableCardEditGroup" : false,
+  "enableCardEditOrder" : false,
+  "enableCardNew" : false,
+  "enableGroup" : true,
+  "enablePagingBar" : true,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "49BE0D67-2C6E-4BE9-BBE0-C22E2AFA7AD8",
+  "modeltype" : "PSDEKANBAN"
+}

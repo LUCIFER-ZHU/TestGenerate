@@ -1,0 +1,287 @@
+{
+  "accUserMode" : 2,
+  "caption" : "图表",
+  "codeName" : "ChartDataTreeExpView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataTreeExpView.json",
+  "name" : "ChartDataTreeExpView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "TreeExpView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "treeexpbar",
+      "name" : "TREEEXPBAR",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "TreeExpViewtreeexpbar",
+    "controlType" : "TREEEXPBAR",
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "name" : "treeexpbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "treeexpbar"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+      "logicTag" : "treeexpbar",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_treeexpbar",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "TREEEXPBAR"
+    },
+    "getPSControls" : [ {
+      "codeName" : "ExpForList",
+      "controlType" : "TREEVIEW",
+      "getCreatePSControlAction" : {
+        "modelref" : true,
+        "id" : "create"
+      },
+      "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSTREEVIEWS/ExpForList.json",
+      "getFetchPSControlAction" : {
+        "modelref" : true,
+        "id" : "fetch"
+      },
+      "getGetPSControlAction" : {
+        "modelref" : true,
+        "id" : "load"
+      },
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+      "logicName" : "导航列表",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSControlHandler" : {
+        "getPSHandlerActions" : [ {
+          "actionName" : "Update",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "UPDATE",
+          "name" : "update",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          }
+        }, {
+          "actionType" : "DEDATASET",
+          "name" : "fetch",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          }
+        }, {
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "DELETE",
+          "name" : "remove",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          }
+        }, {
+          "actionName" : "Get",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "READ",
+          "name" : "load",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          }
+        }, {
+          "actionName" : "Create",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "CREATE",
+          "name" : "create",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          }
+        } ],
+        "userDRAction" : "READ",
+        "enableDEFieldPrivilege" : false,
+        "id" : "树视图处理器"
+      },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SELECTIONCHANGE",
+        "logicTag" : "treeexpbar_tree",
+        "logicType" : "CUSTOM",
+        "name" : "treeexpbar_selectionchange"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "treeexpbar_tree",
+        "logicType" : "CUSTOM",
+        "name" : "treeexpbar_load"
+      } ],
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "treeexpbar_tree"
+      },
+      "getPSDETreeNodeRSs" : [ {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "listView"
+        },
+        "name" : "默认根节点 - 图表实体表格视图",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      } ],
+      "getPSDETreeNodes" : [ {
+        "counterMode" : 0,
+        "name" : "默认根节点",
+        "nodeType" : "ROOT",
+        "nodeValue" : "root",
+        "text" : "默认根节点",
+        "treeNodeType" : "STATIC",
+        "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : true,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "ROOT"
+      }, {
+        "counterMode" : 0,
+        "name" : "图表实体列表视图",
+        "nodeType" : "listView",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "text" : "图表实体列表视图",
+        "treeNodeType" : "STATIC",
+        "hasPSDETreeNodeRSs" : false,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "listView"
+      } ],
+      "getRemovePSControlAction" : {
+        "modelref" : true,
+        "id" : "remove"
+      },
+      "treeGridMode" : 0,
+      "getUpdatePSControlAction" : {
+        "modelref" : true,
+        "id" : "update"
+      },
+      "enableRootSelect" : false,
+      "outputIconDefault" : true,
+      "rootVisible" : false,
+      "name" : "treeexpbar_tree",
+      "modelid" : "2D54560C-DD72-4A2D-815F-265EC5F667A7",
+      "modeltype" : "PSDETREEVIEW"
+    } ],
+    "xDataControlName" : "treeexpbar_tree",
+    "enableCounter" : true,
+    "enableSearch" : false,
+    "showTitleBar" : true,
+    "modelid" : "7e304a849d670b8e53b75c5831cabdba_treeexpbar",
+    "modeltype" : "PSEXPBAR"
+  } ],
+  "getPSDEViewCodeName" : "TreeExpView",
+  "getPSDEViewId" : "A7D9B933-993C-4C9F-8D7E-019758E8A74F",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDETREEEXPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "图表树导航视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DETREEEXPVIEW",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "showDataInfoBar" : true,
+  "modelid" : "7e304a849d670b8e53b75c5831cabdba",
+  "modeltype" : "PSAPPDEVIEW"
+}

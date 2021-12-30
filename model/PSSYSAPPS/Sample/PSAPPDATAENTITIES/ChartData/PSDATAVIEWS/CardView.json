@@ -1,0 +1,174 @@
+{
+  "codeName" : "CardView",
+  "controlType" : "DATAVIEW",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSDATAVIEWS/CardView.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "卡片视图",
+  "minorSortDir" : "DESC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "CREATEDATE",
+    "codeName" : "CreateDate"
+  },
+  "getNavPSAppView" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+    "viewType" : "DEEDITVIEW"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "dataview",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_dataview",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEDataViewDataItems" : [ {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "name" : "endtime",
+    "getPSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "chartdata",
+    "getPSAppDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    }
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "name" : "begintime",
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    }
+  }, {
+    "dataType" : 6,
+    "name" : "data",
+    "getPSAppDEField" : {
+      "name" : "DATA",
+      "codeName" : "Data"
+    }
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+    },
+    "name" : "createman",
+    "getPSAppDEField" : {
+      "name" : "CREATEMAN",
+      "codeName" : "CreateMan"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    }
+  } ],
+  "getPSDEDataViewItems" : [ {
+    "dataItemName" : "chartdata",
+    "itemType" : "DATAITEM",
+    "name" : "chartdata",
+    "enableSort" : false
+  }, {
+    "caption" : "开始时间",
+    "dataItemName" : "begintime",
+    "itemType" : "DATAITEM",
+    "name" : "BEGINTIME",
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "enableSort" : true
+  }, {
+    "cLConvertMode" : "FRONT",
+    "caption" : "建立人",
+    "dataItemName" : "createman",
+    "itemType" : "DATAITEM",
+    "name" : "CREATEMAN",
+    "getPSAppDEField" : {
+      "name" : "CREATEMAN",
+      "codeName" : "CreateMan"
+    },
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "数据",
+    "dataItemName" : "data",
+    "itemType" : "DATAITEM",
+    "name" : "DATA",
+    "getPSAppDEField" : {
+      "name" : "DATA",
+      "codeName" : "Data"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "结束时间",
+    "dataItemName" : "endtime",
+    "itemType" : "DATAITEM",
+    "name" : "ENDTIME",
+    "getPSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "enableSort" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "appendDEItems" : false,
+  "enableCardEdit" : false,
+  "enableCardEditGroup" : false,
+  "enableCardEditOrder" : false,
+  "enableCardNew" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "54305440-0782-4667-937E-BE6A374E7258",
+  "modeltype" : "PSDEDATAVIEW"
+}

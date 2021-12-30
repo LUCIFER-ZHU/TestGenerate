@@ -1,0 +1,247 @@
+{
+  "accUserMode" : 2,
+  "caption" : "选择分区",
+  "codeName" : "CalculatorPickPartPanelView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CalculatorPickPartPanelView.json",
+  "height" : 500,
+  "name" : "CalculatorPickPartPanelView",
+  "openMode" : "POPUPMODAL",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+  },
+  "getPSControls" : [ {
+    "codeName" : "PickPartPanel",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator/PSPANELS/PickPartPanel.json",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "选择分区面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "panel_button1_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "panel_button1"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "panel_button2_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "panel_button2"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "panel_button3_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "panel_button3"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "panel_button1",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+        },
+        "modelref" : true,
+        "id" : "ShowPart1@Calculator"
+      },
+      "uIActionTarget" : "SINGLEDATA",
+      "xDataControlName" : "panel"
+    }, {
+      "name" : "panel_button2",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+        },
+        "modelref" : true,
+        "id" : "ShowPart2@Calculator"
+      },
+      "uIActionTarget" : "SINGLEDATA",
+      "xDataControlName" : "panel"
+    }, {
+      "name" : "panel_button3",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+        },
+        "modelref" : true,
+        "id" : "ShowPart3@Calculator"
+      },
+      "uIActionTarget" : "SINGLEDATA",
+      "xDataControlName" : "panel"
+    } ],
+    "getPSControlParam" : {
+      "id" : "PANEL"
+    },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "actionType" : "UIACTION",
+      "caption" : "显示/隐藏分区1",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "BUTTON",
+      "name" : "button1",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "panel_button1"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEDATA",
+        "caption" : "显示分区1",
+        "codeName" : "ShowPart1",
+        "dialogResult" : "OK",
+        "frontProcessType" : "OTHER",
+        "fullCodeName" : "Calculator_ShowPart1",
+        "name" : "显示分区1",
+        "getPSAppDEUILogic" : {
+          "modelref" : true,
+          "id" : "ShowPart1"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "ShowPart1",
+        "uIActionType" : "DEUIACTION",
+        "uILogicAttachMode" : "AFTER",
+        "uILogicType" : "DEUILOGIC",
+        "closeEditView" : true,
+        "closePopupView" : true,
+        "id" : "ShowPart1@Calculator"
+      },
+      "tooltip" : "显示/隐藏分区1",
+      "showCaption" : true
+    }, {
+      "actionType" : "UIACTION",
+      "caption" : "显示/隐藏分区2",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "BUTTON",
+      "name" : "button2",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "panel_button2"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEDATA",
+        "caption" : "显示分区2",
+        "codeName" : "ShowPart2",
+        "dialogResult" : "OK",
+        "frontProcessType" : "OTHER",
+        "fullCodeName" : "Calculator_ShowPart2",
+        "name" : "显示分区2",
+        "getPSAppDEUILogic" : {
+          "modelref" : true,
+          "id" : "ShowPart2"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "ShowPart2",
+        "uIActionType" : "DEUIACTION",
+        "uILogicAttachMode" : "AFTER",
+        "uILogicType" : "DEUILOGIC",
+        "closeEditView" : true,
+        "closePopupView" : true,
+        "id" : "ShowPart2@Calculator"
+      },
+      "tooltip" : "显示/隐藏分区2",
+      "showCaption" : true
+    }, {
+      "actionType" : "UIACTION",
+      "caption" : "显示/隐藏分区3",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "BUTTON",
+      "name" : "button3",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "panel_button3"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEDATA",
+        "caption" : "显示分区3",
+        "codeName" : "ShowPart3",
+        "dialogResult" : "OK",
+        "frontProcessType" : "OTHER",
+        "fullCodeName" : "Calculator_ShowPart3",
+        "name" : "显示分区3",
+        "getPSAppDEUILogic" : {
+          "modelref" : true,
+          "id" : "ShowPart3"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "ShowPart3",
+        "uIActionType" : "DEUIACTION",
+        "uILogicAttachMode" : "AFTER",
+        "uILogicType" : "DEUILOGIC",
+        "closeEditView" : true,
+        "closePopupView" : true,
+        "id" : "ShowPart3@Calculator"
+      },
+      "tooltip" : "显示/隐藏分区3",
+      "showCaption" : true
+    } ],
+    "name" : "panel",
+    "modelid" : "8D7A826E-8D14-4BD5-AB9E-6DA5340C6839",
+    "modeltype" : "PSSYSVIEWPANEL"
+  } ],
+  "getPSDEViewCodeName" : "PickPartPanelView",
+  "getPSDEViewId" : "F93EC23A-C895-47C9-8034-CB649CF364AE",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEPANELVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "计算器面板视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEPANELVIEW",
+  "width" : 500,
+  "enableDP" : true,
+  "showCaptionBar" : false,
+  "modelid" : "8c76a583b327ca5e5ce3168d3edbeefc",
+  "modeltype" : "PSAPPDEVIEW"
+}

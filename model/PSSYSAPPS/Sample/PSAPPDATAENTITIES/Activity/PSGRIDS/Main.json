@@ -1,0 +1,259 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "活动名称",
+    "codeName" : "activityname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "activityname",
+    "excelCaption" : "活动名称",
+    "name" : "activityname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "ACTIVITYNAME",
+      "codeName" : "ActivityName"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "活动类型",
+    "codeName" : "activitytype",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "activitytype",
+    "excelCaption" : "活动类型",
+    "name" : "activitytype",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/ActivityType.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "ACTIVITYTYPE",
+      "codeName" : "Activitytype"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "客户名称",
+    "codeName" : "customername",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "customername",
+    "excelCaption" : "客户名称",
+    "name" : "customername",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "起始时间",
+    "codeName" : "begintime",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "begintime",
+    "excelCaption" : "起始时间",
+    "name" : "begintime",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "结束时间",
+    "codeName" : "endtime",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "endtime",
+    "excelCaption" : "结束时间",
+    "name" : "endtime",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "更新时间",
+    "codeName" : "updatedate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "updatedate",
+    "excelCaption" : "更新时间",
+    "name" : "updatedate",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "endtime",
+    "getPSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "customerid",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "begintime",
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "activitytype",
+    "getPSAppDEField" : {
+      "name" : "ACTIVITYTYPE",
+      "codeName" : "Activitytype"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "activityname",
+    "getPSAppDEField" : {
+      "name" : "ACTIVITYNAME",
+      "codeName" : "ActivityName"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "updatedate",
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "ACTIVITYNAME",
+      "codeName" : "ActivityName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ACTIVITYID",
+      "codeName" : "ActivityId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ACTIVITYID",
+      "codeName" : "ActivityId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "customername",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "活动标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ACTIVITYID",
+      "codeName" : "ActivityId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "8c5ae730e0ba58721ff664e798ad0a6b",
+  "modeltype" : "PSDEGRID"
+}

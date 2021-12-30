@@ -1,0 +1,91 @@
+{
+  "getAllPSPanelFields" : [ {
+    "id" : "fieldx",
+    "viewFieldName" : "fieldx"
+  }, {
+    "id" : "temp",
+    "viewFieldName" : "Temp"
+  }, {
+    "id" : "temp2",
+    "viewFieldName" : "Temp2"
+  } ],
+  "codeName" : "ValueFormatList",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSPANELS/ValueFormatList.json",
+  "layoutMode" : "TABLE_24COL",
+  "logicName" : "值显示项布局面板",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container1",
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "fieldx",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "fieldx",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "valueFormat" : "00000000",
+      "viewFieldName" : "fieldx",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "temp",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "temp",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "Temp",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "temp2",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "temp2",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "valueFormat" : "0000000000",
+      "viewFieldName" : "Temp2",
+      "hidden" : false,
+      "showCaption" : false
+    } ]
+  } ],
+  "modelid" : "AB6EDECB-8C0E-4262-8A5E-EAF763F64573",
+  "modeltype" : "PSSYSVIEWPANEL"
+}

@@ -1,0 +1,37 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CATEGORYID`",
+    "name" : "CATEGORYID"
+  }, {
+    "expression" : "t11.`CATEGORYNAME`",
+    "name" : "CATEGORYNAME"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`PRODUCTCATEGORYID`",
+    "name" : "PRODUCTCATEGORYID"
+  }, {
+    "expression" : "t1.`PRODUCTCATEGORYNAME`",
+    "name" : "PRODUCTCATEGORYNAME"
+  }, {
+    "expression" : "t1.`PRODUCTID`",
+    "name" : "PRODUCTID"
+  }, {
+    "expression" : "t21.`PRODUCTNAME`",
+    "name" : "PRODUCTNAME"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CATEGORYID`,\nt11.`CATEGORYNAME`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`PRODUCTCATEGORYID`,\nt1.`PRODUCTCATEGORYNAME`,\nt1.`PRODUCTID`,\nt21.`PRODUCTNAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_PRODUCTCATEGORY` t1 \nLEFT JOIN `T_CATEGORY` t11 ON t1.`CATEGORYID` = t11.`CATEGORYID` \nLEFT JOIN `T_PRODUCT` t21 ON t1.`PRODUCTID` = t21.`PRODUCTID` \n",
+  "id" : "PSMODULES/Sample/PSDATAENTITIES/ProductCategory/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

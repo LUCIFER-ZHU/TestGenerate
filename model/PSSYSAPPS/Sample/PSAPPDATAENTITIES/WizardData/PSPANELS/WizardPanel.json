@@ -1,0 +1,129 @@
+{
+  "getAllPSPanelFields" : [ {
+    "id" : "srfnextform",
+    "viewFieldName" : "srfnextform"
+  } ],
+  "codeName" : "WizardPanel",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData/PSPANELS/WizardPanel.json",
+  "layoutMode" : "TABLE_24COL",
+  "logicName" : "向导示例",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "panel_button1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "panel_button1"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "panel_button1",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
+      },
+      "modelref" : true,
+      "id" : "CallReturnWizardData@WizardData"
+    },
+    "uIActionTarget" : "SINGLEDATA",
+    "xDataControlName" : "panel"
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "contentHeight" : 150.0,
+    "contentType" : "RAW",
+    "height" : 150.0,
+    "itemStyle" : "DEFAULT",
+    "itemType" : "RAWITEM",
+    "name" : "rawitem1",
+    "getPSLayoutPos" : {
+      "colMD" : 24,
+      "height" : 150,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSSysCss" : {
+      "cssName" : "el-alert el-alert--info is-light"
+    },
+    "rawContent" : "点击【向导回填数据】按钮，弹出快速向导，向导完成后，将向导中的属性【下一步表单】值回填显示",
+    "rawItemHeight" : 150.0
+  }, {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container1",
+    "getPSLayout" : {
+      "layout" : "FLEX"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSPanelItems" : [ {
+      "actionType" : "UIACTION",
+      "caption" : "回填向导数据",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "BUTTON",
+      "name" : "button1",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "panel_button1"
+      },
+      "getPSLayoutPos" : {
+        "grow" : -1,
+        "layout" : "FLEX"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEDATA",
+        "caption" : "调用向导数据回填",
+        "codeName" : "CallReturnWizardData",
+        "frontProcessType" : "OTHER",
+        "fullCodeName" : "WizardData_CallReturnWizardData",
+        "name" : "调用向导数据回填",
+        "getPSAppDEUILogic" : {
+          "modelref" : true,
+          "id" : "ReturnWizardData"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "CallReturnWizardData",
+        "uIActionType" : "DEUIACTION",
+        "uILogicAttachMode" : "REPLACE",
+        "uILogicType" : "DEUILOGIC",
+        "id" : "CallReturnWizardData@WizardData"
+      },
+      "tooltip" : "回填向导数据",
+      "showCaption" : true
+    }, {
+      "caption" : "回填数据",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "srfnextform",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "srfnextform",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "grow" : -1,
+        "layout" : "FLEX"
+      },
+      "viewFieldName" : "srfnextform",
+      "hidden" : false,
+      "showCaption" : false
+    } ]
+  } ],
+  "modelid" : "0FA72FF9-0369-44CD-B832-08976CA6F115",
+  "modeltype" : "PSSYSVIEWPANEL"
+}

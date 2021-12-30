@@ -1,0 +1,1507 @@
+{
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACMODES/Default.json"
+  }, {
+    "codeName" : "NameAndCode",
+    "logicName" : "自定义数据项",
+    "name" : "NameAndCode",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "format" : "%1$s",
+      "dataType" : 25,
+      "name" : "code"
+    }, {
+      "format" : "%1$s",
+      "dataType" : 25,
+      "name" : "realtext"
+    }, {
+      "format" : "%1$s",
+      "dataType" : 25,
+      "name" : "name"
+    }, {
+      "format" : "%1$s",
+      "dataType" : 25,
+      "name" : "text",
+      "scriptCode" : "data.name+'['+data.code+']';",
+      "customCode" : true
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : false,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACMODES/NameAndCode.json"
+  } ],
+  "getAllPSDEActions" : [ {
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "getPSDEActionInput" : {
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSDEActionReturn" : {
+      "name" : "CreateResult",
+      "type" : "VOID"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "getPSDEActionInput" : {
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSDEActionReturn" : {
+      "name" : "UpdateResult",
+      "type" : "VOID"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "getPSDEActionInput" : {
+      "getKeyPSDEField" : {
+        "name" : "PRODUCTID",
+        "codeName" : "ProductId"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
+    "batchAction" : true,
+    "builtinAction" : true
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "getPSDEActionInput" : {
+      "getKeyPSDEField" : {
+        "name" : "PRODUCTID",
+        "codeName" : "ProductId"
+      },
+      "name" : "GetInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "getPSDEActionInput" : {
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "getPSDEActionInput" : {
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "getPSDEActionInput" : {
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
+    "builtinAction" : true
+  } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`T_PRODUCT`",
+    "tableName" : "T_PRODUCT",
+    "valid" : true
+  } ],
+  "getAllPSDEDBTables" : [ {
+    "getAllPSDEFields" : [ {
+      "name" : "PRODUCTID",
+      "codeName" : "ProductId"
+    }, {
+      "name" : "CREATEMAN",
+      "codeName" : "CreateMan"
+    }, {
+      "name" : "CREATEDATE",
+      "codeName" : "CreateDate"
+    }, {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }, {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }, {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    }, {
+      "name" : "PRODUCTCODE",
+      "codeName" : "Productcode"
+    } ],
+    "codeName" : "Table",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDETABLES/Table.json",
+    "name" : "T_PRODUCT",
+    "getPSSysDBTable" : {
+      "modelref" : true,
+      "id" : "T_PRODUCT"
+    },
+    "tableType" : "MAIN"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEDATAQUERIES/ByCategory/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "ByCategory",
+    "logicName" : "根据类别",
+    "name" : "ByCategory",
+    "getPSDEDQMain" : {
+      "getChildPSDEDQJoins" : [ {
+        "getDERPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/Sample/PSDATAENTITIES/ProductCategory.json"
+        },
+        "getJoinPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/Sample/PSDATAENTITIES/ProductCategory/PSDERS/DER1N_PRODUCTCATEGORY_PRODUCT_PRODUCTID.json"
+        },
+        "getJoinPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/Sample/PSDATAENTITIES/ProductCategory.json"
+        },
+        "joinType" : "1N",
+        "name" : "PRODUCTCATEGORY* [存在1:N（EXISTS (SELECT)）](DER1N_PRODUCTCATEGORY_PRODUCT_PRODUCTID)",
+        "getPSDEDQGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "连接条件",
+          "getPSDEDQConditions" : [ {
+            "condOp" : "EQ",
+            "condType" : "SINGLE",
+            "condValue" : "categoryid",
+            "name" : "CATEGORYID 等于(=) 数据上下文(categoryid)",
+            "getPSDEField" : {
+              "name" : "CATEGORYID",
+              "codeName" : "CategoryId"
+            },
+            "getPSVARTypeId" : "DATACONTEXT"
+          } ]
+        }
+      } ],
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "PRODUCT"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ByCategoryInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ByCategoryResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTOS"
+    }
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "PRODUCT"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTOS"
+    },
+    "defaultMode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEDATAQUERIES/Simple/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "Simple",
+    "dEFGroupType" : "BASEFIELDS",
+    "logicName" : "基础属性查询",
+    "name" : "SIMPLE",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "PRODUCT"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "SimpleInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "SimpleResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductSimpleDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 100
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Product.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "PRODUCT"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
+  } ],
+  "getAllPSDEDataSets" : [ {
+    "codeName" : "ByCategory",
+    "logicName" : "根据类别",
+    "name" : "ByCategory",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ByCategory"
+    } ],
+    "getPSDEDataSetInput" : {
+      "name" : "ByCategoryInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "ByCategoryResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
+    "getPSDEDataSetInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ProductFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ProductDTO"
+      },
+      "type" : "PAGE"
+    },
+    "defaultMode" : true,
+    "enableBackend" : true,
+    "enableFront" : true
+  } ],
+  "getAllPSDEFields" : [ {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PRODUCTID",
+      "dBType" : "MYSQL5",
+      "name" : "PRODUCTID",
+      "queryCodeExp" : "t1.`PRODUCTID`",
+      "standardColumnName" : "`PRODUCTID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PRODUCTID_EQ",
+      "name" : "N_PRODUCTID_EQ",
+      "stdDataType" : 25,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PRODUCTID][产品标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[PRODUCTID][产品标识]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PRODUCTID][产品标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[PRODUCTID][产品标识]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "PRODUCTID",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "ProductId",
+    "dEFType" : 1,
+    "dataType" : "GUID",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "产品标识",
+    "name" : "PRODUCTID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "PRODUCTID"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "keyDEField" : true,
+    "pasteReset" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEMAN",
+      "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CREATEMAN][建立人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEMAN][建立人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CREATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CREATEMAN"
+    },
+    "predefinedType" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEDATE",
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEDATE][建立时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CREATEDATE][建立时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CREATEDATE"
+    },
+    "predefinedType" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEDATE",
+      "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEDATE][更新时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UPDATEDATE][更新时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEDATE"
+    },
+    "predefinedType" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEMAN",
+      "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEMAN][更新人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UPDATEMAN][更新人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "UPDATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEMAN"
+    },
+    "predefinedType" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PRODUCTNAME",
+      "dBType" : "MYSQL5",
+      "name" : "PRODUCTNAME",
+      "queryCodeExp" : "t1.`PRODUCTNAME`",
+      "standardColumnName" : "`PRODUCTNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PRODUCTNAME_LIKE",
+      "name" : "N_PRODUCTNAME_LIKE",
+      "stdDataType" : 25,
+      "valueOP" : "LIKE"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[PRODUCTNAME][产品名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PRODUCTNAME][产品名称]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[PRODUCTNAME][产品名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PRODUCTNAME][产品名称]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "PRODUCTNAME",
+          "maxValue" : 200,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[200]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "ProductName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 200,
+    "logicName" : "产品名称",
+    "name" : "PRODUCTNAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "PRODUCTNAME"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "valueFormat" : "%1$s",
+    "enableQuickSearch" : true,
+    "majorDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PRODUCTCODE",
+      "dBType" : "MYSQL5",
+      "name" : "PRODUCTCODE",
+      "queryCodeExp" : "t1.`PRODUCTCODE`",
+      "standardColumnName" : "`PRODUCTCODE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PRODUCTCODE][产品编码]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PRODUCTCODE][产品编码]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PRODUCTCODE][产品编码]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PRODUCTCODE][产品编码]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "PRODUCTCODE",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Productcode",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "产品编码",
+    "name" : "PRODUCTCODE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "PRODUCTCODE"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "ProductDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "产品标识",
+      "name" : "ProductId",
+      "getPSDEField" : {
+        "name" : "PRODUCTID",
+        "codeName" : "ProductId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "产品名称",
+      "name" : "ProductName",
+      "getPSDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "产品编码",
+      "name" : "Productcode",
+      "getPSDEField" : {
+        "name" : "PRODUCTCODE",
+        "codeName" : "Productcode"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "ProductFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "logicName" : "产品名称",
+      "name" : "N_PRODUCTNAME_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_PRODUCTNAME_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
+  }, {
+    "name" : "ProductSimpleDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "产品标识",
+      "name" : "ProductId",
+      "getPSDEField" : {
+        "name" : "PRODUCTID",
+        "codeName" : "ProductId"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "产品名称",
+      "name" : "ProductName",
+      "getPSDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEUSERROLES/CURDEPT_R.json",
+    "name" : "当前部门（读）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "CURDEPT_R",
+    "secDR" : 1,
+    "userDRAction" : "READ",
+    "enableSecDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEUSERROLES/CURDEPT_RW.json",
+    "name" : "当前部门（读写）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    } ],
+    "roleTag" : "CURDEPT_RW",
+    "secDR" : 1,
+    "userDRAction" : "READ",
+    "enableSecDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEUSERROLES/CURORG_R.json",
+    "name" : "当前组织（读）",
+    "orgDR" : 1,
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "CURORG_R",
+    "userDRAction" : "READ",
+    "enableOrgDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEUSERROLES/CURORG_RW.json",
+    "name" : "当前组织（读写）",
+    "orgDR" : 1,
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    } ],
+    "roleTag" : "CURORG_RW",
+    "userDRAction" : "READ",
+    "enableOrgDR" : true
+  } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "产品实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "产品实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "产品实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "产品实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "产品实体选择表格视图（部件视图）",
+    "name" : "产品实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "产品实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "产品实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "产品实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "产品实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ByCategoryGridView",
+    "logicName" : "产品实体表格视图（根据类型）",
+    "name" : "产品实体表格视图（根据类型）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditDataView",
+    "logicName" : "产品实体编辑视图（示例数据）",
+    "name" : "产品实体编辑视图（示例数据）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "产品实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "产品实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "产品实体编辑视图（左右关系）",
+    "name" : "产品实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Data",
+    "logicName" : "示例数据",
+    "modelTag2" : "0",
+    "name" : "示例数据",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "GridDataView",
+    "logicName" : "产品实体表格视图（示例数据）",
+    "name" : "产品实体表格视图（示例数据）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  } ],
+  "codeName" : "Product",
+  "dEType" : 1,
+  "dSLink" : "DEFAULT",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dataChangeLogMode" : 0,
+  "dataImpExpMode" : 3,
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product.json",
+  "enableActions" : 7,
+  "enableUIActions" : 15,
+  "enableViewLevel" : 0,
+  "extendMode" : 0,
+  "getKeyPSDEField" : {
+    "name" : "PRODUCTID",
+    "codeName" : "ProductId"
+  },
+  "logicName" : "产品",
+  "getMajorPSDEField" : {
+    "name" : "PRODUCTNAME",
+    "codeName" : "ProductName"
+  },
+  "getMajorPSDERs" : [ {
+    "codeName" : "Product",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/OrderDetail/PSDERS/DER1N_ORDERDETAIL_PRODUCT_PRODUCTID.json",
+    "logicName" : "产品",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderDetail.json"
+    },
+    "name" : "DER1N_ORDERDETAIL_PRODUCT_PRODUCTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PRODUCTID",
+      "codeName" : "ProductId"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    },
+    "pickupDEFName" : "PRODUCTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  }, {
+    "codeName" : "Product",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ProductCategory/PSDERS/DER1N_PRODUCTCATEGORY_PRODUCT_PRODUCTID.json",
+    "logicName" : "产品",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Product.json"
+    },
+    "masterOrder" : 100,
+    "masterRS" : 7,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ProductCategory.json"
+    },
+    "name" : "DER1N_PRODUCTCATEGORY_PRODUCT_PRODUCTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "PRODUCTID",
+      "codeName" : "ProductId"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    },
+    "pickupDEFName" : "PRODUCTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  } ],
+  "name" : "PRODUCT",
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Default.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample.json"
+  },
+  "saaSDCIdColumnName" : "SRFDCID",
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSMode" : 4,
+  "serviceAPIMode" : 1,
+  "serviceCodeName" : "Product",
+  "storageMode" : 1,
+  "systemTag" : "iBizSample",
+  "tableName" : "T_PRODUCT",
+  "enableAPIStorage" : false,
+  "enableCreate" : true,
+  "enableDataVer" : false,
+  "enableEntityCache" : false,
+  "enableModify" : true,
+  "enableMultiDS" : false,
+  "enableMultiForm" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableRemove" : true,
+  "enableSQLStorage" : true,
+  "logicValid" : false,
+  "subSysAsCloud" : false
+}

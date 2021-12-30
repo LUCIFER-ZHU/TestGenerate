@@ -1,0 +1,120 @@
+{
+  "codeName" : "order",
+  "dERType" : "DERAGGDATA",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Order/PSDERS/DERAGGDATA_ORDER_ORDERREPDATA.json",
+  "logicName" : "订单",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData.json"
+  },
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample/PSDATAENTITIES/Order.json"
+  },
+  "name" : "DERAGGDATA_ORDER_ORDERREPDATA",
+  "orderValue" : 100,
+  "getPSDERAggDataDEFieldMaps" : [ {
+    "getMajorPSDEField" : {
+      "name" : "PROCESSINGVAL",
+      "codeName" : "ProcessingVal"
+    },
+    "mapType" : "SUM",
+    "getMinorPSDEField" : {
+      "name" : "AMOUNT",
+      "codeName" : "Amount"
+    },
+    "name" : "处理中"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "QUARTERVAL",
+      "codeName" : "Quarterval"
+    },
+    "mapType" : "GROUPBY_QUARTER",
+    "getMinorPSDEField" : {
+      "name" : "ORDERDATE",
+      "codeName" : "OrderDate"
+    },
+    "name" : "季度分组"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    },
+    "mapType" : "GROUPBY",
+    "getMinorPSDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    },
+    "name" : "客户名称"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "mapType" : "GROUPBY",
+    "getMinorPSDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "name" : "客户标识"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "FINISHEDVAL",
+      "codeName" : "Finishedval"
+    },
+    "mapType" : "SUM",
+    "getMinorPSDEField" : {
+      "name" : "AMOUNT",
+      "codeName" : "Amount"
+    },
+    "name" : "已完成"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "YEARVAL",
+      "codeName" : "Yearval"
+    },
+    "mapType" : "GROUPBY_YEAR",
+    "getMinorPSDEField" : {
+      "name" : "ORDERDATE",
+      "codeName" : "OrderDate"
+    },
+    "name" : "年份分组"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "PAYINGVAL",
+      "codeName" : "PayingVal"
+    },
+    "mapType" : "SUM",
+    "getMinorPSDEField" : {
+      "name" : "AMOUNT",
+      "codeName" : "Amount"
+    },
+    "name" : "待支付"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "MONTHVAL",
+      "codeName" : "Monthval"
+    },
+    "mapType" : "GROUPBY_MONTH",
+    "getMinorPSDEField" : {
+      "name" : "ORDERDATE",
+      "codeName" : "OrderDate"
+    },
+    "name" : "月份分组"
+  }, {
+    "getMajorPSDEField" : {
+      "name" : "TOTALVAL",
+      "codeName" : "Totalval"
+    },
+    "mapType" : "SUM",
+    "getMinorPSDEField" : {
+      "name" : "AMOUNT",
+      "codeName" : "Amount"
+    },
+    "name" : "金额合计"
+  } ],
+  "getSourcePSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Group"
+  }
+}

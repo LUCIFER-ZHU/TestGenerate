@@ -1,0 +1,313 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "ORGDATAID",
+        "codeName" : "OrgDataId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "ORGDATANAME",
+        "codeName" : "OrgDataName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "ORGDATANAME",
+      "codeName" : "OrgDataName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "ORGDATAID",
+      "codeName" : "OrgDataId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchPORGDATA",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "OrgDataId",
+    "logicName" : "组织数据标识",
+    "name" : "ORGDATAID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "keyField" : true
+  }, {
+    "codeName" : "OrgDataName",
+    "logicName" : "组织名称",
+    "name" : "ORGDATANAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "DeptId",
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "OrgId",
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Porgdataid",
+    "logicName" : "父级组织数据标识",
+    "name" : "PORGDATAID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Porgdataname",
+    "logicName" : "父级组织",
+    "name" : "PORGDATANAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "Orgdatacode",
+    "logicName" : "组织编码",
+    "name" : "ORGDATACODE",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchPORGDATA",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEUILogics" : [ {
+    "codeName" : "TreeNodeDrop",
+    "defaultParamName" : "Default",
+    "logicName" : "树节点拖拽",
+    "name" : "树节点拖拽",
+    "getPSDEUILogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "parallelOutput" : true
+    } ],
+    "getPSDEUILogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true
+    }, {
+      "codeName" : "Temp",
+      "name" : "临时",
+      "activeCtrlParam" : true,
+      "ctrlParam" : true
+    } ],
+    "getStartPSDEUILogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    }
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "OrgData",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/OrgData.json",
+  "enableUIActions" : 15,
+  "logicName" : "组织数据",
+  "getMinorPSAppDERSs" : [ {
+    "actionRSMode" : 1,
+    "codeName" : "OrgData",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/OrgData.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/OrgData.json"
+    },
+    "name" : "父级组织-组织",
+    "getParentPSAppDEField" : {
+      "name" : "PORGDATAID",
+      "codeName" : "Porgdataid"
+    },
+    "rSMode" : 2
+  } ],
+  "name" : "ORGDATA",
+  "getPSDEName" : "ORGDATA",
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "ORGDATANAME",
+    "codeName" : "OrgDataName"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

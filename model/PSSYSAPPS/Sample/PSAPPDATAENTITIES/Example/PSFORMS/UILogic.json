@@ -1,0 +1,686 @@
+{
+  "codeName" : "UILogic",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/UILogic.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "界面逻辑",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "form_button1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "form_button1"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "form_button2_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "form_button2"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "form_button4_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "form_button4"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "form_button3_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "form_button3"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "form_button1",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "modelref" : true,
+      "id" : "CallUISimple@Example"
+    },
+    "uIActionTarget" : "SINGLEDATA",
+    "xDataControlName" : "form"
+  }, {
+    "name" : "form_button2",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "modelref" : true,
+      "id" : "CallUIActionTest@Example"
+    },
+    "uIActionTarget" : "SINGLEDATA",
+    "xDataControlName" : "form"
+  }, {
+    "name" : "form_button4",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "modelref" : true,
+      "id" : "PrepareCtx@Example"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "form"
+  }, {
+    "name" : "form_button3",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "modelref" : true,
+      "id" : "CallUpdateFieldy@Example"
+    },
+    "uIActionTarget" : "SINGLEDATA",
+    "xDataControlName" : "form"
+  } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLENAME",
+      "codeName" : "ExampleName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "inputtext",
+    "dataType" : 25,
+    "createDV" : "123"
+  }, {
+    "id" : "exampleid",
+    "dataType" : 25,
+    "createDV" : "47F720BF-BDF8-4F2F-900C-64DD647156A2"
+  }, {
+    "id" : "fieldx",
+    "dataType" : 25
+  }, {
+    "id" : "formitem",
+    "dataType" : 25
+  }, {
+    "id" : "fieldz",
+    "dataType" : 25
+  }, {
+    "id" : "currentdate",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "CURRENTDATE",
+      "codeName" : "Currentdate"
+    }
+  }, {
+    "id" : "fieldupdate",
+    "dataType" : 25,
+    "createDV" : "336"
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "codeName" : "rawitem1",
+      "contentType" : "RAW",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "RAWITEM",
+      "name" : "rawitem1",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysCss" : {
+        "cssName" : "el-alert el-alert--info is-light"
+      },
+      "rawContent" : "表单项输入数据后点击【显示对话框】按钮",
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "分组面板",
+      "codeName" : "grouppanel1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "输入提示",
+        "codeName" : "inputtext",
+        "createDV" : "123",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "inputtext",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "inputtext"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX",
+          "width" : 400
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "actionType" : "UIACTION",
+        "caption" : "显示对话框",
+        "codeName" : "button1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "BUTTON",
+        "name" : "button1",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "form_button1"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEDATA",
+          "caption" : "执行",
+          "codeName" : "CallUISimple",
+          "frontProcessType" : "OTHER",
+          "fullCodeName" : "Example_CallUISimple",
+          "name" : "执行显示对话框逻辑",
+          "getPSAppDEUILogic" : {
+            "modelref" : true,
+            "id" : "UISimple"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "CallUISimple",
+          "uIActionType" : "DEUIACTION",
+          "uILogicAttachMode" : "REPLACE",
+          "uILogicType" : "DEUILOGIC",
+          "id" : "CallUISimple@Example"
+        },
+        "tooltip" : "显示对话框",
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    }, {
+      "codeName" : "rawitem2",
+      "contentType" : "HTML",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "RAWITEM",
+      "htmlContent" : "<p>1.通过【数据主键】打开视图，在视图中编辑X值后点击视图中的【保存并关闭】按钮，刚才编辑的X值回显到【X值回显】 <br />2.点击【动态设置上下文并获取数据】，通过数据主键获取数据回显到【Z值回显】、设置当前时间为当前日期</p>",
+      "name" : "rawitem2",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysCss" : {
+        "cssName" : "el-alert el-alert--info is-light"
+      },
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "分组面板",
+      "codeName" : "grouppanel2",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel2",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel5",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel5",
+        "getPSDEFormDetails" : [ {
+          "caption" : "数据主键",
+          "codeName" : "exampleid",
+          "createDV" : "47F720BF-BDF8-4F2F-900C-64DD647156A2",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "exampleid",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "exampleid"
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX",
+            "width" : 400
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "actionType" : "UIACTION",
+          "caption" : "调用界面行为打开视图",
+          "codeName" : "button2",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "BUTTON",
+          "name" : "button2",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "form_button2"
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "getPSUIAction" : {
+            "actionTarget" : "SINGLEDATA",
+            "caption" : "执行",
+            "codeName" : "CallUIActionTest",
+            "frontProcessType" : "OTHER",
+            "fullCodeName" : "Example_CallUIActionTest",
+            "name" : "执行界面行为调用逻辑",
+            "getPSAppDEUILogic" : {
+              "modelref" : true,
+              "id" : "UIActionTest"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+            },
+            "timeout" : 60000,
+            "uIActionMode" : "FRONT",
+            "uIActionTag" : "CallUIActionTest",
+            "uIActionType" : "DEUIACTION",
+            "uILogicAttachMode" : "REPLACE",
+            "uILogicType" : "DEUILOGIC",
+            "id" : "CallUIActionTest@Example"
+          },
+          "tooltip" : "调用界面行为打开视图",
+          "showCaption" : true
+        }, {
+          "caption" : "X值回显",
+          "codeName" : "fieldx",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "fieldx",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "fieldx",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "layout" : "FLEX"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel6",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel6",
+        "getPSDEFormDetails" : [ {
+          "codeName" : "formitem",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX",
+            "width" : 400
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : true,
+          "showCaption" : true
+        }, {
+          "actionType" : "UIACTION",
+          "caption" : "动态设置上下文并获取数据",
+          "codeName" : "button4",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "BUTTON",
+          "name" : "button4",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "form_button4"
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "getPSUIAction" : {
+            "actionTarget" : "SINGLEKEY",
+            "caption" : "动态设置上下文并获取数据",
+            "codeName" : "PrepareCtx",
+            "fullCodeName" : "Example_PrepareCtx",
+            "name" : "动态设置上下文并获取数据",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "PrepareCtx"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+            },
+            "timeout" : 60000,
+            "uIActionMode" : "BACKEND",
+            "uIActionTag" : "PrepareCtx",
+            "uIActionType" : "DEUIACTION",
+            "enableConfirm" : true,
+            "id" : "PrepareCtx@Example"
+          },
+          "tooltip" : "动态设置上下文并获取数据",
+          "showCaption" : true
+        }, {
+          "caption" : "Z值回显",
+          "codeName" : "fieldz",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "fieldz",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "fieldz",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "当前日期",
+          "codeName" : "currentdate",
+          "dataType" : 5,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "currentdate",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "CURRENTDATE",
+            "codeName" : "Currentdate"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "currentdate",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "valueFormat" : "YYYY-MM-DD",
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "layout" : "FLEX"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    }, {
+      "codeName" : "rawitem3",
+      "contentType" : "RAW",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "RAWITEM",
+      "name" : "rawitem3",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysCss" : {
+        "cssName" : "el-alert el-alert--info is-light"
+      },
+      "rawContent" : "通过【数据主键】和【更新值回显】更新指定数据的值属性，更新完成后打开视图显示，视图中对属性【更新值】修改后将回显【更新值回显】",
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "分组面板",
+      "codeName" : "grouppanel3",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel3",
+      "getPSDEFormDetails" : [ {
+        "caption" : "更新值回显",
+        "codeName" : "fieldupdate",
+        "createDV" : "336",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "fieldupdate",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "NUMBER",
+          "name" : "fieldupdate"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX",
+          "width" : 400
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "actionType" : "UIACTION",
+        "caption" : "调用后台更新值",
+        "codeName" : "button3",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "BUTTON",
+        "name" : "button3",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "form_button3"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEDATA",
+          "caption" : "执行",
+          "codeName" : "CallUpdateFieldy",
+          "frontProcessType" : "OTHER",
+          "fullCodeName" : "Example_CallUpdateFieldy",
+          "name" : "执行界面行为更新Y值",
+          "getPSAppDEUILogic" : {
+            "modelref" : true,
+            "id" : "UpdateFieldUpdate"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "CallUpdateFieldy",
+          "uIActionType" : "DEUIACTION",
+          "uILogicAttachMode" : "REPLACE",
+          "uILogicType" : "DEUILOGIC",
+          "id" : "CallUpdateFieldy@Example"
+        },
+        "tooltip" : "调用后台更新值",
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "BB87A913-3D9A-4F5D-8DE4-35185ED16ACF",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

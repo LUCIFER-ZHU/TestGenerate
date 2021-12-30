@@ -1,0 +1,171 @@
+{
+  "accUserMode" : 2,
+  "caption" : "省份",
+  "codeName" : "ProvinceMobCalendarView",
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobCalendarView.json",
+  "mDCtrlActiveMode" : 2,
+  "name" : "ProvinceMobCalendarView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "MobCalendarView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "calendar",
+      "name" : "CALENDAR",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSControls" : [ {
+    "calendarStyle" : "MONTH",
+    "codeName" : "Mob_calendar",
+    "controlType" : "CALENDAR",
+    "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province/PSCALENDARS/Mob_calendar.json",
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "LOAD" ],
+    "legendPos" : "TOP",
+    "logicName" : "移动端日历部件",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+    },
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "calendar"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD",
+      "logicTag" : "calendar",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_calendar",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CALENDAR"
+    },
+    "getPSSysCalendarItems" : [ {
+      "getBeginTimePSAppDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "getEndTimePSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "getIdPSAppDEField" : {
+        "name" : "CHARTDATAID",
+        "codeName" : "ChartDataId"
+      },
+      "itemStyle" : "DEFAULT",
+      "itemType" : "item2",
+      "maxSize" : -1,
+      "name" : "图表",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getTextPSAppDEField" : {
+        "name" : "CHARTDATANAME",
+        "codeName" : "ChartDataName"
+      },
+      "enableQuickCreate" : false,
+      "id" : "item2"
+    }, {
+      "getBeginTimePSAppDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "getEndTimePSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "getIdPSAppDEField" : {
+        "name" : "PROVINCEID",
+        "codeName" : "ProvinceId"
+      },
+      "itemStyle" : "DEFAULT",
+      "itemType" : "item",
+      "maxSize" : -1,
+      "name" : "省份",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+      },
+      "getTextPSAppDEField" : {
+        "name" : "PROVINCENAME",
+        "codeName" : "ProvinceName"
+      },
+      "enableQuickCreate" : false,
+      "id" : "item"
+    } ],
+    "enableGroup" : false,
+    "name" : "calendar",
+    "modelid" : "576D2415-5135-491F-9B66-03FA5D1340C2",
+    "modeltype" : "PSSYSCALENDAR"
+  } ],
+  "getPSDEViewCodeName" : "MobCalendarView",
+  "getPSDEViewId" : "617FA20E-8DE0-40EC-B45B-910BE801A63D",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMOBCALENDARVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "省份移动端日历视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMOBCALENDARVIEW",
+  "xDataControlName" : "calendar",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enablePullDownRefresh" : false,
+  "modelid" : "cde849cc49970fa494b16e0ac92c40d4",
+  "modeltype" : "PSAPPDEVIEW"
+}

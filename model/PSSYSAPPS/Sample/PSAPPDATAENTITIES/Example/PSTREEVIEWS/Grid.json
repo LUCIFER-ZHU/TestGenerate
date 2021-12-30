@@ -1,0 +1,588 @@
+{
+  "codeName" : "Grid",
+  "controlType" : "TREEVIEW",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSTREEVIEWS/Grid.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "logicName" : "表格树",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_load"
+  } ],
+  "getPSDEDataImport" : {
+    "modelref" : true,
+    "id" : "DataImport"
+  },
+  "getPSDETreeNodeRSs" : [ {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "BASE"
+    },
+    "name" : "默认根节点 - 基本对象",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Layout"
+    },
+    "name" : "默认根节点 - 布局",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "GridLogic"
+    },
+    "name" : "默认根节点 - 表格逻辑",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "RowEdit"
+    },
+    "name" : "默认根节点 - 行编辑",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Sort"
+    },
+    "name" : "默认根节点 - 排序",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Group"
+    },
+    "name" : "默认根节点 - 分组",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Toolbar"
+    },
+    "name" : "默认根节点 - 内置工具栏",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "CssAndIcon"
+    },
+    "name" : "默认根节点 - 界面样式及图标",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ActionColumn"
+    },
+    "name" : "默认根节点 - 操作列",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ValueFormat"
+    },
+    "name" : "默认根节点 - 值显示",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "DataItem"
+    },
+    "name" : "默认根节点 - 数据项",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "EventAndInvoke"
+    },
+    "name" : "默认根节点 - 事件及调用",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  } ],
+  "getPSDETreeNodes" : [ {
+    "counterMode" : 0,
+    "name" : "内置工具栏",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleToolbarGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "Toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "内置工具栏",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "Toolbar"
+  }, {
+    "counterMode" : 0,
+    "name" : "布局",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleGridLayoutGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "Layout",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "布局",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "Layout"
+  }, {
+    "counterMode" : 0,
+    "name" : "数据项",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleDataItemGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "DataItem",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "数据项",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "DataItem"
+  }, {
+    "counterMode" : 0,
+    "name" : "表格逻辑",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleGridLogicCustomView.json",
+      "viewType" : "DECUSTOMVIEW"
+    },
+    "nodeType" : "GridLogic",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "表格逻辑",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "GridLogic"
+  }, {
+    "counterMode" : 0,
+    "name" : "值显示",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleGridValueFormatGridView_7046.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "ValueFormat",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "值显示",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ValueFormat"
+  }, {
+    "counterMode" : 0,
+    "name" : "界面样式及图标",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleGridCssAndIconGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "CssAndIcon",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "界面样式及图标",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "CssAndIcon"
+  }, {
+    "counterMode" : 0,
+    "name" : "常规",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleGridBaseGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "BASE",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "常规",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "BASE"
+  }, {
+    "counterMode" : 0,
+    "name" : "排序",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleGridSortGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "Sort",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "排序",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "Sort"
+  }, {
+    "counterMode" : 0,
+    "name" : "事件及调用",
+    "nodeType" : "EventAndInvoke",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "事件及调用",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "EventAndInvoke"
+  }, {
+    "counterMode" : 0,
+    "name" : "默认根节点",
+    "nodeType" : "ROOT",
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : true,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ROOT"
+  }, {
+    "counterMode" : 0,
+    "name" : "操作列",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleGridActionColumnCustomView.json",
+      "viewType" : "DECUSTOMVIEW"
+    },
+    "nodeType" : "ActionColumn",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "操作列",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ActionColumn"
+  }, {
+    "counterMode" : 0,
+    "name" : "分组",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleGridGroupGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "Group",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "分组",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "Group"
+  }, {
+    "counterMode" : 0,
+    "name" : "行编辑",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/EDITORVALUERowEditGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "RowEdit",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "行编辑",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "RowEdit"
+  } ],
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "treeGridMode" : 0,
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "enableRootSelect" : false,
+  "outputIconDefault" : false,
+  "rootVisible" : false,
+  "modelid" : "217F19D5-0002-40B9-B9C9-32A1A669FEFD",
+  "modeltype" : "PSDETREEVIEW"
+}

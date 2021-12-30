@@ -1,0 +1,2069 @@
+{
+  "accUserMode" : 2,
+  "caption" : "图表实体移动端分页导航视图",
+  "codeName" : "ChartDataMobTabExpView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataMobTabExpView.json",
+  "name" : "ChartDataMobTabExpView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "MobTabExpView",
+    "name" : "engine"
+  } ],
+  "getPSAppViewLogics" : [ {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "righttoolbar_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "righttoolbar_deuiaction1"
+    },
+    "getPSViewCtrlName" : "righttoolbar"
+  }, {
+    "eventArg" : "deuiaction2",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "righttoolbar_deuiaction2_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "righttoolbar_deuiaction2"
+    },
+    "getPSViewCtrlName" : "righttoolbar"
+  }, {
+    "eventArg" : "deuiaction3",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "righttoolbar_deuiaction3_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "righttoolbar_deuiaction3"
+    },
+    "getPSViewCtrlName" : "righttoolbar"
+  }, {
+    "eventArg" : "deuiaction4",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "righttoolbar_deuiaction4_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "righttoolbar_deuiaction4"
+    },
+    "getPSViewCtrlName" : "righttoolbar"
+  }, {
+    "eventArg" : "deuiaction5",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "righttoolbar_deuiaction5_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "righttoolbar_deuiaction5"
+    },
+    "getPSViewCtrlName" : "righttoolbar"
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "righttoolbar_deuiaction1",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "New"
+    }
+  }, {
+    "name" : "righttoolbar_deuiaction2",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Save"
+    }
+  }, {
+    "name" : "righttoolbar_deuiaction3",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "modelref" : true,
+      "id" : "Count@ChartData"
+    },
+    "uIActionTarget" : "NONE"
+  }, {
+    "name" : "righttoolbar_deuiaction4",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "modelref" : true,
+      "id" : "custom1@ChartData"
+    },
+    "uIActionTarget" : "SINGLEDATA"
+  }, {
+    "name" : "righttoolbar_deuiaction5",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "modelref" : true,
+      "id" : "custom2@ChartData"
+    },
+    "uIActionTarget" : "NONE"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "MobTabExpViewrighttoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "测试",
+    "name" : "righttoolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction2_click"
+      }
+    }, {
+      "eventArg" : "deuiaction3",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction3_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction3_click"
+      }
+    }, {
+      "eventArg" : "deuiaction4",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction4_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction4_click"
+      }
+    }, {
+      "eventArg" : "deuiaction5",
+      "eventNames" : "CLICK",
+      "logicTag" : "righttoolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "righttoolbar_deuiaction5_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction5_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "RIGHTTOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.NEW"
+      },
+      "caption" : "新建",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0f6@FontAwesome",
+        "cssClass" : "fa fa-file-text-o"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.NEW"
+        },
+        "caption" : "新建",
+        "codeName" : "New",
+        "fullCodeName" : "New",
+        "name" : "表格界面_新建操作",
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.NEW"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "New",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "新建",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.NEW"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.SAVE"
+      },
+      "caption" : "保存",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "imagePath" : "/assets/images/test.png"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.SAVE"
+        },
+        "caption" : "保存",
+        "codeName" : "Save",
+        "fullCodeName" : "Save",
+        "name" : "编辑界面_保存操作",
+        "getPSSysImage" : {
+          "glyph" : "xf0c7@FontAwesome",
+          "cssClass" : "fa fa-save"
+        },
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "Save",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "保存",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "计数器",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction3",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction3"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "计数器",
+        "codeName" : "Count",
+        "counterId" : "countertag",
+        "frontProcessType" : "OTHER",
+        "fullCodeName" : "ChartData_Count",
+        "name" : "计数器",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "getPSSysPFPlugin" : {
+          "pluginType" : "DEUIACTION",
+          "pluginCode" : "actionPluginTest"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "Count",
+        "uIActionType" : "DEUIACTION",
+        "id" : "Count@ChartData"
+      },
+      "tooltip" : "计数器",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "测试1",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction4",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction4"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEDATA",
+        "caption" : "界面行为测试1",
+        "codeName" : "custom1",
+        "dialogResult" : "OK",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+          "viewType" : "DEMOBMDVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "ChartData_custom1",
+        "htmlPageUrl" : "https://www.baidu.com/",
+        "name" : "界面行为测试1",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "custom1",
+        "uIActionType" : "DEUIACTION",
+        "closeEditView" : true,
+        "closePopupView" : true,
+        "reloadData" : true,
+        "id" : "custom1@ChartData"
+      },
+      "tooltip" : "测试1",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "测试2",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction5",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction5"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "界面行为测试2",
+        "codeName" : "custom2",
+        "confirmMsg" : "1354652",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+          "viewType" : "DEMOBMDVIEW"
+        },
+        "fullCodeName" : "ChartData_custom2",
+        "name" : "界面行为测试2",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetRandom"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "successMsg" : "35+62654",
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "custom2",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "id" : "custom2@ChartData"
+      },
+      "tooltip" : "测试2",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "toolbarStyle" : "MOBNAVRIGHTMENU",
+    "modelid" : "1E98CD1B-5069-4A8D-A534-DD302C04AD09",
+    "modeltype" : "PSDETOOLBAR"
+  }, {
+    "codeName" : "MobTabExpViewtabexppanel",
+    "controlType" : "TABEXPPANEL",
+    "name" : "tabexppanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:tabviewpanel",
+      "realTitle" : "图表移动端编辑视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataMobEditView.json",
+        "viewType" : "DEMOBEDITVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:tabviewpanel2",
+      "realTitle" : "图表移动端树视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataMobTreeView.json",
+        "viewType" : "DEMOBTREEVIEW"
+      }
+    } ],
+    "getPSControlParam" : { },
+    "getPSControls" : [ {
+      "caption" : "编辑视图",
+      "codeName" : "MobTabExpViewtabviewpanel",
+      "controlType" : "TABVIEWPANEL",
+      "name" : "tabviewpanel",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSControlParam" : {
+        "id" : "TABVIEWPANEL"
+      },
+      "modelid" : "0fb15f044fdc8d6ff7d7b8940b9b5ca9_tabviewpanel",
+      "modeltype" : "PSVIEWPANEL",
+      "getEmbeddedPSAppDEView" : {
+        "accUserMode" : 2,
+        "caption" : "图表",
+        "codeName" : "ChartDataMobEditView",
+        "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataMobEditView.json",
+        "name" : "ChartDataMobEditView",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "getPSAppViewEngines" : [ {
+          "engineCat" : "VIEW",
+          "engineType" : "MobEditView",
+          "name" : "engine",
+          "getPSUIEngineParams" : [ {
+            "ctrlName" : "form",
+            "name" : "FORM",
+            "paramType" : "CTRL"
+          } ]
+        } ],
+        "getPSAppViewLogics" : [ {
+          "eventArg" : "deuiaction1",
+          "eventNames" : "CLICK",
+          "logicTrigger" : "CTRLEVENT",
+          "logicType" : "APPVIEWUIACTION",
+          "name" : "righttoolbar_deuiaction1_click",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "righttoolbar_deuiaction1"
+          },
+          "getPSViewCtrlName" : "righttoolbar"
+        }, {
+          "eventArg" : "deuiaction2",
+          "eventNames" : "CLICK",
+          "logicTrigger" : "CTRLEVENT",
+          "logicType" : "APPVIEWUIACTION",
+          "name" : "righttoolbar_deuiaction2_click",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "righttoolbar_deuiaction2"
+          },
+          "getPSViewCtrlName" : "righttoolbar"
+        }, {
+          "eventArg" : "deuiaction3",
+          "eventNames" : "CLICK",
+          "logicTrigger" : "CTRLEVENT",
+          "logicType" : "APPVIEWUIACTION",
+          "name" : "righttoolbar_deuiaction3_click",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "righttoolbar_deuiaction3"
+          },
+          "getPSViewCtrlName" : "righttoolbar"
+        }, {
+          "eventArg" : "deuiaction4",
+          "eventNames" : "CLICK",
+          "logicTrigger" : "CTRLEVENT",
+          "logicType" : "APPVIEWUIACTION",
+          "name" : "righttoolbar_deuiaction4_click",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "righttoolbar_deuiaction4"
+          },
+          "getPSViewCtrlName" : "righttoolbar"
+        }, {
+          "eventArg" : "deuiaction5",
+          "eventNames" : "CLICK",
+          "logicTrigger" : "CTRLEVENT",
+          "logicType" : "APPVIEWUIACTION",
+          "name" : "righttoolbar_deuiaction5_click",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "righttoolbar_deuiaction5"
+          },
+          "getPSViewCtrlName" : "righttoolbar"
+        } ],
+        "getPSAppViewUIActions" : [ {
+          "name" : "righttoolbar_deuiaction1",
+          "getPSUIAction" : {
+            "modelref" : true,
+            "id" : "New"
+          },
+          "xDataControlName" : "form"
+        }, {
+          "name" : "righttoolbar_deuiaction2",
+          "getPSUIAction" : {
+            "modelref" : true,
+            "id" : "Save"
+          },
+          "xDataControlName" : "form"
+        }, {
+          "name" : "righttoolbar_deuiaction3",
+          "getPSUIAction" : {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            },
+            "modelref" : true,
+            "id" : "Count@ChartData"
+          },
+          "uIActionTarget" : "NONE",
+          "xDataControlName" : "form"
+        }, {
+          "name" : "righttoolbar_deuiaction4",
+          "getPSUIAction" : {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            },
+            "modelref" : true,
+            "id" : "custom1@ChartData"
+          },
+          "uIActionTarget" : "SINGLEDATA",
+          "xDataControlName" : "form"
+        }, {
+          "name" : "righttoolbar_deuiaction5",
+          "getPSUIAction" : {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            },
+            "modelref" : true,
+            "id" : "custom2@ChartData"
+          },
+          "uIActionTarget" : "NONE",
+          "xDataControlName" : "form"
+        } ],
+        "getPSControls" : [ {
+          "codeName" : "MobForm",
+          "controlType" : "FORM",
+          "getCreatePSControlAction" : {
+            "modelref" : true,
+            "id" : "create"
+          },
+          "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSFORMS/MobForm.json",
+          "getGetDraftFromPSControlAction" : {
+            "modelref" : true,
+            "id" : "loaddraftfrom"
+          },
+          "getGetDraftPSControlAction" : {
+            "modelref" : true,
+            "id" : "loaddraft"
+          },
+          "getGetPSControlAction" : {
+            "modelref" : true,
+            "id" : "load"
+          },
+          "hookEventNames" : [ "SAVE", "ONBEFORELOADDRAFT", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
+          "logicName" : "移动端表单",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "getPSAppViewLogics" : [ {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "APPVIEWUIACTION",
+            "name" : "form_group1_u8c563d5_click",
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "界面行为测试1"
+            }
+          }, {
+            "logicTrigger" : "CUSTOM",
+            "logicType" : "APPVIEWUIACTION",
+            "name" : "form_button1_click",
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "form_button1"
+            }
+          } ],
+          "getPSAppViewUIActions" : [ {
+            "name" : "界面行为测试1",
+            "getPSUIAction" : {
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+              },
+              "modelref" : true,
+              "id" : "custom1@ChartData"
+            },
+            "uIActionTarget" : "SINGLEDATA",
+            "xDataControlName" : "form"
+          }, {
+            "name" : "form_button1",
+            "getPSUIAction" : {
+              "modelref" : true,
+              "id" : "Save"
+            },
+            "xDataControlName" : "form"
+          } ],
+          "getPSControlHandler" : {
+            "getPSHandlerActions" : [ {
+              "actionName" : "Update",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "UPDATE",
+              "name" : "update",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Update"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+              }
+            }, {
+              "actionName" : "GETDRAFTFROM",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "CREATE",
+              "name" : "loaddraftfrom",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+              }
+            }, {
+              "actionName" : "Remove",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "DELETE",
+              "name" : "remove",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Remove"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+              }
+            }, {
+              "actionName" : "GetDraft",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "CREATE",
+              "name" : "loaddraft",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "GetDraft"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+              }
+            }, {
+              "actionName" : "Get",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "READ",
+              "name" : "load",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Get"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+              }
+            }, {
+              "actionName" : "Create",
+              "actionType" : "DEACTION",
+              "dataAccessAction" : "CREATE",
+              "name" : "create",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "Create"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+              }
+            } ],
+            "enableDEFieldPrivilege" : false,
+            "id" : "编辑表单处理器"
+          },
+          "getPSControlLogics" : [ {
+            "logicTag" : "form",
+            "logicType" : "SCRIPT",
+            "name" : "logic2",
+            "scriptCode" : "console.log('只挂接')",
+            "triggerType" : "CUSTOM"
+          }, {
+            "eventNames" : "onBeforeLoadDraft",
+            "logicTag" : "form",
+            "logicType" : "SCRIPT",
+            "name" : "logic6",
+            "scriptCode" : "console.log(\"表单界面逻辑部件自定义触发成功！！！\")"
+          }, {
+            "logicTag" : "form",
+            "logicType" : "SCRIPT",
+            "name" : "logic",
+            "scriptCode" : "console.log('定时器触发')",
+            "triggerType" : "TIMER"
+          }, {
+            "eventNames" : "LOAD;BEFORELOAD;SAVE;BEFORESAVE;REMOVE",
+            "logicTag" : "form",
+            "logicType" : "APPVIEWENGINE",
+            "name" : "engine_form",
+            "getPSAppViewEngine" : {
+              "modelref" : true,
+              "id" : "engine"
+            }
+          } ],
+          "getPSControlParam" : {
+            "autoLoad" : true,
+            "enableAutoSave" : true,
+            "showBusyIndicator" : true,
+            "id" : "FORM"
+          },
+          "getPSDEFormItems" : [ {
+            "id" : "srfupdatedate",
+            "hidden" : true,
+            "dataType" : 5,
+            "getPSAppDEField" : {
+              "name" : "UPDATEDATE",
+              "codeName" : "UpdateDate"
+            }
+          }, {
+            "id" : "srforikey",
+            "hidden" : true,
+            "dataType" : 25
+          }, {
+            "id" : "srfkey",
+            "hidden" : true,
+            "dataType" : 25,
+            "getPSAppDEField" : {
+              "name" : "CHARTDATAID",
+              "codeName" : "ChartDataId"
+            }
+          }, {
+            "id" : "srfmajortext",
+            "hidden" : true,
+            "dataType" : 25,
+            "getPSAppDEField" : {
+              "name" : "CHARTDATANAME",
+              "codeName" : "ChartDataName"
+            }
+          }, {
+            "id" : "srftempmode",
+            "hidden" : true,
+            "dataType" : 25
+          }, {
+            "id" : "srfuf",
+            "hidden" : true,
+            "dataType" : 25
+          }, {
+            "id" : "srfdeid",
+            "hidden" : true,
+            "dataType" : 25
+          }, {
+            "id" : "srfsourcekey",
+            "hidden" : true,
+            "dataType" : 25
+          }, {
+            "id" : "chartdataname",
+            "dataType" : 25,
+            "getPSAppDEField" : {
+              "name" : "CHARTDATANAME",
+              "codeName" : "ChartDataName"
+            }
+          }, {
+            "id" : "data",
+            "dataType" : 6,
+            "getPSAppDEField" : {
+              "name" : "DATA",
+              "codeName" : "Data"
+            }
+          }, {
+            "id" : "season",
+            "dataType" : 9,
+            "getPSAppDEField" : {
+              "name" : "SEASON",
+              "codeName" : "Season"
+            }
+          }, {
+            "id" : "totalprice",
+            "dataType" : 25,
+            "getPSAppDEField" : {
+              "name" : "TOTALPRICE",
+              "codeName" : "Totalprice"
+            }
+          }, {
+            "id" : "datatype",
+            "dataType" : 25,
+            "getPSAppDEField" : {
+              "name" : "DATATYPE",
+              "codeName" : "DataType"
+            }
+          }, {
+            "id" : "formitem1",
+            "dataType" : 25
+          }, {
+            "id" : "data1",
+            "dataType" : 25
+          }, {
+            "id" : "formitem",
+            "dataType" : 25
+          }, {
+            "id" : "formitem2",
+            "hidden" : true,
+            "dataType" : 25
+          }, {
+            "id" : "formitem3",
+            "dataType" : 25,
+            "createDV" : "标签测试"
+          }, {
+            "id" : "formitem4",
+            "dataType" : 25
+          }, {
+            "id" : "formitem5",
+            "dataType" : 25
+          }, {
+            "id" : "formitem6",
+            "dataType" : 25,
+            "getPSAppDEField" : {
+              "name" : "DATATYPE",
+              "codeName" : "DataType"
+            }
+          }, {
+            "id" : "formitem7",
+            "dataType" : 25
+          }, {
+            "id" : "formitem8",
+            "dataType" : 25
+          }, {
+            "id" : "formitem9",
+            "dataType" : 25
+          }, {
+            "id" : "formitem10",
+            "dataType" : 25
+          }, {
+            "id" : "formitem11",
+            "dataType" : 25
+          }, {
+            "id" : "formitem12",
+            "dataType" : 25
+          }, {
+            "id" : "formitem13",
+            "dataType" : 25
+          }, {
+            "id" : "formitem14",
+            "dataType" : 25
+          }, {
+            "id" : "formitem15",
+            "dataType" : 25
+          }, {
+            "id" : "year",
+            "dataType" : 9,
+            "getPSAppDEField" : {
+              "name" : "YEAR",
+              "codeName" : "Year"
+            }
+          }, {
+            "id" : "chartdataid",
+            "hidden" : true,
+            "dataType" : 25,
+            "getPSAppDEField" : {
+              "name" : "CHARTDATAID",
+              "codeName" : "ChartDataId"
+            }
+          } ],
+          "getPSDEFormPages" : [ {
+            "caption" : "基本信息",
+            "codeName" : "formpage1",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMPAGE",
+            "getLabelPSSysCss" : {
+              "cssName" : "h2-title"
+            },
+            "name" : "formpage1",
+            "getPSDEFormDetails" : [ {
+              "actionGroupExtractMode" : "ITEM",
+              "caption" : "图表基本信息",
+              "codeName" : "group1",
+              "detailStyle" : "DEFAULT",
+              "detailType" : "GROUPPANEL",
+              "getLabelPSSysCss" : {
+                "cssName" : "h1-title"
+              },
+              "name" : "group1",
+              "getPSDEFormDetails" : [ {
+                "caption" : "图表名称",
+                "codeName" : "chartdataname",
+                "dataType" : 25,
+                "detailStyle" : "DEFAULT",
+                "detailType" : "FORMITEM",
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "LEFT",
+                "labelWidth" : 130,
+                "name" : "chartdataname",
+                "noPrivDisplayMode" : 1,
+                "getPSAppDEField" : {
+                  "name" : "CHARTDATANAME",
+                  "codeName" : "ChartDataName"
+                },
+                "getPSEditor" : {
+                  "editorType" : "TEXTBOX",
+                  "maxLength" : 200,
+                  "name" : "chartdataname"
+                },
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "resetItemName" : "totalprice",
+                "resetItemNames" : [ "totalprice" ],
+                "allowEmpty" : true,
+                "showCaption" : true
+              }, {
+                "caption" : "数据",
+                "codeName" : "data",
+                "dataType" : 6,
+                "detailStyle" : "DEFAULT",
+                "detailType" : "FORMITEM",
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "LEFT",
+                "labelWidth" : 130,
+                "name" : "data",
+                "noPrivDisplayMode" : 1,
+                "getPSAppDEField" : {
+                  "name" : "DATA",
+                  "codeName" : "Data"
+                },
+                "getPSEditor" : {
+                  "editorStyle" : "editorPluginTest",
+                  "editorType" : "MOBTEXT",
+                  "name" : "data"
+                },
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "allowEmpty" : true,
+                "showCaption" : true
+              } ],
+              "getPSLayout" : {
+                "columnCount" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "getPSSysCss" : {
+                "cssName" : "form-red-border"
+              },
+              "getPSSysImage" : {
+                "cssClass" : "browsers"
+              },
+              "getPSUIActionGroup" : {
+                "codeName" : "Auto11",
+                "name" : "界面行为组测试",
+                "getPSUIActionGroupDetails" : [ {
+                  "detailType" : "DEUIACTION",
+                  "name" : "u8c563d5",
+                  "getPSUIAction" : {
+                    "actionTarget" : "SINGLEDATA",
+                    "caption" : "界面行为测试1",
+                    "codeName" : "custom1",
+                    "dialogResult" : "OK",
+                    "getFrontPSAppView" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+                      "viewType" : "DEMOBMDVIEW"
+                    },
+                    "frontProcessType" : "WIZARD",
+                    "fullCodeName" : "ChartData_custom1",
+                    "htmlPageUrl" : "https://www.baidu.com/",
+                    "name" : "界面行为测试1",
+                    "getPSAppDataEntity" : {
+                      "modelref" : true,
+                      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+                    },
+                    "refreshMode" : 1,
+                    "timeout" : 60000,
+                    "uIActionMode" : "FRONT",
+                    "uIActionTag" : "custom1",
+                    "uIActionType" : "DEUIACTION",
+                    "closeEditView" : true,
+                    "closePopupView" : true,
+                    "reloadData" : true,
+                    "id" : "custom1@ChartData"
+                  },
+                  "addSeparator" : false,
+                  "showCaption" : true,
+                  "showIcon" : true
+                } ]
+              },
+              "titleBarCloseMode" : 1,
+              "infoGroupMode" : false,
+              "showCaption" : true
+            }, {
+              "caption" : "季度",
+              "codeName" : "season",
+              "dataType" : 9,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "getLabelPSSysCss" : {
+                "cssName" : "h2-title"
+              },
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "season",
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "SEASON",
+                "codeName" : "Season"
+              },
+              "getPSEditor" : {
+                "editorType" : "MOBTEXTAREA",
+                "name" : "season",
+                "showMaxLength" : true
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "getPSSysCss" : {
+                "cssName" : "form-red-border"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "总计价格",
+              "codeName" : "totalprice",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 2,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "totalprice",
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "TOTALPRICE",
+                "codeName" : "Totalprice"
+              },
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "maxLength" : 100,
+                "name" : "totalprice"
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "数据分类",
+              "codeName" : "datatype",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "datatype",
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "DATATYPE",
+                "codeName" : "DataType"
+              },
+              "getPSEditor" : {
+                "editorType" : "MOBRADIOLIST",
+                "name" : "datatype",
+                "getPSAppCodeList" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/DataType.json"
+                }
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "needCodeListConfig" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "评分器",
+              "codeName" : "formitem1",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem1",
+              "noPrivDisplayMode" : 1,
+              "getPSEditor" : {
+                "editorType" : "MOBRATING",
+                "maxValue" : 5.0,
+                "minValue" : 0.0,
+                "name" : "formitem1",
+                "stepValue" : 1.0
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "步进器",
+              "codeName" : "data1",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "data1",
+              "noPrivDisplayMode" : 1,
+              "getPSEditor" : {
+                "editorType" : "MOBSTEPPER",
+                "name" : "data1",
+                "stepValue" : 1.0
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "数据选择",
+              "codeName" : "formitem",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem",
+              "noPrivDisplayMode" : 1,
+              "getPSEditor" : {
+                "editorParams" : {
+                  "AC" : "TRUE",
+                  "PICKUPVIEW" : "TRUE"
+                },
+                "editorType" : "MOBPICKER",
+                "name" : "formitem",
+                "getPickupPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMPickupView.json",
+                  "viewType" : "DEMOBMPICKUPVIEW"
+                },
+                "valueItemName" : "formitem2",
+                "enableAC" : true,
+                "enablePickupView" : true,
+                "forceSelection" : true,
+                "showTrigger" : true,
+                "singleSelect" : true
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "valueItemName" : "formitem2",
+              "allowEmpty" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "值项",
+              "codeName" : "formitem2",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem2",
+              "noPrivDisplayMode" : 1,
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "formitem2"
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "hidden" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "标签",
+              "codeName" : "formitem3",
+              "createDV" : "标签测试",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem3",
+              "noPrivDisplayMode" : 1,
+              "getPSEditor" : {
+                "editorType" : "SPAN",
+                "name" : "formitem3",
+                "enableLinkView" : false
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "滑动输入条",
+              "codeName" : "formitem4",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem4",
+              "noPrivDisplayMode" : 1,
+              "getPSEditor" : {
+                "editorType" : "MOBSLIDER",
+                "name" : "formitem4",
+                "stepValue" : 1.0
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "开关",
+              "codeName" : "formitem5",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem5",
+              "noPrivDisplayMode" : 1,
+              "getPSEditor" : {
+                "editorType" : "MOBSWITCH",
+                "name" : "formitem5"
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "needCodeListConfig" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "下拉列表框",
+              "codeName" : "formitem6",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem6",
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "DATATYPE",
+                "codeName" : "DataType"
+              },
+              "getPSEditor" : {
+                "editorType" : "MOBDROPDOWNLIST",
+                "name" : "formitem6",
+                "getPSAppCodeList" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/DataType.json"
+                },
+                "singleSelect" : true
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "needCodeListConfig" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "时间选择",
+              "codeName" : "formitem7",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem7",
+              "noPrivDisplayMode" : 1,
+              "getPSEditor" : {
+                "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+                "editorParams" : {
+                  "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+                },
+                "editorType" : "MOBDATE",
+                "name" : "formitem7"
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            }, {
+              "actionType" : "UIACTION",
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.SAVE"
+              },
+              "caption" : "保存",
+              "codeName" : "button1",
+              "detailStyle" : "DEFAULT",
+              "detailType" : "BUTTON",
+              "name" : "button1",
+              "getPSAppViewUIAction" : {
+                "modelref" : true,
+                "id" : "form_button1"
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "getPSUIAction" : {
+                "getCapPSLanguageRes" : {
+                  "lanResTag" : "TBB.TEXT.*.SAVE"
+                },
+                "caption" : "保存",
+                "codeName" : "Save",
+                "fullCodeName" : "Save",
+                "name" : "编辑界面_保存操作",
+                "getPSSysImage" : {
+                  "glyph" : "xf0c7@FontAwesome",
+                  "cssClass" : "fa fa-save"
+                },
+                "timeout" : 60000,
+                "getTooltipPSLanguageRes" : {
+                  "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+                },
+                "uIActionMode" : "SYS",
+                "uIActionTag" : "Save",
+                "uIActionType" : "DEUIACTION"
+              },
+              "tooltip" : "保存",
+              "showCaption" : true
+            }, {
+              "actionGroupExtractMode" : "ITEM",
+              "caption" : "数据选择测试",
+              "codeName" : "grouppanel1",
+              "detailStyle" : "DEFAULT",
+              "detailType" : "GROUPPANEL",
+              "name" : "grouppanel1",
+              "getPSDEFormDetails" : [ {
+                "caption" : "多数据单选",
+                "codeName" : "formitem8",
+                "dataType" : 25,
+                "detailStyle" : "DEFAULT",
+                "detailType" : "FORMITEM",
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "LEFT",
+                "labelWidth" : 130,
+                "name" : "formitem8",
+                "noPrivDisplayMode" : 1,
+                "getPSEditor" : {
+                  "editorParams" : {
+                    "AC" : "TRUE",
+                    "PICKUPVIEW" : "TRUE"
+                  },
+                  "editorType" : "MOBPICKER",
+                  "name" : "formitem8",
+                  "getPickupPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobPickupView.json",
+                    "viewType" : "DEMOBPICKUPVIEW"
+                  },
+                  "valueItemName" : "formitem9",
+                  "enableAC" : true,
+                  "enablePickupView" : true,
+                  "forceSelection" : true,
+                  "showTrigger" : true,
+                  "singleSelect" : true
+                },
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "valueItemName" : "formitem9",
+                "allowEmpty" : true,
+                "showCaption" : true
+              }, {
+                "caption" : "值项",
+                "codeName" : "formitem9",
+                "dataType" : 25,
+                "detailStyle" : "DEFAULT",
+                "detailType" : "FORMITEM",
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "LEFT",
+                "labelWidth" : 130,
+                "name" : "formitem9",
+                "noPrivDisplayMode" : 1,
+                "getPSEditor" : {
+                  "editorType" : "TEXTBOX",
+                  "name" : "formitem9"
+                },
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "allowEmpty" : true,
+                "showCaption" : true
+              }, {
+                "caption" : "多数据多选",
+                "codeName" : "formitem10",
+                "dataType" : 25,
+                "detailStyle" : "DEFAULT",
+                "detailType" : "FORMITEM",
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "LEFT",
+                "labelWidth" : 130,
+                "name" : "formitem10",
+                "noPrivDisplayMode" : 1,
+                "getPSEditor" : {
+                  "editorParams" : {
+                    "AC" : "TRUE",
+                    "PICKUPVIEW" : "TRUE"
+                  },
+                  "editorType" : "MOBMPICKER",
+                  "name" : "formitem10",
+                  "getPickupPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMPickupView.json",
+                    "viewType" : "DEMOBMPICKUPVIEW"
+                  },
+                  "valueItemName" : "formitem11",
+                  "enableAC" : true,
+                  "enablePickupView" : true,
+                  "forceSelection" : true,
+                  "showTrigger" : true,
+                  "singleSelect" : false
+                },
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "valueItemName" : "formitem11",
+                "allowEmpty" : true,
+                "showCaption" : true
+              }, {
+                "caption" : "值项",
+                "codeName" : "formitem11",
+                "dataType" : 25,
+                "detailStyle" : "DEFAULT",
+                "detailType" : "FORMITEM",
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "LEFT",
+                "labelWidth" : 130,
+                "name" : "formitem11",
+                "noPrivDisplayMode" : 1,
+                "getPSEditor" : {
+                  "editorType" : "TEXTBOX",
+                  "name" : "formitem11"
+                },
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "allowEmpty" : true,
+                "showCaption" : true
+              }, {
+                "caption" : "树单选",
+                "codeName" : "formitem12",
+                "dataType" : 25,
+                "detailStyle" : "DEFAULT",
+                "detailType" : "FORMITEM",
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "LEFT",
+                "labelWidth" : 130,
+                "name" : "formitem12",
+                "noPrivDisplayMode" : 1,
+                "getPSEditor" : {
+                  "editorParams" : {
+                    "AC" : "TRUE",
+                    "PICKUPVIEW" : "TRUE"
+                  },
+                  "editorType" : "MOBPICKER",
+                  "name" : "formitem12",
+                  "getPickupPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobPickupForTreeView.json",
+                    "viewType" : "DEMOBPICKUPVIEW"
+                  },
+                  "valueItemName" : "formitem13",
+                  "enableAC" : true,
+                  "enablePickupView" : true,
+                  "forceSelection" : true,
+                  "showTrigger" : true,
+                  "singleSelect" : true
+                },
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "valueItemName" : "formitem13",
+                "allowEmpty" : true,
+                "showCaption" : true
+              }, {
+                "caption" : "值项",
+                "codeName" : "formitem13",
+                "dataType" : 25,
+                "detailStyle" : "DEFAULT",
+                "detailType" : "FORMITEM",
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "LEFT",
+                "labelWidth" : 130,
+                "name" : "formitem13",
+                "noPrivDisplayMode" : 1,
+                "getPSEditor" : {
+                  "editorType" : "TEXTBOX",
+                  "name" : "formitem13"
+                },
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "allowEmpty" : true,
+                "showCaption" : true
+              }, {
+                "caption" : "树多选",
+                "codeName" : "formitem14",
+                "dataType" : 25,
+                "detailStyle" : "DEFAULT",
+                "detailType" : "FORMITEM",
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "LEFT",
+                "labelWidth" : 130,
+                "name" : "formitem14",
+                "noPrivDisplayMode" : 1,
+                "getPSEditor" : {
+                  "editorParams" : {
+                    "AC" : "TRUE",
+                    "PICKUPVIEW" : "TRUE"
+                  },
+                  "editorType" : "MOBMPICKER",
+                  "name" : "formitem14",
+                  "getPickupPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceForTreeMobMPickupView.json",
+                    "viewType" : "DEMOBMPICKUPVIEW"
+                  },
+                  "valueItemName" : "formitem15",
+                  "enableAC" : true,
+                  "enablePickupView" : true,
+                  "forceSelection" : true,
+                  "showTrigger" : true,
+                  "singleSelect" : false
+                },
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "valueItemName" : "formitem15",
+                "allowEmpty" : true,
+                "showCaption" : true
+              }, {
+                "caption" : "值项",
+                "codeName" : "formitem15",
+                "dataType" : 25,
+                "detailStyle" : "DEFAULT",
+                "detailType" : "FORMITEM",
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "LEFT",
+                "labelWidth" : 130,
+                "name" : "formitem15",
+                "noPrivDisplayMode" : 1,
+                "getPSEditor" : {
+                  "editorType" : "TEXTBOX",
+                  "name" : "formitem15"
+                },
+                "getPSLayoutPos" : {
+                  "colMD" : 24,
+                  "layout" : "TABLE_24COL"
+                },
+                "allowEmpty" : true,
+                "showCaption" : true
+              } ],
+              "getPSLayout" : {
+                "columnCount" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "infoGroupMode" : false,
+              "showCaption" : true
+            } ],
+            "getPSLayout" : {
+              "columnCount" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "form-red-border"
+            },
+            "getPSSysImage" : {
+              "cssClass" : "ribbon"
+            },
+            "infoGroupMode" : false
+          }, {
+            "caption" : "表单分页",
+            "codeName" : "formpage2",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMPAGE",
+            "name" : "formpage2",
+            "getPSDEFormDetails" : [ {
+              "caption" : "年份",
+              "codeName" : "year",
+              "dataType" : 9,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "year",
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "YEAR",
+                "codeName" : "Year"
+              },
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "name" : "year"
+              },
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            } ],
+            "getPSLayout" : {
+              "columnCount" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "infoGroupMode" : false
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getRemovePSControlAction" : {
+            "modelref" : true,
+            "id" : "remove"
+          },
+          "tabHeaderPos" : "TOP",
+          "getUpdatePSControlAction" : {
+            "modelref" : true,
+            "id" : "update"
+          },
+          "enableAutoSave" : true,
+          "mobileControl" : true,
+          "noTabHeader" : false,
+          "name" : "form",
+          "modelid" : "3B3867DF-9286-47B0-BBBD-4878447E49F6",
+          "modeltype" : "PSDEFORM_EDITFORM"
+        }, {
+          "codeName" : "MobEditViewrighttoolbar",
+          "controlType" : "TOOLBAR",
+          "hookEventNames" : [ "CLICK" ],
+          "logicName" : "测试",
+          "name" : "righttoolbar",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "getPSControlLogics" : [ {
+            "eventArg" : "deuiaction1",
+            "eventNames" : "CLICK",
+            "logicTag" : "righttoolbar",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "righttoolbar_deuiaction1_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "righttoolbar_deuiaction1_click"
+            }
+          }, {
+            "eventArg" : "deuiaction2",
+            "eventNames" : "CLICK",
+            "logicTag" : "righttoolbar",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "righttoolbar_deuiaction2_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "righttoolbar_deuiaction2_click"
+            }
+          }, {
+            "eventArg" : "deuiaction3",
+            "eventNames" : "CLICK",
+            "logicTag" : "righttoolbar",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "righttoolbar_deuiaction3_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "righttoolbar_deuiaction3_click"
+            }
+          }, {
+            "eventArg" : "deuiaction4",
+            "eventNames" : "CLICK",
+            "logicTag" : "righttoolbar",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "righttoolbar_deuiaction4_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "righttoolbar_deuiaction4_click"
+            }
+          }, {
+            "eventArg" : "deuiaction5",
+            "eventNames" : "CLICK",
+            "logicTag" : "righttoolbar",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "righttoolbar_deuiaction5_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "righttoolbar_deuiaction5_click"
+            }
+          } ],
+          "getPSControlParam" : {
+            "id" : "RIGHTTOOLBAR"
+          },
+          "getPSDEToolbarItems" : [ {
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.NEW"
+            },
+            "caption" : "新建",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction1",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "righttoolbar_deuiaction1"
+            },
+            "getPSSysImage" : {
+              "glyph" : "xf0f6@FontAwesome",
+              "cssClass" : "fa fa-file-text-o"
+            },
+            "getPSUIAction" : {
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.NEW"
+              },
+              "caption" : "新建",
+              "codeName" : "New",
+              "fullCodeName" : "New",
+              "name" : "表格界面_新建操作",
+              "getPSSysImage" : {
+                "glyph" : "xf0f6@FontAwesome",
+                "cssClass" : "fa fa-file-text-o"
+              },
+              "timeout" : 60000,
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.*.NEW"
+              },
+              "uIActionMode" : "SYS",
+              "uIActionTag" : "New",
+              "uIActionType" : "DEUIACTION"
+            },
+            "tooltip" : "新建",
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.NEW"
+            },
+            "showCaption" : true,
+            "showIcon" : true
+          }, {
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.SAVE"
+            },
+            "caption" : "保存",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction2",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "righttoolbar_deuiaction2"
+            },
+            "getPSSysImage" : {
+              "imagePath" : "/assets/images/test.png"
+            },
+            "getPSUIAction" : {
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.SAVE"
+              },
+              "caption" : "保存",
+              "codeName" : "Save",
+              "fullCodeName" : "Save",
+              "name" : "编辑界面_保存操作",
+              "getPSSysImage" : {
+                "glyph" : "xf0c7@FontAwesome",
+                "cssClass" : "fa fa-save"
+              },
+              "timeout" : 60000,
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+              },
+              "uIActionMode" : "SYS",
+              "uIActionTag" : "Save",
+              "uIActionType" : "DEUIACTION"
+            },
+            "tooltip" : "保存",
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+            },
+            "showCaption" : true,
+            "showIcon" : true
+          }, {
+            "caption" : "计数器",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction3",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "righttoolbar_deuiaction3"
+            },
+            "getPSUIAction" : {
+              "actionTarget" : "NONE",
+              "caption" : "计数器",
+              "codeName" : "Count",
+              "counterId" : "countertag",
+              "frontProcessType" : "OTHER",
+              "fullCodeName" : "ChartData_Count",
+              "name" : "计数器",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+              },
+              "getPSSysPFPlugin" : {
+                "pluginType" : "DEUIACTION",
+                "pluginCode" : "actionPluginTest"
+              },
+              "timeout" : 60000,
+              "uIActionMode" : "FRONT",
+              "uIActionTag" : "Count",
+              "uIActionType" : "DEUIACTION",
+              "id" : "Count@ChartData"
+            },
+            "tooltip" : "计数器",
+            "showCaption" : true,
+            "showIcon" : true
+          }, {
+            "caption" : "测试1",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction4",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "righttoolbar_deuiaction4"
+            },
+            "getPSUIAction" : {
+              "actionTarget" : "SINGLEDATA",
+              "caption" : "界面行为测试1",
+              "codeName" : "custom1",
+              "dialogResult" : "OK",
+              "getFrontPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+                "viewType" : "DEMOBMDVIEW"
+              },
+              "frontProcessType" : "WIZARD",
+              "fullCodeName" : "ChartData_custom1",
+              "htmlPageUrl" : "https://www.baidu.com/",
+              "name" : "界面行为测试1",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+              },
+              "refreshMode" : 1,
+              "timeout" : 60000,
+              "uIActionMode" : "FRONT",
+              "uIActionTag" : "custom1",
+              "uIActionType" : "DEUIACTION",
+              "closeEditView" : true,
+              "closePopupView" : true,
+              "reloadData" : true,
+              "id" : "custom1@ChartData"
+            },
+            "tooltip" : "测试1",
+            "showCaption" : true,
+            "showIcon" : true
+          }, {
+            "caption" : "测试2",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction5",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "righttoolbar_deuiaction5"
+            },
+            "getPSUIAction" : {
+              "actionTarget" : "NONE",
+              "caption" : "界面行为测试2",
+              "codeName" : "custom2",
+              "confirmMsg" : "1354652",
+              "getFrontPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+                "viewType" : "DEMOBMDVIEW"
+              },
+              "fullCodeName" : "ChartData_custom2",
+              "name" : "界面行为测试2",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "GetRandom"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+              },
+              "successMsg" : "35+62654",
+              "timeout" : 60000,
+              "uIActionMode" : "BACKEND",
+              "uIActionTag" : "custom2",
+              "uIActionType" : "DEUIACTION",
+              "enableConfirm" : true,
+              "id" : "custom2@ChartData"
+            },
+            "tooltip" : "测试2",
+            "showCaption" : true,
+            "showIcon" : true
+          } ],
+          "toolbarStyle" : "MOBNAVRIGHTMENU",
+          "modelid" : "1E98CD1B-5069-4A8D-A534-DD302C04AD09",
+          "modeltype" : "PSDETOOLBAR"
+        } ],
+        "getPSDEViewCodeName" : "MobEditView",
+        "getPSDEViewId" : "A79F78C4-0503-4A81-8416-ABF51A95F63A",
+        "getPSSysImage" : {
+          "cssClass" : "home"
+        },
+        "getPSViewLayoutPanel" : {
+          "codeName" : "Layoutpanel",
+          "controlStyle" : "APPDEMOBEDITVIEW",
+          "controlType" : "VIEWLAYOUTPANEL",
+          "name" : "layoutpanel",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "getPSControlParam" : { },
+          "layoutBodyOnly" : true,
+          "layoutPanel" : true,
+          "useDefaultLayout" : true
+        },
+        "title" : "图表移动端编辑视图",
+        "viewStyle" : "DEFAULT",
+        "viewType" : "DEMOBEDITVIEW",
+        "xDataControlName" : "form",
+        "enableDP" : true,
+        "enablePullDownRefresh" : false,
+        "showDataInfoBar" : true,
+        "modelid" : "cdb979ab0e245f25c0565a7908da87ac",
+        "modeltype" : "PSAPPDEVIEW"
+      }
+    }, {
+      "caption" : "树视图",
+      "codeName" : "MobTabExpViewtabviewpanel2",
+      "controlType" : "TABVIEWPANEL",
+      "getEmbeddedPSAppDEView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataMobTreeView.json",
+        "viewType" : "DEMOBTREEVIEW"
+      },
+      "name" : "tabviewpanel2",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSControlParam" : {
+        "id" : "TABVIEWPANEL2"
+      },
+      "modelid" : "0fb15f044fdc8d6ff7d7b8940b9b5ca9_tabviewpanel2",
+      "modeltype" : "PSVIEWPANEL"
+    } ],
+    "getPSTabExpPages" : [ {
+      "name" : "tabviewpanel"
+    }, {
+      "name" : "tabviewpanel2"
+    } ],
+    "tabLayout" : "TOP",
+    "modelid" : "0fb15f044fdc8d6ff7d7b8940b9b5ca9_tabexppanel",
+    "modeltype" : "PSTABEXPPANEL"
+  } ],
+  "getPSDEViewCodeName" : "MobTabExpView",
+  "getPSDEViewId" : "ABC5E2E8-C201-45BA-8099-E04AA0FD1EB6",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMOBTABEXPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "tabLayout" : "TOP",
+  "title" : "图表分页导航视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMOBTABEXPVIEW",
+  "enableDP" : true,
+  "enablePullDownRefresh" : false,
+  "enableQuickSearch" : false,
+  "enableSearch" : false,
+  "expandSearchForm" : false,
+  "loadDefault" : true,
+  "showDataInfoBar" : true,
+  "modelid" : "0fb15f044fdc8d6ff7d7b8940b9b5ca9",
+  "modeltype" : "PSAPPDEVIEW"
+}

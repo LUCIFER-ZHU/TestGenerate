@@ -1,0 +1,172 @@
+{
+  "codeName" : "WizardForm1",
+  "controlType" : "FORM",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData/PSFORMS/WizardForm1.json",
+  "formFuncMode" : "WIZARDFORM",
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "LOAD" ],
+  "logicName" : "步骤一（向导表单）",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SAVE",
+    "logicTag" : "wizardpanel_form_WelcomeForm",
+    "logicType" : "CUSTOM",
+    "name" : "wizardpanel_formsave"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "wizardpanel_form_WelcomeForm",
+    "logicType" : "CUSTOM",
+    "name" : "wizardpanel_formload"
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "WIZARDDATAID",
+      "codeName" : "WizardDataId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "WIZARDDATANAME",
+      "codeName" : "WizardDataName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfnextform",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "SRFNEXTFORM",
+      "codeName" : "Srfnextform"
+    }
+  }, {
+    "id" : "wizarddataid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "WIZARDDATAID",
+      "codeName" : "WizardDataId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "模式选择",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "下一步表单",
+        "codeName" : "srfnextform",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "srfnextform",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "SRFNEXTFORM",
+          "codeName" : "Srfnextform"
+        },
+        "getPSEditor" : {
+          "editorType" : "RADIOBUTTONLIST",
+          "name" : "srfnextform",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/NextForm.json"
+          }
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : false,
+        "needCodeListConfig" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSDEWizardForm" : {
+    "formTag" : "WelcomeForm",
+    "name" : "模式选择",
+    "getPSDEFormName" : "步骤一（向导表单）",
+    "getPSDEWizardStep" : {
+      "modelref" : true,
+      "id" : "开始步骤"
+    },
+    "stepActions" : [ "NEXT" ],
+    "firstForm" : true
+  },
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "2A22642B-98F0-4641-8ABE-3595881D8F7D",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

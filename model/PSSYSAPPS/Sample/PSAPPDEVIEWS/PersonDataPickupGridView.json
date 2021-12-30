@@ -1,0 +1,442 @@
+{
+  "accUserMode" : 2,
+  "caption" : "人员数据",
+  "codeName" : "PersonDataPickupGridView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/PersonDataPickupGridView.json",
+  "gridRowActiveMode" : 2,
+  "name" : "PersonDataPickupGridView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "PickupGridView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "grid",
+      "name" : "GRID",
+      "paramType" : "CTRL"
+    }, {
+      "ctrlName" : "searchform",
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "aggMode" : "NONE",
+    "codeName" : "Main",
+    "columnEnableLink" : 2,
+    "controlType" : "GRID",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData/PSGRIDS/Main.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+    "logicName" : "主表格",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据表格处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;LOAD;BEFORELOAD",
+      "logicTag" : "grid",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_grid",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "getPSDEGridColumns" : [ {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "姓名",
+      "codeName" : "persondataname",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "persondataname",
+      "excelCaption" : "姓名",
+      "name" : "persondataname",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "PERSONDATANAME",
+        "codeName" : "PersonDataName"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "FRONT",
+      "caption" : "更新人",
+      "codeName" : "updateman",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "updateman",
+      "excelCaption" : "更新人",
+      "name" : "updateman",
+      "noPrivDisplayMode" : 1,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+      },
+      "getPSAppDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "更新时间",
+      "codeName" : "updatedate",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "updatedate",
+      "excelCaption" : "更新时间",
+      "name" : "updatedate",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    } ],
+    "getPSDEGridDataItems" : [ {
+      "dataType" : 25,
+      "name" : "persondataname",
+      "getPSAppDEField" : {
+        "name" : "PERSONDATANAME",
+        "codeName" : "PersonDataName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "deptdataid",
+      "getPSAppDEField" : {
+        "name" : "DEPTDATAID",
+        "codeName" : "DeptDataId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "orgdataid",
+      "getPSAppDEField" : {
+        "name" : "ORGDATAID",
+        "codeName" : "OrgDataId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "updateman",
+      "getPSAppDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "updatedate",
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "PERSONDATANAME",
+        "codeName" : "PersonDataName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "PERSONDATAID",
+        "codeName" : "PersonDataId"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "PERSONDATAID",
+        "codeName" : "PersonDataId"
+      }
+    } ],
+    "getPSDEGridEditItems" : [ {
+      "caption" : "人员数据标识",
+      "codeName" : "srfkey",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "PERSONDATAID",
+        "codeName" : "PersonDataId"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
+      },
+      "allowEmpty" : true
+    } ],
+    "pagingSize" : 20,
+    "getRemovePSControlAction" : {
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "DELETE",
+      "name" : "remove",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+      }
+    },
+    "sortMode" : "REMOTE",
+    "hasWFDataItems" : false,
+    "enableColFilter" : false,
+    "enableCustomized" : true,
+    "enableGroup" : false,
+    "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "forceFit" : false,
+    "hideHeader" : false,
+    "noSort" : false,
+    "singleSelect" : false,
+    "name" : "grid",
+    "modelid" : "4f7b1243db48e1ca9e6ca0e000989b1f",
+    "modeltype" : "PSDEGRID"
+  }, {
+    "codeName" : "Default",
+    "controlType" : "SEARCHFORM",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData/PSSEARCHFORMS/Default.json",
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "logicName" : "默认搜索表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionType" : "FILTERACTION",
+        "name" : "search",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SEARCH;LOAD;SAVE",
+      "logicTag" : "searchform",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_searchform",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "getPSDEFormPages" : [ {
+      "caption" : "常规条件",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "searchButtonStyle" : "DEFAULT",
+    "tabHeaderPos" : "TOP",
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "enableFilterSave" : false,
+    "noTabHeader" : true,
+    "name" : "searchform",
+    "modelid" : "73e42dbc67b901e48106cddec3e9ff6b",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
+  } ],
+  "getPSDEViewCodeName" : "PickupGridView",
+  "getPSDEViewId" : "047bb9c6f3ece584eb8be13a26c60888",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEPICKUPGRIDVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "人员数据选择表格视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEPICKUPGRIDVIEW",
+  "xDataControlName" : "grid",
+  "enableDP" : true,
+  "enableExport" : true,
+  "enableFilter" : true,
+  "enableImport" : true,
+  "enableRowEdit" : false,
+  "enableSearch" : true,
+  "expandSearchForm" : true,
+  "pickupMode" : true,
+  "rowEditDefault" : false,
+  "modelid" : "8970e2b09d79bc265db06675dacb3b7d",
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "PersonData",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+    },
+    "name" : "组织-人员",
+    "getParentPSAppDEField" : {
+      "name" : "ORGDATAID",
+      "codeName" : "OrgDataId"
+    },
+    "rSMode" : 2
+  } ] ]
+}

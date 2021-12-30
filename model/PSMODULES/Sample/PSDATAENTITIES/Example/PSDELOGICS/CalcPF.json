@@ -1,0 +1,33 @@
+{
+  "codeName" : "CalcPF",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDELOGICS/CalcPF.json",
+  "logicName" : "表单项更新前台计算",
+  "name" : "表单项更新前台计算",
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "计算",
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
+    },
+    "default" : true
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : false,
+  "enableFront" : true
+}

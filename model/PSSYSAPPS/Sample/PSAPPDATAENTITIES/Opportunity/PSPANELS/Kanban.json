@@ -1,0 +1,136 @@
+{
+  "getAllPSPanelFields" : [ {
+    "id" : "opportunityname",
+    "viewFieldName" : "OPPORTUNITYNAME"
+  }, {
+    "id" : "exprevenue",
+    "viewFieldName" : "EXPREVENUE"
+  }, {
+    "id" : "priority",
+    "viewFieldName" : "PRIORITY"
+  }, {
+    "id" : "customername",
+    "viewFieldName" : "CUSTOMERNAME"
+  }, {
+    "id" : "customerid",
+    "hidden" : true,
+    "viewFieldName" : "CUSTOMERID"
+  } ],
+  "codeName" : "Kanban",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity/PSPANELS/Kanban.json",
+  "layoutMode" : "TABLE_24COL",
+  "logicName" : "商机看板项布局面板",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity.json"
+  },
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container1",
+    "getPSLayout" : {
+      "dir" : "column",
+      "layout" : "FLEX"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "opportunityname",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "opportunityname",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "grow" : 1,
+        "layout" : "FLEX"
+      },
+      "getPSSysCss" : {
+        "cssName" : "h1-title"
+      },
+      "viewFieldName" : "OPPORTUNITYNAME",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "exprevenue",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "exprevenue",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "grow" : 1,
+        "layout" : "FLEX"
+      },
+      "valueFormat" : "￥#,###",
+      "viewFieldName" : "EXPREVENUE",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "priority",
+      "getPSEditor" : {
+        "editorParams" : {
+          "MAXVALUE" : "3"
+        },
+        "editorType" : "RATING",
+        "maxValue" : 3.0,
+        "minValue" : 0.0,
+        "name" : "priority",
+        "stepValue" : 1.0
+      },
+      "getPSLayoutPos" : {
+        "grow" : 1,
+        "layout" : "FLEX"
+      },
+      "viewFieldName" : "PRIORITY",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "customername",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "customername",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "grow" : 1,
+        "layout" : "FLEX"
+      },
+      "viewFieldName" : "CUSTOMERNAME",
+      "hidden" : false,
+      "showCaption" : false
+    } ]
+  }, {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "FIELD",
+    "name" : "customerid",
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "customerid"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "viewFieldName" : "CUSTOMERID",
+    "hidden" : true,
+    "showCaption" : false
+  } ],
+  "modelid" : "3C0DB297-B780-40E5-8FC0-7D83AAB27FDA",
+  "modeltype" : "PSSYSVIEWPANEL"
+}

@@ -1,0 +1,31 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`EXAMPLE2ID`",
+    "name" : "EXAMPLE2ID"
+  }, {
+    "expression" : "t1.`EXAMPLE2NAME`",
+    "name" : "EXAMPLE2NAME"
+  }, {
+    "expression" : "t1.`EXAMPLEID`",
+    "name" : "EXAMPLEID"
+  }, {
+    "expression" : "t11.`EXAMPLENAME`",
+    "name" : "EXAMPLENAME"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`EXAMPLE2ID`,\nt1.`EXAMPLE2NAME`,\nt1.`EXAMPLEID`,\nt11.`EXAMPLENAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_EXAMPLE2` t1 \nLEFT JOIN `T_EXAMPLE` t11 ON t1.`EXAMPLEID` = t11.`EXAMPLEID` \n",
+  "id" : "PSMODULES/Sample/PSDATAENTITIES/Example2/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

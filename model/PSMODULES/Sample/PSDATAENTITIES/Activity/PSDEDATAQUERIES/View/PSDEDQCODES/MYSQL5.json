@@ -1,0 +1,49 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACTIVITYID`",
+    "name" : "ACTIVITYID"
+  }, {
+    "expression" : "t1.`ACTIVITYNAME`",
+    "name" : "ACTIVITYNAME"
+  }, {
+    "expression" : "t1.`ACTIVITYTYPE`",
+    "name" : "ACTIVITYTYPE"
+  }, {
+    "expression" : "t1.`BEGINTIME`",
+    "name" : "BEGINTIME"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`CUSTOMERID`",
+    "name" : "CUSTOMERID"
+  }, {
+    "expression" : "t11.`CUSTOMERNAME`",
+    "name" : "CUSTOMERNAME"
+  }, {
+    "expression" : "t1.`DEPTID`",
+    "name" : "DEPTID"
+  }, {
+    "expression" : "t1.`DESCRIPTION`",
+    "name" : "DESCRIPTION"
+  }, {
+    "expression" : "t1.`ENDTIME`",
+    "name" : "ENDTIME"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACTIVITYID`,\nt1.`ACTIVITYNAME`,\nt1.`ACTIVITYTYPE`,\nt1.`BEGINTIME`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`CUSTOMERID`,\nt11.`CUSTOMERNAME`,\nt1.`DEPTID`,\nt1.`DESCRIPTION`,\nt1.`ENDTIME`,\nt1.`ORGID`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_ACTIVITY` t1 \nLEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID` \n",
+  "id" : "PSMODULES/Sample/PSDATAENTITIES/Activity/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

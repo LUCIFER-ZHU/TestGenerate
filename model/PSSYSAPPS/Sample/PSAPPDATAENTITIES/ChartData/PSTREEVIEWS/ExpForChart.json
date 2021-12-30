@@ -1,0 +1,783 @@
+{
+  "codeName" : "ExpForChart",
+  "controlType" : "TREEVIEW",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSTREEVIEWS/ExpForChart.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "logicName" : "导航图表",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_load"
+  } ],
+  "getPSDETreeNodeRSs" : [ {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "lineChart"
+    },
+    "name" : "默认根节点 - 折线图",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "pieChart"
+    },
+    "name" : "默认根节点 - 饼图",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "RingPie"
+    },
+    "name" : "默认根节点 - 环形饼图",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "barChart"
+    },
+    "name" : "默认根节点 - 柱状图",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "GroupBar"
+    },
+    "name" : "默认根节点 - 分组柱状图",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "StackBar"
+    },
+    "name" : "默认根节点 - 堆叠柱状图",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "funnel"
+    },
+    "name" : "默认根节点 - 漏斗图",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "AreaChart"
+    },
+    "name" : "默认根节点 - 区域图",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "KLineChart"
+    },
+    "name" : "默认根节点 - K线图",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "RadarChart"
+    },
+    "name" : "默认根节点 - 雷达图",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "GaugeChart"
+    },
+    "name" : "默认根节点 - 仪表盘",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "scatter"
+    },
+    "name" : "默认根节点 - 散点图",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "mulChart"
+    },
+    "name" : "默认根节点 - 多序列",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "map"
+    },
+    "name" : "默认根节点 - 地图",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  } ],
+  "getPSDETreeNodes" : [ {
+    "counterMode" : 0,
+    "name" : "仪表盘",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataGaugeChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "GaugeChart",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "text" : "仪表盘",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "GaugeChart"
+  }, {
+    "counterMode" : 0,
+    "name" : "环形饼图",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataRingPieChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "RingPie",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "text" : "环形饼图",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "RingPie"
+  }, {
+    "counterMode" : 0,
+    "name" : "K线图",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataKLineChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "KLineChart",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "CHARTTYPE",
+      "name" : "CHARTTYPE",
+      "value" : "kline",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "charttype",
+      "name" : "charttype",
+      "value" : "kline",
+      "rawValue" : true
+    } ],
+    "text" : "K线图",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "KLineChart"
+  }, {
+    "counterMode" : 0,
+    "name" : "堆叠柱状图",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataStackBarChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "StackBar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "text" : "堆叠柱状图",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "StackBar"
+  }, {
+    "counterMode" : 0,
+    "name" : "折线图",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataLineChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "lineChart",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "CHARTTYPE",
+      "name" : "CHARTTYPE",
+      "value" : "line",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "charttype",
+      "name" : "charttype",
+      "value" : "line",
+      "rawValue" : true
+    } ],
+    "text" : "折线图",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "lineChart"
+  }, {
+    "counterMode" : 0,
+    "name" : "漏斗图",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataFunnelChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "funnel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "CHARTTYPE",
+      "name" : "CHARTTYPE",
+      "value" : "funnel",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "charttype",
+      "name" : "charttype",
+      "value" : "funnel",
+      "rawValue" : true
+    } ],
+    "text" : "漏斗图",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "funnel"
+  }, {
+    "counterMode" : 0,
+    "name" : "饼图",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataPieChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "pieChart",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "CHARTTYPE",
+      "name" : "CHARTTYPE",
+      "value" : "pie",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "charttype",
+      "name" : "charttype",
+      "value" : "pie",
+      "rawValue" : true
+    } ],
+    "text" : "饼图",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "pieChart"
+  }, {
+    "counterMode" : 0,
+    "name" : "柱状图",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataBarChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "barChart",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "CHARTTYPE",
+      "name" : "CHARTTYPE",
+      "value" : "bar",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "charttype",
+      "name" : "charttype",
+      "value" : "bar",
+      "rawValue" : true
+    } ],
+    "text" : "柱状图",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "barChart"
+  }, {
+    "counterMode" : 0,
+    "name" : "散点图",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "scatter",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "CHARTTYPE",
+      "name" : "CHARTTYPE",
+      "value" : "scatter",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "charttype",
+      "name" : "charttype",
+      "value" : "scatter",
+      "rawValue" : true
+    } ],
+    "text" : "散点图",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "scatter"
+  }, {
+    "counterMode" : 0,
+    "name" : "地图",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr3ChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "map",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "CHARTTYPE",
+      "name" : "CHARTTYPE",
+      "value" : "map",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "charttype",
+      "name" : "charttype",
+      "value" : "map",
+      "rawValue" : true
+    } ],
+    "text" : "地图",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "map"
+  }, {
+    "counterMode" : 0,
+    "name" : "默认根节点",
+    "nodeType" : "ROOT",
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : true,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ROOT"
+  }, {
+    "counterMode" : 0,
+    "name" : "区域图",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataAreaChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "AreaChart",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "CHARTTYPE",
+      "name" : "CHARTTYPE",
+      "value" : "area",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "charttype",
+      "name" : "charttype",
+      "value" : "area",
+      "rawValue" : true
+    } ],
+    "text" : "区域图",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "AreaChart"
+  }, {
+    "counterMode" : 0,
+    "name" : "分组柱状图",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataGroupBarChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "GroupBar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "text" : "分组柱状图",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "GroupBar"
+  }, {
+    "counterMode" : 0,
+    "name" : "雷达图",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataRadarChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "RadarChart",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "CHARTTYPE",
+      "name" : "CHARTTYPE",
+      "value" : "radar",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "charttype",
+      "name" : "charttype",
+      "value" : "radar",
+      "rawValue" : true
+    } ],
+    "text" : "雷达图",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "RadarChart"
+  }, {
+    "counterMode" : 0,
+    "name" : "多序列",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr2ChartView.json",
+      "viewType" : "DECHARTVIEW"
+    },
+    "nodeType" : "mulChart",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "text" : "多序列",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : true,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "mulChart"
+  } ],
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "treeGridMode" : 0,
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "enableRootSelect" : false,
+  "outputIconDefault" : false,
+  "rootVisible" : false,
+  "modelid" : "52BB59F0-79A3-4BD4-AE2B-30E2AA5082BB",
+  "modeltype" : "PSDETREEVIEW"
+}

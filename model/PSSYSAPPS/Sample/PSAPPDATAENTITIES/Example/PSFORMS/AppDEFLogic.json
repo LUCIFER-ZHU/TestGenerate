@@ -1,0 +1,454 @@
+{
+  "codeName" : "AppDEFLogic",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/AppDEFLogic.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "前端实体属性",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "form_button1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "form_button1"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "form_button1",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "xDataControlName" : "form"
+  } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLENAME",
+      "codeName" : "ExampleName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "fieldx",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "FIELDX",
+      "codeName" : "Fieldx"
+    }
+  }, {
+    "id" : "fieldy",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "FIELDY",
+      "codeName" : "Fieldy"
+    }
+  }, {
+    "id" : "appfield",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "APPFIELD",
+      "codeName" : "Appfield"
+    }
+  }, {
+    "id" : "appfield2",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "APPFIELD2",
+      "codeName" : "Appfield2"
+    }
+  }, {
+    "id" : "appfield4",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "APPFIELD4",
+      "codeName" : "Appfield4"
+    }
+  }, {
+    "id" : "appfield3",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "APPFIELD3",
+      "codeName" : "Appfield3"
+    }
+  }, {
+    "id" : "exampleid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "属性计算逻辑",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "X值",
+        "codeName" : "fieldx",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "fieldx",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "FIELDX",
+          "codeName" : "Fieldx"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "fieldx",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 6,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "Y值",
+        "codeName" : "fieldy",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "fieldy",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "FIELDY",
+          "codeName" : "Fieldy"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "fieldy",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 6,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "XY前端计算值",
+        "codeName" : "appfield",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "appfield",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "APPFIELD",
+          "codeName" : "Appfield"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "appfield",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 6,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "XY前端计算值2",
+        "codeName" : "appfield2",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "appfield2",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "APPFIELD2",
+          "codeName" : "Appfield2"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "appfield2",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 6,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "XY前端计算值4",
+        "codeName" : "appfield4",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "appfield4",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "APPFIELD4",
+          "codeName" : "Appfield4"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "appfield4",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 6,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    }, {
+      "codeName" : "rawitem1",
+      "contentType" : "HTML",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "RAWITEM",
+      "htmlContent" : "<p>1.XY前端计算值：由前台处理逻辑（计算式）取值计算式：${fieldx} + ${fieldy} <br />2.XY前端计算值2：由前台处理逻辑（脚本代码）取值脚本代码：data.appfield2=data.fieldx+data.fieldy <br />3.XY前端计算值4：由前端处理逻辑（脚本代码）取值脚本代码： if(data.fieldx &amp;&amp; data.fieldz) { data.appfield4=data.fieldx + '(' +Number((data.fieldx/data.fieldz)*100).toFixed(2) + '%)'; } <br />注：表单加载后即计算完成进行显示</p>",
+      "name" : "rawitem1",
+      "getPSLayoutPos" : {
+        "colLG" : 24,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysCss" : {
+        "cssName" : "el-alert el-alert--info is-light"
+      },
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "属性变更逻辑",
+      "codeName" : "grouppanel1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "XY前端计算值3",
+        "codeName" : "appfield3",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "appfield3",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "APPFIELD3",
+          "codeName" : "Appfield3"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "appfield3"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "actionType" : "UIACTION",
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.SAVE"
+        },
+        "caption" : "保存",
+        "codeName" : "button1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "BUTTON",
+        "name" : "button1",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "form_button1"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.SAVE"
+          },
+          "caption" : "保存",
+          "codeName" : "Save",
+          "fullCodeName" : "Save",
+          "name" : "编辑界面_保存操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0c7@FontAwesome",
+            "cssClass" : "fa fa-save"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Save",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "保存",
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    }, {
+      "codeName" : "rawitem2",
+      "contentType" : "HTML",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "RAWITEM",
+      "htmlContent" : "<p>XY前端计算值3输入值后点击保存按钮，触发前台处理逻辑（脚本代码），重新给X值和Y值赋值 <br />脚本代码： <br />data.filedx=Math.random()*data.appfield3; <br />data.filedy=Math.random()*data.appfield3;</p>",
+      "name" : "rawitem2",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysCss" : {
+        "cssName" : "el-alert el-alert--info is-light"
+      },
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "D9DC2DD9-9CFD-45C7-8EA3-23013E1D7A7B",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

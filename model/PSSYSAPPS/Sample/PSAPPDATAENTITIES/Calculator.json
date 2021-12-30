@@ -1,0 +1,1260 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "CALCULATORID",
+        "codeName" : "CalculatorId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "CALCULATORNAME",
+        "codeName" : "CalculatorName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "CALCULATORNAME",
+      "codeName" : "CalculatorName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "CALCULATORID",
+      "codeName" : "CalculatorId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click0",
+    "methodType" : "DEACTION",
+    "name" : "Click0",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'0';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click1",
+    "methodType" : "DEACTION",
+    "name" : "Click1",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'1';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click2",
+    "methodType" : "DEACTION",
+    "name" : "Click2",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'2';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click3",
+    "methodType" : "DEACTION",
+    "name" : "Click3",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'3';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click4",
+    "methodType" : "DEACTION",
+    "name" : "Click4",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'4';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click5",
+    "methodType" : "DEACTION",
+    "name" : "Click5",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'5';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click6",
+    "methodType" : "DEACTION",
+    "name" : "Click6",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'6';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click7",
+    "methodType" : "DEACTION",
+    "name" : "Click7",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'7';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click8",
+    "methodType" : "DEACTION",
+    "name" : "Click8",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'8';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click9",
+    "methodType" : "DEACTION",
+    "name" : "Click9",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'9';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickBackspace",
+    "methodType" : "DEACTION",
+    "name" : "ClickBackspace",
+    "scriptCode" : "if(data.input){\n  data.input=data.input.substring(0,data.input.length-1);\n}\nif(data.expression){\n  data.expression=data.expression.substring(0,data.expression.length-1);\n}\n",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickClear",
+    "methodType" : "DEACTION",
+    "name" : "ClickClear",
+    "scriptCode" : "data.input='';\ndata.expression='';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickEq",
+    "methodType" : "DEACTION",
+    "name" : "ClickEq",
+    "scriptCode" : "if(data.input) {\n  data.expression=data.input+'=';\n  data.input=eval(data.input);\n}\n",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickExcept",
+    "methodType" : "DEACTION",
+    "name" : "ClickExcept",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'/';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickMinus",
+    "methodType" : "DEACTION",
+    "name" : "ClickMinus",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'-';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickMultiply",
+    "methodType" : "DEACTION",
+    "name" : "ClickMultiply",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'*';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickPlus",
+    "methodType" : "DEACTION",
+    "name" : "ClickPlus",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'+';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickPoint",
+    "methodType" : "DEACTION",
+    "name" : "ClickPoint",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'.';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "InitSelectPanel",
+    "methodType" : "DEACTION",
+    "name" : "InitSelectPanel",
+    "scriptCode" : "data.part1=1;\ndata.part2=2;\ndata.part3=3;",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "builtinMethod" : true
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "CalculatorName",
+    "logicName" : "计算器名称",
+    "name" : "CALCULATORNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableFrontOnly" : true,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "CalculatorId",
+    "logicName" : "计算器标识",
+    "name" : "CALCULATORID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "enableFrontOnly" : true,
+    "keyField" : true
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "OrgId",
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "DeptId",
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "Input",
+    "logicName" : "输入值",
+    "name" : "INPUT",
+    "stdDataType" : 25,
+    "stringLength" : 1000,
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "Expression",
+    "logicName" : "表单式",
+    "name" : "EXPRESSION",
+    "stdDataType" : 25,
+    "stringLength" : 1000,
+    "enableFrontOnly" : true
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click0",
+    "methodType" : "DEACTION",
+    "name" : "Click0",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'0';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click1",
+    "methodType" : "DEACTION",
+    "name" : "Click1",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'1';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click2",
+    "methodType" : "DEACTION",
+    "name" : "Click2",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'2';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click3",
+    "methodType" : "DEACTION",
+    "name" : "Click3",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'3';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click4",
+    "methodType" : "DEACTION",
+    "name" : "Click4",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'4';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click5",
+    "methodType" : "DEACTION",
+    "name" : "Click5",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'5';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click6",
+    "methodType" : "DEACTION",
+    "name" : "Click6",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'6';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click7",
+    "methodType" : "DEACTION",
+    "name" : "Click7",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'7';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click8",
+    "methodType" : "DEACTION",
+    "name" : "Click8",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'8';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click9",
+    "methodType" : "DEACTION",
+    "name" : "Click9",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'9';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickBackspace",
+    "methodType" : "DEACTION",
+    "name" : "ClickBackspace",
+    "scriptCode" : "if(data.input){\n  data.input=data.input.substring(0,data.input.length-1);\n}\nif(data.expression){\n  data.expression=data.expression.substring(0,data.expression.length-1);\n}\n",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickClear",
+    "methodType" : "DEACTION",
+    "name" : "ClickClear",
+    "scriptCode" : "data.input='';\ndata.expression='';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickEq",
+    "methodType" : "DEACTION",
+    "name" : "ClickEq",
+    "scriptCode" : "if(data.input) {\n  data.expression=data.input+'=';\n  data.input=eval(data.input);\n}\n",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickExcept",
+    "methodType" : "DEACTION",
+    "name" : "ClickExcept",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'/';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickMinus",
+    "methodType" : "DEACTION",
+    "name" : "ClickMinus",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'-';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickMultiply",
+    "methodType" : "DEACTION",
+    "name" : "ClickMultiply",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'*';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickPlus",
+    "methodType" : "DEACTION",
+    "name" : "ClickPlus",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'+';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickPoint",
+    "methodType" : "DEACTION",
+    "name" : "ClickPoint",
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'.';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "InitSelectPanel",
+    "methodType" : "DEACTION",
+    "name" : "InitSelectPanel",
+    "scriptCode" : "data.part1=1;\ndata.part2=2;\ndata.part3=3;",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  } ],
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "显示分区3",
+    "codeName" : "ShowPart3",
+    "dialogResult" : "OK",
+    "frontProcessType" : "OTHER",
+    "fullCodeName" : "Calculator_ShowPart3",
+    "name" : "显示分区3",
+    "getPSAppDEUILogic" : {
+      "modelref" : true,
+      "id" : "ShowPart3"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "ShowPart3",
+    "uIActionType" : "DEUIACTION",
+    "uILogicAttachMode" : "AFTER",
+    "uILogicType" : "DEUILOGIC",
+    "closeEditView" : true,
+    "closePopupView" : true,
+    "id" : "ShowPart3@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "显示选择分区",
+    "codeName" : "OpenPickPart",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CalculatorPickPartPanelView.json",
+      "viewType" : "DEPANELVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Calculator_OpenPickPart",
+    "name" : "显示选择分区",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "OpenPickPart",
+    "uIActionType" : "DEUIACTION",
+    "id" : "OpenPickPart@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "-",
+    "codeName" : "ClickMinus",
+    "fullCodeName" : "Calculator_ClickMinus",
+    "name" : "ClickMinus",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "ClickMinus"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "ClickMinus",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "ClickMinus@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "8",
+    "codeName" : "Click8",
+    "fullCodeName" : "Calculator_Click8",
+    "name" : "Click8",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Click8"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Click8",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "Click8@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "6",
+    "codeName" : "Click6",
+    "fullCodeName" : "Calculator_Click6",
+    "name" : "Click6",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Click6"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Click6",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "Click6@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "7",
+    "codeName" : "Click7",
+    "fullCodeName" : "Calculator_Click7",
+    "name" : "Click7",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Click7"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Click7",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "Click7@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "Backspace",
+    "codeName" : "ClickBackspace",
+    "fullCodeName" : "Calculator_ClickBackspace",
+    "name" : "ClickBackspace",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "ClickBackspace"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "ClickBackspace",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "ClickBackspace@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "*",
+    "codeName" : "ClickMultiply",
+    "fullCodeName" : "Calculator_ClickMultiply",
+    "name" : "ClickMultiply",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "ClickMultiply"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "ClickMultiply",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "ClickMultiply@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "3",
+    "codeName" : "Click3",
+    "fullCodeName" : "Calculator_Click3",
+    "name" : "Click3",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Click3"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Click3",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "Click3@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "显示分区2",
+    "codeName" : "ShowPart2",
+    "dialogResult" : "OK",
+    "frontProcessType" : "OTHER",
+    "fullCodeName" : "Calculator_ShowPart2",
+    "name" : "显示分区2",
+    "getPSAppDEUILogic" : {
+      "modelref" : true,
+      "id" : "ShowPart2"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "ShowPart2",
+    "uIActionType" : "DEUIACTION",
+    "uILogicAttachMode" : "AFTER",
+    "uILogicType" : "DEUILOGIC",
+    "closeEditView" : true,
+    "closePopupView" : true,
+    "id" : "ShowPart2@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "Clear",
+    "codeName" : "ClickClear",
+    "fullCodeName" : "Calculator_ClickClear",
+    "name" : "ClickClear",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "ClickClear"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "ClickClear",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "ClickClear@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "4",
+    "codeName" : "Click4",
+    "fullCodeName" : "Calculator_Click4",
+    "name" : "Click4",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Click4"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Click4",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "Click4@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : ".",
+    "codeName" : "ClickPoint",
+    "fullCodeName" : "Calculator_ClickPoint",
+    "name" : "ClickPoint",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "ClickPoint"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "ClickPoint",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "ClickPoint@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "/",
+    "codeName" : "ClickExcept",
+    "fullCodeName" : "Calculator_ClickExcept",
+    "name" : "ClickExcept",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "ClickExcept"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "ClickExcept",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "ClickExcept@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "+",
+    "codeName" : "ClickPlus",
+    "fullCodeName" : "Calculator_ClickPlus",
+    "name" : "ClickPlus",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "ClickPlus"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "ClickPlus",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "ClickPlus@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "显示分区1",
+    "codeName" : "ShowPart1",
+    "dialogResult" : "OK",
+    "frontProcessType" : "OTHER",
+    "fullCodeName" : "Calculator_ShowPart1",
+    "name" : "显示分区1",
+    "getPSAppDEUILogic" : {
+      "modelref" : true,
+      "id" : "ShowPart1"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "ShowPart1",
+    "uIActionType" : "DEUIACTION",
+    "uILogicAttachMode" : "AFTER",
+    "uILogicType" : "DEUILOGIC",
+    "closeEditView" : true,
+    "closePopupView" : true,
+    "id" : "ShowPart1@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "0",
+    "codeName" : "Click0",
+    "fullCodeName" : "Calculator_Click0",
+    "name" : "Click0",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Click0"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Click0",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "Click0@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "1",
+    "codeName" : "Click1",
+    "fullCodeName" : "Calculator_Click1",
+    "name" : "Click1",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Click1"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Click1",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "Click1@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "=",
+    "codeName" : "ClickEq",
+    "fullCodeName" : "Calculator_ClickEq",
+    "name" : "ClickEq",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "ClickEq"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "ClickEq",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "ClickEq@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "5",
+    "codeName" : "Click5",
+    "fullCodeName" : "Calculator_Click5",
+    "name" : "Click5",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Click5"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Click5",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "Click5@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "2",
+    "codeName" : "Click2",
+    "fullCodeName" : "Calculator_Click2",
+    "name" : "Click2",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Click2"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Click2",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "Click2@Calculator"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "9",
+    "codeName" : "Click9",
+    "fullCodeName" : "Calculator_Click9",
+    "name" : "Click9",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Click9"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Click9",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "Click9@Calculator"
+  } ],
+  "getAllPSAppDEUILogics" : [ {
+    "codeName" : "ShowPart1",
+    "defaultParamName" : "Default",
+    "logicName" : "ShowPart1",
+    "name" : "ShowPart1",
+    "getPSDEUILogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        },
+        "linkMode" : 0,
+        "name" : "连接5142",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Preparejsparam1",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "回显part1",
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "part1",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "expression" : "data.part1=data.part1==1?0:1;",
+        "name" : "表达式[data.part1=data.part...] ==> Default[part1]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "part1",
+        "srcValue" : "1",
+        "srcValueType" : "EXPRESSION"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDEUILogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true
+    }, {
+      "codeName" : "Temp",
+      "name" : "临时"
+    }, {
+      "codeName" : "Context",
+      "name" : "应用上下文",
+      "navContextParam" : true
+    } ],
+    "getStartPSDEUILogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    }
+  }, {
+    "codeName" : "ShowPart2",
+    "defaultParamName" : "Default",
+    "logicName" : "ShowPart2",
+    "name" : "ShowPart2",
+    "getPSDEUILogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        },
+        "linkMode" : 0,
+        "name" : "连接1192",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Preparejsparam1",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "回显part2",
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "part2",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "expression" : "data.part2=data.part2==2?0:2;",
+        "name" : "表达式[data.part2=data.part...] ==> Default[part2]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValue" : "2",
+        "srcValueType" : "EXPRESSION"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDEUILogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true
+    }, {
+      "codeName" : "Context",
+      "name" : "应用上下文",
+      "navContextParam" : true
+    }, {
+      "codeName" : "Temp",
+      "name" : "临时"
+    } ],
+    "getStartPSDEUILogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    }
+  }, {
+    "codeName" : "ShowPart3",
+    "defaultParamName" : "Default",
+    "logicName" : "ShowPart3",
+    "name" : "ShowPart3",
+    "getPSDEUILogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        },
+        "linkMode" : 0,
+        "name" : "连接3163",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Preparejsparam1",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "回显part3",
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "part3",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "expression" : "data.part3=data.part3==3?0:3;",
+        "name" : "表达式[data.part3=data.part...] ==> Default[part3]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValueType" : "EXPRESSION"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDEUILogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true
+    }, {
+      "codeName" : "Context",
+      "name" : "应用上下文",
+      "navContextParam" : true
+    }, {
+      "codeName" : "Temp",
+      "name" : "临时"
+    } ],
+    "getStartPSDEUILogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    }
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "Calculator",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json",
+  "enableUIActions" : 15,
+  "logicName" : "计算器",
+  "name" : "CALCULATOR",
+  "getPSDEName" : "CALCULATOR",
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "CALCULATORNAME",
+    "codeName" : "CalculatorName"
+  } ],
+  "storageMode" : 1,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

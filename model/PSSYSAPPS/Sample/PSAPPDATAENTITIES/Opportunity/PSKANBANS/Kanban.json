@@ -1,0 +1,318 @@
+{
+  "codeName" : "Kanban",
+  "controlType" : "KANBAN",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity/PSKANBANS/Kanban.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupLayout" : "ROW",
+  "groupMode" : "CODELIST",
+  "getGroupPSAppDEField" : {
+    "name" : "STATE",
+    "codeName" : "State"
+  },
+  "getGroupPSCodeList" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OpportunityState.json"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getItemPSLayoutPanel" : {
+    "getAllPSPanelFields" : [ {
+      "id" : "opportunityname",
+      "viewFieldName" : "OPPORTUNITYNAME"
+    }, {
+      "id" : "exprevenue",
+      "viewFieldName" : "EXPREVENUE"
+    }, {
+      "id" : "priority",
+      "viewFieldName" : "PRIORITY"
+    }, {
+      "id" : "customername",
+      "viewFieldName" : "CUSTOMERNAME"
+    }, {
+      "id" : "customerid",
+      "hidden" : true,
+      "viewFieldName" : "CUSTOMERID"
+    } ],
+    "codeName" : "Kanban",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity/PSPANELS/Kanban.json",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "商机看板项布局面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "dir" : "column",
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "opportunityname",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "opportunityname",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "grow" : 1,
+          "layout" : "FLEX"
+        },
+        "getPSSysCss" : {
+          "cssName" : "h1-title"
+        },
+        "viewFieldName" : "OPPORTUNITYNAME",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "exprevenue",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "exprevenue",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "grow" : 1,
+          "layout" : "FLEX"
+        },
+        "valueFormat" : "￥#,###",
+        "viewFieldName" : "EXPREVENUE",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "priority",
+        "getPSEditor" : {
+          "editorParams" : {
+            "MAXVALUE" : "3"
+          },
+          "editorType" : "RATING",
+          "maxValue" : 3.0,
+          "minValue" : 0.0,
+          "name" : "priority",
+          "stepValue" : 1.0
+        },
+        "getPSLayoutPos" : {
+          "grow" : 1,
+          "layout" : "FLEX"
+        },
+        "viewFieldName" : "PRIORITY",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "customername",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "customername",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "grow" : 1,
+          "layout" : "FLEX"
+        },
+        "viewFieldName" : "CUSTOMERNAME",
+        "hidden" : false,
+        "showCaption" : false
+      } ]
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "customerid",
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "customerid"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "CUSTOMERID",
+      "hidden" : true,
+      "showCaption" : false
+    } ],
+    "name" : "itemlayoutpanel",
+    "modelid" : "3C0DB297-B780-40E5-8FC0-7D83AAB27FDA",
+    "modeltype" : "PSSYSVIEWPANEL"
+  },
+  "logicName" : "商机看板",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "kanban",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_kanban",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEDataViewDataItems" : [ {
+    "dataType" : 25,
+    "name" : "customerid"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/Priority.json"
+    },
+    "name" : "priority"
+  }, {
+    "dataType" : 7,
+    "name" : "exprevenue"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OpportunityState.json"
+    },
+    "name" : "state"
+  }, {
+    "dataType" : 25,
+    "name" : "opportunityname"
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "OPPORTUNITYNAME",
+      "codeName" : "OpportunityName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "OPPORTUNITYID",
+      "codeName" : "OpportunityId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "customername"
+  } ],
+  "getPSDEDataViewItems" : [ {
+    "cLConvertMode" : "FRONT",
+    "caption" : "商机状态",
+    "dataItemName" : "state",
+    "itemType" : "DATAITEM",
+    "name" : "STATE",
+    "getPSAppDEField" : {
+      "name" : "STATE",
+      "codeName" : "State"
+    },
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OpportunityState.json"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "预期收益",
+    "dataItemName" : "exprevenue",
+    "itemType" : "DATAITEM",
+    "name" : "EXPREVENUE",
+    "getPSAppDEField" : {
+      "name" : "EXPREVENUE",
+      "codeName" : "Exprevenue"
+    },
+    "enableSort" : true
+  }, {
+    "cLConvertMode" : "FRONT",
+    "caption" : "优先级",
+    "dataItemName" : "priority",
+    "itemType" : "DATAITEM",
+    "name" : "PRIORITY",
+    "getPSAppDEField" : {
+      "name" : "PRIORITY",
+      "codeName" : "Priority"
+    },
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/Priority.json"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "客户标识",
+    "dataItemName" : "customerid",
+    "itemType" : "DATAITEM",
+    "name" : "CUSTOMERID",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "客户名称",
+    "dataItemName" : "customername",
+    "itemType" : "DATAITEM",
+    "name" : "CUSTOMERNAME",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "商机名称",
+    "dataItemName" : "opportunityname",
+    "itemType" : "DATAITEM",
+    "name" : "OPPORTUNITYNAME",
+    "getPSAppDEField" : {
+      "name" : "OPPORTUNITYNAME",
+      "codeName" : "OpportunityName"
+    },
+    "enableSort" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdateGroupPSControlAction" : {
+    "modelref" : true,
+    "id" : "updategroup"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "appendDEItems" : false,
+  "enableCardEdit" : false,
+  "enableCardEditGroup" : false,
+  "enableCardEditOrder" : false,
+  "enableCardNew" : false,
+  "enableGroup" : true,
+  "enablePagingBar" : true,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "3E6946D2-A48F-42DA-BDC8-735D0C6951A1",
+  "modeltype" : "PSDEKANBAN"
+}

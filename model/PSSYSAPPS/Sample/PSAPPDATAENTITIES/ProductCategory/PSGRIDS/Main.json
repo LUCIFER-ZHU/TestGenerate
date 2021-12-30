@@ -1,0 +1,160 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ProductCategory/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ProductCategory.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "产品",
+    "codeName" : "productname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "productname",
+    "excelCaption" : "产品",
+    "name" : "productname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "类别",
+    "codeName" : "categoryname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "categoryname",
+    "excelCaption" : "类别",
+    "name" : "categoryname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "CATEGORYNAME",
+      "codeName" : "CategoryName"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "categoryid",
+    "getPSAppDEField" : {
+      "name" : "CATEGORYID",
+      "codeName" : "CategoryId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "productid",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTID",
+      "codeName" : "ProductId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "categoryname",
+    "getPSAppDEField" : {
+      "name" : "CATEGORYNAME",
+      "codeName" : "CategoryName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTCATEGORYNAME",
+      "codeName" : "ProductCategoryName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTCATEGORYID",
+      "codeName" : "ProductCategoryId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTCATEGORYID",
+      "codeName" : "ProductCategoryId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "productname",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "产品类别标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTCATEGORYID",
+      "codeName" : "ProductCategoryId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ProductCategory.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "3614a139dd31ea532f114143b3bb8188",
+  "modeltype" : "PSDEGRID"
+}

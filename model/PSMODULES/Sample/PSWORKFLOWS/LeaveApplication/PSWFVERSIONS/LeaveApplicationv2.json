@@ -1,0 +1,123 @@
+{
+  "codeName" : "LeaveApplicationv2",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSWORKFLOWS/LeaveApplication/PSWFVERSIONS/LeaveApplicationv2.json",
+  "name" : "请假申请流程 v2",
+  "getPSWFLinks" : [ {
+    "getFromPSWFProcess" : {
+      "modelref" : true,
+      "id" : "Start001"
+    },
+    "name" : "连接34",
+    "getToPSWFProcess" : {
+      "modelref" : true,
+      "id" : "Interactive001"
+    },
+    "wFLinkType" : "ROUTE"
+  }, {
+    "getFromPSWFProcess" : {
+      "modelref" : true,
+      "id" : "Interactive001"
+    },
+    "logicName" : "通过2",
+    "name" : "C9196",
+    "nextCondition" : "ANY",
+    "getToPSWFProcess" : {
+      "modelref" : true,
+      "id" : "Interactive002"
+    },
+    "wFLinkType" : "IAACTION"
+  }, {
+    "getFromPSWFProcess" : {
+      "modelref" : true,
+      "id" : "Interactive002"
+    },
+    "logicName" : "批准2",
+    "name" : "C6920",
+    "nextCondition" : "ANY",
+    "getToPSWFProcess" : {
+      "modelref" : true,
+      "id" : "End001"
+    },
+    "wFLinkType" : "IAACTION"
+  } ],
+  "getPSWFProcesses" : [ {
+    "codeName" : "Interactive002",
+    "height" : 80,
+    "leftPos" : 388,
+    "logicName" : "领导审批2",
+    "msgType" : 0,
+    "multiInstMode" : "NONE",
+    "name" : "领导审批2",
+    "getPSWFLinks" : [ {
+      "modelref" : true,
+      "id" : "C6920"
+    } ],
+    "timeout" : -1,
+    "topPos" : 74,
+    "wFProcessType" : "INTERACTIVE",
+    "wFStepValue" : "领导审批2",
+    "width" : 100,
+    "asynchronousProcess" : false,
+    "enableTimeout" : false,
+    "sendInform" : false
+  }, {
+    "codeName" : "Start001",
+    "height" : 30,
+    "leftPos" : 168,
+    "logicName" : "提交流程",
+    "name" : "提交流程",
+    "getPSWFLinks" : [ {
+      "modelref" : true,
+      "id" : "连接34"
+    } ],
+    "timeout" : -1,
+    "topPos" : 99,
+    "wFProcessType" : "START",
+    "width" : 30,
+    "asynchronousProcess" : false,
+    "enableTimeout" : false,
+    "startProcess" : true
+  }, {
+    "codeName" : "End001",
+    "height" : 30,
+    "leftPos" : 533,
+    "logicName" : "处理",
+    "name" : "处理",
+    "timeout" : -1,
+    "topPos" : 100,
+    "wFProcessType" : "END",
+    "width" : 30,
+    "asynchronousProcess" : false,
+    "enableTimeout" : false,
+    "terminalProcess" : true
+  }, {
+    "codeName" : "Interactive001",
+    "height" : 80,
+    "leftPos" : 243,
+    "logicName" : "组长审批2",
+    "msgType" : 0,
+    "multiInstMode" : "NONE",
+    "name" : "组长审批2",
+    "getPSWFLinks" : [ {
+      "modelref" : true,
+      "id" : "C9196"
+    } ],
+    "timeout" : -1,
+    "topPos" : 74,
+    "wFProcessType" : "INTERACTIVE",
+    "wFStepValue" : "组长审批2",
+    "width" : 100,
+    "asynchronousProcess" : false,
+    "enableTimeout" : false,
+    "sendInform" : false
+  } ],
+  "getStartPSWFProcess" : {
+    "modelref" : true,
+    "id" : "Start001"
+  },
+  "wFCodeName" : "LeaveApplication",
+  "wFVersion" : 2,
+  "hasMobStartView" : false,
+  "hasStartView" : false,
+  "valid" : true
+}

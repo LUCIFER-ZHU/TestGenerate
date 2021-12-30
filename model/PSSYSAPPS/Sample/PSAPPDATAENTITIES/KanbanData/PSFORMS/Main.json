@@ -1,0 +1,513 @@
+{
+  "codeName" : "Main",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData/PSFORMS/Main.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "主编辑表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "KANBANDATAID",
+      "codeName" : "KanbanDataId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "KANBANDATANAME",
+      "codeName" : "KanbanDataName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "kanbandataname",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "KANBANDATANAME",
+      "codeName" : "KanbanDataName"
+    }
+  }, {
+    "id" : "taskstatus",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "TASKSTATUS",
+      "codeName" : "Taskstatus"
+    }
+  }, {
+    "id" : "begintime",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    }
+  }, {
+    "id" : "endtime",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    }
+  }, {
+    "id" : "memo",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "MEMO",
+      "codeName" : "Memo"
+    }
+  }, {
+    "id" : "createman",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CREATEMAN",
+      "codeName" : "CreateMan"
+    }
+  }, {
+    "id" : "createdate",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "CREATEDATE",
+      "codeName" : "CreateDate"
+    }
+  }, {
+    "id" : "updateman",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }
+  }, {
+    "id" : "updatedate",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "kanbandataid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "KANBANDATAID",
+      "codeName" : "KanbanDataId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "看板数据基本信息",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "任务名称",
+        "codeName" : "kanbandataname",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "kanbandataname",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "KANBANDATANAME",
+          "codeName" : "KanbanDataName"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 200,
+          "name" : "kanbandataname"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "任务状态",
+        "codeName" : "taskstatus",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "taskstatus",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "TASKSTATUS",
+          "codeName" : "Taskstatus"
+        },
+        "getPSEditor" : {
+          "editorType" : "DROPDOWNLIST",
+          "name" : "taskstatus",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+          },
+          "singleSelect" : true
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "needCodeListConfig" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "开始时间",
+        "codeName" : "begintime",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "itemWidth" : 290.0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "begintime",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "BEGINTIME",
+          "codeName" : "BeginTime"
+        },
+        "getPSEditor" : {
+          "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+          "editorParams" : {
+            "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+          },
+          "editorType" : "DATEPICKER",
+          "editorWidth" : 160.0,
+          "name" : "begintime"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "结束时间",
+        "codeName" : "endtime",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "itemWidth" : 290.0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "endtime",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ENDTIME",
+          "codeName" : "EndTime"
+        },
+        "getPSEditor" : {
+          "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+          "editorParams" : {
+            "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+          },
+          "editorType" : "DATEPICKER",
+          "editorWidth" : 160.0,
+          "name" : "endtime"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "备注",
+        "codeName" : "memo",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "itemHeight" : 200.0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "memo",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "MEMO",
+          "codeName" : "Memo"
+        },
+        "getPSEditor" : {
+          "editorHeight" : 200.0,
+          "editorParams" : {
+            "HEIGHT" : "200"
+          },
+          "editorType" : "TEXTAREA_10",
+          "maxLength" : 1000,
+          "name" : "memo",
+          "showMaxLength" : true
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 24,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  }, {
+    "caption" : "其它",
+    "codeName" : "formpage2",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage2",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "操作信息",
+      "codeName" : "group2",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group2",
+      "getPSDEFormDetails" : [ {
+        "caption" : "建立人",
+        "codeName" : "createman",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "createman",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CREATEMAN",
+          "codeName" : "CreateMan"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "createman",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+          },
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "convertToCodeItemText" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "建立时间",
+        "codeName" : "createdate",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "createdate",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CREATEDATE",
+          "codeName" : "CreateDate"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "createdate",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "更新人",
+        "codeName" : "updateman",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "updateman",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "UPDATEMAN",
+          "codeName" : "UpdateMan"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "updateman",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+          },
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "convertToCodeItemText" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "更新时间",
+        "codeName" : "updatedate",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "updatedate",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "UPDATEDATE",
+          "codeName" : "UpdateDate"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "updatedate",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : false,
+  "modelid" : "030310d6a2b0d794e6fb7d9aadbcfe3e",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

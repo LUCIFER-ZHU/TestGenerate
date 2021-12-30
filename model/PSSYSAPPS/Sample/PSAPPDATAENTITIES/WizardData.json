@@ -1,0 +1,456 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "WIZARDDATAID",
+        "codeName" : "WizardDataId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "WIZARDDATANAME",
+        "codeName" : "WizardDataName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "WIZARDDATANAME",
+      "codeName" : "WizardDataName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "WIZARDDATAID",
+      "codeName" : "WizardDataId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "GotoFinishForm",
+    "methodType" : "DEACTION",
+    "name" : "GotoFinishForm",
+    "scriptCode" : "data.srfnextform='FinishForm';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "builtinMethod" : true
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "WizardDataId",
+    "logicName" : "向导数据标识",
+    "name" : "WIZARDDATAID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "enableFrontOnly" : true,
+    "keyField" : true
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "WizardDataName",
+    "logicName" : "向导数据名称",
+    "name" : "WIZARDDATANAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableFrontOnly" : true,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "DeptId",
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "OrgId",
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "Textfield",
+    "logicName" : "文本属性",
+    "name" : "TEXTFIELD",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "Timefield",
+    "logicName" : "时间属性",
+    "name" : "TIMEFIELD",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "Numfield",
+    "logicName" : "数值属性",
+    "name" : "NUMFIELD",
+    "stdDataType" : 6,
+    "enableFrontOnly" : true
+  }, {
+    "codeName" : "Srfnextform",
+    "logicName" : "下一步表单",
+    "name" : "SRFNEXTFORM",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "enableFrontOnly" : true
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "GotoFinishForm",
+    "methodType" : "DEACTION",
+    "name" : "GotoFinishForm",
+    "scriptCode" : "data.srfnextform='FinishForm';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  } ],
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "打开向导示例页面",
+    "codeName" : "OpenWizardExample",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/WizardDataExampleWizardView.json",
+      "viewType" : "DEWIZARDVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "WizardData_OpenWizardExample",
+    "name" : "打开向导示例页面",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "OpenWizardExample",
+    "uIActionType" : "DEUIACTION",
+    "id" : "OpenWizardExample@WizardData"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "调用向导数据回填",
+    "codeName" : "CallReturnWizardData",
+    "frontProcessType" : "OTHER",
+    "fullCodeName" : "WizardData_CallReturnWizardData",
+    "name" : "调用向导数据回填",
+    "getPSAppDEUILogic" : {
+      "modelref" : true,
+      "id" : "ReturnWizardData"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "CallReturnWizardData",
+    "uIActionType" : "DEUIACTION",
+    "uILogicAttachMode" : "REPLACE",
+    "uILogicType" : "DEUILOGIC",
+    "id" : "CallReturnWizardData@WizardData"
+  } ],
+  "getAllPSAppDEUILogics" : [ {
+    "codeName" : "ReturnWizardData",
+    "defaultParamName" : "Default",
+    "logicName" : "向导数据回填",
+    "name" : "向导数据回填",
+    "getPSDEUILogicNodes" : [ {
+      "codeName" : "Deuiaction1",
+      "getDstPSAppDEUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
+        },
+        "modelref" : true,
+        "id" : "OpenWizardExample@WizardData"
+      },
+      "getDstPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
+      },
+      "getDstPSDEUILogicParam" : {
+        "modelref" : true,
+        "id" : "Temp"
+      },
+      "logicNodeType" : "DEUIACTION",
+      "name" : "打开完成步骤页面",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        },
+        "linkMode" : 0,
+        "name" : "连接2308",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Deuiaction1"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Deuiaction1"
+        },
+        "linkMode" : 0,
+        "name" : "连接9588",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Preparejsparam1",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "向导数据回填",
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "srfnextform",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "Temp[srfnextform] ==> Default[srfnextform]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "srfnextform",
+        "getSrcPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDEUILogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true
+    }, {
+      "codeName" : "Temp",
+      "name" : "临时变量"
+    } ],
+    "getStartPSDEUILogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    }
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "WizardData",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json",
+  "enableUIActions" : 15,
+  "logicName" : "向导数据",
+  "name" : "WIZARDDATA",
+  "getPSDEName" : "WIZARDDATA",
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "WIZARDDATANAME",
+    "codeName" : "WizardDataName"
+  } ],
+  "storageMode" : 1,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

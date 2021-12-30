@@ -1,0 +1,169 @@
+{
+  "codeName" : "CssAndIcon",
+  "controlType" : "TREEVIEW",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSTREEVIEWS/CssAndIcon.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "logicName" : "界面样式及图标树",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSControlLogics" : [ {
+    "logicTag" : "tree",
+    "logicType" : "SCRIPT",
+    "name" : "calcnodestyle",
+    "scriptCode" : "return {'color':'red'}",
+    "triggerType" : "CUSTOM"
+  }, {
+    "eventNames" : "SELECTIONCHANGE;LOAD",
+    "logicTag" : "tree",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_tree",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEDataImport" : {
+    "modelref" : true,
+    "id" : "DataImport"
+  },
+  "getPSDETreeNodeRSs" : [ {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Icon1"
+    },
+    "name" : "默认根节点 - 样式",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Icon2"
+    },
+    "name" : "默认根节点 - 图标",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  } ],
+  "getPSDETreeNodes" : [ {
+    "counterMode" : 0,
+    "name" : "图标1",
+    "nodeType" : "Icon1",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf015@FontAwesome",
+      "cssClass" : "fa fa-home"
+    },
+    "text" : "图标1",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "Icon1"
+  }, {
+    "counterMode" : 0,
+    "name" : "图标2",
+    "nodeType" : "Icon2",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf1b2@FontAwesome",
+      "cssClass" : "fa fa-cube"
+    },
+    "text" : "图标2",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "Icon2"
+  }, {
+    "counterMode" : 0,
+    "name" : "默认根节点",
+    "nodeType" : "ROOT",
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : true,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ROOT"
+  } ],
+  "getPSSysCss" : {
+    "cssName" : "gird-red-border"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "treeGridMode" : 0,
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "enableRootSelect" : false,
+  "outputIconDefault" : true,
+  "rootVisible" : false,
+  "modelid" : "8F4D9614-6FF0-41A7-A494-7F4290888663",
+  "modeltype" : "PSDETREEVIEW"
+}

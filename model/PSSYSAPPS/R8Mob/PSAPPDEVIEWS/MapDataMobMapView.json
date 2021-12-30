@@ -1,0 +1,143 @@
+{
+  "accUserMode" : 2,
+  "caption" : "地图示例数据",
+  "codeName" : "MapDataMobMapView",
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/MapDataMobMapView.json",
+  "mDCtrlActiveMode" : 2,
+  "name" : "MapDataMobMapView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/MapData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "MobMapView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "map",
+      "name" : "MAP",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "MobMap",
+    "controlType" : "MAP",
+    "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData/PSMAPS/MobMap.json",
+    "hookEventNames" : [ "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "legendPos" : "NONE",
+    "logicName" : " 地图（移动端）",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "map"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWCLICK;LOAD;BEFORELOAD",
+      "logicTag" : "map",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_map",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "MAP"
+    },
+    "getPSSysMapItems" : [ {
+      "borderWidth" : 0,
+      "getContentPSAppDEField" : {
+        "name" : "DATA",
+        "codeName" : "Data"
+      },
+      "getIdPSAppDEField" : {
+        "name" : "CHARTDATAID",
+        "codeName" : "ChartDataId"
+      },
+      "itemStyle" : "POINT",
+      "itemType" : "chart",
+      "getLatitudePSAppDEField" : {
+        "name" : "LATITUDE",
+        "codeName" : "Latitude"
+      },
+      "getLongitudePSAppDEField" : {
+        "name" : "LONGITUDE",
+        "codeName" : "Longitude"
+      },
+      "maxSize" : -1,
+      "name" : "测试",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "radius" : 0,
+      "getTextPSAppDEField" : {
+        "name" : "CHARTDATANAME",
+        "codeName" : "ChartDataName"
+      },
+      "enableQuickCreate" : false,
+      "id" : "chart"
+    } ],
+    "name" : "map",
+    "modelid" : "B696EBD3-2BA5-4EFD-90F8-436806718A68",
+    "modeltype" : "PSSYSMAPVIEW"
+  } ],
+  "getPSDEViewCodeName" : "MobMapView",
+  "getPSDEViewId" : "AD36E76F-34A0-4F2D-AD31-9F481C5518D5",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMOBMAPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/MapData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "地图示例数据地图视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMOBMAPVIEW",
+  "xDataControlName" : "map",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enablePullDownRefresh" : false,
+  "modelid" : "ef8d3ced02e1ce6ac00ac5062228dd91",
+  "modeltype" : "PSAPPDEVIEW"
+}

@@ -1,0 +1,538 @@
+{
+  "codeName" : "UIAction",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/UIAction.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "界面行为",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "form_button1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "form_button1"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "form_button2_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "form_button2"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "form_button3_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "form_button3"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "form_button4_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "form_button4"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "form_button1",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "modelref" : true,
+      "id" : "openModel@Example"
+    },
+    "uIActionTarget" : "NONE",
+    "xDataControlName" : "form"
+  }, {
+    "name" : "form_button2",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "modelref" : true,
+      "id" : "openWindow@Example"
+    },
+    "uIActionTarget" : "NONE",
+    "xDataControlName" : "form"
+  }, {
+    "name" : "form_button3",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "modelref" : true,
+      "id" : "openHtml@Example"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "form"
+  }, {
+    "name" : "form_button4",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+      },
+      "modelref" : true,
+      "id" : "Quick@Customer"
+    },
+    "uIActionTarget" : "NONE",
+    "xDataControlName" : "form"
+  } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLENAME",
+      "codeName" : "ExampleName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "wd",
+    "dataType" : 25,
+    "createDV" : "ibiz"
+  }, {
+    "id" : "exampleid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "codeName" : "rawitem1",
+      "contentType" : "RAW",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "RAWITEM",
+      "name" : "rawitem1",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysCss" : {
+        "cssName" : "el-alert el-alert--info is-light"
+      },
+      "rawContent" : "打开一个模态框（小视图）",
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "打开模态",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "actionType" : "UIACTION",
+        "caption" : "前台界面行为（打开模态）",
+        "codeName" : "button1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "BUTTON",
+        "name" : "button1",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "form_button1"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "NONE",
+          "caption" : "前台界面行为（打开模态）",
+          "codeName" : "openModel",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleModelOpenEditView.json",
+            "viewType" : "DEEDITVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "Example_openModel",
+          "name" : "前台界面行为（打开模态）",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "openModel",
+          "uIActionType" : "DEUIACTION",
+          "id" : "openModel@Example"
+        },
+        "tooltip" : "前台界面行为（打开模态）",
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    }, {
+      "codeName" : "rawitem2",
+      "contentType" : "RAW",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "RAWITEM",
+      "name" : "rawitem2",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysCss" : {
+        "cssName" : "el-alert el-alert--info is-light"
+      },
+      "rawContent" : "打开一个顶级视图",
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "打开顶级视图",
+      "codeName" : "grouppanel1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel1",
+      "getPSDEFormDetails" : [ {
+        "actionType" : "UIACTION",
+        "caption" : "前台界面行为（打开顶级视图）",
+        "codeName" : "button2",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "BUTTON",
+        "name" : "button2",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "form_button2"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "NONE",
+          "caption" : "前台界面行为（打开顶级视图）",
+          "codeName" : "openWindow",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleGridView.json",
+            "viewType" : "DEGRIDVIEW"
+          },
+          "frontProcessType" : "TOP",
+          "fullCodeName" : "Example_openWindow",
+          "htmlPageUrl" : "https://www.ibizsys.cn/ungroup/portal",
+          "name" : "前台界面行为（打开顶级视图）",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "openWindow",
+          "uIActionType" : "DEUIACTION",
+          "id" : "openWindow@Example"
+        },
+        "tooltip" : "前台界面行为（打开顶级视图）",
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    }, {
+      "codeName" : "rawitem3",
+      "contentType" : "RAW",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "RAWITEM",
+      "name" : "rawitem3",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysCss" : {
+        "cssName" : "el-alert el-alert--info is-light"
+      },
+      "rawContent" : "打开一个指定的html页面，并将搜索框中的参数传过去",
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "打开HTML页面",
+      "codeName" : "grouppanel2",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel2",
+      "getPSDEFormDetails" : [ {
+        "caption" : "搜索",
+        "codeName" : "wd",
+        "createDV" : "ibiz",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "itemWidth" : 480.0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 80,
+        "name" : "wd",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "editorWidth" : 400.0,
+          "name" : "wd",
+          "placeHolder" : "输入关键字后点击【前台界面行为（打开HTML页面）】"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "actionType" : "UIACTION",
+        "caption" : "前台界面行为（打开HTML页面）（百度一下）",
+        "codeName" : "button3",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "BUTTON",
+        "name" : "button3",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "form_button3"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "caption" : "前台界面行为（打开HTML页面）",
+          "codeName" : "openHtml",
+          "frontProcessType" : "OPENHTMLPAGE",
+          "fullCodeName" : "Example_openHtml",
+          "htmlPageUrl" : "https://www.baidu.com/s?wd=${data.wd}&rsv_spt=1",
+          "name" : "前台界面行为（打开HTML页面）",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+          },
+          "getPSNavigateParams" : [ {
+            "key" : "wd",
+            "name" : "wd",
+            "value" : "wd",
+            "rawValue" : false
+          } ],
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "openHtml",
+          "uIActionType" : "DEUIACTION",
+          "id" : "openHtml@Example"
+        },
+        "tooltip" : "前台界面行为（打开HTML页面）（百度一下）",
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "界面行为（后续界面行为）",
+      "codeName" : "grouppanel3",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel3",
+      "getPSDEFormDetails" : [ {
+        "codeName" : "rawitem4",
+        "contentType" : "RAW",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "RAWITEM",
+        "name" : "rawitem4",
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "el-alert el-alert--info is-light"
+        },
+        "rawContent" : "数据快速新建通常使用界面行为（后续界面行为，后台处理后打开新界面进行确认或后续操作）",
+        "rawItemHeight" : -1.0,
+        "rawItemWidth" : -1.0,
+        "showCaption" : true
+      }, {
+        "actionType" : "UIACTION",
+        "caption" : "界面行为（后续界面行为）",
+        "codeName" : "button4",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "BUTTON",
+        "name" : "button4",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "form_button4"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "NONE",
+          "caption" : "快速新建",
+          "codeName" : "Quick",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerUsr2OptionView.json",
+            "viewType" : "DEOPTVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "Customer_Quick",
+          "name" : "快速新建",
+          "getNextPSUIAction" : {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "modelref" : true,
+            "id" : "OpenMain@Customer"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "Quick",
+          "uIActionType" : "DEUIACTION",
+          "globalUIAction" : true,
+          "id" : "Quick@Customer"
+        },
+        "tooltip" : "界面行为（后续界面行为）",
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "6A7DABD0-325E-4B19-BBA1-7CDFDEA0A712",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

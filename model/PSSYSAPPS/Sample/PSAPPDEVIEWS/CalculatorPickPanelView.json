@@ -1,0 +1,333 @@
+{
+  "accUserMode" : 2,
+  "caption" : "选择示例",
+  "codeName" : "CalculatorPickPanelView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CalculatorPickPanelView.json",
+  "name" : "CalculatorPickPanelView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+  },
+  "getPSControls" : [ {
+    "getAllPSPanelFields" : [ {
+      "id" : "part1",
+      "viewFieldName" : "part1"
+    }, {
+      "id" : "part2",
+      "viewFieldName" : "part2"
+    }, {
+      "id" : "part3",
+      "viewFieldName" : "part3"
+    } ],
+    "codeName" : "PickPanel",
+    "controlType" : "PANEL",
+    "dataMode" : 2,
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator/PSPANELS/PickPanel.json",
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "选择示例面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "panel_button1_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "panel_button1"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "panel_button1",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+        },
+        "modelref" : true,
+        "id" : "OpenPickPart@Calculator"
+      },
+      "uIActionTarget" : "SINGLEDATA",
+      "xDataControlName" : "panel"
+    } ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "InitSelectPanel",
+        "actionType" : "DEACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "InitSelectPanel"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "panel"
+    },
+    "getPSControlParam" : {
+      "id" : "PANEL"
+    },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "contentType" : "HTML",
+        "htmlContent" : "<p>1.页面初始化时，分区1、分区2、分区3显示<br />&lt;/br&gt;<br />2.点击【选择显示分区】按钮打开视图，选择【显示/隐藏分区1】、【显示/隐藏分区2】、【显示/隐藏分区3】触发显示当前面板的隐藏分区</p>",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "RAWITEM",
+        "name" : "rawitem1",
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "el-alert el-alert--info is-light"
+        }
+      }, {
+        "actionType" : "UIACTION",
+        "caption" : "选择显示分区",
+        "contentWidth" : 200.0,
+        "itemStyle" : "DEFAULT",
+        "itemType" : "BUTTON",
+        "name" : "button1",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "panel_button1"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL",
+          "width" : 200
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEDATA",
+          "caption" : "显示选择分区",
+          "codeName" : "OpenPickPart",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CalculatorPickPartPanelView.json",
+            "viewType" : "DEPANELVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "Calculator_OpenPickPart",
+          "name" : "显示选择分区",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "OpenPickPart",
+          "uIActionType" : "DEUIACTION",
+          "id" : "OpenPickPart@Calculator"
+        },
+        "tooltip" : "选择显示分区",
+        "width" : 200.0,
+        "showCaption" : true
+      }, {
+        "caption" : "分区1",
+        "contentHeight" : 100.0,
+        "height" : 100.0,
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTAINER",
+        "name" : "showpart1",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "height" : 100,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSPanelItemGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "PANELVISIBLE",
+          "logicType" : "GROUP",
+          "name" : "面板成员[showpart1][面板显示]逻辑",
+          "getPSPanelItemLogics" : [ {
+            "condOp" : "EQ",
+            "dstModelField" : "part1",
+            "logicType" : "SINGLE",
+            "name" : "part1 等于(=) (1)",
+            "value" : "1"
+          } ],
+          "relatedItemNames" : [ "part1" ],
+          "notMode" : false
+        } ],
+        "getPSPanelItems" : [ {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "part1",
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "part1",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "viewFieldName" : "part1",
+          "hidden" : false,
+          "showCaption" : false
+        } ],
+        "getPSSysCss" : {
+          "cssName" : "pick-background1-css"
+        },
+        "showCaption" : true
+      }, {
+        "caption" : "分区2",
+        "contentHeight" : 100.0,
+        "height" : 100.0,
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTAINER",
+        "name" : "showpart2",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "height" : 100,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSPanelItemGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "PANELVISIBLE",
+          "logicType" : "GROUP",
+          "name" : "面板成员[showpart2][面板显示]逻辑",
+          "getPSPanelItemLogics" : [ {
+            "condOp" : "EQ",
+            "dstModelField" : "part2",
+            "logicType" : "SINGLE",
+            "name" : "part2 等于(=) (2)",
+            "value" : "2"
+          } ],
+          "relatedItemNames" : [ "part2" ],
+          "notMode" : false
+        } ],
+        "getPSPanelItems" : [ {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "part2",
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "part2",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "viewFieldName" : "part2",
+          "hidden" : false,
+          "showCaption" : false
+        } ],
+        "getPSSysCss" : {
+          "cssName" : "pick-background2-css"
+        },
+        "showCaption" : true
+      }, {
+        "caption" : "分区3",
+        "contentHeight" : 100.0,
+        "height" : 100.0,
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTAINER",
+        "name" : "showpart3",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "height" : 100,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSPanelItemGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "PANELVISIBLE",
+          "logicType" : "GROUP",
+          "name" : "面板成员[showpart3][面板显示]逻辑",
+          "getPSPanelItemLogics" : [ {
+            "condOp" : "EQ",
+            "dstModelField" : "part3",
+            "logicType" : "SINGLE",
+            "name" : "part3 等于(=) (3)",
+            "value" : "3"
+          } ],
+          "relatedItemNames" : [ "part3" ],
+          "notMode" : false
+        } ],
+        "getPSPanelItems" : [ {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "part3",
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "part3",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "viewFieldName" : "part3",
+          "hidden" : false,
+          "showCaption" : false
+        } ],
+        "getPSSysCss" : {
+          "cssName" : "pick-background3-css"
+        },
+        "showCaption" : true
+      } ]
+    } ],
+    "name" : "panel",
+    "modelid" : "2798839C-0CD7-40FC-8FE4-82FBEE9E7562",
+    "modeltype" : "PSSYSVIEWPANEL"
+  } ],
+  "getPSDEViewCodeName" : "PickPanelView",
+  "getPSDEViewId" : "2E7A5BF4-030D-41FE-98EF-88CFE6962AAB",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEPANELVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "计算器面板视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEPANELVIEW",
+  "enableDP" : true,
+  "showCaptionBar" : false,
+  "modelid" : "3efe8978742eb75a04d08d14b5112d68",
+  "modeltype" : "PSAPPDEVIEW"
+}

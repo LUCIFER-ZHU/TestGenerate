@@ -1,0 +1,85 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CITYID`",
+    "name" : "CITYID"
+  }, {
+    "expression" : "t31.`CITYNAME`",
+    "name" : "CITYNAME"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`CUSTOMERID`",
+    "name" : "CUSTOMERID"
+  }, {
+    "expression" : "t1.`CUSTOMERNAME`",
+    "name" : "CUSTOMERNAME"
+  }, {
+    "expression" : "t1.`DISTRICTID`",
+    "name" : "DISTRICTID"
+  }, {
+    "expression" : "t41.`DISTRICTNAME`",
+    "name" : "DISTRICTNAME"
+  }, {
+    "expression" : "t1.`EMAIL`",
+    "name" : "EMAIL"
+  }, {
+    "expression" : "t1.`IMAGE`",
+    "name" : "IMAGE"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`MOBILE`",
+    "name" : "MOBILE"
+  }, {
+    "expression" : "t1.`ORDERAMOUNT`",
+    "name" : "ORDERAMOUNT"
+  }, {
+    "expression" : "t1.`PCUSTOMERID`",
+    "name" : "PCUSTOMERID"
+  }, {
+    "expression" : "t11.`CUSTOMERNAME`",
+    "name" : "PCUSTOMERNAME"
+  }, {
+    "expression" : "t1.`PHONE`",
+    "name" : "PHONE"
+  }, {
+    "expression" : "t1.`PROVINCEID`",
+    "name" : "PROVINCEID"
+  }, {
+    "expression" : "t21.`PROVINCENAME`",
+    "name" : "PROVINCENAME"
+  }, {
+    "expression" : "t1.`RETURNAMOUNT`",
+    "name" : "RETURNAMOUNT"
+  }, {
+    "expression" : "t1.`RETURNAMOUNT`/t1.`ORDERAMOUNT`",
+    "name" : "RETURNRATE"
+  }, {
+    "expression" : "t1.`STREET`",
+    "name" : "STREET"
+  }, {
+    "expression" : "t1.`TAXNO`",
+    "name" : "TAXNO"
+  }, {
+    "expression" : "t1.`TYPE`",
+    "name" : "TYPE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  }, {
+    "expression" : "t1.`WEBSITE`",
+    "name" : "WEBSITE"
+  } ],
+  "queryCode" : "SELECT\nt1.`CITYID`,\nt31.`CITYNAME`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`CUSTOMERID`,\nt1.`CUSTOMERNAME`,\nt1.`DISTRICTID`,\nt41.`DISTRICTNAME`,\nt1.`EMAIL`,\nt1.`IMAGE`,\nt1.`MEMO`,\nt1.`MOBILE`,\nt1.`ORDERAMOUNT`,\nt1.`PCUSTOMERID`,\nt11.`CUSTOMERNAME` AS `PCUSTOMERNAME`,\nt1.`PHONE`,\nt1.`PROVINCEID`,\nt21.`PROVINCENAME`,\nt1.`RETURNAMOUNT`,\nt1.`RETURNAMOUNT`/t1.`ORDERAMOUNT` AS `RETURNRATE`,\nt1.`STREET`,\nt1.`TAXNO`,\nt1.`TYPE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`WEBSITE`\nFROM `T_CUSTOMER` t1 \nLEFT JOIN `T_CUSTOMER` t11 ON t1.`PCUSTOMERID` = t11.`CUSTOMERID` \nLEFT JOIN `T_PROVINCE` t21 ON t1.`PROVINCEID` = t21.`PROVINCEID` \nLEFT JOIN `T_CITY` t31 ON t1.`CITYID` = t31.`CITYID` \nLEFT JOIN `T_DISTRICT` t41 ON t1.`DISTRICTID` = t41.`DISTRICTID` \n",
+  "id" : "PSMODULES/Sample/PSDATAENTITIES/Customer/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

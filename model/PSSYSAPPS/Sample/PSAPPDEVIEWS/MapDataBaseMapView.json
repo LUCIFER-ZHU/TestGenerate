@@ -1,0 +1,130 @@
+{
+  "accUserMode" : 2,
+  "caption" : "常规",
+  "codeName" : "MapDataBaseMapView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/MapDataBaseMapView.json",
+  "mDCtrlActiveMode" : 2,
+  "name" : "MapDataBaseMapView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "getNewDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/MapDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/MapDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/MapDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/MapDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "realTitle" : "地图示例数据编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/MapDataEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "realTitle" : "地图示例数据编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/MapDataEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "Map",
+    "controlType" : "MAP",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData/PSMAPS/Map.json",
+    "legendPos" : "NONE",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+    },
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "map"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "MAP"
+    },
+    "name" : "map",
+    "modelid" : "1e37970d268f2564ce0550781513cb42_map",
+    "modeltype" : "PSSYSMAPVIEW"
+  } ],
+  "getPSDEViewCodeName" : "BaseMapView",
+  "getPSDEViewId" : "D43A35E0-5950-4293-8F8F-6C8078BF43C3",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMAPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "地图示例数据地图视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMAPVIEW",
+  "xDataControlName" : "map",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "showCaptionBar" : false,
+  "modelid" : "1e37970d268f2564ce0550781513cb42",
+  "modeltype" : "PSAPPDEVIEW"
+}

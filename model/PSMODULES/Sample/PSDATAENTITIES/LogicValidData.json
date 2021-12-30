@@ -1,0 +1,1716 @@
+{
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEACMODES/Default.json"
+  } ],
+  "getAllPSDEActions" : [ {
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "getPSDEActionInput" : {
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSDEActionReturn" : {
+      "name" : "CreateResult",
+      "type" : "VOID"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "getPSDEActionInput" : {
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSDEActionReturn" : {
+      "name" : "UpdateResult",
+      "type" : "VOID"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "getPSDEActionInput" : {
+      "getKeyPSDEField" : {
+        "name" : "LOGICVALIDDATAID",
+        "codeName" : "LogicValidDataId"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
+    "batchAction" : true,
+    "builtinAction" : true
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "getPSDEActionInput" : {
+      "getKeyPSDEField" : {
+        "name" : "LOGICVALIDDATAID",
+        "codeName" : "LogicValidDataId"
+      },
+      "name" : "GetInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataDTO"
+      },
+      "type" : "DTO"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "getPSDEActionInput" : {
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataDTO"
+      },
+      "type" : "DTO"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "getPSDEActionInput" : {
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "getPSDEActionInput" : {
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
+    "builtinAction" : true
+  } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`T_LOGICVALIDDATA`",
+    "tableName" : "T_LOGICVALIDDATA",
+    "valid" : true
+  } ],
+  "getAllPSDEDBTables" : [ {
+    "getAllPSDEFields" : [ {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }, {
+      "name" : "CREATEDATE",
+      "codeName" : "CreateDate"
+    }, {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }, {
+      "name" : "LOGICVALIDDATANAME",
+      "codeName" : "LogicValidDataName"
+    }, {
+      "name" : "ENABLE",
+      "codeName" : "Enable"
+    }, {
+      "name" : "LOGICVALIDDATAID",
+      "codeName" : "LogicValidDataId"
+    }, {
+      "name" : "CREATEMAN",
+      "codeName" : "CreateMan"
+    }, {
+      "name" : "DEPTID",
+      "codeName" : "DeptId"
+    }, {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    }, {
+      "name" : "CODE",
+      "codeName" : "Code"
+    }, {
+      "name" : "REGION",
+      "codeName" : "Region"
+    } ],
+    "codeName" : "Table",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDETABLES/Table.json",
+    "name" : "T_LOGICVALIDDATA",
+    "getPSSysDBTable" : {
+      "modelref" : true,
+      "id" : "T_LOGICVALIDDATA"
+    },
+    "tableType" : "MAIN"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "LOGICVALIDDATA"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataDTO"
+      },
+      "type" : "DTOS"
+    },
+    "defaultMode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEDATAQUERIES/Simple/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "Simple",
+    "dEFGroupType" : "BASEFIELDS",
+    "logicName" : "基础属性查询",
+    "name" : "SIMPLE",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "LOGICVALIDDATA"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "SimpleInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "SimpleResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataSimpleDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 100
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "LOGICVALIDDATA"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
+  } ],
+  "getAllPSDEDataSets" : [ {
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
+    "getPSDEDataSetInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "LogicValidDataDTO"
+      },
+      "type" : "PAGE"
+    },
+    "defaultMode" : true,
+    "enableBackend" : true,
+    "enableFront" : true
+  } ],
+  "getAllPSDEFields" : [ {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEDATE",
+      "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[UPDATEDATE][更新时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEDATE][更新时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEDATE"
+    },
+    "predefinedType" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEDATE",
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CREATEDATE][建立时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEDATE][建立时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CREATEDATE"
+    },
+    "predefinedType" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEMAN",
+      "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[UPDATEMAN][更新人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEMAN][更新人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "UPDATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEMAN"
+    },
+    "predefinedType" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "LOGICVALIDDATANAME",
+      "dBType" : "MYSQL5",
+      "name" : "LOGICVALIDDATANAME",
+      "queryCodeExp" : "t1.`LOGICVALIDDATANAME`",
+      "standardColumnName" : "`LOGICVALIDDATANAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LOGICVALIDDATANAME_LIKE",
+      "name" : "N_LOGICVALIDDATANAME_LIKE",
+      "stdDataType" : 25,
+      "valueOP" : "LIKE"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[LOGICVALIDDATANAME][示例数据（启用逻辑删除）名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[LOGICVALIDDATANAME][示例数据（启用逻辑删除）名称]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[LOGICVALIDDATANAME][示例数据（启用逻辑删除）名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[LOGICVALIDDATANAME][示例数据（启用逻辑删除）名称]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "LOGICVALIDDATANAME",
+          "maxValue" : 200,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[200]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "LogicValidDataName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 200,
+    "logicName" : "名称",
+    "name" : "LOGICVALIDDATANAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "LOGICVALIDDATANAME"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "valueFormat" : "%1$s",
+    "enableQuickSearch" : true,
+    "majorDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ENABLE",
+      "dBType" : "MYSQL5",
+      "name" : "ENABLE",
+      "queryCodeExp" : "t1.`ENABLE`",
+      "standardColumnName" : "`ENABLE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ENABLE][逻辑有效标志]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[ENABLE][逻辑有效标志]",
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ENABLE][逻辑有效标志]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[ENABLE][逻辑有效标志]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Enable",
+    "dEFType" : 1,
+    "dataType" : "YESNO",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "逻辑有效标志",
+    "name" : "ENABLE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ENABLE"
+    },
+    "predefinedType" : "LOGICVALID",
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "LOGICVALIDDATAID",
+      "dBType" : "MYSQL5",
+      "name" : "LOGICVALIDDATAID",
+      "queryCodeExp" : "t1.`LOGICVALIDDATAID`",
+      "standardColumnName" : "`LOGICVALIDDATAID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LOGICVALIDDATAID_EQ",
+      "name" : "N_LOGICVALIDDATAID_EQ",
+      "stdDataType" : 25,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[LOGICVALIDDATAID][示例数据（启用逻辑删除）标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[LOGICVALIDDATAID][示例数据（启用逻辑删除）标识]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[LOGICVALIDDATAID][示例数据（启用逻辑删除）标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[LOGICVALIDDATAID][示例数据（启用逻辑删除）标识]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "LOGICVALIDDATAID",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "LogicValidDataId",
+    "dEFType" : 1,
+    "dataType" : "GUID",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "示例数据（启用逻辑删除）标识",
+    "name" : "LOGICVALIDDATAID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "LOGICVALIDDATAID"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "keyDEField" : true,
+    "pasteReset" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEMAN",
+      "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CREATEMAN][建立人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEMAN][建立人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CREATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CREATEMAN"
+    },
+    "predefinedType" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DEPTID",
+      "dBType" : "MYSQL5",
+      "name" : "DEPTID",
+      "queryCodeExp" : "t1.`DEPTID`",
+      "standardColumnName" : "`DEPTID`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DEPTID][组织部门标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DEPTID][组织部门标识]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DEPTID][组织部门标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DEPTID][组织部门标识]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DEPTID",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "DeptId",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DEPTID"
+    },
+    "predefinedType" : "ORGSECTORID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ORGID",
+      "dBType" : "MYSQL5",
+      "name" : "ORGID",
+      "queryCodeExp" : "t1.`ORGID`",
+      "standardColumnName" : "`ORGID`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ORGID][组织机构标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ORGID][组织机构标识]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ORGID][组织机构标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ORGID][组织机构标识]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ORGID",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "OrgId",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ORGID"
+    },
+    "predefinedType" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CODE",
+      "dBType" : "MYSQL5",
+      "name" : "CODE",
+      "queryCodeExp" : "t1.`CODE`",
+      "standardColumnName" : "`CODE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_CODE_EQ",
+      "name" : "N_CODE_EQ",
+      "stdDataType" : 25,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CODE][标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CODE][标识]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CODE][标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CODE][标识]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CODE",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Code",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "标识",
+    "name" : "CODE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CODE"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "unionKeyValue" : "KEY2",
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "REGION",
+      "dBType" : "MYSQL5",
+      "name" : "REGION",
+      "queryCodeExp" : "t1.`REGION`",
+      "standardColumnName" : "`REGION`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_REGION_EQ",
+      "name" : "N_REGION_EQ",
+      "stdDataType" : 25,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[REGION][区域]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[REGION][区域]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[REGION][区域]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[REGION][区域]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "REGION",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Region",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "区域",
+    "name" : "REGION",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "REGION"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "unionKeyValue" : "KEY1",
+    "valueFormat" : "%1$s"
+  } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "LogicValidDataDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "标识",
+      "name" : "Code",
+      "getPSDEField" : {
+        "name" : "CODE",
+        "codeName" : "Code"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "组织部门标识",
+      "name" : "DeptId",
+      "getPSDEField" : {
+        "name" : "DEPTID",
+        "codeName" : "DeptId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "示例数据（启用逻辑删除）标识",
+      "name" : "LogicValidDataId",
+      "getPSDEField" : {
+        "name" : "LOGICVALIDDATAID",
+        "codeName" : "LogicValidDataId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "名称",
+      "name" : "LogicValidDataName",
+      "getPSDEField" : {
+        "name" : "LOGICVALIDDATANAME",
+        "codeName" : "LogicValidDataName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "组织机构标识",
+      "name" : "OrgId",
+      "getPSDEField" : {
+        "name" : "ORGID",
+        "codeName" : "OrgId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "区域",
+      "name" : "Region",
+      "getPSDEField" : {
+        "name" : "REGION",
+        "codeName" : "Region"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "LogicValidDataFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "logicName" : "名称",
+      "name" : "N_LOGICVALIDDATANAME_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_LOGICVALIDDATANAME_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "LOGICVALIDDATANAME",
+        "codeName" : "LogicValidDataName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
+  }, {
+    "name" : "LogicValidDataSimpleDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "标识",
+      "name" : "Code",
+      "getPSDEField" : {
+        "name" : "CODE",
+        "codeName" : "Code"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "组织部门标识",
+      "name" : "DeptId",
+      "getPSDEField" : {
+        "name" : "DEPTID",
+        "codeName" : "DeptId"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "示例数据（启用逻辑删除）标识",
+      "name" : "LogicValidDataId",
+      "getPSDEField" : {
+        "name" : "LOGICVALIDDATAID",
+        "codeName" : "LogicValidDataId"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "名称",
+      "name" : "LogicValidDataName",
+      "getPSDEField" : {
+        "name" : "LOGICVALIDDATANAME",
+        "codeName" : "LogicValidDataName"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "组织机构标识",
+      "name" : "OrgId",
+      "getPSDEField" : {
+        "name" : "ORGID",
+        "codeName" : "OrgId"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "区域",
+      "name" : "Region",
+      "getPSDEField" : {
+        "name" : "REGION",
+        "codeName" : "Region"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEUSERROLES/CURDEPT_R.json",
+    "name" : "当前部门（读）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "CURDEPT_R",
+    "secDR" : 1,
+    "userDRAction" : "READ",
+    "enableSecDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEUSERROLES/CURDEPT_RW.json",
+    "name" : "当前部门（读写）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    } ],
+    "roleTag" : "CURDEPT_RW",
+    "secDR" : 1,
+    "userDRAction" : "READ",
+    "enableSecDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEUSERROLES/CURORG_R.json",
+    "name" : "当前组织（读）",
+    "orgDR" : 1,
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "CURORG_R",
+    "userDRAction" : "READ",
+    "enableOrgDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData/PSDEUSERROLES/CURORG_RW.json",
+    "name" : "当前组织（读写）",
+    "orgDR" : 1,
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    } ],
+    "roleTag" : "CURORG_RW",
+    "userDRAction" : "READ",
+    "enableOrgDR" : true
+  } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "RedirectView",
+    "logicName" : "示例数据（启用逻辑删除）实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "示例数据（启用逻辑删除）实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "示例数据（启用逻辑删除）实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "示例数据（启用逻辑删除）实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "示例数据（启用逻辑删除）实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "示例数据（启用逻辑删除）实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "示例数据（启用逻辑删除）实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "示例数据（启用逻辑删除）实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "示例数据（启用逻辑删除）实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "示例数据（启用逻辑删除）实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "示例数据（启用逻辑删除）实体选择表格视图（部件视图）",
+    "name" : "示例数据（启用逻辑删除）实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "示例数据（启用逻辑删除）实体编辑视图（左右关系）",
+    "name" : "示例数据（启用逻辑删除）实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  } ],
+  "codeName" : "LogicValidData",
+  "dEType" : 1,
+  "dSLink" : "DEFAULT",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dataChangeLogMode" : 0,
+  "dataImpExpMode" : 3,
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LogicValidData.json",
+  "enableActions" : 7,
+  "enableUIActions" : 15,
+  "enableViewLevel" : 0,
+  "extendMode" : 0,
+  "invalidLogicValue" : "0",
+  "getKeyPSDEField" : {
+    "name" : "LOGICVALIDDATAID",
+    "codeName" : "LogicValidDataId"
+  },
+  "logicName" : "示例数据（启用逻辑删除）",
+  "getLogicValidPSDEField" : {
+    "name" : "ENABLE",
+    "codeName" : "Enable"
+  },
+  "getMajorPSDEField" : {
+    "name" : "LOGICVALIDDATANAME",
+    "codeName" : "LogicValidDataName"
+  },
+  "name" : "LOGICVALIDDATA",
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Default.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample.json"
+  },
+  "saaSMode" : 0,
+  "serviceAPIMode" : 1,
+  "serviceCodeName" : "LogicValidData",
+  "storageMode" : 1,
+  "systemTag" : "iBizSample",
+  "tableName" : "T_LOGICVALIDDATA",
+  "getUnionKeyValuePSDEFields" : [ {
+    "name" : "REGION",
+    "codeName" : "Region"
+  }, {
+    "name" : "CODE",
+    "codeName" : "Code"
+  } ],
+  "validLogicValue" : "1",
+  "enableAPIStorage" : false,
+  "enableCreate" : true,
+  "enableDataVer" : false,
+  "enableEntityCache" : false,
+  "enableModify" : true,
+  "enableMultiDS" : false,
+  "enableMultiForm" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableRemove" : true,
+  "enableSQLStorage" : true,
+  "logicValid" : true,
+  "subSysAsCloud" : false
+}

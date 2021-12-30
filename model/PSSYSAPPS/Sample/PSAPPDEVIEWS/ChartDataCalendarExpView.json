@@ -1,0 +1,979 @@
+{
+  "accUserMode" : 2,
+  "caption" : "功能确认",
+  "codeName" : "ChartDataCalendarExpView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataCalendarExpView.json",
+  "name" : "ChartDataCalendarExpView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "CalendarExpView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "calendarexpbar",
+      "name" : "CALENDAREXPBAR",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "CalendarExpViewcalendarexpbar",
+    "controlType" : "CALENDAREXPBAR",
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "name" : "calendarexpbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendarexpbar_toolbar_deuiaction1_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendarexpbar_toolbar_deuiaction1"
+      },
+      "getPSViewCtrlName" : "calendarexpbar_toolbar"
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendarexpbar_toolbar_deuiaction2_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendarexpbar_toolbar_deuiaction2"
+      },
+      "getPSViewCtrlName" : "calendarexpbar_toolbar"
+    }, {
+      "eventArg" : "deuiaction3",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendarexpbar_toolbar_deuiaction3_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendarexpbar_toolbar_deuiaction3"
+      },
+      "getPSViewCtrlName" : "calendarexpbar_toolbar"
+    }, {
+      "eventArg" : "deuiaction4",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendarexpbar_toolbar_deuiaction4_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendarexpbar_toolbar_deuiaction4"
+      },
+      "getPSViewCtrlName" : "calendarexpbar_toolbar"
+    }, {
+      "eventArg" : "deuiaction5",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendarexpbar_toolbar_deuiaction5_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendarexpbar_toolbar_deuiaction5"
+      },
+      "getPSViewCtrlName" : "calendarexpbar_toolbar"
+    } ],
+    "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:type1",
+      "realTitle" : "图表编辑视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "calendarexpbar_toolbar_deuiaction1",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "New"
+      },
+      "xDataControlName" : "calendarexpbar_calendar"
+    }, {
+      "name" : "calendarexpbar_toolbar_deuiaction2",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Save"
+      },
+      "xDataControlName" : "calendarexpbar_calendar"
+    }, {
+      "name" : "calendarexpbar_toolbar_deuiaction3",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "modelref" : true,
+        "id" : "Count@ChartData"
+      },
+      "uIActionTarget" : "NONE",
+      "xDataControlName" : "calendarexpbar_calendar"
+    }, {
+      "name" : "calendarexpbar_toolbar_deuiaction4",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "modelref" : true,
+        "id" : "custom1@ChartData"
+      },
+      "uIActionTarget" : "SINGLEDATA",
+      "xDataControlName" : "calendarexpbar_calendar"
+    }, {
+      "name" : "calendarexpbar_toolbar_deuiaction5",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "modelref" : true,
+        "id" : "custom2@ChartData"
+      },
+      "uIActionTarget" : "NONE",
+      "xDataControlName" : "calendarexpbar_calendar"
+    } ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "calendarexpbar"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+      "logicTag" : "calendarexpbar",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_calendarexpbar",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CALENDAREXPBAR"
+    },
+    "getPSControls" : [ {
+      "codeName" : "CalendarExpViewcalendarexpbar_toolbar",
+      "controlType" : "TOOLBAR",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "测试",
+      "name" : "calendarexpbar_toolbar",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendarexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendarexpbar_toolbar_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendarexpbar_toolbar_deuiaction1_click"
+        }
+      }, {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendarexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendarexpbar_toolbar_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendarexpbar_toolbar_deuiaction2_click"
+        }
+      }, {
+        "eventArg" : "deuiaction3",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendarexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendarexpbar_toolbar_deuiaction3_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendarexpbar_toolbar_deuiaction3_click"
+        }
+      }, {
+        "eventArg" : "deuiaction4",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendarexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendarexpbar_toolbar_deuiaction4_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendarexpbar_toolbar_deuiaction4_click"
+        }
+      }, {
+        "eventArg" : "deuiaction5",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendarexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendarexpbar_toolbar_deuiaction5_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendarexpbar_toolbar_deuiaction5_click"
+        }
+      } ],
+      "getPSControlParam" : {
+        "id" : "calendarexpbar_toolbar"
+      },
+      "getPSDEToolbarItems" : [ {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.NEW"
+        },
+        "caption" : "新建",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction1",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendarexpbar_toolbar_deuiaction1"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.NEW"
+          },
+          "caption" : "新建",
+          "codeName" : "New",
+          "fullCodeName" : "New",
+          "name" : "表格界面_新建操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0f6@FontAwesome",
+            "cssClass" : "fa fa-file-text-o"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.NEW"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "New",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "新建",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.NEW"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.SAVE"
+        },
+        "caption" : "保存",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction2",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendarexpbar_toolbar_deuiaction2"
+        },
+        "getPSSysImage" : {
+          "imagePath" : "/assets/images/test.png"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.SAVE"
+          },
+          "caption" : "保存",
+          "codeName" : "Save",
+          "fullCodeName" : "Save",
+          "name" : "编辑界面_保存操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0c7@FontAwesome",
+            "cssClass" : "fa fa-save"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Save",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "保存",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "计数器",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction3",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendarexpbar_toolbar_deuiaction3"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "NONE",
+          "caption" : "计数器",
+          "codeName" : "Count",
+          "counterId" : "countertag",
+          "frontProcessType" : "OTHER",
+          "fullCodeName" : "ChartData_Count",
+          "name" : "计数器",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "getPSSysPFPlugin" : {
+            "pluginType" : "DEUIACTION",
+            "pluginCode" : "actionPluginTest"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "Count",
+          "uIActionType" : "DEUIACTION",
+          "id" : "Count@ChartData"
+        },
+        "tooltip" : "计数器",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "测试1",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction4",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendarexpbar_toolbar_deuiaction4"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEDATA",
+          "caption" : "界面行为测试1",
+          "codeName" : "custom1",
+          "dialogResult" : "OK",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+            "viewType" : "DEMOBMDVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "ChartData_custom1",
+          "htmlPageUrl" : "https://www.baidu.com/",
+          "name" : "界面行为测试1",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "custom1",
+          "uIActionType" : "DEUIACTION",
+          "closeEditView" : true,
+          "closePopupView" : true,
+          "reloadData" : true,
+          "id" : "custom1@ChartData"
+        },
+        "tooltip" : "测试1",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "测试2",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction5",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendarexpbar_toolbar_deuiaction5"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "NONE",
+          "caption" : "界面行为测试2",
+          "codeName" : "custom2",
+          "confirmMsg" : "1354652",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+            "viewType" : "DEMOBMDVIEW"
+          },
+          "fullCodeName" : "ChartData_custom2",
+          "name" : "界面行为测试2",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "GetRandom"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "successMsg" : "35+62654",
+          "timeout" : 60000,
+          "uIActionMode" : "BACKEND",
+          "uIActionTag" : "custom2",
+          "uIActionType" : "DEUIACTION",
+          "enableConfirm" : true,
+          "id" : "custom2@ChartData"
+        },
+        "tooltip" : "测试2",
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "1E98CD1B-5069-4A8D-A534-DD302C04AD09",
+      "modeltype" : "PSDETOOLBAR"
+    }, {
+      "calendarStyle" : "MONTH",
+      "codeName" : "Chartdatacalendar",
+      "controlType" : "CALENDAR",
+      "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSCALENDARS/Chartdatacalendar.json",
+      "groupMode" : "NONE",
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+      "legendPos" : "NONE",
+      "logicName" : "图表实体日历部件",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSAppViewLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTrigger" : "CTRLEVENT",
+        "logicType" : "APPVIEWUIACTION",
+        "name" : "cm_deuiaction1_click",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "cm_deuiaction1"
+        },
+        "getPSViewCtrlName" : "cm"
+      }, {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTrigger" : "CTRLEVENT",
+        "logicType" : "APPVIEWUIACTION",
+        "name" : "cm_deuiaction2_click",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "cm_deuiaction2"
+        },
+        "getPSViewCtrlName" : "cm"
+      }, {
+        "eventArg" : "deuiaction3",
+        "eventNames" : "CLICK",
+        "logicTrigger" : "CTRLEVENT",
+        "logicType" : "APPVIEWUIACTION",
+        "name" : "cm_deuiaction3_click",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "cm_deuiaction3"
+        },
+        "getPSViewCtrlName" : "cm"
+      } ],
+      "getPSAppViewUIActions" : [ {
+        "name" : "cm_deuiaction1",
+        "getPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "modelref" : true,
+          "id" : "editview@ChartData"
+        },
+        "uIActionTarget" : "SINGLEKEY",
+        "xDataControlName" : "calendarexpbar_calendar"
+      }, {
+        "name" : "cm_deuiaction2",
+        "getPSUIAction" : {
+          "modelref" : true,
+          "id" : "New"
+        },
+        "xDataControlName" : "calendarexpbar_calendar"
+      }, {
+        "name" : "cm_deuiaction3",
+        "getPSUIAction" : {
+          "modelref" : true,
+          "id" : "RemoveAndExit"
+        },
+        "uIActionTarget" : "SINGLEKEY",
+        "xDataControlName" : "calendarexpbar_calendar"
+      } ],
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "calendarexpbar_calendar"
+      },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SELECTIONCHANGE",
+        "logicTag" : "calendarexpbar_calendar",
+        "logicType" : "CUSTOM",
+        "name" : "calendarexpbar_selectionchange"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "calendarexpbar_calendar",
+        "logicType" : "CUSTOM",
+        "name" : "calendarexpbar_load"
+      } ],
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "calendarexpbar_calendar"
+      },
+      "getPSControls" : [ {
+        "codeName" : "CalendarExpViewcm",
+        "controlType" : "CONTEXTMENU",
+        "hookEventNames" : [ "CLICK" ],
+        "logicName" : "上下文菜单",
+        "name" : "cm",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "getPSControlLogics" : [ {
+          "eventArg" : "deuiaction1",
+          "eventNames" : "CLICK",
+          "logicTag" : "cm",
+          "logicType" : "APPVIEWLOGIC",
+          "name" : "cm_deuiaction1_click",
+          "getPSAppViewLogic" : {
+            "modelref" : true,
+            "id" : "cm_deuiaction1_click"
+          }
+        }, {
+          "eventArg" : "deuiaction2",
+          "eventNames" : "CLICK",
+          "logicTag" : "cm",
+          "logicType" : "APPVIEWLOGIC",
+          "name" : "cm_deuiaction2_click",
+          "getPSAppViewLogic" : {
+            "modelref" : true,
+            "id" : "cm_deuiaction2_click"
+          }
+        }, {
+          "eventArg" : "deuiaction3",
+          "eventNames" : "CLICK",
+          "logicTag" : "cm",
+          "logicType" : "APPVIEWLOGIC",
+          "name" : "cm_deuiaction3_click",
+          "getPSAppViewLogic" : {
+            "modelref" : true,
+            "id" : "cm_deuiaction3_click"
+          }
+        } ],
+        "getPSControlParam" : {
+          "id" : "cm"
+        },
+        "getPSDEToolbarItems" : [ {
+          "caption" : "编辑",
+          "groupExtractMode" : "ITEM",
+          "itemType" : "DEUIACTION",
+          "name" : "deuiaction1",
+          "noPrivDisplayMode" : 2,
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "cm_deuiaction1"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "getPSUIAction" : {
+            "actionTarget" : "SINGLEKEY",
+            "caption" : "编辑",
+            "codeName" : "editview",
+            "getFrontPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+              "viewType" : "DEEDITVIEW"
+            },
+            "frontProcessType" : "WIZARD",
+            "fullCodeName" : "ChartData_editview",
+            "name" : "编辑",
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            },
+            "timeout" : 60000,
+            "uIActionMode" : "FRONT",
+            "uIActionTag" : "editview",
+            "uIActionType" : "DEUIACTION",
+            "id" : "editview@ChartData"
+          },
+          "tooltip" : "编辑",
+          "showCaption" : true,
+          "showIcon" : true
+        }, {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.NEW"
+          },
+          "caption" : "新建",
+          "groupExtractMode" : "ITEM",
+          "itemType" : "DEUIACTION",
+          "name" : "deuiaction2",
+          "noPrivDisplayMode" : 2,
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "cm_deuiaction2"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf0f6@FontAwesome",
+            "cssClass" : "fa fa-file-text-o"
+          },
+          "getPSUIAction" : {
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.NEW"
+            },
+            "caption" : "新建",
+            "codeName" : "New",
+            "fullCodeName" : "New",
+            "name" : "编辑界面_新建操作",
+            "getPSSysImage" : {
+              "glyph" : "xf0f6@FontAwesome",
+              "cssClass" : "fa fa-file-text-o"
+            },
+            "timeout" : 60000,
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.NEW"
+            },
+            "uIActionMode" : "SYS",
+            "uIActionTag" : "New",
+            "uIActionType" : "DEUIACTION"
+          },
+          "tooltip" : "新建",
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.NEW"
+          },
+          "showCaption" : true,
+          "showIcon" : true
+        }, {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
+          },
+          "caption" : "删除",
+          "groupExtractMode" : "ITEM",
+          "itemType" : "DEUIACTION",
+          "name" : "deuiaction3",
+          "noPrivDisplayMode" : 2,
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "cm_deuiaction3"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf00d@FontAwesome",
+            "cssClass" : "fa fa-remove"
+          },
+          "getPSUIAction" : {
+            "actionTarget" : "SINGLEKEY",
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
+            },
+            "caption" : "删除并关闭",
+            "codeName" : "RemoveAndExit",
+            "fullCodeName" : "RemoveAndExit",
+            "name" : "编辑界面_删除并退出操作",
+            "getPSSysImage" : {
+              "glyph" : "xf00d@FontAwesome",
+              "cssClass" : "fa fa-remove"
+            },
+            "timeout" : 60000,
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
+            },
+            "uIActionMode" : "SYS",
+            "uIActionTag" : "RemoveAndExit",
+            "uIActionType" : "DEUIACTION"
+          },
+          "tooltip" : "删除",
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
+          },
+          "showCaption" : true,
+          "showIcon" : true
+        } ],
+        "modelid" : "7F52F9E0-478B-44BA-92AC-02AD91329E7D",
+        "modeltype" : "PSDETOOLBAR"
+      } ],
+      "getPSSysCalendarItems" : [ {
+        "bKColor" : "rgba(239, 210, 42, 1)",
+        "getBeginTimePSAppDEField" : {
+          "name" : "BEGINTIME",
+          "codeName" : "BeginTime"
+        },
+        "color" : "rgba(221, 38, 38, 1)",
+        "getEndTimePSAppDEField" : {
+          "name" : "ENDTIME",
+          "codeName" : "EndTime"
+        },
+        "getIdPSAppDEField" : {
+          "name" : "CHARTDATAID",
+          "codeName" : "ChartDataId"
+        },
+        "itemStyle" : "DEFAULT",
+        "itemType" : "type1",
+        "maxSize" : -1,
+        "name" : "日历项1",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "getPSDEContextMenu" : {
+          "codeName" : "CalendarExpViewcm",
+          "controlType" : "CONTEXTMENU",
+          "hookEventNames" : [ "CLICK" ],
+          "logicName" : "上下文菜单",
+          "name" : "cm",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "getPSControlLogics" : [ {
+            "eventArg" : "deuiaction1",
+            "eventNames" : "CLICK",
+            "logicTag" : "cm",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "cm_deuiaction1_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "cm_deuiaction1_click"
+            }
+          }, {
+            "eventArg" : "deuiaction2",
+            "eventNames" : "CLICK",
+            "logicTag" : "cm",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "cm_deuiaction2_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "cm_deuiaction2_click"
+            }
+          }, {
+            "eventArg" : "deuiaction3",
+            "eventNames" : "CLICK",
+            "logicTag" : "cm",
+            "logicType" : "APPVIEWLOGIC",
+            "name" : "cm_deuiaction3_click",
+            "getPSAppViewLogic" : {
+              "modelref" : true,
+              "id" : "cm_deuiaction3_click"
+            }
+          } ],
+          "getPSControlParam" : {
+            "id" : "cm"
+          },
+          "getPSDEToolbarItems" : [ {
+            "caption" : "编辑",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction1",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "cm_deuiaction1"
+            },
+            "getPSSysImage" : {
+              "glyph" : "xf044@FontAwesome",
+              "cssClass" : "fa fa-edit"
+            },
+            "getPSUIAction" : {
+              "actionTarget" : "SINGLEKEY",
+              "caption" : "编辑",
+              "codeName" : "editview",
+              "getFrontPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+                "viewType" : "DEEDITVIEW"
+              },
+              "frontProcessType" : "WIZARD",
+              "fullCodeName" : "ChartData_editview",
+              "name" : "编辑",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+              },
+              "timeout" : 60000,
+              "uIActionMode" : "FRONT",
+              "uIActionTag" : "editview",
+              "uIActionType" : "DEUIACTION",
+              "id" : "editview@ChartData"
+            },
+            "tooltip" : "编辑",
+            "showCaption" : true,
+            "showIcon" : true
+          }, {
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.*.NEW"
+            },
+            "caption" : "新建",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction2",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "cm_deuiaction2"
+            },
+            "getPSSysImage" : {
+              "glyph" : "xf0f6@FontAwesome",
+              "cssClass" : "fa fa-file-text-o"
+            },
+            "getPSUIAction" : {
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.*.NEW"
+              },
+              "caption" : "新建",
+              "codeName" : "New",
+              "fullCodeName" : "New",
+              "name" : "编辑界面_新建操作",
+              "getPSSysImage" : {
+                "glyph" : "xf0f6@FontAwesome",
+                "cssClass" : "fa fa-file-text-o"
+              },
+              "timeout" : 60000,
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.*.NEW"
+              },
+              "uIActionMode" : "SYS",
+              "uIActionTag" : "New",
+              "uIActionType" : "DEUIACTION"
+            },
+            "tooltip" : "新建",
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.*.NEW"
+            },
+            "showCaption" : true,
+            "showIcon" : true
+          }, {
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
+            },
+            "caption" : "删除",
+            "groupExtractMode" : "ITEM",
+            "itemType" : "DEUIACTION",
+            "name" : "deuiaction3",
+            "noPrivDisplayMode" : 2,
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "cm_deuiaction3"
+            },
+            "getPSSysImage" : {
+              "glyph" : "xf00d@FontAwesome",
+              "cssClass" : "fa fa-remove"
+            },
+            "getPSUIAction" : {
+              "actionTarget" : "SINGLEKEY",
+              "getCapPSLanguageRes" : {
+                "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
+              },
+              "caption" : "删除并关闭",
+              "codeName" : "RemoveAndExit",
+              "fullCodeName" : "RemoveAndExit",
+              "name" : "编辑界面_删除并退出操作",
+              "getPSSysImage" : {
+                "glyph" : "xf00d@FontAwesome",
+                "cssClass" : "fa fa-remove"
+              },
+              "timeout" : 60000,
+              "getTooltipPSLanguageRes" : {
+                "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
+              },
+              "uIActionMode" : "SYS",
+              "uIActionTag" : "RemoveAndExit",
+              "uIActionType" : "DEUIACTION"
+            },
+            "tooltip" : "删除",
+            "getTooltipPSLanguageRes" : {
+              "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
+            },
+            "showCaption" : true,
+            "showIcon" : true
+          } ],
+          "modelid" : "7F52F9E0-478B-44BA-92AC-02AD91329E7D",
+          "modeltype" : "PSDETOOLBAR"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "CHARTDATANAME",
+          "codeName" : "ChartDataName"
+        },
+        "enableQuickCreate" : false,
+        "id" : "type1"
+      } ],
+      "enableGroup" : false,
+      "name" : "calendarexpbar_calendar",
+      "modelid" : "16F49FFE-ACA2-4CA7-A83F-44E894E38771",
+      "modeltype" : "PSSYSCALENDAR"
+    } ],
+    "title" : "日历导航",
+    "xDataControlName" : "calendarexpbar_calendar",
+    "enableCounter" : true,
+    "enableSearch" : true,
+    "showTitleBar" : true,
+    "modelid" : "0859a9aec59e0badf9978ef524952d9a_calendarexpbar",
+    "modeltype" : "PSEXPBAR"
+  } ],
+  "getPSDEViewCodeName" : "CalendarExpView",
+  "getPSDEViewId" : "A8EAE970-A44B-4188-B683-F49E71F7BB19",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDECALENDAREXPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "sideBarLayout" : "LEFT",
+  "title" : "图表日历导航视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DECALENDAREXPVIEW",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "showDataInfoBar" : true,
+  "modelid" : "0859a9aec59e0badf9978ef524952d9a",
+  "modeltype" : "PSAPPDEVIEW"
+}

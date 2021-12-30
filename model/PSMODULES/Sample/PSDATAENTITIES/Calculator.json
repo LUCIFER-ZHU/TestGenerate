@@ -1,0 +1,1874 @@
+{
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACMODES/Default.json"
+  } ],
+  "getAllPSDEActions" : [ {
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "getPSDEActionInput" : {
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSDEActionReturn" : {
+      "name" : "CreateResult",
+      "type" : "VOID"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "getPSDEActionInput" : {
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSDEActionReturn" : {
+      "name" : "UpdateResult",
+      "type" : "VOID"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "getPSDEActionInput" : {
+      "getKeyPSDEField" : {
+        "name" : "CALCULATORID",
+        "codeName" : "CalculatorId"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
+    "batchAction" : true,
+    "builtinAction" : true
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "getPSDEActionInput" : {
+      "getKeyPSDEField" : {
+        "name" : "CALCULATORID",
+        "codeName" : "CalculatorId"
+      },
+      "name" : "GetInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "getPSDEActionInput" : {
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "getPSDEActionInput" : {
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click0",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click0.json",
+    "logicName" : "Click0",
+    "name" : "Click0",
+    "getPSDEActionInput" : {
+      "name" : "Click0Input",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "Click0Result",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'0';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click1",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click1.json",
+    "logicName" : "Click1",
+    "name" : "Click1",
+    "getPSDEActionInput" : {
+      "name" : "Click1Input",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "Click1Result",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'1';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click2",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click2.json",
+    "logicName" : "Click2",
+    "name" : "Click2",
+    "getPSDEActionInput" : {
+      "name" : "Click2Input",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "Click2Result",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'2';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click3",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click3.json",
+    "logicName" : "Click3",
+    "name" : "Click3",
+    "getPSDEActionInput" : {
+      "name" : "Click3Input",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "Click3Result",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'3';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click4",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click4.json",
+    "logicName" : "Click4",
+    "name" : "Click4",
+    "getPSDEActionInput" : {
+      "name" : "Click4Input",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "Click4Result",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'4';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click5",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click5.json",
+    "logicName" : "Click5",
+    "name" : "Click5",
+    "getPSDEActionInput" : {
+      "name" : "Click5Input",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "Click5Result",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'5';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click6",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click6.json",
+    "logicName" : "Click6",
+    "name" : "Click6",
+    "getPSDEActionInput" : {
+      "name" : "Click6Input",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "Click6Result",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'6';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click7",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click7.json",
+    "logicName" : "Click7",
+    "name" : "Click7",
+    "getPSDEActionInput" : {
+      "name" : "Click7Input",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "Click7Result",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'7';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click8",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click8.json",
+    "logicName" : "Click8",
+    "name" : "Click8",
+    "getPSDEActionInput" : {
+      "name" : "Click8Input",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "Click8Result",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'8';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "Click9",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click9.json",
+    "logicName" : "Click9",
+    "name" : "Click9",
+    "getPSDEActionInput" : {
+      "name" : "Click9Input",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "Click9Result",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'9';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickBackspace",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickBackspace.json",
+    "logicName" : "ClickBackspace",
+    "name" : "ClickBackspace",
+    "getPSDEActionInput" : {
+      "name" : "ClickBackspaceInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "ClickBackspaceResult",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(data.input){\n  data.input=data.input.substring(0,data.input.length-1);\n}\nif(data.expression){\n  data.expression=data.expression.substring(0,data.expression.length-1);\n}\n"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickClear",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickClear.json",
+    "logicName" : "ClickClear",
+    "name" : "ClickClear",
+    "getPSDEActionInput" : {
+      "name" : "ClickClearInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "ClickClearResult",
+      "type" : "VOID"
+    },
+    "scriptCode" : "data.input='';\ndata.expression='';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickEq",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickEq.json",
+    "logicName" : "ClickEq",
+    "name" : "ClickEq",
+    "getPSDEActionInput" : {
+      "name" : "ClickEqInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "ClickEqResult",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(data.input) {\n  data.expression=data.input+'=';\n  data.input=eval(data.input);\n}\n"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickExcept",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickExcept.json",
+    "logicName" : "ClickExcept",
+    "name" : "ClickExcept",
+    "getPSDEActionInput" : {
+      "name" : "ClickExceptInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "ClickExceptResult",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'/';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickMinus",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickMinus.json",
+    "logicName" : "ClickMinus",
+    "name" : "ClickMinus",
+    "getPSDEActionInput" : {
+      "name" : "ClickMinusInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "ClickMinusResult",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'-';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickMultiply",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickMultiply.json",
+    "logicName" : "ClickMultiply",
+    "name" : "ClickMultiply",
+    "getPSDEActionInput" : {
+      "name" : "ClickMultiplyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "ClickMultiplyResult",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'*';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickPlus",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickPlus.json",
+    "logicName" : "ClickPlus",
+    "name" : "ClickPlus",
+    "getPSDEActionInput" : {
+      "name" : "ClickPlusInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "ClickPlusResult",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'+';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClickPoint",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickPoint.json",
+    "logicName" : "ClickPoint",
+    "name" : "ClickPoint",
+    "getPSDEActionInput" : {
+      "name" : "ClickPointInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "ClickPointResult",
+      "type" : "VOID"
+    },
+    "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'.';"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "InitSelectPanel",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/InitSelectPanel.json",
+    "logicName" : "InitSelectPanel",
+    "name" : "InitSelectPanel",
+    "getPSDEActionInput" : {
+      "name" : "InitSelectPanelInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "InitSelectPanelResult",
+      "type" : "VOID"
+    },
+    "scriptCode" : "data.part1=1;\ndata.part2=2;\ndata.part3=3;"
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "getPSDEActionInput" : {
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
+    "builtinAction" : true
+  } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`T_CALCULATOR`",
+    "tableName" : "T_CALCULATOR",
+    "valid" : true
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Calculator.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "CALCULATOR"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTOS"
+    },
+    "defaultMode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEDATAQUERIES/Simple/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "Simple",
+    "dEFGroupType" : "BASEFIELDS",
+    "logicName" : "基础属性查询",
+    "name" : "SIMPLE",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Calculator.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "CALCULATOR"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "SimpleInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "SimpleResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorSimpleDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 100
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Calculator.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "CALCULATOR"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
+  } ],
+  "getAllPSDEDataSets" : [ {
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
+    "getPSDEDataSetInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "CalculatorDTO"
+      },
+      "type" : "PAGE"
+    },
+    "defaultMode" : true,
+    "enableBackend" : true,
+    "enableFront" : true
+  } ],
+  "getAllPSDEFields" : [ {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CALCULATORNAME",
+      "dBType" : "MYSQL5",
+      "name" : "CALCULATORNAME",
+      "queryCodeExp" : "t1.`CALCULATORNAME`",
+      "standardColumnName" : "`CALCULATORNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_CALCULATORNAME_LIKE",
+      "name" : "N_CALCULATORNAME_LIKE",
+      "stdDataType" : 25,
+      "valueOP" : "LIKE"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CALCULATORNAME][计算器名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CALCULATORNAME][计算器名称]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CALCULATORNAME][计算器名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CALCULATORNAME][计算器名称]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CALCULATORNAME",
+          "maxValue" : 200,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[200]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CalculatorName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 200,
+    "logicName" : "计算器名称",
+    "name" : "CALCULATORNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "valueFormat" : "%1$s",
+    "enableQuickSearch" : true,
+    "majorDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEMAN",
+      "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEMAN][建立人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CREATEMAN][建立人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CREATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "predefinedType" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CALCULATORID",
+      "dBType" : "MYSQL5",
+      "name" : "CALCULATORID",
+      "queryCodeExp" : "t1.`CALCULATORID`",
+      "standardColumnName" : "`CALCULATORID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_CALCULATORID_EQ",
+      "name" : "N_CALCULATORID_EQ",
+      "stdDataType" : 25,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CALCULATORID][计算器标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CALCULATORID][计算器标识]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CALCULATORID][计算器标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CALCULATORID][计算器标识]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CALCULATORID",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CalculatorId",
+    "dEFType" : 1,
+    "dataType" : "GUID",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "计算器标识",
+    "name" : "CALCULATORID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "keyDEField" : true,
+    "pasteReset" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEDATE",
+      "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[UPDATEDATE][更新时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEDATE][更新时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "predefinedType" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEMAN",
+      "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEMAN][更新人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UPDATEMAN][更新人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "UPDATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "predefinedType" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEDATE",
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEDATE][建立时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CREATEDATE][建立时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "predefinedType" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ORGID",
+      "dBType" : "MYSQL5",
+      "name" : "ORGID",
+      "queryCodeExp" : "t1.`ORGID`",
+      "standardColumnName" : "`ORGID`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[ORGID][组织机构标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ORGID][组织机构标识]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[ORGID][组织机构标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ORGID][组织机构标识]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ORGID",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "OrgId",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
+    "predefinedType" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DEPTID",
+      "dBType" : "MYSQL5",
+      "name" : "DEPTID",
+      "queryCodeExp" : "t1.`DEPTID`",
+      "standardColumnName" : "`DEPTID`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DEPTID][组织部门标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DEPTID][组织部门标识]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DEPTID][组织部门标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DEPTID][组织部门标识]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DEPTID",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "DeptId",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "predefinedType" : "ORGSECTORID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "INPUT",
+      "dBType" : "MYSQL5",
+      "name" : "INPUT",
+      "queryCodeExp" : "t1.`INPUT`",
+      "standardColumnName" : "`INPUT`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[INPUT][输入值]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[INPUT][输入值]移动端默认",
+        "stringLength" : 1000,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[INPUT][输入值]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[INPUT][输入值]",
+        "stringLength" : 1000,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "INPUT",
+          "maxValue" : 1000,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[1000]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[1000]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[1000]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Input",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 1000,
+    "logicName" : "输入值",
+    "name" : "INPUT",
+    "stdDataType" : 25,
+    "stringLength" : 1000,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "EXPRESSION",
+      "dBType" : "MYSQL5",
+      "name" : "EXPRESSION",
+      "queryCodeExp" : "t1.`EXPRESSION`",
+      "standardColumnName" : "`EXPRESSION`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[EXPRESSION][表单式]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[EXPRESSION][表单式]",
+        "stringLength" : 1000,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[EXPRESSION][表单式]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[EXPRESSION][表单式]移动端默认",
+        "stringLength" : 1000,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "EXPRESSION",
+          "maxValue" : 1000,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[1000]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[1000]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[1000]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Expression",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 1000,
+    "logicName" : "表单式",
+    "name" : "EXPRESSION",
+    "stdDataType" : 25,
+    "stringLength" : 1000,
+    "valueFormat" : "%1$s"
+  } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "CalculatorDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "计算器标识",
+      "name" : "CalculatorId",
+      "getPSDEField" : {
+        "name" : "CALCULATORID",
+        "codeName" : "CalculatorId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "计算器名称",
+      "name" : "CalculatorName",
+      "getPSDEField" : {
+        "name" : "CALCULATORNAME",
+        "codeName" : "CalculatorName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "组织部门标识",
+      "name" : "DeptId",
+      "getPSDEField" : {
+        "name" : "DEPTID",
+        "codeName" : "DeptId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "表单式",
+      "name" : "Expression",
+      "getPSDEField" : {
+        "name" : "EXPRESSION",
+        "codeName" : "Expression"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 1000,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "输入值",
+      "name" : "Input",
+      "getPSDEField" : {
+        "name" : "INPUT",
+        "codeName" : "Input"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 1000,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "组织机构标识",
+      "name" : "OrgId",
+      "getPSDEField" : {
+        "name" : "ORGID",
+        "codeName" : "OrgId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "CalculatorFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "logicName" : "计算器名称",
+      "name" : "N_CALCULATORNAME_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_CALCULATORNAME_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "CALCULATORNAME",
+        "codeName" : "CalculatorName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
+  }, {
+    "name" : "CalculatorSimpleDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "计算器标识",
+      "name" : "CalculatorId",
+      "getPSDEField" : {
+        "name" : "CALCULATORID",
+        "codeName" : "CalculatorId"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "计算器名称",
+      "name" : "CalculatorName",
+      "getPSDEField" : {
+        "name" : "CALCULATORNAME",
+        "codeName" : "CalculatorName"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "组织部门标识",
+      "name" : "DeptId",
+      "getPSDEField" : {
+        "name" : "DEPTID",
+        "codeName" : "DeptId"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "组织机构标识",
+      "name" : "OrgId",
+      "getPSDEField" : {
+        "name" : "ORGID",
+        "codeName" : "OrgId"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEUSERROLES/CURDEPT_R.json",
+    "name" : "当前部门（读）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "CURDEPT_R",
+    "secDR" : 1,
+    "userDRAction" : "READ",
+    "enableSecDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEUSERROLES/CURDEPT_RW.json",
+    "name" : "当前部门（读写）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "CURDEPT_RW",
+    "secDR" : 1,
+    "userDRAction" : "READ",
+    "enableSecDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEUSERROLES/CURORG_R.json",
+    "name" : "当前组织（读）",
+    "orgDR" : 1,
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "CURORG_R",
+    "userDRAction" : "READ",
+    "enableOrgDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEUSERROLES/CURORG_RW.json",
+    "name" : "当前组织（读写）",
+    "orgDR" : 1,
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    } ],
+    "roleTag" : "CURORG_RW",
+    "userDRAction" : "READ",
+    "enableOrgDR" : true
+  } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "CalcPanelView",
+    "logicName" : "计算器实体面板视图（计算器示例）",
+    "name" : "计算器实体面板视图（计算器示例）",
+    "realModelSubType" : "DEPANELVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "计算器实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "计算器实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "计算器实体编辑视图（左右关系）",
+    "name" : "计算器实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "计算器实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "计算器实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickPartPanelView",
+    "logicName" : "计算器实体面板视图（选择分区）",
+    "name" : "计算器实体面板视图（选择分区）",
+    "realModelSubType" : "DEPANELVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "计算器实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "计算器实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "计算器实体选择表格视图（部件视图）",
+    "name" : "计算器实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickPanelView",
+    "logicName" : "计算器实体面板视图（选择示例）",
+    "name" : "计算器实体面板视图（选择示例）",
+    "realModelSubType" : "DEPANELVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "计算器实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "计算器实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "计算器实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "计算器实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  } ],
+  "codeName" : "Calculator",
+  "dEType" : 1,
+  "dSLink" : "DEFAULT",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dataChangeLogMode" : 0,
+  "dataImpExpMode" : 3,
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator.json",
+  "enableActions" : 7,
+  "enableUIActions" : 15,
+  "enableViewLevel" : 0,
+  "extendMode" : 0,
+  "getKeyPSDEField" : {
+    "name" : "CALCULATORID",
+    "codeName" : "CalculatorId"
+  },
+  "logicName" : "计算器",
+  "getMajorPSDEField" : {
+    "name" : "CALCULATORNAME",
+    "codeName" : "CalculatorName"
+  },
+  "name" : "CALCULATOR",
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Default.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample.json"
+  },
+  "saaSMode" : 0,
+  "serviceAPIMode" : 1,
+  "serviceCodeName" : "Calculator",
+  "storageMode" : 0,
+  "systemTag" : "iBizSample",
+  "tableName" : "T_CALCULATOR",
+  "enableAPIStorage" : false,
+  "enableCreate" : true,
+  "enableDataVer" : false,
+  "enableEntityCache" : false,
+  "enableModify" : true,
+  "enableMultiDS" : false,
+  "enableMultiForm" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableRemove" : true,
+  "enableSQLStorage" : false,
+  "logicValid" : false,
+  "subSysAsCloud" : false
+}

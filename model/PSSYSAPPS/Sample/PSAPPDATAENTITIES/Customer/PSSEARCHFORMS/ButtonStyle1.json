@@ -1,0 +1,113 @@
+{
+  "codeName" : "ButtonStyle1",
+  "controlType" : "SEARCHFORM",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer/PSSEARCHFORMS/ButtonStyle1.json",
+  "logicName" : "搜索表单（按钮样式1）",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+  },
+  "getPSDEFormItems" : [ {
+    "id" : "n_customername_like",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    }
+  }, {
+    "id" : "n_type_eq",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "常规条件",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "caption" : "客户名称(文本包含(%))",
+      "codeName" : "n_customername_like",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_customername_like",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME",
+        "codeName" : "CustomerName"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "n_customername_like"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 12,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "showCaption" : true
+    }, {
+      "caption" : "类型(等于(=))",
+      "codeName" : "n_type_eq",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_type_eq",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      },
+      "getPSEditor" : {
+        "editorType" : "DROPDOWNLIST",
+        "name" : "n_type_eq",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/CustomerType.json"
+        },
+        "singleSelect" : true
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 12,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "needCodeListConfig" : true,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getPSSysCss" : {
+    "cssName" : "searchform-css1"
+  },
+  "searchButtonStyle" : "DEFAULT",
+  "tabHeaderPos" : "TOP",
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : false,
+  "enableFilterSave" : false,
+  "noTabHeader" : true,
+  "modelid" : "F73C453B-6F24-45F9-B721-6554C1F69DB3",
+  "modeltype" : "PSDEFORM_SEARCHFORM"
+}

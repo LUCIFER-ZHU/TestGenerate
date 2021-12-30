@@ -1,0 +1,235 @@
+{
+  "codeName" : "MapTree",
+  "controlType" : "TREEVIEW",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData/PSTREEVIEWS/MapTree.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "logicName" : "地图树",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_load"
+  } ],
+  "getPSDETreeNodeRSs" : [ {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Base"
+    },
+    "name" : "默认根节点 - 常规",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "MapNav"
+    },
+    "name" : "默认根节点 - 地图导航",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Css"
+    },
+    "name" : "默认根节点 - 界面样式",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "EventAndInvoke"
+    },
+    "name" : "默认根节点 - 事件及调用",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  } ],
+  "getPSDETreeNodes" : [ {
+    "counterMode" : 0,
+    "name" : "地图导航",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/MapDataMapChartExpView.json",
+      "viewType" : "DECHARTEXPVIEW"
+    },
+    "nodeType" : "MapNav",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+    },
+    "text" : "地图导航",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "MapNav"
+  }, {
+    "counterMode" : 0,
+    "name" : "事件及调用",
+    "nodeType" : "EventAndInvoke",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+    },
+    "text" : "事件及调用",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "EventAndInvoke"
+  }, {
+    "counterMode" : 0,
+    "name" : "界面样式",
+    "nodeType" : "Css",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+    },
+    "text" : "界面样式",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "Css"
+  }, {
+    "counterMode" : 0,
+    "name" : "默认根节点",
+    "nodeType" : "ROOT",
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : true,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ROOT"
+  }, {
+    "counterMode" : 0,
+    "name" : "常规",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/MapDataBaseMapView.json",
+      "viewType" : "DEMAPVIEW"
+    },
+    "nodeType" : "Base",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+    },
+    "text" : "常规",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "Base"
+  } ],
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "treeGridMode" : 0,
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "enableRootSelect" : false,
+  "outputIconDefault" : false,
+  "rootVisible" : false,
+  "modelid" : "849AF2F7-432D-4519-BF04-D7FC29060757",
+  "modeltype" : "PSDETREEVIEW"
+}

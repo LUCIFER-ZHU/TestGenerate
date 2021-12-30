@@ -1,0 +1,282 @@
+{
+  "codeName" : "SearchFormTree",
+  "controlType" : "TREEVIEW",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSTREEVIEWS/SearchFormTree.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "logicName" : "搜索表单树",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "treeexpbar_tree",
+    "logicType" : "CUSTOM",
+    "name" : "treeexpbar_load"
+  } ],
+  "getPSDEDataImport" : {
+    "modelref" : true,
+    "id" : "DataImport"
+  },
+  "getPSDETreeNodeRSs" : [ {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Base"
+    },
+    "name" : "默认根节点 - 常规",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ButtonStyle"
+    },
+    "name" : "默认根节点 - 布局",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "AutoSearch"
+    },
+    "name" : "默认根节点 - 分组",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "AdvSearch"
+    },
+    "name" : "默认根节点 - 高级搜索",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "EventAndInvoke"
+    },
+    "name" : "默认根节点 - 事件及调用",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  } ],
+  "getPSDETreeNodes" : [ {
+    "counterMode" : 0,
+    "name" : "自动搜索",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerAutoSearchGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "AutoSearch",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "自动搜索",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "AutoSearch"
+  }, {
+    "counterMode" : 0,
+    "name" : "常规",
+    "nodeType" : "Base",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "常规",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "Base"
+  }, {
+    "counterMode" : 0,
+    "name" : "高级搜索",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerAdvSearchGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "nodeType" : "AdvSearch",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "高级搜索",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "AdvSearch"
+  }, {
+    "counterMode" : 0,
+    "name" : "默认根节点",
+    "nodeType" : "ROOT",
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : true,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ROOT"
+  }, {
+    "counterMode" : 0,
+    "name" : "按钮样式",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerSearchFormButtonStyleCustomView.json",
+      "viewType" : "DECUSTOMVIEW"
+    },
+    "nodeType" : "ButtonStyle",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "按钮样式",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ButtonStyle"
+  }, {
+    "counterMode" : 0,
+    "name" : "事件及调用",
+    "nodeType" : "EventAndInvoke",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "text" : "事件及调用",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "EventAndInvoke"
+  } ],
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "treeGridMode" : 0,
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "enableRootSelect" : false,
+  "outputIconDefault" : false,
+  "rootVisible" : false,
+  "modelid" : "EA7A01F2-6831-4A42-AFBA-16414B220174",
+  "modeltype" : "PSDETREEVIEW"
+}

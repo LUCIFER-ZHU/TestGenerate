@@ -1,0 +1,106 @@
+{
+  "codeName" : "ViewMsg",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData/PSPANELS/ViewMsg.json",
+  "layoutMode" : "TABLE_24COL",
+  "logicName" : "视图消息",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
+  },
+  "getPSControls" : [ {
+    "codeName" : "ViewMsgPanelViewcontrol1",
+    "controlType" : "VIEWPANEL",
+    "getEmbeddedPSAppDEView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleViewMsg1CustomView.json",
+      "viewType" : "DECUSTOMVIEW"
+    },
+    "name" : "control1",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
+    },
+    "getPSControlParam" : { }
+  }, {
+    "codeName" : "ViewMsgPanelViewcontrol2",
+    "controlType" : "VIEWPANEL",
+    "getEmbeddedPSAppDEView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleViewMsg2CustomView.json",
+      "viewType" : "DECUSTOMVIEW"
+    },
+    "name" : "control2",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
+    },
+    "getPSControlParam" : { }
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container1",
+    "getPSLayout" : {
+      "dir" : "column",
+      "layout" : "FLEX"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTROL",
+      "name" : "control1",
+      "getPSControl" : {
+        "codeName" : "ViewMsgPanelViewcontrol1",
+        "controlType" : "VIEWPANEL",
+        "getEmbeddedPSAppDEView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleViewMsg1CustomView.json",
+          "viewType" : "DECUSTOMVIEW"
+        },
+        "name" : "control1",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
+        },
+        "getPSControlParam" : { }
+      },
+      "getPSLayoutPos" : {
+        "grow" : 1,
+        "layout" : "FLEX"
+      }
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTROL",
+      "name" : "control2",
+      "getPSControl" : {
+        "codeName" : "ViewMsgPanelViewcontrol2",
+        "controlType" : "VIEWPANEL",
+        "getEmbeddedPSAppDEView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleViewMsg2CustomView.json",
+          "viewType" : "DECUSTOMVIEW"
+        },
+        "name" : "control2",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
+        },
+        "getPSControlParam" : { }
+      },
+      "getPSLayoutPos" : {
+        "grow" : 1,
+        "layout" : "FLEX"
+      }
+    } ]
+  } ],
+  "modelid" : "F0C9D8AE-776A-466F-AF7A-81EF83F857A0",
+  "modeltype" : "PSSYSVIEWPANEL"
+}

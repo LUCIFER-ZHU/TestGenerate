@@ -1,0 +1,108 @@
+{
+  "codeName" : "ProcessingVal",
+  "dEFLogicMode" : "USER",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEFLOGICS/ProcessingVal.json",
+  "logicName" : "处理中金额",
+  "logicSubType" : "DEFIELD",
+  "name" : "处理中金额",
+  "getPSDEField" : {
+    "name" : "PROCESSINGVAL",
+    "codeName" : "ProcessingVal"
+  },
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Prepareparam2",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "默认0",
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "FINISHEDVAL",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "直接值[0] ==> Default[FINISHEDVAL]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValue" : "0",
+      "srcValueType" : "SRCVALUE"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "状态：处理中",
+      "getPSDELogicLinkGroupCond" : {
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "name" : "连接条件组",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "EQ",
+          "dstFieldName" : "STATE",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[STATE] 等于(=) (20)",
+          "paramValue" : "20"
+        } ]
+      },
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      }
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam2"
+      },
+      "name" : "默认",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : true
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "已处理金额",
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "PROCESSINGVAL",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "Default[AMOUNT] ==> Default[PROCESSINGVAL]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "AMOUNT",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData.json"
+    },
+    "default" : true
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : true,
+  "enableFront" : false
+}

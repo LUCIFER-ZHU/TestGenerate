@@ -1,0 +1,163 @@
+{
+  "codeName" : "Line",
+  "controlType" : "CHART",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSCHARTS/Line.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "logicName" : "Line",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+  },
+  "getPSChartCoordinateSystems" : [ {
+    "eChartsType" : "cartesian2d",
+    "index" : 0,
+    "name" : "[line]直角坐标系[0]",
+    "getPSChartGrid" : {
+      "index" : 0,
+      "name" : "[line]直角坐标系[0]",
+      "getPSChartCoordinateSystem" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartGridXAxis0" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartGridYAxis0" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "grid",
+      "id" : "0"
+    },
+    "type" : "XY",
+    "id" : "0"
+  } ],
+  "getPSChartDataSetGroups" : [ {
+    "index" : 0,
+    "name" : "DEFAULT",
+    "id" : "0"
+  } ],
+  "getPSChartDataSets" : [ {
+    "index" : 0,
+    "name" : "line-DEFAULT",
+    "getPSChartDataSetFields" : [ {
+      "groupMode" : "MONTH",
+      "index" : 0,
+      "name" : "orderdate",
+      "groupField" : true,
+      "id" : "0"
+    }, {
+      "index" : 1,
+      "name" : "amount",
+      "groupField" : true,
+      "id" : "1"
+    } ],
+    "id" : "0"
+  } ],
+  "getPSChartGrids" : [ {
+    "index" : 0,
+    "name" : "[line]直角坐标系[0]",
+    "getPSChartCoordinateSystem" : {
+      "eChartsType" : "cartesian2d",
+      "index" : 0,
+      "name" : "[line]直角坐标系[0]",
+      "getPSChartGrid" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "XY",
+      "id" : "0"
+    },
+    "getPSChartGridXAxis0" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartGridYAxis0" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "type" : "grid",
+    "id" : "0"
+  } ],
+  "getPSChartXAxises" : [ {
+    "caption" : "日期",
+    "eChartsPos" : "xAxis",
+    "eChartsType" : "category",
+    "index" : 0,
+    "name" : "X坐标轴_日期",
+    "position" : "bottom",
+    "type" : "category",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "caption" : "金额",
+    "eChartsPos" : "yAxis",
+    "eChartsType" : "value",
+    "index" : 0,
+    "name" : "Y坐标轴_金额",
+    "position" : "left",
+    "type" : "numeric",
+    "id" : "0"
+  } ],
+  "getPSDEChartLegend" : {
+    "index" : 0,
+    "legendPos" : "TOP",
+    "showLegend" : true,
+    "id" : "0"
+  },
+  "getPSDEChartSerieses" : [ {
+    "getCapPSLanguageRes" : {
+      "lanResTag" : "CONTROL.CHART.LINE.CAPTION"
+    },
+    "caption" : "订单折线图",
+    "catalogField" : "orderdate",
+    "eChartsType" : "line",
+    "groupMode" : "MONTH",
+    "idField" : "amount",
+    "index" : 0,
+    "name" : "line",
+    "getPSChartCoordinateSystem" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartSeriesEncode" : {
+      "index" : 0,
+      "itemId" : "amount",
+      "name" : "坐标系编码",
+      "getPSChartXAxis" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartYAxis" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "XY",
+      "x" : [ "orderdate" ],
+      "y" : [ "amount" ],
+      "id" : "0"
+    },
+    "seriesLayoutBy" : "column",
+    "seriesType" : "line",
+    "valueField" : "amount",
+    "enableChartDataSet" : true,
+    "stack" : false
+  } ],
+  "getPSDEChartTitle" : {
+    "index" : 0,
+    "title" : "订单折线图",
+    "showTitle" : true,
+    "id" : "0"
+  },
+  "readOnly" : true,
+  "modelid" : "44378081-017D-4E64-A20A-89B53DA7D583",
+  "modeltype" : "PSDECHART"
+}

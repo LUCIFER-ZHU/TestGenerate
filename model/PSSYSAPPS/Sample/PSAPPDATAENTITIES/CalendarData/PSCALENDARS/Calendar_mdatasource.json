@@ -1,0 +1,81 @@
+{
+  "calendarStyle" : "MONTH",
+  "codeName" : "Calendar_mdatasource",
+  "controlType" : "CALENDAR",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData/PSCALENDARS/Calendar_mdatasource.json",
+  "groupMode" : "NONE",
+  "legendPos" : "TOP",
+  "logicName" : "日历部件（多数据源）",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+  },
+  "getPSSysCalendarItems" : [ {
+    "bKColor" : "rgba(24, 249, 4, 1)",
+    "getBeginTimePSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    },
+    "getEndTimePSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    },
+    "getIdPSAppDEField" : {
+      "name" : "CALENDARDATAID",
+      "codeName" : "CalendarDataId"
+    },
+    "itemStyle" : "DEFAULT",
+    "itemType" : "calendardata",
+    "maxSize" : -1,
+    "name" : "数据源1",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "CALENDARDATANAME",
+      "codeName" : "CalendarDataName"
+    },
+    "enableQuickCreate" : false,
+    "id" : "calendardata"
+  }, {
+    "bKColor" : "rgba(248, 5, 5, 1)",
+    "getBeginTimePSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    },
+    "getEndTimePSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    },
+    "getIdPSAppDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    },
+    "itemStyle" : "DEFAULT",
+    "itemType" : "chartdata",
+    "maxSize" : -1,
+    "name" : "数据源2",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    },
+    "enableQuickCreate" : false,
+    "id" : "chartdata"
+  } ],
+  "enableGroup" : false,
+  "modelid" : "84BD6B39-D7AC-4B05-949D-A4753C4FE3A6",
+  "modeltype" : "PSSYSCALENDAR"
+}

@@ -1,0 +1,79 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`ACFIELD`",
+    "name" : "ACFIELD"
+  }, {
+    "expression" : "t1.`BEGINTIME`",
+    "name" : "BEGINTIME"
+  }, {
+    "expression" : "t1.`CITYID`",
+    "name" : "CITYID"
+  }, {
+    "expression" : "t11.`CITYNAME`",
+    "name" : "CITYNAME"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DATATYPE`",
+    "name" : "DATATYPE"
+  }, {
+    "expression" : "t1.`DECIMALFIELD`",
+    "name" : "DECIMALFIELD"
+  }, {
+    "expression" : "t1.`DECIMALFIELD2`",
+    "name" : "DECIMALFIELD2"
+  }, {
+    "expression" : "t1.`DISTRICTID`",
+    "name" : "DISTRICTID"
+  }, {
+    "expression" : "t31.`DISTRICTNAME`",
+    "name" : "DISTRICTNAME"
+  }, {
+    "expression" : "t1.`ENDTIME`",
+    "name" : "ENDTIME"
+  }, {
+    "expression" : "t1.`EXAMPLEID`",
+    "name" : "EXAMPLEID"
+  }, {
+    "expression" : "t1.`EXAMPLENAME`",
+    "name" : "EXAMPLENAME"
+  }, {
+    "expression" : "t1.`FIELD`",
+    "name" : "FIELD"
+  }, {
+    "expression" : "t1.`FIELDUPDATE`",
+    "name" : "FIELDUPDATE"
+  }, {
+    "expression" : "t1.`FIELDVALUE`",
+    "name" : "FIELDVALUE"
+  }, {
+    "expression" : "t1.`FIELDX`",
+    "name" : "FIELDX"
+  }, {
+    "expression" : "t1.`FIELDY`",
+    "name" : "FIELDY"
+  }, {
+    "expression" : "t1.`FIELDZ`",
+    "name" : "FIELDZ"
+  }, {
+    "expression" : "t1.`PROVINCEID`",
+    "name" : "PROVINCEID"
+  }, {
+    "expression" : "t21.`PROVINCENAME`",
+    "name" : "PROVINCENAME"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`ACFIELD`,\nt1.`BEGINTIME`,\nt1.`CITYID`,\nt11.`CITYNAME`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DATATYPE`,\nt1.`DECIMALFIELD`,\nt1.`DECIMALFIELD2`,\nt1.`DISTRICTID`,\nt31.`DISTRICTNAME`,\nt1.`ENDTIME`,\nt1.`EXAMPLEID`,\nt1.`EXAMPLENAME`,\nt1.`FIELD`,\nt1.`FIELDUPDATE`,\nt1.`FIELDVALUE`,\nt1.`FIELDX`,\nt1.`FIELDY`,\nt1.`FIELDZ`,\nt1.`PROVINCEID`,\nt21.`PROVINCENAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_EXAMPLE` t1 \nLEFT JOIN `T_CITY` t11 ON t1.`CITYID` = t11.`CITYID` \nLEFT JOIN `T_PROVINCE` t21 ON t1.`PROVINCEID` = t21.`PROVINCEID` \nLEFT JOIN `T_DISTRICT` t31 ON t1.`DISTRICTID` = t31.`DISTRICTID` \n",
+  "id" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,195 @@
+{
+  "codeName" : "KLineChart",
+  "controlType" : "CHART",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSCHARTS/KLineChart.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+  "logicName" : "KLineChart",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSChartCoordinateSystems" : [ {
+    "eChartsType" : "cartesian2d",
+    "index" : 0,
+    "name" : "[kline]直角坐标系[0]",
+    "getPSChartGrid" : {
+      "index" : 0,
+      "name" : "[kline]直角坐标系[0]",
+      "getPSChartCoordinateSystem" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartGridXAxis0" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartGridYAxis0" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "grid",
+      "id" : "0"
+    },
+    "type" : "XY",
+    "id" : "0"
+  } ],
+  "getPSChartDataSetGroups" : [ {
+    "index" : 0,
+    "name" : "DEFAULT",
+    "id" : "0"
+  } ],
+  "getPSChartDataSets" : [ {
+    "index" : 0,
+    "name" : "kline-DEFAULT",
+    "getPSChartDataSetFields" : [ {
+      "index" : 0,
+      "name" : "datatype",
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/DataType.json"
+      },
+      "groupField" : true,
+      "id" : "0"
+    }, {
+      "index" : 1,
+      "name" : "open",
+      "groupField" : false,
+      "id" : "1"
+    }, {
+      "index" : 2,
+      "name" : "close",
+      "groupField" : false,
+      "id" : "2"
+    }, {
+      "index" : 3,
+      "name" : "lowest",
+      "groupField" : false,
+      "id" : "3"
+    }, {
+      "index" : 4,
+      "name" : "highest",
+      "groupField" : false,
+      "id" : "4"
+    } ],
+    "id" : "0"
+  } ],
+  "getPSChartGrids" : [ {
+    "index" : 0,
+    "name" : "[kline]直角坐标系[0]",
+    "getPSChartCoordinateSystem" : {
+      "eChartsType" : "cartesian2d",
+      "index" : 0,
+      "name" : "[kline]直角坐标系[0]",
+      "getPSChartGrid" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "XY",
+      "id" : "0"
+    },
+    "getPSChartGridXAxis0" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartGridYAxis0" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "type" : "grid",
+    "id" : "0"
+  } ],
+  "getPSChartXAxises" : [ {
+    "caption" : "分类",
+    "eChartsPos" : "xAxis",
+    "eChartsType" : "category",
+    "index" : 0,
+    "name" : "X坐标轴_分类",
+    "position" : "bottom",
+    "type" : "category",
+    "id" : "0"
+  } ],
+  "getPSChartYAxises" : [ {
+    "caption" : "数据",
+    "eChartsPos" : "yAxis",
+    "eChartsType" : "value",
+    "index" : 0,
+    "name" : "Y坐标轴_数据",
+    "position" : "left",
+    "type" : "numeric",
+    "userTag" : "open",
+    "userTag2" : "close",
+    "userTag3" : "lowest",
+    "userTag4" : "highest",
+    "id" : "0"
+  } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;BEFORELOAD",
+    "logicTag" : "chart",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_chart",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEChartLegend" : {
+    "index" : 0,
+    "showLegend" : true,
+    "id" : "0"
+  },
+  "getPSDEChartSerieses" : [ {
+    "caption" : "k线图",
+    "catalogField" : "datatype",
+    "getCatalogPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/DataType.json"
+    },
+    "eChartsType" : "candlestick",
+    "extValue2Field" : "close",
+    "extValue3Field" : "lowest",
+    "extValue4Field" : "highest",
+    "extValueField" : "open",
+    "index" : 0,
+    "name" : "kline",
+    "getPSChartCoordinateSystem" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartSeriesEncode" : {
+      "index" : 0,
+      "name" : "坐标系编码",
+      "getPSChartXAxis" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartYAxis" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "XY",
+      "x" : [ "datatype" ],
+      "y" : [ "open", "close", "lowest", "highest" ],
+      "id" : "0"
+    },
+    "seriesLayoutBy" : "column",
+    "seriesType" : "candlestick",
+    "enableChartDataSet" : true
+  } ],
+  "getPSDEChartTitle" : {
+    "index" : 0,
+    "title" : "K线图",
+    "showTitle" : true,
+    "id" : "0"
+  },
+  "readOnly" : true,
+  "modelid" : "38AAD1C8-D573-48F1-AC01-65D325653BCC",
+  "modeltype" : "PSDECHART"
+}

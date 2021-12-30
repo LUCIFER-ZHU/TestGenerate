@@ -1,0 +1,417 @@
+{
+  "codeName" : "DataSourceAdv",
+  "controlType" : "TREEVIEW",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSTREEVIEWS/DataSourceAdv.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "logicName" : " 数据源高级树",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE;LOAD",
+    "logicTag" : "tree",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_tree",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEDataImport" : {
+    "modelref" : true,
+    "id" : "DataImport"
+  },
+  "getPSDETreeNodeRSs" : [ {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "SortFieldNode"
+    },
+    "name" : "排序属性 - 排序属性1",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "SortField"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "MarkField1"
+    },
+    "name" : "标识属性 - 标识属性1",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "MarkField"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "TextField2Node"
+    },
+    "name" : "文本属性2 - 文本属性2数据节点",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "TextField2"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "MarkField"
+    },
+    "name" : "默认根节点 - 标识属性",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "TextField1Node"
+    },
+    "name" : "文本属性1 - 文本属性1数据节点",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "TextField1"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "SortField"
+    },
+    "name" : "默认根节点 - 排序属性",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "TextField1"
+    },
+    "name" : "默认根节点 - 文本属性1",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "TextField2"
+    },
+    "name" : "默认根节点 - 省份数据（以编码为文本显示）",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  } ],
+  "getPSDETreeNodes" : [ {
+    "counterMode" : 0,
+    "getIdPSAppDEField" : {
+      "name" : "CODE",
+      "codeName" : "Code"
+    },
+    "maxSize" : -1,
+    "name" : "标识属性1",
+    "nodeType" : "MarkField1",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "PROVINCENAME",
+      "codeName" : "ProvinceName"
+    },
+    "treeNodeType" : "DE",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "MarkField1"
+  }, {
+    "counterMode" : 0,
+    "getIdPSAppDEField" : {
+      "name" : "PROVINCEID",
+      "codeName" : "ProvinceId"
+    },
+    "maxSize" : -1,
+    "name" : "文本属性1数据节点",
+    "nodeType" : "TextField1Node",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "PROVINCENAME",
+      "codeName" : "ProvinceName"
+    },
+    "treeNodeType" : "DE",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "TextField1Node"
+  }, {
+    "counterMode" : 0,
+    "name" : "省份数据（以编码倒序）",
+    "nodeType" : "SortField",
+    "text" : "省份数据（以编码倒序）",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "SortField"
+  }, {
+    "counterMode" : 0,
+    "getIdPSAppDEField" : {
+      "name" : "PROVINCEID",
+      "codeName" : "ProvinceId"
+    },
+    "maxSize" : -1,
+    "name" : "排序属性节点",
+    "nodeType" : "SortFieldNode",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
+    },
+    "sortDir" : "DESC",
+    "getSortPSAppDEField" : {
+      "name" : "CODE",
+      "codeName" : "Code"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "PROVINCENAME",
+      "codeName" : "ProvinceName"
+    },
+    "treeNodeType" : "DE",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "SortFieldNode"
+  }, {
+    "counterMode" : 0,
+    "name" : "省份数据（以编码为文本显示）",
+    "nodeType" : "TextField2",
+    "text" : "省份数据（以编码为文本显示）",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "TextField2"
+  }, {
+    "counterMode" : 0,
+    "name" : "省份数据（以名称为文本显示）",
+    "nodeType" : "TextField1",
+    "text" : "省份数据（以名称为文本显示）",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "TextField1"
+  }, {
+    "counterMode" : 0,
+    "name" : "默认根节点",
+    "nodeType" : "ROOT",
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : true,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ROOT"
+  }, {
+    "counterMode" : 0,
+    "getIdPSAppDEField" : {
+      "name" : "PROVINCEID",
+      "codeName" : "ProvinceId"
+    },
+    "maxSize" : -1,
+    "name" : "文本属性2数据节点",
+    "nodeType" : "TextField2Node",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "CODE",
+      "codeName" : "Code"
+    },
+    "treeNodeType" : "DE",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "TextField2Node"
+  }, {
+    "counterMode" : 0,
+    "name" : "省份数据（以编码为标识）",
+    "nodeType" : "MarkField",
+    "text" : "省份数据（以编码为标识）",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : false,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "MarkField"
+  } ],
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "treeGridMode" : 0,
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "enableRootSelect" : false,
+  "outputIconDefault" : true,
+  "rootVisible" : false,
+  "modelid" : "0F5912E3-948F-42FC-8571-6A7584A3CEB1",
+  "modeltype" : "PSDETREEVIEW"
+}

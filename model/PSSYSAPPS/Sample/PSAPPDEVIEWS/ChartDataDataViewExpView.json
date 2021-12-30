@@ -1,0 +1,742 @@
+{
+  "accUserMode" : 2,
+  "caption" : "图表实体卡片视图导航视图",
+  "codeName" : "ChartDataDataViewExpView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataDataViewExpView.json",
+  "name" : "ChartDataDataViewExpView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "DataViewExpView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "dataviewexpbar",
+      "name" : "DATAVIEWEXPBAR",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "DataViewExpViewdataviewexpbar",
+    "controlType" : "DATAVIEWEXPBAR",
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "name" : "dataviewexpbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "dataviewexpbar_toolbar_deuiaction1_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "dataviewexpbar_toolbar_deuiaction1"
+      },
+      "getPSViewCtrlName" : "dataviewexpbar_toolbar"
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "dataviewexpbar_toolbar_deuiaction2_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "dataviewexpbar_toolbar_deuiaction2"
+      },
+      "getPSViewCtrlName" : "dataviewexpbar_toolbar"
+    }, {
+      "eventArg" : "deuiaction3",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "dataviewexpbar_toolbar_deuiaction3_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "dataviewexpbar_toolbar_deuiaction3"
+      },
+      "getPSViewCtrlName" : "dataviewexpbar_toolbar"
+    }, {
+      "eventArg" : "deuiaction4",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "dataviewexpbar_toolbar_deuiaction4_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "dataviewexpbar_toolbar_deuiaction4"
+      },
+      "getPSViewCtrlName" : "dataviewexpbar_toolbar"
+    }, {
+      "eventArg" : "deuiaction5",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "dataviewexpbar_toolbar_deuiaction5_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "dataviewexpbar_toolbar_deuiaction5"
+      },
+      "getPSViewCtrlName" : "dataviewexpbar_toolbar"
+    } ],
+    "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:DEFAULT",
+      "realTitle" : "图表编辑视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "dataviewexpbar_toolbar_deuiaction1",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "New"
+      },
+      "xDataControlName" : "dataviewexpbar_dataview"
+    }, {
+      "name" : "dataviewexpbar_toolbar_deuiaction2",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Save"
+      },
+      "xDataControlName" : "dataviewexpbar_dataview"
+    }, {
+      "name" : "dataviewexpbar_toolbar_deuiaction3",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "modelref" : true,
+        "id" : "Count@ChartData"
+      },
+      "uIActionTarget" : "NONE",
+      "xDataControlName" : "dataviewexpbar_dataview"
+    }, {
+      "name" : "dataviewexpbar_toolbar_deuiaction4",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "modelref" : true,
+        "id" : "custom1@ChartData"
+      },
+      "uIActionTarget" : "SINGLEDATA",
+      "xDataControlName" : "dataviewexpbar_dataview"
+    }, {
+      "name" : "dataviewexpbar_toolbar_deuiaction5",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "modelref" : true,
+        "id" : "custom2@ChartData"
+      },
+      "uIActionTarget" : "NONE",
+      "xDataControlName" : "dataviewexpbar_dataview"
+    } ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "dataviewexpbar"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+      "logicTag" : "dataviewexpbar",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_dataviewexpbar",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "DATAVIEWEXPBAR"
+    },
+    "getPSControls" : [ {
+      "codeName" : "DataViewExpViewdataviewexpbar_toolbar",
+      "controlType" : "TOOLBAR",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "测试",
+      "name" : "dataviewexpbar_toolbar",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "dataviewexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "dataviewexpbar_toolbar_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "dataviewexpbar_toolbar_deuiaction1_click"
+        }
+      }, {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "dataviewexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "dataviewexpbar_toolbar_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "dataviewexpbar_toolbar_deuiaction2_click"
+        }
+      }, {
+        "eventArg" : "deuiaction3",
+        "eventNames" : "CLICK",
+        "logicTag" : "dataviewexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "dataviewexpbar_toolbar_deuiaction3_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "dataviewexpbar_toolbar_deuiaction3_click"
+        }
+      }, {
+        "eventArg" : "deuiaction4",
+        "eventNames" : "CLICK",
+        "logicTag" : "dataviewexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "dataviewexpbar_toolbar_deuiaction4_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "dataviewexpbar_toolbar_deuiaction4_click"
+        }
+      }, {
+        "eventArg" : "deuiaction5",
+        "eventNames" : "CLICK",
+        "logicTag" : "dataviewexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "dataviewexpbar_toolbar_deuiaction5_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "dataviewexpbar_toolbar_deuiaction5_click"
+        }
+      } ],
+      "getPSControlParam" : {
+        "id" : "dataviewexpbar_toolbar"
+      },
+      "getPSDEToolbarItems" : [ {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.NEW"
+        },
+        "caption" : "新建",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction1",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "dataviewexpbar_toolbar_deuiaction1"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.NEW"
+          },
+          "caption" : "新建",
+          "codeName" : "New",
+          "fullCodeName" : "New",
+          "name" : "表格界面_新建操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0f6@FontAwesome",
+            "cssClass" : "fa fa-file-text-o"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.NEW"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "New",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "新建",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.NEW"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.SAVE"
+        },
+        "caption" : "保存",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction2",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "dataviewexpbar_toolbar_deuiaction2"
+        },
+        "getPSSysImage" : {
+          "imagePath" : "/assets/images/test.png"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.SAVE"
+          },
+          "caption" : "保存",
+          "codeName" : "Save",
+          "fullCodeName" : "Save",
+          "name" : "编辑界面_保存操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0c7@FontAwesome",
+            "cssClass" : "fa fa-save"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Save",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "保存",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "计数器",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction3",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "dataviewexpbar_toolbar_deuiaction3"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "NONE",
+          "caption" : "计数器",
+          "codeName" : "Count",
+          "counterId" : "countertag",
+          "frontProcessType" : "OTHER",
+          "fullCodeName" : "ChartData_Count",
+          "name" : "计数器",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "getPSSysPFPlugin" : {
+            "pluginType" : "DEUIACTION",
+            "pluginCode" : "actionPluginTest"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "Count",
+          "uIActionType" : "DEUIACTION",
+          "id" : "Count@ChartData"
+        },
+        "tooltip" : "计数器",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "测试1",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction4",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "dataviewexpbar_toolbar_deuiaction4"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEDATA",
+          "caption" : "界面行为测试1",
+          "codeName" : "custom1",
+          "dialogResult" : "OK",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+            "viewType" : "DEMOBMDVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "ChartData_custom1",
+          "htmlPageUrl" : "https://www.baidu.com/",
+          "name" : "界面行为测试1",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "custom1",
+          "uIActionType" : "DEUIACTION",
+          "closeEditView" : true,
+          "closePopupView" : true,
+          "reloadData" : true,
+          "id" : "custom1@ChartData"
+        },
+        "tooltip" : "测试1",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "测试2",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction5",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "dataviewexpbar_toolbar_deuiaction5"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "NONE",
+          "caption" : "界面行为测试2",
+          "codeName" : "custom2",
+          "confirmMsg" : "1354652",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+            "viewType" : "DEMOBMDVIEW"
+          },
+          "fullCodeName" : "ChartData_custom2",
+          "name" : "界面行为测试2",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "GetRandom"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "successMsg" : "35+62654",
+          "timeout" : 60000,
+          "uIActionMode" : "BACKEND",
+          "uIActionTag" : "custom2",
+          "uIActionType" : "DEUIACTION",
+          "enableConfirm" : true,
+          "id" : "custom2@ChartData"
+        },
+        "tooltip" : "测试2",
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "1E98CD1B-5069-4A8D-A534-DD302C04AD09",
+      "modeltype" : "PSDETOOLBAR"
+    }, {
+      "codeName" : "CardView",
+      "controlType" : "DATAVIEW",
+      "getCreatePSControlAction" : {
+        "modelref" : true,
+        "id" : "create"
+      },
+      "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSDATAVIEWS/CardView.json",
+      "getFetchPSControlAction" : {
+        "modelref" : true,
+        "id" : "fetch"
+      },
+      "getGetPSControlAction" : {
+        "modelref" : true,
+        "id" : "load"
+      },
+      "groupMode" : "NONE",
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+      "logicName" : "卡片视图",
+      "minorSortDir" : "DESC",
+      "getMinorSortPSAppDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "getNavPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+        "viewType" : "DEEDITVIEW"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSControlHandler" : {
+        "getPSHandlerActions" : [ {
+          "actionName" : "Update",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "UPDATE",
+          "name" : "update",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          }
+        }, {
+          "actionType" : "DEDATASET",
+          "name" : "fetch",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "FetchDefault"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          }
+        }, {
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "DELETE",
+          "name" : "remove",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          }
+        }, {
+          "actionName" : "Get",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "READ",
+          "name" : "load",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          }
+        }, {
+          "actionName" : "Create",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "CREATE",
+          "name" : "create",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          }
+        } ],
+        "userDRAction" : "READ",
+        "enableDEFieldPrivilege" : false,
+        "id" : "数据视图处理器"
+      },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SELECTIONCHANGE",
+        "logicTag" : "dataviewexpbar_dataview",
+        "logicType" : "CUSTOM",
+        "name" : "dataviewexpbar_selectionchange"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "dataviewexpbar_dataview",
+        "logicType" : "CUSTOM",
+        "name" : "dataviewexpbar_load"
+      } ],
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "dataviewexpbar_dataview"
+      },
+      "getPSDEDataViewDataItems" : [ {
+        "dataType" : 5,
+        "format" : "YYYY-MM-DD HH:mm:ss",
+        "name" : "endtime",
+        "getPSAppDEField" : {
+          "name" : "ENDTIME",
+          "codeName" : "EndTime"
+        }
+      }, {
+        "dataType" : 25,
+        "name" : "chartdata",
+        "getPSAppDEField" : {
+          "name" : "CHARTDATAID",
+          "codeName" : "ChartDataId"
+        }
+      }, {
+        "dataType" : 5,
+        "format" : "YYYY-MM-DD HH:mm:ss",
+        "name" : "begintime",
+        "getPSAppDEField" : {
+          "name" : "BEGINTIME",
+          "codeName" : "BeginTime"
+        }
+      }, {
+        "dataType" : 6,
+        "name" : "data",
+        "getPSAppDEField" : {
+          "name" : "DATA",
+          "codeName" : "Data"
+        }
+      }, {
+        "dataType" : 25,
+        "getFrontPSCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+        },
+        "name" : "createman",
+        "getPSAppDEField" : {
+          "name" : "CREATEMAN",
+          "codeName" : "CreateMan"
+        }
+      }, {
+        "dataType" : 25,
+        "name" : "srfmajortext",
+        "getPSAppDEField" : {
+          "name" : "CHARTDATANAME",
+          "codeName" : "ChartDataName"
+        }
+      }, {
+        "dataType" : 25,
+        "name" : "srfkey",
+        "getPSAppDEField" : {
+          "name" : "CHARTDATAID",
+          "codeName" : "ChartDataId"
+        }
+      } ],
+      "getPSDEDataViewItems" : [ {
+        "dataItemName" : "chartdata",
+        "itemType" : "DATAITEM",
+        "name" : "chartdata",
+        "enableSort" : false
+      }, {
+        "caption" : "开始时间",
+        "dataItemName" : "begintime",
+        "itemType" : "DATAITEM",
+        "name" : "BEGINTIME",
+        "getPSAppDEField" : {
+          "name" : "BEGINTIME",
+          "codeName" : "BeginTime"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "enableSort" : true
+      }, {
+        "cLConvertMode" : "FRONT",
+        "caption" : "建立人",
+        "dataItemName" : "createman",
+        "itemType" : "DATAITEM",
+        "name" : "CREATEMAN",
+        "getPSAppDEField" : {
+          "name" : "CREATEMAN",
+          "codeName" : "CreateMan"
+        },
+        "getPSCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+        },
+        "enableSort" : true
+      }, {
+        "caption" : "数据",
+        "dataItemName" : "data",
+        "itemType" : "DATAITEM",
+        "name" : "DATA",
+        "getPSAppDEField" : {
+          "name" : "DATA",
+          "codeName" : "Data"
+        },
+        "enableSort" : true
+      }, {
+        "caption" : "结束时间",
+        "dataItemName" : "endtime",
+        "itemType" : "DATAITEM",
+        "name" : "ENDTIME",
+        "getPSAppDEField" : {
+          "name" : "ENDTIME",
+          "codeName" : "EndTime"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "enableSort" : true
+      } ],
+      "pagingSize" : 20,
+      "getRemovePSControlAction" : {
+        "modelref" : true,
+        "id" : "remove"
+      },
+      "getUpdatePSControlAction" : {
+        "modelref" : true,
+        "id" : "update"
+      },
+      "hasWFDataItems" : false,
+      "appendDEItems" : false,
+      "enableCardEdit" : false,
+      "enableCardEditGroup" : false,
+      "enableCardEditOrder" : false,
+      "enableCardNew" : false,
+      "enableGroup" : false,
+      "enablePagingBar" : true,
+      "noSort" : false,
+      "singleSelect" : false,
+      "name" : "dataviewexpbar_dataview",
+      "modelid" : "54305440-0782-4667-937E-BE6A374E7258",
+      "modeltype" : "PSDEDATAVIEW"
+    } ],
+    "title" : "卡片导航",
+    "xDataControlName" : "dataviewexpbar_dataview",
+    "enableCounter" : true,
+    "enableSearch" : true,
+    "showTitleBar" : true,
+    "modelid" : "51b094f06e0b41a78da5e89e13b08239_dataviewexpbar",
+    "modeltype" : "PSEXPBAR"
+  } ],
+  "getPSDEViewCodeName" : "DataViewExpView",
+  "getPSDEViewId" : "E873DE93-5199-48D9-89D6-4B24B3C8D935",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEDATAVIEWEXPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "sideBarLayout" : "LEFT",
+  "title" : "图表卡片视图导航视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEDATAVIEWEXPVIEW",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "showDataInfoBar" : true,
+  "modelid" : "51b094f06e0b41a78da5e89e13b08239",
+  "modeltype" : "PSAPPDEVIEW"
+}

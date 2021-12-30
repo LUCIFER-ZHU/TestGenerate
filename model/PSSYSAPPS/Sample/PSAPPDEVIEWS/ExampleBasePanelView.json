@@ -1,0 +1,377 @@
+{
+  "accUserMode" : 2,
+  "caption" : "面板常规",
+  "codeName" : "ExampleBasePanelView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleBasePanelView.json",
+  "name" : "ExampleBasePanelView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSControls" : [ {
+    "codeName" : "PanelBase",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSPANELS/PanelBase.json",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "面板常规",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "panel_button1_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "panel_button1"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "panel_button1",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        },
+        "modelref" : true,
+        "id" : "openHtml@Example"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "panel"
+    } ],
+    "getPSControlParam" : {
+      "id" : "PANEL"
+    },
+    "getPSControls" : [ {
+      "codeName" : "BasePanelViewcontrol1",
+      "controlType" : "VIEWPANEL",
+      "getEmbeddedPSAppDEView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExamplePanelHtmlView.json",
+        "viewType" : "DEHTMLVIEW"
+      },
+      "height" : 300.0,
+      "name" : "control1",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "getPSControlParam" : {
+        "height" : 300.0
+      }
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "TABPANEL",
+      "name" : "tabpanel1",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelTabPages" : [ {
+        "caption" : "分页1",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "TABPAGE",
+        "name" : "tabpage1",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSPanelItems" : [ {
+          "contentType" : "RAW",
+          "itemStyle" : "DEFAULT",
+          "itemType" : "RAWITEM",
+          "name" : "rawitem4",
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysCss" : {
+            "cssName" : "el-alert el-alert--info is-light"
+          },
+          "rawContent" : "面板常规"
+        }, {
+          "contentType" : "RAW",
+          "itemStyle" : "DEFAULT",
+          "itemType" : "RAWITEM",
+          "name" : "rawitem1",
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysCss" : {
+            "cssName" : "el-alert el-alert--info is-light"
+          },
+          "rawContent" : "显示标题的面板分组"
+        }, {
+          "caption" : "面板分组",
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CONTAINER",
+          "name" : "container1",
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "showCaption" : true
+        }, {
+          "contentType" : "RAW",
+          "itemStyle" : "DEFAULT",
+          "itemType" : "RAWITEM",
+          "name" : "rawitem2",
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysCss" : {
+            "cssName" : "el-alert el-alert--info is-light"
+          },
+          "rawContent" : "无标题的面板分组"
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CONTAINER",
+          "name" : "container2",
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          }
+        }, {
+          "contentType" : "RAW",
+          "itemStyle" : "DEFAULT",
+          "itemType" : "RAWITEM",
+          "name" : "rawitem3",
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysCss" : {
+            "cssName" : "el-alert el-alert--info is-light"
+          },
+          "rawContent" : "两列均分的面板分组"
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CONTAINER",
+          "name" : "container3",
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSPanelItems" : [ {
+            "itemStyle" : "DEFAULT",
+            "itemType" : "CONTAINER",
+            "name" : "container4",
+            "getPSLayout" : {
+              "columnCount" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSLayoutPos" : {
+              "colLG" : 12,
+              "colMD" : 12,
+              "colSM" : 12,
+              "colXS" : 12,
+              "layout" : "TABLE_24COL"
+            }
+          }, {
+            "itemStyle" : "DEFAULT",
+            "itemType" : "CONTAINER",
+            "name" : "container5",
+            "getPSLayout" : {
+              "columnCount" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSLayoutPos" : {
+              "colLG" : 12,
+              "colMD" : 12,
+              "colSM" : 12,
+              "colXS" : 12,
+              "layout" : "TABLE_24COL"
+            }
+          } ]
+        }, {
+          "contentType" : "RAW",
+          "itemStyle" : "DEFAULT",
+          "itemType" : "RAWITEM",
+          "name" : "rawitem6",
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysCss" : {
+            "cssName" : "el-alert el-alert--info is-light"
+          },
+          "rawContent" : "界面行为"
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CONTAINER",
+          "name" : "container6",
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSPanelItems" : [ {
+            "actionType" : "UIACTION",
+            "caption" : "前台界面行为（打开HTML页面）",
+            "itemStyle" : "DEFAULT",
+            "itemType" : "BUTTON",
+            "name" : "button1",
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "panel_button1"
+            },
+            "getPSLayoutPos" : {
+              "colLG" : 6,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSUIAction" : {
+              "actionTarget" : "SINGLEKEY",
+              "caption" : "前台界面行为（打开HTML页面）",
+              "codeName" : "openHtml",
+              "frontProcessType" : "OPENHTMLPAGE",
+              "fullCodeName" : "Example_openHtml",
+              "htmlPageUrl" : "https://www.baidu.com/s?wd=${data.wd}&rsv_spt=1",
+              "name" : "前台界面行为（打开HTML页面）",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+              },
+              "getPSNavigateParams" : [ {
+                "key" : "wd",
+                "name" : "wd",
+                "value" : "wd",
+                "rawValue" : false
+              } ],
+              "timeout" : 60000,
+              "uIActionMode" : "FRONT",
+              "uIActionTag" : "openHtml",
+              "uIActionType" : "DEUIACTION",
+              "id" : "openHtml@Example"
+            },
+            "tooltip" : "前台界面行为（打开HTML页面）",
+            "showCaption" : true
+          } ]
+        }, {
+          "contentType" : "RAW",
+          "itemStyle" : "DEFAULT",
+          "itemType" : "RAWITEM",
+          "name" : "rawitem5",
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysCss" : {
+            "cssName" : "el-alert el-alert--info is-light"
+          },
+          "rawContent" : "嵌入HTML页面（百度一下）"
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CONTAINER",
+          "name" : "container9",
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSPanelItems" : [ {
+            "contentHeight" : 300.0,
+            "height" : 300.0,
+            "itemStyle" : "DEFAULT",
+            "itemType" : "CONTROL",
+            "name" : "control1",
+            "getPSControl" : {
+              "codeName" : "BasePanelViewcontrol1",
+              "controlType" : "VIEWPANEL",
+              "getEmbeddedPSAppDEView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExamplePanelHtmlView.json",
+                "viewType" : "DEHTMLVIEW"
+              },
+              "height" : 300.0,
+              "name" : "control1",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+              },
+              "getPSControlParam" : {
+                "height" : 300.0
+              }
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "height" : 300,
+              "layout" : "TABLE_24COL"
+            }
+          } ]
+        } ],
+        "showCaption" : true
+      }, {
+        "caption" : "分页2",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "TABPAGE",
+        "name" : "tabpage2",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "showCaption" : true
+      } ]
+    } ],
+    "name" : "panel",
+    "modelid" : "447AEA54-B401-449D-94F8-4DC69DB6EA9F",
+    "modeltype" : "PSSYSVIEWPANEL"
+  } ],
+  "getPSDEViewCodeName" : "BasePanelView",
+  "getPSDEViewId" : "2999BFA7-5800-413C-9579-DCEABEBF3F0D",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEPANELVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "示例面板视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEPANELVIEW",
+  "enableDP" : true,
+  "showCaptionBar" : false,
+  "modelid" : "cc3b43e893e94eb3db1d2df189225598",
+  "modeltype" : "PSAPPDEVIEW"
+}

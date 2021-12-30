@@ -1,0 +1,21 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "SCRIPT",
+  "codeName" : "ClickBackspace",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickBackspace.json",
+  "logicName" : "ClickBackspace",
+  "name" : "ClickBackspace",
+  "getPSDEActionInput" : {
+    "name" : "ClickBackspaceInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CalculatorDTO"
+    },
+    "type" : "DTO"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "ClickBackspaceResult",
+    "type" : "VOID"
+  },
+  "scriptCode" : "if(data.input){\n  data.input=data.input.substring(0,data.input.length-1);\n}\nif(data.expression){\n  data.expression=data.expression.substring(0,data.expression.length-1);\n}\n"
+}

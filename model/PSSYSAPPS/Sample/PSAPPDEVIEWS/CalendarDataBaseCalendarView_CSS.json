@@ -1,0 +1,122 @@
+{
+  "accUserMode" : 2,
+  "caption" : "常规",
+  "codeName" : "CalendarDataBaseCalendarView_CSS",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CalendarDataBaseCalendarView_CSS.json",
+  "mDCtrlActiveMode" : 2,
+  "name" : "CalendarDataBaseCalendarView_CSS",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSControls" : [ {
+    "calendarStyle" : "MONTH",
+    "codeName" : "Calendar",
+    "controlType" : "CALENDAR",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData/PSCALENDARS/Calendar.json",
+    "groupMode" : "NONE",
+    "legendPos" : "NONE",
+    "logicName" : "日历部件（日历示例数据）",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+    },
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "calendar"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CALENDAR"
+    },
+    "getPSSysCalendarItems" : [ {
+      "getBeginTimePSAppDEField" : {
+        "name" : "BEGINTIME",
+        "codeName" : "BeginTime"
+      },
+      "getEndTimePSAppDEField" : {
+        "name" : "ENDTIME",
+        "codeName" : "EndTime"
+      },
+      "getIdPSAppDEField" : {
+        "name" : "CALENDARDATAID",
+        "codeName" : "CalendarDataId"
+      },
+      "itemStyle" : "DEFAULT",
+      "itemType" : "calendardata",
+      "maxSize" : -1,
+      "name" : "日历示例数据",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+      },
+      "getTextPSAppDEField" : {
+        "name" : "CALENDARDATANAME",
+        "codeName" : "CalendarDataName"
+      },
+      "enableQuickCreate" : false,
+      "id" : "calendardata"
+    } ],
+    "getPSSysCss" : {
+      "cssName" : "calendar-css"
+    },
+    "enableGroup" : false,
+    "name" : "calendar",
+    "modelid" : "C905125F-5787-4553-A6A8-9194724131E7",
+    "modeltype" : "PSSYSCALENDAR"
+  } ],
+  "getPSDEViewCodeName" : "BaseCalendarView_CSS",
+  "getPSDEViewId" : "97D69DB9-83EC-40F2-8D28-D7FE0936DC84",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDECALENDARVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "日历示例数据日历视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DECALENDARVIEW",
+  "xDataControlName" : "calendar",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "showCaptionBar" : false,
+  "modelid" : "165eea90d3304dbeadf9114e8c417928",
+  "modeltype" : "PSAPPDEVIEW"
+}

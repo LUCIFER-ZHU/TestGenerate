@@ -1,0 +1,55 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`CUSTOMERID`",
+    "name" : "CUSTOMERID"
+  }, {
+    "expression" : "t11.`CUSTOMERNAME`",
+    "name" : "CUSTOMERNAME"
+  }, {
+    "expression" : "t1.`DEPTID`",
+    "name" : "DEPTID"
+  }, {
+    "expression" : "t1.`EXTDATA2`",
+    "name" : "EXTDATA2"
+  }, {
+    "expression" : "t1.`EXT_DATA`",
+    "name" : "EXT_DATA"
+  }, {
+    "expression" : "t1.`EXT_PARAM`",
+    "name" : "EXT_PARAM"
+  }, {
+    "expression" : "t1.`EXT_PARAM2`",
+    "name" : "EXT_PARAM2"
+  }, {
+    "expression" : "t1.`LEAVEAPPLICATIONID`",
+    "name" : "LEAVEAPPLICATIONID"
+  }, {
+    "expression" : "t1.`LEAVEAPPLICATIONNAME`",
+    "name" : "LEAVEAPPLICATIONNAME"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`STATE`",
+    "name" : "STATE"
+  }, {
+    "expression" : "t1.`STEP`",
+    "name" : "STEP"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`CUSTOMERID`,\nt11.`CUSTOMERNAME`,\nt1.`DEPTID`,\nt1.`EXTDATA2`,\nt1.`EXT_DATA`,\nt1.`EXT_PARAM`,\nt1.`EXT_PARAM2`,\nt1.`LEAVEAPPLICATIONID`,\nt1.`LEAVEAPPLICATIONNAME`,\nt1.`ORGID`,\nt1.`STATE`,\nt1.`STEP`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_LEAVEAPPLICATION` t1 \nLEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID` \n",
+  "id" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

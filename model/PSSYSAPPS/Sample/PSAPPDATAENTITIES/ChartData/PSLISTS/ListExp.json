@@ -1,0 +1,74 @@
+{
+  "codeName" : "ListExp",
+  "controlType" : "LIST",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSLISTS/ListExp.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "logicName" : "ListExp",
+  "getNavPSAppView" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+    "viewType" : "DEEDITVIEW"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "listexpbar_list",
+    "logicType" : "CUSTOM",
+    "name" : "listexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "listexpbar_list",
+    "logicType" : "CUSTOM",
+    "name" : "listexpbar_load"
+  } ],
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    }
+  } ],
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
+  "modelid" : "085E3502-E08E-4B9E-838E-8C7693C11290",
+  "modeltype" : "PSDELIST"
+}

@@ -1,0 +1,225 @@
+{
+  "accUserMode" : 2,
+  "caption" : "订单",
+  "codeName" : "OrderReportView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderReportView.json",
+  "name" : "OrderReportView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+  },
+  "getPSControls" : [ {
+    "codeName" : "Default",
+    "controlType" : "SEARCHFORM",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSSEARCHFORMS/Default.json",
+    "logicName" : "默认搜索表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionType" : "FILTERACTION",
+        "name" : "search",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "getPSDEFormItems" : [ {
+      "id" : "n_state_eq",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "STATE",
+        "codeName" : "State"
+      }
+    }, {
+      "id" : "n_ordername_like",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "ORDERNAME",
+        "codeName" : "OrderName"
+      }
+    } ],
+    "getPSDEFormPages" : [ {
+      "caption" : "常规条件",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "订单状态(等于(=))",
+        "codeName" : "n_state_eq",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "n_state_eq",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "STATE",
+          "codeName" : "State"
+        },
+        "getPSEditor" : {
+          "editorType" : "DROPDOWNLIST",
+          "name" : "n_state_eq",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OrderState.json"
+          },
+          "singleSelect" : true
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 8,
+          "colSM" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "needCodeListConfig" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "订单名称(文本包含(%))",
+        "codeName" : "n_ordername_like",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "n_ordername_like",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ORDERNAME",
+          "codeName" : "OrderName"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "n_ordername_like"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 8,
+          "colSM" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "searchButtonStyle" : "DEFAULT",
+    "tabHeaderPos" : "TOP",
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "enableFilterSave" : false,
+    "noTabHeader" : true,
+    "name" : "searchform",
+    "modelid" : "7210bd856c534ffc0abc5a12493c518d",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
+    "codeName" : "Report",
+    "controlType" : "REPORTPANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSREPORTPANELS/Report.json",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
+    "getPSControlParam" : {
+      "id" : "REPORTPANEL"
+    },
+    "name" : "reportpanel"
+  } ],
+  "getPSDEViewCodeName" : "ReportView",
+  "getPSDEViewId" : "F6D294B0-A8A4-4672-B06F-865323AE8787",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEREPORTVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "订单报表视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEREPORTVIEW",
+  "enableDP" : true,
+  "enableQuickGroup" : false,
+  "enableQuickSearch" : false,
+  "enableSearch" : true,
+  "expandSearchForm" : true,
+  "loadDefault" : true,
+  "modelid" : "b99e8bf2ca81fdc5c388c0eccbf890cc",
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Orders",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
+    "name" : "客户-订单",
+    "getParentPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "rSMode" : 2
+  } ] ]
+}

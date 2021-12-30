@@ -1,0 +1,51 @@
+{
+  "calendarStyle" : "MONTH",
+  "codeName" : "Calendar",
+  "controlType" : "CALENDAR",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData/PSCALENDARS/Calendar.json",
+  "groupMode" : "NONE",
+  "legendPos" : "NONE",
+  "logicName" : "日历部件（日历示例数据）",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+  },
+  "getPSSysCalendarItems" : [ {
+    "getBeginTimePSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    },
+    "getEndTimePSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    },
+    "getIdPSAppDEField" : {
+      "name" : "CALENDARDATAID",
+      "codeName" : "CalendarDataId"
+    },
+    "itemStyle" : "DEFAULT",
+    "itemType" : "calendardata",
+    "maxSize" : -1,
+    "name" : "日历示例数据",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "CALENDARDATANAME",
+      "codeName" : "CalendarDataName"
+    },
+    "enableQuickCreate" : false,
+    "id" : "calendardata"
+  } ],
+  "getPSSysCss" : {
+    "cssName" : "calendar-css"
+  },
+  "enableGroup" : false,
+  "modelid" : "C905125F-5787-4553-A6A8-9194724131E7",
+  "modeltype" : "PSSYSCALENDAR"
+}

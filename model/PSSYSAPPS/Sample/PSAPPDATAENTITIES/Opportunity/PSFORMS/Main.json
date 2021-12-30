@@ -1,0 +1,784 @@
+{
+  "codeName" : "Main",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity/PSFORMS/Main.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "主编辑表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "customername_editor_u016ca55_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "自动填充-新建"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "自动填充-新建",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+      },
+      "modelref" : true,
+      "id" : "ACCreate@Customer"
+    },
+    "uIActionTarget" : "NONE"
+  } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "OPPORTUNITYID",
+      "codeName" : "OpportunityId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "OPPORTUNITYNAME",
+      "codeName" : "OpportunityName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "opportunityname",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "OPPORTUNITYNAME",
+      "codeName" : "OpportunityName"
+    }
+  }, {
+    "id" : "customername",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    }
+  }, {
+    "id" : "exprevenue",
+    "dataType" : 7,
+    "getPSAppDEField" : {
+      "name" : "EXPREVENUE",
+      "codeName" : "Exprevenue"
+    }
+  }, {
+    "id" : "expendtime",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "EXPENDTIME",
+      "codeName" : "Expendtime"
+    }
+  }, {
+    "id" : "priority",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PRIORITY",
+      "codeName" : "Priority"
+    }
+  }, {
+    "id" : "state",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "STATE",
+      "codeName" : "State"
+    }
+  }, {
+    "id" : "persondataname",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PERSONDATANAME",
+      "codeName" : "PersonDataName"
+    }
+  }, {
+    "id" : "phone",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PHONE",
+      "codeName" : "Phone"
+    }
+  }, {
+    "id" : "email",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EMAIL",
+      "codeName" : "Email"
+    }
+  }, {
+    "id" : "createman",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CREATEMAN",
+      "codeName" : "CreateMan"
+    }
+  }, {
+    "id" : "createdate",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "CREATEDATE",
+      "codeName" : "CreateDate"
+    }
+  }, {
+    "id" : "updateman",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }
+  }, {
+    "id" : "updatedate",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "persondataid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PERSONDATAID",
+      "codeName" : "PersonDataId"
+    }
+  }, {
+    "id" : "customerid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    }
+  }, {
+    "id" : "opportunityid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "OPPORTUNITYID",
+      "codeName" : "OpportunityId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "商机基本信息",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "商机名称",
+        "codeName" : "opportunityname",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "opportunityname",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "OPPORTUNITYNAME",
+          "codeName" : "OpportunityName"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 200,
+          "name" : "opportunityname"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 24,
+          "colMD" : 24,
+          "colSM" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "客户名称",
+        "codeName" : "customername",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "customername",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CUSTOMERNAME",
+          "codeName" : "CustomerName"
+        },
+        "getPSEditor" : {
+          "editorParams" : {
+            "AC" : "TRUE",
+            "PICKUPVIEW" : "TRUE"
+          },
+          "editorType" : "PICKER",
+          "handlerType" : "PickupText",
+          "name" : "customername",
+          "getPSAppDEACMode" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "getPSAppDEDataSet" : {
+            "modelref" : true,
+            "id" : "FetchDefault"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+          },
+          "getPSUIActionGroup" : {
+            "codeName" : "Auto1",
+            "name" : "自动填充",
+            "getPSUIActionGroupDetails" : [ {
+              "detailType" : "DEUIACTION",
+              "name" : "u016ca55",
+              "getPSUIAction" : {
+                "actionTarget" : "NONE",
+                "caption" : "新建",
+                "codeName" : "ACCreate",
+                "getFrontPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                  "viewType" : "DEOPTVIEW"
+                },
+                "frontProcessType" : "WIZARD",
+                "fullCodeName" : "Customer_ACCreate",
+                "name" : "自动填充-新建",
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+                },
+                "getPSSysImage" : {
+                  "glyph" : "xf044@FontAwesome",
+                  "cssClass" : "fa fa-edit"
+                },
+                "timeout" : 60000,
+                "uIActionMode" : "FRONT",
+                "uIActionTag" : "ACCreate",
+                "uIActionType" : "DEUIACTION",
+                "id" : "ACCreate@Customer"
+              },
+              "addSeparator" : false,
+              "showCaption" : true,
+              "showIcon" : true
+            } ]
+          },
+          "getPickupPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupView.json",
+            "viewType" : "DEPICKUPVIEW"
+          },
+          "valueItemName" : "customerid",
+          "enableAC" : true,
+          "enablePickupView" : true,
+          "forceSelection" : true,
+          "showTrigger" : true,
+          "singleSelect" : true
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 24,
+          "colMD" : 24,
+          "colSM" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueItemName" : "customerid",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "预期收益",
+        "codeName" : "exprevenue",
+        "dataType" : 7,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "exprevenue",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "EXPREVENUE",
+          "codeName" : "Exprevenue"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "exprevenue"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 8,
+          "colSM" : 8,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "预计结束时间",
+        "codeName" : "expendtime",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "itemWidth" : 290.0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "expendtime",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "EXPENDTIME",
+          "codeName" : "Expendtime"
+        },
+        "getPSEditor" : {
+          "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+          "editorParams" : {
+            "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+          },
+          "editorType" : "DATEPICKER",
+          "editorWidth" : 160.0,
+          "name" : "expendtime"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 8,
+          "colSM" : 8,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "优先级",
+        "codeName" : "priority",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "priority",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PRIORITY",
+          "codeName" : "Priority"
+        },
+        "getPSEditor" : {
+          "editorType" : "DROPDOWNLIST",
+          "name" : "priority",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/Priority.json"
+          },
+          "singleSelect" : true
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 8,
+          "colSM" : 8,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "needCodeListConfig" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "商机状态",
+        "codeName" : "state",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "state",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "STATE",
+          "codeName" : "State"
+        },
+        "getPSEditor" : {
+          "editorType" : "DROPDOWNLIST",
+          "name" : "state",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OpportunityState.json"
+          },
+          "singleSelect" : true
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 8,
+          "colSM" : 8,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "needCodeListConfig" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "销售员",
+        "codeName" : "persondataname",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "persondataname",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PERSONDATANAME",
+          "codeName" : "PersonDataName"
+        },
+        "getPSEditor" : {
+          "editorParams" : {
+            "AC" : "TRUE",
+            "PICKUPVIEW" : "TRUE"
+          },
+          "editorType" : "PICKER",
+          "handlerType" : "PickupText",
+          "name" : "persondataname",
+          "getPSAppDEACMode" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "getPSAppDEDataSet" : {
+            "modelref" : true,
+            "id" : "FetchDefault"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+          },
+          "getPickupPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/PersonDataPickupView.json",
+            "viewType" : "DEPICKUPVIEW"
+          },
+          "valueItemName" : "persondataid",
+          "enableAC" : true,
+          "enablePickupView" : true,
+          "forceSelection" : true,
+          "showTrigger" : true,
+          "singleSelect" : true
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 8,
+          "colSM" : 8,
+          "layout" : "TABLE_24COL"
+        },
+        "valueItemName" : "persondataid",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "电话",
+        "codeName" : "phone",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "phone",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PHONE",
+          "codeName" : "Phone"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 100,
+          "name" : "phone"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 8,
+          "colSM" : 8,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "电子邮件",
+        "codeName" : "email",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "email",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "EMAIL",
+          "codeName" : "Email"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 100,
+          "name" : "email"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 24,
+          "colMD" : 24,
+          "colSM" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  }, {
+    "caption" : "其它",
+    "codeName" : "formpage2",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage2",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "操作信息",
+      "codeName" : "group2",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group2",
+      "getPSDEFormDetails" : [ {
+        "caption" : "建立人",
+        "codeName" : "createman",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "createman",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CREATEMAN",
+          "codeName" : "CreateMan"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "createman",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+          },
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "convertToCodeItemText" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "建立时间",
+        "codeName" : "createdate",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "createdate",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CREATEDATE",
+          "codeName" : "CreateDate"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "createdate",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "更新人",
+        "codeName" : "updateman",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "updateman",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "UPDATEMAN",
+          "codeName" : "UpdateMan"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "updateman",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+          },
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "convertToCodeItemText" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "更新时间",
+        "codeName" : "updatedate",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "updatedate",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "UPDATEDATE",
+          "codeName" : "UpdateDate"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "updatedate",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : false,
+  "modelid" : "11d43da907ff42d6ba107677a5731955",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

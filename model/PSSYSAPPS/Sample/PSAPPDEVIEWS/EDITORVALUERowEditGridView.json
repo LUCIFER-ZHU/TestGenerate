@@ -1,0 +1,2077 @@
+{
+  "accUserMode" : 2,
+  "caption" : "编辑器值",
+  "codeName" : "EDITORVALUERowEditGridView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/EDITORVALUERowEditGridView.json",
+  "gridRowActiveMode" : 0,
+  "name" : "EDITORVALUERowEditGridView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "GridView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "appViewLogicName" : "opendata",
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "appViewLogicName" : "newdata",
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "ctrlName" : "grid",
+      "name" : "GRID",
+      "paramType" : "CTRL"
+    }, {
+      "ctrlName" : "searchform",
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction1"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "eventArg" : "deuiaction2",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction2_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction2"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "eventArg" : "deuiaction3",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction3_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction3"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "eventArg" : "deuiaction4",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction4_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction4"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "getNewDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/EDITORVALUEEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/EDITORVALUEEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/EDITORVALUEEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/EDITORVALUEEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA",
+    "realTitle" : "编辑器值编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/EDITORVALUEEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA",
+    "realTitle" : "编辑器值编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/EDITORVALUEEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "toolbar_deuiaction1",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "ToggleRowEdit"
+    },
+    "xDataControlName" : "grid"
+  }, {
+    "name" : "toolbar_deuiaction2",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "NewRow"
+    },
+    "xDataControlName" : "grid"
+  }, {
+    "name" : "toolbar_deuiaction3",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "SaveRow"
+    },
+    "xDataControlName" : "grid"
+  }, {
+    "name" : "toolbar_deuiaction4",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "uIActionTarget" : "MULTIKEY",
+    "xDataControlName" : "grid"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "RowEditGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "工具栏模板（行编辑表格界面）",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    }, {
+      "eventArg" : "deuiaction3",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction3_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_click"
+      }
+    }, {
+      "eventArg" : "deuiaction4",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction4_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "行编辑",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0ce@FontAwesome",
+        "cssClass" : "fa fa-table"
+      },
+      "getPSUIAction" : {
+        "caption" : "行编辑",
+        "codeName" : "ToggleRowEdit",
+        "fullCodeName" : "ToggleRowEdit",
+        "name" : "表格界面_行编辑开关操作",
+        "getPSSysImage" : {
+          "glyph" : "xf0ce@FontAwesome",
+          "cssClass" : "fa fa-table"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ToggleRowEdit",
+        "uIActionType" : "DEUIACTION",
+        "enableToggleMode" : true
+      },
+      "tooltip" : "行编辑",
+      "enableToggleMode" : true,
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "新建行",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "getPSUIAction" : {
+        "caption" : "新建行",
+        "codeName" : "NewRow",
+        "fullCodeName" : "NewRow",
+        "name" : "表格界面_新建行",
+        "getPSSysImage" : {
+          "glyph" : "xf067@FontAwesome",
+          "cssClass" : "fa fa-plus"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "NewRow",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "新建行",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "保存行",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction3",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0c7@FontAwesome",
+        "cssClass" : "fa fa-save"
+      },
+      "getPSUIAction" : {
+        "caption" : "保存行",
+        "codeName" : "SaveRow",
+        "fullCodeName" : "SaveRow",
+        "name" : "表格界面_保存行",
+        "getPSSysImage" : {
+          "glyph" : "xf0c7@FontAwesome",
+          "cssClass" : "fa fa-save"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "SaveRow",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "保存行",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.REMOVE"
+      },
+      "caption" : "删除行",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction4",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf00d@FontAwesome",
+        "cssClass" : "fa fa-remove"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "MULTIKEY",
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.REMOVE"
+        },
+        "caption" : "删除",
+        "codeName" : "Remove",
+        "fullCodeName" : "Remove",
+        "name" : "表格界面_删除操作",
+        "getPSSysImage" : {
+          "glyph" : "xf00d@FontAwesome",
+          "cssClass" : "fa fa-remove"
+        },
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "Remove",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "删除行",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "D80F8D3F-131E-43FC-BEE9-CCF84182C710",
+    "modeltype" : "PSDETOOLBAR"
+  }, {
+    "aggMode" : "NONE",
+    "codeName" : "RowEdit",
+    "columnEnableLink" : 2,
+    "controlType" : "GRID",
+    "getCreatePSControlAction" : {
+      "actionName" : "Create",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "CREATE",
+      "name" : "create",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+      }
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue/PSGRIDS/RowEdit.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetDraftPSControlAction" : {
+      "actionName" : "GetDraft",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "CREATE",
+      "name" : "loaddraft",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+      }
+    },
+    "getGetPSControlAction" : {
+      "actionName" : "Get",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "READ",
+      "name" : "load",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+      }
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "logicName" : "行编辑",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "customername_editor_u016ca55_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "自动填充-新建"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "customername3_editor_u016ca55_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "自动填充-新建"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "customername5_editor_u016ca55_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "自动填充-新建"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "自动填充-新建",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "modelref" : true,
+        "id" : "ACCreate@Customer"
+      },
+      "uIActionTarget" : "NONE"
+    }, {
+      "name" : "自动填充-新建",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "modelref" : true,
+        "id" : "ACCreate@Customer"
+      },
+      "uIActionTarget" : "NONE"
+    }, {
+      "name" : "自动填充-新建",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "modelref" : true,
+        "id" : "ACCreate@Customer"
+      },
+      "uIActionTarget" : "NONE"
+    } ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据表格处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "grid",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_grid",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "getPSDEGridColumns" : [ {
+      "align" : "LEFT",
+      "cLConvertMode" : "FRONT",
+      "caption" : "下拉列表框",
+      "codeName" : "dropdownlist",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "dropdownlist",
+      "excelCaption" : "下拉列表框",
+      "name" : "dropdownlist",
+      "noPrivDisplayMode" : 1,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OrderState.json"
+      },
+      "getPSAppDEField" : {
+        "name" : "DROPDOWNLIST",
+        "codeName" : "Dropdownlist"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "FRONT",
+      "caption" : "下拉列表框（多选）",
+      "codeName" : "mdropdownlist",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "mdropdownlist",
+      "excelCaption" : "下拉列表框（多选）",
+      "name" : "mdropdownlist",
+      "noPrivDisplayMode" : 1,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OrderState.json"
+      },
+      "getPSAppDEField" : {
+        "name" : "MDROPDOWNLIST",
+        "codeName" : "Mdropdownlist"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "FRONT",
+      "caption" : "开关部件",
+      "codeName" : "switchval",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "switchval",
+      "excelCaption" : "开关部件",
+      "name" : "switchval",
+      "noPrivDisplayMode" : 1,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/YesNo.json"
+      },
+      "getPSAppDEField" : {
+        "name" : "SWITCHVAL",
+        "codeName" : "Switchval"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "数值框",
+      "codeName" : "numberval",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "numberval",
+      "excelCaption" : "数值框",
+      "name" : "numberval",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "NUMBERVAL",
+        "codeName" : "Numberval"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "数据选择",
+      "codeName" : "customername",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "customername",
+      "excelCaption" : "数据选择",
+      "name" : "customername",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME",
+        "codeName" : "CustomerName"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "数据选择（下拉视图）",
+      "codeName" : "customername2",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "customername2",
+      "excelCaption" : "数据选择（下拉视图）",
+      "name" : "customername2",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME2",
+        "codeName" : "Customername2"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "数据选择（下拉）",
+      "codeName" : "customername3",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "customername3",
+      "excelCaption" : "数据选择（下拉）",
+      "name" : "customername3",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME3",
+        "codeName" : "Customername3"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "数据选择（无AC）",
+      "codeName" : "customername4",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "customername4",
+      "excelCaption" : "数据选择（无AC）",
+      "name" : "customername4",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME4",
+        "codeName" : "Customername4"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "数据选择（无按钮）",
+      "codeName" : "customername5",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "customername5",
+      "excelCaption" : "数据选择（无按钮）",
+      "name" : "customername5",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME5",
+        "codeName" : "Customername5"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "文本框",
+      "codeName" : "textbox",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "textbox",
+      "excelCaption" : "文本框",
+      "name" : "textbox",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "TEXTBOX",
+        "codeName" : "Textbox"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "时间选择器",
+      "codeName" : "datepicker",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "datepicker",
+      "excelCaption" : "时间选择器",
+      "name" : "datepicker",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "DATEPICKER",
+        "codeName" : "Datepicker"
+      },
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "时间选择器（YYYY-MM-DD HH）",
+      "codeName" : "datepickerex_hour",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "datepickerex_hour",
+      "excelCaption" : "时间选择器（YYYY-MM-DD HH）",
+      "name" : "datepickerex_hour",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_HOUR",
+        "codeName" : "Datepickerex_hour"
+      },
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+      "width" : 300,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "时间选择器（YYYY-MM-DD HH:mm）",
+      "codeName" : "datepickerex_minute",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "datepickerex_minute",
+      "excelCaption" : "时间选择器（YYYY-MM-DD HH:mm）",
+      "name" : "datepickerex_minute",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_MINUTE",
+        "codeName" : "Datepickerex_minute"
+      },
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+      "width" : 300,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "时间选择器（HH:mm:ss）",
+      "codeName" : "datepickerex_noday",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "datepickerex_noday",
+      "excelCaption" : "时间选择器（HH:mm:ss）",
+      "name" : "datepickerex_noday",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_NODAY",
+        "codeName" : "Datepickerex_noday"
+      },
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+      "width" : 300,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "时间选择器（HH:mm）",
+      "codeName" : "datepickerex_noday_nosecond",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "datepickerex_noday_nosecond",
+      "excelCaption" : "时间选择器（HH:mm）",
+      "name" : "datepickerex_noday_nosecond",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_NODAY_NOSECOND",
+        "codeName" : "Datepickerex_noday_nosecond"
+      },
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+      "width" : 300,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "时间选择器（YYYY-MM-DD）",
+      "codeName" : "datepickerex_notime",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "datepickerex_notime",
+      "excelCaption" : "时间选择器（YYYY-MM-DD）",
+      "name" : "datepickerex_notime",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_NOTIME",
+        "codeName" : "Datepickerex_notime"
+      },
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+      "width" : 300,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "时间选择器（YYYY-MM-DD HH:mm:ss）",
+      "codeName" : "datepickerex_second",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "datepickerex_second",
+      "excelCaption" : "时间选择器（YYYY-MM-DD HH:mm:ss）",
+      "name" : "datepickerex_second",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_SECOND",
+        "codeName" : "Datepickerex_second"
+      },
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+      "width" : 300,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "步进器",
+      "codeName" : "stepper",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "stepper",
+      "excelCaption" : "步进器",
+      "name" : "stepper",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "STEPPER",
+        "codeName" : "Stepper"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "滑动输入条",
+      "codeName" : "slider",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "slider",
+      "excelCaption" : "滑动输入条",
+      "name" : "slider",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "SLIDER",
+        "codeName" : "Slider"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "FRONT",
+      "caption" : "自动填充",
+      "codeName" : "ac",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "ac",
+      "excelCaption" : "自动填充",
+      "name" : "ac",
+      "noPrivDisplayMode" : 1,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OrderState.json"
+      },
+      "getPSAppDEField" : {
+        "name" : "AC",
+        "codeName" : "Ac"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "评分器",
+      "codeName" : "rating",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "rating",
+      "excelCaption" : "评分器",
+      "name" : "rating",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "RATING",
+        "codeName" : "Rating"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "FRONT",
+      "caption" : "选项框",
+      "codeName" : "checkbox",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "checkbox",
+      "excelCaption" : "选项框",
+      "name" : "checkbox",
+      "noPrivDisplayMode" : 1,
+      "getPSAppCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/YesNo.json"
+      },
+      "getPSAppDEField" : {
+        "name" : "CHECKBOX",
+        "codeName" : "Checkbox"
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    } ],
+    "getPSDEGridDataItems" : [ {
+      "dataType" : 25,
+      "name" : "customerid3",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERID3",
+        "codeName" : "Customerid3"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "slider",
+      "getPSAppDEField" : {
+        "name" : "SLIDER",
+        "codeName" : "Slider"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "customerid4",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERID4",
+        "codeName" : "Customerid4"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "datepickerex_minute",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_MINUTE",
+        "codeName" : "Datepickerex_minute"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "datepickerex_hour",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_HOUR",
+        "codeName" : "Datepickerex_hour"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "datepicker",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKER",
+        "codeName" : "Datepicker"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "dropdownlist",
+      "getPSAppDEField" : {
+        "name" : "DROPDOWNLIST",
+        "codeName" : "Dropdownlist"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "customerid2",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERID2",
+        "codeName" : "Customerid2"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "mdropdownlist",
+      "getPSAppDEField" : {
+        "name" : "MDROPDOWNLIST",
+        "codeName" : "Mdropdownlist"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "customerid5",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERID5",
+        "codeName" : "Customerid5"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "datepickerex_noday_nosecond",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_NODAY_NOSECOND",
+        "codeName" : "Datepickerex_noday_nosecond"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "EDITORVALUENAME",
+        "codeName" : "EditorValueName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "EDITORVALUEID",
+        "codeName" : "EditorValueId"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "EDITORVALUEID",
+        "codeName" : "EditorValueId"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "datepickerex_second",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_SECOND",
+        "codeName" : "Datepickerex_second"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "customername",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME",
+        "codeName" : "CustomerName"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "datepickerex_noday",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_NODAY",
+        "codeName" : "Datepickerex_noday"
+      }
+    }, {
+      "dataType" : 6,
+      "name" : "numberval",
+      "getPSAppDEField" : {
+        "name" : "NUMBERVAL",
+        "codeName" : "Numberval"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "customername2",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME2",
+        "codeName" : "Customername2"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "customername3",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME3",
+        "codeName" : "Customername3"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "customername4",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME4",
+        "codeName" : "Customername4"
+      }
+    }, {
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "dataType" : 5,
+      "name" : "datepickerex_notime",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_NOTIME",
+        "codeName" : "Datepickerex_notime"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "customername5",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME5",
+        "codeName" : "Customername5"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "textbox",
+      "getPSAppDEField" : {
+        "name" : "TEXTBOX",
+        "codeName" : "Textbox"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "stepper",
+      "getPSAppDEField" : {
+        "name" : "STEPPER",
+        "codeName" : "Stepper"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "switchval",
+      "getPSAppDEField" : {
+        "name" : "SWITCHVAL",
+        "codeName" : "Switchval"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "customerid",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERID",
+        "codeName" : "CustomerId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "ac",
+      "getPSAppDEField" : {
+        "name" : "AC",
+        "codeName" : "Ac"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "checkbox",
+      "getPSAppDEField" : {
+        "name" : "CHECKBOX",
+        "codeName" : "Checkbox"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "rating",
+      "getPSAppDEField" : {
+        "name" : "RATING",
+        "codeName" : "Rating"
+      }
+    } ],
+    "getPSDEGridEditItems" : [ {
+      "name" : "customerid3"
+    }, {
+      "caption" : "滑动输入条",
+      "codeName" : "slider",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "slider",
+      "getPSAppDEField" : {
+        "name" : "SLIDER",
+        "codeName" : "Slider"
+      },
+      "getPSEditor" : {
+        "editorType" : "SLIDER",
+        "name" : "slider",
+        "stepValue" : 1.0
+      },
+      "allowEmpty" : true
+    }, {
+      "name" : "customerid4"
+    }, {
+      "caption" : "时间选择器（YYYY-MM-DD HH:mm）",
+      "codeName" : "datepickerex_minute",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "datepickerex_minute",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_MINUTE",
+        "codeName" : "Datepickerex_minute"
+      },
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD HH:mm",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD HH:mm"
+        },
+        "editorType" : "DATEPICKEREX_MINUTE",
+        "name" : "datepickerex_minute"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "时间选择器（YYYY-MM-DD HH）",
+      "codeName" : "datepickerex_hour",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "datepickerex_hour",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_HOUR",
+        "codeName" : "Datepickerex_hour"
+      },
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD HH",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD HH"
+        },
+        "editorType" : "DATEPICKEREX_HOUR",
+        "name" : "datepickerex_hour"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "时间选择器",
+      "codeName" : "datepicker",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "datepicker",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKER",
+        "codeName" : "Datepicker"
+      },
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+        },
+        "editorType" : "DATEPICKER",
+        "name" : "datepicker"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "下拉列表框",
+      "codeName" : "dropdownlist",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "dropdownlist",
+      "getPSAppDEField" : {
+        "name" : "DROPDOWNLIST",
+        "codeName" : "Dropdownlist"
+      },
+      "getPSEditor" : {
+        "editorType" : "DROPDOWNLIST",
+        "name" : "dropdownlist",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OrderState.json"
+        },
+        "singleSelect" : true
+      },
+      "allowEmpty" : true,
+      "needCodeListConfig" : true
+    }, {
+      "name" : "customerid2"
+    }, {
+      "caption" : "下拉列表框（多选）",
+      "codeName" : "mdropdownlist",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "mdropdownlist",
+      "getPSAppDEField" : {
+        "name" : "MDROPDOWNLIST",
+        "codeName" : "Mdropdownlist"
+      },
+      "getPSEditor" : {
+        "editorType" : "MDROPDOWNLIST",
+        "name" : "mdropdownlist",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OrderState.json"
+        },
+        "singleSelect" : false
+      },
+      "allowEmpty" : true,
+      "needCodeListConfig" : true
+    }, {
+      "name" : "customerid5"
+    }, {
+      "caption" : "时间选择器（HH:mm）",
+      "codeName" : "datepickerex_noday_nosecond",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "datepickerex_noday_nosecond",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_NODAY_NOSECOND",
+        "codeName" : "Datepickerex_noday_nosecond"
+      },
+      "getPSEditor" : {
+        "dateTimeFormat" : "HH:mm",
+        "editorParams" : {
+          "TIMEFMT" : "HH:mm"
+        },
+        "editorType" : "DATEPICKEREX_NODAY_NOSECOND",
+        "name" : "datepickerex_noday_nosecond"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "编辑器值标识",
+      "codeName" : "srfkey",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "EDITORVALUEID",
+        "codeName" : "EditorValueId"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "时间选择器（YYYY-MM-DD HH:mm:ss）",
+      "codeName" : "datepickerex_second",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "datepickerex_second",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_SECOND",
+        "codeName" : "Datepickerex_second"
+      },
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+        },
+        "editorType" : "DATEPICKEREX_SECOND",
+        "name" : "datepickerex_second"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "数据选择",
+      "codeName" : "customername",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "customername",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME",
+        "codeName" : "CustomerName"
+      },
+      "getPSEditor" : {
+        "editorParams" : {
+          "AC" : "TRUE",
+          "PICKUPVIEW" : "TRUE"
+        },
+        "editorType" : "PICKER",
+        "handlerType" : "PickupText",
+        "name" : "customername",
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "getPSUIActionGroup" : {
+          "codeName" : "Auto1",
+          "name" : "自动填充",
+          "getPSUIActionGroupDetails" : [ {
+            "detailType" : "DEUIACTION",
+            "name" : "u016ca55",
+            "getPSUIAction" : {
+              "actionTarget" : "NONE",
+              "caption" : "新建",
+              "codeName" : "ACCreate",
+              "getFrontPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                "viewType" : "DEOPTVIEW"
+              },
+              "frontProcessType" : "WIZARD",
+              "fullCodeName" : "Customer_ACCreate",
+              "name" : "自动填充-新建",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+              },
+              "getPSSysImage" : {
+                "glyph" : "xf044@FontAwesome",
+                "cssClass" : "fa fa-edit"
+              },
+              "timeout" : 60000,
+              "uIActionMode" : "FRONT",
+              "uIActionTag" : "ACCreate",
+              "uIActionType" : "DEUIACTION",
+              "id" : "ACCreate@Customer"
+            },
+            "addSeparator" : false,
+            "showCaption" : true,
+            "showIcon" : true
+          } ]
+        },
+        "getPickupPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerSinglePickupGridView.json",
+          "viewType" : "DEPICKUPGRIDVIEW"
+        },
+        "valueItemName" : "customerid",
+        "enableAC" : true,
+        "enablePickupView" : true,
+        "forceSelection" : true,
+        "showTrigger" : true,
+        "singleSelect" : true
+      },
+      "valueItemName" : "customerid",
+      "allowEmpty" : true
+    }, {
+      "caption" : "时间选择器（HH:mm:ss）",
+      "codeName" : "datepickerex_noday",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "datepickerex_noday",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_NODAY",
+        "codeName" : "Datepickerex_noday"
+      },
+      "getPSEditor" : {
+        "dateTimeFormat" : "HH:mm:ss",
+        "editorParams" : {
+          "TIMEFMT" : "HH:mm:ss"
+        },
+        "editorType" : "DATEPICKEREX_NODAY",
+        "name" : "datepickerex_noday"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "数值框",
+      "codeName" : "numberval",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "numberval",
+      "getPSAppDEField" : {
+        "name" : "NUMBERVAL",
+        "codeName" : "Numberval"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "numberval"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "数据选择（下拉视图）",
+      "codeName" : "customername2",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "customername2",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME2",
+        "codeName" : "Customername2"
+      },
+      "getPSEditor" : {
+        "editorParams" : {
+          "DROPDOWNVIEW" : "TRUE",
+          "AC" : "FALSE",
+          "TRIGGER" : "TRUE",
+          "PICKUPVIEW" : "TRUE"
+        },
+        "editorType" : "PICKEREX_DROPDOWNVIEW",
+        "handlerType" : "PickupText",
+        "name" : "customername2",
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "getPickupPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupView.json",
+          "viewType" : "DEPICKUPVIEW"
+        },
+        "valueItemName" : "customerid2",
+        "dropDownView" : true,
+        "enableAC" : false,
+        "enablePickupView" : true,
+        "forceSelection" : true,
+        "showTrigger" : true,
+        "singleSelect" : true
+      },
+      "valueItemName" : "customerid2",
+      "allowEmpty" : true
+    }, {
+      "caption" : "数据选择（下拉）",
+      "codeName" : "customername3",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "customername3",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME3",
+        "codeName" : "Customername3"
+      },
+      "getPSEditor" : {
+        "editorParams" : {
+          "AC" : "TRUE",
+          "TRIGGER" : "TRUE",
+          "PICKUPVIEW" : "FALSE"
+        },
+        "editorType" : "PICKEREX_TRIGGER",
+        "handlerType" : "PickupText",
+        "name" : "customername3",
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "getPSUIActionGroup" : {
+          "codeName" : "Auto1",
+          "name" : "自动填充",
+          "getPSUIActionGroupDetails" : [ {
+            "detailType" : "DEUIACTION",
+            "name" : "u016ca55",
+            "getPSUIAction" : {
+              "actionTarget" : "NONE",
+              "caption" : "新建",
+              "codeName" : "ACCreate",
+              "getFrontPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                "viewType" : "DEOPTVIEW"
+              },
+              "frontProcessType" : "WIZARD",
+              "fullCodeName" : "Customer_ACCreate",
+              "name" : "自动填充-新建",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+              },
+              "getPSSysImage" : {
+                "glyph" : "xf044@FontAwesome",
+                "cssClass" : "fa fa-edit"
+              },
+              "timeout" : 60000,
+              "uIActionMode" : "FRONT",
+              "uIActionTag" : "ACCreate",
+              "uIActionType" : "DEUIACTION",
+              "id" : "ACCreate@Customer"
+            },
+            "addSeparator" : false,
+            "showCaption" : true,
+            "showIcon" : true
+          } ]
+        },
+        "valueItemName" : "customerid3",
+        "enableAC" : true,
+        "enablePickupView" : false,
+        "forceSelection" : true,
+        "showTrigger" : true,
+        "singleSelect" : true
+      },
+      "valueItemName" : "customerid3",
+      "allowEmpty" : true
+    }, {
+      "caption" : "数据选择（无AC）",
+      "codeName" : "customername4",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "customername4",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME4",
+        "codeName" : "Customername4"
+      },
+      "getPSEditor" : {
+        "editorParams" : {
+          "AC" : "FALSE",
+          "TRIGGER" : "TRUE",
+          "PICKUPVIEW" : "TRUE"
+        },
+        "editorType" : "PICKEREX_NOAC",
+        "handlerType" : "PickupText",
+        "name" : "customername4",
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "getPickupPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerSinglePickupGridView.json",
+          "viewType" : "DEPICKUPGRIDVIEW"
+        },
+        "valueItemName" : "customerid4",
+        "enableAC" : false,
+        "enablePickupView" : true,
+        "forceSelection" : true,
+        "showTrigger" : true,
+        "singleSelect" : true
+      },
+      "valueItemName" : "customerid4",
+      "allowEmpty" : true
+    }, {
+      "caption" : "时间选择器（YYYY-MM-DD）",
+      "codeName" : "datepickerex_notime",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "datepickerex_notime",
+      "getPSAppDEField" : {
+        "name" : "DATEPICKEREX_NOTIME",
+        "codeName" : "Datepickerex_notime"
+      },
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD"
+        },
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "datepickerex_notime"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "数据选择（无按钮）",
+      "codeName" : "customername5",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "customername5",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME5",
+        "codeName" : "Customername5"
+      },
+      "getPSEditor" : {
+        "editorParams" : {
+          "AC" : "TRUE",
+          "TRIGGER" : "FALSE",
+          "PICKUPVIEW" : "FALSE"
+        },
+        "editorType" : "PICKEREX_NOBUTTON",
+        "handlerType" : "PickupText",
+        "name" : "customername5",
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "getPSUIActionGroup" : {
+          "codeName" : "Auto1",
+          "name" : "自动填充",
+          "getPSUIActionGroupDetails" : [ {
+            "detailType" : "DEUIACTION",
+            "name" : "u016ca55",
+            "getPSUIAction" : {
+              "actionTarget" : "NONE",
+              "caption" : "新建",
+              "codeName" : "ACCreate",
+              "getFrontPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                "viewType" : "DEOPTVIEW"
+              },
+              "frontProcessType" : "WIZARD",
+              "fullCodeName" : "Customer_ACCreate",
+              "name" : "自动填充-新建",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+              },
+              "getPSSysImage" : {
+                "glyph" : "xf044@FontAwesome",
+                "cssClass" : "fa fa-edit"
+              },
+              "timeout" : 60000,
+              "uIActionMode" : "FRONT",
+              "uIActionTag" : "ACCreate",
+              "uIActionType" : "DEUIACTION",
+              "id" : "ACCreate@Customer"
+            },
+            "addSeparator" : false,
+            "showCaption" : true,
+            "showIcon" : true
+          } ]
+        },
+        "valueItemName" : "customerid5",
+        "enableAC" : true,
+        "enablePickupView" : false,
+        "forceSelection" : true,
+        "showTrigger" : false,
+        "singleSelect" : true
+      },
+      "valueItemName" : "customerid5",
+      "allowEmpty" : true
+    }, {
+      "caption" : "文本框",
+      "codeName" : "textbox",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "textbox",
+      "getPSAppDEField" : {
+        "name" : "TEXTBOX",
+        "codeName" : "Textbox"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "maxLength" : 100,
+        "name" : "textbox"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "步进器",
+      "codeName" : "stepper",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "stepper",
+      "getPSAppDEField" : {
+        "name" : "STEPPER",
+        "codeName" : "Stepper"
+      },
+      "getPSEditor" : {
+        "editorType" : "STEPPER",
+        "name" : "stepper",
+        "stepValue" : 1.0
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "开关部件",
+      "codeName" : "switchval",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "switchval",
+      "getPSAppDEField" : {
+        "name" : "SWITCHVAL",
+        "codeName" : "Switchval"
+      },
+      "getPSEditor" : {
+        "editorType" : "SWITCH",
+        "name" : "switchval"
+      },
+      "allowEmpty" : true
+    }, {
+      "name" : "customerid"
+    }, {
+      "caption" : "自动填充",
+      "codeName" : "ac",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "ac",
+      "getPSAppDEField" : {
+        "name" : "AC",
+        "codeName" : "Ac"
+      },
+      "getPSEditor" : {
+        "editorParams" : {
+          "FORCESELECTION" : "FALSE",
+          "TRIGGER" : "TRUE"
+        },
+        "editorType" : "AC",
+        "handlerType" : "AC",
+        "maxLength" : 100,
+        "name" : "ac",
+        "enableAC" : true,
+        "forceSelection" : false,
+        "showTrigger" : true
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "选项框",
+      "codeName" : "checkbox",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "checkbox",
+      "getPSAppDEField" : {
+        "name" : "CHECKBOX",
+        "codeName" : "Checkbox"
+      },
+      "getPSEditor" : {
+        "editorType" : "CHECKBOX",
+        "name" : "checkbox"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "评分器",
+      "codeName" : "rating",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "rating",
+      "getPSAppDEField" : {
+        "name" : "RATING",
+        "codeName" : "Rating"
+      },
+      "getPSEditor" : {
+        "editorType" : "RATING",
+        "maxValue" : 5.0,
+        "minValue" : 0.0,
+        "name" : "rating",
+        "stepValue" : 1.0
+      },
+      "allowEmpty" : true
+    } ],
+    "pagingSize" : 20,
+    "getRemovePSControlAction" : {
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "DELETE",
+      "name" : "remove",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+      }
+    },
+    "sortMode" : "REMOTE",
+    "getUpdatePSControlAction" : {
+      "actionName" : "Update",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "UPDATE",
+      "name" : "update",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+      }
+    },
+    "hasWFDataItems" : false,
+    "enableColFilter" : false,
+    "enableCustomized" : true,
+    "enableGroup" : false,
+    "enablePagingBar" : true,
+    "enableRowEdit" : true,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : true,
+    "forceFit" : false,
+    "hideHeader" : false,
+    "noSort" : false,
+    "singleSelect" : false,
+    "name" : "grid",
+    "modelid" : "E90928E0-C703-40C7-92F2-9146C0CFB494",
+    "modeltype" : "PSDEGRID"
+  }, {
+    "codeName" : "Default",
+    "controlType" : "SEARCHFORM",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue/PSSEARCHFORMS/Default.json",
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "logicName" : "默认搜索表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionType" : "FILTERACTION",
+        "name" : "search",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SEARCH;LOAD;SAVE",
+      "logicTag" : "searchform",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_searchform",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "getPSDEFormPages" : [ {
+      "caption" : "常规条件",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "searchButtonStyle" : "DEFAULT",
+    "tabHeaderPos" : "TOP",
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "enableFilterSave" : false,
+    "noTabHeader" : true,
+    "name" : "searchform",
+    "modelid" : "c003742b9c1b6cde52a1184a115809fd",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
+  } ],
+  "getPSDEViewCodeName" : "RowEditGridView",
+  "getPSDEViewId" : "89C5D9C7-14A1-4158-B459-FA1EE3E81989",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEGRIDVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "编辑器值表格视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEGRIDVIEW",
+  "xDataControlName" : "grid",
+  "enableDP" : true,
+  "enableExport" : true,
+  "enableFilter" : true,
+  "enableImport" : true,
+  "enableQuickSearch" : true,
+  "enableRowEdit" : true,
+  "enableSearch" : true,
+  "rowEditDefault" : true,
+  "modelid" : "b3ac4af12b1e2d6b21c23ad04ec456d2",
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "EditorValues",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+    },
+    "name" : "客户-编辑器值",
+    "getParentPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "rSMode" : 2
+  } ] ]
+}

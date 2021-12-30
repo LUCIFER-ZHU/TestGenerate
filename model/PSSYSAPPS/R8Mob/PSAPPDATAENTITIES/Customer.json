@@ -1,0 +1,413 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERID",
+        "codeName" : "CustomerId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME",
+        "codeName" : "CustomerName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "SCRIPT",
+    "codeName" : "GetOrderCNT",
+    "methodType" : "DEACTION",
+    "name" : "getOrderCNT",
+    "scriptCode" : "data.ordercnt=Math.floor(Math.random()*100+1);\nconsole.log(\"获取订单计数\");\nconsole.log(data.ordercnt);",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "CustomerId",
+    "logicName" : "客户标识",
+    "name" : "CUSTOMERID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "keyField" : true
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "CustomerName",
+    "logicName" : "客户名称",
+    "name" : "CUSTOMERNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Pcustomerid",
+    "logicName" : "上级客户标识",
+    "name" : "PCUSTOMERID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Pcustomername",
+    "logicName" : "上级客户",
+    "name" : "PCUSTOMERNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "ProvinceId",
+    "logicName" : "省份标识",
+    "name" : "PROVINCEID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "CityId",
+    "logicName" : "市标识",
+    "name" : "CITYID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "DistrictId",
+    "logicName" : "区标识",
+    "name" : "DISTRICTID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "ProvinceName",
+    "logicName" : "省份",
+    "name" : "PROVINCENAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "CityName",
+    "logicName" : "市",
+    "name" : "CITYNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "DistrictName",
+    "logicName" : "区/县",
+    "name" : "DISTRICTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "Type",
+    "logicName" : "类型",
+    "name" : "TYPE",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Memo",
+    "logicName" : "备注",
+    "name" : "MEMO",
+    "stdDataType" : 25,
+    "stringLength" : 1000
+  }, {
+    "codeName" : "Street",
+    "logicName" : "街道",
+    "name" : "STREET",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Phone",
+    "logicName" : "电话",
+    "name" : "PHONE",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Mobile",
+    "logicName" : "手机",
+    "name" : "MOBILE",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Email",
+    "logicName" : "电子邮箱",
+    "name" : "EMAIL",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Image",
+    "logicName" : "图像",
+    "name" : "IMAGE",
+    "stdDataType" : 25,
+    "stringLength" : 2000
+  }, {
+    "codeName" : "Website",
+    "logicName" : "网站地址",
+    "name" : "WEBSITE",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "TaxNO",
+    "logicName" : "税号",
+    "name" : "TAXNO",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Orderamount",
+    "logicName" : "订单金额",
+    "name" : "ORDERAMOUNT",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Returnamount",
+    "logicName" : "回款金额",
+    "name" : "RETURNAMOUNT",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Returnrate",
+    "logicName" : "回款率",
+    "name" : "RETURNRATE",
+    "stdDataType" : 7
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "SCRIPT",
+    "codeName" : "GetOrderCNT",
+    "methodType" : "DEACTION",
+    "name" : "getOrderCNT",
+    "scriptCode" : "data.ordercnt=Math.floor(Math.random()*100+1);\nconsole.log(\"获取订单计数\");\nconsole.log(data.ordercnt);",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "NONE",
+    "caption" : "新建",
+    "codeName" : "ACCreate",
+    "frontPSAppView" : "无法获取指定应用视图，标识为[a37578d9fc7dfc7ef18c6b46a5df447b]，请确认实体视图[CUSTOMER][客户实体选项操作视图]已经添加到应用[移动端应用示例]中",
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Customer_ACCreate",
+    "name" : "自动填充-新建",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Customer.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf044@FontAwesome",
+      "cssClass" : "fa fa-edit"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "ACCreate",
+    "uIActionType" : "DEUIACTION",
+    "id" : "ACCreate@Customer"
+  }, {
+    "actionTarget" : "NONE",
+    "caption" : "快速新建",
+    "codeName" : "Quick",
+    "frontPSAppView" : "无法获取指定应用视图，标识为[094c20b40da31ecca45e0db376be7a29]，请确认实体视图[CUSTOMER][客户实体选项操作视图（快速新建）]已经添加到应用[移动端应用示例]中",
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Customer_Quick",
+    "name" : "快速新建",
+    "getNextPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Customer.json"
+      },
+      "modelref" : true,
+      "id" : "OpenMain@Customer"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Customer.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "Quick",
+    "uIActionType" : "DEUIACTION",
+    "globalUIAction" : true,
+    "id" : "Quick@Customer"
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "Customer",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Customer.json",
+  "enableUIActions" : 15,
+  "logicName" : "客户",
+  "name" : "CUSTOMER",
+  "getPSDEName" : "CUSTOMER",
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "CUSTOMERNAME",
+    "codeName" : "CustomerName"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

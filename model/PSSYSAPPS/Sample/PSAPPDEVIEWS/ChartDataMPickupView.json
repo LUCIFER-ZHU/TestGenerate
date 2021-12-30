@@ -1,0 +1,1000 @@
+{
+  "accUserMode" : 2,
+  "caption" : "图表",
+  "codeName" : "ChartDataMPickupView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataMPickupView.json",
+  "funcViewMode" : "MPICKUPVIEW",
+  "name" : "ChartDataMPickupView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "MPickupView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "pickupviewpanel",
+      "name" : "PICKUPVIEWPANEL",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "MPickupViewpickupviewpanel",
+    "controlType" : "PICKUPVIEWPANEL",
+    "getEmbeddedPSAppDEView" : {
+      "accUserMode" : 2,
+      "caption" : "图表",
+      "codeName" : "ChartDataPickupGridView",
+      "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataPickupGridView.json",
+      "gridRowActiveMode" : 2,
+      "name" : "ChartDataPickupGridView",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSAppViewEngines" : [ {
+        "engineCat" : "VIEW",
+        "engineType" : "PickupGridView",
+        "name" : "engine",
+        "getPSUIEngineParams" : [ {
+          "ctrlName" : "grid",
+          "name" : "GRID",
+          "paramType" : "CTRL"
+        }, {
+          "ctrlName" : "searchform",
+          "name" : "SEARCHFORM",
+          "paramType" : "CTRL"
+        } ]
+      } ],
+      "getPSControls" : [ {
+        "aggMode" : "NONE",
+        "codeName" : "Main",
+        "columnEnableLink" : 2,
+        "controlType" : "GRID",
+        "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSGRIDS/Main.json",
+        "getFetchPSControlAction" : {
+          "modelref" : true,
+          "id" : "fetch"
+        },
+        "gridStyle" : "USER",
+        "groupMode" : "NONE",
+        "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+        "logicName" : "主表格",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "getPSAppViewLogics" : [ {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "APPVIEWUIACTION",
+          "name" : "grid_uagridcolumn1_u0c7ccd3_click",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "表格界面_刷新操作"
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "APPVIEWUIACTION",
+          "name" : "grid_uagridcolumn1_u953df17_click",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "移动端编辑"
+          }
+        } ],
+        "getPSAppViewUIActions" : [ {
+          "name" : "表格界面_刷新操作",
+          "getPSUIAction" : {
+            "modelref" : true,
+            "id" : "Refresh"
+          },
+          "xDataControlName" : "grid"
+        }, {
+          "name" : "移动端编辑",
+          "getPSUIAction" : {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            },
+            "modelref" : true,
+            "id" : "MobEdit@ChartData"
+          },
+          "uIActionTarget" : "SINGLEKEY",
+          "xDataControlName" : "grid"
+        } ],
+        "getPSControlHandler" : {
+          "getPSHandlerActions" : [ {
+            "actionName" : "Update",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "UPDATE",
+            "name" : "update",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            }
+          }, {
+            "actionType" : "DEDATASET",
+            "name" : "fetch",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            }
+          }, {
+            "actionName" : "Remove",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "DELETE",
+            "name" : "remove",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            }
+          }, {
+            "actionName" : "Get",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "READ",
+            "name" : "load",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            }
+          }, {
+            "actionName" : "GetDraft",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "CREATE",
+            "name" : "loaddraft",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "GetDraft"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            }
+          }, {
+            "actionName" : "Create",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "CREATE",
+            "name" : "create",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            }
+          } ],
+          "userDRAction" : "READ",
+          "enableDEFieldPrivilege" : false,
+          "id" : "数据表格处理器"
+        },
+        "getPSControlLogics" : [ {
+          "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;LOAD;BEFORELOAD",
+          "logicTag" : "grid",
+          "logicType" : "APPVIEWENGINE",
+          "name" : "engine_grid",
+          "getPSAppViewEngine" : {
+            "modelref" : true,
+            "id" : "engine"
+          }
+        } ],
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "id" : "GRID"
+        },
+        "getPSDEGridColumns" : [ {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "图表名称",
+          "codeName" : "chartdataname",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "chartdataname",
+          "excelCaption" : "图表名称",
+          "name" : "chartdataname",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "CHARTDATANAME",
+            "codeName" : "ChartDataName"
+          },
+          "width" : 150,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "图表时间",
+          "codeName" : "chartdate",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "chartdate",
+          "excelCaption" : "图表时间",
+          "name" : "chartdate",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "CHARTDATE",
+            "codeName" : "Chartdate"
+          },
+          "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+          "width" : 200,
+          "widthUnit" : "PX",
+          "enableRowEdit" : true,
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "FRONT",
+          "caption" : "数据分类",
+          "codeName" : "datatype",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "datatype",
+          "excelCaption" : "数据分类",
+          "name" : "datatype",
+          "noPrivDisplayMode" : 1,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/DataType.json"
+          },
+          "getPSAppDEField" : {
+            "name" : "DATATYPE",
+            "codeName" : "DataType"
+          },
+          "width" : 100,
+          "widthUnit" : "PX",
+          "enableRowEdit" : true,
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "年份",
+          "codeName" : "year",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "year",
+          "excelCaption" : "年份",
+          "name" : "year",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "YEAR",
+            "codeName" : "Year"
+          },
+          "width" : 100,
+          "widthUnit" : "PX",
+          "enableRowEdit" : true,
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "数据",
+          "codeName" : "data",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "data",
+          "excelCaption" : "数据",
+          "name" : "data",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "DATA",
+            "codeName" : "Data"
+          },
+          "width" : 100,
+          "widthUnit" : "PX",
+          "enableRowEdit" : true,
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "计划收入",
+          "codeName" : "planincome",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "planincome",
+          "excelCaption" : "计划收入",
+          "name" : "planincome",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "PLANINCOME",
+            "codeName" : "Planincome"
+          },
+          "width" : 100,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "实际收入",
+          "codeName" : "realincome",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "realincome",
+          "excelCaption" : "实际收入",
+          "name" : "realincome",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "REALINCOME",
+            "codeName" : "Realincome"
+          },
+          "width" : 100,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "数据时间",
+          "codeName" : "datetime",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "datetime",
+          "excelCaption" : "数据时间",
+          "name" : "datetime",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "DATETIME",
+            "codeName" : "DateTime"
+          },
+          "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+          "width" : 200,
+          "widthUnit" : "PX",
+          "enableRowEdit" : true,
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "FRONT",
+          "caption" : "更新人",
+          "codeName" : "updateman",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "updateman",
+          "excelCaption" : "更新人",
+          "name" : "updateman",
+          "noPrivDisplayMode" : 1,
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+          },
+          "getPSAppDEField" : {
+            "name" : "UPDATEMAN",
+            "codeName" : "UpdateMan"
+          },
+          "width" : 150,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "更新时间",
+          "codeName" : "updatedate",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "updatedate",
+          "excelCaption" : "更新时间",
+          "name" : "updatedate",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "UPDATEDATE",
+            "codeName" : "UpdateDate"
+          },
+          "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+          "width" : 150,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "RIGHT",
+          "caption" : "操作",
+          "codeName" : "uagridcolumn1",
+          "columnType" : "UAGRIDCOLUMN",
+          "name" : "uagridcolumn1",
+          "noPrivDisplayMode" : 1,
+          "getPSDEUIActionGroup" : {
+            "codeName" : "Auto3",
+            "name" : "看板界面行为组",
+            "getPSUIActionGroupDetails" : [ {
+              "detailType" : "DEUIACTION",
+              "name" : "u0c7ccd3",
+              "getPSUIAction" : {
+                "caption" : "刷新",
+                "codeName" : "Refresh",
+                "fullCodeName" : "Refresh",
+                "name" : "表格界面_刷新操作",
+                "getPSSysImage" : {
+                  "glyph" : "xf021@FontAwesome",
+                  "cssClass" : "fa fa-refresh"
+                },
+                "timeout" : 60000,
+                "uIActionMode" : "SYS",
+                "uIActionTag" : "Refresh",
+                "uIActionType" : "DEUIACTION"
+              },
+              "addSeparator" : true,
+              "showCaption" : true,
+              "showIcon" : true
+            }, {
+              "detailType" : "DEUIACTION",
+              "name" : "u953df17",
+              "getPSUIAction" : {
+                "actionTarget" : "SINGLEKEY",
+                "caption" : "移动端编辑",
+                "codeName" : "MobEdit",
+                "getFrontPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataMobEditView.json",
+                  "viewType" : "DEMOBEDITVIEW"
+                },
+                "frontProcessType" : "WIZARD",
+                "fullCodeName" : "ChartData_MobEdit",
+                "name" : "移动端编辑",
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+                },
+                "timeout" : 60000,
+                "uIActionMode" : "FRONT",
+                "uIActionTag" : "MobEdit",
+                "uIActionType" : "DEUIACTION",
+                "id" : "MobEdit@ChartData"
+              },
+              "addSeparator" : false,
+              "showCaption" : true,
+              "showIcon" : true
+            } ]
+          },
+          "width" : 100,
+          "widthUnit" : "PX",
+          "enableSort" : false
+        } ],
+        "getPSDEGridDataItems" : [ {
+          "dataType" : 25,
+          "name" : "chartdataname",
+          "getPSAppDEField" : {
+            "name" : "CHARTDATANAME",
+            "codeName" : "ChartDataName"
+          }
+        }, {
+          "dataType" : 6,
+          "name" : "data",
+          "getPSAppDEField" : {
+            "name" : "DATA",
+            "codeName" : "Data"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "updateman",
+          "getPSAppDEField" : {
+            "name" : "UPDATEMAN",
+            "codeName" : "UpdateMan"
+          }
+        }, {
+          "dataType" : 6,
+          "name" : "planincome",
+          "getPSAppDEField" : {
+            "name" : "PLANINCOME",
+            "codeName" : "Planincome"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfmajortext",
+          "getPSAppDEField" : {
+            "name" : "CHARTDATANAME",
+            "codeName" : "ChartDataName"
+          }
+        }, {
+          "dataType" : 6,
+          "name" : "realincome",
+          "getPSAppDEField" : {
+            "name" : "REALINCOME",
+            "codeName" : "Realincome"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfkey",
+          "getPSAppDEField" : {
+            "name" : "CHARTDATAID",
+            "codeName" : "ChartDataId"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfdataaccaction",
+          "getPSAppDEField" : {
+            "name" : "CHARTDATAID",
+            "codeName" : "ChartDataId"
+          },
+          "dataAccessAction" : true
+        }, {
+          "format" : "YYYY-MM-DD HH:mm:ss",
+          "dataType" : 5,
+          "name" : "chartdate",
+          "getPSAppDEField" : {
+            "name" : "CHARTDATE",
+            "codeName" : "Chartdate"
+          }
+        }, {
+          "dataType" : 9,
+          "name" : "year",
+          "getPSAppDEField" : {
+            "name" : "YEAR",
+            "codeName" : "Year"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "datatype",
+          "getPSAppDEField" : {
+            "name" : "DATATYPE",
+            "codeName" : "DataType"
+          }
+        }, {
+          "format" : "YYYY-MM-DD HH:mm:ss",
+          "dataType" : 5,
+          "name" : "datetime",
+          "getPSAppDEField" : {
+            "name" : "DATETIME",
+            "codeName" : "DateTime"
+          }
+        }, {
+          "format" : "YYYY-MM-DD HH:mm:ss",
+          "dataType" : 5,
+          "name" : "updatedate",
+          "getPSAppDEField" : {
+            "name" : "UPDATEDATE",
+            "codeName" : "UpdateDate"
+          }
+        } ],
+        "getPSDEGridEditItemUpdates" : [ {
+          "codeName" : "timechange",
+          "name" : "日期更新",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Save"
+          },
+          "getPSDEGEIUpdateDetails" : [ {
+            "name" : "datetime"
+          }, {
+            "name" : "data"
+          } ]
+        }, {
+          "codeName" : "dataChange",
+          "name" : "数据更新",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "getPSDEGEIUpdateDetails" : [ {
+            "name" : "data"
+          }, {
+            "name" : "datetime"
+          } ]
+        } ],
+        "getPSDEGridEditItemVRs" : [ {
+          "checkMode" : 3,
+          "name" : "编辑项值规则",
+          "getPSDEFValueRule" : {
+            "codeName" : "ValueRule",
+            "name" : "数据不为空",
+            "getPSDEFVRGroupCondition" : {
+              "condOp" : "AND",
+              "condType" : "GROUP",
+              "name" : "默认组",
+              "getPSDEFVRConditions" : [ {
+                "condType" : "VALUERANGE2",
+                "dEFName" : "DATA",
+                "maxValue" : 200.0,
+                "minValue" : 10.0,
+                "name" : "[数值范围] 大于 10.0 且  小于 200.0",
+                "ruleInfo" : "数值范围小于10或大于200！",
+                "includeMaxValue" : false,
+                "includeMinValue" : false
+              } ],
+              "ruleInfo" : "数值范围小于10或大于200！"
+            },
+            "ruleInfo" : "数据为空！",
+            "checkDefault" : true,
+            "defaultMode" : true,
+            "enableBackend" : true,
+            "enableFront" : true
+          },
+          "getPSDEGridEditItemName" : "data",
+          "valueRuleType" : "DEFVALUERULE"
+        } ],
+        "getPSDEGridEditItems" : [ {
+          "caption" : "图表时间",
+          "codeName" : "chartdate",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "name" : "chartdate",
+          "getPSAppDEField" : {
+            "name" : "CHARTDATE",
+            "codeName" : "Chartdate"
+          },
+          "getPSEditor" : {
+            "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+            "editorParams" : {
+              "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+            },
+            "editorType" : "DATEPICKER",
+            "name" : "chartdate"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "数据",
+          "codeName" : "data",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "name" : "data",
+          "getPSAppDEField" : {
+            "name" : "DATA",
+            "codeName" : "Data"
+          },
+          "getPSEditor" : {
+            "editorType" : "NUMBER",
+            "name" : "data"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "年份",
+          "codeName" : "year",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "name" : "year",
+          "getPSAppDEField" : {
+            "name" : "YEAR",
+            "codeName" : "Year"
+          },
+          "getPSDEGridEditItemUpdate" : {
+            "modelref" : true,
+            "id" : "timechange"
+          },
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "year"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "数据分类",
+          "codeName" : "datatype",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "name" : "datatype",
+          "getPSAppDEField" : {
+            "name" : "DATATYPE",
+            "codeName" : "DataType"
+          },
+          "getPSEditor" : {
+            "editorType" : "DROPDOWNLIST",
+            "name" : "datatype",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/DataType.json"
+            },
+            "singleSelect" : true
+          },
+          "allowEmpty" : true,
+          "needCodeListConfig" : true
+        }, {
+          "caption" : "数据时间",
+          "codeName" : "datetime",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "name" : "datetime",
+          "getPSAppDEField" : {
+            "name" : "DATETIME",
+            "codeName" : "DateTime"
+          },
+          "getPSEditor" : {
+            "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+            "editorParams" : {
+              "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+            },
+            "editorType" : "DATEPICKER",
+            "name" : "datetime"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "图表标识",
+          "codeName" : "srfkey",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "name" : "srfkey",
+          "getPSAppDEField" : {
+            "name" : "CHARTDATAID",
+            "codeName" : "ChartDataId"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "srfkey"
+          },
+          "allowEmpty" : true
+        } ],
+        "getPSNavigateContexts" : [ {
+          "key" : "PARAM1",
+          "name" : "PARAM1",
+          "value" : "testparam1",
+          "rawValue" : true
+        }, {
+          "key" : "PARAM2",
+          "name" : "PARAM2",
+          "value" : "chartdataid",
+          "rawValue" : false
+        } ],
+        "pagingSize" : 20,
+        "getRemovePSControlAction" : {
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "DELETE",
+          "name" : "remove",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          }
+        },
+        "sortMode" : "REMOTE",
+        "hasWFDataItems" : false,
+        "enableColFilter" : false,
+        "enableCustomized" : true,
+        "enableGroup" : false,
+        "enablePagingBar" : true,
+        "enableRowEdit" : false,
+        "enableRowEditOrder" : false,
+        "enableRowNew" : false,
+        "forceFit" : false,
+        "hideHeader" : false,
+        "noSort" : false,
+        "singleSelect" : false,
+        "name" : "grid",
+        "modelid" : "3c3ad6123877c557e8483fffa2627b3d",
+        "modeltype" : "PSDEGRID"
+      }, {
+        "codeName" : "Default",
+        "controlType" : "SEARCHFORM",
+        "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSSEARCHFORMS/Default.json",
+        "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+        "logicName" : "默认搜索表单",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "getPSControlHandler" : {
+          "getPSHandlerActions" : [ {
+            "actionType" : "FILTERACTION",
+            "name" : "search",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FilterSearch"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            }
+          }, {
+            "actionType" : "FILTERACTION",
+            "name" : "load",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FilterGet"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            }
+          }, {
+            "actionType" : "FILTERACTION",
+            "name" : "loaddraft",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FilterGetDraft"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            }
+          } ],
+          "enableDEFieldPrivilege" : false,
+          "id" : "搜索表单处理器"
+        },
+        "getPSControlLogics" : [ {
+          "eventNames" : "SEARCH;LOAD;SAVE",
+          "logicTag" : "searchform",
+          "logicType" : "APPVIEWENGINE",
+          "name" : "engine_searchform",
+          "getPSAppViewEngine" : {
+            "modelref" : true,
+            "id" : "engine"
+          }
+        } ],
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "id" : "SEARCHFORM"
+        },
+        "getPSDEFormItems" : [ {
+          "id" : "n_chartdataname_like",
+          "dataType" : 25,
+          "getPSAppDEField" : {
+            "name" : "CHARTDATANAME",
+            "codeName" : "ChartDataName"
+          }
+        }, {
+          "id" : "n_datatype_eq",
+          "dataType" : 25,
+          "getPSAppDEField" : {
+            "name" : "DATATYPE",
+            "codeName" : "DataType"
+          }
+        } ],
+        "getPSDEFormPages" : [ {
+          "caption" : "常规条件",
+          "codeName" : "formpage1",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMPAGE",
+          "name" : "formpage1",
+          "getPSDEFormDetails" : [ {
+            "caption" : "图表名称(%)",
+            "codeName" : "n_chartdataname_like",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "name" : "n_chartdataname_like",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "CHARTDATANAME",
+              "codeName" : "ChartDataName"
+            },
+            "getPSEditor" : {
+              "editorType" : "TEXTBOX",
+              "name" : "n_chartdataname_like"
+            },
+            "getPSLayoutPos" : {
+              "colLG" : 12,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
+            "showCaption" : true
+          }, {
+            "caption" : "数据分类(等于(=))",
+            "codeName" : "n_datatype_eq",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "name" : "n_datatype_eq",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "DATATYPE",
+              "codeName" : "DataType"
+            },
+            "getPSEditor" : {
+              "editorType" : "DROPDOWNLIST",
+              "name" : "n_datatype_eq",
+              "getPSAppCodeList" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/DataType.json"
+              },
+              "singleSelect" : true
+            },
+            "getPSLayoutPos" : {
+              "colLG" : 12,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
+            "needCodeListConfig" : true,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "searchButtonStyle" : "DEFAULT",
+        "tabHeaderPos" : "TOP",
+        "enableAdvanceSearch" : false,
+        "enableAutoSearch" : false,
+        "enableFilterSave" : false,
+        "noTabHeader" : true,
+        "name" : "searchform",
+        "modelid" : "b00f170a574453ea974476955bd83442",
+        "modeltype" : "PSDEFORM_SEARCHFORM"
+      } ],
+      "getPSDEViewCodeName" : "PickupGridView",
+      "getPSDEViewId" : "3096c42baf76307ce00f26e2e0b97452",
+      "getPSViewLayoutPanel" : {
+        "codeName" : "Layoutpanel",
+        "controlStyle" : "APPDEPICKUPGRIDVIEW",
+        "controlType" : "VIEWLAYOUTPANEL",
+        "name" : "layoutpanel",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
+        "layoutPanel" : true,
+        "useDefaultLayout" : true
+      },
+      "title" : "图表选择表格视图",
+      "viewStyle" : "DEFAULT",
+      "viewType" : "DEPICKUPGRIDVIEW",
+      "xDataControlName" : "grid",
+      "enableDP" : true,
+      "enableExport" : true,
+      "enableFilter" : true,
+      "enableImport" : true,
+      "enableRowEdit" : false,
+      "enableSearch" : true,
+      "expandSearchForm" : true,
+      "pickupMode" : true,
+      "rowEditDefault" : false,
+      "modelid" : "e13f9a5d90882b9a0528bf88c2c266d8",
+      "modeltype" : "PSAPPDEVIEW"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "name" : "pickupviewpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+      "logicTag" : "pickupviewpanel",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_pickupviewpanel",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "PICKUPVIEWPANEL"
+    }
+  } ],
+  "getPSDEViewCodeName" : "MPickupView",
+  "getPSDEViewId" : "6c57ebad4366333457c6aca9cf8102d7",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMPICKUPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "图表数据多项选择视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMPICKUPVIEW",
+  "enableDP" : true,
+  "showCaptionBar" : false,
+  "modelid" : "f248de6a4cfdcdf72837f41ed92169a7",
+  "modeltype" : "PSAPPDEVIEW"
+}

@@ -1,0 +1,21 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "SCRIPT",
+  "codeName" : "Click5",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click5.json",
+  "logicName" : "Click5",
+  "name" : "Click5",
+  "getPSDEActionInput" : {
+    "name" : "Click5Input",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CalculatorDTO"
+    },
+    "type" : "DTO"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "Click5Result",
+    "type" : "VOID"
+  },
+  "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'5';"
+}

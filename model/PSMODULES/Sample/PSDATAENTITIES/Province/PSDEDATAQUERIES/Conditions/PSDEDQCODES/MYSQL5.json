@@ -1,0 +1,39 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeConds" : [ {
+    "condType" : "CUSTOM",
+    "customCond" : "( LENGTH(t1.`PROVINCENAME`) = 10  AND  t1.`CREATEMAN` = #{ctx.sessioncontext.srfpersonid}  AND  t1.`PROVINCENAME` IS NULL  AND  t1.`PROVINCENAME` IS NOT NULL  AND  t1.`PROVINCENAME` LIKE CONCAT('%',#{ctx.sessioncontext.srforgid},'%')  AND  t1.`PROVINCENAME` LIKE CONCAT('%',#{ctx.sessioncontext.srforgname})  AND  t1.`PROVINCENAME` LIKE CONCAT(#{ctx.sessioncontext.srfusername},'%')  AND  t1.`SN` <> #{ctx.datacontext.sn}  AND  t1.`SN` > #{ctx.globalcontext.sn}  AND  t1.`SN` >= #{ctx.sessioncontext.sn}  AND  t1.`SN` < #{ctx.systemcontext.sn}  AND  t1.`SN` <= #{ctx.webcontext.sn}  AND  t1.`CODE` IN (#{ctx.sessioncontext.srforgid}) )",
+    "name" : "查询条件"
+  } ],
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CODE`",
+    "name" : "CODE"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`PROVINCEID`",
+    "name" : "PROVINCEID"
+  }, {
+    "expression" : "t1.`PROVINCENAME`",
+    "name" : "PROVINCENAME"
+  }, {
+    "expression" : "t1.`SN`",
+    "name" : "SN"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CODE`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`MEMO`,\nt1.`PROVINCEID`,\nt1.`PROVINCENAME`,\nt1.`SN`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_PROVINCE` t1 \n",
+  "id" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEDATAQUERIES/Conditions/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,377 @@
+{
+  "codeName" : "Quick",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer/PSFORMS/Quick.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "快速新建",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "pcustomername_editor_u016ca55_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "自动填充-新建"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "自动填充-新建",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+      },
+      "modelref" : true,
+      "id" : "ACCreate@Customer"
+    },
+    "uIActionTarget" : "NONE"
+  } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "customername",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    }
+  }, {
+    "id" : "pcustomername",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PCUSTOMERNAME",
+      "codeName" : "Pcustomername"
+    }
+  }, {
+    "id" : "type",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
+    "id" : "memo",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "MEMO",
+      "codeName" : "Memo"
+    }
+  }, {
+    "id" : "customerid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    }
+  }, {
+    "id" : "pcustomerid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PCUSTOMERID",
+      "codeName" : "Pcustomerid"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "快速新建",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "客户名称",
+        "codeName" : "customername",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "customername",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CUSTOMERNAME",
+          "codeName" : "CustomerName"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 200,
+          "name" : "customername"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "上级客户",
+        "codeName" : "pcustomername",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "pcustomername",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PCUSTOMERNAME",
+          "codeName" : "Pcustomername"
+        },
+        "getPSEditor" : {
+          "editorParams" : {
+            "AC" : "TRUE",
+            "PICKUPVIEW" : "TRUE"
+          },
+          "editorType" : "PICKER",
+          "handlerType" : "PickupText",
+          "name" : "pcustomername",
+          "getPSAppDEACMode" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "getPSAppDEDataSet" : {
+            "modelref" : true,
+            "id" : "FetchDefault"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+          },
+          "getPSUIActionGroup" : {
+            "codeName" : "Auto1",
+            "name" : "自动填充",
+            "getPSUIActionGroupDetails" : [ {
+              "detailType" : "DEUIACTION",
+              "name" : "u016ca55",
+              "getPSUIAction" : {
+                "actionTarget" : "NONE",
+                "caption" : "新建",
+                "codeName" : "ACCreate",
+                "getFrontPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                  "viewType" : "DEOPTVIEW"
+                },
+                "frontProcessType" : "WIZARD",
+                "fullCodeName" : "Customer_ACCreate",
+                "name" : "自动填充-新建",
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+                },
+                "getPSSysImage" : {
+                  "glyph" : "xf044@FontAwesome",
+                  "cssClass" : "fa fa-edit"
+                },
+                "timeout" : 60000,
+                "uIActionMode" : "FRONT",
+                "uIActionTag" : "ACCreate",
+                "uIActionType" : "DEUIACTION",
+                "id" : "ACCreate@Customer"
+              },
+              "addSeparator" : false,
+              "showCaption" : true,
+              "showIcon" : true
+            } ]
+          },
+          "getPickupPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupView.json",
+            "viewType" : "DEPICKUPVIEW"
+          },
+          "valueItemName" : "pcustomerid",
+          "enableAC" : true,
+          "enablePickupView" : true,
+          "forceSelection" : true,
+          "showTrigger" : true,
+          "singleSelect" : true
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueItemName" : "pcustomerid",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "类型",
+        "codeName" : "type",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "type",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "TYPE",
+          "codeName" : "Type"
+        },
+        "getPSEditor" : {
+          "editorType" : "RADIOBUTTONLIST",
+          "name" : "type",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/CustomerType.json"
+          }
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : false,
+        "needCodeListConfig" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "备注",
+        "codeName" : "memo",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "itemHeight" : 200.0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "memo",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "MEMO",
+          "codeName" : "Memo"
+        },
+        "getPSEditor" : {
+          "editorHeight" : 200.0,
+          "editorParams" : {
+            "HEIGHT" : "200"
+          },
+          "editorType" : "TEXTAREA_10",
+          "maxLength" : 1000,
+          "name" : "memo",
+          "showMaxLength" : true
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "DC849EA9-2E7C-4C51-ADD1-375D6BAD1212",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

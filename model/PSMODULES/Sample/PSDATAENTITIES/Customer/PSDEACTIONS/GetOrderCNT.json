@@ -1,0 +1,25 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "SCRIPT",
+  "codeName" : "GetOrderCNT",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Customer/PSDEACTIONS/GetOrderCNT.json",
+  "logicName" : "获取订单计数",
+  "name" : "getOrderCNT",
+  "getPSDEActionInput" : {
+    "getKeyPSDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "name" : "GetOrderCNTInput",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "GetOrderCNTResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CustomerDTO"
+    },
+    "type" : "DTO"
+  },
+  "scriptCode" : "data.ordercnt=Math.floor(Math.random()*100+1);\nconsole.log(\"获取订单计数\");\nconsole.log(data.ordercnt);"
+}

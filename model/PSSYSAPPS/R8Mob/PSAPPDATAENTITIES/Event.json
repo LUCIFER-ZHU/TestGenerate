@@ -1,0 +1,242 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "EVENTID",
+        "codeName" : "EventId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "EVENTNAME",
+        "codeName" : "EventName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "EVENTNAME",
+      "codeName" : "EventName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "EVENTID",
+      "codeName" : "EventId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "EventName",
+    "logicName" : "事件名称",
+    "name" : "EVENTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "EventId",
+    "logicName" : "事件标识",
+    "name" : "EVENTID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "keyField" : true
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "BeginTime",
+    "logicName" : "开始时间",
+    "name" : "BEGINTIME",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "EndTime",
+    "logicName" : "结束时间",
+    "name" : "ENDTIME",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
+    "builtinMethod" : false
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "Event",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Event.json",
+  "enableUIActions" : 15,
+  "logicName" : "事件",
+  "name" : "EVENT",
+  "getPSDEName" : "EVENT",
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "EVENTNAME",
+    "codeName" : "EventName"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

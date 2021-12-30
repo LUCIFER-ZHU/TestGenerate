@@ -1,0 +1,61 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`CUSTOMERID`",
+    "name" : "CUSTOMERID"
+  }, {
+    "expression" : "t11.`CUSTOMERNAME`",
+    "name" : "CUSTOMERNAME"
+  }, {
+    "expression" : "t1.`DEPTID`",
+    "name" : "DEPTID"
+  }, {
+    "expression" : "t1.`EMAIL`",
+    "name" : "EMAIL"
+  }, {
+    "expression" : "t1.`EXPENDTIME`",
+    "name" : "EXPENDTIME"
+  }, {
+    "expression" : "t1.`EXPREVENUE`",
+    "name" : "EXPREVENUE"
+  }, {
+    "expression" : "t1.`OPPORTUNITYID`",
+    "name" : "OPPORTUNITYID"
+  }, {
+    "expression" : "t1.`OPPORTUNITYNAME`",
+    "name" : "OPPORTUNITYNAME"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`PERSONDATAID`",
+    "name" : "PERSONDATAID"
+  }, {
+    "expression" : "t21.`PERSONDATANAME`",
+    "name" : "PERSONDATANAME"
+  }, {
+    "expression" : "t1.`PHONE`",
+    "name" : "PHONE"
+  }, {
+    "expression" : "t1.`PRIORITY`",
+    "name" : "PRIORITY"
+  }, {
+    "expression" : "t1.`STATE`",
+    "name" : "STATE"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`CUSTOMERID`,\nt11.`CUSTOMERNAME`,\nt1.`DEPTID`,\nt1.`EMAIL`,\nt1.`EXPENDTIME`,\nt1.`EXPREVENUE`,\nt1.`OPPORTUNITYID`,\nt1.`OPPORTUNITYNAME`,\nt1.`ORGID`,\nt1.`PERSONDATAID`,\nt21.`PERSONDATANAME`,\nt1.`PHONE`,\nt1.`PRIORITY`,\nt1.`STATE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_OPPORTUNITY` t1 \nLEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID` \nLEFT JOIN `T_PERSONDATA` t21 ON t1.`PERSONDATAID` = t21.`PERSONDATAID` \n",
+  "id" : "PSMODULES/Sample/PSDATAENTITIES/Opportunity/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,174 @@
+{
+  "codeName" : "TreeTable",
+  "controlType" : "TREEGRIDEX",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSTREEGRIDICES/TreeTable.json",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "树表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "treegridex",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_treegridex",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDETreeColumns" : [ {
+    "align" : "CENTER",
+    "caption" : "创建时间",
+    "codeName" : "createdate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "createdate",
+    "name" : "createdate",
+    "width" : 250,
+    "widthUnit" : "px",
+    "enableExpand" : false,
+    "enableSort" : false
+  }, {
+    "align" : "CENTER",
+    "caption" : "更新时间",
+    "codeName" : "updatedate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "updatedate",
+    "name" : "updatedate",
+    "width" : 250,
+    "widthUnit" : "px",
+    "enableExpand" : false,
+    "enableSort" : false
+  }, {
+    "align" : "CENTER",
+    "caption" : "数据",
+    "codeName" : "data",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "data",
+    "name" : "data",
+    "width" : 250,
+    "widthUnit" : "px",
+    "enableExpand" : false,
+    "enableSort" : false
+  } ],
+  "getPSDETreeNodeRSs" : [ {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "chartdata"
+    },
+    "name" : "默认根节点 - 动态chart",
+    "getPSNavigateContexts" : [ {
+      "key" : "CONTEXTPARAM1",
+      "name" : "CONTEXTPARAM1",
+      "value" : "datatype",
+      "rawValue" : false
+    }, {
+      "key" : "CONTEXTPARAM2",
+      "name" : "CONTEXTPARAM2",
+      "value" : "ssssss",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "param2",
+      "name" : "param2",
+      "value" : "datatype",
+      "rawValue" : false
+    }, {
+      "key" : "param3",
+      "name" : "param3",
+      "value" : "xxxxxx",
+      "rawValue" : true
+    } ],
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  } ],
+  "getPSDETreeNodes" : [ {
+    "counterMode" : 0,
+    "name" : "默认根节点",
+    "nodeType" : "ROOT",
+    "nodeValue" : "root",
+    "text" : "默认根节点",
+    "treeNodeType" : "STATIC",
+    "hasPSDETreeNodeRSs" : true,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : true,
+    "rootNode" : true,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "ROOT"
+  }, {
+    "counterMode" : 0,
+    "getIdPSAppDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    },
+    "maxSize" : -1,
+    "name" : "动态chart",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "nodeType" : "chartdata",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "PARAM1",
+      "name" : "PARAM1",
+      "value" : "testparam1",
+      "rawValue" : true
+    }, {
+      "key" : "PARAM2",
+      "name" : "PARAM2",
+      "value" : "chartdataid",
+      "rawValue" : false
+    } ],
+    "getTextPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    },
+    "treeNodeType" : "DE",
+    "hasPSDETreeNodeRSs" : false,
+    "appendPNodeId" : false,
+    "disableSelect" : false,
+    "enableCheck" : false,
+    "enableEditData" : false,
+    "enableNewData" : false,
+    "enableQuickCreate" : false,
+    "enableQuickSearch" : false,
+    "enableRemoveData" : false,
+    "enableViewData" : false,
+    "expandFirstOnly" : false,
+    "expanded" : true,
+    "rootNode" : false,
+    "selectFirstOnly" : false,
+    "selected" : false,
+    "id" : "chartdata"
+  } ],
+  "treeGridMode" : 1,
+  "enableRootSelect" : false,
+  "outputIconDefault" : true,
+  "rootVisible" : false,
+  "modelid" : "B2D034DE-BAF4-4D98-B33D-9F3ECFE38B6F",
+  "modeltype" : "PSDETREEGRIDEX"
+}

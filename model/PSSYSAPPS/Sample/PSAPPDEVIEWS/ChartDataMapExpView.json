@@ -1,0 +1,553 @@
+{
+  "accUserMode" : 2,
+  "caption" : "图表地图导航视图",
+  "codeName" : "ChartDataMapExpView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataMapExpView.json",
+  "name" : "ChartDataMapExpView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "MapExpViewmapexpbar",
+    "controlType" : "MAPEXPBAR",
+    "name" : "mapexpbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "mapexpbar_toolbar_deuiaction1_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "mapexpbar_toolbar_deuiaction1"
+      },
+      "getPSViewCtrlName" : "mapexpbar_toolbar"
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "mapexpbar_toolbar_deuiaction2_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "mapexpbar_toolbar_deuiaction2"
+      },
+      "getPSViewCtrlName" : "mapexpbar_toolbar"
+    }, {
+      "eventArg" : "deuiaction3",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "mapexpbar_toolbar_deuiaction3_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "mapexpbar_toolbar_deuiaction3"
+      },
+      "getPSViewCtrlName" : "mapexpbar_toolbar"
+    }, {
+      "eventArg" : "deuiaction4",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "mapexpbar_toolbar_deuiaction4_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "mapexpbar_toolbar_deuiaction4"
+      },
+      "getPSViewCtrlName" : "mapexpbar_toolbar"
+    }, {
+      "eventArg" : "deuiaction5",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "mapexpbar_toolbar_deuiaction5_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "mapexpbar_toolbar_deuiaction5"
+      },
+      "getPSViewCtrlName" : "mapexpbar_toolbar"
+    } ],
+    "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:chart",
+      "realTitle" : "图表编辑视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "mapexpbar_toolbar_deuiaction1",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "New"
+      },
+      "xDataControlName" : "mapexpbar_map"
+    }, {
+      "name" : "mapexpbar_toolbar_deuiaction2",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Save"
+      },
+      "xDataControlName" : "mapexpbar_map"
+    }, {
+      "name" : "mapexpbar_toolbar_deuiaction3",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "modelref" : true,
+        "id" : "Count@ChartData"
+      },
+      "uIActionTarget" : "NONE",
+      "xDataControlName" : "mapexpbar_map"
+    }, {
+      "name" : "mapexpbar_toolbar_deuiaction4",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "modelref" : true,
+        "id" : "custom1@ChartData"
+      },
+      "uIActionTarget" : "SINGLEDATA",
+      "xDataControlName" : "mapexpbar_map"
+    }, {
+      "name" : "mapexpbar_toolbar_deuiaction5",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "modelref" : true,
+        "id" : "custom2@ChartData"
+      },
+      "uIActionTarget" : "NONE",
+      "xDataControlName" : "mapexpbar_map"
+    } ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "mapexpbar"
+    },
+    "getPSControlParam" : {
+      "width" : 800.0,
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "MAPEXPBAR"
+    },
+    "getPSControls" : [ {
+      "codeName" : "MapView",
+      "controlType" : "MAP",
+      "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSMAPS/MapView.json",
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+      "legendPos" : "NONE",
+      "logicName" : "地图视图",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "mapexpbar_map"
+      },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SELECTIONCHANGE",
+        "logicTag" : "mapexpbar_map",
+        "logicType" : "CUSTOM",
+        "name" : "mapexpbar_selectionchange"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "mapexpbar_map",
+        "logicType" : "CUSTOM",
+        "name" : "mapexpbar_load"
+      } ],
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "mapexpbar_map"
+      },
+      "getPSSysMapItems" : [ {
+        "bKColor" : "rgba(241, 21, 21, 1)",
+        "borderWidth" : 0,
+        "color" : "rgba(235, 160, 160, 1)",
+        "getContentPSAppDEField" : {
+          "name" : "DATA",
+          "codeName" : "Data"
+        },
+        "getIdPSAppDEField" : {
+          "name" : "CHARTDATAID",
+          "codeName" : "ChartDataId"
+        },
+        "itemStyle" : "POINT",
+        "itemType" : "chart",
+        "getLatitudePSAppDEField" : {
+          "name" : "LATITUDE",
+          "codeName" : "Latitude"
+        },
+        "getLongitudePSAppDEField" : {
+          "name" : "LONGITUDE",
+          "codeName" : "Longitude"
+        },
+        "maxSize" : -1,
+        "name" : "测试",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "radius" : 0,
+        "getTextPSAppDEField" : {
+          "name" : "CHARTDATANAME",
+          "codeName" : "ChartDataName"
+        },
+        "enableQuickCreate" : false,
+        "id" : "chart"
+      } ],
+      "name" : "mapexpbar_map",
+      "modelid" : "A160AFE6-3D82-48F5-AEB7-840F9CBCAF65",
+      "modeltype" : "PSSYSMAPVIEW"
+    }, {
+      "codeName" : "MapExpViewmapexpbar_toolbar",
+      "controlType" : "TOOLBAR",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "测试",
+      "name" : "mapexpbar_toolbar",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSControlLogics" : [ {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "mapexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "mapexpbar_toolbar_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "mapexpbar_toolbar_deuiaction1_click"
+        }
+      }, {
+        "eventArg" : "deuiaction2",
+        "eventNames" : "CLICK",
+        "logicTag" : "mapexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "mapexpbar_toolbar_deuiaction2_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "mapexpbar_toolbar_deuiaction2_click"
+        }
+      }, {
+        "eventArg" : "deuiaction3",
+        "eventNames" : "CLICK",
+        "logicTag" : "mapexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "mapexpbar_toolbar_deuiaction3_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "mapexpbar_toolbar_deuiaction3_click"
+        }
+      }, {
+        "eventArg" : "deuiaction4",
+        "eventNames" : "CLICK",
+        "logicTag" : "mapexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "mapexpbar_toolbar_deuiaction4_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "mapexpbar_toolbar_deuiaction4_click"
+        }
+      }, {
+        "eventArg" : "deuiaction5",
+        "eventNames" : "CLICK",
+        "logicTag" : "mapexpbar_toolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "mapexpbar_toolbar_deuiaction5_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "mapexpbar_toolbar_deuiaction5_click"
+        }
+      } ],
+      "getPSControlParam" : {
+        "id" : "mapexpbar_toolbar"
+      },
+      "getPSDEToolbarItems" : [ {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.NEW"
+        },
+        "caption" : "新建",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction1",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "mapexpbar_toolbar_deuiaction1"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.NEW"
+          },
+          "caption" : "新建",
+          "codeName" : "New",
+          "fullCodeName" : "New",
+          "name" : "表格界面_新建操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0f6@FontAwesome",
+            "cssClass" : "fa fa-file-text-o"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.NEW"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "New",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "新建",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.NEW"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.SAVE"
+        },
+        "caption" : "保存",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction2",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "mapexpbar_toolbar_deuiaction2"
+        },
+        "getPSSysImage" : {
+          "imagePath" : "/assets/images/test.png"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.SAVE"
+          },
+          "caption" : "保存",
+          "codeName" : "Save",
+          "fullCodeName" : "Save",
+          "name" : "编辑界面_保存操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0c7@FontAwesome",
+            "cssClass" : "fa fa-save"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Save",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "保存",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "计数器",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction3",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "mapexpbar_toolbar_deuiaction3"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "NONE",
+          "caption" : "计数器",
+          "codeName" : "Count",
+          "counterId" : "countertag",
+          "frontProcessType" : "OTHER",
+          "fullCodeName" : "ChartData_Count",
+          "name" : "计数器",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "getPSSysPFPlugin" : {
+            "pluginType" : "DEUIACTION",
+            "pluginCode" : "actionPluginTest"
+          },
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "Count",
+          "uIActionType" : "DEUIACTION",
+          "id" : "Count@ChartData"
+        },
+        "tooltip" : "计数器",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "测试1",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction4",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "mapexpbar_toolbar_deuiaction4"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEDATA",
+          "caption" : "界面行为测试1",
+          "codeName" : "custom1",
+          "dialogResult" : "OK",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+            "viewType" : "DEMOBMDVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "ChartData_custom1",
+          "htmlPageUrl" : "https://www.baidu.com/",
+          "name" : "界面行为测试1",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "refreshMode" : 1,
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "custom1",
+          "uIActionType" : "DEUIACTION",
+          "closeEditView" : true,
+          "closePopupView" : true,
+          "reloadData" : true,
+          "id" : "custom1@ChartData"
+        },
+        "tooltip" : "测试1",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "caption" : "测试2",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "deuiaction5",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "mapexpbar_toolbar_deuiaction5"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "NONE",
+          "caption" : "界面行为测试2",
+          "codeName" : "custom2",
+          "confirmMsg" : "1354652",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+            "viewType" : "DEMOBMDVIEW"
+          },
+          "fullCodeName" : "ChartData_custom2",
+          "name" : "界面行为测试2",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "GetRandom"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+          },
+          "successMsg" : "35+62654",
+          "timeout" : 60000,
+          "uIActionMode" : "BACKEND",
+          "uIActionTag" : "custom2",
+          "uIActionType" : "DEUIACTION",
+          "enableConfirm" : true,
+          "id" : "custom2@ChartData"
+        },
+        "tooltip" : "测试2",
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "1E98CD1B-5069-4A8D-A534-DD302C04AD09",
+      "modeltype" : "PSDETOOLBAR"
+    } ],
+    "title" : "地图导航",
+    "width" : 800.0,
+    "xDataControlName" : "mapexpbar_map",
+    "enableCounter" : true,
+    "enableSearch" : true,
+    "showTitleBar" : true,
+    "modelid" : "acc3378cfe085a71582970a77873b52a_mapexpbar",
+    "modeltype" : "PSEXPBAR"
+  } ],
+  "getPSDEViewCodeName" : "MapExpView",
+  "getPSDEViewId" : "6E27483F-9690-4D3D-963C-E73E3091DF41",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMAPEXPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "sideBarLayout" : "LEFT",
+  "title" : "图表地图导航视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMAPEXPVIEW",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "showDataInfoBar" : true,
+  "modelid" : "acc3378cfe085a71582970a77873b52a",
+  "modeltype" : "PSAPPDEVIEW"
+}

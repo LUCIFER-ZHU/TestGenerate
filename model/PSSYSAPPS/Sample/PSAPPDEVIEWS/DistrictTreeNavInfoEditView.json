@@ -1,0 +1,306 @@
+{
+  "accUserMode" : 2,
+  "caption" : "区",
+  "codeName" : "DistrictTreeNavInfoEditView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/DistrictTreeNavInfoEditView.json",
+  "name" : "DistrictTreeNavInfoEditView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/District.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "EditView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "form",
+      "name" : "FORM",
+      "paramType" : "CTRL"
+    }, {
+      "name" : "P2K",
+      "paramType" : "VALUE",
+      "value" : 0
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "Info",
+    "controlType" : "FORM",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/District/PSFORMS/Info.json",
+    "getGetDraftFromPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraftfrom"
+    },
+    "getGetDraftPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraft"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "logicName" : "信息表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/District.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/District.json"
+        }
+      }, {
+        "actionName" : "GETDRAFTFROM",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraftfrom",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/District.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/District.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/District.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/District.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/District.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "编辑表单处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;SAVE;REMOVE",
+      "logicTag" : "form",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_form",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "getPSDEFormItems" : [ {
+      "id" : "srfupdatedate",
+      "hidden" : true,
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      }
+    }, {
+      "id" : "srforikey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfkey",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "DISTRICTID",
+        "codeName" : "DistrictId"
+      }
+    }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "DISTRICTNAME",
+        "codeName" : "DistrictName"
+      }
+    }, {
+      "id" : "srftempmode",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfuf",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfdeid",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfsourcekey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "districtname",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "DISTRICTNAME",
+        "codeName" : "DistrictName"
+      }
+    }, {
+      "id" : "districtid",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "DISTRICTID",
+        "codeName" : "DistrictId"
+      }
+    } ],
+    "getPSDEFormPages" : [ {
+      "caption" : "基本信息",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "区基本信息",
+        "codeName" : "group1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "group1",
+        "getPSDEFormDetails" : [ {
+          "caption" : "区名称",
+          "codeName" : "districtname",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "districtname",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "DISTRICTNAME",
+            "codeName" : "DistrictName"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "districtname",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "tabHeaderPos" : "TOP",
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "infoFormMode" : true,
+    "noTabHeader" : true,
+    "name" : "form",
+    "modelid" : "A17EE637-190B-4479-B3B7-1C7EE7EA8F43",
+    "modeltype" : "PSDEFORM_EDITFORM"
+  } ],
+  "getPSDEViewCodeName" : "TreeNavInfoEditView",
+  "getPSDEViewId" : "093946BE-9005-49AF-9E06-7E2971C26EEC",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEEDITVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/District.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "区编辑视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEEDITVIEW",
+  "xDataControlName" : "form",
+  "enableDP" : true,
+  "showDataInfoBar" : true,
+  "modelid" : "a0d42ad509cdd1e91e5a25b7ed5b3d63",
+  "modeltype" : "PSAPPDEVIEW"
+}

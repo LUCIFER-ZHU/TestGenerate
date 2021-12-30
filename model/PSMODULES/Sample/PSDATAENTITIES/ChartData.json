@@ -1,0 +1,3603 @@
+{
+  "getAllPSDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value"
+    }, {
+      "dataType" : 25,
+      "name" : "text"
+    } ],
+    "pagingSize" : 50,
+    "defaultMode" : true,
+    "enablePagingBar" : false,
+    "id" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEACMODES/Default.json"
+  } ],
+  "getAllPSDEActions" : [ {
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEACTIONS/Create.json",
+    "logicName" : "Create",
+    "name" : "Create",
+    "orderValue" : 1,
+    "getPSDEActionInput" : {
+      "name" : "CreateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSDEActionReturn" : {
+      "name" : "CreateResult",
+      "type" : "VOID"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEACTIONS/Update.json",
+    "logicName" : "Update",
+    "name" : "Update",
+    "orderValue" : 11,
+    "getPSDEActionInput" : {
+      "name" : "UpdateInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataDTO"
+      },
+      "type" : "DTO",
+      "output" : true
+    },
+    "getPSDEActionReturn" : {
+      "name" : "UpdateResult",
+      "type" : "VOID"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEACTIONS/Remove.json",
+    "logicName" : "Remove",
+    "name" : "Remove",
+    "orderValue" : 21,
+    "getPSDEActionInput" : {
+      "getKeyPSDEField" : {
+        "name" : "CHARTDATAID",
+        "codeName" : "ChartDataId"
+      },
+      "name" : "RemoveInput",
+      "type" : "KEYFIELDS"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "RemoveResult",
+      "type" : "VOID"
+    },
+    "batchAction" : true,
+    "builtinAction" : true
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEACTIONS/Get.json",
+    "logicName" : "Get",
+    "name" : "Get",
+    "orderValue" : 31,
+    "getPSDEActionInput" : {
+      "getKeyPSDEField" : {
+        "name" : "CHARTDATAID",
+        "codeName" : "ChartDataId"
+      },
+      "name" : "GetInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "GetResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataDTO"
+      },
+      "type" : "DTO"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEACTIONS/GetDraft.json",
+    "logicName" : "GetDraft",
+    "name" : "GetDraft",
+    "orderValue" : 41,
+    "getPSDEActionInput" : {
+      "name" : "GetDraftInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "GetDraftResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataDTO"
+      },
+      "type" : "DTO"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEACTIONS/CheckKey.json",
+    "logicName" : "CheckKey",
+    "name" : "CheckKey",
+    "getPSDEActionInput" : {
+      "name" : "CheckKeyInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "CheckKeyResult",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "SCRIPT",
+    "codeName" : "GetRandom",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEACTIONS/GetRandom.json",
+    "logicName" : "获取随机数",
+    "name" : "getRandom",
+    "getPSDEActionInput" : {
+      "getKeyPSDEField" : {
+        "name" : "CHARTDATAID",
+        "codeName" : "ChartDataId"
+      },
+      "name" : "GetRandomInput",
+      "type" : "KEYFIELD"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "GetRandomResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataDTO"
+      },
+      "type" : "DTO"
+    },
+    "scriptCode" : "data.countertag=Math.floor(Math.random()*100+1);\ndata.countertag2=Math.floor(Math.random()*100+1);\ndata.countertag3=Math.floor(Math.random()*100+1);\nconsole.log(\"获取随机数给【首页计数器】供数\");\nconsole.log(data);"
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEACTIONS/Save.json",
+    "logicName" : "Save",
+    "name" : "Save",
+    "getPSDEActionInput" : {
+      "name" : "SaveInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "SaveResult",
+      "type" : "VOID"
+    },
+    "builtinAction" : true
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "TestBackEndAction",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEACTIONS/TestBackEndAction.json",
+    "logicName" : "测试后台界面行为",
+    "name" : "TestBackEndAction",
+    "getPSDEActionInput" : {
+      "name" : "TestBackEndActionInput",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEActionReturn" : {
+      "name" : "TestBackEndActionResult",
+      "type" : "VOID"
+    },
+    "scriptCode" : "console.log(\"执行脚本，测试后台界面行为\", data);"
+  } ],
+  "getAllPSDEDBConfigs" : [ {
+    "dBType" : "MYSQL5",
+    "name" : "MYSQL5",
+    "objNameCase" : "DEFAULT",
+    "standardTableName" : "`T_CHARTDATA`",
+    "tableName" : "T_CHARTDATA",
+    "valid" : true
+  } ],
+  "getAllPSDEDBTables" : [ {
+    "getAllPSDEFields" : [ {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    }, {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    }, {
+      "name" : "CREATEMAN",
+      "codeName" : "CreateMan"
+    }, {
+      "name" : "CREATEDATE",
+      "codeName" : "CreateDate"
+    }, {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }, {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }, {
+      "name" : "DEPTID",
+      "codeName" : "DeptId"
+    }, {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    }, {
+      "name" : "CHARTDATE",
+      "codeName" : "Chartdate"
+    }, {
+      "name" : "TOTALPRICE",
+      "codeName" : "Totalprice"
+    }, {
+      "name" : "DATETIME",
+      "codeName" : "DateTime"
+    }, {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    }, {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    }, {
+      "name" : "LONGITUDE",
+      "codeName" : "Longitude"
+    }, {
+      "name" : "LATITUDE",
+      "codeName" : "Latitude"
+    }, {
+      "name" : "YEAR",
+      "codeName" : "Year"
+    }, {
+      "name" : "MONTH",
+      "codeName" : "Month"
+    }, {
+      "name" : "SEASON",
+      "codeName" : "Season"
+    }, {
+      "name" : "DATA",
+      "codeName" : "Data"
+    }, {
+      "name" : "DATATYPE",
+      "codeName" : "DataType"
+    }, {
+      "name" : "CHARTDATANO",
+      "codeName" : "ChartDataNo"
+    }, {
+      "name" : "OPEN",
+      "codeName" : "Open"
+    }, {
+      "name" : "CLOSE",
+      "codeName" : "Close"
+    }, {
+      "name" : "LOWEST",
+      "codeName" : "Lowest"
+    }, {
+      "name" : "HIGHEST",
+      "codeName" : "Highest"
+    }, {
+      "name" : "INFOMESSAGE",
+      "codeName" : "Infomessage"
+    }, {
+      "name" : "PLANINCOME",
+      "codeName" : "Planincome"
+    }, {
+      "name" : "REALINCOME",
+      "codeName" : "Realincome"
+    }, {
+      "name" : "IMAGEPATH",
+      "codeName" : "Imagepath"
+    } ],
+    "codeName" : "Table",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json",
+    "name" : "T_CHARTDATA",
+    "getPSSysDBTable" : {
+      "modelref" : true,
+      "id" : "T_CHARTDATA"
+    },
+    "tableType" : "MAIN"
+  } ],
+  "getAllPSDEDataQueries" : [ {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "Default",
+    "logicName" : "数据查询",
+    "name" : "DEFAULT",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "CHARTDATA"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataDTO"
+      },
+      "type" : "DTOS"
+    },
+    "defaultMode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEDATAQUERIES/Simple/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "Simple",
+    "dEFGroupType" : "BASEFIELDS",
+    "logicName" : "基础属性查询",
+    "name" : "SIMPLE",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "CHARTDATA"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "SimpleInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "SimpleResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataSimpleDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 100
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+    } ],
+    "codeName" : "View",
+    "logicName" : "默认（全部数据）",
+    "name" : "VIEW",
+    "getPSDEDQMain" : {
+      "getJoinPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData.json"
+      },
+      "joinType" : "MAIN",
+      "name" : "CHARTDATA"
+    },
+    "getPSDEDataQueryInput" : {
+      "name" : "ViewInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataQueryReturn" : {
+      "name" : "ViewResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataDTO"
+      },
+      "type" : "DTOS"
+    },
+    "viewLevel" : 0
+  } ],
+  "getAllPSDEDataSets" : [ {
+    "codeName" : "Default",
+    "logicName" : "数据集",
+    "name" : "DEFAULT",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
+    "getPSDEDataSetInput" : {
+      "name" : "DefaultInput",
+      "getPSDEFilterDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataFilterDTO"
+      },
+      "type" : "DTO"
+    },
+    "getPSDEDataSetReturn" : {
+      "name" : "DefaultResult",
+      "getPSDEMethodDTO" : {
+        "modelref" : true,
+        "id" : "ChartDataDTO"
+      },
+      "type" : "PAGE"
+    },
+    "defaultMode" : true,
+    "enableBackend" : true,
+    "enableFront" : true
+  } ],
+  "getAllPSDEFields" : [ {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CHARTDATAID",
+      "dBType" : "MYSQL5",
+      "name" : "CHARTDATAID",
+      "queryCodeExp" : "t1.`CHARTDATAID`",
+      "standardColumnName" : "`CHARTDATAID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_CHARTDATAID_EQ",
+      "name" : "N_CHARTDATAID_EQ",
+      "stdDataType" : 25,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CHARTDATAID][图表标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CHARTDATAID][图表标识]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CHARTDATAID][图表标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CHARTDATAID][图表标识]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CHARTDATAID",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "ChartDataId",
+    "dEFType" : 1,
+    "dataType" : "GUID",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "图表标识",
+    "name" : "CHARTDATAID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CHARTDATAID"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "keyDEField" : true,
+    "pasteReset" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CHARTDATANAME",
+      "dBType" : "MYSQL5",
+      "name" : "CHARTDATANAME",
+      "queryCodeExp" : "t1.`CHARTDATANAME`",
+      "standardColumnName" : "`CHARTDATANAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_CHARTDATANAME_LIKE",
+      "name" : "N_CHARTDATANAME_LIKE",
+      "stdDataType" : 25,
+      "valueOP" : "LIKE"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CHARTDATANAME][图表名称]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CHARTDATANAME][图表名称]",
+        "stringLength" : 200,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CHARTDATANAME][图表名称]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CHARTDATANAME][图表名称]移动端默认",
+        "stringLength" : 200,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CHARTDATANAME",
+          "maxValue" : 200,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[200]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "ChartDataName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 200,
+    "logicName" : "图表名称",
+    "name" : "CHARTDATANAME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CHARTDATANAME"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "valueFormat" : "%1$s",
+    "enableQuickSearch" : true,
+    "majorDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEMAN",
+      "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CREATEMAN][建立人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEMAN][建立人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEMAN][建立人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CREATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CREATEMAN"
+    },
+    "predefinedType" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEDATE",
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CREATEDATE][建立时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CREATEDATE][建立时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[CREATEDATE][建立时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CREATEDATE"
+    },
+    "predefinedType" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEMAN",
+      "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEMAN][更新人]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UPDATEMAN][更新人]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEMAN][更新人]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "UPDATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEMAN"
+    },
+    "predefinedType" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEDATE",
+      "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[UPDATEDATE][更新时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[UPDATEDATE][更新时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "SPAN",
+        "name" : "[UPDATEDATE][更新时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "UPDATEDATE"
+    },
+    "predefinedType" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DEPTID",
+      "dBType" : "MYSQL5",
+      "name" : "DEPTID",
+      "queryCodeExp" : "t1.`DEPTID`",
+      "standardColumnName" : "`DEPTID`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[DEPTID][组织部门标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DEPTID][组织部门标识]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[DEPTID][组织部门标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DEPTID][组织部门标识]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DEPTID",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "DeptId",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DEPTID"
+    },
+    "predefinedType" : "ORGSECTORID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ORGID",
+      "dBType" : "MYSQL5",
+      "name" : "ORGID",
+      "queryCodeExp" : "t1.`ORGID`",
+      "standardColumnName" : "`ORGID`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ORGID][组织机构标识]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[ORGID][组织机构标识]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ORGID][组织机构标识]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[ORGID][组织机构标识]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ORGID",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "OrgId",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ORGID"
+    },
+    "predefinedType" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CHARTDATE",
+      "dBType" : "MYSQL5",
+      "name" : "CHARTDATE",
+      "queryCodeExp" : "t1.`CHARTDATE`",
+      "standardColumnName" : "`CHARTDATE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CHARTDATE][图表时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKER",
+        "name" : "[CHARTDATE][图表时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CHARTDATE][图表时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[CHARTDATE][图表时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Chartdate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "logicName" : "图表时间",
+    "name" : "CHARTDATE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CHARTDATE"
+    },
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "TOTALPRICE",
+      "dBType" : "MYSQL5",
+      "name" : "TOTALPRICE",
+      "queryCodeExp" : "t1.`TOTALPRICE`",
+      "standardColumnName" : "`TOTALPRICE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[TOTALPRICE][总计价格]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[TOTALPRICE][总计价格]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[TOTALPRICE][总计价格]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[TOTALPRICE][总计价格]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "TOTALPRICE",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Totalprice",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "总计价格",
+    "name" : "TOTALPRICE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "TOTALPRICE"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DATETIME",
+      "dBType" : "MYSQL5",
+      "name" : "DATETIME",
+      "queryCodeExp" : "t1.`DATETIME`",
+      "standardColumnName" : "`DATETIME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[DATETIME][数据时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKER",
+        "name" : "[DATETIME][数据时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "[红色]YYYY-MM-DD"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[DATETIME][数据时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[DATETIME][数据时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "[红色]YYYY-MM-DD",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "DateTime",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "logicName" : "数据时间",
+    "name" : "DATETIME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DATETIME"
+    },
+    "stdDataType" : 5,
+    "valueFormat" : "[红色]YYYY-MM-DD"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "BEGINTIME",
+      "dBType" : "MYSQL5",
+      "name" : "BEGINTIME",
+      "queryCodeExp" : "t1.`BEGINTIME`",
+      "standardColumnName" : "`BEGINTIME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[BEGINTIME][开始时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[BEGINTIME][开始时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[BEGINTIME][开始时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKER",
+        "name" : "[BEGINTIME][开始时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "BeginTime",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "logicName" : "开始时间",
+    "name" : "BEGINTIME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "BEGINTIME"
+    },
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ENDTIME",
+      "dBType" : "MYSQL5",
+      "name" : "ENDTIME",
+      "queryCodeExp" : "t1.`ENDTIME`",
+      "standardColumnName" : "`ENDTIME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[ENDTIME][结束时间]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDATE",
+        "name" : "[ENDTIME][结束时间]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[ENDTIME][结束时间]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DATEPICKER",
+        "name" : "[ENDTIME][结束时间]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "EndTime",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "logicName" : "结束时间",
+    "name" : "ENDTIME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "ENDTIME"
+    },
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "LONGITUDE",
+      "dBType" : "MYSQL5",
+      "name" : "LONGITUDE",
+      "queryCodeExp" : "t1.`LONGITUDE`",
+      "standardColumnName" : "`LONGITUDE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[LONGITUDE][经度]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[LONGITUDE][经度]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[LONGITUDE][经度]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[LONGITUDE][经度]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Longitude",
+    "dEFType" : 1,
+    "dataType" : "FLOAT",
+    "importOrder" : 1000,
+    "logicName" : "经度",
+    "name" : "LONGITUDE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "LONGITUDE"
+    },
+    "stdDataType" : 7,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "LATITUDE",
+      "dBType" : "MYSQL5",
+      "name" : "LATITUDE",
+      "queryCodeExp" : "t1.`LATITUDE`",
+      "standardColumnName" : "`LATITUDE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[LATITUDE][纬度]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[LATITUDE][纬度]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[LATITUDE][纬度]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[LATITUDE][纬度]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Latitude",
+    "dEFType" : 1,
+    "dataType" : "FLOAT",
+    "importOrder" : 1000,
+    "logicName" : "纬度",
+    "name" : "LATITUDE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "LATITUDE"
+    },
+    "stdDataType" : 7,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "YEAR",
+      "dBType" : "MYSQL5",
+      "name" : "YEAR",
+      "queryCodeExp" : "t1.`YEAR`",
+      "standardColumnName" : "`YEAR`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[YEAR][年费]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[YEAR][年费]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[YEAR][年费]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[YEAR][年费]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Year",
+    "dEFType" : 1,
+    "dataType" : "INT",
+    "importOrder" : 1000,
+    "logicName" : "年份",
+    "name" : "YEAR",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "YEAR"
+    },
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "MONTH",
+      "dBType" : "MYSQL5",
+      "name" : "MONTH",
+      "queryCodeExp" : "t1.`MONTH`",
+      "standardColumnName" : "`MONTH`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[MONTH][月份]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[MONTH][月份]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[MONTH][月份]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[MONTH][月份]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Month",
+    "dEFType" : 1,
+    "dataType" : "INT",
+    "importOrder" : 1000,
+    "logicName" : "月份",
+    "name" : "MONTH",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "MONTH"
+    },
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "SEASON",
+      "dBType" : "MYSQL5",
+      "name" : "SEASON",
+      "queryCodeExp" : "t1.`SEASON`",
+      "standardColumnName" : "`SEASON`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[SEASON][季度]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[SEASON][季度]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[SEASON][季度]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[SEASON][季度]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Season",
+    "dEFType" : 1,
+    "dataType" : "INT",
+    "importOrder" : 1000,
+    "logicName" : "季度",
+    "name" : "SEASON",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "SEASON"
+    },
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DATA",
+      "dBType" : "MYSQL5",
+      "name" : "DATA",
+      "queryCodeExp" : "t1.`DATA`",
+      "standardColumnName" : "`DATA`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[DATA][数据]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[DATA][数据]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "valueFormat" : "[蓝色]第#次",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[DATA][数据]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[DATA][数据]",
+        "uIMode" : "DEFAULT",
+        "valueFormat" : "[蓝色]第#次"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "ValueRule",
+      "name" : "数据不为空",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "VALUERANGE2",
+          "dEFName" : "DATA",
+          "maxValue" : 200.0,
+          "minValue" : 10.0,
+          "name" : "[数值范围] 大于 10.0 且  小于 200.0",
+          "ruleInfo" : "数值范围小于10或大于200！",
+          "includeMaxValue" : false,
+          "includeMinValue" : false
+        } ],
+        "ruleInfo" : "数值范围小于10或大于200！"
+      },
+      "ruleInfo" : "数据为空！",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Data",
+    "dEFType" : 1,
+    "dataType" : "DECIMAL",
+    "importOrder" : 1000,
+    "logicName" : "数据",
+    "name" : "DATA",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DATA"
+    },
+    "stdDataType" : 6,
+    "valueFormat" : "[蓝色]第#次"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DATATYPE",
+      "dBType" : "MYSQL5",
+      "name" : "DATATYPE",
+      "queryCodeExp" : "t1.`DATATYPE`",
+      "standardColumnName" : "`DATATYPE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DATATYPE_EQ",
+      "name" : "N_DATATYPE_EQ",
+      "stdDataType" : 25,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[DATATYPE][数据分类]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBDROPDOWNLIST",
+        "name" : "[DATATYPE][数据分类]移动端默认",
+        "stringLength" : 60,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true,
+        "needCodeListConfig" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[DATATYPE][数据分类]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "DROPDOWNLIST",
+        "name" : "[DATATYPE][数据分类]",
+        "stringLength" : 60,
+        "uIMode" : "DEFAULT",
+        "needCodeListConfig" : true
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DATATYPE",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "DataType",
+    "dEFType" : 1,
+    "dataType" : "SSCODELIST",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "数据分类",
+    "name" : "DATATYPE",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSCODELISTS/DataType.json"
+    },
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "DATATYPE"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CHARTDATANO",
+      "dBType" : "MYSQL5",
+      "name" : "CHARTDATANO",
+      "queryCodeExp" : "t1.`CHARTDATANO`",
+      "standardColumnName" : "`CHARTDATANO`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[CHARTDATANO][图表编号]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CHARTDATANO][图表编号]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[CHARTDATANO][图表编号]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CHARTDATANO][图表编号]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CHARTDATANO",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "ChartDataNo",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "图表编号",
+    "name" : "CHARTDATANO",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CHARTDATANO"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "OPEN",
+      "dBType" : "MYSQL5",
+      "name" : "OPEN",
+      "queryCodeExp" : "t1.`OPEN`",
+      "standardColumnName" : "`OPEN`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[OPEN][开盘值]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[OPEN][开盘值]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[OPEN][开盘值]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[OPEN][开盘值]",
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Open",
+    "dEFType" : 1,
+    "dataType" : "DECIMAL",
+    "importOrder" : 1000,
+    "logicName" : "开盘值",
+    "name" : "OPEN",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "OPEN"
+    },
+    "stdDataType" : 6,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CLOSE",
+      "dBType" : "MYSQL5",
+      "name" : "CLOSE",
+      "queryCodeExp" : "t1.`CLOSE`",
+      "standardColumnName" : "`CLOSE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[CLOSE][收盘值]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[CLOSE][收盘值]",
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[CLOSE][收盘值]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[CLOSE][收盘值]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Close",
+    "dEFType" : 1,
+    "dataType" : "DECIMAL",
+    "importOrder" : 1000,
+    "logicName" : "收盘值",
+    "name" : "CLOSE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    },
+    "stdDataType" : 6,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "LOWEST",
+      "dBType" : "MYSQL5",
+      "name" : "LOWEST",
+      "queryCodeExp" : "t1.`LOWEST`",
+      "standardColumnName" : "`LOWEST`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[LOWEST][最小值]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[LOWEST][最小值]",
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[LOWEST][最小值]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[LOWEST][最小值]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Lowest",
+    "dEFType" : 1,
+    "dataType" : "DECIMAL",
+    "importOrder" : 1000,
+    "logicName" : "最小值",
+    "name" : "LOWEST",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "LOWEST"
+    },
+    "stdDataType" : 6,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "HIGHEST",
+      "dBType" : "MYSQL5",
+      "name" : "HIGHEST",
+      "queryCodeExp" : "t1.`HIGHEST`",
+      "standardColumnName" : "`HIGHEST`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[HIGHEST][最大值]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[HIGHEST][最大值]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "allowEmpty" : false,
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[HIGHEST][最大值]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[HIGHEST][最大值]",
+        "uIMode" : "DEFAULT",
+        "allowEmpty" : false
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Highest",
+    "dEFType" : 1,
+    "dataType" : "DECIMAL",
+    "importOrder" : 1000,
+    "logicName" : "最大值",
+    "name" : "HIGHEST",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "HIGHEST"
+    },
+    "stdDataType" : 6,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "INFOMESSAGE",
+      "dBType" : "MYSQL5",
+      "name" : "INFOMESSAGE",
+      "queryCodeExp" : "t1.`INFOMESSAGE`",
+      "standardColumnName" : "`INFOMESSAGE`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "MobileDefault",
+      "name" : "[INFOMESSAGE][备注]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXTAREA",
+        "name" : "[INFOMESSAGE][备注]移动端默认",
+        "stringLength" : 1048576,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "[INFOMESSAGE][备注]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTAREA_10",
+        "name" : "[INFOMESSAGE][备注]",
+        "stringLength" : 1048576,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "INFOMESSAGE",
+          "maxValue" : 1048576,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[1048576]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[1048576]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[1048576]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Infomessage",
+    "dEFType" : 1,
+    "dataType" : "LONGTEXT",
+    "importOrder" : 1000,
+    "length" : 1048576,
+    "logicName" : "备注",
+    "name" : "INFOMESSAGE",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "INFOMESSAGE"
+    },
+    "stdDataType" : 21,
+    "stringLength" : 1048576,
+    "valueFormat" : "%1$s",
+    "queryColumn" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PLANINCOME",
+      "dBType" : "MYSQL5",
+      "name" : "PLANINCOME",
+      "queryCodeExp" : "t1.`PLANINCOME`",
+      "standardColumnName" : "`PLANINCOME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[PLANINCOME][计划收入]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[PLANINCOME][计划收入]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[PLANINCOME][计划收入]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[PLANINCOME][计划收入]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Planincome",
+    "dEFType" : 1,
+    "dataType" : "DECIMAL",
+    "importOrder" : 1000,
+    "logicName" : "计划收入",
+    "name" : "PLANINCOME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "PLANINCOME"
+    },
+    "stdDataType" : 6,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "REALINCOME",
+      "dBType" : "MYSQL5",
+      "name" : "REALINCOME",
+      "queryCodeExp" : "t1.`REALINCOME`",
+      "standardColumnName" : "`REALINCOME`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[REALINCOME][实际收入]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[REALINCOME][实际收入]",
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[REALINCOME][实际收入]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[REALINCOME][实际收入]移动端默认",
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Realincome",
+    "dEFType" : 1,
+    "dataType" : "DECIMAL",
+    "importOrder" : 1000,
+    "logicName" : "实际收入",
+    "name" : "REALINCOME",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "REALINCOME"
+    },
+    "stdDataType" : 6,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "IMAGEPATH",
+      "dBType" : "MYSQL5",
+      "name" : "IMAGEPATH",
+      "queryCodeExp" : "t1.`IMAGEPATH`",
+      "standardColumnName" : "`IMAGEPATH`"
+    } ],
+    "getAllPSDEFUIModes" : [ {
+      "codeName" : "Default",
+      "name" : "[IMAGEPATH][属性]",
+      "getPSDEFFormItem" : {
+        "codeName" : "Default",
+        "editorType" : "TEXTBOX",
+        "name" : "[IMAGEPATH][属性]",
+        "stringLength" : 100,
+        "uIMode" : "DEFAULT"
+      },
+      "type" : "DEFAULT"
+    }, {
+      "codeName" : "MobileDefault",
+      "name" : "[IMAGEPATH][属性]移动端默认",
+      "getPSDEFFormItem" : {
+        "codeName" : "MobileDefault",
+        "editorType" : "MOBTEXT",
+        "name" : "[IMAGEPATH][属性]移动端默认",
+        "stringLength" : 100,
+        "uIMode" : "MOBILEDEFAULT",
+        "mobileMode" : true
+      },
+      "type" : "MOBILEDEFAULT",
+      "mobileMode" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "IMAGEPATH",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Imagepath",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "图片路径",
+    "name" : "IMAGEPATH",
+    "getPSDEDBTable" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDETABLES/Table.json"
+    },
+    "getPSSysDBColumn" : {
+      "modelref" : true,
+      "id" : "IMAGEPATH"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  } ],
+  "getAllPSDEMethodDTOs" : [ {
+    "name" : "ChartDataDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "开始时间",
+      "name" : "BeginTime",
+      "getPSDEField" : {
+        "name" : "BEGINTIME",
+        "codeName" : "BeginTime"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "图表标识",
+      "name" : "ChartDataId",
+      "getPSDEField" : {
+        "name" : "CHARTDATAID",
+        "codeName" : "ChartDataId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "图表名称",
+      "name" : "ChartDataName",
+      "getPSDEField" : {
+        "name" : "CHARTDATANAME",
+        "codeName" : "ChartDataName"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "图表编号",
+      "name" : "ChartDataNo",
+      "getPSDEField" : {
+        "name" : "CHARTDATANO",
+        "codeName" : "ChartDataNo"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "图表时间",
+      "name" : "Chartdate",
+      "getPSDEField" : {
+        "name" : "CHARTDATE",
+        "codeName" : "Chartdate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "收盘值",
+      "name" : "Close",
+      "getPSDEField" : {
+        "name" : "CLOSE",
+        "codeName" : "Close"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 6,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "数据",
+      "name" : "Data",
+      "getPSDEField" : {
+        "name" : "DATA",
+        "codeName" : "Data"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 6,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "数据分类",
+      "name" : "DataType",
+      "getPSDEField" : {
+        "name" : "DATATYPE",
+        "codeName" : "DataType"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "数据时间",
+      "name" : "DateTime",
+      "getPSDEField" : {
+        "name" : "DATETIME",
+        "codeName" : "DateTime"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "组织部门标识",
+      "name" : "DeptId",
+      "getPSDEField" : {
+        "name" : "DEPTID",
+        "codeName" : "DeptId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "结束时间",
+      "name" : "EndTime",
+      "getPSDEField" : {
+        "name" : "ENDTIME",
+        "codeName" : "EndTime"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "最大值",
+      "name" : "Highest",
+      "getPSDEField" : {
+        "name" : "HIGHEST",
+        "codeName" : "Highest"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 6,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "图片路径",
+      "name" : "Imagepath",
+      "getPSDEField" : {
+        "name" : "IMAGEPATH",
+        "codeName" : "Imagepath"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "备注",
+      "name" : "Infomessage",
+      "getPSDEField" : {
+        "name" : "INFOMESSAGE",
+        "codeName" : "Infomessage"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 21,
+      "stringLength" : 1048576,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "纬度",
+      "name" : "Latitude",
+      "getPSDEField" : {
+        "name" : "LATITUDE",
+        "codeName" : "Latitude"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "经度",
+      "name" : "Longitude",
+      "getPSDEField" : {
+        "name" : "LONGITUDE",
+        "codeName" : "Longitude"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 7,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "最小值",
+      "name" : "Lowest",
+      "getPSDEField" : {
+        "name" : "LOWEST",
+        "codeName" : "Lowest"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 6,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "月份",
+      "name" : "Month",
+      "getPSDEField" : {
+        "name" : "MONTH",
+        "codeName" : "Month"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "开盘值",
+      "name" : "Open",
+      "getPSDEField" : {
+        "name" : "OPEN",
+        "codeName" : "Open"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 6,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "组织机构标识",
+      "name" : "OrgId",
+      "getPSDEField" : {
+        "name" : "ORGID",
+        "codeName" : "OrgId"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "计划收入",
+      "name" : "Planincome",
+      "getPSDEField" : {
+        "name" : "PLANINCOME",
+        "codeName" : "Planincome"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 6,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "实际收入",
+      "name" : "Realincome",
+      "getPSDEField" : {
+        "name" : "REALINCOME",
+        "codeName" : "Realincome"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 6,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "季度",
+      "name" : "Season",
+      "getPSDEField" : {
+        "name" : "SEASON",
+        "codeName" : "Season"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "总计价格",
+      "name" : "Totalprice",
+      "getPSDEField" : {
+        "name" : "TOTALPRICE",
+        "codeName" : "Totalprice"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "年份",
+      "name" : "Year",
+      "getPSDEField" : {
+        "name" : "YEAR",
+        "codeName" : "Year"
+      },
+      "sourceType" : "DEFIELD",
+      "stdDataType" : 9,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT",
+    "defaultMode" : true
+  }, {
+    "name" : "ChartDataFilterDTO",
+    "getPSDEFilterDTOFields" : [ {
+      "logicName" : "图表名称",
+      "name" : "N_CHARTDATANAME_LIKE",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_CHARTDATANAME_LIKE"
+      },
+      "getPSDEField" : {
+        "name" : "CHARTDATANAME",
+        "codeName" : "ChartDataName"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "数据分类",
+      "name" : "N_DATATYPE_EQ",
+      "getPSDEFSearchMode" : {
+        "modelref" : true,
+        "id" : "N_DATATYPE_EQ"
+      },
+      "getPSDEField" : {
+        "name" : "DATATYPE",
+        "codeName" : "DataType"
+      },
+      "sourceType" : "DEFSEARCHMODE",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFILTER",
+    "defaultMode" : true
+  }, {
+    "name" : "ChartDataSimpleDTO",
+    "getPSDEMethodDTOFields" : [ {
+      "logicName" : "图表标识",
+      "name" : "ChartDataId",
+      "getPSDEField" : {
+        "name" : "CHARTDATAID",
+        "codeName" : "ChartDataId"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 100,
+      "type" : "SIMPLE",
+      "allowEmpty" : false
+    }, {
+      "logicName" : "图表名称",
+      "name" : "ChartDataName",
+      "getPSDEField" : {
+        "name" : "CHARTDATANAME",
+        "codeName" : "ChartDataName"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 200,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "建立时间",
+      "name" : "CreateDate",
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "建立人",
+      "name" : "CreateMan",
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "组织部门标识",
+      "name" : "DeptId",
+      "getPSDEField" : {
+        "name" : "DEPTID",
+        "codeName" : "DeptId"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "组织机构标识",
+      "name" : "OrgId",
+      "getPSDEField" : {
+        "name" : "ORGID",
+        "codeName" : "OrgId"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE"
+    }, {
+      "logicName" : "更新时间",
+      "name" : "UpdateDate",
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 5,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    }, {
+      "logicName" : "更新人",
+      "name" : "UpdateMan",
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "sourceType" : "DEFGROUPDETAIL",
+      "stdDataType" : 25,
+      "stringLength" : 60,
+      "type" : "SIMPLE",
+      "allowEmpty" : false,
+      "readOnly" : true
+    } ],
+    "sourceType" : "DE",
+    "type" : "DEFAULT"
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "getAllPSDEReports" : [ {
+    "codeName" : "Report",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEREPORTS/Report.json",
+    "name" : "Report",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "reportFile" : "图表报表",
+    "reportType" : "JR"
+  } ],
+  "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEUSERROLES/CURDEPT_R.json",
+    "name" : "当前部门（读）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "CURDEPT_R",
+    "secDR" : 1,
+    "userDRAction" : "READ",
+    "enableSecDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEUSERROLES/CURDEPT_RW.json",
+    "name" : "当前部门（读写）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    } ],
+    "roleTag" : "CURDEPT_RW",
+    "secDR" : 1,
+    "userDRAction" : "READ",
+    "enableSecDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEUSERROLES/CURORG_R.json",
+    "name" : "当前组织（读）",
+    "orgDR" : 1,
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "CURORG_R",
+    "userDRAction" : "READ",
+    "enableOrgDR" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEUSERROLES/CURORG_RW.json",
+    "name" : "当前组织（读写）",
+    "orgDR" : 1,
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    } ],
+    "roleTag" : "CURORG_RW",
+    "userDRAction" : "READ",
+    "enableOrgDR" : true
+  } ],
+  "getAllPSModelDatas" : [ {
+    "codeName" : "GaugeChartView",
+    "logicName" : "图表实体图表视图（仪表盘）",
+    "name" : "图表实体图表视图（仪表盘）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr3EditView",
+    "logicName" : "图表实体编辑视图（功能确认）",
+    "name" : "图表实体编辑视图（功能确认）",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PieChartView",
+    "logicName" : "图表实体图表视图（饼图）",
+    "name" : "图表实体图表视图（饼图）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ChartExpView",
+    "logicName" : "图表实体图表导航视图",
+    "name" : "图表实体图表导航视图",
+    "realModelSubType" : "DECHARTEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr3ListView",
+    "logicName" : "图表实体列表视图(样式适配)",
+    "name" : "图表实体列表视图(样式适配)",
+    "realModelSubType" : "DELISTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupTreeView",
+    "logicName" : "图表实体移动端选择树视图（部件视图）",
+    "name" : "图表实体移动端选择树视图（部件视图）",
+    "realModelSubType" : "DEMOBPICKUPTREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2EditView",
+    "logicName" : "图表实体编辑视图(嵌入视图)",
+    "name" : "图表实体编辑视图(嵌入视图)",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobMDView",
+    "logicName" : "图表实体移动端多数据视图",
+    "name" : "图表实体移动端多数据视图",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main",
+    "logicName" : "主编辑表单",
+    "modelTag2" : "0",
+    "name" : "主编辑表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "PickupView",
+    "logicName" : "图表实体数据选择视图",
+    "modelTag" : "PICKUPVIEW",
+    "name" : "图表实体数据选择视图",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr5EditView",
+    "logicName" : "图表实体编辑视图(2)",
+    "name" : "图表实体编辑视图(2)",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobTreeView",
+    "logicName" : "图表实体移动端树视图",
+    "name" : "图表实体移动端树视图",
+    "realModelSubType" : "DEMOBTREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2ChartView",
+    "logicName" : "多序列图表视图",
+    "name" : "多序列图表视图",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TreeGridExView",
+    "logicName" : "图表实体树表格视图（增强）",
+    "name" : "图表实体树表格视图（增强）",
+    "realModelSubType" : "DETREEGRIDEXVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridView9",
+    "logicName" : "图表实体表格视图（部件视图）",
+    "name" : "图表实体表格视图（部件视图）",
+    "realModelSubType" : "DEGRIDVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main_2",
+    "logicName" : "功能确认表单",
+    "modelTag2" : "0",
+    "name" : "功能确认表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "Usr3GridView",
+    "logicName" : "图表实体表格视图(2)",
+    "name" : "图表实体表格视图(2)",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RadarChartView",
+    "logicName" : "图表实体图表视图（雷达图）",
+    "name" : "图表实体图表视图（雷达图）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobTabExpView",
+    "logicName" : "图表实体移动端分页导航视图",
+    "name" : "图表实体移动端分页导航视图",
+    "realModelSubType" : "DEMOBTABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ReportView",
+    "logicName" : "图表实体报表视图",
+    "name" : "图表实体报表视图",
+    "realModelSubType" : "DEREPORTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2CalendarExpView",
+    "logicName" : "图表实体日历导航视图（时间轴）",
+    "name" : "图表实体日历导航视图（时间轴）",
+    "realModelSubType" : "DECALENDAREXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GanttView",
+    "logicName" : "图表实体甘特视图（功能确认）",
+    "name" : "图表实体甘特视图（功能确认）",
+    "realModelSubType" : "DEGANTTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2PickupView",
+    "logicName" : "图表实体数据选择视图(树视图)",
+    "name" : "图表实体数据选择视图(树视图)",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2ListView",
+    "logicName" : "图表实体列表视图",
+    "name" : "图表实体列表视图",
+    "realModelSubType" : "DELISTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TabExpView",
+    "logicName" : "图表实体分页导航视图",
+    "name" : "图表实体分页导航视图",
+    "realModelSubType" : "DETABEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr3PickupView",
+    "logicName" : "图表实体数据选择视图（列表）",
+    "name" : "图表实体数据选择视图（列表）",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TreeView",
+    "logicName" : "图表实体树视图",
+    "name" : "图表实体树视图",
+    "realModelSubType" : "DETREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MapView",
+    "logicName" : "图表实体地图视图",
+    "name" : "图表实体地图视图",
+    "realModelSubType" : "DEMAPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DataView",
+    "logicName" : "图表实体数据视图",
+    "name" : "图表实体数据视图",
+    "realModelSubType" : "DEDATAVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobForm",
+    "logicName" : "移动端表单",
+    "modelTag2" : "1",
+    "name" : "移动端表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "PickupView2",
+    "logicName" : "图表实体数据选择视图（左右关系列表）",
+    "name" : "图表实体数据选择视图（左右关系列表）",
+    "realModelSubType" : "DEPICKUPVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CalendarExpView",
+    "logicName" : "图表实体日历导航视图（功能确认）",
+    "name" : "图表实体日历导航视图（功能确认）",
+    "realModelSubType" : "DECALENDAREXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "DataViewExpView",
+    "logicName" : "图表实体卡片视图导航视图",
+    "name" : "图表实体卡片视图导航视图",
+    "realModelSubType" : "DEDATAVIEWEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ListView",
+    "logicName" : "图表实体列表视图",
+    "name" : "图表实体列表视图",
+    "realModelSubType" : "DELISTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPickupView",
+    "logicName" : "图表实体移动端数据选择视图",
+    "name" : "图表实体移动端数据选择视图",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "BarChartView",
+    "logicName" : "图表实体图表视图（柱状图）",
+    "name" : "图表实体图表视图（柱状图）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "embeddedview",
+    "logicName" : "嵌入视图",
+    "modelTag2" : "0",
+    "name" : "嵌入视图",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "AreaChartView",
+    "logicName" : "图表实体图表视图（区域图）",
+    "name" : "图表实体图表视图（区域图）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "FunnelChartView",
+    "logicName" : "图表实体图表视图（漏斗）",
+    "name" : "图表实体图表视图（漏斗）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MPickupView",
+    "logicName" : "图表实体数据多项选择视图",
+    "modelTag" : "MPICKUPVIEW",
+    "name" : "图表实体数据多项选择视图",
+    "realModelSubType" : "DEMPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2PickupView2",
+    "logicName" : "图表实体数据选择视图（左右关系卡片）",
+    "name" : "图表实体数据选择视图（左右关系卡片）",
+    "realModelSubType" : "DEPICKUPVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView2",
+    "logicName" : "图表实体编辑视图（左右关系）",
+    "name" : "图表实体编辑视图（左右关系）",
+    "realModelSubType" : "DEEDITVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PanelView",
+    "logicName" : "图表实体面板视图",
+    "name" : "图表实体面板视图",
+    "realModelSubType" : "DEPANELVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr3CalendarView",
+    "logicName" : "图表实体日历视图（时间轴面板）",
+    "name" : "图表实体日历视图（时间轴面板）",
+    "realModelSubType" : "DECALENDARVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupGridView",
+    "logicName" : "图表实体选择表格视图（部件视图）",
+    "name" : "图表实体选择表格视图（部件视图）",
+    "realModelSubType" : "DEPICKUPGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobPanelView",
+    "logicName" : "图表实体移动端面板视图",
+    "name" : "图表实体移动端面板视图",
+    "realModelSubType" : "DEMOBPANELVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Main_3",
+    "logicName" : "选择测试表单",
+    "modelTag2" : "0",
+    "name" : "选择测试表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "GridView",
+    "logicName" : "图表实体表格视图",
+    "modelTag" : "MDATAVIEW",
+    "name" : "图表实体表格视图",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "StackBarChartView",
+    "logicName" : "图表实体图表视图（堆叠柱状图）",
+    "name" : "图表实体图表视图（堆叠柱状图）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "EditView",
+    "logicName" : "图表实体编辑视图",
+    "modelTag" : "EDITVIEW",
+    "name" : "图表实体编辑视图",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr3ChartView",
+    "logicName" : "图表实体图表视图（地图）",
+    "name" : "图表实体图表视图（地图）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TreeExpView",
+    "logicName" : "图表实体树导航视图（表格导航）",
+    "name" : "图表实体树导航视图（表格导航）",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr3PickupView2",
+    "logicName" : "图表实体数据选择视图（左右关系表格）",
+    "name" : "图表实体数据选择视图（左右关系表格）",
+    "realModelSubType" : "DEPICKUPVIEW2",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "LogicTestForm",
+    "logicName" : "界面逻辑测试表单",
+    "modelTag2" : "1",
+    "name" : "界面逻辑测试表单",
+    "realModelSubType" : "EDITFORM",
+    "realModelType" : "PSDEFORM"
+  }, {
+    "codeName" : "MapExpView",
+    "logicName" : "图表实体地图导航视图",
+    "name" : "图表实体地图导航视图",
+    "realModelSubType" : "DEMAPEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "KanbanView",
+    "logicName" : "图表实体看板视图",
+    "name" : "图表实体看板视图",
+    "realModelSubType" : "DEKANBANVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr4EditView",
+    "logicName" : "图表实体编辑视图(选择测试)",
+    "name" : "图表实体编辑视图(选择测试)",
+    "realModelSubType" : "DEEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ChartView",
+    "logicName" : "图表实体图表视图（散点图）",
+    "name" : "图表实体图表视图（散点图）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GroupBarChartView",
+    "logicName" : "图表实体图表视图（分组柱状图）",
+    "name" : "图表实体图表视图（分组柱状图）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2GridView",
+    "logicName" : "图表实体表格视图（功能确认）",
+    "name" : "图表实体表格视图（功能确认）",
+    "realModelSubType" : "DEGRIDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "CalendarView",
+    "logicName" : "图表实体日历视图（功能确认）",
+    "name" : "图表实体日历视图（功能确认）",
+    "realModelSubType" : "DECALENDARVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RedirectView",
+    "logicName" : "图表实体数据重定向视图",
+    "modelTag" : "REDIRECTVIEW",
+    "name" : "图表实体数据重定向视图",
+    "realModelSubType" : "DEREDIRECTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "LineChartView",
+    "logicName" : "图表实体图表视图（折线图）",
+    "name" : "图表实体图表视图（折线图）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2CalendarView",
+    "logicName" : "图表实体日历视图（时间轴）",
+    "name" : "图表实体日历视图（时间轴）",
+    "realModelSubType" : "DECALENDARVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "GridExpView",
+    "logicName" : "图表实体表格导航视图（功能确认）",
+    "name" : "图表实体表格导航视图（功能确认）",
+    "realModelSubType" : "DEGRIDEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "KLineChartView",
+    "logicName" : "图表实体图表视图（K线图）",
+    "name" : "图表实体图表视图（K线图）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "PickupTreeView",
+    "logicName" : "图表实体选择树视图（部件视图）",
+    "name" : "图表实体选择树视图（部件视图）",
+    "realModelSubType" : "DEPICKUPTREEVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TreeExpForChartView",
+    "logicName" : "图表实体树导航视图（图表导航）",
+    "name" : "图表实体树导航视图（图表导航）",
+    "realModelSubType" : "DETREEEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr2MobPickupView",
+    "logicName" : "图表实体移动端数据选择视图(树选择)",
+    "name" : "图表实体移动端数据选择视图(树选择)",
+    "realModelSubType" : "DEMOBPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MEditView9",
+    "logicName" : "图表实体多表单编辑视图（部件视图）",
+    "name" : "图表实体多表单编辑视图（部件视图）",
+    "realModelSubType" : "DEMEDITVIEW9",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobEditView",
+    "logicName" : "图表实体移动端编辑视图",
+    "name" : "图表实体移动端编辑视图",
+    "realModelSubType" : "DEMOBEDITVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "Usr4PickupView",
+    "logicName" : "图表实体数据选择视图（卡片）",
+    "name" : "图表实体数据选择视图（卡片）",
+    "realModelSubType" : "DEPICKUPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobChartView",
+    "logicName" : "图表实体移动端图表视图",
+    "name" : "图表实体移动端图表视图",
+    "realModelSubType" : "DEMOBCHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "MobDashboardView",
+    "logicName" : "图表实体移动端数据看板视图",
+    "name" : "图表实体移动端数据看板视图",
+    "realModelSubType" : "DEMOBPORTALVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "RingPieChartView",
+    "logicName" : "图表实体图表视图（环形饼图）",
+    "name" : "图表实体图表视图（环形饼图）",
+    "realModelSubType" : "DECHARTVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "TestLayoutPanelMDView",
+    "logicName" : "图表实体移动端多数据视图（布局面板）",
+    "name" : "图表实体移动端多数据视图（布局面板）",
+    "realModelSubType" : "DEMOBMDVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  }, {
+    "codeName" : "ListExpView",
+    "logicName" : "图表实体列表导航视图",
+    "name" : "图表实体列表导航视图",
+    "realModelSubType" : "DELISTEXPVIEW",
+    "realModelType" : "PSDEVIEWBASE"
+  } ],
+  "codeName" : "ChartData",
+  "dEType" : 1,
+  "dSLink" : "DEFAULT",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dataChangeLogMode" : 0,
+  "dataImpExpMode" : 3,
+  "getDefaultPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData.json",
+  "enableActions" : 7,
+  "enableUIActions" : 15,
+  "enableViewLevel" : 0,
+  "extendMode" : 0,
+  "getKeyPSDEField" : {
+    "name" : "CHARTDATAID",
+    "codeName" : "ChartDataId"
+  },
+  "logicName" : "图表",
+  "getMajorPSDEField" : {
+    "name" : "CHARTDATANAME",
+    "codeName" : "ChartDataName"
+  },
+  "name" : "CHARTDATA",
+  "getPSSysDBScheme" : {
+    "modelref" : true,
+    "path" : "PSSYSDBSCHEMES/Default.json"
+  },
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample.json"
+  },
+  "saaSMode" : 0,
+  "serviceAPIMode" : 1,
+  "serviceCodeName" : "ChartData",
+  "storageMode" : 1,
+  "systemTag" : "iBizSample",
+  "tableName" : "T_CHARTDATA",
+  "enableAPIStorage" : false,
+  "enableCreate" : true,
+  "enableDataVer" : false,
+  "enableEntityCache" : false,
+  "enableModify" : true,
+  "enableMultiDS" : false,
+  "enableMultiForm" : false,
+  "enableMultiStorage" : false,
+  "enableNoSQLStorage" : false,
+  "enableRemove" : true,
+  "enableSQLStorage" : true,
+  "logicValid" : false,
+  "subSysAsCloud" : false
+}

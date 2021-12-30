@@ -1,0 +1,295 @@
+{
+  "accUserMode" : 2,
+  "caption" : "图表",
+  "codeName" : "ChartDataMobPanelView",
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ChartDataMobPanelView.json",
+  "name" : "ChartDataMobPanelView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA",
+    "realTitle" : "图表移动端编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ChartDataMobEditView.json",
+      "viewType" : "DEMOBEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA",
+    "realTitle" : "图表移动端编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ChartDataMobEditView.json",
+      "viewType" : "DEMOBEDITVIEW"
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "TestMobPanel",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData/PSPANELS/TestMobPanel.json",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "移动端面板视图测试",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "panel_button1_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "panel_button1"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "panel_button1",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "modelref" : true,
+        "id" : "MobEdit@ChartData"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "panel"
+    } ],
+    "getPSControlParam" : {
+      "id" : "PANEL"
+    },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "caption" : "外层容器",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "contentHeight" : 500.0,
+        "height" : 500.0,
+        "itemStyle" : "DEFAULT",
+        "itemType" : "TABPANEL",
+        "name" : "tabpanel1",
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "height" : 500,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSPanelTabPages" : [ {
+          "caption" : "测试分页1",
+          "itemStyle" : "DEFAULT",
+          "itemType" : "TABPAGE",
+          "name" : "tabpage1",
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSPanelItems" : [ {
+            "contentHeight" : 100.0,
+            "contentType" : "RAW",
+            "contentWidth" : 100.0,
+            "height" : 100.0,
+            "itemStyle" : "DEFAULT",
+            "itemType" : "RAWITEM",
+            "name" : "rawitem1",
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "height" : 100,
+              "layout" : "TABLE_24COL",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "mob-raw-warning"
+            },
+            "rawContent" : "直接内容， 100x100",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "width" : 100.0
+          } ],
+          "showCaption" : true
+        }, {
+          "caption" : "部件",
+          "itemStyle" : "DEFAULT",
+          "itemType" : "TABPAGE",
+          "name" : "tabpage2",
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSPanelItems" : [ {
+            "actionType" : "UIACTION",
+            "caption" : "打开",
+            "contentHeight" : 50.0,
+            "contentWidth" : 50.0,
+            "height" : 50.0,
+            "itemStyle" : "DEFAULT",
+            "itemType" : "BUTTON",
+            "name" : "button1",
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "panel_button1"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "height" : 50,
+              "layout" : "TABLE_24COL",
+              "width" : 50
+            },
+            "getPSUIAction" : {
+              "actionTarget" : "SINGLEKEY",
+              "caption" : "移动端编辑",
+              "codeName" : "MobEdit",
+              "getFrontPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ChartDataMobEditView.json",
+                "viewType" : "DEMOBEDITVIEW"
+              },
+              "frontProcessType" : "WIZARD",
+              "fullCodeName" : "ChartData_MobEdit",
+              "name" : "移动端编辑",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+              },
+              "timeout" : 60000,
+              "uIActionMode" : "FRONT",
+              "uIActionTag" : "MobEdit",
+              "uIActionType" : "DEUIACTION",
+              "id" : "MobEdit@ChartData"
+            },
+            "tooltip" : "打开",
+            "width" : 50.0,
+            "showCaption" : true
+          } ],
+          "showCaption" : true
+        } ]
+      } ],
+      "showCaption" : true
+    }, {
+      "contentHeight" : 400.0,
+      "height" : 400.0,
+      "itemStyle" : "DEFAULT",
+      "itemType" : "TABPANEL",
+      "name" : "tabpanel2",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "height" : 400,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelTabPages" : [ {
+        "caption" : "测试嵌入多容器",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "TABPAGE",
+        "name" : "tabpage3",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSPanelItems" : [ {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CONTAINER",
+          "name" : "container2",
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSPanelItems" : [ {
+            "itemStyle" : "DEFAULT",
+            "itemType" : "CONTAINER",
+            "name" : "container3",
+            "getPSLayout" : {
+              "columnCount" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSPanelItems" : [ {
+              "contentType" : "HTML",
+              "htmlContent" : "<p><span style=\"color: yellow; font-size: 14px;\">无外层容器</span></p>",
+              "itemStyle" : "DEFAULT",
+              "itemType" : "RAWITEM",
+              "name" : "rawitem2",
+              "getPSLayoutPos" : {
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              }
+            } ]
+          } ]
+        } ],
+        "showCaption" : true
+      }, {
+        "caption" : "测试布局",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "TABPAGE",
+        "name" : "tabpage4",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "showCaption" : true
+      } ]
+    } ],
+    "mobilePanel" : true,
+    "name" : "panel",
+    "modelid" : "4F7A3DC2-2695-4645-BFAB-A3A3D797D154",
+    "modeltype" : "PSSYSVIEWPANEL"
+  } ],
+  "getPSDEViewCodeName" : "MobPanelView",
+  "getPSDEViewId" : "63F3B69D-5859-4A42-86D7-F4F431EED422",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMOBPANELVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "图表移动端面板视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMOBPANELVIEW",
+  "enableDP" : true,
+  "enablePullDownRefresh" : false,
+  "modelid" : "9606a007269b39d066a36ac949713291",
+  "modeltype" : "PSAPPDEVIEW"
+}

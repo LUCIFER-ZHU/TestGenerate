@@ -1,0 +1,230 @@
+{
+  "codeName" : "PanelTest",
+  "controlType" : "LIST",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSLISTS/PanelTest.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getItemPSLayoutPanel" : {
+    "getAllPSPanelFields" : [ {
+      "id" : "createman",
+      "viewFieldName" : "CREATEMAN"
+    }, {
+      "id" : "chartdataname",
+      "viewFieldName" : "CHARTDATANAME"
+    }, {
+      "id" : "orgid",
+      "viewFieldName" : "ORGID"
+    } ],
+    "codeName" : "PanelTest",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSPANELS/PanelTest.json",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "List项布局面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "caption" : "面板测试",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "caption" : "建立人",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "createman",
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "createman"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "getPSPanelItemGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "PANELVISIBLE",
+          "logicType" : "GROUP",
+          "name" : "面板成员[createman][面板显示]逻辑",
+          "getPSPanelItemLogics" : [ {
+            "condOp" : "NOTEQ",
+            "dstModelField" : "field1",
+            "logicType" : "SINGLE",
+            "name" : "field1 不等于(<>) (0)",
+            "value" : "0"
+          } ],
+          "relatedItemNames" : [ "field1" ],
+          "notMode" : false
+        } ],
+        "viewFieldName" : "CREATEMAN",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "caption" : "图表",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "chartdataname",
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "chartdataname"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "getPSPanelItemGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "ITEMENABLE",
+          "logicType" : "GROUP",
+          "name" : "面板成员[chartdataname][表单项启用]逻辑",
+          "getPSPanelItemLogics" : [ {
+            "condOp" : "NOTEQ",
+            "dstModelField" : "field2",
+            "logicType" : "SINGLE",
+            "name" : "field2 不等于(<>) (0)",
+            "value" : "0"
+          } ],
+          "relatedItemNames" : [ "field2" ],
+          "notMode" : false
+        } ],
+        "viewFieldName" : "CHARTDATANAME",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "caption" : "组织",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "orgid",
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "orgid"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "getPSPanelItemGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "ITEMBLANK",
+          "logicType" : "GROUP",
+          "name" : "面板成员[orgid][表单项空输入]逻辑",
+          "getPSPanelItemLogics" : [ {
+            "condOp" : "NOTEQ",
+            "dstModelField" : "field3",
+            "logicType" : "SINGLE",
+            "name" : "field3 不等于(<>) (0)",
+            "value" : "0"
+          } ],
+          "relatedItemNames" : [ "field3" ],
+          "notMode" : false
+        } ],
+        "viewFieldName" : "ORGID",
+        "hidden" : false,
+        "showCaption" : false
+      } ],
+      "showCaption" : true
+    } ],
+    "name" : "list_itempanel",
+    "modelid" : "3313F183-AA03-4660-8C16-928C9D2228A0",
+    "modeltype" : "PSSYSVIEWPANEL"
+  },
+  "logicName" : "List",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "list",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_list",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+    },
+    "name" : "createman",
+    "getPSAppDEField" : {
+      "name" : "CREATEMAN",
+      "codeName" : "CreateMan"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "chartdataname",
+    "getPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "orgid",
+    "getPSAppDEField" : {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    }
+  } ],
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
+  "modelid" : "F3368C5B-903C-44AA-B200-EC6103A55F47",
+  "modeltype" : "PSDELIST"
+}

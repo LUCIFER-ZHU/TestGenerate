@@ -1,0 +1,233 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/SampleVer/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "minorSortDir" : "DESC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "VERSTR",
+    "codeName" : "Verstr"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/SampleVer.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "标题",
+    "codeName" : "samplevername",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "samplevername",
+    "excelCaption" : "标题",
+    "name" : "samplevername",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "SAMPLEVERNAME",
+      "codeName" : "SampleVerName"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "版本号",
+    "codeName" : "verstr",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "verstr",
+    "excelCaption" : "版本号",
+    "name" : "verstr",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "VERSTR",
+      "codeName" : "Verstr"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "分类",
+    "codeName" : "type",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "type",
+    "excelCaption" : "分类",
+    "name" : "type",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SampleCat.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "更新人",
+    "codeName" : "updateman",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "updateman",
+    "excelCaption" : "更新人",
+    "name" : "updateman",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "更新时间",
+    "codeName" : "updatedate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "updatedate",
+    "excelCaption" : "更新时间",
+    "name" : "updatedate",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 180,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "verstr",
+    "getPSAppDEField" : {
+      "name" : "VERSTR",
+      "codeName" : "Verstr"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "samplevername",
+    "getPSAppDEField" : {
+      "name" : "SAMPLEVERNAME",
+      "codeName" : "SampleVerName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "updateman",
+    "getPSAppDEField" : {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "updatedate",
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "type",
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "SAMPLEVERNAME",
+      "codeName" : "SampleVerName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "SAMPLEVERID",
+      "codeName" : "SampleVerId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "SAMPLEVERID",
+      "codeName" : "SampleVerId"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "示例版本标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "SAMPLEVERID",
+      "codeName" : "SampleVerId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/SampleVer.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "ee6036c9b22fc2c0397544e04f90807f",
+  "modeltype" : "PSDEGRID"
+}

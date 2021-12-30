@@ -1,0 +1,885 @@
+{
+  "accUserMode" : 2,
+  "caption" : "表格逻辑",
+  "codeName" : "ExampleGridLogicCustomView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleGridLogicCustomView.json",
+  "name" : "ExampleGridLogicCustomView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "CTRL",
+    "engineType" : "CtrlLoadTrigger",
+    "name" : "engine_grid2_default",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "grid2",
+      "name" : "CTRL",
+      "paramType" : "CTRL"
+    } ]
+  }, {
+    "engineCat" : "CTRL",
+    "engineType" : "CtrlLoadTrigger",
+    "name" : "engine_grid_default",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "grid",
+      "name" : "CTRL",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "TIMER",
+    "logicType" : "SCRIPT",
+    "name" : "VIEWTIMER",
+    "scriptCode" : "console.log('视图定时器触发',arg);",
+    "timer" : 6000
+  }, {
+    "eventNames" : "IBIZ__CUSTOMVEVENT",
+    "logicTrigger" : "VIEWEVENT",
+    "logicType" : "SCRIPT",
+    "name" : "IBIZ__CUSTOMVEVENT",
+    "scriptCode" : "console.log('视图事件触发',arg);"
+  } ],
+  "getPSControls" : [ {
+    "aggMode" : "PAGE",
+    "codeName" : "GirdLogic",
+    "columnEnableLink" : 2,
+    "controlType" : "GRID",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSGRIDS/GirdLogic.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "groupMode" : "NONE",
+    "logicName" : "表格逻辑",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据表格处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID2"
+    },
+    "getPSDEDataImport" : {
+      "modelref" : true,
+      "id" : "DataImport"
+    },
+    "getPSDEGridColumns" : [ {
+      "aggMode" : "SUM",
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "X值",
+      "codeName" : "fieldx",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "fieldx",
+      "excelCaption" : "X值",
+      "name" : "fieldx",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "FIELDX",
+        "codeName" : "Fieldx"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "aggMode" : "AVG",
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "Y值",
+      "codeName" : "fieldy",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "fieldy",
+      "excelCaption" : "Y值",
+      "name" : "fieldy",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "FIELDY",
+        "codeName" : "Fieldy"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "aggMode" : "MAX",
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "Z值",
+      "codeName" : "fieldz",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "fieldz",
+      "excelCaption" : "Z值",
+      "name" : "fieldz",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "FIELDZ",
+        "codeName" : "Fieldz"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    } ],
+    "getPSDEGridDataItems" : [ {
+      "dataType" : 6,
+      "name" : "fieldz",
+      "getPSAppDEField" : {
+        "name" : "FIELDZ",
+        "codeName" : "Fieldz"
+      }
+    }, {
+      "dataType" : 6,
+      "name" : "fieldx",
+      "getPSAppDEField" : {
+        "name" : "FIELDX",
+        "codeName" : "Fieldx"
+      }
+    }, {
+      "dataType" : 6,
+      "name" : "fieldy",
+      "getPSAppDEField" : {
+        "name" : "FIELDY",
+        "codeName" : "Fieldy"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "provinceid",
+      "getPSAppDEField" : {
+        "name" : "PROVINCEID",
+        "codeName" : "ProvinceId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "districtid",
+      "getPSAppDEField" : {
+        "name" : "DISTRICTID",
+        "codeName" : "DistrictId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "EXAMPLENAME",
+        "codeName" : "ExampleName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "EXAMPLEID",
+        "codeName" : "ExampleId"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "EXAMPLEID",
+        "codeName" : "ExampleId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "cityid",
+      "getPSAppDEField" : {
+        "name" : "CITYID",
+        "codeName" : "CityId"
+      }
+    } ],
+    "getPSDEGridEditItemUpdates" : [ {
+      "codeName" : "CalcPF2",
+      "name" : "前台计算（脚本代码）",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "CalcPF2"
+      },
+      "getPSDEGEIUpdateDetails" : [ {
+        "name" : "fieldz"
+      } ]
+    } ],
+    "getPSDEGridEditItems" : [ {
+      "caption" : "X值",
+      "codeName" : "fieldx",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "fieldx",
+      "getPSAppDEField" : {
+        "name" : "FIELDX",
+        "codeName" : "Fieldx"
+      },
+      "getPSDEGridEditItemUpdate" : {
+        "modelref" : true,
+        "id" : "CalcPF2"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "fieldx"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "Y值",
+      "codeName" : "fieldy",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "fieldy",
+      "getPSAppDEField" : {
+        "name" : "FIELDY",
+        "codeName" : "Fieldy"
+      },
+      "getPSDEGridEditItemUpdate" : {
+        "modelref" : true,
+        "id" : "CalcPF2"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "fieldy"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "示例标识",
+      "codeName" : "srfkey",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "EXAMPLEID",
+        "codeName" : "ExampleId"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
+      },
+      "allowEmpty" : true
+    } ],
+    "pagingSize" : 20,
+    "getRemovePSControlAction" : {
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "DELETE",
+      "name" : "remove",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      }
+    },
+    "sortMode" : "REMOTE",
+    "hasWFDataItems" : false,
+    "enableColFilter" : false,
+    "enableCustomized" : true,
+    "enableGroup" : false,
+    "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "forceFit" : false,
+    "hideHeader" : false,
+    "noSort" : false,
+    "singleSelect" : false,
+    "name" : "grid2",
+    "modelid" : "2C0DE362-74CD-41BC-81E5-623D6711EBF3",
+    "modeltype" : "PSDEGRID"
+  }, {
+    "aggMode" : "NONE",
+    "codeName" : "GridUILogic",
+    "columnEnableLink" : 2,
+    "controlType" : "GRID",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSGRIDS/GridUILogic.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "IBIZ__CUSTOMECTRLEVENT", "ONBEFORELOAD", "IBIZ_CELL_MOUSE_ENTER", "IBIZ_CELL_MOUSE_LEAVE", "IBIZ_SELECT", "BEFORELOAD", "IBIZ_ROW_CONTEXTMENU" ],
+    "logicName" : "表格动态行单元格背景",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "grid_uagridcolumn1_uef574fa_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "表单项更新前台计算"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "表单项更新前台计算",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        },
+        "modelref" : true,
+        "id" : "CalcPF@Example"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "grid"
+    } ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据表格处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ibiz_row_contextmenu",
+      "logicTag" : "grid",
+      "logicType" : "SCRIPT",
+      "name" : "ibiz_row_contextmenu",
+      "scriptCode" : "console.log('当某一行被鼠标右键点击时会触发该事件');\nconsole.log(arg);"
+    }, {
+      "eventNames" : "ibiz__customectrlevent",
+      "logicTag" : "grid",
+      "logicType" : "SCRIPT",
+      "name" : "ibiz__customctrlevent",
+      "scriptCode" : "console.log('部件绑定自定义事件',arg);"
+    }, {
+      "logicTag" : "grid",
+      "logicType" : "SCRIPT",
+      "name" : "calcCellStyle",
+      "scriptCode" : "if((rowIndex == 8) && (columnIndex == 1) && (row.examplename ='示例数据1')){ return {'background':'red','color':'blue'}; }else{ return {'background':'green','color':'red'}; }",
+      "triggerType" : "CUSTOM"
+    }, {
+      "eventNames" : "ibiz_select",
+      "logicTag" : "grid",
+      "logicType" : "SCRIPT",
+      "name" : "ibiz_select",
+      "scriptCode" : "if(arg.args[1].examplename){\n            utils.messagebox.open({content:'你是否选中'+arg.args[1].examplename});\n        }else{\n            utils.messagebox.open({content:'你当前选中数据无主信息'});\n        }\nconsole.log(arg,utils)\nconsole.log('触发自定义事件')\nctrl.$emit('ibiz__customectrlevent',arg);"
+    }, {
+      "eventNames" : "ibiz_cell_mouse_enter",
+      "logicTag" : "grid",
+      "logicType" : "SCRIPT",
+      "name" : "ibiz_cell_mouse_enter",
+      "scriptCode" : "console.log('当单元格 hover 进入时会触发该事件');\nview.$emit('IBIZ__CUSTOMVEVENT',arg);"
+    }, {
+      "eventNames" : "ibiz_cell_mouse_leave",
+      "logicTag" : "grid",
+      "logicType" : "SCRIPT",
+      "name" : "ibiz_cell_mouse_leave",
+      "scriptCode" : "console.log('当单元格 hover 退出时会触发该事件');\nconsole.log(arg);"
+    }, {
+      "logicTag" : "grid",
+      "logicType" : "SCRIPT",
+      "name" : "ctrltimer",
+      "scriptCode" : "console.log('部件定时器触发',arg);",
+      "triggerType" : "TIMER"
+    }, {
+      "eventNames" : "onBeforeLoad",
+      "logicTag" : "grid",
+      "logicType" : "SCRIPT",
+      "name" : "onBeforeLoad",
+      "scriptCode" : "console.log('表格加载之前');\nconsole.log(arg);"
+    }, {
+      "eventNames" : "beforeload",
+      "logicTag" : "grid",
+      "logicType" : "SCRIPT",
+      "name" : "ctrleventlogic",
+      "scriptCode" : "console.log(11111)"
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "getPSDEDataImport" : {
+      "modelref" : true,
+      "id" : "DataImport"
+    },
+    "getPSDEGridColumns" : [ {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "名称",
+      "codeName" : "examplename",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "examplename",
+      "excelCaption" : "名称",
+      "name" : "examplename",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "EXAMPLENAME",
+        "codeName" : "ExampleName"
+      },
+      "width" : 150,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "caption" : "分组列",
+      "codeName" : "groupgridcolumn1",
+      "columnType" : "GROUPGRIDCOLUMN",
+      "name" : "groupgridcolumn1",
+      "noPrivDisplayMode" : 1,
+      "getPSDEGridColumns" : [ {
+        "align" : "LEFT",
+        "cLConvertMode" : "NONE",
+        "caption" : "X值",
+        "codeName" : "fieldx",
+        "columnType" : "DEFGRIDCOLUMN",
+        "dataItemName" : "fieldx",
+        "enableCond" : 3,
+        "excelCaption" : "X值",
+        "ignoreInput" : 0,
+        "name" : "fieldx",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "FIELDX",
+          "codeName" : "Fieldx"
+        },
+        "width" : 100,
+        "widthUnit" : "PX",
+        "allowEmpty" : true,
+        "enableSort" : true
+      }, {
+        "align" : "LEFT",
+        "cLConvertMode" : "NONE",
+        "caption" : "Y值",
+        "codeName" : "fieldy",
+        "columnType" : "DEFGRIDCOLUMN",
+        "dataItemName" : "fieldy",
+        "enableCond" : 3,
+        "excelCaption" : "Y值",
+        "ignoreInput" : 0,
+        "name" : "fieldy",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "FIELDY",
+          "codeName" : "Fieldy"
+        },
+        "width" : 100,
+        "widthUnit" : "PX",
+        "allowEmpty" : true,
+        "enableSort" : true
+      }, {
+        "align" : "LEFT",
+        "cLConvertMode" : "NONE",
+        "caption" : "Z值",
+        "codeName" : "fieldz",
+        "columnType" : "DEFGRIDCOLUMN",
+        "dataItemName" : "fieldz",
+        "enableCond" : 3,
+        "excelCaption" : "Z值",
+        "ignoreInput" : 0,
+        "name" : "fieldz",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "FIELDZ",
+          "codeName" : "Fieldz"
+        },
+        "width" : 100,
+        "widthUnit" : "PX",
+        "allowEmpty" : true,
+        "enableSort" : true
+      } ],
+      "width" : 200,
+      "widthUnit" : "STAR",
+      "enableSort" : false
+    }, {
+      "align" : "CENTER",
+      "caption" : "操作列",
+      "codeName" : "uagridcolumn1",
+      "columnType" : "UAGRIDCOLUMN",
+      "name" : "uagridcolumn1",
+      "noPrivDisplayMode" : 1,
+      "getPSDEUIActionGroup" : {
+        "codeName" : "Auto4",
+        "name" : "表格操作列",
+        "getPSUIActionGroupDetails" : [ {
+          "detailType" : "DEUIACTION",
+          "name" : "uef574fa",
+          "getPSUIAction" : {
+            "actionTarget" : "SINGLEKEY",
+            "caption" : "表单项更新前台计算",
+            "codeName" : "CalcPF",
+            "fullCodeName" : "Example_CalcPF",
+            "name" : "表单项更新前台计算",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "CalcPF"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+            },
+            "timeout" : 60000,
+            "uIActionMode" : "BACKEND",
+            "uIActionTag" : "CalcPF",
+            "uIActionType" : "DEUIACTION",
+            "enableConfirm" : true,
+            "id" : "CalcPF@Example"
+          },
+          "addSeparator" : false,
+          "showCaption" : true,
+          "showIcon" : true
+        } ]
+      },
+      "width" : 200,
+      "widthUnit" : "PX",
+      "enableSort" : false
+    } ],
+    "getPSDEGridDataItems" : [ {
+      "dataType" : 6,
+      "name" : "fieldz",
+      "getPSAppDEField" : {
+        "name" : "FIELDZ",
+        "codeName" : "Fieldz"
+      }
+    }, {
+      "dataType" : 6,
+      "name" : "fieldx",
+      "getPSAppDEField" : {
+        "name" : "FIELDX",
+        "codeName" : "Fieldx"
+      }
+    }, {
+      "dataType" : 6,
+      "name" : "fieldy",
+      "getPSAppDEField" : {
+        "name" : "FIELDY",
+        "codeName" : "Fieldy"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "provinceid",
+      "getPSAppDEField" : {
+        "name" : "PROVINCEID",
+        "codeName" : "ProvinceId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "districtid",
+      "getPSAppDEField" : {
+        "name" : "DISTRICTID",
+        "codeName" : "DistrictId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "EXAMPLENAME",
+        "codeName" : "ExampleName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "EXAMPLEID",
+        "codeName" : "ExampleId"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "EXAMPLEID",
+        "codeName" : "ExampleId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "cityid",
+      "getPSAppDEField" : {
+        "name" : "CITYID",
+        "codeName" : "CityId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "examplename",
+      "getPSAppDEField" : {
+        "name" : "EXAMPLENAME",
+        "codeName" : "ExampleName"
+      }
+    } ],
+    "getPSDEGridEditItems" : [ {
+      "caption" : "示例标识",
+      "codeName" : "srfkey",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "EXAMPLEID",
+        "codeName" : "ExampleId"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
+      },
+      "allowEmpty" : true
+    } ],
+    "pagingSize" : 20,
+    "getRemovePSControlAction" : {
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "DELETE",
+      "name" : "remove",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      }
+    },
+    "sortMode" : "REMOTE",
+    "hasWFDataItems" : false,
+    "enableColFilter" : false,
+    "enableCustomized" : true,
+    "enableGroup" : false,
+    "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "forceFit" : false,
+    "hideHeader" : false,
+    "noSort" : false,
+    "singleSelect" : false,
+    "name" : "grid",
+    "modelid" : "06CDC012-26E9-4DE7-9B49-17FDF9975A08",
+    "modeltype" : "PSDEGRID"
+  } ],
+  "getPSDEViewCodeName" : "GridLogicCustomView",
+  "getPSDEViewId" : "5168DFB1-D17A-48D4-AD01-8CE1B46F0551",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Auto4",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "表格逻辑面板",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "caption" : "界面逻辑",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "contentHeight" : 300.0,
+        "height" : 300.0,
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CTRLPOS",
+        "name" : "grid",
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "height" : 300,
+          "layout" : "TABLE_24COL"
+        }
+      } ],
+      "showCaption" : true
+    }, {
+      "caption" : "聚合",
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container2",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "contentHeight" : 300.0,
+        "height" : 300.0,
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CTRLPOS",
+        "name" : "grid2",
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "height" : 300,
+          "layout" : "TABLE_24COL"
+        }
+      } ],
+      "showCaption" : true
+    } ],
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : false,
+    "modelid" : "E8603390-3404-4C68-A169-0E7BE8316938",
+    "modeltype" : "PSSYSVIEWLAYOUTPANEL"
+  },
+  "title" : "示例自定义视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DECUSTOMVIEW",
+  "enableDP" : true,
+  "modelid" : "9b07955441aed6b81f2e4a1a878b90d2",
+  "modeltype" : "PSAPPDEVIEW"
+}

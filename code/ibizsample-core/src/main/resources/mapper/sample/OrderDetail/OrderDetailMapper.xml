@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="ibizsample.core.sample.mapper.OrderDetailMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="OrderDetailResultMap" type="ibizsample.core.sample.domain.OrderDetail" autoMapping="true">
+		<id property="orderDetailId" column="orderdetailid" /><!--主键字段映射-->
+		<result property="orderId" column="orderid" />
+		<result property="productId" column="productid" />
+        <association property="order" javaType="ibizsample.core.sample.domain.Order" column="orderid" select="ibizsample.core.sample.mapper.OrderMapper.selectById" fetchType="lazy"></association>
+        <association property="product" javaType="ibizsample.core.sample.domain.Product" column="productid" select="ibizsample.core.sample.mapper.ProductMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+    <select id="selectById"  resultMap="OrderDetailResultMap">
+        <include refid="view" /> 
+         where 
+        t1.orderdetailid=#{id}
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`AMOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`ORDERDETAILID`, t1.`ORDERDETAILNAME`, t1.`ORDERID`, t1.`PRICE`, t1.`PRODUCTID`, t11.`PRODUCTNAME`, t1.`QTY`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORDERDETAIL` t1  LEFT JOIN `T_PRODUCT` t11 ON t1.`PRODUCTID` = t11.`PRODUCTID`  
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`ORDERDETAILID`, t1.`ORDERDETAILNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORDERDETAIL` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`AMOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`ORDERDETAILID`, t1.`ORDERDETAILNAME`, t1.`ORDERID`, t1.`PRICE`, t1.`PRODUCTID`, t11.`PRODUCTNAME`, t1.`QTY`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORDERDETAIL` t1  LEFT JOIN `T_PRODUCT` t11 ON t1.`PRODUCTID` = t11.`PRODUCTID`  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="ibizsample.core.sample.filter.OrderDetailSearchContext"  resultType="OrderDetailResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="selectByOrderId" resultMap="OrderDetailResultMap">
+        <include refid="default" />
+         where 
+        orderid = #orderId
+    </select>
+
+    <select id="selectByProductId" resultMap="OrderDetailResultMap">
+        <include refid="default" />
+         where 
+        productid = #productId
+    </select>
+
+
+</mapper>

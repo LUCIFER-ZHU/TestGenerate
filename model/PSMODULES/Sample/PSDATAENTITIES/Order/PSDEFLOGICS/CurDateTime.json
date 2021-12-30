@@ -1,0 +1,17 @@
+{
+  "codeName" : "CurDateTime",
+  "dEFLogicMode" : "DEFAULT",
+  "defaultParamName" : "DEFAULT",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Order/PSDEFLOGICS/CurDateTime.json",
+  "logicName" : "订单时间当前时间",
+  "logicSubType" : "DEFIELD",
+  "name" : "订单时间当前时间",
+  "getPSDEField" : {
+    "name" : "ORDERDATE",
+    "codeName" : "OrderDate"
+  },
+  "scriptCode" : "var _c=new Date();\nentity.set(\"ORDERDATE\",_c);",
+  "customCode" : true,
+  "enableBackend" : true,
+  "enableFront" : false
+}

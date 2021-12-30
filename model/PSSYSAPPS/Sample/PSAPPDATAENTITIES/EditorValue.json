@@ -1,0 +1,417 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "EDITORVALUEID",
+        "codeName" : "EditorValueId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "EDITORVALUENAME",
+        "codeName" : "EditorValueName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "EDITORVALUENAME",
+      "codeName" : "EditorValueName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "EDITORVALUEID",
+      "codeName" : "EditorValueId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "EditorValueId",
+    "logicName" : "编辑器值标识",
+    "name" : "EDITORVALUEID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "keyField" : true
+  }, {
+    "codeName" : "EditorValueName",
+    "logicName" : "编辑器值名称",
+    "name" : "EDITORVALUENAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "DeptId",
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "OrgId",
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Dropdownlist",
+    "logicName" : "下拉列表框",
+    "name" : "DROPDOWNLIST",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Mdropdownlist",
+    "logicName" : "下拉列表框（多选）",
+    "name" : "MDROPDOWNLIST",
+    "stdDataType" : 25,
+    "stringLength" : 2000
+  }, {
+    "codeName" : "Switchval",
+    "logicName" : "开关部件",
+    "name" : "SWITCHVAL",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Numberval",
+    "logicName" : "数值框",
+    "name" : "NUMBERVAL",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Textbox",
+    "logicName" : "文本框",
+    "name" : "TEXTBOX",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Datepicker",
+    "logicName" : "时间选择器",
+    "name" : "DATEPICKER",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Datepickerex_noday",
+    "logicName" : "时间选择器（HH:mm:ss）",
+    "name" : "DATEPICKEREX_NODAY",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Datepickerex_noday_nosecond",
+    "logicName" : "时间选择器（HH:mm）",
+    "name" : "DATEPICKEREX_NODAY_NOSECOND",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Datepickerex_second",
+    "logicName" : "时间选择器（YYYY-MM-DD HH:mm:ss）",
+    "name" : "DATEPICKEREX_SECOND",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Datepickerex_minute",
+    "logicName" : "时间选择器（YYYY-MM-DD HH:mm）",
+    "name" : "DATEPICKEREX_MINUTE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Datepickerex_hour",
+    "logicName" : "时间选择器（YYYY-MM-DD HH）",
+    "name" : "DATEPICKEREX_HOUR",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Datepickerex_notime",
+    "logicName" : "时间选择器（YYYY-MM-DD）",
+    "name" : "DATEPICKEREX_NOTIME",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Stepper",
+    "logicName" : "步进器",
+    "name" : "STEPPER",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Slider",
+    "logicName" : "滑动输入条",
+    "name" : "SLIDER",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Ac",
+    "logicName" : "自动填充",
+    "name" : "AC",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Rating",
+    "logicName" : "评分器",
+    "name" : "RATING",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Checkbox",
+    "logicName" : "选项框",
+    "name" : "CHECKBOX",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "CustomerId",
+    "logicName" : "客户标识",
+    "name" : "CUSTOMERID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "CustomerName",
+    "logicName" : "客户名称",
+    "name" : "CUSTOMERNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "Customerid2",
+    "logicName" : "客户标识2",
+    "name" : "CUSTOMERID2",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Customername2",
+    "logicName" : "客户名称2",
+    "name" : "CUSTOMERNAME2",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "Customerid3",
+    "logicName" : "客户标识3",
+    "name" : "CUSTOMERID3",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Customername3",
+    "logicName" : "客户名称3",
+    "name" : "CUSTOMERNAME3",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "Customerid4",
+    "logicName" : "客户标识4",
+    "name" : "CUSTOMERID4",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Customername4",
+    "logicName" : "客户名称4",
+    "name" : "CUSTOMERNAME4",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "Customerid5",
+    "logicName" : "客户标识5",
+    "name" : "CUSTOMERID5",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Customername5",
+    "logicName" : "客户名称5",
+    "name" : "CUSTOMERNAME5",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
+    "builtinMethod" : false
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "EditorValue",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json",
+  "enableUIActions" : 15,
+  "logicName" : "编辑器值",
+  "getMinorPSAppDERSs" : [ {
+    "actionRSMode" : 1,
+    "codeName" : "EditorValues",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/EditorValue.json"
+    },
+    "name" : "客户-编辑器值",
+    "getParentPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "rSMode" : 2
+  } ],
+  "name" : "EDITORVALUE",
+  "getPSDEName" : "EDITORVALUE",
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "EDITORVALUENAME",
+    "codeName" : "EditorValueName"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

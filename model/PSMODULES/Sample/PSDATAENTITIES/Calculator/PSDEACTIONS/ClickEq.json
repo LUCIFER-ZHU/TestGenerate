@@ -1,0 +1,21 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "SCRIPT",
+  "codeName" : "ClickEq",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickEq.json",
+  "logicName" : "ClickEq",
+  "name" : "ClickEq",
+  "getPSDEActionInput" : {
+    "name" : "ClickEqInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CalculatorDTO"
+    },
+    "type" : "DTO"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "ClickEqResult",
+    "type" : "VOID"
+  },
+  "scriptCode" : "if(data.input) {\n  data.expression=data.input+'=';\n  data.input=eval(data.input);\n}\n"
+}

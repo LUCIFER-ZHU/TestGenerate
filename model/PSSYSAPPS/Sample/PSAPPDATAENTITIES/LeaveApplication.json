@@ -1,0 +1,370 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "LEAVEAPPLICATIONID",
+        "codeName" : "LeaveApplicationId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "LEAVEAPPLICATIONNAME",
+        "codeName" : "LeaveApplicationName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "LEAVEAPPLICATIONNAME",
+      "codeName" : "LeaveApplicationName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "LEAVEAPPLICATIONID",
+      "codeName" : "LeaveApplicationId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "actionMode" : "CUSTOM",
+    "codeName" : "A",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "WFError",
+    "methodType" : "DEACTION",
+    "name" : "WFError",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "WFFinish",
+    "methodType" : "DEACTION",
+    "name" : "WFFinish",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "WFInit",
+    "methodType" : "DEACTION",
+    "name" : "WFInit",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "WFStart",
+    "methodType" : "DEACTION",
+    "name" : "WFStart",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "WFUpdate",
+    "methodType" : "DEACTION",
+    "name" : "WFUpdate",
+    "builtinMethod" : true
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "LeaveApplicationName",
+    "logicName" : "请假申请名称",
+    "name" : "LEAVEAPPLICATIONNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "LeaveApplicationId",
+    "logicName" : "请假申请标识",
+    "name" : "LEAVEAPPLICATIONID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "keyField" : true
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "OrgId",
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "DeptId",
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "State",
+    "logicName" : "申请状态",
+    "name" : "STATE",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Step",
+    "logicName" : "审批步骤",
+    "name" : "STEP",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "CustomerId",
+    "logicName" : "客户标识",
+    "name" : "CUSTOMERID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "CustomerName",
+    "logicName" : "客户名称",
+    "name" : "CUSTOMERNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "Ext_Data",
+    "logicName" : "扩展数据",
+    "name" : "EXT_DATA",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "ExtParam",
+    "logicName" : "扩展参数",
+    "name" : "EXT_PARAM",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Ext_param2",
+    "logicName" : "扩展参数2",
+    "name" : "EXT_PARAM2",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Ext_Data2",
+    "logicName" : "扩展数据2",
+    "name" : "EXTDATA2",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CUSTOM",
+    "codeName" : "A",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "WFError",
+    "methodType" : "DEACTION",
+    "name" : "WFError",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "WFFinish",
+    "methodType" : "DEACTION",
+    "name" : "WFFinish",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "WFInit",
+    "methodType" : "DEACTION",
+    "name" : "WFInit",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "WFStart",
+    "methodType" : "DEACTION",
+    "name" : "WFStart",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "WFUpdate",
+    "methodType" : "DEACTION",
+    "name" : "WFUpdate",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
+    "builtinMethod" : false
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "LeaveApplication",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/LeaveApplication.json",
+  "enableUIActions" : 15,
+  "logicName" : "请假申请",
+  "name" : "LEAVEAPPLICATION",
+  "getPSDEName" : "LEAVEAPPLICATION",
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "LEAVEAPPLICATIONNAME",
+    "codeName" : "LeaveApplicationName"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

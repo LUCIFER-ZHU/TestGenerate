@@ -1,0 +1,355 @@
+{
+  "codeName" : "ValueFormat",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/ValueFormat.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "值显示",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLENAME",
+      "codeName" : "ExampleName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "format1",
+    "dataType" : 6,
+    "createDV" : "1234.1",
+    "getPSAppDEField" : {
+      "name" : "FORMAT1",
+      "codeName" : "Format1"
+    }
+  }, {
+    "id" : "format2",
+    "dataType" : 6,
+    "createDV" : "100.14",
+    "getPSAppDEField" : {
+      "name" : "FORMAT2",
+      "codeName" : "Format2"
+    }
+  }, {
+    "id" : "datatype",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "DATATYPE",
+      "codeName" : "DataType"
+    }
+  }, {
+    "id" : "formitem",
+    "dataType" : 25,
+    "createDV" : "10"
+  }, {
+    "id" : "exampleid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "分组",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "codeName" : "rawitem1",
+        "contentType" : "RAW",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "RAWITEM",
+        "name" : "rawitem1",
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "el-alert el-alert--info is-light"
+        },
+        "rawContent" : "值【1234.1】，使用【#.#\\元】进行格式化，预期效果【1234.1元】",
+        "rawItemHeight" : -1.0,
+        "rawItemWidth" : -1.0,
+        "showCaption" : true
+      }, {
+        "caption" : "数值编辑器格式化",
+        "codeName" : "format1",
+        "createDV" : "1234.1",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "format1",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "FORMAT1",
+          "codeName" : "Format1"
+        },
+        "getPSEditor" : {
+          "editorType" : "NUMBER",
+          "name" : "format1",
+          "precision" : 4
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "#.#\\元",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "codeName" : "rawitem2",
+        "contentType" : "RAW",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "RAWITEM",
+        "name" : "rawitem2",
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "el-alert el-alert--info is-light"
+        },
+        "rawContent" : "值【100.14】，使用【¥*-#.##】进行格式化，预期效果【¥----------100.14】",
+        "rawItemHeight" : -1.0,
+        "rawItemWidth" : -1.0,
+        "showCaption" : true
+      }, {
+        "caption" : "标签编辑器格式化",
+        "codeName" : "format2",
+        "contentWidth" : 500.0,
+        "createDV" : "100.14",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "format2",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "FORMAT2",
+          "codeName" : "Format2"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "format2",
+          "precision" : 4,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL",
+          "width" : 500
+        },
+        "valueFormat" : "¥*-#.##",
+        "width" : 500.0,
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "codeName" : "rawitem3",
+        "contentType" : "RAW",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "RAWITEM",
+        "name" : "rawitem3",
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "el-alert el-alert--info is-light"
+        },
+        "rawContent" : "标签显示属性代码表原值",
+        "rawItemHeight" : -1.0,
+        "rawItemWidth" : -1.0,
+        "showCaption" : true
+      }, {
+        "caption" : "表单项",
+        "codeName" : "datatype",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "datatype",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "DATATYPE",
+          "codeName" : "DataType"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "datatype",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/ExampleDataType.json"
+          },
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "convertToCodeItemText" : true,
+        "showCaption" : true
+      }, {
+        "codeName" : "rawitem4",
+        "contentType" : "RAW",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "RAWITEM",
+        "name" : "rawitem4",
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "el-alert el-alert--info is-light"
+        },
+        "rawContent" : "标签显示属性代码表值文本",
+        "rawItemHeight" : -1.0,
+        "rawItemWidth" : -1.0,
+        "showCaption" : true
+      }, {
+        "caption" : "表单项",
+        "codeName" : "formitem",
+        "createDV" : "10",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "formitem",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "formitem",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/ExampleDataType.json"
+          },
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "convertToCodeItemText" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "424111D8-4236-4F91-9E74-C1614BD99C8E",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

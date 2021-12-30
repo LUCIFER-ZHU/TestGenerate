@@ -1,0 +1,226 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "任务名称",
+    "codeName" : "kanbandataname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "kanbandataname",
+    "excelCaption" : "任务名称",
+    "name" : "kanbandataname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "KANBANDATANAME",
+      "codeName" : "KanbanDataName"
+    },
+    "width" : 1,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "任务状态",
+    "codeName" : "taskstatus",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "taskstatus",
+    "excelCaption" : "任务状态",
+    "name" : "taskstatus",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "TASKSTATUS",
+      "codeName" : "Taskstatus"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "开始时间",
+    "codeName" : "begintime",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "begintime",
+    "excelCaption" : "开始时间",
+    "name" : "begintime",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 180,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "结束时间",
+    "codeName" : "endtime",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "endtime",
+    "excelCaption" : "结束时间",
+    "name" : "endtime",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 180,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "备注",
+    "codeName" : "memo",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "memo",
+    "excelCaption" : "备注",
+    "name" : "memo",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "MEMO",
+      "codeName" : "Memo"
+    },
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "endtime",
+    "getPSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "memo",
+    "getPSAppDEField" : {
+      "name" : "MEMO",
+      "codeName" : "Memo"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "begintime",
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "taskstatus",
+    "getPSAppDEField" : {
+      "name" : "TASKSTATUS",
+      "codeName" : "Taskstatus"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "kanbandataname",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATANAME",
+      "codeName" : "KanbanDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATANAME",
+      "codeName" : "KanbanDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATAID",
+      "codeName" : "KanbanDataId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATAID",
+      "codeName" : "KanbanDataId"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "看板数据标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATAID",
+      "codeName" : "KanbanDataId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "1efdce67d3f16fa0c406fa5519be9b6d",
+  "modeltype" : "PSDEGRID"
+}

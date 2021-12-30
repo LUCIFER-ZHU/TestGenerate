@@ -1,0 +1,144 @@
+{
+  "getAllPSPanelFields" : [ {
+    "id" : "image",
+    "viewFieldName" : "IMAGE"
+  }, {
+    "id" : "customername",
+    "viewFieldName" : "CUSTOMERNAME"
+  }, {
+    "id" : "street",
+    "viewFieldName" : "STREET"
+  }, {
+    "id" : "email",
+    "viewFieldName" : "EMAIL"
+  } ],
+  "codeName" : "Card2",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer/PSPANELS/Card2.json",
+  "layoutMode" : "TABLE_24COL",
+  "logicName" : "客户卡片项布局面板",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+  },
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container1",
+    "getPSLayout" : {
+      "dir" : "row",
+      "layout" : "FLEX"
+    },
+    "getPSLayoutPos" : {
+      "colMD" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSPanelItems" : [ {
+      "contentWidth" : 205.0,
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container2",
+      "getPSLayout" : {
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "grow" : -1,
+        "layout" : "FLEX",
+        "width" : 205
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "image",
+        "getPSEditor" : {
+          "editorParams" : {
+            "MAXCOUNT" : "1",
+            "READONLY" : "TRUE"
+          },
+          "editorType" : "PICTURE_ONE",
+          "maxFileCount" : 1,
+          "maxFileSize" : -1,
+          "minFileCount" : 0,
+          "name" : "image",
+          "readOnly" : true
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "viewFieldName" : "IMAGE",
+        "hidden" : false,
+        "showCaption" : false
+      } ],
+      "width" : 205.0
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container3",
+      "getPSLayout" : {
+        "align" : "flex-start",
+        "dir" : "column",
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "grow" : 1,
+        "layout" : "FLEX"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "customername",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "customername",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "viewFieldName" : "CUSTOMERNAME",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "street",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "street",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "viewFieldName" : "STREET",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "email",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "email",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "viewFieldName" : "EMAIL",
+        "hidden" : false,
+        "showCaption" : false
+      } ]
+    } ]
+  } ],
+  "modelid" : "6A4AAB4C-FA74-41B0-AD3D-1505011C2A4B",
+  "modeltype" : "PSSYSVIEWPANEL"
+}

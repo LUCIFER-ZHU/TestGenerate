@@ -1,0 +1,55 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`AGE`",
+    "name" : "AGE"
+  }, {
+    "expression" : "t1.`AVATAR`",
+    "name" : "AVATAR"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`DEPTDATAID`",
+    "name" : "DEPTDATAID"
+  }, {
+    "expression" : "t21.`DEPTDATANAME`",
+    "name" : "DEPTDATANAME"
+  }, {
+    "expression" : "t1.`DEPTID`",
+    "name" : "DEPTID"
+  }, {
+    "expression" : "t1.`GENDER`",
+    "name" : "GENDER"
+  }, {
+    "expression" : "t1.`IDCARD`",
+    "name" : "IDCARD"
+  }, {
+    "expression" : "t1.`ORGDATAID`",
+    "name" : "ORGDATAID"
+  }, {
+    "expression" : "t11.`ORGDATANAME`",
+    "name" : "ORGDATANAME"
+  }, {
+    "expression" : "t1.`ORGID`",
+    "name" : "ORGID"
+  }, {
+    "expression" : "t1.`PERSONDATAID`",
+    "name" : "PERSONDATAID"
+  }, {
+    "expression" : "t1.`PERSONDATANAME`",
+    "name" : "PERSONDATANAME"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`AGE`,\nt1.`AVATAR`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DEPTDATAID`,\nt21.`DEPTDATANAME`,\nt1.`DEPTID`,\nt1.`GENDER`,\nt1.`IDCARD`,\nt1.`ORGDATAID`,\nt11.`ORGDATANAME`,\nt1.`ORGID`,\nt1.`PERSONDATAID`,\nt1.`PERSONDATANAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_PERSONDATA` t1 \nLEFT JOIN `T_ORGDATA` t11 ON t1.`ORGDATAID` = t11.`ORGDATAID` \nLEFT JOIN `T_DEPTDATA` t21 ON t1.`DEPTDATAID` = t21.`DEPTDATAID` \n",
+  "id" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
+}

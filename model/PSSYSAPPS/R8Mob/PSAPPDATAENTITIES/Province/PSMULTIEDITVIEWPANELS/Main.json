@@ -1,0 +1,182 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "MULTIEDITVIEWPANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province/PSMULTIEDITVIEWPANELS/Main.json",
+  "getEmbeddedPSAppView" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobEditView.json",
+    "viewType" : "DEMOBEDITVIEW"
+  },
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "DATACHANGE", "SAVE", "BEFORESAVE", "LOAD" ],
+  "logicName" : "主表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;DATACHANGE;BEFORESAVE;SAVE",
+    "logicTag" : "meditviewpanel",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_meditviewpanel",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "省份名称",
+    "codeName" : "provincename",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "provincename",
+    "excelCaption" : "省份名称",
+    "name" : "provincename",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "PROVINCENAME",
+      "codeName" : "ProvinceName"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "更新人",
+    "codeName" : "updateman",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "updateman",
+    "excelCaption" : "更新人",
+    "name" : "updateman",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPCODELISTS/SysOperator.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "更新时间",
+    "codeName" : "updatedate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "updatedate",
+    "excelCaption" : "更新时间",
+    "name" : "updatedate",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "provincename",
+    "getPSAppDEField" : {
+      "name" : "PROVINCENAME",
+      "codeName" : "ProvinceName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "updateman",
+    "getPSAppDEField" : {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "updatedate",
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "PROVINCENAME",
+      "codeName" : "ProvinceName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "PROVINCEID",
+      "codeName" : "ProvinceId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "PROVINCEID",
+      "codeName" : "ProvinceId"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "省份标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "PROVINCEID",
+      "codeName" : "ProvinceId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "panelStyle" : "TAB_TOP",
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "c28e213b4609a7eb50c93db7aeec4c20",
+  "modeltype" : "PSDEGRID"
+}

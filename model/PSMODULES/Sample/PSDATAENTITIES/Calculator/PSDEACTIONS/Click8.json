@@ -1,0 +1,21 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "SCRIPT",
+  "codeName" : "Click8",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click8.json",
+  "logicName" : "Click8",
+  "name" : "Click8",
+  "getPSDEActionInput" : {
+    "name" : "Click8Input",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CalculatorDTO"
+    },
+    "type" : "DTO"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "Click8Result",
+    "type" : "VOID"
+  },
+  "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'8';"
+}

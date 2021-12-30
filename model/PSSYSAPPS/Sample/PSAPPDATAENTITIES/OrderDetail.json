@@ -1,0 +1,318 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "ORDERDETAILID",
+        "codeName" : "OrderDetailId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "ORDERDETAILNAME",
+        "codeName" : "OrderDetailName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "ORDERDETAILNAME",
+      "codeName" : "OrderDetailName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "ORDERDETAILID",
+      "codeName" : "OrderDetailId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "builtinMethod" : true
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "OrderDetailName",
+    "logicName" : "订单明细名称",
+    "name" : "ORDERDETAILNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "OrderDetailId",
+    "logicName" : "订单明细标识",
+    "name" : "ORDERDETAILID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "keyField" : true
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "OrderId",
+    "logicName" : "订单标识",
+    "name" : "ORDERID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Price",
+    "logicName" : "单价",
+    "name" : "PRICE",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Amount",
+    "logicName" : "小计",
+    "name" : "AMOUNT",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Qty",
+    "logicName" : "数量",
+    "name" : "QTY",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "ProductId",
+    "logicName" : "产品标识",
+    "name" : "PRODUCTID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "ProductName",
+    "logicName" : "产品",
+    "name" : "PRODUCTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CHECKKEY",
+    "actionType" : "BUILTIN",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "CREATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "BUILTIN",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "GETDRAFT",
+    "actionType" : "BUILTIN",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "DELETE",
+    "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "BUILTIN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "builtinMethod" : true
+  }, {
+    "actionMode" : "UPDATE",
+    "actionType" : "BUILTIN",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FetchDefault",
+    "dataSetType" : "DATAQUERY",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempDefault",
+    "dataSetType" : "DATAQUERY",
+    "methodType" : "FETCHTEMP",
+    "name" : "DEFAULT",
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "OrderDetail",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json",
+  "enableUIActions" : 15,
+  "logicName" : "订单明细",
+  "getMinorPSAppDERSs" : [ {
+    "actionRSMode" : 1,
+    "codeName" : "OrderDetails",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+    },
+    "name" : "订单-订单明细",
+    "getParentPSAppDEField" : {
+      "name" : "ORDERID",
+      "codeName" : "OrderId"
+    },
+    "rSMode" : 2
+  } ],
+  "name" : "ORDERDETAIL",
+  "getPSDEName" : "ORDERDETAIL",
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "ORDERDETAILNAME",
+    "codeName" : "OrderDetailName"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableTempData" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : false
+}

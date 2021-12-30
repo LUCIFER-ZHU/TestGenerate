@@ -1,0 +1,61 @@
+{
+  "codeName" : "AppDEFieldCompute",
+  "dEFLogicMode" : "COMPUTE",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEFLOGICS/AppDEFieldCompute.json",
+  "logicName" : "XY属性计算逻辑",
+  "logicSubType" : "DEFIELD",
+  "name" : "XY属性计算逻辑",
+  "getPSDEField" : {
+    "name" : "APPFIELD",
+    "codeName" : "Appfield"
+  },
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "计算",
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "APPFIELD",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "expression" : "${fieldx} + ${fieldy}",
+      "name" : "表达式[${fieldx} + ${fieldy...] ==> Default[APPFIELD]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValueType" : "EXPRESSION"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接781",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      }
+    } ],
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
+    },
+    "default" : true
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : false,
+  "enableFront" : true
+}

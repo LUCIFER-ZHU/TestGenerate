@@ -1,0 +1,1533 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "EXAMPLEID",
+        "codeName" : "ExampleId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "EXAMPLENAME",
+        "codeName" : "ExampleName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "EXAMPLENAME",
+      "codeName" : "ExampleName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "actionMode" : "CUSTOM",
+    "actionType" : "DELOGIC",
+    "codeName" : "CalcPF",
+    "methodType" : "DEACTION",
+    "name" : "CalcPF",
+    "getPSAppDELogic" : {
+      "modelref" : true,
+      "id" : "CalcPF"
+    },
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "CalcPF2",
+    "methodType" : "DEACTION",
+    "name" : "CalcPF2",
+    "scriptCode" : "if((data.fieldx || data.fieldx == 0) && (data.fieldy || data.fieldy == 0)) {\n    data.fieldz = (data.fieldx + data.fieldy)*2;\n    data.formitem17 = 'X值'+data.fieldx +'加Y值'+data.fieldy+'再乘以2等于Z值'+data.fieldz;\n}",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClearContent",
+    "methodType" : "DEACTION",
+    "name" : "ClearContent",
+    "scriptCode" : "data.content='';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "DELOGIC",
+    "codeName" : "PrepareCtx",
+    "methodType" : "DEACTION",
+    "name" : "PrepareCtx",
+    "getPSAppDELogic" : {
+      "modelref" : true,
+      "id" : "PrepareCtx"
+    },
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataImports" : [ {
+    "batchSize" : 1000,
+    "codeName" : "DataImport",
+    "createDataAccessAction" : "CREATE",
+    "getCreatePSAppDEAction" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "name" : "数据导入",
+    "getPSDEDataImportItems" : [ {
+      "caption" : "X值",
+      "name" : "FIELDX",
+      "orderValue" : 10,
+      "getPSAppDEField" : {
+        "name" : "FIELDX",
+        "codeName" : "Fieldx"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "Y值",
+      "name" : "FIELDY",
+      "orderValue" : 20,
+      "getPSAppDEField" : {
+        "name" : "FIELDY",
+        "codeName" : "Fieldy"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "Z值",
+      "name" : "FIELDZ",
+      "orderValue" : 30,
+      "getPSAppDEField" : {
+        "name" : "FIELDZ",
+        "codeName" : "Fieldz"
+      },
+      "uniqueItem" : false
+    } ],
+    "updateDataAccessAction" : "UPDATE",
+    "getUpdatePSAppDEAction" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "defaultMode" : true,
+    "ignoreError" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchEmpty",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "ExampleId",
+    "logicName" : "示例标识",
+    "name" : "EXAMPLEID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "keyField" : true
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "ExampleName",
+    "logicName" : "名称",
+    "name" : "EXAMPLENAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "Field",
+    "logicName" : "数据选择",
+    "name" : "FIELD",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "FieldValue",
+    "logicName" : "选择数据（值）",
+    "name" : "FIELDVALUE",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Fieldx",
+    "logicName" : "X值",
+    "name" : "FIELDX",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Fieldy",
+    "logicName" : "Y值",
+    "name" : "FIELDY",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Fieldz",
+    "logicName" : "Z值",
+    "name" : "FIELDZ",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "BeginTime",
+    "logicName" : "开始时间",
+    "name" : "BEGINTIME",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "EndTime",
+    "logicName" : "结束时间",
+    "name" : "ENDTIME",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "DataType",
+    "logicName" : "数据分类",
+    "name" : "DATATYPE",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CityId",
+    "logicName" : "市标识",
+    "name" : "CITYID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "CityName",
+    "logicName" : "市",
+    "name" : "CITYNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "ProvinceId",
+    "logicName" : "省份标识",
+    "name" : "PROVINCEID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "ProvinceName",
+    "logicName" : "省份",
+    "name" : "PROVINCENAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "DistrictId",
+    "logicName" : "区标识",
+    "name" : "DISTRICTID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "DistrictName",
+    "logicName" : "区/县",
+    "name" : "DISTRICTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "Format1",
+    "logicName" : "数字占位符（#）",
+    "name" : "FORMAT1",
+    "precision" : 4,
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Format2",
+    "logicName" : "数字占位符（0）",
+    "name" : "FORMAT2",
+    "precision" : 4,
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Format3",
+    "logicName" : "数字占位符（?）",
+    "name" : "FORMAT3",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Format4",
+    "logicName" : "百分比（%）",
+    "name" : "FORMAT4",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Format5",
+    "logicName" : "千位分隔符（,）",
+    "name" : "FORMAT5",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Format6",
+    "logicName" : "正负零区分显示",
+    "name" : "FORMAT6",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Format7",
+    "logicName" : "科学计数法",
+    "name" : "FORMAT7",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Format8",
+    "logicName" : "文本占位符（@）",
+    "name" : "FORMAT8",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Format9",
+    "logicName" : "星号占位符（*）",
+    "name" : "FORMAT9",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Format10",
+    "logicName" : "显示下一个字符",
+    "name" : "FORMAT10",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Format11",
+    "logicName" : "属性颜色（[]）",
+    "name" : "FORMAT11",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Format12",
+    "logicName" : "条件",
+    "name" : "FORMAT12",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Format13",
+    "logicName" : "时间和日期代码",
+    "name" : "FORMAT13",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Format14",
+    "logicName" : "占位符（_）",
+    "name" : "FORMAT14",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Appfield",
+    "getComputePSAppDEFLogic" : {
+      "modelref" : true,
+      "id" : "AppDEFieldCompute"
+    },
+    "logicName" : "XY前端计算值",
+    "name" : "APPFIELD",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Appfield2",
+    "getComputePSAppDEFLogic" : {
+      "modelref" : true,
+      "id" : "AppDEField2Compute"
+    },
+    "logicName" : "XY前端计算值2",
+    "name" : "APPFIELD2",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Appfield3",
+    "getComputePSAppDEFLogic" : {
+      "modelref" : true,
+      "id" : "AppDEField3Compute"
+    },
+    "logicName" : "XY前端计算值3",
+    "name" : "APPFIELD3",
+    "getOnChangePSAppDEFLogic" : {
+      "modelref" : true,
+      "id" : "AppDEFieldChange"
+    },
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Fieldupdate",
+    "logicName" : "更新值",
+    "name" : "FIELDUPDATE",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Acfield",
+    "logicName" : "自动填充属性",
+    "name" : "ACFIELD",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Currentdate",
+    "logicName" : "当前日期",
+    "name" : "CURRENTDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "Appfield4",
+    "getComputePSAppDEFLogic" : {
+      "modelref" : true,
+      "id" : "AppDEField4Compute"
+    },
+    "logicName" : "XY前端计算值4",
+    "name" : "APPFIELD4",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Decimalfield",
+    "logicName" : "数值字段",
+    "name" : "DECIMALFIELD",
+    "precision" : 6,
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Decimalfield2",
+    "logicName" : "数值字段2",
+    "name" : "DECIMALFIELD2",
+    "precision" : 6,
+    "stdDataType" : 6
+  } ],
+  "getAllPSAppDELogics" : [ {
+    "codeName" : "AppDEField2Compute",
+    "dEFLogicMode" : "COMPUTE",
+    "defaultParamName" : "DEFAULT",
+    "logicName" : "XY属性计算逻辑2",
+    "logicSubType" : "DEFIELD",
+    "name" : "XY属性计算逻辑2",
+    "getPSAppDEField" : {
+      "name" : "APPFIELD2",
+      "codeName" : "Appfield2"
+    },
+    "scriptCode" : "data.appfield2=data.fieldx+data.fieldy",
+    "customCode" : true,
+    "enableBackend" : false,
+    "enableFront" : true
+  }, {
+    "codeName" : "AppDEField3Compute",
+    "dEFLogicMode" : "COMPUTE",
+    "defaultParamName" : "DEFAULT",
+    "logicName" : "XY值属性计算逻辑3",
+    "logicSubType" : "DEFIELD",
+    "name" : "XY值属性计算逻辑3",
+    "getPSAppDEField" : {
+      "name" : "APPFIELD3",
+      "codeName" : "Appfield3"
+    },
+    "scriptCode" : "Math.random()*10",
+    "customCode" : true,
+    "enableBackend" : false,
+    "enableFront" : true
+  }, {
+    "codeName" : "AppDEField4Compute",
+    "dEFLogicMode" : "COMPUTE",
+    "defaultParamName" : "DEFAULT",
+    "logicName" : "XY值属性计算逻辑4",
+    "logicSubType" : "DEFIELD",
+    "name" : "XY值属性计算逻辑4",
+    "getPSAppDEField" : {
+      "name" : "APPFIELD4",
+      "codeName" : "Appfield4"
+    },
+    "scriptCode" : "if(data.fieldx && data.fieldz) {\n  data.appfield4=data.fieldx + '(' +Number((data.fieldx/data.fieldz)*100).toFixed(2)  + '%)';\n}",
+    "customCode" : true,
+    "enableBackend" : false,
+    "enableFront" : true
+  }, {
+    "codeName" : "AppDEFieldChange",
+    "dEFLogicMode" : "ONCHANGE",
+    "defaultParamName" : "DEFAULT",
+    "logicName" : "XY值change逻辑",
+    "logicSubType" : "DEFIELD",
+    "name" : "XY值change逻辑",
+    "getPSAppDEField" : {
+      "name" : "APPFIELD3",
+      "codeName" : "Appfield3"
+    },
+    "scriptCode" : "if(data.appfield3 != null && data.appfield3 != undefined){\n   data.fieldx=Math.random() * data.appfield3;\n   data.fieldy=Math.random() * data.appfield3;\n}\n",
+    "customCode" : true,
+    "enableBackend" : false,
+    "enableFront" : true
+  }, {
+    "codeName" : "AppDEFieldCompute",
+    "dEFLogicMode" : "COMPUTE",
+    "defaultParamName" : "Default",
+    "logicName" : "XY属性计算逻辑",
+    "logicSubType" : "DEFIELD",
+    "name" : "XY属性计算逻辑",
+    "getPSAppDEField" : {
+      "name" : "APPFIELD",
+      "codeName" : "Appfield"
+    },
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Prepareparam1",
+      "logicNodeType" : "PREPAREPARAM",
+      "name" : "计算",
+      "getPSDELogicNodeParams" : [ {
+        "dstFieldName" : "APPFIELD",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "expression" : "${fieldx} + ${fieldy}",
+        "name" : "表达式[${fieldx} + ${fieldy...] ==> Default[APPFIELD]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValueType" : "EXPRESSION"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接781",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "getParamPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
+      },
+      "default" : true
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : false,
+    "enableFront" : true
+  }, {
+    "codeName" : "CalcPF",
+    "defaultParamName" : "Default",
+    "logicName" : "表单项更新前台计算",
+    "name" : "表单项更新前台计算",
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Prepareparam1",
+      "logicNodeType" : "PREPAREPARAM",
+      "name" : "计算",
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "getParamPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
+      },
+      "default" : true
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : false,
+    "enableFront" : true
+  }, {
+    "codeName" : "PrepareCtx",
+    "defaultParamName" : "Default",
+    "logicName" : "动态准备应用上下文",
+    "name" : "动态准备应用上下文",
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Prepareparam2",
+      "logicNodeType" : "PREPAREPARAM",
+      "name" : "回显",
+      "getPSDELogicNodeParams" : [ {
+        "dstFieldName" : "FIELDZ",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "Temp[FIELDZ] ==> Default[FIELDZ]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "FIELDZ",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "CURRENTDATE",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "expression" : "new Date().getFullYear().toString()+'-'+(new Date().getMonth()+1).toString()+'-'+new Date().getDate().toString()",
+        "name" : "表达式[new Date().getFullYe...] ==> Default[CURRENTDATE]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValueType" : "EXPRESSION"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接5781",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Prepareparam1",
+      "logicNodeType" : "PREPAREPARAM",
+      "name" : "准备键值",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction1"
+        },
+        "name" : "连接499",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        }
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "dstFieldName" : "example",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "context"
+        },
+        "name" : "Default[EXAMPLEID] ==> context[example]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "EXAMPLEID",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Deaction1",
+      "getDstPSAppDEAction" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
+      "getDstPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
+      },
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Temp"
+      },
+      "logicNodeType" : "DEACTION",
+      "name" : "获取数据",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam2"
+        },
+        "name" : "连接103",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction1"
+        }
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "Temp",
+      "name" : "临时",
+      "getParamPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
+      }
+    }, {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "getParamPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
+      },
+      "default" : true
+    }, {
+      "codeName" : "context",
+      "name" : "应用上下文"
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : false,
+    "enableFront" : true
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CUSTOM",
+    "actionType" : "DELOGIC",
+    "codeName" : "CalcPF",
+    "methodType" : "DEACTION",
+    "name" : "CalcPF",
+    "getPSAppDELogic" : {
+      "modelref" : true,
+      "id" : "CalcPF"
+    },
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "CalcPF2",
+    "methodType" : "DEACTION",
+    "name" : "CalcPF2",
+    "scriptCode" : "if((data.fieldx || data.fieldx == 0) && (data.fieldy || data.fieldy == 0)) {\n    data.fieldz = (data.fieldx + data.fieldy)*2;\n    data.formitem17 = 'X值'+data.fieldx +'加Y值'+data.fieldy+'再乘以2等于Z值'+data.fieldz;\n}",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "ClearContent",
+    "methodType" : "DEACTION",
+    "name" : "ClearContent",
+    "scriptCode" : "data.content='';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "DELOGIC",
+    "codeName" : "PrepareCtx",
+    "methodType" : "DEACTION",
+    "name" : "PrepareCtx",
+    "getPSAppDELogic" : {
+      "modelref" : true,
+      "id" : "PrepareCtx"
+    },
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchEmpty",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "打开视图（界面逻辑-界面行为调用）",
+    "codeName" : "OpenView_UIActionTest",
+    "frontPSAppView" : "无法获取指定应用视图，标识为[9348cd04230e8a88f76b776a61f2b815]，请确认实体视图[EXAMPLE][示例实体选项操作视图（界面逻辑-界面行为调用）]已经添加到应用[移动端应用示例]中",
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Example_OpenView_UIActionTest",
+    "name" : "打开视图（界面逻辑-界面行为调用）",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "OpenView_UIActionTest",
+    "uIActionType" : "DEUIACTION",
+    "id" : "OpenView_UIActionTest@Example"
+  } ],
+  "getAllPSAppDEUILogics" : [ {
+    "codeName" : "UIActionTest",
+    "defaultParamName" : "Default",
+    "logicName" : "界面行为调用",
+    "name" : "界面行为调用",
+    "getPSDEUILogicNodes" : [ {
+      "codeName" : "Preparejsparam1",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "获取表单项参数",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Deuiaction1"
+        },
+        "linkMode" : 0,
+        "name" : "连接9951",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        }
+      } ],
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "example",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Context"
+        },
+        "name" : "Default[exampleid] ==> Context[example]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "exampleid",
+        "getSrcPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Deuiaction1",
+      "getDstPSAppDEUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
+        },
+        "modelref" : true,
+        "id" : "OpenView_UIActionTest@Example"
+      },
+      "getDstPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
+      },
+      "getDstPSDEUILogicParam" : {
+        "modelref" : true,
+        "id" : "Temp"
+      },
+      "logicNodeType" : "DEUIACTION",
+      "name" : "打开视图",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam2"
+        },
+        "linkMode" : 2,
+        "name" : "连接4903",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Deuiaction1"
+        },
+        "fulfilledLink" : true
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        },
+        "linkMode" : 0,
+        "name" : "连接9893",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Preparejsparam2",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "设置回显",
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "fieldx",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "Temp[fieldx] ==> Default[fieldx]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "fieldx",
+        "getSrcPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDEUILogicParams" : [ {
+      "codeName" : "Temp",
+      "name" : "临时"
+    }, {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true
+    }, {
+      "codeName" : "Context",
+      "name" : "应用上下文",
+      "navContextParam" : true
+    } ],
+    "getStartPSDEUILogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    }
+  }, {
+    "codeName" : "UISimple",
+    "defaultParamName" : "Default",
+    "logicName" : "显示对话框",
+    "name" : "显示对话框",
+    "getPSDEUILogicNodes" : [ {
+      "buttonsType" : "YESNO",
+      "codeName" : "Msgbox1",
+      "logicNodeType" : "MSGBOX",
+      "message" : "是否进行此操作？",
+      "getMsgBoxParam" : {
+        "modelref" : true,
+        "id" : "Temp"
+      },
+      "msgBoxType" : "QUESTION",
+      "name" : "提示用户操作",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Msgbox3"
+        },
+        "linkMode" : 0,
+        "name" : "连接4783",
+        "getPSDEUILogicLinkGroupCond" : {
+          "groupOP" : "AND",
+          "logicType" : "GROUP",
+          "getPSDEUILogicLinkConds" : [ {
+            "condOP" : "EQ",
+            "dstFieldName" : "result",
+            "getDstLogicParam" : {
+              "modelref" : true,
+              "id" : "Temp"
+            },
+            "logicType" : "SINGLE",
+            "name" : "Temp[result] 等于(=) (no)",
+            "paramValue" : "no",
+            "value" : "no"
+          } ]
+        },
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Msgbox1"
+        }
+      }, {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Msgbox2"
+        },
+        "linkMode" : 0,
+        "name" : "连接3850",
+        "getPSDEUILogicLinkGroupCond" : {
+          "groupOP" : "AND",
+          "logicType" : "GROUP",
+          "getPSDEUILogicLinkConds" : [ {
+            "condOP" : "EQ",
+            "dstFieldName" : "result",
+            "getDstLogicParam" : {
+              "modelref" : true,
+              "id" : "Temp"
+            },
+            "logicType" : "SINGLE",
+            "name" : "Temp[result] 等于(=) (yes)",
+            "paramValue" : "yes",
+            "value" : "yes"
+          } ]
+        },
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Msgbox1"
+        }
+      } ],
+      "showMode" : "CENTER",
+      "title" : "询问"
+    }, {
+      "buttonsType" : "OK",
+      "codeName" : "Msgbox2",
+      "logicNodeType" : "MSGBOX",
+      "message" : "您选择了【是】",
+      "msgBoxType" : "INFO",
+      "name" : "选择了【是】",
+      "showMode" : "CENTER",
+      "title" : "选择结果"
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        },
+        "linkMode" : 0,
+        "name" : "连接8324",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Preparejsparam1",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "准备提示参数",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Msgbox1"
+        },
+        "linkMode" : 0,
+        "name" : "连接7967",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        }
+      } ],
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "inputtext",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "name" : "Default[inputtext] ==> Temp[inputtext]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "inputtext",
+        "getSrcPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "message",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "expression" : "'您是否输入【'+${inputtext}+'】?'",
+        "name" : "表达式['您是否输入【'+${inputtext...] ==> Temp[message]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValueType" : "EXPRESSION"
+      } ]
+    }, {
+      "buttonsType" : "OK",
+      "codeName" : "Msgbox3",
+      "logicNodeType" : "MSGBOX",
+      "message" : "您选择了【否】",
+      "msgBoxType" : "INFO",
+      "name" : "选择了【否】",
+      "showMode" : "CENTER",
+      "title" : "选择结果"
+    } ],
+    "getPSDEUILogicParams" : [ {
+      "codeName" : "Temp",
+      "name" : "临时"
+    }, {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true
+    } ],
+    "getStartPSDEUILogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    }
+  }, {
+    "codeName" : "UpdateFieldUpdate",
+    "defaultParamName" : "Default",
+    "logicName" : "更新值",
+    "name" : "更新值",
+    "getPSDEUILogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        },
+        "linkMode" : 0,
+        "name" : "连接9458",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Deaction2",
+      "getDstPSAppDEAction" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
+      "getDstPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
+      },
+      "getDstPSDEUILogicParam" : {
+        "modelref" : true,
+        "id" : "ExampleTemp"
+      },
+      "logicNodeType" : "DEACTION",
+      "name" : "更新值",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Deuiaction1"
+        },
+        "linkMode" : 2,
+        "name" : "连接3080",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction2"
+        },
+        "fulfilledLink" : true
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Preparejsparam3",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "回显值",
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "fieldupdate",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "ExampleTemp[fieldupdate] ==> Default[fieldupdate]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "fieldupdate",
+        "getSrcPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "ExampleTemp"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Preparejsparam2",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "设置更新值",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction2"
+        },
+        "linkMode" : 0,
+        "name" : "连接287",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam2"
+        }
+      } ],
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "fieldupdate",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "ExampleTemp"
+        },
+        "name" : "Default[fieldupdate] ==> ExampleTemp[fieldupdate]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "fieldupdate",
+        "getSrcPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Deaction1",
+      "getDstPSAppDEAction" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
+      "getDstPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
+      },
+      "getDstPSDEUILogicParam" : {
+        "modelref" : true,
+        "id" : "ExampleTemp"
+      },
+      "logicNodeType" : "DEACTION",
+      "name" : "获取示例数据",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam2"
+        },
+        "linkMode" : 2,
+        "name" : "连接1153",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction1"
+        },
+        "fulfilledLink" : true
+      } ],
+      "parallelOutput" : true
+    }, {
+      "code" : "if (ExampleTemp.fieldy) {\n  Default.fieldy=ExampleTemp.fieldy;\n}\n",
+      "codeName" : "Rawjscode1",
+      "logicNodeType" : "RAWJSCODE",
+      "name" : "直接代码回显值",
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Deuiaction1",
+      "getDstPSAppDEUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
+        },
+        "modelref" : true,
+        "id" : "OpenView_UIActionTest@Example"
+      },
+      "getDstPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
+      },
+      "getDstPSDEUILogicParam" : {
+        "modelref" : true,
+        "id" : "ExampleTemp"
+      },
+      "logicNodeType" : "DEUIACTION",
+      "name" : "打开视图",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam3"
+        },
+        "linkMode" : 0,
+        "name" : "连接6607",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Deuiaction1"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Preparejsparam1",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "获取表单项参数",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction1"
+        },
+        "linkMode" : 0,
+        "name" : "连接2107",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        }
+      } ],
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "example",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Context"
+        },
+        "name" : "Default[exampleid] ==> Context[example]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "exampleid",
+        "getSrcPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "exampleid",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "ExampleTemp"
+        },
+        "name" : "Default[exampleid] ==> ExampleTemp[exampleid]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "exampleid",
+        "getSrcPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDEUILogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true
+    }, {
+      "codeName" : "ExampleTemp",
+      "name" : "示例临时"
+    }, {
+      "codeName" : "Context",
+      "name" : "应用上下文",
+      "navContextParam" : true
+    } ],
+    "getStartPSDEUILogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    }
+  }, {
+    "codeName" : "allowDrag",
+    "defaultParamName" : "Default",
+    "logicName" : "是否允许树节点拖拽",
+    "name" : "是否允许树节点拖拽",
+    "getPSDEUILogicNodes" : [ {
+      "codeName" : "Preparejsparam1",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "准备消息参数",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Msgbox1"
+        },
+        "linkMode" : 0,
+        "name" : "连接5723",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        }
+      } ],
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "message",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "temp"
+        },
+        "expression" : "'您是否确认拖拽【'+${districtname}+'】?'",
+        "name" : "表达式['您是否确认拖拽【'+${distric...] ==> temp[message]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "cityname",
+        "srcValueType" : "EXPRESSION"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        },
+        "linkMode" : 0,
+        "name" : "连接8290",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "buttonsType" : "YESNO",
+      "codeName" : "Msgbox1",
+      "logicNodeType" : "MSGBOX",
+      "getMsgBoxParam" : {
+        "modelref" : true,
+        "id" : "temp"
+      },
+      "msgBoxType" : "QUESTION",
+      "name" : "提示消息",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam2"
+        },
+        "linkMode" : 0,
+        "name" : "连接4684",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Msgbox1"
+        }
+      } ],
+      "title" : "提示信息"
+    }, {
+      "codeName" : "Preparejsparam2",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "回填参数",
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "result",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "temp[result] ==> Default[result]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "result",
+        "getSrcPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "temp"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDEUILogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true
+    }, {
+      "codeName" : "temp",
+      "name" : "临时存储变量"
+    } ],
+    "getStartPSDEUILogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    }
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "Example",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json",
+  "enableUIActions" : 15,
+  "logicName" : "示例",
+  "name" : "EXAMPLE",
+  "getPSDEName" : "EXAMPLE",
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "EXAMPLENAME",
+    "codeName" : "ExampleName"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

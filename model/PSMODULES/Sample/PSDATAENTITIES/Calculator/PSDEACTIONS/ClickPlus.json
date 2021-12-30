@@ -1,0 +1,21 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "SCRIPT",
+  "codeName" : "ClickPlus",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickPlus.json",
+  "logicName" : "ClickPlus",
+  "name" : "ClickPlus",
+  "getPSDEActionInput" : {
+    "name" : "ClickPlusInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CalculatorDTO"
+    },
+    "type" : "DTO"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "ClickPlusResult",
+    "type" : "VOID"
+  },
+  "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'+';"
+}

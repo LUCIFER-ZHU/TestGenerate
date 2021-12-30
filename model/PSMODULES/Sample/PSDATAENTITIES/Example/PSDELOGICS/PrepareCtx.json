@@ -1,0 +1,138 @@
+{
+  "codeName" : "PrepareCtx",
+  "defaultParamName" : "Default",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDELOGICS/PrepareCtx.json",
+  "logicName" : "动态准备应用上下文",
+  "name" : "动态准备应用上下文",
+  "getPSDELogicNodes" : [ {
+    "codeName" : "Prepareparam2",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "回显",
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "FIELDZ",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "name" : "Temp[FIELDZ] ==> Default[FIELDZ]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "FIELDZ",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Temp"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    }, {
+      "dstFieldName" : "CURRENTDATE",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "expression" : "new Date().getFullYear().toString()+'-'+(new Date().getMonth()+1).toString()+'-'+new Date().getDate().toString()",
+      "name" : "表达式[new Date().getFullYe...] ==> Default[CURRENTDATE]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcValueType" : "EXPRESSION"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接5781",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      }
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Prepareparam1",
+    "logicNodeType" : "PREPAREPARAM",
+    "name" : "准备键值",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
+      },
+      "name" : "连接499",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      }
+    } ],
+    "getPSDELogicNodeParams" : [ {
+      "dstFieldName" : "example",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "context"
+      },
+      "name" : "Default[EXAMPLEID] ==> context[example]",
+      "paramAction" : "SETPARAMVALUE",
+      "srcFieldName" : "EXAMPLEID",
+      "getSrcPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "Default"
+      },
+      "srcValueType" : "SRCDLPARAM"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Deaction1",
+    "getDstPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Get.json"
+    },
+    "getDstPSDELogicParam" : {
+      "modelref" : true,
+      "id" : "Temp"
+    },
+    "getDstPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
+    },
+    "logicNodeType" : "DEACTION",
+    "name" : "获取数据",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam2"
+      },
+      "name" : "连接103",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
+      }
+    } ],
+    "parallelOutput" : true
+  } ],
+  "getPSDELogicParams" : [ {
+    "codeName" : "Temp",
+    "name" : "临时",
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
+    }
+  }, {
+    "codeName" : "Default",
+    "name" : "传入变量",
+    "getParamPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
+    },
+    "default" : true
+  }, {
+    "codeName" : "context",
+    "name" : "应用上下文"
+  } ],
+  "getStartPSDELogicNode" : {
+    "modelref" : true,
+    "id" : "Begin"
+  },
+  "enableBackend" : false,
+  "enableFront" : true
+}

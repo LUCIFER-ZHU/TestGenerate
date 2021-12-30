@@ -1,0 +1,591 @@
+{
+  "accUserMode" : 2,
+  "caption" : "树导航传参",
+  "codeName" : "ExampleTreeNavParamTreeExpView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleTreeNavParamTreeExpView.json",
+  "name" : "ExampleTreeNavParamTreeExpView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "TreeExpView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "treeexpbar",
+      "name" : "TREEEXPBAR",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "TreeNavParamTreeExpViewtreeexpbar",
+    "controlType" : "TREEEXPBAR",
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "name" : "treeexpbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:ProvinceToProvince",
+      "realTitle" : "省份编辑视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceTreeNavInfoEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:viewparam",
+      "realTitle" : "示例编辑视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleNavParamEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ProvinceToCity",
+      "parentDataJO" : {
+        "srfparentdefname" : "PROVINCEID",
+        "srfparentdename" : "PROVINCE",
+        "srfparentmode" : "DER1N_CITY_PROVINCE_PROVINCEID"
+      },
+      "realTitle" : "市表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CityTreeNavGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    } ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "treeexpbar"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+      "logicTag" : "treeexpbar",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_treeexpbar",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "width" : 300.0,
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "TREEEXPBAR"
+    },
+    "getPSControls" : [ {
+      "codeName" : "TreeNavParam",
+      "controlType" : "TREEVIEW",
+      "getCreatePSControlAction" : {
+        "modelref" : true,
+        "id" : "create"
+      },
+      "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSTREEVIEWS/TreeNavParam.json",
+      "getFetchPSControlAction" : {
+        "modelref" : true,
+        "id" : "fetch"
+      },
+      "getGetPSControlAction" : {
+        "modelref" : true,
+        "id" : "load"
+      },
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+      "logicName" : "树导航传参树",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "getPSControlHandler" : {
+        "getPSHandlerActions" : [ {
+          "actionName" : "Update",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "UPDATE",
+          "name" : "update",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Update"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+          }
+        }, {
+          "actionType" : "DEDATASET",
+          "name" : "fetch",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+          }
+        }, {
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "DELETE",
+          "name" : "remove",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+          }
+        }, {
+          "actionName" : "Get",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "READ",
+          "name" : "load",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Get"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+          }
+        }, {
+          "actionName" : "Create",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "CREATE",
+          "name" : "create",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Create"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+          }
+        } ],
+        "userDRAction" : "READ",
+        "enableDEFieldPrivilege" : false,
+        "id" : "树视图处理器"
+      },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SELECTIONCHANGE",
+        "logicTag" : "treeexpbar_tree",
+        "logicType" : "CUSTOM",
+        "name" : "treeexpbar_selectionchange"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "treeexpbar_tree",
+        "logicType" : "CUSTOM",
+        "name" : "treeexpbar_load"
+      } ],
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "treeexpbar_tree"
+      },
+      "getPSDEDataImport" : {
+        "modelref" : true,
+        "id" : "DataImport"
+      },
+      "getPSDETreeNodeRSs" : [ {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "viewparam"
+        },
+        "name" : "视图传参（多级传入） - 视图传参",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ViewParamParent"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ProvinceToProvince"
+        },
+        "name" : "上下文传参 - 省到省",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "contextparam"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ProvinceToCity"
+        },
+        "name" : "视图传参2 - 省到市",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "viewparam2"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ViewParamParent"
+        },
+        "name" : "默认根节点 - 视图传参（多级传入）",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "contextparam"
+        },
+        "name" : "默认根节点 - 上下文传参",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "viewparam2"
+        },
+        "name" : "默认根节点 - 视图传参（省作为查询参数传入）",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      } ],
+      "getPSDETreeNodes" : [ {
+        "counterMode" : 0,
+        "getIdPSAppDEField" : {
+          "name" : "PROVINCEID",
+          "codeName" : "ProvinceId"
+        },
+        "maxSize" : -1,
+        "name" : "省到市",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CityTreeNavGridView.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "getNavPSDER" : {
+          "codeName" : "Province",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/City/PSDERS/DER1N_CITY_PROVINCE_PROVINCEID.json",
+          "logicName" : "省",
+          "masterOrder" : -1,
+          "masterRS" : 0,
+          "name" : "DER1N_CITY_PROVINCE_PROVINCEID",
+          "orderValue" : 100,
+          "pickupDEFName" : "PROVINCEID",
+          "removeActionType" : -1,
+          "removeOrder" : 0
+        },
+        "nodeType" : "ProvinceToCity",
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
+        },
+        "getPSNavigateParams" : [ {
+          "key" : "n_provinceid_eq",
+          "name" : "n_provinceid_eq",
+          "value" : "nodeid",
+          "rawValue" : false
+        } ],
+        "getTextPSAppDEField" : {
+          "name" : "PROVINCENAME",
+          "codeName" : "ProvinceName"
+        },
+        "treeNodeType" : "DE",
+        "hasPSDETreeNodeRSs" : false,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "ProvinceToCity"
+      }, {
+        "counterMode" : 0,
+        "name" : "上下文传参（省作为上下文参数传入）",
+        "nodeType" : "contextparam",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        },
+        "text" : "上下文传参（省作为上下文参数传入）",
+        "treeNodeType" : "STATIC",
+        "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "contextparam"
+      }, {
+        "counterMode" : 0,
+        "name" : "视图传参（多级传入）",
+        "nodeType" : "ViewParamParent",
+        "nodeValue" : "parent",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        },
+        "text" : "视图传参（多级传入）",
+        "tooltip" : "我的节点id是parent",
+        "treeNodeType" : "STATIC",
+        "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : true,
+        "expanded" : true,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "ViewParamParent"
+      }, {
+        "counterMode" : 0,
+        "getIdPSAppDEField" : {
+          "name" : "PROVINCEID",
+          "codeName" : "ProvinceId"
+        },
+        "maxSize" : -1,
+        "name" : "省到省",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceTreeNavInfoEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "nodeType" : "ProvinceToProvince",
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "PROVINCENAME",
+          "codeName" : "ProvinceName"
+        },
+        "treeNodeType" : "DE",
+        "hasPSDETreeNodeRSs" : false,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "ProvinceToProvince"
+      }, {
+        "counterMode" : 0,
+        "name" : "视图传参（省作为查询参数传入）",
+        "nodeType" : "viewparam2",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        },
+        "text" : "视图传参（省作为查询参数传入）",
+        "treeNodeType" : "STATIC",
+        "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "viewparam2"
+      }, {
+        "counterMode" : 0,
+        "name" : "默认根节点",
+        "nodeType" : "ROOT",
+        "nodeValue" : "root",
+        "text" : "默认根节点",
+        "treeNodeType" : "STATIC",
+        "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : true,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "ROOT"
+      }, {
+        "counterMode" : 0,
+        "name" : "视图传参",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleNavParamEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "nodeType" : "viewparam",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        },
+        "getPSNavigateParams" : [ {
+          "key" : "param02",
+          "name" : "param02",
+          "value" : "nodeid",
+          "rawValue" : false
+        }, {
+          "key" : "param01",
+          "name" : "param01",
+          "value" : "123456",
+          "rawValue" : true
+        }, {
+          "key" : "param03",
+          "name" : "param03",
+          "value" : "nodeid2",
+          "rawValue" : false
+        } ],
+        "text" : "视图传参",
+        "tooltip" : "我的节点id是current",
+        "treeNodeType" : "STATIC",
+        "hasPSDETreeNodeRSs" : false,
+        "appendPNodeId" : true,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "viewparam"
+      } ],
+      "getRemovePSControlAction" : {
+        "modelref" : true,
+        "id" : "remove"
+      },
+      "treeGridMode" : 0,
+      "getUpdatePSControlAction" : {
+        "modelref" : true,
+        "id" : "update"
+      },
+      "enableRootSelect" : false,
+      "outputIconDefault" : true,
+      "rootVisible" : false,
+      "name" : "treeexpbar_tree",
+      "modelid" : "868D058D-72D5-4502-A71E-C9DC5FD035CA",
+      "modeltype" : "PSDETREEVIEW"
+    } ],
+    "width" : 300.0,
+    "xDataControlName" : "treeexpbar_tree",
+    "enableCounter" : true,
+    "enableSearch" : false,
+    "showTitleBar" : false,
+    "modelid" : "f1c0e743e084bd8ace05bf7c2a027c2f_treeexpbar",
+    "modeltype" : "PSEXPBAR"
+  } ],
+  "getPSDEViewCodeName" : "TreeNavParamTreeExpView",
+  "getPSDEViewId" : "677C2754-09EE-4430-95BB-F46201E63053",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDETREEEXPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "示例树导航视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DETREEEXPVIEW",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "showCaptionBar" : false,
+  "showDataInfoBar" : true,
+  "modelid" : "f1c0e743e084bd8ace05bf7c2a027c2f",
+  "modeltype" : "PSAPPDEVIEW"
+}

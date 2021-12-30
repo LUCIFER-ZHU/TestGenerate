@@ -1,0 +1,202 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "视图消息标题",
+    "codeName" : "viewmsgdataname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "viewmsgdataname",
+    "excelCaption" : "视图消息标题",
+    "name" : "viewmsgdataname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "VIEWMSGDATANAME",
+      "codeName" : "ViewMsgDataName"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "视图消息内容",
+    "codeName" : "content",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "content",
+    "excelCaption" : "视图消息内容",
+    "name" : "content",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "CONTENT",
+      "codeName" : "Content"
+    },
+    "width" : 1,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "视图消息类型",
+    "codeName" : "type",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "type",
+    "excelCaption" : "视图消息类型",
+    "name" : "type",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/CodeListViewMsgType.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "视图消息位置",
+    "codeName" : "location",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "location",
+    "excelCaption" : "视图消息位置",
+    "name" : "location",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/CodeListViewMsgLocation.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "LOCATION",
+      "codeName" : "Location"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "content",
+    "getPSAppDEField" : {
+      "name" : "CONTENT",
+      "codeName" : "Content"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "location",
+    "getPSAppDEField" : {
+      "name" : "LOCATION",
+      "codeName" : "Location"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "viewmsgdataname",
+    "getPSAppDEField" : {
+      "name" : "VIEWMSGDATANAME",
+      "codeName" : "ViewMsgDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "type",
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "VIEWMSGDATANAME",
+      "codeName" : "ViewMsgDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "VIEWMSGDATAID",
+      "codeName" : "ViewMsgDataId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "VIEWMSGDATAID",
+      "codeName" : "ViewMsgDataId"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "视图消息数据标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "VIEWMSGDATAID",
+      "codeName" : "ViewMsgDataId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "032e5a3aa43f1cbd550dfcc2c291842d",
+  "modeltype" : "PSDEGRID"
+}

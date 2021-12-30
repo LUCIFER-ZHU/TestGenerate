@@ -1,0 +1,216 @@
+{
+  "getAllPSPanelFields" : [ {
+    "id" : "content",
+    "viewFieldName" : "content"
+  } ],
+  "codeName" : "TreeNodeDrop",
+  "controlType" : "PANEL",
+  "dataMode" : 4,
+  "dataName" : "TreeNodeDrop",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSPANELS/TreeNodeDrop.json",
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "layoutMode" : "FLEX",
+  "logicName" : "树节点拖拽",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "panel_button1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "panel_button1"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "panel_button1",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "modelref" : true,
+      "id" : "ClearContent@Example"
+    },
+    "uIActionTarget" : "SINGLEDATA",
+    "xDataControlName" : "panel"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "TreeNodeDropPanelViewcontrol1",
+    "controlType" : "VIEWPANEL",
+    "getEmbeddedPSAppDEView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrgDataOrgDeptDataTreeView.json",
+      "viewType" : "DETREEVIEW"
+    },
+    "name" : "control1",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlParam" : { }
+  } ],
+  "getPSLayout" : {
+    "layout" : "FLEX"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container1",
+    "getPSLayout" : {
+      "dir" : "column",
+      "layout" : "FLEX"
+    },
+    "getPSLayoutPos" : {
+      "grow" : 1,
+      "layout" : "FLEX"
+    },
+    "getPSPanelItems" : [ {
+      "contentHeight" : 50.0,
+      "contentType" : "RAW",
+      "height" : 50.0,
+      "itemStyle" : "DEFAULT",
+      "itemType" : "RAWITEM",
+      "name" : "rawitem1",
+      "getPSLayoutPos" : {
+        "grow" : -1,
+        "height" : 50,
+        "layout" : "FLEX"
+      },
+      "getPSSysCss" : {
+        "cssName" : "el-alert el-alert--info is-light"
+      },
+      "rawContent" : "树节点拖拽：节点拖拽过程中，右侧内容区显示拖拽节点信息",
+      "rawItemHeight" : 50.0
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container2",
+      "getPSLayout" : {
+        "dir" : "row",
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "grow" : 1,
+        "layout" : "FLEX"
+      },
+      "getPSPanelItems" : [ {
+        "contentWidth" : 300.0,
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTROL",
+        "name" : "control1",
+        "getPSControl" : {
+          "codeName" : "TreeNodeDropPanelViewcontrol1",
+          "controlType" : "VIEWPANEL",
+          "getEmbeddedPSAppDEView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrgDataOrgDeptDataTreeView.json",
+            "viewType" : "DETREEVIEW"
+          },
+          "name" : "control1",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+          },
+          "getPSControlParam" : { }
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX",
+          "width" : 300
+        },
+        "width" : 300.0
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTAINER",
+        "name" : "container3",
+        "getPSLayout" : {
+          "align" : "flex-end",
+          "dir" : "column",
+          "layout" : "FLEX"
+        },
+        "getPSLayoutPos" : {
+          "grow" : 1,
+          "layout" : "FLEX"
+        },
+        "getPSPanelItems" : [ {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CONTAINER",
+          "name" : "container4",
+          "getPSLayout" : {
+            "dir" : "row-reverse",
+            "layout" : "FLEX"
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "getPSPanelItems" : [ {
+            "actionType" : "UIACTION",
+            "caption" : "清空内容",
+            "contentWidth" : 90.0,
+            "itemStyle" : "DEFAULT",
+            "itemType" : "BUTTON",
+            "name" : "button1",
+            "getPSAppViewUIAction" : {
+              "modelref" : true,
+              "id" : "panel_button1"
+            },
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "layout" : "FLEX",
+              "width" : 90
+            },
+            "getPSUIAction" : {
+              "actionTarget" : "SINGLEDATA",
+              "caption" : "清空内容",
+              "codeName" : "ClearContent",
+              "fullCodeName" : "Example_ClearContent",
+              "name" : "清空内容",
+              "getPSAppDEMethod" : {
+                "modelref" : true,
+                "id" : "ClearContent"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+              },
+              "timeout" : 60000,
+              "uIActionMode" : "BACKEND",
+              "uIActionTag" : "ClearContent",
+              "uIActionType" : "DEUIACTION",
+              "enableConfirm" : true,
+              "id" : "ClearContent@Example"
+            },
+            "tooltip" : "清空内容",
+            "width" : 90.0,
+            "showCaption" : true
+          } ]
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "content",
+          "getPSEditor" : {
+            "editorType" : "TEXTAREA",
+            "name" : "content",
+            "showMaxLength" : true
+          },
+          "getPSLayoutPos" : {
+            "grow" : 1,
+            "layout" : "FLEX"
+          },
+          "viewFieldName" : "content",
+          "hidden" : false,
+          "showCaption" : false
+        } ]
+      } ]
+    } ]
+  } ],
+  "modelid" : "EFBCD31E-86BD-4AAA-8B3A-07E830948D4C",
+  "modeltype" : "PSSYSVIEWPANEL"
+}

@@ -1,0 +1,342 @@
+{
+  "codeName" : "CssAndIcon",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/CssAndIcon.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "界面样式及图标",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLENAME",
+      "codeName" : "ExampleName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "formitem",
+    "dataType" : 25
+  }, {
+    "id" : "formitem1",
+    "dataType" : 25
+  }, {
+    "id" : "formitem2",
+    "dataType" : 25
+  }, {
+    "id" : "formitem3",
+    "dataType" : 25
+  }, {
+    "id" : "formitem4",
+    "dataType" : 25
+  }, {
+    "id" : "exampleid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "codeName" : "rawitem1",
+      "contentType" : "RAW",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "RAWITEM",
+      "name" : "rawitem1",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysCss" : {
+        "cssName" : "el-alert el-alert--info is-light"
+      },
+      "rawContent" : "表单样式表分为：容器样式表、标题样式表、编辑器样式；作用优先级采用就近原则",
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "收文样式",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "getLabelPSSysCss" : {
+        "cssName" : "formgroup-bold-center"
+      },
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "收文单位",
+        "codeName" : "formitem",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "getLabelPSSysCss" : {
+          "cssName" : "formitem-left"
+        },
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "formitem",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "formitem"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "收文编号",
+        "codeName" : "formitem1",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "formitem1",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "formitem1"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "收文内容",
+        "codeName" : "formitem2",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "formitem2",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "TEXTAREA",
+          "name" : "formitem2",
+          "showMaxLength" : true
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 24,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysCss" : {
+        "cssName" : "form-red-border"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    }, {
+      "codeName" : "rawitem2",
+      "contentType" : "RAW",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "RAWITEM",
+      "name" : "rawitem2",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysCss" : {
+        "cssName" : "el-alert el-alert--info is-light"
+      },
+      "rawContent" : "表单中的分组和表单项标签都可以设置图标，编辑器样式则可以定义编辑器的绘制",
+      "rawItemHeight" : -1.0,
+      "rawItemWidth" : -1.0,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "分组图标",
+      "codeName" : "grouppanel1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "标签图标",
+        "codeName" : "formitem3",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "formitem3",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "formitem3"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0f1@FontAwesome",
+          "cssClass" : "fa fa-stethoscope"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "无边框浅蓝背景",
+        "codeName" : "formitem4",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "formitem4",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorStyle" : "text_noborder",
+          "editorType" : "TEXTBOX",
+          "name" : "formitem4",
+          "getPSSysCss" : {
+            "cssName" : "editor-css-noborder"
+          }
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0f1@FontAwesome",
+        "cssClass" : "fa fa-stethoscope"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getPSSysCss" : {
+    "cssName" : "form-noborder"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "A4CEBED7-406A-4FDB-ADDB-B11BF79F95C7",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

@@ -1,0 +1,123 @@
+{
+  "cardHeight" : 250,
+  "cardWidth" : 400,
+  "codeName" : "DataItem",
+  "controlType" : "DATAVIEW",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData/PSDATAVIEWS/DataItem.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getItemPSLayoutPanel" : {
+    "getAllPSPanelFields" : [ {
+      "id" : "temp",
+      "viewFieldName" : "Temp"
+    } ],
+    "codeName" : "DataItem",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData/PSPANELS/DataItem.json",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "数据项项布局面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "temp",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "temp",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "Temp",
+      "hidden" : false,
+      "showCaption" : false
+    } ],
+    "name" : "itemlayoutpanel",
+    "modelid" : "4DAE8DFB-7996-41A4-8968-60C0FB80195A",
+    "modeltype" : "PSSYSVIEWPANEL"
+  },
+  "logicName" : "数据项",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "dataview",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_dataview",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEDataViewDataItems" : [ {
+    "dataType" : 25,
+    "name" : "temp",
+    "scriptCode" : "'<a target=\"_blank\" href=\"https://www.baidu.com\">www.baidu.com</a>'",
+    "customCode" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATANAME",
+      "codeName" : "KanbanDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATAID",
+      "codeName" : "KanbanDataId"
+    }
+  } ],
+  "getPSDEDataViewItems" : [ {
+    "dataItemName" : "temp",
+    "itemType" : "DATAITEM",
+    "name" : "Temp",
+    "enableSort" : false
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "appendDEItems" : true,
+  "enableCardEdit" : false,
+  "enableCardEditGroup" : false,
+  "enableCardEditOrder" : false,
+  "enableCardNew" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "846E99F4-F0E8-40C6-AD37-51F7AEF073F7",
+  "modeltype" : "PSDEDATAVIEW"
+}

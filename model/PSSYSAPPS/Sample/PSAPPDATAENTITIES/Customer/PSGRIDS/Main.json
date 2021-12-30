@@ -1,0 +1,420 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+  "logicName" : "主表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_uc7c82c1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "表格界面_编辑操作"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_ue9dd53b_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "表格界面_拷贝操作"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "grid_uagridcolumn1_u46863bf_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "表格界面_删除操作"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "表格界面_编辑操作",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Edit"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "grid"
+  }, {
+    "name" : "表格界面_拷贝操作",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Copy"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "grid"
+  }, {
+    "name" : "表格界面_删除操作",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "uIActionTarget" : "MULTIKEY",
+    "xDataControlName" : "grid"
+  } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "客户名称",
+    "codeName" : "customername",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "customername",
+    "excelCaption" : "客户名称",
+    "name" : "customername",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    },
+    "width" : 100,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "类型",
+    "codeName" : "type",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "type",
+    "excelCaption" : "类型",
+    "name" : "type",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/CustomerType.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "上级客户",
+    "codeName" : "pcustomername",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "pcustomername",
+    "excelCaption" : "上级客户",
+    "name" : "pcustomername",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "PCUSTOMERNAME",
+      "codeName" : "Pcustomername"
+    },
+    "width" : 120,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "电话",
+    "codeName" : "phone",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "phone",
+    "excelCaption" : "电话",
+    "name" : "phone",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "PHONE",
+      "codeName" : "Phone"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "手机",
+    "codeName" : "mobile",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "mobile",
+    "excelCaption" : "手机",
+    "name" : "mobile",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "MOBILE",
+      "codeName" : "Mobile"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "电子邮箱",
+    "codeName" : "email",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "email",
+    "excelCaption" : "电子邮箱",
+    "name" : "email",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "EMAIL",
+      "codeName" : "Email"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "RIGHT",
+    "caption" : "操作",
+    "codeName" : "uagridcolumn1",
+    "columnType" : "UAGRIDCOLUMN",
+    "name" : "uagridcolumn1",
+    "noPrivDisplayMode" : 1,
+    "getPSDEUIActionGroup" : {
+      "codeName" : "Auto6",
+      "name" : "表格操作列",
+      "getPSUIActionGroupDetails" : [ {
+        "detailType" : "DEUIACTION",
+        "name" : "uc7c82c1",
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.EDIT"
+          },
+          "caption" : "编辑",
+          "codeName" : "Edit",
+          "fullCodeName" : "Edit",
+          "name" : "表格界面_编辑操作",
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Edit",
+          "uIActionType" : "DEUIACTION"
+        },
+        "addSeparator" : false,
+        "showCaption" : false,
+        "showIcon" : true
+      }, {
+        "detailType" : "DEUIACTION",
+        "name" : "ue9dd53b",
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.COPY"
+          },
+          "caption" : "拷贝",
+          "codeName" : "Copy",
+          "fullCodeName" : "Copy",
+          "name" : "表格界面_拷贝操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0c5@FontAwesome",
+            "cssClass" : "fa fa-copy"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.COPY"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Copy",
+          "uIActionType" : "DEUIACTION"
+        },
+        "addSeparator" : false,
+        "showCaption" : false,
+        "showIcon" : true
+      }, {
+        "detailType" : "DEUIACTION",
+        "name" : "u46863bf",
+        "getPSUIAction" : {
+          "actionTarget" : "MULTIKEY",
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.REMOVE"
+          },
+          "caption" : "删除",
+          "codeName" : "Remove",
+          "fullCodeName" : "Remove",
+          "name" : "表格界面_删除操作",
+          "getPSSysImage" : {
+            "glyph" : "xf00d@FontAwesome",
+            "cssClass" : "fa fa-remove"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Remove",
+          "uIActionType" : "DEUIACTION"
+        },
+        "addSeparator" : false,
+        "showCaption" : false,
+        "showIcon" : true
+      } ]
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : false
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "phone",
+    "getPSAppDEField" : {
+      "name" : "PHONE",
+      "codeName" : "Phone"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "provinceid",
+    "getPSAppDEField" : {
+      "name" : "PROVINCEID",
+      "codeName" : "ProvinceId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "type",
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "pcustomername",
+    "getPSAppDEField" : {
+      "name" : "PCUSTOMERNAME",
+      "codeName" : "Pcustomername"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "cityid",
+    "getPSAppDEField" : {
+      "name" : "CITYID",
+      "codeName" : "CityId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "email",
+    "getPSAppDEField" : {
+      "name" : "EMAIL",
+      "codeName" : "Email"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "pcustomerid",
+    "getPSAppDEField" : {
+      "name" : "PCUSTOMERID",
+      "codeName" : "Pcustomerid"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "districtid",
+    "getPSAppDEField" : {
+      "name" : "DISTRICTID",
+      "codeName" : "DistrictId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "customername",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "mobile",
+    "getPSAppDEField" : {
+      "name" : "MOBILE",
+      "codeName" : "Mobile"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "客户标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "980e6afcb62f794b5a3a0632cc891c4c",
+  "modeltype" : "PSDEGRID"
+}

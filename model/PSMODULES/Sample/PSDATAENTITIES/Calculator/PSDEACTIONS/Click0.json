@@ -1,0 +1,21 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "SCRIPT",
+  "codeName" : "Click0",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/Click0.json",
+  "logicName" : "Click0",
+  "name" : "Click0",
+  "getPSDEActionInput" : {
+    "name" : "Click0Input",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "CalculatorDTO"
+    },
+    "type" : "DTO"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "Click0Result",
+    "type" : "VOID"
+  },
+  "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'0';"
+}

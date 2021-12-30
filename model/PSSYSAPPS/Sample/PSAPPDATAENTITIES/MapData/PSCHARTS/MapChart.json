@@ -1,0 +1,126 @@
+{
+  "codeName" : "MapChart",
+  "controlType" : "CHART",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData/PSCHARTS/MapChart.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+  "logicName" : "MapChart",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+  },
+  "getPSChartCoordinateSystems" : [ {
+    "eChartsType" : "geo",
+    "index" : 0,
+    "name" : "[Map]地图坐标系[0]",
+    "getPSChartGeo" : {
+      "index" : 0,
+      "name" : "[Map]地图坐标系[0]",
+      "getPSChartCoordinateSystem" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "geo",
+      "id" : "0"
+    },
+    "type" : "MAP",
+    "id" : "0"
+  } ],
+  "getPSChartDataSetGroups" : [ {
+    "index" : 0,
+    "name" : "DEFAULT",
+    "id" : "0"
+  } ],
+  "getPSChartDataSets" : [ {
+    "index" : 0,
+    "name" : "Map-DEFAULT",
+    "getPSChartDataSetFields" : [ {
+      "index" : 0,
+      "name" : "MAPDATANAME",
+      "groupField" : true,
+      "id" : "0"
+    }, {
+      "index" : 1,
+      "name" : "MAPDATAID",
+      "groupField" : true,
+      "id" : "1"
+    }, {
+      "index" : 2,
+      "name" : "MAPDATACODE",
+      "groupField" : false,
+      "id" : "2"
+    } ],
+    "id" : "0"
+  } ],
+  "getPSControlLogics" : [ {
+    "eventNames" : "SELECTIONCHANGE",
+    "logicTag" : "chartexpbar_chart",
+    "logicType" : "CUSTOM",
+    "name" : "chartexpbar_selectionchange"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "chartexpbar_chart",
+    "logicType" : "CUSTOM",
+    "name" : "chartexpbar_load"
+  } ],
+  "getPSDEChartLegend" : {
+    "index" : 0,
+    "showLegend" : false,
+    "id" : "0"
+  },
+  "getPSDEChartSerieses" : [ {
+    "caption" : "广西壮自治区地图",
+    "catalogField" : "MAPDATANAME",
+    "eChartsType" : "custom",
+    "idField" : "MAPDATAID",
+    "index" : 0,
+    "name" : "Map",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/MapDataInfoEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "getPSChartCoordinateSystem" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSChartDataSet" : {
+      "modelref" : true,
+      "id" : "0"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "AA",
+      "name" : "AA",
+      "value" : "111",
+      "rawValue" : true
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "bb",
+      "name" : "bb",
+      "value" : "222",
+      "rawValue" : true
+    } ],
+    "seriesLayoutBy" : "column",
+    "seriesType" : "custom",
+    "valueField" : "MAPDATACODE",
+    "enableChartDataSet" : true,
+    "getUserParam" : {
+      "EC.mapType" : "guangxi"
+    }
+  } ],
+  "getPSDEChartTitle" : {
+    "index" : 0,
+    "title" : "广西壮族自治区地图导航",
+    "showTitle" : true,
+    "id" : "0"
+  },
+  "readOnly" : true,
+  "modelid" : "29D39E86-2328-4693-B11E-DF9131901508",
+  "modeltype" : "PSDECHART",
+  "getUserParam" : {
+    "mapName" : "guangxi"
+  }
+}

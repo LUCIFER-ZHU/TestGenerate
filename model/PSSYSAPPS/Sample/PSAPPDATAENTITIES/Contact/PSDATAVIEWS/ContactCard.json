@@ -1,0 +1,313 @@
+{
+  "codeName" : "ContactCard",
+  "controlType" : "DATAVIEW",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact/PSDATAVIEWS/ContactCard.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getItemPSLayoutPanel" : {
+    "getAllPSPanelFields" : [ {
+      "id" : "image",
+      "viewFieldName" : "IMAGE"
+    }, {
+      "id" : "contactname",
+      "viewFieldName" : "CONTACTNAME"
+    }, {
+      "id" : "post",
+      "viewFieldName" : "POST"
+    }, {
+      "id" : "mobile",
+      "viewFieldName" : "MOBILE"
+    }, {
+      "id" : "email",
+      "viewFieldName" : "EMAIL"
+    } ],
+    "codeName" : "ContactCard",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact/PSPANELS/ContactCard.json",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "联系人卡片项布局面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 8,
+        "colSM" : 8,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "image",
+        "getPSEditor" : {
+          "editorParams" : {
+            "MAXCOUNT" : "1"
+          },
+          "editorType" : "PICTURE_ONE",
+          "maxFileCount" : 1,
+          "maxFileSize" : -1,
+          "minFileCount" : 0,
+          "name" : "image"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "viewFieldName" : "IMAGE",
+        "hidden" : false,
+        "showCaption" : false
+      } ]
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container4",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 16,
+        "colMD" : 16,
+        "colSM" : 15,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "contactname",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "contactname",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "viewFieldName" : "CONTACTNAME",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "post",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "post",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "viewFieldName" : "POST",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "mobile",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "mobile",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "viewFieldName" : "MOBILE",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "email",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "email",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "viewFieldName" : "EMAIL",
+        "hidden" : false,
+        "showCaption" : false
+      } ]
+    } ],
+    "name" : "itemlayoutpanel",
+    "modelid" : "CB039FFF-B12E-4269-9387-106DDD734007",
+    "modeltype" : "PSSYSVIEWPANEL"
+  },
+  "logicName" : "联系人卡片",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "dataview",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_dataview",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEDataViewDataItems" : [ {
+    "dataType" : 25,
+    "name" : "post"
+  }, {
+    "dataType" : 25,
+    "name" : "customerid"
+  }, {
+    "dataType" : 25,
+    "name" : "email"
+  }, {
+    "dataType" : 25,
+    "name" : "contactname"
+  }, {
+    "dataType" : 25,
+    "name" : "image"
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "CONTACTNAME",
+      "codeName" : "ContactName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "CONTACTID",
+      "codeName" : "ContactId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "mobile"
+  }, {
+    "dataType" : 25,
+    "name" : "customername"
+  } ],
+  "getPSDEDataViewItems" : [ {
+    "caption" : "工作岗位",
+    "dataItemName" : "post",
+    "itemType" : "DATAITEM",
+    "name" : "POST",
+    "getPSAppDEField" : {
+      "name" : "POST",
+      "codeName" : "Post"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "客户名称",
+    "dataItemName" : "customername",
+    "itemType" : "DATAITEM",
+    "name" : "CUSTOMERNAME",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "联系人姓名",
+    "dataItemName" : "contactname",
+    "itemType" : "DATAITEM",
+    "name" : "CONTACTNAME",
+    "getPSAppDEField" : {
+      "name" : "CONTACTNAME",
+      "codeName" : "ContactName"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "客户标识",
+    "dataItemName" : "customerid",
+    "itemType" : "DATAITEM",
+    "name" : "CUSTOMERID",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "头像",
+    "dataItemName" : "image",
+    "itemType" : "DATAITEM",
+    "name" : "IMAGE",
+    "getPSAppDEField" : {
+      "name" : "IMAGE",
+      "codeName" : "Image"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "手机",
+    "dataItemName" : "mobile",
+    "itemType" : "DATAITEM",
+    "name" : "MOBILE",
+    "getPSAppDEField" : {
+      "name" : "MOBILE",
+      "codeName" : "Mobile"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "电子邮箱",
+    "dataItemName" : "email",
+    "itemType" : "DATAITEM",
+    "name" : "EMAIL",
+    "getPSAppDEField" : {
+      "name" : "EMAIL",
+      "codeName" : "Email"
+    },
+    "enableSort" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "appendDEItems" : false,
+  "enableCardEdit" : false,
+  "enableCardEditGroup" : false,
+  "enableCardEditOrder" : false,
+  "enableCardNew" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "D3605E34-5F2B-4F8B-999B-3A30A0B6A5E9",
+  "modeltype" : "PSDEDATAVIEW"
+}

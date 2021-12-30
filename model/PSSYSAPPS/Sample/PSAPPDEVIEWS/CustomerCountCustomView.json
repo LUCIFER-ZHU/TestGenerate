@@ -1,0 +1,1346 @@
+{
+  "accUserMode" : 2,
+  "caption" : "客户",
+  "codeName" : "CustomerCountCustomView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerCountCustomView.json",
+  "name" : "CustomerCountCustomView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "CTRL",
+    "engineType" : "CtrlLoadTrigger",
+    "name" : "engine_chart2_default",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "chart2",
+      "name" : "CTRL",
+      "paramType" : "CTRL"
+    }, {
+      "ctrlName" : "searchform",
+      "name" : "TRIGGER",
+      "paramType" : "CTRL"
+    } ]
+  }, {
+    "engineCat" : "CTRL",
+    "engineType" : "CtrlLoadTrigger",
+    "name" : "engine_chart_default",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "chart",
+      "name" : "CTRL",
+      "paramType" : "CTRL"
+    }, {
+      "ctrlName" : "searchform",
+      "name" : "TRIGGER",
+      "paramType" : "CTRL"
+    } ]
+  }, {
+    "engineCat" : "CTRL",
+    "engineType" : "CtrlLoadTrigger",
+    "name" : "engine_form_default",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "form",
+      "name" : "CTRL",
+      "paramType" : "CTRL"
+    }, {
+      "ctrlName" : "list",
+      "name" : "TRIGGER",
+      "paramType" : "CTRL"
+    } ]
+  }, {
+    "engineCat" : "CTRL",
+    "engineType" : "CtrlLoadTrigger",
+    "name" : "engine_list_default",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "list",
+      "name" : "CTRL",
+      "paramType" : "CTRL"
+    }, {
+      "ctrlName" : "searchform",
+      "name" : "TRIGGER",
+      "paramType" : "CTRL"
+    } ]
+  }, {
+    "engineCat" : "CTRL",
+    "engineType" : "CtrlLoadAndSearch",
+    "name" : "engine_searchform_default",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "searchform",
+      "name" : "CTRL",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "Info",
+    "controlType" : "FORM",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSFORMS/Info.json",
+    "getGetDraftFromPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraftfrom"
+    },
+    "getGetDraftPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraft"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "logicName" : "信息表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionName" : "GETDRAFTFROM",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraftfrom",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "编辑表单处理器"
+    },
+    "getPSControlNavContexts" : [ {
+      "key" : "ORDER",
+      "name" : "ORDER",
+      "value" : "srfkey",
+      "rawValue" : false
+    } ],
+    "getPSControlNavParams" : [ {
+      "key" : "orderid",
+      "name" : "orderid",
+      "value" : "srfkey",
+      "rawValue" : false
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "ctrlParams" : {
+        "SRFNAVCTX.ORDER" : "%srfkey%",
+        "SRFNAVPARAM.ORDERID" : "%srfkey%"
+      },
+      "id" : "FORM"
+    },
+    "getPSDEFormItems" : [ {
+      "id" : "srfupdatedate",
+      "hidden" : true,
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      }
+    }, {
+      "id" : "srforikey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfkey",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "ORDERID",
+        "codeName" : "OrderId"
+      }
+    }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "ORDERNAME",
+        "codeName" : "OrderName"
+      }
+    }, {
+      "id" : "srftempmode",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfuf",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfdeid",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfsourcekey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "customername",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME",
+        "codeName" : "CustomerName"
+      }
+    }, {
+      "id" : "ordername",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "ORDERNAME",
+        "codeName" : "OrderName"
+      }
+    }, {
+      "id" : "orderdate",
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "ORDERDATE",
+        "codeName" : "OrderDate"
+      }
+    }, {
+      "id" : "state",
+      "dataType" : 25,
+      "createDV" : "10",
+      "getPSAppDEField" : {
+        "name" : "STATE",
+        "codeName" : "State"
+      }
+    }, {
+      "id" : "amount",
+      "dataType" : 7,
+      "getPSAppDEField" : {
+        "name" : "AMOUNT",
+        "codeName" : "Amount"
+      }
+    }, {
+      "id" : "orderid",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "ORDERID",
+        "codeName" : "OrderId"
+      }
+    } ],
+    "getPSDEFormPages" : [ {
+      "caption" : "基本信息",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "订单基本信息",
+        "codeName" : "group1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "group1",
+        "getPSDEFormDetails" : [ {
+          "caption" : "客户",
+          "codeName" : "customername",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "customername",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "CUSTOMERNAME",
+            "codeName" : "CustomerName"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "customername",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "订单号",
+          "codeName" : "ordername",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "ordername",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ORDERNAME",
+            "codeName" : "OrderName"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "ordername",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "订单时间",
+          "codeName" : "orderdate",
+          "dataType" : 5,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "orderdate",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ORDERDATE",
+            "codeName" : "OrderDate"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "orderdate",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueFormat" : "YYYY-MM-DD",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "订单状态",
+          "codeName" : "state",
+          "createDV" : "10",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 0,
+          "ignoreInput" : 3,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "state",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "STATE",
+            "codeName" : "State"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "state",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OrderState.json"
+            },
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "convertToCodeItemText" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "金额",
+          "codeName" : "amount",
+          "dataType" : 7,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "amount",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "AMOUNT",
+            "codeName" : "Amount"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "amount",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : true,
+        "showCaption" : false
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "tabHeaderPos" : "TOP",
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "infoFormMode" : true,
+    "noTabHeader" : true,
+    "name" : "form",
+    "modelid" : "3C800BF4-1151-4556-80CC-3D262E3CC3B8",
+    "modeltype" : "PSDEFORM_EDITFORM"
+  }, {
+    "codeName" : "Pie",
+    "controlType" : "CHART",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail/PSCHARTS/Pie.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "logicName" : "Pie",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+    },
+    "getPSChartCoordinateSystems" : [ {
+      "eChartsType" : "none",
+      "index" : 0,
+      "name" : "[Pie]无坐标系[0]",
+      "type" : "NONE",
+      "id" : "0"
+    } ],
+    "getPSChartDataSetGroups" : [ {
+      "index" : 0,
+      "name" : "DEFAULT",
+      "id" : "0"
+    } ],
+    "getPSChartDataSets" : [ {
+      "index" : 0,
+      "name" : "Pie-DEFAULT",
+      "getPSChartDataSetFields" : [ {
+        "index" : 0,
+        "name" : "PRODUCTNAME",
+        "groupField" : true,
+        "id" : "0"
+      }, {
+        "index" : 1,
+        "name" : "AMOUNT",
+        "groupField" : false,
+        "id" : "1"
+      } ],
+      "id" : "0"
+    } ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "图形控件处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CHART2"
+    },
+    "getPSDEChartLegend" : {
+      "index" : 0,
+      "showLegend" : true,
+      "id" : "0"
+    },
+    "getPSDEChartSerieses" : [ {
+      "catalogField" : "PRODUCTNAME",
+      "eChartsType" : "pie",
+      "index" : 0,
+      "name" : "Pie",
+      "getPSChartCoordinateSystem" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartDataSet" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartSeriesEncode" : {
+        "category" : "PRODUCTNAME",
+        "index" : 0,
+        "name" : "坐标系编码",
+        "type" : "NONE",
+        "value" : "AMOUNT",
+        "id" : "0"
+      },
+      "seriesLayoutBy" : "column",
+      "seriesType" : "pie",
+      "valueField" : "AMOUNT",
+      "enableChartDataSet" : true
+    } ],
+    "getPSDEChartTitle" : {
+      "index" : 0,
+      "showTitle" : true,
+      "id" : "0"
+    },
+    "readOnly" : true,
+    "name" : "chart2",
+    "modelid" : "4F579DB8-597A-4D1D-8F05-6D18A49CA8AF",
+    "modeltype" : "PSDECHART"
+  }, {
+    "codeName" : "Line",
+    "controlType" : "CHART",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSCHARTS/Line.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "logicName" : "Line",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
+    "getPSChartCoordinateSystems" : [ {
+      "eChartsType" : "cartesian2d",
+      "index" : 0,
+      "name" : "[line]直角坐标系[0]",
+      "getPSChartGrid" : {
+        "index" : 0,
+        "name" : "[line]直角坐标系[0]",
+        "getPSChartCoordinateSystem" : {
+          "modelref" : true,
+          "id" : "0"
+        },
+        "getPSChartGridXAxis0" : {
+          "modelref" : true,
+          "id" : "0"
+        },
+        "getPSChartGridYAxis0" : {
+          "modelref" : true,
+          "id" : "0"
+        },
+        "type" : "grid",
+        "id" : "0"
+      },
+      "type" : "XY",
+      "id" : "0"
+    } ],
+    "getPSChartDataSetGroups" : [ {
+      "index" : 0,
+      "name" : "DEFAULT",
+      "id" : "0"
+    } ],
+    "getPSChartDataSets" : [ {
+      "index" : 0,
+      "name" : "line-DEFAULT",
+      "getPSChartDataSetFields" : [ {
+        "groupMode" : "MONTH",
+        "index" : 0,
+        "name" : "orderdate",
+        "groupField" : true,
+        "id" : "0"
+      }, {
+        "index" : 1,
+        "name" : "amount",
+        "groupField" : true,
+        "id" : "1"
+      } ],
+      "id" : "0"
+    } ],
+    "getPSChartGrids" : [ {
+      "index" : 0,
+      "name" : "[line]直角坐标系[0]",
+      "getPSChartCoordinateSystem" : {
+        "eChartsType" : "cartesian2d",
+        "index" : 0,
+        "name" : "[line]直角坐标系[0]",
+        "getPSChartGrid" : {
+          "modelref" : true,
+          "id" : "0"
+        },
+        "type" : "XY",
+        "id" : "0"
+      },
+      "getPSChartGridXAxis0" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartGridYAxis0" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "grid",
+      "id" : "0"
+    } ],
+    "getPSChartXAxises" : [ {
+      "caption" : "日期",
+      "eChartsPos" : "xAxis",
+      "eChartsType" : "category",
+      "index" : 0,
+      "name" : "X坐标轴_日期",
+      "position" : "bottom",
+      "type" : "category",
+      "id" : "0"
+    } ],
+    "getPSChartYAxises" : [ {
+      "caption" : "金额",
+      "eChartsPos" : "yAxis",
+      "eChartsType" : "value",
+      "index" : 0,
+      "name" : "Y坐标轴_金额",
+      "position" : "left",
+      "type" : "numeric",
+      "id" : "0"
+    } ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "图形控件处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CHART"
+    },
+    "getPSDEChartLegend" : {
+      "index" : 0,
+      "legendPos" : "TOP",
+      "showLegend" : true,
+      "id" : "0"
+    },
+    "getPSDEChartSerieses" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "CONTROL.CHART.LINE.CAPTION"
+      },
+      "caption" : "订单折线图",
+      "catalogField" : "orderdate",
+      "eChartsType" : "line",
+      "groupMode" : "MONTH",
+      "idField" : "amount",
+      "index" : 0,
+      "name" : "line",
+      "getPSChartCoordinateSystem" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartDataSet" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartSeriesEncode" : {
+        "index" : 0,
+        "itemId" : "amount",
+        "name" : "坐标系编码",
+        "getPSChartXAxis" : {
+          "modelref" : true,
+          "id" : "0"
+        },
+        "getPSChartYAxis" : {
+          "modelref" : true,
+          "id" : "0"
+        },
+        "type" : "XY",
+        "x" : [ "orderdate" ],
+        "y" : [ "amount" ],
+        "id" : "0"
+      },
+      "seriesLayoutBy" : "column",
+      "seriesType" : "line",
+      "valueField" : "amount",
+      "enableChartDataSet" : true,
+      "stack" : false
+    } ],
+    "getPSDEChartTitle" : {
+      "index" : 0,
+      "title" : "订单折线图",
+      "showTitle" : true,
+      "id" : "0"
+    },
+    "readOnly" : true,
+    "name" : "chart",
+    "modelid" : "44378081-017D-4E64-A20A-89B53DA7D583",
+    "modeltype" : "PSDECHART"
+  }, {
+    "codeName" : "List",
+    "controlType" : "LIST",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSLISTS/List.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "groupMode" : "NONE",
+    "logicName" : "List",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "列表控件处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "LIST"
+    },
+    "getPSDEListDataItems" : [ {
+      "dataType" : 5,
+      "format" : "YYYY-MM-DD",
+      "name" : "orderdate",
+      "getPSAppDEField" : {
+        "name" : "ORDERDATE",
+        "codeName" : "OrderDate"
+      }
+    }, {
+      "dataType" : 7,
+      "name" : "amount",
+      "getPSAppDEField" : {
+        "name" : "AMOUNT",
+        "codeName" : "Amount"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ORDERID",
+        "codeName" : "OrderId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "ORDERNAME",
+        "codeName" : "OrderName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "customerid",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERID",
+        "codeName" : "CustomerId"
+      }
+    } ],
+    "pagingSize" : 1000,
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "hasWFDataItems" : false,
+    "enableGroup" : false,
+    "enableRowEdit" : false,
+    "enableRowEditGroup" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "noSort" : false,
+    "showHeader" : true,
+    "name" : "list",
+    "modelid" : "6F7313F8-D58B-410C-8B9B-D3CE4C1AFE1D",
+    "modeltype" : "PSDELIST"
+  }, {
+    "codeName" : "TimeRange",
+    "controlType" : "SEARCHFORM",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSSEARCHFORMS/TimeRange.json",
+    "logicName" : "时间范围",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionType" : "FILTERACTION",
+        "name" : "search",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "getPSDEFormItems" : [ {
+      "id" : "n_orderdate_gtandeq",
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "ORDERDATE",
+        "codeName" : "OrderDate"
+      }
+    }, {
+      "id" : "n_orderdate_ltandeq",
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "ORDERDATE",
+        "codeName" : "OrderDate"
+      }
+    } ],
+    "getPSDEFormPages" : [ {
+      "caption" : "常规条件",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "订单时间(大于等于(>=))",
+        "codeName" : "n_orderdate_gtandeq",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "n_orderdate_gtandeq",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ORDERDATE",
+          "codeName" : "OrderDate"
+        },
+        "getPSEditor" : {
+          "dateTimeFormat" : "YYYY-MM-DD",
+          "editorParams" : {
+            "TIMEFMT" : "YYYY-MM-DD"
+          },
+          "editorType" : "DATEPICKEREX_NOTIME",
+          "name" : "n_orderdate_gtandeq"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 8,
+          "colSM" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "订单时间(小于等于(<=))",
+        "codeName" : "n_orderdate_ltandeq",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "n_orderdate_ltandeq",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ORDERDATE",
+          "codeName" : "OrderDate"
+        },
+        "getPSEditor" : {
+          "dateTimeFormat" : "YYYY-MM-DD",
+          "editorParams" : {
+            "TIMEFMT" : "YYYY-MM-DD"
+          },
+          "editorType" : "DATEPICKEREX_NOTIME",
+          "name" : "n_orderdate_ltandeq"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 8,
+          "colSM" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD",
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "searchButtonPos" : "RIGHT",
+    "searchButtonStyle" : "SEARCHONLY",
+    "tabHeaderPos" : "TOP",
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : true,
+    "enableFilterSave" : false,
+    "noTabHeader" : true,
+    "name" : "searchform",
+    "modelid" : "C5A2D99F-0862-4D4F-BC8A-CF6B5477D35B",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
+  } ],
+  "getPSDEViewCodeName" : "CountCustomView",
+  "getPSDEViewId" : "B4B5605E-6C5C-47BD-8B95-6FFB7D2FD4E6",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Auto3",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "客户统计",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container3",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CTRLPOS",
+        "name" : "searchform",
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        }
+      } ]
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "dir" : "row-reverse",
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "contentHeight" : 250.0,
+        "contentWidth" : 250.0,
+        "height" : 250.0,
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CTRLPOS",
+        "name" : "chart2",
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "height" : 250,
+          "layout" : "FLEX",
+          "width" : 250
+        },
+        "width" : 250.0
+      }, {
+        "contentHeight" : 250.0,
+        "height" : 250.0,
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CTRLPOS",
+        "name" : "chart",
+        "getPSLayoutPos" : {
+          "grow" : 1,
+          "height" : 250,
+          "layout" : "FLEX"
+        }
+      } ]
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container4",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "caption" : "订单列表",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTAINER",
+        "name" : "container5",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSPanelItems" : [ {
+          "contentHeight" : 300.0,
+          "height" : 300.0,
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CTRLPOS",
+          "name" : "list",
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "height" : 300,
+            "layout" : "TABLE_24COL"
+          }
+        } ],
+        "showCaption" : true
+      }, {
+        "caption" : "订单信息",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTAINER",
+        "name" : "container2",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSPanelItems" : [ {
+          "contentHeight" : 300.0,
+          "height" : 300.0,
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CTRLPOS",
+          "name" : "form",
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "height" : 300,
+            "layout" : "TABLE_24COL"
+          }
+        } ],
+        "showCaption" : true
+      } ]
+    } ],
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : false,
+    "modelid" : "1DFC8BC8-0503-42BB-98D0-2EB2E4D9C087",
+    "modeltype" : "PSSYSVIEWLAYOUTPANEL"
+  },
+  "title" : "客户自定义视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DECUSTOMVIEW",
+  "enableDP" : true,
+  "showCaptionBar" : false,
+  "modelid" : "4e1cb7073edfe108e0f6617c8d86c5a9",
+  "modeltype" : "PSAPPDEVIEW"
+}

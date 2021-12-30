@@ -1,0 +1,149 @@
+{
+  "getAllPSPanelFields" : [ {
+    "id" : "image",
+    "viewFieldName" : "IMAGE"
+  }, {
+    "id" : "contactname",
+    "viewFieldName" : "CONTACTNAME"
+  }, {
+    "id" : "post",
+    "viewFieldName" : "POST"
+  }, {
+    "id" : "mobile",
+    "viewFieldName" : "MOBILE"
+  }, {
+    "id" : "email",
+    "viewFieldName" : "EMAIL"
+  } ],
+  "codeName" : "ContactCard",
+  "controlType" : "PANEL",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact/PSPANELS/ContactCard.json",
+  "layoutMode" : "TABLE_24COL",
+  "logicName" : "联系人卡片项布局面板",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact.json"
+  },
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRootPSPanelItems" : [ {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container1",
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSLayoutPos" : {
+      "colLG" : 8,
+      "colMD" : 8,
+      "colSM" : 8,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "image",
+      "getPSEditor" : {
+        "editorParams" : {
+          "MAXCOUNT" : "1"
+        },
+        "editorType" : "PICTURE_ONE",
+        "maxFileCount" : 1,
+        "maxFileSize" : -1,
+        "minFileCount" : 0,
+        "name" : "image"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "IMAGE",
+      "hidden" : false,
+      "showCaption" : false
+    } ]
+  }, {
+    "itemStyle" : "DEFAULT",
+    "itemType" : "CONTAINER",
+    "name" : "container4",
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSLayoutPos" : {
+      "colLG" : 16,
+      "colMD" : 16,
+      "colSM" : 15,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "contactname",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "contactname",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "CONTACTNAME",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "post",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "post",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "POST",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "mobile",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "mobile",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "MOBILE",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "email",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "email",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "EMAIL",
+      "hidden" : false,
+      "showCaption" : false
+    } ]
+  } ],
+  "modelid" : "CB039FFF-B12E-4269-9387-106DDD734007",
+  "modeltype" : "PSSYSVIEWPANEL"
+}

@@ -1,0 +1,390 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "WIZARDDATAID",
+        "codeName" : "WizardDataId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "WIZARDDATANAME",
+        "codeName" : "WizardDataName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "WIZARDDATANAME",
+      "codeName" : "WizardDataName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "WIZARDDATAID",
+      "codeName" : "WizardDataId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "GotoFinishForm",
+    "methodType" : "DEACTION",
+    "name" : "GotoFinishForm",
+    "scriptCode" : "data.srfnextform='FinishForm';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "WizardDataId",
+    "logicName" : "向导数据标识",
+    "name" : "WIZARDDATAID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "keyField" : true
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "WizardDataName",
+    "logicName" : "向导数据名称",
+    "name" : "WIZARDDATANAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "DeptId",
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "OrgId",
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Textfield",
+    "logicName" : "文本属性",
+    "name" : "TEXTFIELD",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Timefield",
+    "logicName" : "时间属性",
+    "name" : "TIMEFIELD",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Numfield",
+    "logicName" : "数值属性",
+    "name" : "NUMFIELD",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Srfnextform",
+    "logicName" : "下一步表单",
+    "name" : "SRFNEXTFORM",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "SCRIPT",
+    "codeName" : "GotoFinishForm",
+    "methodType" : "DEACTION",
+    "name" : "GotoFinishForm",
+    "scriptCode" : "data.srfnextform='FinishForm';",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "打开向导示例页面",
+    "codeName" : "OpenWizardExample",
+    "frontPSAppView" : "无法获取指定应用视图，标识为[da4c025b9165484c358f24193a2e24e7]，请确认实体视图[WIZARDDATA][向导数据实体向导视图（向导示例）]已经添加到应用[移动端应用示例]中",
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "WizardData_OpenWizardExample",
+    "name" : "打开向导示例页面",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/WizardData.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "OpenWizardExample",
+    "uIActionType" : "DEUIACTION",
+    "id" : "OpenWizardExample@WizardData"
+  } ],
+  "getAllPSAppDEUILogics" : [ {
+    "codeName" : "ReturnWizardData",
+    "defaultParamName" : "Default",
+    "logicName" : "向导数据回填",
+    "name" : "向导数据回填",
+    "getPSDEUILogicNodes" : [ {
+      "codeName" : "Deuiaction1",
+      "getDstPSAppDEUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/WizardData.json"
+        },
+        "modelref" : true,
+        "id" : "OpenWizardExample@WizardData"
+      },
+      "getDstPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/WizardData.json"
+      },
+      "getDstPSDEUILogicParam" : {
+        "modelref" : true,
+        "id" : "Temp"
+      },
+      "logicNodeType" : "DEUIACTION",
+      "name" : "打开完成步骤页面",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Preparejsparam1"
+        },
+        "linkMode" : 0,
+        "name" : "连接2308",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Deuiaction1"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDEUILogicLinks" : [ {
+        "getDstPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Deuiaction1"
+        },
+        "linkMode" : 0,
+        "name" : "连接9588",
+        "getSrcPSDEUILogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        }
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Preparejsparam1",
+      "logicNodeType" : "PREPAREJSPARAM",
+      "name" : "向导数据回填",
+      "getPSDEUILogicNodeParams" : [ {
+        "dstFieldName" : "srfnextform",
+        "getDstPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "name" : "Temp[srfnextform] ==> Default[srfnextform]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "srfnextform",
+        "getSrcPSDEUILogicParam" : {
+          "modelref" : true,
+          "id" : "Temp"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDEUILogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true
+    }, {
+      "codeName" : "Temp",
+      "name" : "临时变量"
+    } ],
+    "getStartPSDEUILogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    }
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "WizardData",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/WizardData.json",
+  "enableUIActions" : 15,
+  "logicName" : "向导数据",
+  "name" : "WIZARDDATA",
+  "getPSDEName" : "WIZARDDATA",
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "WIZARDDATANAME",
+    "codeName" : "WizardDataName"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

@@ -1,0 +1,318 @@
+{
+  "accUserMode" : 2,
+  "caption" : "省份",
+  "codeName" : "ProvinceMobPickupTreeView",
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobPickupTreeView.json",
+  "mDCtrlActiveMode" : 2,
+  "name" : "ProvinceMobPickupTreeView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "MobPickupTreeView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "tree",
+      "name" : "TREE",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "MobTree",
+    "controlType" : "TREEVIEW",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province/PSTREEVIEWS/MobTree.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "hookEventNames" : [ "SELECTCHANGE", "CLICK", "LOAD" ],
+    "logicName" : "移动端树视图",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "树视图处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;CLICK;SELECTCHANGE",
+      "logicTag" : "tree",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_tree",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "TREE"
+    },
+    "getPSDETreeNodeRSs" : [ {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "staticNode"
+      },
+      "name" : "根节点 - 静态节点",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ROOT"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "EntityNode"
+      },
+      "name" : "实体节点父 - 实体节点",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "entityNodeParent"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "entityNodeParent"
+      },
+      "name" : "根节点 - 实体节点父",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ROOT"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    } ],
+    "getPSDETreeNodes" : [ {
+      "counterMode" : 0,
+      "getIdPSAppDEField" : {
+        "name" : "PROVINCEID",
+        "codeName" : "ProvinceId"
+      },
+      "maxSize" : -1,
+      "name" : "实体节点",
+      "nodeType" : "EntityNode",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+      },
+      "textFormat" : "实体节点",
+      "getTextPSAppDEField" : {
+        "name" : "PROVINCENAME",
+        "codeName" : "ProvinceName"
+      },
+      "treeNodeType" : "DE",
+      "hasPSDETreeNodeRSs" : false,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : false,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : false,
+      "rootNode" : false,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "EntityNode"
+    }, {
+      "counterMode" : 0,
+      "name" : "静态节点",
+      "nodeType" : "staticNode",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+      },
+      "text" : "静态节点",
+      "treeNodeType" : "STATIC",
+      "hasPSDETreeNodeRSs" : false,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : false,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : false,
+      "rootNode" : false,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "staticNode"
+    }, {
+      "counterMode" : 0,
+      "name" : "根节点",
+      "nodeType" : "ROOT",
+      "nodeValue" : "root",
+      "text" : "根节点",
+      "treeNodeType" : "STATIC",
+      "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : false,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : false,
+      "rootNode" : true,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "ROOT"
+    }, {
+      "counterMode" : 0,
+      "name" : "实体节点父",
+      "nodeType" : "entityNodeParent",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+      },
+      "text" : "实体节点父",
+      "treeNodeType" : "STATIC",
+      "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : false,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : false,
+      "rootNode" : false,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "entityNodeParent"
+    } ],
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "treeGridMode" : 0,
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "enableRootSelect" : false,
+    "outputIconDefault" : true,
+    "rootVisible" : false,
+    "name" : "tree",
+    "modelid" : "8BF9AADC-18C4-49C7-807B-FA590FDD6BC2",
+    "modeltype" : "PSDETREEVIEW"
+  } ],
+  "getPSDEViewCodeName" : "MobPickupTreeView",
+  "getPSDEViewId" : "3EFA68C3-8302-4FCE-8053-B75E9D347C5E",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMOBPICKUPTREEVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "省份移动端选择树视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMOBPICKUPTREEVIEW",
+  "xDataControlName" : "tree",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enablePullDownRefresh" : false,
+  "expandSearchForm" : true,
+  "modelid" : "1bf656d7d06714eccdf5de9b81f9cc2f",
+  "modeltype" : "PSAPPDEVIEW"
+}

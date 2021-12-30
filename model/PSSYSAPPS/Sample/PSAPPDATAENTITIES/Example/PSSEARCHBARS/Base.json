@@ -1,0 +1,105 @@
+{
+  "codeName" : "Base",
+  "controlType" : "SEARCHBAR",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSSEARCHBARS/Base.json",
+  "logicName" : "常规",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSSearchBarFilters" : [ {
+    "caption" : "省份(%)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "filter",
+    "getPSAppDEField" : {
+      "name" : "PROVINCENAME",
+      "codeName" : "ProvinceName"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_PROVINCENAME_LIKE",
+      "name" : "N_PROVINCENAME_LIKE",
+      "stdDataType" : 25,
+      "valueOP" : "LIKE"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "name" : "filter"
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "市(%)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "filter2",
+    "getPSAppDEField" : {
+      "name" : "CITYNAME",
+      "codeName" : "CityName"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_CITYNAME_LIKE",
+      "name" : "N_CITYNAME_LIKE",
+      "stdDataType" : 25,
+      "valueOP" : "LIKE"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "name" : "filter2"
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  }, {
+    "caption" : "区/县(%)",
+    "dataType" : 25,
+    "itemType" : "FILTER",
+    "labelPos" : "NONE",
+    "labelWidth" : 0,
+    "name" : "filter3",
+    "getPSAppDEField" : {
+      "name" : "DISTRICTNAME",
+      "codeName" : "DistrictName"
+    },
+    "getPSDEFSearchMode" : {
+      "codeName" : "N_DISTRICTNAME_LIKE",
+      "name" : "N_DISTRICTNAME_LIKE",
+      "stdDataType" : 25,
+      "valueOP" : "LIKE"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "name" : "filter3"
+    },
+    "allowEmpty" : true,
+    "emptyCaption" : false,
+    "hidden" : false,
+    "showCaption" : false
+  } ],
+  "getPSSearchBarGroups" : [ {
+    "itemType" : "GROUP",
+    "name" : "group",
+    "getPSAppDEField" : {
+      "name" : "DATATYPE",
+      "codeName" : "DataType"
+    },
+    "width" : 0.0,
+    "addSeparator" : false
+  } ],
+  "quickGroupCount" : -1,
+  "quickSearchMode" : 1,
+  "quickSearchWidth" : 0,
+  "enableFilter" : true,
+  "enableGroup" : true,
+  "enableQuickSearch" : true,
+  "mobileSearchBar" : false,
+  "modelid" : "4EEAC836-07CB-4180-8BA5-40C97E080E1D",
+  "modeltype" : "PSSYSSEARCHBAR"
+}

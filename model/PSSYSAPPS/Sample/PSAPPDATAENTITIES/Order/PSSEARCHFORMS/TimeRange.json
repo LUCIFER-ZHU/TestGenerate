@@ -1,0 +1,117 @@
+{
+  "codeName" : "TimeRange",
+  "controlType" : "SEARCHFORM",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSSEARCHFORMS/TimeRange.json",
+  "logicName" : "时间范围",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+  },
+  "getPSDEFormItems" : [ {
+    "id" : "n_orderdate_gtandeq",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "ORDERDATE",
+      "codeName" : "OrderDate"
+    }
+  }, {
+    "id" : "n_orderdate_ltandeq",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "ORDERDATE",
+      "codeName" : "OrderDate"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "常规条件",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "caption" : "订单时间(大于等于(>=))",
+      "codeName" : "n_orderdate_gtandeq",
+      "dataType" : 5,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_orderdate_gtandeq",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "ORDERDATE",
+        "codeName" : "OrderDate"
+      },
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD"
+        },
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "n_orderdate_gtandeq"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 8,
+        "colSM" : 12,
+        "layout" : "TABLE_24COL"
+      },
+      "valueFormat" : "YYYY-MM-DD",
+      "allowEmpty" : true,
+      "showCaption" : true
+    }, {
+      "caption" : "订单时间(小于等于(<=))",
+      "codeName" : "n_orderdate_ltandeq",
+      "dataType" : 5,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_orderdate_ltandeq",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "ORDERDATE",
+        "codeName" : "OrderDate"
+      },
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD"
+        },
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "name" : "n_orderdate_ltandeq"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 8,
+        "colSM" : 12,
+        "layout" : "TABLE_24COL"
+      },
+      "valueFormat" : "YYYY-MM-DD",
+      "allowEmpty" : true,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "searchButtonPos" : "RIGHT",
+  "searchButtonStyle" : "SEARCHONLY",
+  "tabHeaderPos" : "TOP",
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : true,
+  "enableFilterSave" : false,
+  "noTabHeader" : true,
+  "modelid" : "C5A2D99F-0862-4D4F-BC8A-CF6B5477D35B",
+  "modeltype" : "PSDEFORM_SEARCHFORM"
+}

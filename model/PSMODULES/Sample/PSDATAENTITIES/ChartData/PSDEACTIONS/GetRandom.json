@@ -1,0 +1,25 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "SCRIPT",
+  "codeName" : "GetRandom",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ChartData/PSDEACTIONS/GetRandom.json",
+  "logicName" : "获取随机数",
+  "name" : "getRandom",
+  "getPSDEActionInput" : {
+    "getKeyPSDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    },
+    "name" : "GetRandomInput",
+    "type" : "KEYFIELD"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "GetRandomResult",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ChartDataDTO"
+    },
+    "type" : "DTO"
+  },
+  "scriptCode" : "data.countertag=Math.floor(Math.random()*100+1);\ndata.countertag2=Math.floor(Math.random()*100+1);\ndata.countertag3=Math.floor(Math.random()*100+1);\nconsole.log(\"获取随机数给【首页计数器】供数\");\nconsole.log(data);"
+}

@@ -1,0 +1,1615 @@
+{
+  "accUserMode" : 2,
+  "caption" : "活动",
+  "codeName" : "ACTIVITYCalendarView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ACTIVITYCalendarView.json",
+  "mDCtrlActiveMode" : 2,
+  "name" : "ACTIVITYCalendarView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSControls" : [ {
+    "calendarStyle" : "MONTH",
+    "codeName" : "ActivityCalendar",
+    "controlType" : "CALENDAR",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity/PSCALENDARS/ActivityCalendar.json",
+    "groupMode" : "NONE",
+    "legendPos" : "TOP",
+    "logicName" : "销售活动日历",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "eventArg" : "tbitem3",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem3_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem3"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem4",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem4_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem4"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem5",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem5_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem5"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem6",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem6_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem6"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem24",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem24_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem24"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem25",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem25_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem25"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem8",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem8_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem8"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem13",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem13_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem13"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem11",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem11_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem11"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem21",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem21_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem21"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem23",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem23_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem23"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem19",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem19_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem19"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem18",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_tbitem18_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_tbitem18"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_quicktoolbar_deuiaction1_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_quicktoolbar_deuiaction1"
+      },
+      "getPSViewCtrlName" : "calendar_quicktoolbar"
+    }, {
+      "eventArg" : "tbitem3",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem3_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem3"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem4",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem4_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem4"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem5",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem5_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem5"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem6",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem6_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem6"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem24",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem24_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem24"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem25",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem25_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem25"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem8",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem8_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem8"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem13",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem13_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem13"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem11",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem11_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem11"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem21",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem21_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem21"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem23",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem23_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem23"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem19",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem19_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem19"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem18",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_tbitem18_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_tbitem18"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    }, {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "calendar_batchtoolbar_deuiaction1_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "calendar_batchtoolbar_deuiaction1"
+      },
+      "getPSViewCtrlName" : "calendar_batchtoolbar"
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "calendar_quicktoolbar_tbitem3",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "New"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_tbitem4",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Edit"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_tbitem5",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "View"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_tbitem6",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Copy"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_tbitem24",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "ToggleRowEdit"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_tbitem25",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "NewRow"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_tbitem8",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "uIActionTarget" : "MULTIKEY",
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_tbitem13",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "ExportExcel"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_tbitem11",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Print"
+      },
+      "uIActionTarget" : "MULTIKEY",
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_tbitem21",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "ExportModel"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_tbitem23",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Import"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_tbitem19",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "ToggleFilter"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_tbitem18",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Help"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_quicktoolbar_deuiaction1",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "SaveRow"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem3",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "New"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem4",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Edit"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem5",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "View"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem6",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Copy"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem24",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "ToggleRowEdit"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem25",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "NewRow"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem8",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "uIActionTarget" : "MULTIKEY",
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem13",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "ExportExcel"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem11",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Print"
+      },
+      "uIActionTarget" : "MULTIKEY",
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem21",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "ExportModel"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem23",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Import"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem19",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "ToggleFilter"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_tbitem18",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Help"
+      },
+      "xDataControlName" : "calendar"
+    }, {
+      "name" : "calendar_batchtoolbar_deuiaction1",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "SaveRow"
+      },
+      "xDataControlName" : "calendar"
+    } ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "calendar"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CALENDAR"
+    },
+    "getPSControls" : [ {
+      "codeName" : "CalendarViewcalendar_quicktoolbar",
+      "controlType" : "TOOLBAR",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "工具栏模板（默认表格界面）",
+      "name" : "calendar_quicktoolbar",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity.json"
+      },
+      "getPSControlLogics" : [ {
+        "eventArg" : "tbitem3",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem3_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem3_click"
+        }
+      }, {
+        "eventArg" : "tbitem4",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem4_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem4_click"
+        }
+      }, {
+        "eventArg" : "tbitem5",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem5_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem5_click"
+        }
+      }, {
+        "eventArg" : "tbitem6",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem6_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem6_click"
+        }
+      }, {
+        "eventArg" : "tbitem24",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem24_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem24_click"
+        }
+      }, {
+        "eventArg" : "tbitem25",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem25_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem25_click"
+        }
+      }, {
+        "eventArg" : "tbitem8",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem8_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem8_click"
+        }
+      }, {
+        "eventArg" : "tbitem13",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem13_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem13_click"
+        }
+      }, {
+        "eventArg" : "tbitem11",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem11_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem11_click"
+        }
+      }, {
+        "eventArg" : "tbitem21",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem21_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem21_click"
+        }
+      }, {
+        "eventArg" : "tbitem23",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem23_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem23_click"
+        }
+      }, {
+        "eventArg" : "tbitem19",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem19_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem19_click"
+        }
+      }, {
+        "eventArg" : "tbitem18",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_tbitem18_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem18_click"
+        }
+      }, {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_quicktoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_quicktoolbar_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_deuiaction1_click"
+        }
+      } ],
+      "getPSControlParam" : {
+        "id" : "calendar_quicktoolbar"
+      },
+      "getPSDEToolbarItems" : [ {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.NEW"
+        },
+        "caption" : "新建",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem3",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem3"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.NEW"
+          },
+          "caption" : "新建",
+          "codeName" : "New",
+          "fullCodeName" : "New",
+          "name" : "表格界面_新建操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0f6@FontAwesome",
+            "cssClass" : "fa fa-file-text-o"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.NEW"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "New",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "新建",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.NEW"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EDIT"
+        },
+        "caption" : "编辑",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem4",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem4"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf044@FontAwesome",
+          "cssClass" : "fa fa-edit"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.EDIT"
+          },
+          "caption" : "编辑",
+          "codeName" : "Edit",
+          "fullCodeName" : "Edit",
+          "name" : "表格界面_编辑操作",
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Edit",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "编辑",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.COPY"
+        },
+        "caption" : "拷贝",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem6",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem6"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0c5@FontAwesome",
+          "cssClass" : "fa fa-copy"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.COPY"
+          },
+          "caption" : "拷贝",
+          "codeName" : "Copy",
+          "fullCodeName" : "Copy",
+          "name" : "表格界面_拷贝操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0c5@FontAwesome",
+            "cssClass" : "fa fa-copy"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.COPY"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Copy",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "拷贝",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.COPY"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "itemType" : "SEPERATOR",
+        "name" : "tbitem7",
+        "spanMode" : false
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.REMOVE"
+        },
+        "caption" : "删除",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem8",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem8"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf00d@FontAwesome",
+          "cssClass" : "fa fa-remove"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "MULTIKEY",
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.REMOVE"
+          },
+          "caption" : "删除",
+          "codeName" : "Remove",
+          "fullCodeName" : "Remove",
+          "name" : "表格界面_删除操作",
+          "getPSSysImage" : {
+            "glyph" : "xf00d@FontAwesome",
+            "cssClass" : "fa fa-remove"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Remove",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "删除",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "itemType" : "SEPERATOR",
+        "name" : "tbitem9",
+        "spanMode" : false
+      }, {
+        "caption" : "其它",
+        "itemType" : "ITEMS",
+        "name" : "tbitem16",
+        "getPSDEToolbarItems" : [ {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF"
+          },
+          "caption" : "导出数据模型",
+          "groupExtractMode" : "ITEM",
+          "itemType" : "DEUIACTION",
+          "name" : "tbitem21",
+          "noPrivDisplayMode" : 2,
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "calendar_quicktoolbar_tbitem21"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf019@FontAwesome",
+            "cssClass" : "fa fa-download"
+          },
+          "getPSUIAction" : {
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF"
+            },
+            "caption" : "导出数据模型",
+            "codeName" : "ExportModel",
+            "fullCodeName" : "ExportModel",
+            "name" : "表格界面_导出数据模型",
+            "getPSSysImage" : {
+              "glyph" : "xf019@FontAwesome",
+              "cssClass" : "fa fa-download"
+            },
+            "timeout" : 60000,
+            "uIActionMode" : "SYS",
+            "uIActionTag" : "ExportModel",
+            "uIActionType" : "DEUIACTION"
+          },
+          "tooltip" : "导出数据模型",
+          "showCaption" : true,
+          "showIcon" : true
+        } ],
+        "tooltip" : "其它",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "itemType" : "SEPERATOR",
+        "name" : "tbitem17",
+        "spanMode" : false
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.HELP"
+        },
+        "caption" : "帮助",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem18",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendar_quicktoolbar_tbitem18"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf128@FontAwesome",
+          "cssClass" : "fa fa-question"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.HELP"
+          },
+          "caption" : "帮助",
+          "codeName" : "Help",
+          "fullCodeName" : "Help",
+          "name" : "表格界面_帮助操作",
+          "getPSSysImage" : {
+            "glyph" : "xf128@FontAwesome",
+            "cssClass" : "fa fa-question"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.HELP"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Help",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "帮助",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.HELP"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "b912ff540f5614f63914a38067d84728",
+      "modeltype" : "PSDETOOLBAR"
+    }, {
+      "codeName" : "CalendarViewcalendar_batchtoolbar",
+      "controlType" : "TOOLBAR",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "工具栏模板（默认表格界面）",
+      "name" : "calendar_batchtoolbar",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity.json"
+      },
+      "getPSControlLogics" : [ {
+        "eventArg" : "tbitem3",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem3_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem3_click"
+        }
+      }, {
+        "eventArg" : "tbitem4",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem4_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem4_click"
+        }
+      }, {
+        "eventArg" : "tbitem5",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem5_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem5_click"
+        }
+      }, {
+        "eventArg" : "tbitem6",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem6_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem6_click"
+        }
+      }, {
+        "eventArg" : "tbitem24",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem24_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem24_click"
+        }
+      }, {
+        "eventArg" : "tbitem25",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem25_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem25_click"
+        }
+      }, {
+        "eventArg" : "tbitem8",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem8_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem8_click"
+        }
+      }, {
+        "eventArg" : "tbitem13",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem13_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem13_click"
+        }
+      }, {
+        "eventArg" : "tbitem11",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem11_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem11_click"
+        }
+      }, {
+        "eventArg" : "tbitem21",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem21_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem21_click"
+        }
+      }, {
+        "eventArg" : "tbitem23",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem23_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem23_click"
+        }
+      }, {
+        "eventArg" : "tbitem19",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem19_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem19_click"
+        }
+      }, {
+        "eventArg" : "tbitem18",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_tbitem18_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem18_click"
+        }
+      }, {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "calendar_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "calendar_batchtoolbar_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_deuiaction1_click"
+        }
+      } ],
+      "getPSControlParam" : {
+        "id" : "calendar_batchtoolbar"
+      },
+      "getPSDEToolbarItems" : [ {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.NEW"
+        },
+        "caption" : "新建",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem3",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem3"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.NEW"
+          },
+          "caption" : "新建",
+          "codeName" : "New",
+          "fullCodeName" : "New",
+          "name" : "表格界面_新建操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0f6@FontAwesome",
+            "cssClass" : "fa fa-file-text-o"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.NEW"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "New",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "新建",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.NEW"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EDIT"
+        },
+        "caption" : "编辑",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem4",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem4"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf044@FontAwesome",
+          "cssClass" : "fa fa-edit"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.EDIT"
+          },
+          "caption" : "编辑",
+          "codeName" : "Edit",
+          "fullCodeName" : "Edit",
+          "name" : "表格界面_编辑操作",
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Edit",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "编辑",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.COPY"
+        },
+        "caption" : "拷贝",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem6",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem6"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0c5@FontAwesome",
+          "cssClass" : "fa fa-copy"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.COPY"
+          },
+          "caption" : "拷贝",
+          "codeName" : "Copy",
+          "fullCodeName" : "Copy",
+          "name" : "表格界面_拷贝操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0c5@FontAwesome",
+            "cssClass" : "fa fa-copy"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.COPY"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Copy",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "拷贝",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.COPY"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "itemType" : "SEPERATOR",
+        "name" : "tbitem7",
+        "spanMode" : false
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.REMOVE"
+        },
+        "caption" : "删除",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem8",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem8"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf00d@FontAwesome",
+          "cssClass" : "fa fa-remove"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "MULTIKEY",
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.REMOVE"
+          },
+          "caption" : "删除",
+          "codeName" : "Remove",
+          "fullCodeName" : "Remove",
+          "name" : "表格界面_删除操作",
+          "getPSSysImage" : {
+            "glyph" : "xf00d@FontAwesome",
+            "cssClass" : "fa fa-remove"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Remove",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "删除",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "itemType" : "SEPERATOR",
+        "name" : "tbitem9",
+        "spanMode" : false
+      }, {
+        "caption" : "其它",
+        "itemType" : "ITEMS",
+        "name" : "tbitem16",
+        "getPSDEToolbarItems" : [ {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF"
+          },
+          "caption" : "导出数据模型",
+          "groupExtractMode" : "ITEM",
+          "itemType" : "DEUIACTION",
+          "name" : "tbitem21",
+          "noPrivDisplayMode" : 2,
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "calendar_batchtoolbar_tbitem21"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf019@FontAwesome",
+            "cssClass" : "fa fa-download"
+          },
+          "getPSUIAction" : {
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF"
+            },
+            "caption" : "导出数据模型",
+            "codeName" : "ExportModel",
+            "fullCodeName" : "ExportModel",
+            "name" : "表格界面_导出数据模型",
+            "getPSSysImage" : {
+              "glyph" : "xf019@FontAwesome",
+              "cssClass" : "fa fa-download"
+            },
+            "timeout" : 60000,
+            "uIActionMode" : "SYS",
+            "uIActionTag" : "ExportModel",
+            "uIActionType" : "DEUIACTION"
+          },
+          "tooltip" : "导出数据模型",
+          "showCaption" : true,
+          "showIcon" : true
+        } ],
+        "tooltip" : "其它",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "itemType" : "SEPERATOR",
+        "name" : "tbitem17",
+        "spanMode" : false
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.HELP"
+        },
+        "caption" : "帮助",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem18",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "calendar_batchtoolbar_tbitem18"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf128@FontAwesome",
+          "cssClass" : "fa fa-question"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.HELP"
+          },
+          "caption" : "帮助",
+          "codeName" : "Help",
+          "fullCodeName" : "Help",
+          "name" : "表格界面_帮助操作",
+          "getPSSysImage" : {
+            "glyph" : "xf128@FontAwesome",
+            "cssClass" : "fa fa-question"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.HELP"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Help",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "帮助",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.HELP"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "b912ff540f5614f63914a38067d84728",
+      "modeltype" : "PSDETOOLBAR"
+    } ],
+    "getPSSysCalendarItems" : [ {
+      "bKColor" : "rgba(4, 0, 255, 1)",
+      "getBeginTimePSAppDEField" : {
+        "name" : "BEGINTIME",
+        "codeName" : "BeginTime"
+      },
+      "getEndTimePSAppDEField" : {
+        "name" : "ENDTIME",
+        "codeName" : "EndTime"
+      },
+      "getIdPSAppDEField" : {
+        "name" : "ACTIVITYID",
+        "codeName" : "ActivityId"
+      },
+      "itemStyle" : "DEFAULT",
+      "itemType" : "Meeting",
+      "maxSize" : -1,
+      "name" : "会议",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchMeeting"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity.json"
+      },
+      "getTextPSAppDEField" : {
+        "name" : "ACTIVITYNAME",
+        "codeName" : "ActivityName"
+      },
+      "enableQuickCreate" : false,
+      "id" : "Meeting"
+    }, {
+      "bKColor" : "rgba(130, 128, 128, 1)",
+      "getBeginTimePSAppDEField" : {
+        "name" : "BEGINTIME",
+        "codeName" : "BeginTime"
+      },
+      "getEndTimePSAppDEField" : {
+        "name" : "ENDTIME",
+        "codeName" : "EndTime"
+      },
+      "getIdPSAppDEField" : {
+        "name" : "ACTIVITYID",
+        "codeName" : "ActivityId"
+      },
+      "itemStyle" : "DEFAULT",
+      "itemType" : "Other",
+      "maxSize" : -1,
+      "name" : "其它活动",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchOther"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity.json"
+      },
+      "getTextPSAppDEField" : {
+        "name" : "ACTIVITYNAME",
+        "codeName" : "ActivityName"
+      },
+      "enableQuickCreate" : false,
+      "id" : "Other"
+    }, {
+      "bKColor" : "rgba(0, 255, 55, 1)",
+      "getBeginTimePSAppDEField" : {
+        "name" : "BEGINTIME",
+        "codeName" : "BeginTime"
+      },
+      "getEndTimePSAppDEField" : {
+        "name" : "ENDTIME",
+        "codeName" : "EndTime"
+      },
+      "getIdPSAppDEField" : {
+        "name" : "ACTIVITYID",
+        "codeName" : "ActivityId"
+      },
+      "itemStyle" : "DEFAULT",
+      "itemType" : "Phone",
+      "maxSize" : -1,
+      "name" : "电话",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchPhone"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity.json"
+      },
+      "getTextPSAppDEField" : {
+        "name" : "ACTIVITYNAME",
+        "codeName" : "ActivityName"
+      },
+      "enableQuickCreate" : false,
+      "id" : "Phone"
+    }, {
+      "bKColor" : "rgba(102, 0, 255, 1)",
+      "getBeginTimePSAppDEField" : {
+        "name" : "BEGINTIME",
+        "codeName" : "BeginTime"
+      },
+      "getEndTimePSAppDEField" : {
+        "name" : "ENDTIME",
+        "codeName" : "EndTime"
+      },
+      "getIdPSAppDEField" : {
+        "name" : "ACTIVITYID",
+        "codeName" : "ActivityId"
+      },
+      "itemStyle" : "DEFAULT",
+      "itemType" : "Email",
+      "maxSize" : -1,
+      "name" : "邮件",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchEmail"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity.json"
+      },
+      "getTextPSAppDEField" : {
+        "name" : "ACTIVITYNAME",
+        "codeName" : "ActivityName"
+      },
+      "enableQuickCreate" : false,
+      "id" : "Email"
+    } ],
+    "enableGroup" : false,
+    "name" : "calendar",
+    "modelid" : "C54D6A54-AC97-4878-8D36-00E637EE59D0",
+    "modeltype" : "PSSYSCALENDAR"
+  } ],
+  "getPSDEViewCodeName" : "CalendarView",
+  "getPSDEViewId" : "3CC4B424-9142-4A06-B039-BE47865E86E3",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDECALENDARVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "活动日历视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DECALENDARVIEW",
+  "xDataControlName" : "calendar",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "modelid" : "2002f479b7815ee817772c10992a88f6",
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Activities",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Activity.json"
+    },
+    "name" : "客户-活动",
+    "getParentPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "rSMode" : 2
+  } ] ]
+}

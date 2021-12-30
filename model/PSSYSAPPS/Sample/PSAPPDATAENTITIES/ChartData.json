@@ -1,0 +1,540 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "CHARTDATAID",
+        "codeName" : "ChartDataId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "CHARTDATANAME",
+        "codeName" : "ChartDataName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "GetRandom",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CUSTOM",
+    "codeName" : "TestBackEndAction",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "ChartDataId",
+    "logicName" : "图表标识",
+    "name" : "CHARTDATAID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "keyField" : true
+  }, {
+    "codeName" : "ChartDataName",
+    "logicName" : "图表名称",
+    "name" : "CHARTDATANAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "DeptId",
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "OrgId",
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Chartdate",
+    "logicName" : "图表时间",
+    "name" : "CHARTDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Totalprice",
+    "logicName" : "总计价格",
+    "name" : "TOTALPRICE",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "DateTime",
+    "logicName" : "数据时间",
+    "name" : "DATETIME",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "BeginTime",
+    "logicName" : "开始时间",
+    "name" : "BEGINTIME",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "EndTime",
+    "logicName" : "结束时间",
+    "name" : "ENDTIME",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Longitude",
+    "logicName" : "经度",
+    "name" : "LONGITUDE",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Latitude",
+    "logicName" : "纬度",
+    "name" : "LATITUDE",
+    "stdDataType" : 7
+  }, {
+    "codeName" : "Year",
+    "logicName" : "年份",
+    "name" : "YEAR",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Month",
+    "logicName" : "月份",
+    "name" : "MONTH",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Season",
+    "logicName" : "季度",
+    "name" : "SEASON",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Data",
+    "logicName" : "数据",
+    "name" : "DATA",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "DataType",
+    "logicName" : "数据分类",
+    "name" : "DATATYPE",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "ChartDataNo",
+    "logicName" : "图表编号",
+    "name" : "CHARTDATANO",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Open",
+    "logicName" : "开盘值",
+    "name" : "OPEN",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Close",
+    "logicName" : "收盘值",
+    "name" : "CLOSE",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Lowest",
+    "logicName" : "最小值",
+    "name" : "LOWEST",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Highest",
+    "logicName" : "最大值",
+    "name" : "HIGHEST",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Infomessage",
+    "logicName" : "备注",
+    "name" : "INFOMESSAGE",
+    "stdDataType" : 21,
+    "stringLength" : 1048576
+  }, {
+    "codeName" : "Planincome",
+    "logicName" : "计划收入",
+    "name" : "PLANINCOME",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Realincome",
+    "logicName" : "实际收入",
+    "name" : "REALINCOME",
+    "stdDataType" : 6
+  }, {
+    "codeName" : "Imagepath",
+    "logicName" : "图片路径",
+    "name" : "IMAGEPATH",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "GetRandom",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CUSTOM",
+    "codeName" : "TestBackEndAction",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "编辑",
+    "codeName" : "editview",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "ChartData_editview",
+    "name" : "编辑",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "editview",
+    "uIActionType" : "DEUIACTION",
+    "id" : "editview@ChartData"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "移动端编辑",
+    "codeName" : "MobEdit",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataMobEditView.json",
+      "viewType" : "DEMOBEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "ChartData_MobEdit",
+    "name" : "移动端编辑",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "MobEdit",
+    "uIActionType" : "DEUIACTION",
+    "id" : "MobEdit@ChartData"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "测试后台界面行为",
+    "codeName" : "TestBackUIAction",
+    "fullCodeName" : "ChartData_TestBackUIAction",
+    "name" : "测试后台界面行为",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "TestBackEndAction"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "TestBackUIAction",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "TestBackUIAction@ChartData"
+  }, {
+    "actionTarget" : "SINGLEDATA",
+    "caption" : "界面行为测试1",
+    "codeName" : "custom1",
+    "dialogResult" : "OK",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+      "viewType" : "DEMOBMDVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "ChartData_custom1",
+    "htmlPageUrl" : "https://www.baidu.com/",
+    "name" : "界面行为测试1",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "custom1",
+    "uIActionType" : "DEUIACTION",
+    "closeEditView" : true,
+    "closePopupView" : true,
+    "reloadData" : true,
+    "id" : "custom1@ChartData"
+  }, {
+    "actionTarget" : "NONE",
+    "caption" : "计数器",
+    "codeName" : "Count",
+    "counterId" : "countertag",
+    "frontProcessType" : "OTHER",
+    "fullCodeName" : "ChartData_Count",
+    "name" : "计数器",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSSysPFPlugin" : {
+      "pluginType" : "DEUIACTION",
+      "pluginCode" : "actionPluginTest"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "Count",
+    "uIActionType" : "DEUIACTION",
+    "id" : "Count@ChartData"
+  }, {
+    "actionTarget" : "NONE",
+    "caption" : "测试图表实体打开多数据视图",
+    "codeName" : "TestOpenMDView",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataMobMDView.json",
+      "viewType" : "DEMOBMDVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "ChartData_TestOpenMDView",
+    "name" : "测试图表实体打开多数据视图",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "TestOpenMDView",
+    "uIActionType" : "DEUIACTION",
+    "id" : "TestOpenMDView@ChartData"
+  }, {
+    "actionTarget" : "NONE",
+    "caption" : "界面行为测试2",
+    "codeName" : "custom2",
+    "confirmMsg" : "1354652",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+      "viewType" : "DEMOBMDVIEW"
+    },
+    "fullCodeName" : "ChartData_custom2",
+    "name" : "界面行为测试2",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "GetRandom"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "successMsg" : "35+62654",
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "custom2",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "id" : "custom2@ChartData"
+  } ],
+  "getAllPSAppPortletCats" : [ {
+    "codeName" : "Ungroup",
+    "name" : "（未分类）",
+    "ungroup" : true
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "ChartData",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json",
+  "enableUIActions" : 15,
+  "logicName" : "图表",
+  "name" : "CHARTDATA",
+  "getPSDEName" : "CHARTDATA",
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "CHARTDATANAME",
+    "codeName" : "ChartDataName"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

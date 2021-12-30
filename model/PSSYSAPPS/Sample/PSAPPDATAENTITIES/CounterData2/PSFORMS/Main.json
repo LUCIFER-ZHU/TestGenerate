@@ -1,0 +1,443 @@
+{
+  "codeName" : "Main",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CounterData2/PSFORMS/Main.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "主编辑表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CounterData2.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "COUNTERDATA2ID",
+      "codeName" : "CounterData2Id"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "COUNTERDATA2NAME",
+      "codeName" : "CounterData2Name"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "countertag",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "COUNTERTAG",
+      "codeName" : "Countertag"
+    }
+  }, {
+    "id" : "countertag2",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "COUNTERTAG2",
+      "codeName" : "Countertag2"
+    }
+  }, {
+    "id" : "countertag3",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "COUNTERTAG3",
+      "codeName" : "Countertag3"
+    }
+  }, {
+    "id" : "countertag4",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "COUNTERTAG4",
+      "codeName" : "Countertag4"
+    }
+  }, {
+    "id" : "countertag5",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "COUNTERTAG5",
+      "codeName" : "Countertag5"
+    }
+  }, {
+    "id" : "countertag6",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "COUNTERTAG6",
+      "codeName" : "Countertag6"
+    }
+  }, {
+    "id" : "countertag7",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "COUNTERTAG7",
+      "codeName" : "Countertag7"
+    }
+  }, {
+    "id" : "countertag8",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "COUNTERTAG8",
+      "codeName" : "Countertag8"
+    }
+  }, {
+    "id" : "countertag9",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "COUNTERTAG9",
+      "codeName" : "Countertag9"
+    }
+  }, {
+    "id" : "counterdata2id",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "COUNTERDATA2ID",
+      "codeName" : "CounterData2Id"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "计算器数据2基本信息",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "计数1",
+        "codeName" : "countertag",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "countertag",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "COUNTERTAG",
+          "codeName" : "Countertag"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "countertag"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "计数2",
+        "codeName" : "countertag2",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "countertag2",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "COUNTERTAG2",
+          "codeName" : "Countertag2"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "countertag2"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "计数3",
+        "codeName" : "countertag3",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "countertag3",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "COUNTERTAG3",
+          "codeName" : "Countertag3"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "countertag3"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "计数4",
+        "codeName" : "countertag4",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "countertag4",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "COUNTERTAG4",
+          "codeName" : "Countertag4"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "countertag4"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "计数5",
+        "codeName" : "countertag5",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "countertag5",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "COUNTERTAG5",
+          "codeName" : "Countertag5"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "countertag5"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "计数6",
+        "codeName" : "countertag6",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "countertag6",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "COUNTERTAG6",
+          "codeName" : "Countertag6"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "countertag6"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "计数7",
+        "codeName" : "countertag7",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "countertag7",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "COUNTERTAG7",
+          "codeName" : "Countertag7"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "countertag7"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "计数8",
+        "codeName" : "countertag8",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "countertag8",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "COUNTERTAG8",
+          "codeName" : "Countertag8"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "countertag8"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "计数9",
+        "codeName" : "countertag9",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "countertag9",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "COUNTERTAG9",
+          "codeName" : "Countertag9"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "countertag9"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "373eecbf6dd0f7c0c65f592315c1a2d7",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

@@ -1,0 +1,198 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "CalendarData",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData/PSGRIDS/CalendarData.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "日历数据",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "事项",
+    "codeName" : "calendardataname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "calendardataname",
+    "excelCaption" : "事项",
+    "name" : "calendardataname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "CALENDARDATANAME",
+      "codeName" : "CalendarDataName"
+    },
+    "width" : 1,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "开始时间",
+    "codeName" : "begintime",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "begintime",
+    "excelCaption" : "开始时间",
+    "name" : "begintime",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 180,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "结束时间",
+    "codeName" : "endtime",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "endtime",
+    "excelCaption" : "结束时间",
+    "name" : "endtime",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 180,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "备注",
+    "codeName" : "memo",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "memo",
+    "excelCaption" : "备注",
+    "name" : "memo",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "MEMO",
+      "codeName" : "Memo"
+    },
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "endtime",
+    "getPSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "memo",
+    "getPSAppDEField" : {
+      "name" : "MEMO",
+      "codeName" : "Memo"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "begintime",
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "calendardataname",
+    "getPSAppDEField" : {
+      "name" : "CALENDARDATANAME",
+      "codeName" : "CalendarDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "CALENDARDATANAME",
+      "codeName" : "CalendarDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "CALENDARDATAID",
+      "codeName" : "CalendarDataId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "CALENDARDATAID",
+      "codeName" : "CalendarDataId"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "日历示例数据标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "CALENDARDATAID",
+      "codeName" : "CalendarDataId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "0FB9E3B1-A234-45BA-B705-51F9F1B1917D",
+  "modeltype" : "PSDEGRID"
+}

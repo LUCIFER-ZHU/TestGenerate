@@ -1,0 +1,1569 @@
+{
+  "codeName" : "FormLogic",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/FormLogic.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "表单逻辑演示",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItemUpdates" : [ {
+    "codeName" : "CalcPF2",
+    "name" : "前台计算（实体行为）",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "CalcPF2"
+    },
+    "getPSDEFIUpdateDetails" : [ {
+      "name" : "fieldz"
+    }, {
+      "name" : "formitem17"
+    } ]
+  }, {
+    "codeName" : "CalcPF3",
+    "name" : "前台计算（直接脚本）",
+    "getPSDEFIUpdateDetails" : [ {
+      "name" : "fieldz1"
+    }, {
+      "name" : "formitem18"
+    } ],
+    "scriptCode" : "if((data.fieldx1 || data.fieldx1 == 0) && (data.fieldy1 || data.fieldy1 == 0)) {\n    data.fieldz1 = (parseFloat(data.fieldx1) + parseFloat(data.fieldy1))*2;\n    data.formitem18 = 'X值'+data.fieldx1 +'加Y值'+data.fieldy1+'再乘以2等于Z值'+data.fieldz1;\n}",
+    "customCode" : true
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLENAME",
+      "codeName" : "ExampleName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "formitem",
+    "dataType" : 25,
+    "createDV" : "1"
+  }, {
+    "id" : "formitem1",
+    "dataType" : 25
+  }, {
+    "id" : "formitem2",
+    "dataType" : 25,
+    "createDV" : "1"
+  }, {
+    "id" : "formitem3",
+    "dataType" : 25
+  }, {
+    "id" : "formitem4",
+    "dataType" : 25,
+    "createDV" : "1"
+  }, {
+    "id" : "formitem5",
+    "dataType" : 25
+  }, {
+    "id" : "formitem6",
+    "dataType" : 25
+  }, {
+    "id" : "formitem7",
+    "dataType" : 25,
+    "createDV" : "这里是默认值"
+  }, {
+    "id" : "formitem11",
+    "dataType" : 25
+  }, {
+    "id" : "formitem12",
+    "dataType" : 25
+  }, {
+    "id" : "formitem13",
+    "dataType" : 25
+  }, {
+    "id" : "formitem14",
+    "dataType" : 25
+  }, {
+    "id" : "formitem15",
+    "dataType" : 25
+  }, {
+    "id" : "formitem16",
+    "dataType" : 25
+  }, {
+    "id" : "provincename",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PROVINCENAME",
+      "codeName" : "ProvinceName"
+    }
+  }, {
+    "id" : "cityname",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CITYNAME",
+      "codeName" : "CityName"
+    }
+  }, {
+    "id" : "districtname",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "DISTRICTNAME",
+      "codeName" : "DistrictName"
+    }
+  }, {
+    "id" : "cityid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CITYID",
+      "codeName" : "CityId"
+    }
+  }, {
+    "id" : "provinceid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PROVINCEID",
+      "codeName" : "ProvinceId"
+    }
+  }, {
+    "id" : "districtid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "DISTRICTID",
+      "codeName" : "DistrictId"
+    }
+  }, {
+    "id" : "fieldx1",
+    "dataType" : 25
+  }, {
+    "id" : "fieldy1",
+    "dataType" : 25
+  }, {
+    "id" : "fieldz1",
+    "dataType" : 25
+  }, {
+    "id" : "formitem18",
+    "dataType" : 25
+  }, {
+    "id" : "fieldx",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "FIELDX",
+      "codeName" : "Fieldx"
+    }
+  }, {
+    "id" : "fieldy",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "FIELDY",
+      "codeName" : "Fieldy"
+    }
+  }, {
+    "id" : "fieldz",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "FIELDZ",
+      "codeName" : "Fieldz"
+    }
+  }, {
+    "id" : "formitem17",
+    "dataType" : 25
+  }, {
+    "id" : "formitem8",
+    "dataType" : 25,
+    "createDV" : "动态分组标题"
+  }, {
+    "id" : "formitem10",
+    "dataType" : 25,
+    "createDV" : "标题"
+  }, {
+    "id" : "formitem9",
+    "dataType" : 25
+  }, {
+    "id" : "exampleid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "基础控制逻辑",
+      "codeName" : "group2",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group2",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel1_1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel1_1",
+        "getPSDEFormDetails" : [ {
+          "caption" : "是否显示",
+          "codeName" : "formitem",
+          "createDV" : "1",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "DROPDOWNLIST",
+            "name" : "formitem",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/YesNo.json"
+            },
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "needCodeListConfig" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "显示项",
+          "codeName" : "formitem1",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem1",
+          "noPrivDisplayMode" : 1,
+          "getPSDEFDGroupLogics" : [ {
+            "groupOP" : "AND",
+            "logicCat" : "PANELVISIBLE",
+            "logicType" : "GROUP",
+            "name" : "表单成员[formitem1][面板显示]逻辑",
+            "getPSDEFDLogics" : [ {
+              "condOP" : "EQ",
+              "dEFDName" : "formitem",
+              "logicType" : "SINGLE",
+              "name" : "formitem 等于(=) (1)",
+              "value" : "1"
+            } ],
+            "relatedDetailNames" : [ "formitem" ],
+            "notMode" : false
+          } ],
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem1"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 18,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel2_1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel2_1",
+        "getPSDEFormDetails" : [ {
+          "caption" : "是否启用",
+          "codeName" : "formitem2",
+          "createDV" : "1",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem2",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "DROPDOWNLIST",
+            "name" : "formitem2",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/YesNo.json"
+            },
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "needCodeListConfig" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "启用项",
+          "codeName" : "formitem3",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem3",
+          "noPrivDisplayMode" : 1,
+          "getPSDEFDGroupLogics" : [ {
+            "groupOP" : "AND",
+            "logicCat" : "ITEMENABLE",
+            "logicType" : "GROUP",
+            "name" : "表单成员[formitem3][表单项启用]逻辑",
+            "getPSDEFDLogics" : [ {
+              "condOP" : "EQ",
+              "dEFDName" : "formitem2",
+              "logicType" : "SINGLE",
+              "name" : "formitem2 等于(=) (1)",
+              "value" : "1"
+            } ],
+            "relatedDetailNames" : [ "formitem2" ],
+            "notMode" : false
+          } ],
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem3"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 18,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel3_1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel3_1",
+        "getPSDEFormDetails" : [ {
+          "caption" : "是否空输入",
+          "codeName" : "formitem4",
+          "createDV" : "1",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem4",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "DROPDOWNLIST",
+            "name" : "formitem4",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/YesNo.json"
+            },
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "needCodeListConfig" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "空输入项",
+          "codeName" : "formitem5",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem5",
+          "noPrivDisplayMode" : 1,
+          "getPSDEFDGroupLogics" : [ {
+            "groupOP" : "AND",
+            "logicCat" : "ITEMBLANK",
+            "logicType" : "GROUP",
+            "name" : "表单成员[formitem5][表单项空输入]逻辑",
+            "getPSDEFDLogics" : [ {
+              "condOP" : "EQ",
+              "dEFDName" : "formitem4",
+              "logicType" : "SINGLE",
+              "name" : "formitem4 等于(=) (1)",
+              "value" : "1"
+            } ],
+            "relatedDetailNames" : [ "formitem4" ],
+            "notMode" : false
+          } ],
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem5"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 18,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : false,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel4_1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel4_1",
+        "getPSDEFormDetails" : [ {
+          "caption" : "值变化置空",
+          "codeName" : "formitem6",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 3,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem6",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem6"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "convertToCodeItemText" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "置空项",
+          "codeName" : "formitem7",
+          "createDV" : "这里是默认值",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem7",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem7"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 18,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "resetItemName" : "formitem6",
+          "resetItemNames" : [ "formitem6" ],
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "组合逻辑控制",
+          "codeName" : "grouppanel8",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel8",
+          "getPSDEFormDetails" : [ {
+            "actionGroupExtractMode" : "ITEM",
+            "caption" : "分组面板",
+            "codeName" : "grouppanel5",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "GROUPPANEL",
+            "name" : "grouppanel5",
+            "getPSDEFormDetails" : [ {
+              "caption" : "值1",
+              "codeName" : "formitem11",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem11",
+              "noPrivDisplayMode" : 1,
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "name" : "formitem11"
+              },
+              "getPSLayoutPos" : {
+                "colLG" : 6,
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "值2",
+              "codeName" : "formitem12",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem12",
+              "noPrivDisplayMode" : 1,
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "name" : "formitem12"
+              },
+              "getPSLayoutPos" : {
+                "colLG" : 6,
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "表单项",
+              "codeName" : "formitem13",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem13",
+              "noPrivDisplayMode" : 1,
+              "getPSDEFDGroupLogics" : [ {
+                "groupOP" : "AND",
+                "logicCat" : "ITEMENABLE",
+                "logicType" : "GROUP",
+                "name" : "表单成员[formitem13][表单项启用]逻辑",
+                "getPSDEFDLogics" : [ {
+                  "condOP" : "ISNOTNULL",
+                  "dEFDName" : "formitem11",
+                  "logicType" : "SINGLE",
+                  "name" : "formitem11 值不为空(NotNil)"
+                }, {
+                  "condOP" : "ISNOTNULL",
+                  "dEFDName" : "formitem12",
+                  "logicType" : "SINGLE",
+                  "name" : "formitem12 值不为空(NotNil)"
+                } ],
+                "relatedDetailNames" : [ "formitem12", "formitem11" ],
+                "notMode" : false
+              } ],
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "name" : "formitem13",
+                "placeHolder" : "值1和值2有值时启用"
+              },
+              "getPSLayoutPos" : {
+                "colLG" : 12,
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            } ],
+            "getPSLayout" : {
+              "columnCount" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "infoGroupMode" : false,
+            "showCaption" : false
+          }, {
+            "actionGroupExtractMode" : "ITEM",
+            "caption" : "分组面板",
+            "codeName" : "grouppanel7",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "GROUPPANEL",
+            "name" : "grouppanel7",
+            "getPSDEFormDetails" : [ {
+              "caption" : "值3",
+              "codeName" : "formitem14",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem14",
+              "noPrivDisplayMode" : 1,
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "name" : "formitem14"
+              },
+              "getPSLayoutPos" : {
+                "colLG" : 6,
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "值4",
+              "codeName" : "formitem15",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem15",
+              "noPrivDisplayMode" : 1,
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "name" : "formitem15"
+              },
+              "getPSLayoutPos" : {
+                "colLG" : 6,
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            }, {
+              "caption" : "表单项",
+              "codeName" : "formitem16",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "formitem16",
+              "noPrivDisplayMode" : 1,
+              "getPSDEFDGroupLogics" : [ {
+                "groupOP" : "AND",
+                "logicCat" : "ITEMENABLE",
+                "logicType" : "GROUP",
+                "name" : "表单成员[formitem16][表单项启用]逻辑",
+                "getPSDEFDLogics" : [ {
+                  "groupOP" : "OR",
+                  "logicType" : "GROUP",
+                  "name" : "OR",
+                  "getPSDEFDLogics" : [ {
+                    "condOP" : "ISNOTNULL",
+                    "dEFDName" : "formitem14",
+                    "logicType" : "SINGLE",
+                    "name" : "formitem14 值不为空(NotNil)"
+                  }, {
+                    "condOP" : "ISNOTNULL",
+                    "dEFDName" : "formitem15",
+                    "logicType" : "SINGLE",
+                    "name" : "formitem15 值不为空(NotNil)"
+                  } ],
+                  "notMode" : false
+                } ],
+                "relatedDetailNames" : [ "formitem15", "formitem14" ],
+                "notMode" : false
+              } ],
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "name" : "formitem16",
+                "placeHolder" : "值3或值4有值时启用"
+              },
+              "getPSLayoutPos" : {
+                "colLG" : 12,
+                "colMD" : 24,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : true,
+              "showCaption" : true
+            } ],
+            "getPSLayout" : {
+              "columnCount" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "infoGroupMode" : false,
+            "showCaption" : false
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "层级选择",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "省市区",
+        "codeName" : "grouppanel1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel1",
+        "getPSDEFormDetails" : [ {
+          "caption" : "省份",
+          "codeName" : "provincename",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "provincename",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "PROVINCENAME",
+            "codeName" : "ProvinceName"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "AC" : "TRUE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "FALSE"
+            },
+            "editorType" : "PICKEREX_TRIGGER",
+            "handlerType" : "PickupText",
+            "name" : "provincename",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
+            },
+            "valueItemName" : "provinceid",
+            "enableAC" : true,
+            "enablePickupView" : false,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "valueItemName" : "provinceid",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "市",
+          "codeName" : "cityname",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 25,
+          "name" : "cityname",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "CITYNAME",
+            "codeName" : "CityName"
+          },
+          "getPSDEFDGroupLogics" : [ {
+            "groupOP" : "AND",
+            "logicCat" : "ITEMENABLE",
+            "logicType" : "GROUP",
+            "name" : "表单成员[cityname][表单项启用]逻辑",
+            "getPSDEFDLogics" : [ {
+              "condOP" : "ISNOTNULL",
+              "dEFDName" : "provinceid",
+              "logicType" : "SINGLE",
+              "name" : "provinceid 值不为空(NotNil)"
+            } ],
+            "relatedDetailNames" : [ "provinceid" ],
+            "notMode" : false
+          } ],
+          "getPSEditor" : {
+            "editorParams" : {
+              "AC" : "TRUE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "FALSE",
+              "SRFNAVPARAM.n_provinceid_eq" : "%provinceid%"
+            },
+            "editorType" : "PICKEREX_TRIGGER",
+            "handlerType" : "PickupText",
+            "name" : "cityname",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/City.json"
+            },
+            "getPSNavigateParams" : [ {
+              "key" : "n_provinceid_eq",
+              "name" : "n_provinceid_eq",
+              "value" : "provinceid",
+              "rawValue" : false
+            } ],
+            "valueItemName" : "cityid",
+            "enableAC" : true,
+            "enablePickupView" : false,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "resetItemName" : "provinceid",
+          "resetItemNames" : [ "provinceid" ],
+          "valueItemName" : "cityid",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "区/县",
+          "codeName" : "districtname",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 45,
+          "name" : "districtname",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "DISTRICTNAME",
+            "codeName" : "DistrictName"
+          },
+          "getPSDEFDGroupLogics" : [ {
+            "groupOP" : "AND",
+            "logicCat" : "ITEMENABLE",
+            "logicType" : "GROUP",
+            "name" : "表单成员[districtname][表单项启用]逻辑",
+            "getPSDEFDLogics" : [ {
+              "condOP" : "ISNOTNULL",
+              "dEFDName" : "cityid",
+              "logicType" : "SINGLE",
+              "name" : "cityid 值不为空(NotNil)"
+            } ],
+            "relatedDetailNames" : [ "cityid" ],
+            "notMode" : false
+          } ],
+          "getPSEditor" : {
+            "editorParams" : {
+              "SRFNAVPARAM.n_cityid_eq" : "%cityid%",
+              "AC" : "TRUE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "FALSE"
+            },
+            "editorType" : "PICKEREX_TRIGGER",
+            "handlerType" : "PickupText",
+            "name" : "districtname",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/District.json"
+            },
+            "getPSNavigateParams" : [ {
+              "key" : "n_cityid_eq",
+              "name" : "n_cityid_eq",
+              "value" : "cityid",
+              "rawValue" : false
+            } ],
+            "valueItemName" : "districtid",
+            "enableAC" : true,
+            "enablePickupView" : false,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "resetItemName" : "cityid",
+          "resetItemNames" : [ "cityid" ],
+          "valueItemName" : "districtid",
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "layout" : "FLEX"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      }, {
+        "caption" : "市标识",
+        "codeName" : "cityid",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "cityid",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CITYID",
+          "codeName" : "CityId"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "cityid"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "hidden" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "省份标识",
+        "codeName" : "provinceid",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "provinceid",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PROVINCEID",
+          "codeName" : "ProvinceId"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "provinceid"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "hidden" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "区标识",
+        "codeName" : "districtid",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "districtid",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "DISTRICTID",
+          "codeName" : "DistrictId"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "districtid"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "hidden" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "表单项更新（直接代码）",
+      "codeName" : "grouppanel9",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel9",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel10",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel10",
+        "getPSDEFormDetails" : [ {
+          "caption" : "(x值",
+          "codeName" : "fieldx1",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "fieldx1",
+          "noPrivDisplayMode" : 1,
+          "getPSDEFormItemUpdate" : {
+            "modelref" : true,
+            "id" : "CalcPF3"
+          },
+          "getPSEditor" : {
+            "editorType" : "NUMBER",
+            "name" : "fieldx1"
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "+Y值",
+          "codeName" : "fieldy1",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 50,
+          "name" : "fieldy1",
+          "noPrivDisplayMode" : 1,
+          "getPSDEFormItemUpdate" : {
+            "modelref" : true,
+            "id" : "CalcPF3"
+          },
+          "getPSEditor" : {
+            "editorType" : "NUMBER",
+            "name" : "fieldy1"
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : ")*2=Z值",
+          "codeName" : "fieldz1",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 80,
+          "name" : "fieldz1",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "fieldz1",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "layout" : "FLEX"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 24,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      }, {
+        "codeName" : "formitem18",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "formitem18",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "formitem18",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 24,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "el-alert el-alert--info is-light"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "表单项更新（调用行为）",
+      "codeName" : "grouppanel2",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel2",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel6",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel6",
+        "getPSDEFormDetails" : [ {
+          "caption" : "(x值",
+          "codeName" : "fieldx",
+          "dataType" : 6,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "fieldx",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELDX",
+            "codeName" : "Fieldx"
+          },
+          "getPSDEFormItemUpdate" : {
+            "modelref" : true,
+            "id" : "CalcPF2"
+          },
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "fieldx"
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "+Y值",
+          "codeName" : "fieldy",
+          "dataType" : 6,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 50,
+          "name" : "fieldy",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELDY",
+            "codeName" : "Fieldy"
+          },
+          "getPSDEFormItemUpdate" : {
+            "modelref" : true,
+            "id" : "CalcPF2"
+          },
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "fieldy"
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : ")*2=Z值",
+          "codeName" : "fieldz",
+          "dataType" : 6,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 80,
+          "name" : "fieldz",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELDZ",
+            "codeName" : "Fieldz"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "fieldz",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "layout" : "FLEX"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 24,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      }, {
+        "codeName" : "formitem17",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "formitem17",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "formitem17",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 24,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "el-alert el-alert--info is-light"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "动态分组标题",
+      "captionItemName" : "formitem8",
+      "codeName" : "grouppanel3",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel3",
+      "getPSDEFormDetails" : [ {
+        "codeName" : "formitem8",
+        "createDV" : "动态分组标题",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "NONE",
+        "labelWidth" : 0,
+        "name" : "formitem8",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "formitem8"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "动态表单项标签标题",
+      "codeName" : "grouppanel4",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel4",
+      "getPSDEFormDetails" : [ {
+        "codeName" : "formitem10",
+        "createDV" : "标题",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "NONE",
+        "labelWidth" : 0,
+        "name" : "formitem10",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "formitem10",
+          "placeHolder" : "请输入信息以触发"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true
+      }, {
+        "captionItemName" : "formitem10",
+        "codeName" : "formitem9",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "formitem9",
+        "noPrivDisplayMode" : 1,
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "formitem9"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "D78F38B2-F071-4E88-8951-F65C8451EBFA",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

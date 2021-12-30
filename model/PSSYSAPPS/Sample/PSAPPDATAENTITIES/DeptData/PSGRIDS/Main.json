@@ -1,0 +1,207 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/DeptData/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+  "logicName" : "主表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/DeptData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "部门名称",
+    "codeName" : "deptdataname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "deptdataname",
+    "excelCaption" : "部门名称",
+    "name" : "deptdataname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "DEPTDATANAME",
+      "codeName" : "DeptDataName"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "组织名称",
+    "codeName" : "orgdataname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "orgdataname",
+    "excelCaption" : "组织名称",
+    "name" : "orgdataname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "ORGDATANAME",
+      "codeName" : "OrgDataName"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "更新人",
+    "codeName" : "updateman",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "updateman",
+    "excelCaption" : "更新人",
+    "name" : "updateman",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "更新时间",
+    "codeName" : "updatedate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "updatedate",
+    "excelCaption" : "更新时间",
+    "name" : "updatedate",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "deptdataname",
+    "getPSAppDEField" : {
+      "name" : "DEPTDATANAME",
+      "codeName" : "DeptDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "orgdataid",
+    "getPSAppDEField" : {
+      "name" : "ORGDATAID",
+      "codeName" : "OrgDataId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "orgdataname",
+    "getPSAppDEField" : {
+      "name" : "ORGDATANAME",
+      "codeName" : "OrgDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "updateman",
+    "getPSAppDEField" : {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "updatedate",
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "DEPTDATANAME",
+      "codeName" : "DeptDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "DEPTDATAID",
+      "codeName" : "DeptDataId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "DEPTDATAID",
+      "codeName" : "DeptDataId"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "部门数据标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "DEPTDATAID",
+      "codeName" : "DeptDataId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/DeptData.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "afa0e08afeb38079d3a265f4066f8419",
+  "modeltype" : "PSDEGRID"
+}

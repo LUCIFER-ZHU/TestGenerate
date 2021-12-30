@@ -1,0 +1,121 @@
+{
+  "codeName" : "Default",
+  "controlType" : "SEARCHFORM",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSSEARCHFORMS/Default.json",
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "logicName" : "默认搜索表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SEARCH;LOAD;SAVE",
+    "logicTag" : "searchform",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_searchform",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "n_chartdataname_like",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    }
+  }, {
+    "id" : "n_datatype_eq",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "DATATYPE",
+      "codeName" : "DataType"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "常规条件",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "caption" : "图表名称(%)",
+      "codeName" : "n_chartdataname_like",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_chartdataname_like",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "CHARTDATANAME",
+        "codeName" : "ChartDataName"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "n_chartdataname_like"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 12,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "showCaption" : true
+    }, {
+      "caption" : "数据分类(等于(=))",
+      "codeName" : "n_datatype_eq",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_datatype_eq",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "DATATYPE",
+        "codeName" : "DataType"
+      },
+      "getPSEditor" : {
+        "editorType" : "DROPDOWNLIST",
+        "name" : "n_datatype_eq",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/DataType.json"
+        },
+        "singleSelect" : true
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 12,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "needCodeListConfig" : true,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "searchButtonStyle" : "DEFAULT",
+  "tabHeaderPos" : "TOP",
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : false,
+  "enableFilterSave" : false,
+  "noTabHeader" : true,
+  "modelid" : "b00f170a574453ea974476955bd83442",
+  "modeltype" : "PSDEFORM_SEARCHFORM"
+}

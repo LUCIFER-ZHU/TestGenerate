@@ -1,0 +1,39 @@
+{
+  "actionMode" : "UPDATE",
+  "actionType" : "BUILTIN",
+  "getAfterPSDEActionLogics" : [ {
+    "actionLogicType" : 2,
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
+    "scriptCode" : "//脚本中参数统一使用下划线开头，避免与脚本上下文参数冲突 eg: var _1 = sys.entity(\"ORDER\");\n//sys.info(\"订单调整\");\nsys.call(\"HasFile\",entity, \"field\", true);",
+    "internalLogic" : false
+  }, {
+    "actionLogicType" : 3,
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
+    "getPSDENotify" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Order/PSDENOTIFIES/AmountChanged.json"
+    },
+    "internalLogic" : false
+  } ],
+  "codeName" : "Update",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Order/PSDEACTIONS/Update.json",
+  "logicName" : "Update",
+  "name" : "Update",
+  "orderValue" : 11,
+  "getPSDEActionInput" : {
+    "name" : "UpdateInput",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "OrderDTO"
+    },
+    "type" : "DTO",
+    "output" : true
+  },
+  "getPSDEActionReturn" : {
+    "name" : "UpdateResult",
+    "type" : "VOID"
+  },
+  "builtinAction" : true
+}

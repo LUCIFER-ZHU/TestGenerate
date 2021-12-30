@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="ibizsample.core.sample.mapper.DeptDataMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="DeptDataResultMap" type="ibizsample.core.sample.domain.DeptData" autoMapping="true">
+		<id property="deptDataId" column="deptdataid" /><!--主键字段映射-->
+		<result property="orgDataId" column="orgdataid" />
+        <association property="orgdata" javaType="ibizsample.core.sample.domain.OrgData" column="orgdataid" select="ibizsample.core.sample.mapper.OrgDataMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+    <select id="selectById"  resultMap="DeptDataResultMap">
+        <include refid="view" /> 
+         where 
+        t1.deptdataid=#{id}
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTDATAID`, t1.`DEPTDATANAME`, t1.`DEPTID`, t1.`ORGDATAID`, t11.`ORGDATANAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_DEPTDATA` t1  LEFT JOIN `T_ORGDATA` t11 ON t1.`ORGDATAID` = t11.`ORGDATAID`  
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTDATAID`, t1.`DEPTDATANAME`, t1.`DEPTID`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_DEPTDATA` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTDATAID`, t1.`DEPTDATANAME`, t1.`DEPTID`, t1.`ORGDATAID`, t11.`ORGDATANAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_DEPTDATA` t1  LEFT JOIN `T_ORGDATA` t11 ON t1.`ORGDATAID` = t11.`ORGDATAID`  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="ibizsample.core.sample.filter.DeptDataSearchContext"  resultType="DeptDataResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="selectByOrgDataId" resultMap="DeptDataResultMap">
+        <include refid="default" />
+         where 
+        orgdataid = #orgDataId
+    </select>
+
+
+</mapper>

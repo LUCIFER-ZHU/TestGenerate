@@ -1,0 +1,794 @@
+{
+  "accUserMode" : 2,
+  "caption" : "订单报表数据",
+  "codeName" : "OrderRepDataGroupGridView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderRepDataGroupGridView.json",
+  "gridRowActiveMode" : 2,
+  "name" : "OrderRepDataGroupGridView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "GridView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "appViewLogicName" : "opendata",
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "appViewLogicName" : "newdata",
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "ctrlName" : "grid",
+      "name" : "GRID",
+      "paramType" : "CTRL"
+    }, {
+      "ctrlName" : "searchform",
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "getNewDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderRepDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderRepDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderRepDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderRepDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA",
+    "realTitle" : "订单报表数据编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderRepDataEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA",
+    "realTitle" : "订单报表数据编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderRepDataEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  } ],
+  "getPSControls" : [ {
+    "aggMode" : "NONE",
+    "codeName" : "Main",
+    "columnEnableLink" : 2,
+    "controlType" : "GRID",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData/PSGRIDS/Main.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "logicName" : "主表格",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchGroup"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据表格处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "grid",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_grid",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "getPSDEGridColumns" : [ {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "客户名称",
+      "codeName" : "customername",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "customername",
+      "excelCaption" : "客户名称",
+      "name" : "customername",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME",
+        "codeName" : "CustomerName"
+      },
+      "width" : 300,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "月份",
+      "codeName" : "monthval",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "monthval",
+      "excelCaption" : "月份",
+      "name" : "monthval",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "MONTHVAL",
+        "codeName" : "Monthval"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "季度",
+      "codeName" : "quarterval",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "quarterval",
+      "excelCaption" : "季度",
+      "name" : "quarterval",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "QUARTERVAL",
+        "codeName" : "Quarterval"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "年份",
+      "codeName" : "yearval",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "yearval",
+      "excelCaption" : "年份",
+      "name" : "yearval",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "YEARVAL",
+        "codeName" : "Yearval"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "处理中金额",
+      "codeName" : "processingval",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "processingval",
+      "excelCaption" : "处理中金额",
+      "name" : "processingval",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "PROCESSINGVAL",
+        "codeName" : "ProcessingVal"
+      },
+      "width" : 120,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "待支付金额",
+      "codeName" : "payingval",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "payingval",
+      "excelCaption" : "待支付金额",
+      "name" : "payingval",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "PAYINGVAL",
+        "codeName" : "PayingVal"
+      },
+      "width" : 120,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "已完成金额",
+      "codeName" : "finishedval",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "finishedval",
+      "excelCaption" : "已完成金额",
+      "name" : "finishedval",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "FINISHEDVAL",
+        "codeName" : "Finishedval"
+      },
+      "width" : 120,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "合计",
+      "codeName" : "totalval",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "totalval",
+      "excelCaption" : "合计",
+      "name" : "totalval",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "TOTALVAL",
+        "codeName" : "Totalval"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    } ],
+    "getPSDEGridDataItems" : [ {
+      "dataType" : 6,
+      "name" : "totalval",
+      "getPSAppDEField" : {
+        "name" : "TOTALVAL",
+        "codeName" : "Totalval"
+      }
+    }, {
+      "dataType" : 6,
+      "name" : "payingval",
+      "getPSAppDEField" : {
+        "name" : "PAYINGVAL",
+        "codeName" : "PayingVal"
+      }
+    }, {
+      "dataType" : 6,
+      "name" : "finishedval",
+      "getPSAppDEField" : {
+        "name" : "FINISHEDVAL",
+        "codeName" : "Finishedval"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "monthval",
+      "getPSAppDEField" : {
+        "name" : "MONTHVAL",
+        "codeName" : "Monthval"
+      }
+    }, {
+      "dataType" : 6,
+      "name" : "processingval",
+      "getPSAppDEField" : {
+        "name" : "PROCESSINGVAL",
+        "codeName" : "ProcessingVal"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "quarterval",
+      "getPSAppDEField" : {
+        "name" : "QUARTERVAL",
+        "codeName" : "Quarterval"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "yearval",
+      "getPSAppDEField" : {
+        "name" : "YEARVAL",
+        "codeName" : "Yearval"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "ORDERREPDATANAME",
+        "codeName" : "OrderRepDataName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "ORDERREPDATAID",
+        "codeName" : "OrderRepDataId"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ORDERREPDATAID",
+        "codeName" : "OrderRepDataId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "customername",
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME",
+        "codeName" : "CustomerName"
+      }
+    } ],
+    "getPSDEGridEditItems" : [ {
+      "caption" : "订单报表数据标识",
+      "codeName" : "srfkey",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ORDERREPDATAID",
+        "codeName" : "OrderRepDataId"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
+      },
+      "allowEmpty" : true
+    } ],
+    "pagingSize" : 20,
+    "getRemovePSControlAction" : {
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "DELETE",
+      "name" : "remove",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+      }
+    },
+    "sortMode" : "REMOTE",
+    "hasWFDataItems" : false,
+    "enableColFilter" : false,
+    "enableCustomized" : true,
+    "enableGroup" : false,
+    "enablePagingBar" : true,
+    "enableRowEdit" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "forceFit" : false,
+    "hideHeader" : false,
+    "noSort" : false,
+    "singleSelect" : false,
+    "name" : "grid",
+    "modelid" : "e3a5d098148d7c38851dd5cfcacca7b2",
+    "modeltype" : "PSDEGRID"
+  }, {
+    "codeName" : "Default",
+    "controlType" : "SEARCHFORM",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData/PSSEARCHFORMS/Default.json",
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "logicName" : "默认搜索表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionType" : "FILTERACTION",
+        "name" : "search",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SEARCH;LOAD;SAVE",
+      "logicTag" : "searchform",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_searchform",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "getPSDEFormItems" : [ {
+      "id" : "n_customername_like",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "CUSTOMERNAME",
+        "codeName" : "CustomerName"
+      }
+    }, {
+      "id" : "n_monthval_eq",
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "MONTHVAL",
+        "codeName" : "Monthval"
+      }
+    }, {
+      "id" : "n_quarterval_eq",
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "QUARTERVAL",
+        "codeName" : "Quarterval"
+      }
+    }, {
+      "id" : "n_yearval_eq",
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "YEARVAL",
+        "codeName" : "Yearval"
+      }
+    }, {
+      "id" : "n_totalval_gtandeq",
+      "dataType" : 6,
+      "getPSAppDEField" : {
+        "name" : "TOTALVAL",
+        "codeName" : "Totalval"
+      }
+    } ],
+    "getPSDEFormPages" : [ {
+      "caption" : "常规条件",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel1",
+        "getPSDEFormDetails" : [ {
+          "caption" : "客户名称(%)",
+          "codeName" : "n_customername_like",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "n_customername_like",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "CUSTOMERNAME",
+            "codeName" : "CustomerName"
+          },
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "n_customername_like"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 8,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "月份(等于(=))",
+          "codeName" : "n_monthval_eq",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "n_monthval_eq",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "MONTHVAL",
+            "codeName" : "Monthval"
+          },
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "n_monthval_eq"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 8,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "季度(=)",
+          "codeName" : "n_quarterval_eq",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "n_quarterval_eq",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "QUARTERVAL",
+            "codeName" : "Quarterval"
+          },
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "n_quarterval_eq"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 8,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "年份(等于(=))",
+          "codeName" : "n_yearval_eq",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "n_yearval_eq",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "YEARVAL",
+            "codeName" : "Yearval"
+          },
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "n_yearval_eq"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 8,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "合计(大于等于(>=))",
+          "codeName" : "n_totalval_gtandeq",
+          "dataType" : 6,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "n_totalval_gtandeq",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "TOTALVAL",
+            "codeName" : "Totalval"
+          },
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "n_totalval_gtandeq"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 6,
+            "colMD" : 8,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "searchButtonStyle" : "DEFAULT",
+    "tabHeaderPos" : "TOP",
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "enableFilterSave" : false,
+    "noTabHeader" : true,
+    "name" : "searchform",
+    "modelid" : "0f900dd794b4a40fe9b0cb492f323baa",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
+  } ],
+  "getPSDEViewCodeName" : "GroupGridView",
+  "getPSDEViewId" : "021AA6A2-BE95-498B-AB6D-8C8254DA963C",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEGRIDVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "订单报表数据表格视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEGRIDVIEW",
+  "xDataControlName" : "grid",
+  "enableDP" : true,
+  "enableExport" : true,
+  "enableFilter" : true,
+  "enableImport" : true,
+  "enableQuickSearch" : true,
+  "enableRowEdit" : false,
+  "enableSearch" : true,
+  "rowEditDefault" : false,
+  "modelid" : "2f7440c547f50e09cace0ebdd6c005f5",
+  "modeltype" : "PSAPPDEVIEW"
+}

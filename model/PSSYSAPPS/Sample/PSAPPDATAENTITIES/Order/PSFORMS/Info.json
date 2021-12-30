@@ -1,0 +1,322 @@
+{
+  "codeName" : "Info",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSFORMS/Info.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "logicName" : "信息表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+  },
+  "getPSControlNavContexts" : [ {
+    "key" : "ORDER",
+    "name" : "ORDER",
+    "value" : "srfkey",
+    "rawValue" : false
+  } ],
+  "getPSControlNavParams" : [ {
+    "key" : "orderid",
+    "name" : "orderid",
+    "value" : "srfkey",
+    "rawValue" : false
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "ORDERID",
+      "codeName" : "OrderId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "ORDERNAME",
+      "codeName" : "OrderName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "customername",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    }
+  }, {
+    "id" : "ordername",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "ORDERNAME",
+      "codeName" : "OrderName"
+    }
+  }, {
+    "id" : "orderdate",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "ORDERDATE",
+      "codeName" : "OrderDate"
+    }
+  }, {
+    "id" : "state",
+    "dataType" : 25,
+    "createDV" : "10",
+    "getPSAppDEField" : {
+      "name" : "STATE",
+      "codeName" : "State"
+    }
+  }, {
+    "id" : "amount",
+    "dataType" : 7,
+    "getPSAppDEField" : {
+      "name" : "AMOUNT",
+      "codeName" : "Amount"
+    }
+  }, {
+    "id" : "orderid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "ORDERID",
+      "codeName" : "OrderId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "订单基本信息",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "客户",
+        "codeName" : "customername",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "customername",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CUSTOMERNAME",
+          "codeName" : "CustomerName"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "customername",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "订单号",
+        "codeName" : "ordername",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "ordername",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ORDERNAME",
+          "codeName" : "OrderName"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "ordername",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "订单时间",
+        "codeName" : "orderdate",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "orderdate",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ORDERDATE",
+          "codeName" : "OrderDate"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "orderdate",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "订单状态",
+        "codeName" : "state",
+        "createDV" : "10",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 0,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "state",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "STATE",
+          "codeName" : "State"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "state",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OrderState.json"
+          },
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "convertToCodeItemText" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "金额",
+        "codeName" : "amount",
+        "dataType" : 7,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "amount",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "AMOUNT",
+          "codeName" : "Amount"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "amount",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 12,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : true,
+      "showCaption" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : true
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "infoFormMode" : true,
+  "noTabHeader" : true,
+  "modelid" : "3C800BF4-1151-4556-80CC-3D262E3CC3B8",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

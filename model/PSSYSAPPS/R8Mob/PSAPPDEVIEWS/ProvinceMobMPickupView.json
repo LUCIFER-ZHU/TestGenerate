@@ -1,0 +1,261 @@
+{
+  "accUserMode" : 2,
+  "caption" : "省份",
+  "codeName" : "ProvinceMobMPickupView",
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobMPickupView.json",
+  "name" : "ProvinceMobMPickupView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "MobMPickupView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "pickupviewpanel",
+      "name" : "PICKUPVIEWPANEL",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "MobMPickupViewpickupviewpanel",
+    "controlType" : "PICKUPVIEWPANEL",
+    "getEmbeddedPSAppDEView" : {
+      "accUserMode" : 2,
+      "caption" : "省份",
+      "codeName" : "ProvinceMobPickupMDView",
+      "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobPickupMDView.json",
+      "name" : "ProvinceMobPickupMDView",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+      },
+      "getPSAppViewEngines" : [ {
+        "engineCat" : "VIEW",
+        "engineType" : "MobPickupMDView",
+        "name" : "engine",
+        "getPSUIEngineParams" : [ {
+          "ctrlName" : "mdctrl",
+          "name" : "MDCTRL",
+          "paramType" : "CTRL"
+        } ]
+      } ],
+      "getPSControls" : [ {
+        "codeName" : "Mob",
+        "controlStyle" : "LISTVIEW",
+        "controlType" : "MOBMDCTRL",
+        "getCreatePSControlAction" : {
+          "modelref" : true,
+          "id" : "create"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province/PSMOBMDCTRLS/Mob.json",
+        "emptyText" : "无数据",
+        "getFetchPSControlAction" : {
+          "modelref" : true,
+          "id" : "fetch"
+        },
+        "getGetPSControlAction" : {
+          "modelref" : true,
+          "id" : "load"
+        },
+        "groupMode" : "NONE",
+        "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+        "logicName" : "MOB",
+        "mobListStyle" : "LISTVIEW",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+        },
+        "getPSControlHandler" : {
+          "getPSHandlerActions" : [ {
+            "actionName" : "Update",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "UPDATE",
+            "name" : "update",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+            }
+          }, {
+            "actionType" : "DEDATASET",
+            "name" : "fetch",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+            }
+          }, {
+            "actionName" : "Remove",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "DELETE",
+            "name" : "remove",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+            }
+          }, {
+            "actionName" : "Get",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "READ",
+            "name" : "load",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+            }
+          }, {
+            "actionName" : "Create",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "CREATE",
+            "name" : "create",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+            }
+          } ],
+          "userDRAction" : "READ",
+          "enableDEFieldPrivilege" : false,
+          "id" : "列表控件处理器"
+        },
+        "getPSControlLogics" : [ {
+          "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+          "logicTag" : "mdctrl",
+          "logicType" : "APPVIEWENGINE",
+          "name" : "engine_mdctrl",
+          "getPSAppViewEngine" : {
+            "modelref" : true,
+            "id" : "engine"
+          }
+        } ],
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "id" : "MDCTRL"
+        },
+        "getPSDEListDataItems" : [ {
+          "dataType" : 25,
+          "name" : "srfkey",
+          "getPSAppDEField" : {
+            "name" : "PROVINCEID",
+            "codeName" : "ProvinceId"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfmajortext",
+          "getPSAppDEField" : {
+            "name" : "PROVINCENAME",
+            "codeName" : "ProvinceName"
+          }
+        } ],
+        "pagingSize" : 30,
+        "getRemovePSControlAction" : {
+          "modelref" : true,
+          "id" : "remove"
+        },
+        "getUpdatePSControlAction" : {
+          "modelref" : true,
+          "id" : "update"
+        },
+        "hasWFDataItems" : false,
+        "enableGroup" : false,
+        "enableRowEdit" : false,
+        "enableRowEditGroup" : false,
+        "enableRowEditOrder" : false,
+        "enableRowNew" : false,
+        "noSort" : false,
+        "showHeader" : true,
+        "name" : "mdctrl",
+        "modelid" : "683344526221165d454956c6213b2038",
+        "modeltype" : "PSDELIST"
+      } ],
+      "getPSDEViewCodeName" : "MobPickupMDView",
+      "getPSDEViewId" : "B2A5216C-85EA-4AA1-900B-3C5652936DDD",
+      "getPSViewLayoutPanel" : {
+        "codeName" : "Layoutpanel",
+        "controlStyle" : "APPDEMOBPICKUPMDVIEW",
+        "controlType" : "VIEWLAYOUTPANEL",
+        "name" : "layoutpanel",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+        },
+        "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
+        "layoutPanel" : true,
+        "useDefaultLayout" : true
+      },
+      "title" : "省份移动端选择多数据视图",
+      "viewStyle" : "DEFAULT",
+      "viewType" : "DEMOBPICKUPMDVIEW",
+      "xDataControlName" : "mdctrl",
+      "enableDP" : true,
+      "enableFilter" : false,
+      "enablePullDownRefresh" : false,
+      "expandSearchForm" : true,
+      "modelid" : "0492c47f34b371516ec2172997f9a8e4",
+      "modeltype" : "PSAPPDEVIEW"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+    "name" : "pickupviewpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD",
+      "logicTag" : "pickupviewpanel",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_pickupviewpanel",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "PICKUPVIEWPANEL"
+    }
+  } ],
+  "getPSDEViewCodeName" : "MobMPickupView",
+  "getPSDEViewId" : "5D42B9E1-C6B8-42EA-AF5A-9A927D16BF3A",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMOBMPICKUPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "省份移动端多数据选择视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMOBMPICKUPVIEW",
+  "enableDP" : true,
+  "enablePullDownRefresh" : false,
+  "showCaptionBar" : false,
+  "modelid" : "5bbed003f20398c6882901c89ace546d",
+  "modeltype" : "PSAPPDEVIEW"
+}

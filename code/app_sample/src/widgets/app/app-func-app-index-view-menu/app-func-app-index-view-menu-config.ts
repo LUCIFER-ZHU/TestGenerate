@@ -1,0 +1,51 @@
+export const CtrlConfig = {
+  controlCodeName: 'AppFuncAppIndexView',
+  controlName: 'appmenu',
+  defaultOpens: [],
+  defaultSelect: [],
+  menus: [
+{ 
+	name: "menuitem1",
+	caption: "应用功能",
+	itemType: "MENUITEM",
+  expanded: false,
+	tooltip: "应用功能",
+  funcTag: "AppFunc80",
+  hidden: false,
+  disableClose: false,
+},
+{ 
+	name: "menuitem2",
+	caption: "应用功能配置",
+	itemType: "MENUITEM",
+  expanded: false,
+	tooltip: "应用功能配置",
+  funcTag: '',
+  hidden: false,
+  disableClose: false,
+},
+{ 
+	name: "menuitem3",
+	caption: "应用多语言",
+	itemType: "MENUITEM",
+  expanded: false,
+	tooltip: "应用多语言",
+  funcTag: '',
+  hidden: false,
+  disableClose: false,
+},
+{ 
+	name: "menuitem4",
+	caption: "应用故事板",
+	itemType: "MENUITEM",
+  expanded: false,
+	tooltip: "应用故事板",
+  funcTag: '',
+  hidden: false,
+  disableClose: false,
+},
+  ],
+  funcs: [
+
+  ],
+};

@@ -1,0 +1,323 @@
+{
+  "cardHeight" : 250,
+  "cardWidth" : 400,
+  "codeName" : "ValueFormat",
+  "controlType" : "DATAVIEW",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData/PSDATAVIEWS/ValueFormat.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getItemPSLayoutPanel" : {
+    "getAllPSPanelFields" : [ {
+      "id" : "temp2",
+      "viewFieldName" : "Temp2"
+    }, {
+      "id" : "temp3",
+      "viewFieldName" : "Temp3"
+    }, {
+      "id" : "begintime",
+      "viewFieldName" : "BEGINTIME"
+    }, {
+      "id" : "endtime",
+      "viewFieldName" : "ENDTIME"
+    } ],
+    "codeName" : "ValueFormat",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData/PSPANELS/ValueFormat.json",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "值显示项布局面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "temp2",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "temp2",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "00000",
+        "viewFieldName" : "Temp2",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "temp3",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "temp3",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "#,###",
+        "viewFieldName" : "Temp3",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "begintime",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "begintime",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD",
+        "viewFieldName" : "BEGINTIME",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "endtime",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "endtime",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY",
+        "viewFieldName" : "ENDTIME",
+        "hidden" : false,
+        "showCaption" : false
+      } ]
+    } ],
+    "name" : "itemlayoutpanel",
+    "modelid" : "B258134C-D47E-4DB0-8CA4-B0597F60EC34",
+    "modeltype" : "PSSYSVIEWPANEL"
+  },
+  "logicName" : "值显示",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "dataview",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_dataview",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEDataViewDataItems" : [ {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "name" : "endtime",
+    "getPSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    }
+  }, {
+    "dataType" : 25,
+    "format" : "00000000",
+    "name" : "temp2",
+    "scriptCode" : "1010",
+    "customCode" : true
+  }, {
+    "dataType" : 25,
+    "format" : "##,###",
+    "name" : "temp3",
+    "scriptCode" : "return 12345;",
+    "customCode" : true
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "name" : "begintime",
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    }
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+    },
+    "name" : "taskstatus",
+    "getPSAppDEField" : {
+      "name" : "TASKSTATUS",
+      "codeName" : "Taskstatus"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "temp",
+    "scriptCode" : "return '<a href=\"https://www.ibizsys.cn\" target=\"_blank\">www.ibizsys.cn</a>';",
+    "customCode" : true
+  }, {
+    "dataType" : 25,
+    "name" : "kanbandataname",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATANAME",
+      "codeName" : "KanbanDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+    },
+    "name" : "taskstatustext",
+    "getPSAppDEField" : {
+      "name" : "TASKSTATUS",
+      "codeName" : "Taskstatus"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATANAME",
+      "codeName" : "KanbanDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATAID",
+      "codeName" : "KanbanDataId"
+    }
+  } ],
+  "getPSDEDataViewItems" : [ {
+    "caption" : "任务名称",
+    "dataItemName" : "kanbandataname",
+    "itemType" : "DATAITEM",
+    "name" : "KANBANDATANAME",
+    "getPSAppDEField" : {
+      "name" : "KANBANDATANAME",
+      "codeName" : "KanbanDataName"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "结束时间",
+    "dataItemName" : "endtime",
+    "itemType" : "DATAITEM",
+    "name" : "ENDTIME",
+    "getPSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "enableSort" : true
+  }, {
+    "cLConvertMode" : "FRONT",
+    "caption" : "任务状态",
+    "dataItemName" : "taskstatus",
+    "itemType" : "DATAITEM",
+    "name" : "TASKSTATUS",
+    "getPSAppDEField" : {
+      "name" : "TASKSTATUS",
+      "codeName" : "Taskstatus"
+    },
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+    },
+    "enableSort" : true
+  }, {
+    "caption" : "开始时间",
+    "dataItemName" : "begintime",
+    "itemType" : "DATAITEM",
+    "name" : "BEGINTIME",
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "enableSort" : true
+  }, {
+    "cLConvertMode" : "FRONT",
+    "dataItemName" : "taskstatustext",
+    "itemType" : "DATAITEM",
+    "name" : "TASKSTATUSTEXT",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+    },
+    "enableSort" : false
+  }, {
+    "dataItemName" : "temp3",
+    "itemType" : "DATAITEM",
+    "name" : "Temp3",
+    "valueFormat" : "##,###",
+    "enableSort" : false
+  }, {
+    "dataItemName" : "temp",
+    "itemType" : "DATAITEM",
+    "name" : "Temp",
+    "enableSort" : false
+  }, {
+    "dataItemName" : "temp2",
+    "itemType" : "DATAITEM",
+    "name" : "Temp2",
+    "valueFormat" : "00000000",
+    "enableSort" : false
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "appendDEItems" : true,
+  "enableCardEdit" : false,
+  "enableCardEditGroup" : false,
+  "enableCardEditOrder" : false,
+  "enableCardNew" : false,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "792C6FEA-A49D-48DD-8A69-1B911AE5CEFB",
+  "modeltype" : "PSDEDATAVIEW"
+}

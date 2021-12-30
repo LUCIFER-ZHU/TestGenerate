@@ -1,0 +1,21 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "SCRIPT",
+  "codeName" : "CalcPF2",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/CalcPF2.json",
+  "logicName" : "前台计算（脚本代码）",
+  "name" : "CalcPF2",
+  "getPSDEActionInput" : {
+    "name" : "CalcPF2Input",
+    "getPSDEMethodDTO" : {
+      "modelref" : true,
+      "id" : "ExampleDTO"
+    },
+    "type" : "DTO"
+  },
+  "getPSDEActionReturn" : {
+    "name" : "CalcPF2Result",
+    "type" : "VOID"
+  },
+  "scriptCode" : "if((data.fieldx || data.fieldx == 0) && (data.fieldy || data.fieldy == 0)) {\n    data.fieldz = (data.fieldx + data.fieldy)*2;\n    data.formitem17 = 'X值'+data.fieldx +'加Y值'+data.fieldy+'再乘以2等于Z值'+data.fieldz;\n}"
+}

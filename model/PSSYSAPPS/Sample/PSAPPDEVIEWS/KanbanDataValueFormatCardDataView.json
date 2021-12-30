@@ -1,0 +1,629 @@
+{
+  "accUserMode" : 2,
+  "caption" : "卡片常规",
+  "codeName" : "KanbanDataValueFormatCardDataView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/KanbanDataValueFormatCardDataView.json",
+  "mDCtrlActiveMode" : 2,
+  "name" : "KanbanDataValueFormatCardDataView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "DataView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "appViewLogicName" : "opendata",
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "appViewLogicName" : "newdata",
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "ctrlName" : "searchform",
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
+    }, {
+      "ctrlName" : "dataview",
+      "name" : "DATAVIEW",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "getNewDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/KanbanDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/KanbanDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/KanbanDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/KanbanDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA",
+    "realTitle" : "看板数据编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/KanbanDataEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA",
+    "realTitle" : "看板数据编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/KanbanDataEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "ValueFormatCardDataViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+    },
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "modelid" : "5abe4c1a0878da1eeba02a995862b3f7_toolbar",
+    "modeltype" : "PSDETOOLBAR"
+  }, {
+    "codeName" : "Default",
+    "controlType" : "SEARCHFORM",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData/PSSEARCHFORMS/Default.json",
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "logicName" : "默认搜索表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionType" : "FILTERACTION",
+        "name" : "search",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SEARCH;LOAD;SAVE",
+      "logicTag" : "searchform",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_searchform",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "getPSDEFormPages" : [ {
+      "caption" : "常规条件",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "searchButtonStyle" : "DEFAULT",
+    "tabHeaderPos" : "TOP",
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "enableFilterSave" : false,
+    "noTabHeader" : true,
+    "name" : "searchform",
+    "modelid" : "fec1d559d7e3a16ade24b26aee25d02f",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
+  }, {
+    "cardHeight" : 250,
+    "cardWidth" : 400,
+    "codeName" : "ValueFormat",
+    "controlType" : "DATAVIEW",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData/PSDATAVIEWS/ValueFormat.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "getItemPSLayoutPanel" : {
+      "getAllPSPanelFields" : [ {
+        "id" : "temp2",
+        "viewFieldName" : "Temp2"
+      }, {
+        "id" : "temp3",
+        "viewFieldName" : "Temp3"
+      }, {
+        "id" : "begintime",
+        "viewFieldName" : "BEGINTIME"
+      }, {
+        "id" : "endtime",
+        "viewFieldName" : "ENDTIME"
+      } ],
+      "codeName" : "ValueFormat",
+      "controlType" : "PANEL",
+      "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData/PSPANELS/ValueFormat.json",
+      "layoutMode" : "TABLE_24COL",
+      "logicName" : "值显示项布局面板",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+      },
+      "getPSControlParam" : { },
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getRootPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTAINER",
+        "name" : "container1",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSPanelItems" : [ {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "temp2",
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "temp2",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "valueFormat" : "00000",
+          "viewFieldName" : "Temp2",
+          "hidden" : false,
+          "showCaption" : false
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "temp3",
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "temp3",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "valueFormat" : "#,###",
+          "viewFieldName" : "Temp3",
+          "hidden" : false,
+          "showCaption" : false
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "begintime",
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "begintime",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "valueFormat" : "YYYY-MM-DD",
+          "viewFieldName" : "BEGINTIME",
+          "hidden" : false,
+          "showCaption" : false
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "endtime",
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "endtime",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "valueFormat" : "YYYY",
+          "viewFieldName" : "ENDTIME",
+          "hidden" : false,
+          "showCaption" : false
+        } ]
+      } ],
+      "name" : "itemlayoutpanel",
+      "modelid" : "B258134C-D47E-4DB0-8CA4-B0597F60EC34",
+      "modeltype" : "PSSYSVIEWPANEL"
+    },
+    "logicName" : "值显示",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据视图处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "dataview",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_dataview",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "DATAVIEW"
+    },
+    "getPSDEDataViewDataItems" : [ {
+      "dataType" : 5,
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "name" : "endtime",
+      "getPSAppDEField" : {
+        "name" : "ENDTIME",
+        "codeName" : "EndTime"
+      }
+    }, {
+      "dataType" : 25,
+      "format" : "00000000",
+      "name" : "temp2",
+      "scriptCode" : "1010",
+      "customCode" : true
+    }, {
+      "dataType" : 25,
+      "format" : "##,###",
+      "name" : "temp3",
+      "scriptCode" : "return 12345;",
+      "customCode" : true
+    }, {
+      "dataType" : 5,
+      "format" : "YYYY-MM-DD HH:mm:ss",
+      "name" : "begintime",
+      "getPSAppDEField" : {
+        "name" : "BEGINTIME",
+        "codeName" : "BeginTime"
+      }
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+      },
+      "name" : "taskstatus",
+      "getPSAppDEField" : {
+        "name" : "TASKSTATUS",
+        "codeName" : "Taskstatus"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "temp",
+      "scriptCode" : "return '<a href=\"https://www.ibizsys.cn\" target=\"_blank\">www.ibizsys.cn</a>';",
+      "customCode" : true
+    }, {
+      "dataType" : 25,
+      "name" : "kanbandataname",
+      "getPSAppDEField" : {
+        "name" : "KANBANDATANAME",
+        "codeName" : "KanbanDataName"
+      }
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+      },
+      "name" : "taskstatustext",
+      "getPSAppDEField" : {
+        "name" : "TASKSTATUS",
+        "codeName" : "Taskstatus"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "KANBANDATANAME",
+        "codeName" : "KanbanDataName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "KANBANDATAID",
+        "codeName" : "KanbanDataId"
+      }
+    } ],
+    "getPSDEDataViewItems" : [ {
+      "caption" : "任务名称",
+      "dataItemName" : "kanbandataname",
+      "itemType" : "DATAITEM",
+      "name" : "KANBANDATANAME",
+      "getPSAppDEField" : {
+        "name" : "KANBANDATANAME",
+        "codeName" : "KanbanDataName"
+      },
+      "enableSort" : true
+    }, {
+      "caption" : "结束时间",
+      "dataItemName" : "endtime",
+      "itemType" : "DATAITEM",
+      "name" : "ENDTIME",
+      "getPSAppDEField" : {
+        "name" : "ENDTIME",
+        "codeName" : "EndTime"
+      },
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+      "enableSort" : true
+    }, {
+      "cLConvertMode" : "FRONT",
+      "caption" : "任务状态",
+      "dataItemName" : "taskstatus",
+      "itemType" : "DATAITEM",
+      "name" : "TASKSTATUS",
+      "getPSAppDEField" : {
+        "name" : "TASKSTATUS",
+        "codeName" : "Taskstatus"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+      },
+      "enableSort" : true
+    }, {
+      "caption" : "开始时间",
+      "dataItemName" : "begintime",
+      "itemType" : "DATAITEM",
+      "name" : "BEGINTIME",
+      "getPSAppDEField" : {
+        "name" : "BEGINTIME",
+        "codeName" : "BeginTime"
+      },
+      "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+      "enableSort" : true
+    }, {
+      "cLConvertMode" : "FRONT",
+      "dataItemName" : "taskstatustext",
+      "itemType" : "DATAITEM",
+      "name" : "TASKSTATUSTEXT",
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/TaskStatus.json"
+      },
+      "enableSort" : false
+    }, {
+      "dataItemName" : "temp3",
+      "itemType" : "DATAITEM",
+      "name" : "Temp3",
+      "valueFormat" : "##,###",
+      "enableSort" : false
+    }, {
+      "dataItemName" : "temp",
+      "itemType" : "DATAITEM",
+      "name" : "Temp",
+      "enableSort" : false
+    }, {
+      "dataItemName" : "temp2",
+      "itemType" : "DATAITEM",
+      "name" : "Temp2",
+      "valueFormat" : "00000000",
+      "enableSort" : false
+    } ],
+    "pagingSize" : 20,
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "hasWFDataItems" : false,
+    "appendDEItems" : true,
+    "enableCardEdit" : false,
+    "enableCardEditGroup" : false,
+    "enableCardEditOrder" : false,
+    "enableCardNew" : false,
+    "enableGroup" : false,
+    "enablePagingBar" : true,
+    "noSort" : false,
+    "singleSelect" : false,
+    "name" : "dataview",
+    "modelid" : "792C6FEA-A49D-48DD-8A69-1B911AE5CEFB",
+    "modeltype" : "PSDEDATAVIEW"
+  } ],
+  "getPSDEViewCodeName" : "ValueFormatCardDataView",
+  "getPSDEViewId" : "D6698108-DD88-4394-9108-946A85C30A46",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEDATAVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "看板数据数据视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEDATAVIEW",
+  "xDataControlName" : "dataview",
+  "enableDP" : true,
+  "enableFilter" : true,
+  "enableQuickSearch" : true,
+  "enableSearch" : true,
+  "showCaptionBar" : false,
+  "modelid" : "5abe4c1a0878da1eeba02a995862b3f7",
+  "modeltype" : "PSAPPDEVIEW"
+}

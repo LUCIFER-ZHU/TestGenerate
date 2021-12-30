@@ -1,0 +1,296 @@
+{
+  "accUserMode" : 2,
+  "caption" : "图表实体图表视图（区域图）",
+  "codeName" : "ChartDataAreaChartView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataAreaChartView.json",
+  "name" : "ChartDataAreaChartView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "ChartView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "chart",
+      "name" : "CHART",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "AreaChart",
+    "controlType" : "CHART",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSCHARTS/AreaChart.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+    "logicName" : "AreaChart",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSChartCoordinateSystems" : [ {
+      "eChartsType" : "cartesian2d",
+      "index" : 0,
+      "name" : "[area]直角坐标系[0]",
+      "getPSChartGrid" : {
+        "index" : 0,
+        "name" : "[area]直角坐标系[0]",
+        "getPSChartCoordinateSystem" : {
+          "modelref" : true,
+          "id" : "0"
+        },
+        "getPSChartGridXAxis0" : {
+          "modelref" : true,
+          "id" : "0"
+        },
+        "getPSChartGridYAxis0" : {
+          "modelref" : true,
+          "id" : "0"
+        },
+        "type" : "grid",
+        "id" : "0"
+      },
+      "type" : "XY",
+      "id" : "0"
+    } ],
+    "getPSChartDataSetGroups" : [ {
+      "index" : 0,
+      "name" : "DEFAULT",
+      "id" : "0"
+    } ],
+    "getPSChartDataSets" : [ {
+      "index" : 0,
+      "name" : "area-DEFAULT",
+      "getPSChartDataSetFields" : [ {
+        "index" : 0,
+        "name" : "datetime",
+        "groupField" : true,
+        "id" : "0"
+      }, {
+        "index" : 1,
+        "name" : "data",
+        "groupField" : true,
+        "id" : "1"
+      } ],
+      "id" : "0"
+    } ],
+    "getPSChartGrids" : [ {
+      "index" : 0,
+      "name" : "[area]直角坐标系[0]",
+      "getPSChartCoordinateSystem" : {
+        "eChartsType" : "cartesian2d",
+        "index" : 0,
+        "name" : "[area]直角坐标系[0]",
+        "getPSChartGrid" : {
+          "modelref" : true,
+          "id" : "0"
+        },
+        "type" : "XY",
+        "id" : "0"
+      },
+      "getPSChartGridXAxis0" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartGridYAxis0" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "type" : "grid",
+      "id" : "0"
+    } ],
+    "getPSChartXAxises" : [ {
+      "caption" : "分类",
+      "eChartsPos" : "xAxis",
+      "eChartsType" : "category",
+      "index" : 0,
+      "name" : "X坐标轴_分类",
+      "position" : "bottom",
+      "type" : "category",
+      "id" : "0"
+    } ],
+    "getPSChartYAxises" : [ {
+      "caption" : "数据",
+      "eChartsPos" : "yAxis",
+      "eChartsType" : "value",
+      "index" : 0,
+      "name" : "Y坐标轴_数据",
+      "position" : "left",
+      "type" : "numeric",
+      "id" : "0"
+    } ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "图形控件处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;BEFORELOAD",
+      "logicTag" : "chart",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_chart",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CHART"
+    },
+    "getPSDEChartLegend" : {
+      "index" : 0,
+      "showLegend" : true,
+      "id" : "0"
+    },
+    "getPSDEChartSerieses" : [ {
+      "caption" : "区域图",
+      "catalogField" : "datetime",
+      "eChartsType" : "line",
+      "idField" : "data",
+      "index" : 0,
+      "name" : "area",
+      "getPSChartCoordinateSystem" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartDataSet" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartSeriesEncode" : {
+        "index" : 0,
+        "itemId" : "data",
+        "name" : "坐标系编码",
+        "getPSChartXAxis" : {
+          "modelref" : true,
+          "id" : "0"
+        },
+        "getPSChartYAxis" : {
+          "modelref" : true,
+          "id" : "0"
+        },
+        "type" : "XY",
+        "x" : [ "datetime" ],
+        "y" : [ "data" ],
+        "id" : "0"
+      },
+      "seriesLayoutBy" : "column",
+      "seriesType" : "area",
+      "valueField" : "data",
+      "enableChartDataSet" : true,
+      "stack" : false,
+      "getUserParam" : {
+        "EC.areaStyle" : "{}"
+      }
+    } ],
+    "getPSDEChartTitle" : {
+      "index" : 0,
+      "subTitle" : "虚拟数据",
+      "title" : "区域图",
+      "showTitle" : true,
+      "id" : "0"
+    },
+    "readOnly" : true,
+    "name" : "chart",
+    "modelid" : "2959B635-156E-48F8-9730-FCE7EAF928F7",
+    "modeltype" : "PSDECHART"
+  } ],
+  "getPSDEViewCodeName" : "AreaChartView",
+  "getPSDEViewId" : "CBE7CAF1-27D9-40DB-90BC-61EF9B99A3AF",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDECHARTVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "图表视图（区域图）",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DECHARTVIEW",
+  "enableDP" : true,
+  "enableQuickGroup" : false,
+  "enableQuickSearch" : false,
+  "enableSearch" : false,
+  "expandSearchForm" : false,
+  "loadDefault" : true,
+  "showCaptionBar" : false,
+  "modelid" : "45e96d2b069c3e81a7b604c242d4b9e9",
+  "modeltype" : "PSAPPDEVIEW"
+}

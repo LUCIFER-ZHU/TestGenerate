@@ -1,0 +1,17 @@
+{
+  "codeName" : "AppDEFieldChange",
+  "dEFLogicMode" : "ONCHANGE",
+  "defaultParamName" : "DEFAULT",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEFLOGICS/AppDEFieldChange.json",
+  "logicName" : "XY值change逻辑",
+  "logicSubType" : "DEFIELD",
+  "name" : "XY值change逻辑",
+  "getPSDEField" : {
+    "name" : "APPFIELD3",
+    "codeName" : "Appfield3"
+  },
+  "scriptCode" : "if(data.appfield3 != null && data.appfield3 != undefined){\n   data.fieldx=Math.random() * data.appfield3;\n   data.fieldy=Math.random() * data.appfield3;\n}\n",
+  "customCode" : true,
+  "enableBackend" : false,
+  "enableFront" : true
+}

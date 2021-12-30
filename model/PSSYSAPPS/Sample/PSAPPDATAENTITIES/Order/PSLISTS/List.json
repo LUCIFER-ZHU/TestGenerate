@@ -1,0 +1,79 @@
+{
+  "codeName" : "List",
+  "controlType" : "LIST",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSLISTS/List.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "logicName" : "List",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+  },
+  "getPSDEListDataItems" : [ {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD",
+    "name" : "orderdate",
+    "getPSAppDEField" : {
+      "name" : "ORDERDATE",
+      "codeName" : "OrderDate"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "amount",
+    "getPSAppDEField" : {
+      "name" : "AMOUNT",
+      "codeName" : "Amount"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ORDERID",
+      "codeName" : "OrderId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "ORDERNAME",
+      "codeName" : "OrderName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "customerid",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    }
+  } ],
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
+  "modelid" : "6F7313F8-D58B-410C-8B9B-D3CE4C1AFE1D",
+  "modeltype" : "PSDELIST"
+}

@@ -1,0 +1,903 @@
+{
+  "accUserMode" : 2,
+  "caption" : "订单明细",
+  "codeName" : "OrderDetailLineEditGridView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderDetailLineEditGridView.json",
+  "gridRowActiveMode" : 0,
+  "name" : "OrderDetailLineEditGridView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "GridView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "appViewLogicName" : "opendata",
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "appViewLogicName" : "newdata",
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "ctrlName" : "grid",
+      "name" : "GRID",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction1"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "eventArg" : "deuiaction2",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction2_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction2"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "eventArg" : "deuiaction3",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction3_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction3"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "eventArg" : "deuiaction4",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction4_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction4"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "getNewDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderDetailEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderDetailEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderDetailEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderDetailEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "realTitle" : "订单明细编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderDetailEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA",
+    "realOpenMode" : "DRAWER_RIGHT",
+    "realTitle" : "订单明细编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderDetailEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "toolbar_deuiaction1",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "ToggleRowEdit"
+    },
+    "xDataControlName" : "grid"
+  }, {
+    "name" : "toolbar_deuiaction2",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "NewRow"
+    },
+    "xDataControlName" : "grid"
+  }, {
+    "name" : "toolbar_deuiaction3",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "SaveRow"
+    },
+    "xDataControlName" : "grid"
+  }, {
+    "name" : "toolbar_deuiaction4",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "uIActionTarget" : "MULTIKEY",
+    "xDataControlName" : "grid"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "LineEditGridViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "工具栏模板（行编辑表格界面）",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    }, {
+      "eventArg" : "deuiaction3",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction3_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_click"
+      }
+    }, {
+      "eventArg" : "deuiaction4",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction4_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "行编辑",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0ce@FontAwesome",
+        "cssClass" : "fa fa-table"
+      },
+      "getPSUIAction" : {
+        "caption" : "行编辑",
+        "codeName" : "ToggleRowEdit",
+        "fullCodeName" : "ToggleRowEdit",
+        "name" : "表格界面_行编辑开关操作",
+        "getPSSysImage" : {
+          "glyph" : "xf0ce@FontAwesome",
+          "cssClass" : "fa fa-table"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "ToggleRowEdit",
+        "uIActionType" : "DEUIACTION",
+        "enableToggleMode" : true
+      },
+      "tooltip" : "行编辑",
+      "enableToggleMode" : true,
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "新建行",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "getPSUIAction" : {
+        "caption" : "新建行",
+        "codeName" : "NewRow",
+        "fullCodeName" : "NewRow",
+        "name" : "表格界面_新建行",
+        "getPSSysImage" : {
+          "glyph" : "xf067@FontAwesome",
+          "cssClass" : "fa fa-plus"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "NewRow",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "新建行",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "保存行",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction3",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0c7@FontAwesome",
+        "cssClass" : "fa fa-save"
+      },
+      "getPSUIAction" : {
+        "caption" : "保存行",
+        "codeName" : "SaveRow",
+        "fullCodeName" : "SaveRow",
+        "name" : "表格界面_保存行",
+        "getPSSysImage" : {
+          "glyph" : "xf0c7@FontAwesome",
+          "cssClass" : "fa fa-save"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "SaveRow",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "保存行",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.REMOVE"
+      },
+      "caption" : "删除行",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction4",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf00d@FontAwesome",
+        "cssClass" : "fa fa-remove"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "MULTIKEY",
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.REMOVE"
+        },
+        "caption" : "删除",
+        "codeName" : "Remove",
+        "fullCodeName" : "Remove",
+        "name" : "表格界面_删除操作",
+        "getPSSysImage" : {
+          "glyph" : "xf00d@FontAwesome",
+          "cssClass" : "fa fa-remove"
+        },
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "Remove",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "删除行",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "D80F8D3F-131E-43FC-BEE9-CCF84182C710",
+    "modeltype" : "PSDETOOLBAR"
+  }, {
+    "aggMode" : "NONE",
+    "codeName" : "LineEdit",
+    "columnEnableLink" : 2,
+    "controlType" : "GRID",
+    "getCreatePSControlAction" : {
+      "actionName" : "Create",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "CREATE",
+      "name" : "create",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+      }
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail/PSGRIDS/LineEdit.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetDraftPSControlAction" : {
+      "actionName" : "GetDraft",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "CREATE",
+      "name" : "loaddraft",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "GetDraft"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+      }
+    },
+    "getGetPSControlAction" : {
+      "actionName" : "Get",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "READ",
+      "name" : "load",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+      }
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "logicName" : "行编辑表格",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "数据表格处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "grid",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_grid",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "GRID"
+    },
+    "getPSDEGridColumns" : [ {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "产品",
+      "codeName" : "productname",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "productname",
+      "excelCaption" : "产品",
+      "name" : "productname",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "单价",
+      "codeName" : "price",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "price",
+      "excelCaption" : "单价",
+      "name" : "price",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "PRICE",
+        "codeName" : "Price"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "数量",
+      "codeName" : "qty",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "qty",
+      "excelCaption" : "数量",
+      "name" : "qty",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "QTY",
+        "codeName" : "Qty"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableRowEdit" : true,
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "小计",
+      "codeName" : "amount",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "amount",
+      "excelCaption" : "小计",
+      "name" : "amount",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "AMOUNT",
+        "codeName" : "Amount"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
+      "caption" : "产品标识",
+      "codeName" : "productid",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "productid",
+      "excelCaption" : "产品标识",
+      "name" : "productid",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTID",
+        "codeName" : "ProductId"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true,
+      "hideDefault" : true
+    } ],
+    "getPSDEGridDataItems" : [ {
+      "dataType" : 7,
+      "name" : "amount",
+      "getPSAppDEField" : {
+        "name" : "AMOUNT",
+        "codeName" : "Amount"
+      }
+    }, {
+      "dataType" : 7,
+      "name" : "price",
+      "getPSAppDEField" : {
+        "name" : "PRICE",
+        "codeName" : "Price"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "productid",
+      "getPSAppDEField" : {
+        "name" : "PRODUCTID",
+        "codeName" : "ProductId"
+      }
+    }, {
+      "dataType" : 9,
+      "name" : "qty",
+      "getPSAppDEField" : {
+        "name" : "QTY",
+        "codeName" : "Qty"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "orderid",
+      "getPSAppDEField" : {
+        "name" : "ORDERID",
+        "codeName" : "OrderId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "ORDERDETAILNAME",
+        "codeName" : "OrderDetailName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfdataaccaction",
+      "getPSAppDEField" : {
+        "name" : "ORDERDETAILID",
+        "codeName" : "OrderDetailId"
+      },
+      "dataAccessAction" : true
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ORDERDETAILID",
+        "codeName" : "OrderDetailId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "productname",
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      }
+    } ],
+    "getPSDEGridEditItems" : [ {
+      "caption" : "单价",
+      "codeName" : "price",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "price",
+      "getPSAppDEField" : {
+        "name" : "PRICE",
+        "codeName" : "Price"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "price"
+      },
+      "allowEmpty" : true
+    }, {
+      "name" : "productid"
+    }, {
+      "caption" : "数量",
+      "codeName" : "qty",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "qty",
+      "getPSAppDEField" : {
+        "name" : "QTY",
+        "codeName" : "Qty"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "qty"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "订单明细标识",
+      "codeName" : "srfkey",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ORDERDETAILID",
+        "codeName" : "OrderDetailId"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "srfkey"
+      },
+      "allowEmpty" : true
+    }, {
+      "caption" : "产品",
+      "codeName" : "productname",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "productname",
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "getPSEditor" : {
+        "editorParams" : {
+          "AC" : "TRUE",
+          "PICKUPVIEW" : "TRUE"
+        },
+        "editorType" : "PICKER",
+        "handlerType" : "PickupText",
+        "name" : "productname",
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Product.json"
+        },
+        "getPickupPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProductPickupView.json",
+          "viewType" : "DEPICKUPVIEW"
+        },
+        "valueItemName" : "productid",
+        "enableAC" : true,
+        "enablePickupView" : true,
+        "forceSelection" : true,
+        "showTrigger" : true,
+        "singleSelect" : true
+      },
+      "valueItemName" : "productid",
+      "allowEmpty" : true
+    } ],
+    "pagingSize" : 20,
+    "getRemovePSControlAction" : {
+      "actionName" : "Remove",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "DELETE",
+      "name" : "remove",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+      }
+    },
+    "sortMode" : "REMOTE",
+    "getUpdatePSControlAction" : {
+      "actionName" : "Update",
+      "actionType" : "DEACTION",
+      "dataAccessAction" : "UPDATE",
+      "name" : "update",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Update"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+      }
+    },
+    "hasWFDataItems" : false,
+    "enableColFilter" : false,
+    "enableCustomized" : true,
+    "enableGroup" : false,
+    "enablePagingBar" : false,
+    "enableRowEdit" : true,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : true,
+    "forceFit" : false,
+    "hideHeader" : false,
+    "noSort" : false,
+    "singleSelect" : false,
+    "name" : "grid",
+    "modelid" : "43842CBB-77B5-4A1D-A96D-32067C0D3338",
+    "modeltype" : "PSDEGRID"
+  } ],
+  "getPSDEViewCodeName" : "LineEditGridView",
+  "getPSDEViewId" : "A3F1DDBC-8750-4A21-B741-E24E3740D2AD",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEGRIDVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "订单明细表格视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEGRIDVIEW",
+  "xDataControlName" : "grid",
+  "enableDP" : true,
+  "enableExport" : true,
+  "enableFilter" : false,
+  "enableImport" : true,
+  "enableRowEdit" : true,
+  "rowEditDefault" : true,
+  "modelid" : "a9b666577c465a97e4472ab315ae13fa",
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Orders",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
+    "name" : "客户-订单",
+    "getParentPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    },
+    "rSMode" : 2
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "OrderDetails",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+    },
+    "name" : "订单-订单明细",
+    "getParentPSAppDEField" : {
+      "name" : "ORDERID",
+      "codeName" : "OrderId"
+    },
+    "rSMode" : 2
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "OrderDetails",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+    },
+    "name" : "订单-订单明细",
+    "getParentPSAppDEField" : {
+      "name" : "ORDERID",
+      "codeName" : "OrderId"
+    },
+    "rSMode" : 2
+  } ] ]
+}

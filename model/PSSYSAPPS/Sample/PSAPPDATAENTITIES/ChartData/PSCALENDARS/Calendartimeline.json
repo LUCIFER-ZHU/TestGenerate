@@ -1,0 +1,55 @@
+{
+  "calendarStyle" : "TIMELINE",
+  "codeName" : "Calendartimeline",
+  "controlType" : "CALENDAR",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSCALENDARS/Calendartimeline.json",
+  "groupMode" : "NONE",
+  "legendPos" : "NONE",
+  "logicName" : "时间轴视图",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSSysCalendarItems" : [ {
+    "bKColor" : "rgba(231, 144, 144, 1)",
+    "getBeginTimePSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    },
+    "color" : "rgba(220, 38, 230, 1)",
+    "getEndTimePSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    },
+    "getIdPSAppDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    },
+    "itemStyle" : "DEFAULT",
+    "itemType" : "chart",
+    "maxSize" : -1,
+    "name" : "图表实体",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    },
+    "enableQuickCreate" : false,
+    "id" : "chart"
+  } ],
+  "enableGroup" : false,
+  "modelid" : "0F8E5E1E-8D51-4A63-BA5F-FBD501F5D854",
+  "modeltype" : "PSSYSCALENDAR"
+}

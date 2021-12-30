@@ -1,0 +1,481 @@
+{
+  "accUserMode" : 2,
+  "caption" : "示例",
+  "codeName" : "ExampleDataSourceTreeView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleDataSourceTreeView.json",
+  "mDCtrlActiveMode" : 2,
+  "name" : "ExampleDataSourceTreeView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "TreeView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "tree",
+      "name" : "TREE",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "DataSource",
+    "controlType" : "TREEVIEW",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSTREEVIEWS/DataSource.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+    "logicName" : "数据源树",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "树视图处理器"
+    },
+    "getPSControlLogics" : [ {
+      "logicTag" : "tree",
+      "logicType" : "SCRIPT",
+      "name" : "calcnodestyle",
+      "scriptCode" : "return {'color':'red'}",
+      "triggerType" : "CUSTOM"
+    }, {
+      "eventNames" : "SELECTIONCHANGE;LOAD",
+      "logicTag" : "tree",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_tree",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "TREE"
+    },
+    "getPSDEDataImport" : {
+      "modelref" : true,
+      "id" : "DataImport"
+    },
+    "getPSDETreeNodeRSs" : [ {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "DEDataSetNode"
+      },
+      "name" : "动态（实体） - 动态（实体）数据节点",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "DEDataSet"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "StaticNode1"
+      },
+      "name" : "静态 - 静态一",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "StaticNode"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "StaticNode"
+      },
+      "name" : "默认根节点 - 静态",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ROOT"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "CodeListNode"
+      },
+      "name" : "动态（代码表） - 动态（代码表）数据节点",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "CodeList"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "StaticNode2"
+      },
+      "name" : "静态 - 静态2",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "StaticNode"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "DEDataSet"
+      },
+      "name" : "默认根节点 - 动态（实体）",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ROOT"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "CodeList"
+      },
+      "name" : "默认根节点 - 动态（代码表）",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ROOT"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    } ],
+    "getPSDETreeNodes" : [ {
+      "counterMode" : 0,
+      "name" : "静态一",
+      "nodeType" : "StaticNode1",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "text" : "静态一",
+      "treeNodeType" : "STATIC",
+      "hasPSDETreeNodeRSs" : false,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : false,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : false,
+      "rootNode" : false,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "StaticNode1"
+    }, {
+      "counterMode" : 0,
+      "name" : "静态",
+      "nodeType" : "StaticNode",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "text" : "静态",
+      "treeNodeType" : "STATIC",
+      "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : false,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : true,
+      "rootNode" : false,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "StaticNode"
+    }, {
+      "counterMode" : 0,
+      "name" : "动态（代码表）数据节点",
+      "nodeType" : "CodeListNode",
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OrderState.json"
+      },
+      "treeNodeType" : "CODELIST",
+      "hasPSDETreeNodeRSs" : false,
+      "appendCaption" : false,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : false,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : false,
+      "rootNode" : false,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "CodeListNode"
+    }, {
+      "counterMode" : 0,
+      "name" : "默认根节点",
+      "nodeType" : "ROOT",
+      "nodeValue" : "root",
+      "text" : "默认根节点",
+      "treeNodeType" : "STATIC",
+      "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : false,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : false,
+      "rootNode" : true,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "ROOT"
+    }, {
+      "counterMode" : 0,
+      "name" : "动态（代码表）",
+      "nodeType" : "CodeList",
+      "text" : "动态（代码表）",
+      "treeNodeType" : "STATIC",
+      "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : false,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : true,
+      "rootNode" : false,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "CodeList"
+    }, {
+      "counterMode" : 0,
+      "name" : "静态2",
+      "nodeType" : "StaticNode2",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "text" : "静态2",
+      "treeNodeType" : "STATIC",
+      "hasPSDETreeNodeRSs" : false,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : false,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : false,
+      "rootNode" : false,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "StaticNode2"
+    }, {
+      "counterMode" : 0,
+      "getIdPSAppDEField" : {
+        "name" : "PROVINCEID",
+        "codeName" : "ProvinceId"
+      },
+      "maxSize" : -1,
+      "name" : "动态（实体）数据节点",
+      "nodeType" : "DEDataSetNode",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
+      },
+      "getPSDETreeNodeDataItems" : [ {
+        "cLConvertMode" : "NONE",
+        "dataType" : 25,
+        "name" : "text",
+        "getPSAppDEField" : {
+          "name" : "PROVINCENAME",
+          "codeName" : "ProvinceName"
+        },
+        "scriptCode" : "if(data.text!=null && data.text!=undefined) {\n  if(data.text.match('北京市')) {\n     return  `<span style='color:blue;'>${data.text}</span>`;\n  } else {\n     return  `${data.text}`;\n  }\n}",
+        "customCode" : true
+      } ],
+      "getTextPSAppDEField" : {
+        "name" : "PROVINCENAME",
+        "codeName" : "ProvinceName"
+      },
+      "treeNodeType" : "DE",
+      "hasPSDETreeNodeRSs" : false,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : false,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : false,
+      "rootNode" : false,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "DEDataSetNode"
+    }, {
+      "counterMode" : 0,
+      "name" : "动态（实体）",
+      "nodeType" : "DEDataSet",
+      "text" : "动态（实体）",
+      "treeNodeType" : "STATIC",
+      "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : false,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : true,
+      "rootNode" : false,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "DEDataSet"
+    } ],
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "treeGridMode" : 0,
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "enableRootSelect" : false,
+    "outputIconDefault" : true,
+    "rootVisible" : false,
+    "name" : "tree",
+    "modelid" : "178C7056-9C00-42B5-B1B3-E6C770FAC921",
+    "modeltype" : "PSDETREEVIEW"
+  } ],
+  "getPSDEViewCodeName" : "DataSourceTreeView",
+  "getPSDEViewId" : "58FF7633-F79B-40D5-AF5F-1ADB337F258D",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDETREEVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "示例树视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DETREEVIEW",
+  "xDataControlName" : "tree",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "showCaptionBar" : false,
+  "modelid" : "5a5834ec4b8f5b39b3e5e546f763da49",
+  "modeltype" : "PSAPPDEVIEW"
+}

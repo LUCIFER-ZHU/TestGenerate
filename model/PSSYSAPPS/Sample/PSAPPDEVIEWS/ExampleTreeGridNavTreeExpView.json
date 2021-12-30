@@ -1,0 +1,517 @@
+{
+  "accUserMode" : 2,
+  "caption" : "树表格导航",
+  "codeName" : "ExampleTreeGridNavTreeExpView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleTreeGridNavTreeExpView.json",
+  "name" : "ExampleTreeGridNavTreeExpView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "TreeExpView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "treeexpbar",
+      "name" : "TREEEXPBAR",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "TreeGridNavTreeExpViewtreeexpbar",
+    "controlType" : "TREEEXPBAR",
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "name" : "treeexpbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:DISTRICT",
+      "realTitle" : "区编辑视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/DistrictTreeNavInfoEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:PROVINCE",
+      "parentDataJO" : {
+        "srfparentdefname" : "PROVINCEID",
+        "srfparentdename" : "PROVINCE",
+        "srfparentmode" : "DER1N_CITY_PROVINCE_PROVINCEID"
+      },
+      "realTitle" : "市表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CityTreeNavGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:CITY",
+      "parentDataJO" : {
+        "srfparentdefname" : "CITYID",
+        "srfparentdename" : "CITY",
+        "srfparentmode" : "DER1N_DISTRICT_CITY_CITYID"
+      },
+      "realTitle" : "区表格视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/DistrictTreeNavGridView.json",
+        "viewType" : "DEGRIDVIEW"
+      }
+    } ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "treeexpbar"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+      "logicTag" : "treeexpbar",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_treeexpbar",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "width" : 300.0,
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "TREEEXPBAR"
+    },
+    "getPSControls" : [ {
+      "codeName" : "ProvinceCityDistict_TreeGrid",
+      "controlType" : "TREEGRIDEX",
+      "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSTREEGRIDICES/ProvinceCityDistict_TreeGrid.json",
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+      "logicName" : "省市区/县树（树表格）",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "treeexpbar_tree"
+      },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SELECTIONCHANGE",
+        "logicTag" : "treeexpbar_tree",
+        "logicType" : "CUSTOM",
+        "name" : "treeexpbar_selectionchange"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "treeexpbar_tree",
+        "logicType" : "CUSTOM",
+        "name" : "treeexpbar_load"
+      } ],
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "treeexpbar_tree"
+      },
+      "getPSDETreeColumns" : [ {
+        "caption" : "名称",
+        "codeName" : "text",
+        "columnType" : "DEFGRIDCOLUMN",
+        "dataItemName" : "text",
+        "name" : "text",
+        "width" : 200,
+        "widthUnit" : "px",
+        "enableExpand" : true,
+        "enableSort" : false
+      }, {
+        "caption" : "备注",
+        "codeName" : "gridmemo",
+        "columnType" : "DEFGRIDCOLUMN",
+        "dataItemName" : "gridmemo",
+        "name" : "gridmemo",
+        "width" : 200,
+        "widthUnit" : "px",
+        "enableExpand" : false,
+        "enableSort" : false
+      } ],
+      "getPSDETreeNodeRSs" : [ {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "PROVINCE"
+        },
+        "name" : "默认根节点 - 省",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ROOT"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 2
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "CITY"
+        },
+        "name" : "省 - 市",
+        "getParentPSAppDEField" : {
+          "name" : "PROVINCEID",
+          "codeName" : "ProvinceId"
+        },
+        "getParentPSDER1N" : {
+          "codeName" : "Province",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/City/PSDERS/DER1N_CITY_PROVINCE_PROVINCEID.json",
+          "logicName" : "省",
+          "masterOrder" : -1,
+          "masterRS" : 0,
+          "name" : "DER1N_CITY_PROVINCE_PROVINCEID",
+          "orderValue" : 100,
+          "pickupDEFName" : "PROVINCEID",
+          "removeActionType" : -1,
+          "removeOrder" : 0
+        },
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "PROVINCE"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 2
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "DISTRICT"
+        },
+        "name" : "市 - 区/县",
+        "getParentPSAppDEField" : {
+          "name" : "CITYID",
+          "codeName" : "CityId"
+        },
+        "getParentPSDER1N" : {
+          "codeName" : "City",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/District/PSDERS/DER1N_DISTRICT_CITY_CITYID.json",
+          "logicName" : "市",
+          "masterOrder" : -1,
+          "masterRS" : 0,
+          "name" : "DER1N_DISTRICT_CITY_CITYID",
+          "orderValue" : 100,
+          "pickupDEFName" : "CITYID",
+          "removeActionType" : -1,
+          "removeOrder" : 0
+        },
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "CITY"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 2
+      } ],
+      "getPSDETreeNodes" : [ {
+        "counterMode" : 0,
+        "getIdPSAppDEField" : {
+          "name" : "CITYID",
+          "codeName" : "CityId"
+        },
+        "maxSize" : -1,
+        "name" : "市",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/DistrictTreeNavGridView.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "getNavPSDER" : {
+          "codeName" : "City",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/District/PSDERS/DER1N_DISTRICT_CITY_CITYID.json",
+          "logicName" : "市",
+          "masterOrder" : -1,
+          "masterRS" : 0,
+          "name" : "DER1N_DISTRICT_CITY_CITYID",
+          "orderValue" : 100,
+          "pickupDEFName" : "CITYID",
+          "removeActionType" : -1,
+          "removeOrder" : 0
+        },
+        "nodeType" : "CITY",
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/City.json"
+        },
+        "getPSDETreeNodeDataItems" : [ {
+          "cLConvertMode" : "NONE",
+          "dataType" : 25,
+          "name" : "text",
+          "getPSAppDEField" : {
+            "name" : "CITYNAME",
+            "codeName" : "CityName"
+          }
+        }, {
+          "cLConvertMode" : "NONE",
+          "dataType" : 25,
+          "name" : "gridmemo",
+          "getPSAppDEField" : {
+            "name" : "MEMO",
+            "codeName" : "Memo"
+          }
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "n_cityid_eq",
+          "name" : "n_cityid_eq",
+          "value" : "nodeid",
+          "rawValue" : false
+        } ],
+        "getTextPSAppDEField" : {
+          "name" : "CITYNAME",
+          "codeName" : "CityName"
+        },
+        "treeNodeType" : "DE",
+        "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "CITY"
+      }, {
+        "counterMode" : 0,
+        "name" : "默认根节点",
+        "nodeType" : "ROOT",
+        "nodeValue" : "root",
+        "text" : "默认根节点",
+        "treeNodeType" : "STATIC",
+        "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : true,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "ROOT"
+      }, {
+        "counterMode" : 0,
+        "getIdPSAppDEField" : {
+          "name" : "PROVINCEID",
+          "codeName" : "ProvinceId"
+        },
+        "maxSize" : -1,
+        "name" : "省",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CityTreeNavGridView.json",
+          "viewType" : "DEGRIDVIEW"
+        },
+        "getNavPSDER" : {
+          "codeName" : "Province",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/City/PSDERS/DER1N_CITY_PROVINCE_PROVINCEID.json",
+          "logicName" : "省",
+          "masterOrder" : -1,
+          "masterRS" : 0,
+          "name" : "DER1N_CITY_PROVINCE_PROVINCEID",
+          "orderValue" : 100,
+          "pickupDEFName" : "PROVINCEID",
+          "removeActionType" : -1,
+          "removeOrder" : 0
+        },
+        "nodeType" : "PROVINCE",
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
+        },
+        "getPSDETreeNodeDataItems" : [ {
+          "cLConvertMode" : "NONE",
+          "dataType" : 25,
+          "name" : "gridmemo",
+          "getPSAppDEField" : {
+            "name" : "MEMO",
+            "codeName" : "Memo"
+          }
+        }, {
+          "cLConvertMode" : "NONE",
+          "dataType" : 25,
+          "name" : "text",
+          "getPSAppDEField" : {
+            "name" : "PROVINCENAME",
+            "codeName" : "ProvinceName"
+          },
+          "scriptCode" : "<span style='color:red;'>${data.text}</span>",
+          "customCode" : true
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "n_provinceid_eq",
+          "name" : "n_provinceid_eq",
+          "value" : "nodeid",
+          "rawValue" : false
+        } ],
+        "getTextPSAppDEField" : {
+          "name" : "PROVINCENAME",
+          "codeName" : "ProvinceName"
+        },
+        "treeNodeType" : "DE",
+        "hasPSDETreeNodeRSs" : true,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "PROVINCE"
+      }, {
+        "counterMode" : 0,
+        "getIdPSAppDEField" : {
+          "name" : "DISTRICTID",
+          "codeName" : "DistrictId"
+        },
+        "maxSize" : -1,
+        "name" : "区/县",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/DistrictTreeNavInfoEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "nodeType" : "DISTRICT",
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/District.json"
+        },
+        "getPSDETreeNodeDataItems" : [ {
+          "cLConvertMode" : "NONE",
+          "dataType" : 25,
+          "name" : "text",
+          "getPSAppDEField" : {
+            "name" : "DISTRICTNAME",
+            "codeName" : "DistrictName"
+          }
+        }, {
+          "cLConvertMode" : "NONE",
+          "dataType" : 25,
+          "name" : "gridmemo",
+          "getPSAppDEField" : {
+            "name" : "MEMO",
+            "codeName" : "Memo"
+          }
+        } ],
+        "getTextPSAppDEField" : {
+          "name" : "DISTRICTNAME",
+          "codeName" : "DistrictName"
+        },
+        "treeNodeType" : "DE",
+        "hasPSDETreeNodeRSs" : false,
+        "appendPNodeId" : false,
+        "disableSelect" : false,
+        "enableCheck" : false,
+        "enableEditData" : false,
+        "enableNewData" : false,
+        "enableQuickCreate" : false,
+        "enableQuickSearch" : false,
+        "enableRemoveData" : false,
+        "enableViewData" : false,
+        "expandFirstOnly" : false,
+        "expanded" : false,
+        "rootNode" : false,
+        "selectFirstOnly" : false,
+        "selected" : false,
+        "id" : "DISTRICT"
+      } ],
+      "treeGridMode" : 1,
+      "enableRootSelect" : false,
+      "outputIconDefault" : true,
+      "rootVisible" : false,
+      "name" : "treeexpbar_tree",
+      "modelid" : "1E6F9BAF-02A3-40B3-80C9-7648A07AC334",
+      "modeltype" : "PSDETREEGRIDEX"
+    } ],
+    "width" : 300.0,
+    "xDataControlName" : "treeexpbar_tree",
+    "enableCounter" : true,
+    "enableSearch" : false,
+    "showTitleBar" : false,
+    "modelid" : "6e8732c7e7f4268e8d5117f7079a44fd_treeexpbar",
+    "modeltype" : "PSEXPBAR"
+  } ],
+  "getPSDEViewCodeName" : "TreeGridNavTreeExpView",
+  "getPSDEViewId" : "73731A0B-1410-4868-87FE-7132D7AE68F7",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDETREEEXPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "示例树导航视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DETREEEXPVIEW",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "showCaptionBar" : false,
+  "showDataInfoBar" : true,
+  "modelid" : "6e8732c7e7f4268e8d5117f7079a44fd",
+  "modeltype" : "PSAPPDEVIEW"
+}

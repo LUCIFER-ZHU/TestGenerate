@@ -1,0 +1,192 @@
+{
+  "accUserMode" : 2,
+  "caption" : "图表",
+  "codeName" : "ChartDataUsr2CalendarExpView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr2CalendarExpView.json",
+  "name" : "ChartDataUsr2CalendarExpView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "CalendarExpView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "calendarexpbar",
+      "name" : "CALENDAREXPBAR",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "Usr2CalendarExpViewcalendarexpbar",
+    "controlType" : "CALENDAREXPBAR",
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "name" : "calendarexpbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSAppViewRefs" : [ {
+      "name" : "EXPITEM:chart",
+      "realTitle" : "图表编辑视图",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    } ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "calendarexpbar"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+      "logicTag" : "calendarexpbar",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_calendarexpbar",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CALENDAREXPBAR"
+    },
+    "getPSControls" : [ {
+      "calendarStyle" : "TIMELINE",
+      "codeName" : "Calendartimeline",
+      "controlType" : "CALENDAR",
+      "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSCALENDARS/Calendartimeline.json",
+      "groupMode" : "NONE",
+      "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+      "legendPos" : "NONE",
+      "logicName" : "时间轴视图",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "calendarexpbar_calendar"
+      },
+      "getPSControlLogics" : [ {
+        "eventNames" : "SELECTIONCHANGE",
+        "logicTag" : "calendarexpbar_calendar",
+        "logicType" : "CUSTOM",
+        "name" : "calendarexpbar_selectionchange"
+      }, {
+        "eventNames" : "LOAD",
+        "logicTag" : "calendarexpbar_calendar",
+        "logicType" : "CUSTOM",
+        "name" : "calendarexpbar_load"
+      } ],
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true,
+        "id" : "calendarexpbar_calendar"
+      },
+      "getPSSysCalendarItems" : [ {
+        "bKColor" : "rgba(231, 144, 144, 1)",
+        "getBeginTimePSAppDEField" : {
+          "name" : "BEGINTIME",
+          "codeName" : "BeginTime"
+        },
+        "color" : "rgba(220, 38, 230, 1)",
+        "getEndTimePSAppDEField" : {
+          "name" : "ENDTIME",
+          "codeName" : "EndTime"
+        },
+        "getIdPSAppDEField" : {
+          "name" : "CHARTDATAID",
+          "codeName" : "ChartDataId"
+        },
+        "itemStyle" : "DEFAULT",
+        "itemType" : "chart",
+        "maxSize" : -1,
+        "name" : "图表实体",
+        "getNavPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "getTextPSAppDEField" : {
+          "name" : "CHARTDATANAME",
+          "codeName" : "ChartDataName"
+        },
+        "enableQuickCreate" : false,
+        "id" : "chart"
+      } ],
+      "enableGroup" : false,
+      "name" : "calendarexpbar_calendar",
+      "modelid" : "0F8E5E1E-8D51-4A63-BA5F-FBD501F5D854",
+      "modeltype" : "PSSYSCALENDAR"
+    } ],
+    "xDataControlName" : "calendarexpbar_calendar",
+    "enableCounter" : true,
+    "enableSearch" : false,
+    "showTitleBar" : true,
+    "modelid" : "90c52f500395239a6a4f1efa3f9dbe12_calendarexpbar",
+    "modeltype" : "PSEXPBAR"
+  } ],
+  "getPSDEViewCodeName" : "Usr2CalendarExpView",
+  "getPSDEViewId" : "A1F86936-7FBD-4EE6-B4C5-500289CCEE1D",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDECALENDAREXPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "sideBarLayout" : "LEFT",
+  "title" : "图表日历导航视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DECALENDAREXPVIEW",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enableQuickSearch" : true,
+  "showDataInfoBar" : true,
+  "modelid" : "90c52f500395239a6a4f1efa3f9dbe12",
+  "modeltype" : "PSAPPDEVIEW"
+}

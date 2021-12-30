@@ -1,0 +1,305 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "COUNTERDATA2ID",
+        "codeName" : "CounterData2Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "COUNTERDATA2NAME",
+        "codeName" : "CounterData2Name"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "COUNTERDATA2NAME",
+      "codeName" : "CounterData2Name"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "COUNTERDATA2ID",
+      "codeName" : "CounterData2Id"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "SCRIPT",
+    "codeName" : "GetRandom",
+    "methodType" : "DEACTION",
+    "name" : "getRandom",
+    "scriptCode" : "data.countertag=Math.floor(Math.random()*100+1);\ndata.countertag2=Math.floor(Math.random()*100+1);\ndata.countertag3=Math.floor(Math.random()*100+1);\nconsole.log(\"获取随机数给【首页计数器】供数\");\nconsole.log(data);",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "CounterData2Id",
+    "logicName" : "计数器数据2标识",
+    "name" : "COUNTERDATA2ID",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "keyField" : true
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CounterData2Name",
+    "logicName" : "计数器数据2名称",
+    "name" : "COUNTERDATA2NAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "DeptId",
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "OrgId",
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Countertag",
+    "logicName" : "计数1",
+    "name" : "COUNTERTAG",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Countertag2",
+    "logicName" : "计数2",
+    "name" : "COUNTERTAG2",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Countertag3",
+    "logicName" : "计数3",
+    "name" : "COUNTERTAG3",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Countertag4",
+    "logicName" : "计数4",
+    "name" : "COUNTERTAG4",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Countertag5",
+    "logicName" : "计数5",
+    "name" : "COUNTERTAG5",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Countertag6",
+    "logicName" : "计数6",
+    "name" : "COUNTERTAG6",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Countertag7",
+    "logicName" : "计数7",
+    "name" : "COUNTERTAG7",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Countertag8",
+    "logicName" : "计数8",
+    "name" : "COUNTERTAG8",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Countertag9",
+    "logicName" : "计数9",
+    "name" : "COUNTERTAG9",
+    "stdDataType" : 9
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "actionMode" : "CHECKKEY",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "CREATE",
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "GETDRAFT",
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "READ",
+    "actionType" : "SCRIPT",
+    "codeName" : "GetRandom",
+    "methodType" : "DEACTION",
+    "name" : "getRandom",
+    "scriptCode" : "data.countertag=Math.floor(Math.random()*100+1);\ndata.countertag2=Math.floor(Math.random()*100+1);\ndata.countertag3=Math.floor(Math.random()*100+1);\nconsole.log(\"获取随机数给【首页计数器】供数\");\nconsole.log(data);",
+    "builtinMethod" : false,
+    "customCode" : true
+  }, {
+    "actionMode" : "DELETE",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "actionMode" : "UPDATE",
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
+    "builtinMethod" : false
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "CounterData2",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/CounterData2.json",
+  "enableUIActions" : 15,
+  "logicName" : "计数器数据2",
+  "name" : "COUNTERDATA2",
+  "getPSDEName" : "COUNTERDATA2",
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "COUNTERDATA2NAME",
+    "codeName" : "CounterData2Name"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

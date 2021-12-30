@@ -1,0 +1,3258 @@
+{
+  "accUserMode" : 2,
+  "caption" : "编辑器示例",
+  "codeName" : "ExampleEditorEditView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleEditorEditView.json",
+  "name" : "ExampleEditorEditView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "EditView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "form",
+      "name" : "FORM",
+      "paramType" : "CTRL"
+    }, {
+      "name" : "P2K",
+      "paramType" : "VALUE",
+      "value" : 0
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "Editor",
+    "controlType" : "FORM",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/Editor.json",
+    "getGetDraftFromPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraftfrom"
+    },
+    "getGetDraftPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraft"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "logicName" : "编辑器示例",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "formitem52_editor_u016ca55_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "自动填充-新建"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "formitem51_editor_u016ca55_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "自动填充-新建"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "formitem50_editor_u016ca55_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "自动填充-新建"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "formitem49_editor_u016ca55_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "自动填充-新建"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "formitem26_editor_u016ca55_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "自动填充-新建"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "formitem33_editor_u016ca55_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "自动填充-新建"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "formitem35_editor_u016ca55_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "自动填充-新建"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "formitem37_editor_u016ca55_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "自动填充-新建"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "自动填充-新建",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "modelref" : true,
+        "id" : "ACCreate@Customer"
+      },
+      "uIActionTarget" : "NONE"
+    }, {
+      "name" : "自动填充-新建",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "modelref" : true,
+        "id" : "ACCreate@Customer"
+      },
+      "uIActionTarget" : "NONE"
+    }, {
+      "name" : "自动填充-新建",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "modelref" : true,
+        "id" : "ACCreate@Customer"
+      },
+      "uIActionTarget" : "NONE"
+    }, {
+      "name" : "自动填充-新建",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "modelref" : true,
+        "id" : "ACCreate@Customer"
+      },
+      "uIActionTarget" : "NONE"
+    }, {
+      "name" : "自动填充-新建",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "modelref" : true,
+        "id" : "ACCreate@Customer"
+      },
+      "uIActionTarget" : "NONE"
+    }, {
+      "name" : "自动填充-新建",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "modelref" : true,
+        "id" : "ACCreate@Customer"
+      },
+      "uIActionTarget" : "NONE"
+    }, {
+      "name" : "自动填充-新建",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "modelref" : true,
+        "id" : "ACCreate@Customer"
+      },
+      "uIActionTarget" : "NONE"
+    }, {
+      "name" : "自动填充-新建",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+        },
+        "modelref" : true,
+        "id" : "ACCreate@Customer"
+      },
+      "uIActionTarget" : "NONE"
+    } ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "GETDRAFTFROM",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraftfrom",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "编辑表单处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;SAVE;REMOVE",
+      "logicTag" : "form",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_form",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "getPSDEFormItems" : [ {
+      "id" : "srfupdatedate",
+      "hidden" : true,
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      }
+    }, {
+      "id" : "srforikey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfkey",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "EXAMPLEID",
+        "codeName" : "ExampleId"
+      }
+    }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "EXAMPLENAME",
+        "codeName" : "ExampleName"
+      }
+    }, {
+      "id" : "srftempmode",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfuf",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfdeid",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfsourcekey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "formitem",
+      "dataType" : 25
+    }, {
+      "id" : "formitem3",
+      "dataType" : 25
+    }, {
+      "id" : "formitem1",
+      "dataType" : 25,
+      "createDV" : "10"
+    }, {
+      "id" : "formitem2",
+      "dataType" : 25,
+      "createDV" : "password"
+    }, {
+      "id" : "formitem4",
+      "dataType" : 25,
+      "createDV" : "demo@ibiz.com"
+    }, {
+      "id" : "formitem22",
+      "dataType" : 25,
+      "createDV" : "2"
+    }, {
+      "id" : "formitem23",
+      "dataType" : 25,
+      "createDV" : "3"
+    }, {
+      "id" : "formitem24",
+      "dataType" : 25,
+      "createDV" : "20"
+    }, {
+      "id" : "formitem7",
+      "dataType" : 25
+    }, {
+      "id" : "formitem9",
+      "dataType" : 25
+    }, {
+      "id" : "formitem20",
+      "dataType" : 25
+    }, {
+      "id" : "formitem47",
+      "dataType" : 25
+    }, {
+      "id" : "formitem21",
+      "dataType" : 25
+    }, {
+      "id" : "formitem48",
+      "dataType" : 25
+    }, {
+      "id" : "formitem5",
+      "dataType" : 25
+    }, {
+      "id" : "formitem6",
+      "dataType" : 25
+    }, {
+      "id" : "formitem10",
+      "dataType" : 25
+    }, {
+      "id" : "formitem8",
+      "dataType" : 25
+    }, {
+      "id" : "formitem11",
+      "dataType" : 25
+    }, {
+      "id" : "formitem12",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem52",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem51",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem50",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem49",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem19",
+      "dataType" : 25,
+      "createDVT" : "CURTIME"
+    }, {
+      "id" : "formitem29",
+      "dataType" : 25,
+      "createDVT" : "CURTIME"
+    }, {
+      "id" : "formitem15",
+      "dataType" : 25,
+      "createDVT" : "CURTIME"
+    }, {
+      "id" : "formitem27",
+      "dataType" : 25,
+      "createDVT" : "CURTIME"
+    }, {
+      "id" : "formitem28",
+      "dataType" : 25,
+      "createDVT" : "CURTIME"
+    }, {
+      "id" : "formitem14",
+      "dataType" : 25,
+      "createDVT" : "CURTIME"
+    }, {
+      "id" : "formitem26",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem17",
+      "dataType" : 25
+    }, {
+      "id" : "formitem33",
+      "dataType" : 25,
+      "createDV" : "上海客户",
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem39",
+      "dataType" : 25,
+      "createDV" : "DE3C6025-4356-4AAF-8278-55E8C1E6DA31"
+    }, {
+      "id" : "formitem32",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem40",
+      "dataType" : 25
+    }, {
+      "id" : "formitem31",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem36",
+      "dataType" : 25
+    }, {
+      "id" : "formitem30",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem41",
+      "dataType" : 25
+    }, {
+      "id" : "formitem35",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem42",
+      "dataType" : 25
+    }, {
+      "id" : "formitem37",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem43",
+      "dataType" : 25
+    }, {
+      "id" : "formitem38",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem44",
+      "dataType" : 25
+    }, {
+      "id" : "formitem61",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem62",
+      "dataType" : 25
+    }, {
+      "id" : "formitem34",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem45",
+      "dataType" : 25
+    }, {
+      "id" : "formitem16",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "FIELD",
+        "codeName" : "Field"
+      }
+    }, {
+      "id" : "formitem46",
+      "dataType" : 25
+    }, {
+      "id" : "formitem13",
+      "dataType" : 25
+    }, {
+      "id" : "formitem57",
+      "dataType" : 25,
+      "createDV" : "<B>ABC</B>"
+    }, {
+      "id" : "formitem58",
+      "dataType" : 25,
+      "createDV" : "<B>ABC</B>"
+    }, {
+      "id" : "formitem59",
+      "dataType" : 25,
+      "createDV" : "https://www.ibizsys.cn/imgs/ibizlogo.svg"
+    }, {
+      "id" : "formitem60",
+      "dataType" : 25,
+      "createDV" : "<B>ABC</B>"
+    }, {
+      "id" : "formitem25",
+      "dataType" : 25,
+      "createDV" : "172.16.100.32"
+    }, {
+      "id" : "formitem18",
+      "dataType" : 25
+    }, {
+      "id" : "formitem55",
+      "dataType" : 25
+    }, {
+      "id" : "formitem54",
+      "dataType" : 25
+    }, {
+      "id" : "formitem53",
+      "dataType" : 25
+    }, {
+      "id" : "formitem56",
+      "dataType" : 25
+    }, {
+      "id" : "exampleid",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "EXAMPLEID",
+        "codeName" : "ExampleId"
+      }
+    } ],
+    "getPSDEFormPages" : [ {
+      "caption" : "基本信息",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "基础",
+        "codeName" : "group1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "group1",
+        "getPSDEFormDetails" : [ {
+          "caption" : "文本框",
+          "codeName" : "formitem",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "MAXLENGTH" : "4",
+              "SHOWMAXLENGTH" : "true"
+            },
+            "editorType" : "TEXTBOX",
+            "maxLength" : 4,
+            "name" : "formitem",
+            "showMaxLength" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "多行输入",
+          "codeName" : "formitem3",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem3",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "TEXTAREA",
+            "name" : "formitem3",
+            "showMaxLength" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "数值框",
+          "codeName" : "formitem1",
+          "createDV" : "10",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 350.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem1",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "NUMBER",
+            "editorWidth" : 150.0,
+            "name" : "formitem1"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "密码框",
+          "codeName" : "formitem2",
+          "createDV" : "password",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 350.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem2",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "PASSWORD",
+            "editorWidth" : 150.0,
+            "name" : "formitem2"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "标签",
+          "codeName" : "formitem4",
+          "createDV" : "demo@ibiz.com",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 350.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem4",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "editorWidth" : 150.0,
+            "getLinkPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/LeaveApplicationLeaveApplication_D_WFGridView.json",
+              "viewType" : "DEWFGRIDVIEW"
+            },
+            "name" : "formitem4",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "步进器",
+          "codeName" : "formitem22",
+          "createDV" : "2",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 350.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem22",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "STEPPER",
+            "editorWidth" : 150.0,
+            "name" : "formitem22",
+            "stepValue" : 1.0
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "评分器",
+          "codeName" : "formitem23",
+          "createDV" : "3",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 350.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem23",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "RATING",
+            "editorWidth" : 150.0,
+            "maxValue" : 5.0,
+            "minValue" : 0.0,
+            "name" : "formitem23",
+            "stepValue" : 1.0
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "滑动输入条",
+          "codeName" : "formitem24",
+          "createDV" : "20",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 350.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem24",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SLIDER",
+            "editorWidth" : 150.0,
+            "name" : "formitem24",
+            "stepValue" : 1.0
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "选项框",
+          "codeName" : "formitem7",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem7",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "CHECKBOX",
+            "name" : "formitem7"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "控制开关",
+          "codeName" : "formitem9",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem9",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SWITCH",
+            "name" : "formitem9"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "图片",
+          "codeName" : "formitem20",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem20",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "PICTURE",
+            "maxFileCount" : -1,
+            "maxFileSize" : -1,
+            "minFileCount" : 0,
+            "name" : "formitem20"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "图片（单项）",
+          "codeName" : "formitem47",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem47",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "MAXCOUNT" : "1"
+            },
+            "editorType" : "PICTURE_ONE",
+            "maxFileCount" : 1,
+            "maxFileSize" : -1,
+            "minFileCount" : 0,
+            "name" : "formitem47"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "文件上传",
+          "codeName" : "formitem21",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem21",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "FILEEXTS" : "",
+              "MAXFILESIZE" : "",
+              "MINFILECNT" : "",
+              "MAXFILECNT" : ""
+            },
+            "editorType" : "FILEUPLOADER",
+            "maxFileCount" : -1,
+            "maxFileSize" : -1,
+            "minFileCount" : 0,
+            "name" : "formitem21"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "文件上传（单项）",
+          "codeName" : "formitem48",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem48",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "MAXFILECNT" : "1"
+            },
+            "editorType" : "FILEUPLOADER_ONE",
+            "maxFileCount" : 1,
+            "maxFileSize" : -1,
+            "minFileCount" : 0,
+            "name" : "formitem48"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : true
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "代码表",
+        "codeName" : "grouppanel2",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel2",
+        "getPSDEFormDetails" : [ {
+          "caption" : "下拉列表框",
+          "codeName" : "formitem5",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 350.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem5",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "DROPDOWNLIST",
+            "editorWidth" : 150.0,
+            "name" : "formitem5",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/CodeList33.json"
+            },
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "needCodeListConfig" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "下拉列表框（多选）",
+          "codeName" : "formitem6",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem6",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "MDROPDOWNLIST",
+            "name" : "formitem6",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/CodeList33.json"
+            },
+            "singleSelect" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "needCodeListConfig" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "单选项列表",
+          "codeName" : "formitem10",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem10",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "RADIOBUTTONLIST",
+            "name" : "formitem10",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/CodeList33.json"
+            }
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "needCodeListConfig" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "选项框列表",
+          "codeName" : "formitem8",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem8",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "CHECKBOXLIST",
+            "name" : "formitem8",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/CodeList33.json"
+            }
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "needCodeListConfig" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "列表框",
+          "codeName" : "formitem11",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem11",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "LISTBOX",
+            "name" : "formitem11",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/CodeList33.json"
+            }
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "needCodeListConfig" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "列表框（选择）",
+          "codeName" : "formitem12",
+          "contentHeight" : 300.0,
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "height" : 300.0,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem12",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "LISTBOXPICKUP",
+            "name" : "formitem12",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
+            "enableAC" : false,
+            "forceSelection" : true,
+            "showTrigger" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "height" : 300,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : true
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "自动填充",
+        "codeName" : "grouppanel5",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel5",
+        "getPSDEFormDetails" : [ {
+          "caption" : "默认",
+          "codeName" : "formitem52",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 400.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem52",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "FORCESELECTION" : "FALSE",
+              "TRIGGER" : "TRUE"
+            },
+            "editorType" : "AC",
+            "editorWidth" : 200.0,
+            "handlerType" : "AC",
+            "maxLength" : 100,
+            "name" : "formitem52",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPSUIActionGroup" : {
+              "codeName" : "Auto1",
+              "name" : "自动填充",
+              "getPSUIActionGroupDetails" : [ {
+                "detailType" : "DEUIACTION",
+                "name" : "u016ca55",
+                "getPSUIAction" : {
+                  "actionTarget" : "NONE",
+                  "caption" : "新建",
+                  "codeName" : "ACCreate",
+                  "getFrontPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                    "viewType" : "DEOPTVIEW"
+                  },
+                  "frontProcessType" : "WIZARD",
+                  "fullCodeName" : "Customer_ACCreate",
+                  "name" : "自动填充-新建",
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+                  },
+                  "getPSSysImage" : {
+                    "glyph" : "xf044@FontAwesome",
+                    "cssClass" : "fa fa-edit"
+                  },
+                  "timeout" : 60000,
+                  "uIActionMode" : "FRONT",
+                  "uIActionTag" : "ACCreate",
+                  "uIActionType" : "DEUIACTION",
+                  "id" : "ACCreate@Customer"
+                },
+                "addSeparator" : false,
+                "showCaption" : true,
+                "showIcon" : true
+              } ]
+            },
+            "enableAC" : true,
+            "forceSelection" : false,
+            "showTrigger" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "只能选择",
+          "codeName" : "formitem51",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 400.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem51",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "FORCESELECTION" : "TRUE",
+              "TRIGGER" : "TRUE"
+            },
+            "editorType" : "AC_FS",
+            "editorWidth" : 200.0,
+            "handlerType" : "AC",
+            "maxLength" : 100,
+            "name" : "formitem51",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPSUIActionGroup" : {
+              "codeName" : "Auto1",
+              "name" : "自动填充",
+              "getPSUIActionGroupDetails" : [ {
+                "detailType" : "DEUIACTION",
+                "name" : "u016ca55",
+                "getPSUIAction" : {
+                  "actionTarget" : "NONE",
+                  "caption" : "新建",
+                  "codeName" : "ACCreate",
+                  "getFrontPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                    "viewType" : "DEOPTVIEW"
+                  },
+                  "frontProcessType" : "WIZARD",
+                  "fullCodeName" : "Customer_ACCreate",
+                  "name" : "自动填充-新建",
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+                  },
+                  "getPSSysImage" : {
+                    "glyph" : "xf044@FontAwesome",
+                    "cssClass" : "fa fa-edit"
+                  },
+                  "timeout" : 60000,
+                  "uIActionMode" : "FRONT",
+                  "uIActionTag" : "ACCreate",
+                  "uIActionType" : "DEUIACTION",
+                  "id" : "ACCreate@Customer"
+                },
+                "addSeparator" : false,
+                "showCaption" : true,
+                "showIcon" : true
+              } ]
+            },
+            "enableAC" : true,
+            "forceSelection" : true,
+            "showTrigger" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "无按钮",
+          "codeName" : "formitem50",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 400.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem50",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "FORCESELECTION" : "FALSE",
+              "TRIGGER" : "FALSE"
+            },
+            "editorType" : "AC_NOBUTTON",
+            "editorWidth" : 200.0,
+            "handlerType" : "AC",
+            "maxLength" : 100,
+            "name" : "formitem50",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPSUIActionGroup" : {
+              "codeName" : "Auto1",
+              "name" : "自动填充",
+              "getPSUIActionGroupDetails" : [ {
+                "detailType" : "DEUIACTION",
+                "name" : "u016ca55",
+                "getPSUIAction" : {
+                  "actionTarget" : "NONE",
+                  "caption" : "新建",
+                  "codeName" : "ACCreate",
+                  "getFrontPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                    "viewType" : "DEOPTVIEW"
+                  },
+                  "frontProcessType" : "WIZARD",
+                  "fullCodeName" : "Customer_ACCreate",
+                  "name" : "自动填充-新建",
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+                  },
+                  "getPSSysImage" : {
+                    "glyph" : "xf044@FontAwesome",
+                    "cssClass" : "fa fa-edit"
+                  },
+                  "timeout" : 60000,
+                  "uIActionMode" : "FRONT",
+                  "uIActionTag" : "ACCreate",
+                  "uIActionType" : "DEUIACTION",
+                  "id" : "ACCreate@Customer"
+                },
+                "addSeparator" : false,
+                "showCaption" : true,
+                "showIcon" : true
+              } ]
+            },
+            "enableAC" : true,
+            "forceSelection" : false,
+            "showTrigger" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "只能选择、无按钮",
+          "codeName" : "formitem49",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 400.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem49",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "FORCESELECTION" : "TRUE",
+              "TRIGGER" : "FALSE"
+            },
+            "editorType" : "AC_FS_NOBUTTON",
+            "editorWidth" : 200.0,
+            "handlerType" : "AC",
+            "maxLength" : 100,
+            "name" : "formitem49",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPSUIActionGroup" : {
+              "codeName" : "Auto1",
+              "name" : "自动填充",
+              "getPSUIActionGroupDetails" : [ {
+                "detailType" : "DEUIACTION",
+                "name" : "u016ca55",
+                "getPSUIAction" : {
+                  "actionTarget" : "NONE",
+                  "caption" : "新建",
+                  "codeName" : "ACCreate",
+                  "getFrontPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                    "viewType" : "DEOPTVIEW"
+                  },
+                  "frontProcessType" : "WIZARD",
+                  "fullCodeName" : "Customer_ACCreate",
+                  "name" : "自动填充-新建",
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+                  },
+                  "getPSSysImage" : {
+                    "glyph" : "xf044@FontAwesome",
+                    "cssClass" : "fa fa-edit"
+                  },
+                  "timeout" : 60000,
+                  "uIActionMode" : "FRONT",
+                  "uIActionTag" : "ACCreate",
+                  "uIActionType" : "DEUIACTION",
+                  "id" : "ACCreate@Customer"
+                },
+                "addSeparator" : false,
+                "showCaption" : true,
+                "showIcon" : true
+              } ]
+            },
+            "enableAC" : true,
+            "forceSelection" : true,
+            "showTrigger" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : true
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "时间选择器",
+        "codeName" : "grouppanel4",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel4",
+        "getPSDEFormDetails" : [ {
+          "caption" : "HH:mm",
+          "codeName" : "formitem19",
+          "createDVT" : "CURTIME",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 270.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem19",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "dateTimeFormat" : "HH:mm",
+            "editorParams" : {
+              "TIMEFMT" : "HH:mm"
+            },
+            "editorType" : "DATEPICKEREX_NODAY_NOSECOND",
+            "editorWidth" : 70.0,
+            "name" : "formitem19"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "HH:mm:ss",
+          "codeName" : "formitem29",
+          "createDVT" : "CURTIME",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 290.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem29",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "dateTimeFormat" : "HH:mm:ss",
+            "editorParams" : {
+              "TIMEFMT" : "HH:mm:ss"
+            },
+            "editorType" : "DATEPICKEREX_NODAY",
+            "editorWidth" : 90.0,
+            "name" : "formitem29"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "YYYY-MM-DD",
+          "codeName" : "formitem15",
+          "createDVT" : "CURTIME",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 300.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem15",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "dateTimeFormat" : "YYYY-MM-DD",
+            "editorParams" : {
+              "TIMEFMT" : "YYYY-MM-DD"
+            },
+            "editorType" : "DATEPICKEREX_NOTIME",
+            "editorWidth" : 100.0,
+            "name" : "formitem15"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "YYYY-MM-DD HH",
+          "codeName" : "formitem27",
+          "createDVT" : "CURTIME",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 320.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem27",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "dateTimeFormat" : "YYYY-MM-DD HH",
+            "editorParams" : {
+              "TIMEFMT" : "YYYY-MM-DD HH"
+            },
+            "editorType" : "DATEPICKEREX_HOUR",
+            "editorWidth" : 120.0,
+            "name" : "formitem27"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "YYYY-MM-DD HH:mm",
+          "codeName" : "formitem28",
+          "createDVT" : "CURTIME",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 340.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem28",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "dateTimeFormat" : "YYYY-MM-DD HH:mm",
+            "editorParams" : {
+              "TIMEFMT" : "YYYY-MM-DD HH:mm"
+            },
+            "editorType" : "DATEPICKEREX_MINUTE",
+            "editorWidth" : 140.0,
+            "name" : "formitem28"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "YYYY-MM-DD HH:mm:ss",
+          "codeName" : "formitem14",
+          "createDVT" : "CURTIME",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 360.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem14",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+            "editorParams" : {
+              "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+            },
+            "editorType" : "DATEPICKEREX_SECOND",
+            "editorWidth" : 160.0,
+            "name" : "formitem14"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : true
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "数据选择",
+        "codeName" : "grouppanel3",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel3",
+        "getPSDEFormDetails" : [ {
+          "caption" : "默认",
+          "codeName" : "formitem26",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 400.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem26",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "AC" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKER",
+            "editorWidth" : 200.0,
+            "handlerType" : "PickupText",
+            "name" : "formitem26",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPSUIActionGroup" : {
+              "codeName" : "Auto1",
+              "name" : "自动填充",
+              "getPSUIActionGroupDetails" : [ {
+                "detailType" : "DEUIACTION",
+                "name" : "u016ca55",
+                "getPSUIAction" : {
+                  "actionTarget" : "NONE",
+                  "caption" : "新建",
+                  "codeName" : "ACCreate",
+                  "getFrontPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                    "viewType" : "DEOPTVIEW"
+                  },
+                  "frontProcessType" : "WIZARD",
+                  "fullCodeName" : "Customer_ACCreate",
+                  "name" : "自动填充-新建",
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+                  },
+                  "getPSSysImage" : {
+                    "glyph" : "xf044@FontAwesome",
+                    "cssClass" : "fa fa-edit"
+                  },
+                  "timeout" : 60000,
+                  "uIActionMode" : "FRONT",
+                  "uIActionTag" : "ACCreate",
+                  "uIActionType" : "DEUIACTION",
+                  "id" : "ACCreate@Customer"
+                },
+                "addSeparator" : false,
+                "showCaption" : true,
+                "showIcon" : true
+              } ]
+            },
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
+            "valueItemName" : "formitem17",
+            "enableAC" : true,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem17",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitem17",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitem17",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem17",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "数据链接",
+          "codeName" : "formitem33",
+          "createDV" : "上海客户",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 400.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem33",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "LINKVIEW" : "TRUE",
+              "AC" : "TRUE",
+              "TRIGGER" : "FALSE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_LINK",
+            "editorWidth" : 200.0,
+            "handlerType" : "PickupText",
+            "getLinkPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerEditView.json",
+              "viewType" : "DEEDITVIEW"
+            },
+            "name" : "formitem33",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPSUIActionGroup" : {
+              "codeName" : "Auto1",
+              "name" : "自动填充",
+              "getPSUIActionGroupDetails" : [ {
+                "detailType" : "DEUIACTION",
+                "name" : "u016ca55",
+                "getPSUIAction" : {
+                  "actionTarget" : "NONE",
+                  "caption" : "新建",
+                  "codeName" : "ACCreate",
+                  "getFrontPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                    "viewType" : "DEOPTVIEW"
+                  },
+                  "frontProcessType" : "WIZARD",
+                  "fullCodeName" : "Customer_ACCreate",
+                  "name" : "自动填充-新建",
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+                  },
+                  "getPSSysImage" : {
+                    "glyph" : "xf044@FontAwesome",
+                    "cssClass" : "fa fa-edit"
+                  },
+                  "timeout" : 60000,
+                  "uIActionMode" : "FRONT",
+                  "uIActionTag" : "ACCreate",
+                  "uIActionType" : "DEUIACTION",
+                  "id" : "ACCreate@Customer"
+                },
+                "addSeparator" : false,
+                "showCaption" : true,
+                "showIcon" : true
+              } ]
+            },
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
+            "valueItemName" : "formitem39",
+            "enableAC" : true,
+            "enableLinkView" : true,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : false,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem39",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitem39",
+          "createDV" : "DE3C6025-4356-4AAF-8278-55E8C1E6DA31",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitem39",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem39",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "无AC",
+          "codeName" : "formitem32",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 400.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem32",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_NOAC",
+            "editorWidth" : 200.0,
+            "handlerType" : "PickupText",
+            "name" : "formitem32",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
+            "valueItemName" : "formitem40",
+            "enableAC" : false,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem40",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitem40",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitem40",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem40",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "无AC、数据链接",
+          "codeName" : "formitem31",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 400.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem31",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "LINKVIEW" : "TRUE",
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_NOAC_LINK",
+            "editorWidth" : 200.0,
+            "handlerType" : "PickupText",
+            "getLinkPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerEditView.json",
+              "viewType" : "DEEDITVIEW"
+            },
+            "name" : "formitem31",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
+            "valueItemName" : "formitem36",
+            "enableAC" : false,
+            "enableLinkView" : true,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem36",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitem36",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitem36",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem36",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "下拉",
+          "codeName" : "formitem30",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 400.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem30",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "DROPDOWNVIEW" : "TRUE",
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_DROPDOWNVIEW",
+            "editorWidth" : 200.0,
+            "handlerType" : "PickupText",
+            "name" : "formitem30",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
+            "valueItemName" : "formitem41",
+            "dropDownView" : true,
+            "enableAC" : false,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem41",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitem41",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitem41",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem41",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "下拉、数据链接",
+          "codeName" : "formitem35",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 400.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem35",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "LINKVIEW" : "TRUE",
+              "AC" : "TRUE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "FALSE"
+            },
+            "editorType" : "PICKEREX_TRIGGER_LINK",
+            "editorWidth" : 200.0,
+            "handlerType" : "PickupText",
+            "getLinkPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerEditView.json",
+              "viewType" : "DEEDITVIEW"
+            },
+            "name" : "formitem35",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPSUIActionGroup" : {
+              "codeName" : "Auto1",
+              "name" : "自动填充",
+              "getPSUIActionGroupDetails" : [ {
+                "detailType" : "DEUIACTION",
+                "name" : "u016ca55",
+                "getPSUIAction" : {
+                  "actionTarget" : "NONE",
+                  "caption" : "新建",
+                  "codeName" : "ACCreate",
+                  "getFrontPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                    "viewType" : "DEOPTVIEW"
+                  },
+                  "frontProcessType" : "WIZARD",
+                  "fullCodeName" : "Customer_ACCreate",
+                  "name" : "自动填充-新建",
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+                  },
+                  "getPSSysImage" : {
+                    "glyph" : "xf044@FontAwesome",
+                    "cssClass" : "fa fa-edit"
+                  },
+                  "timeout" : 60000,
+                  "uIActionMode" : "FRONT",
+                  "uIActionTag" : "ACCreate",
+                  "uIActionType" : "DEUIACTION",
+                  "id" : "ACCreate@Customer"
+                },
+                "addSeparator" : false,
+                "showCaption" : true,
+                "showIcon" : true
+              } ]
+            },
+            "valueItemName" : "formitem42",
+            "enableAC" : true,
+            "enableLinkView" : true,
+            "enablePickupView" : false,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem42",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitem42",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitem42",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem42",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "无按钮",
+          "codeName" : "formitem37",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 400.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem37",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "AC" : "TRUE",
+              "TRIGGER" : "FALSE",
+              "PICKUPVIEW" : "FALSE"
+            },
+            "editorType" : "PICKEREX_NOBUTTON",
+            "editorWidth" : 200.0,
+            "handlerType" : "PickupText",
+            "name" : "formitem37",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPSUIActionGroup" : {
+              "codeName" : "Auto1",
+              "name" : "自动填充",
+              "getPSUIActionGroupDetails" : [ {
+                "detailType" : "DEUIACTION",
+                "name" : "u016ca55",
+                "getPSUIAction" : {
+                  "actionTarget" : "NONE",
+                  "caption" : "新建",
+                  "codeName" : "ACCreate",
+                  "getFrontPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerOptionView.json",
+                    "viewType" : "DEOPTVIEW"
+                  },
+                  "frontProcessType" : "WIZARD",
+                  "fullCodeName" : "Customer_ACCreate",
+                  "name" : "自动填充-新建",
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+                  },
+                  "getPSSysImage" : {
+                    "glyph" : "xf044@FontAwesome",
+                    "cssClass" : "fa fa-edit"
+                  },
+                  "timeout" : 60000,
+                  "uIActionMode" : "FRONT",
+                  "uIActionTag" : "ACCreate",
+                  "uIActionType" : "DEUIACTION",
+                  "id" : "ACCreate@Customer"
+                },
+                "addSeparator" : false,
+                "showCaption" : true,
+                "showIcon" : true
+              } ]
+            },
+            "valueItemName" : "formitem43",
+            "enableAC" : true,
+            "enablePickupView" : false,
+            "forceSelection" : true,
+            "showTrigger" : false,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem43",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitem43",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitem43",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem43",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "下拉视图",
+          "codeName" : "formitem38",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem38",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "DROPDOWNVIEW" : "TRUE",
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_DROPDOWNVIEW",
+            "handlerType" : "PickupText",
+            "name" : "formitem38",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
+            "valueItemName" : "formitem44",
+            "dropDownView" : true,
+            "enableAC" : false,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem44",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitem44",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitem44",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem44",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "下拉树视图",
+          "codeName" : "formitem61",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem61",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "DROPDOWNVIEW" : "TRUE",
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_DROPDOWNVIEW",
+            "handlerType" : "PickupText",
+            "name" : "formitem61",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+            },
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrgDataOrgDataPickupTreeView.json",
+              "viewType" : "DEPICKUPTREEVIEW"
+            },
+            "valueItemName" : "formitem62",
+            "dropDownView" : true,
+            "enableAC" : false,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem62",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitem62",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitem62",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem62",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "下拉视图、数据链接",
+          "codeName" : "formitem34",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem34",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "DROPDOWNVIEW" : "TRUE",
+              "LINKVIEW" : "TRUE",
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_DROPDOWNVIEW_LINK",
+            "handlerType" : "PickupText",
+            "getLinkPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerEditView.json",
+              "viewType" : "DEEDITVIEW"
+            },
+            "name" : "formitem34",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+            },
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
+            "valueItemName" : "formitem45",
+            "dropDownView" : true,
+            "enableAC" : false,
+            "enableLinkView" : true,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem45",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitem45",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitem45",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem45",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "嵌入选择视图",
+          "codeName" : "formitem16",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemHeight" : 300.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem16",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "FIELD",
+            "codeName" : "Field"
+          },
+          "getPSEditor" : {
+            "editorHeight" : 300.0,
+            "editorType" : "PICKUPVIEW",
+            "name" : "formitem16",
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CategorySinglePickupGridView.json",
+              "viewType" : "DEPICKUPGRIDVIEW"
+            },
+            "valueItemName" : "formitem46"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 24,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem46",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitem46",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitem46",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem46",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 24,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true
+        }, {
+          "caption" : "数据多选",
+          "codeName" : "formitem13",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem13",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "ADDRESSPICKUP",
+            "name" : "formitem13",
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerMPickupView.json",
+              "viewType" : "DEMPICKUPVIEW"
+            },
+            "enableAC" : false,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 24,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : true
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "直接内容",
+        "codeName" : "grouppanel6",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel6",
+        "getPSDEFormDetails" : [ {
+          "codeName" : "rawitem1",
+          "contentType" : "RAW",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "RAWITEM",
+          "name" : "rawitem1",
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysCss" : {
+            "cssName" : "el-alert el-alert--info is-light"
+          },
+          "rawContent" : "直接内容编辑器一般用于面板绘制呈现",
+          "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
+          "showCaption" : true
+        }, {
+          "caption" : "直接内容（RAW）",
+          "codeName" : "formitem57",
+          "createDV" : "<B>ABC</B>",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem57",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "CONTENTTYPE" : "RAW"
+            },
+            "editorType" : "RAW",
+            "name" : "formitem57"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "直接内容（HTML）",
+          "codeName" : "formitem58",
+          "createDV" : "<B>ABC</B>",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem58",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "contentType" : "HTML",
+            "editorParams" : {
+              "CONTENTTYPE" : "HTML"
+            },
+            "editorType" : "RAW",
+            "name" : "formitem58"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "直接内容（IMAGE）",
+          "codeName" : "formitem59",
+          "createDV" : "https://www.ibizsys.cn/imgs/ibizlogo.svg",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemHeight" : 200.0,
+          "itemWidth" : 400.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem59",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "contentType" : "IMAGE",
+            "editorHeight" : 200.0,
+            "editorParams" : {
+              "CONTENTTYPE" : "IMAGE"
+            },
+            "editorType" : "RAW",
+            "editorWidth" : 200.0,
+            "name" : "formitem59"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "直接内容（MARKDOWN）",
+          "codeName" : "formitem60",
+          "createDV" : "<B>ABC</B>",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem60",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "contentType" : "MARKDOWN",
+            "editorParams" : {
+              "CONTENTTYPE" : "MARKDOWN"
+            },
+            "editorType" : "RAW",
+            "name" : "formitem60"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : true
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "高级",
+        "codeName" : "grouppanel1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel1",
+        "getPSDEFormDetails" : [ {
+          "caption" : "IP地址",
+          "codeName" : "formitem25",
+          "createDV" : "172.16.100.32",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem25",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "IPADDRESSTEXTBOX",
+            "name" : "formitem25"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "HTML编辑框",
+          "codeName" : "formitem18",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem18",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "HTMLEDITOR",
+            "name" : "formitem18"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "代码编辑框",
+          "codeName" : "formitem55",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem55",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "CODE",
+            "name" : "formitem55",
+            "showMaxLength" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "MD编辑器（预览）",
+          "codeName" : "formitem54",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem54",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "MODE" : "PREVIEW"
+            },
+            "editorType" : "MARKDOWN",
+            "mode" : "PREVIEW",
+            "name" : "formitem54",
+            "showMaxLength" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "MD编辑器（编辑）",
+          "codeName" : "formitem53",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem53",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "MODE" : "EDIT"
+            },
+            "editorType" : "MARKDOWN",
+            "mode" : "EDIT",
+            "name" : "formitem53",
+            "showMaxLength" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "MD编辑器（即时预览）",
+          "codeName" : "formitem56",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem56",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "MODE" : "SUBFIELD"
+            },
+            "editorType" : "MARKDOWN",
+            "mode" : "SUBFIELD",
+            "name" : "formitem56",
+            "showMaxLength" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "tabHeaderPos" : "TOP",
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "noTabHeader" : true,
+    "name" : "form",
+    "modelid" : "0CC8B1E5-2284-4F1D-8414-DD7BECCA4D96",
+    "modeltype" : "PSDEFORM_EDITFORM"
+  } ],
+  "getPSDEViewCodeName" : "EditorEditView",
+  "getPSDEViewId" : "86E37DCB-67C1-4824-A755-12166FD703DC",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEEDITVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "示例编辑视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEEDITVIEW",
+  "xDataControlName" : "form",
+  "enableDP" : true,
+  "showCaptionBar" : false,
+  "showDataInfoBar" : true,
+  "modelid" : "02233b1818eb9ae110c99031c5fa4650",
+  "modeltype" : "PSAPPDEVIEW"
+}

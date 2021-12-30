@@ -1,0 +1,53 @@
+{
+  "codeName" : "LeaveApplication",
+  "dynaModelFilePath" : "PSMODULES/Sample/PSWORKFLOWS/LeaveApplication.json",
+  "logicName" : "请假申请流程",
+  "name" : "请假申请流程",
+  "getPSSystemModule" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample.json"
+  },
+  "getPSWFDEs" : [ {
+    "codeName" : "LeaveApplication",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSWFDES/LeaveApplication.json",
+    "getEntityStatePSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSCODELISTS/LeaveApplicationState.json"
+    },
+    "name" : "LEAVEAPPLICATION",
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication.json"
+    },
+    "getPSWorkflow" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSWORKFLOWS/LeaveApplication.json"
+    },
+    "getUDStatePSDEField" : {
+      "name" : "STATE",
+      "codeName" : "State"
+    },
+    "wFProxyMode" : 0,
+    "getWFStepPSDEField" : {
+      "name" : "STEP",
+      "codeName" : "Step"
+    },
+    "defaultMode" : true,
+    "enableUserStart" : true,
+    "useWFProxyApp" : false
+  } ],
+  "getPSWFVersions" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample/PSWORKFLOWS/LeaveApplication/PSWFVERSIONS/LeaveApplicationv1.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample/PSWORKFLOWS/LeaveApplication/PSWFVERSIONS/LeaveApplicationv2.json"
+  } ],
+  "wFEngineCat" : "ACTIVITI",
+  "wFEngineType" : "ACTIVITI",
+  "wFProxyMode" : 0,
+  "wFType" : "DEFAULT",
+  "useRemoteEngine" : false,
+  "useWFProxyApp" : false,
+  "valid" : true
+}

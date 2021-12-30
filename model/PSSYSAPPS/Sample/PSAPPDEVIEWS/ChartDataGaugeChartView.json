@@ -1,0 +1,227 @@
+{
+  "accUserMode" : 2,
+  "caption" : "图表实体图表视图（仪表盘）",
+  "codeName" : "ChartDataGaugeChartView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataGaugeChartView.json",
+  "name" : "ChartDataGaugeChartView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "ChartView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "chart",
+      "name" : "CHART",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "GaugeChart",
+    "controlType" : "CHART",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSCHARTS/GaugeChart.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
+    "logicName" : "GaugeChart",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSChartCoordinateSystems" : [ {
+      "eChartsType" : "none",
+      "index" : 0,
+      "name" : "[Gauge]无坐标系[0]",
+      "type" : "NONE",
+      "id" : "0"
+    } ],
+    "getPSChartDataSetGroups" : [ {
+      "index" : 0,
+      "name" : "DEFAULT",
+      "id" : "0"
+    } ],
+    "getPSChartDataSets" : [ {
+      "index" : 0,
+      "name" : "Gauge-DEFAULT",
+      "getPSChartDataSetFields" : [ {
+        "index" : 0,
+        "name" : "datatype",
+        "getPSCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/DataType.json"
+        },
+        "groupField" : true,
+        "id" : "0"
+      }, {
+        "index" : 1,
+        "name" : "data",
+        "groupField" : false,
+        "id" : "1"
+      } ],
+      "id" : "0"
+    } ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "图形控件处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;BEFORELOAD",
+      "logicTag" : "chart",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_chart",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "CHART"
+    },
+    "getPSDEChartLegend" : {
+      "index" : 0,
+      "showLegend" : true,
+      "id" : "0"
+    },
+    "getPSDEChartSerieses" : [ {
+      "caption" : "仪表盘",
+      "catalogField" : "datatype",
+      "getCatalogPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/DataType.json"
+      },
+      "eChartsType" : "gauge",
+      "index" : 0,
+      "name" : "Gauge",
+      "getPSChartCoordinateSystem" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartDataSet" : {
+        "modelref" : true,
+        "id" : "0"
+      },
+      "getPSChartSeriesEncode" : {
+        "category" : "datatype",
+        "index" : 0,
+        "name" : "坐标系编码",
+        "type" : "NONE",
+        "value" : "data",
+        "id" : "0"
+      },
+      "seriesLayoutBy" : "column",
+      "seriesType" : "gauge",
+      "valueField" : "data",
+      "clockwise" : true,
+      "enableChartDataSet" : true
+    } ],
+    "getPSDEChartTitle" : {
+      "index" : 0,
+      "title" : "仪表盘",
+      "showTitle" : true,
+      "id" : "0"
+    },
+    "readOnly" : true,
+    "name" : "chart",
+    "modelid" : "636B8CF4-986E-4F16-A528-2EFA233C7D28",
+    "modeltype" : "PSDECHART"
+  } ],
+  "getPSDEViewCodeName" : "GaugeChartView",
+  "getPSDEViewId" : "0D1479AC-C722-4839-AA2B-9CB2107B0A8B",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDECHARTVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "图表视图（仪表盘）",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DECHARTVIEW",
+  "enableDP" : true,
+  "enableQuickGroup" : false,
+  "enableQuickSearch" : false,
+  "enableSearch" : false,
+  "expandSearchForm" : false,
+  "loadDefault" : true,
+  "showCaptionBar" : false,
+  "modelid" : "a78e551f853431e1fe09f2ddac5afdf8",
+  "modeltype" : "PSAPPDEVIEW"
+}

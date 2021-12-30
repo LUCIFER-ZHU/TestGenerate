@@ -1,0 +1,200 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "文本属性",
+    "codeName" : "textfield",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "textfield",
+    "excelCaption" : "文本属性",
+    "name" : "textfield",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "TEXTFIELD",
+      "codeName" : "Textfield"
+    },
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "时间属性",
+    "codeName" : "timefield",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "timefield",
+    "excelCaption" : "时间属性",
+    "name" : "timefield",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "TIMEFIELD",
+      "codeName" : "Timefield"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "数值属性",
+    "codeName" : "numfield",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "numfield",
+    "excelCaption" : "数值属性",
+    "name" : "numfield",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "NUMFIELD",
+      "codeName" : "Numfield"
+    },
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "下一步表单",
+    "codeName" : "srfnextform",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "srfnextform",
+    "excelCaption" : "下一步表单",
+    "name" : "srfnextform",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/NextForm.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "SRFNEXTFORM",
+      "codeName" : "Srfnextform"
+    },
+    "width" : 1,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "timefield",
+    "getPSAppDEField" : {
+      "name" : "TIMEFIELD",
+      "codeName" : "Timefield"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "textfield",
+    "getPSAppDEField" : {
+      "name" : "TEXTFIELD",
+      "codeName" : "Textfield"
+    }
+  }, {
+    "dataType" : 6,
+    "name" : "numfield",
+    "getPSAppDEField" : {
+      "name" : "NUMFIELD",
+      "codeName" : "Numfield"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfnextform",
+    "getPSAppDEField" : {
+      "name" : "SRFNEXTFORM",
+      "codeName" : "Srfnextform"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "WIZARDDATANAME",
+      "codeName" : "WizardDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "WIZARDDATAID",
+      "codeName" : "WizardDataId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "WIZARDDATAID",
+      "codeName" : "WizardDataId"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "向导数据标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "WIZARDDATAID",
+      "codeName" : "WizardDataId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "c5a686b5ba9d89fe01e39ee6a01c1b8d",
+  "modeltype" : "PSDEGRID"
+}

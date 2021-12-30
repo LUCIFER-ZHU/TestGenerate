@@ -1,0 +1,37 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CATEGORYID`",
+    "name" : "CATEGORYID"
+  }, {
+    "expression" : "t1.`CATEGORYNAME`",
+    "name" : "CATEGORYNAME"
+  }, {
+    "expression" : "t1.`CATEGORYNAMEPATH`",
+    "name" : "CATEGORYNAMEPATH"
+  }, {
+    "expression" : "t1.`CATEGORYPATH`",
+    "name" : "CATEGORYPATH"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`PCATEGORYID`",
+    "name" : "PCATEGORYID"
+  }, {
+    "expression" : "t11.`CATEGORYNAME`",
+    "name" : "PCATEGORYNAME"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CATEGORYID`,\nt1.`CATEGORYNAME`,\nt1.`CATEGORYNAMEPATH`,\nt1.`CATEGORYPATH`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`PCATEGORYID`,\nt11.`CATEGORYNAME` AS `PCATEGORYNAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_CATEGORY` t1 \nLEFT JOIN `T_CATEGORY` t11 ON t1.`PCATEGORYID` = t11.`CATEGORYID` \n",
+  "id" : "PSMODULES/Sample/PSDATAENTITIES/Category/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

@@ -1,0 +1,335 @@
+{
+  "accUserMode" : 2,
+  "caption" : "组织数据",
+  "codeName" : "OrgDataOrgDataTreeView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrgDataOrgDataTreeView.json",
+  "mDCtrlActiveMode" : 2,
+  "name" : "OrgDataOrgDataTreeView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "TreeView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "tree",
+      "name" : "TREE",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "OrgDataTree",
+    "controlType" : "TREEVIEW",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData/PSTREEVIEWS/OrgDataTree.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+    "logicName" : "组织数据树",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "树视图处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD",
+      "logicTag" : "tree",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_tree",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "TREE"
+    },
+    "getPSDETreeNodeRSs" : [ {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "Sorg"
+      },
+      "name" : "子组织 - 子组织",
+      "getParentPSAppDEField" : {
+        "name" : "PORGDATAID",
+        "codeName" : "Porgdataid"
+      },
+      "getParentPSDER1N" : {
+        "codeName" : "POrgData",
+        "dERType" : "DER1N",
+        "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/OrgData/PSDERS/DER1N_ORGDATA_ORGDATA_PORGDATAID.json",
+        "logicName" : "父级组织",
+        "masterOrder" : -1,
+        "masterRS" : 0,
+        "name" : "DER1N_ORGDATA_ORGDATA_PORGDATAID",
+        "orderValue" : 100,
+        "pickupDEFName" : "PORGDATAID",
+        "removeActionType" : -1,
+        "removeOrder" : 0
+      },
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "Sorg"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "Sorg"
+      },
+      "name" : "根组织 - 子组织",
+      "getParentPSAppDEField" : {
+        "name" : "PORGDATAID",
+        "codeName" : "Porgdataid"
+      },
+      "getParentPSDER1N" : {
+        "codeName" : "POrgData",
+        "dERType" : "DER1N",
+        "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/OrgData/PSDERS/DER1N_ORGDATA_ORGDATA_PORGDATAID.json",
+        "logicName" : "父级组织",
+        "masterOrder" : -1,
+        "masterRS" : 0,
+        "name" : "DER1N_ORGDATA_ORGDATA_PORGDATAID",
+        "orderValue" : 100,
+        "pickupDEFName" : "PORGDATAID",
+        "removeActionType" : -1,
+        "removeOrder" : 0
+      },
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "RootOrg"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "RootOrg"
+      },
+      "name" : "默认根节点 - 根组织",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ROOT"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 2
+    } ],
+    "getPSDETreeNodes" : [ {
+      "counterMode" : 0,
+      "name" : "默认根节点",
+      "nodeType" : "ROOT",
+      "nodeValue" : "root",
+      "text" : "默认根节点",
+      "treeNodeType" : "STATIC",
+      "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : true,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : false,
+      "rootNode" : true,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "ROOT"
+    }, {
+      "counterMode" : 0,
+      "getIdPSAppDEField" : {
+        "name" : "ORGDATAID",
+        "codeName" : "OrgDataId"
+      },
+      "maxSize" : -1,
+      "name" : "子组织",
+      "nodeType" : "Sorg",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+      },
+      "getTextPSAppDEField" : {
+        "name" : "ORGDATANAME",
+        "codeName" : "OrgDataName"
+      },
+      "treeNodeType" : "DE",
+      "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : true,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : false,
+      "expanded" : false,
+      "rootNode" : false,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "Sorg"
+    }, {
+      "counterMode" : 0,
+      "getIdPSAppDEField" : {
+        "name" : "ORGDATAID",
+        "codeName" : "OrgDataId"
+      },
+      "maxSize" : -1,
+      "name" : "根组织",
+      "nodeType" : "RootOrg",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchPORGDATA"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+      },
+      "getTextPSAppDEField" : {
+        "name" : "ORGDATANAME",
+        "codeName" : "OrgDataName"
+      },
+      "treeNodeType" : "DE",
+      "hasPSDETreeNodeRSs" : true,
+      "appendPNodeId" : false,
+      "disableSelect" : false,
+      "enableCheck" : false,
+      "enableEditData" : false,
+      "enableNewData" : false,
+      "enableQuickCreate" : false,
+      "enableQuickSearch" : true,
+      "enableRemoveData" : false,
+      "enableViewData" : false,
+      "expandFirstOnly" : true,
+      "expanded" : true,
+      "rootNode" : false,
+      "selectFirstOnly" : false,
+      "selected" : false,
+      "id" : "RootOrg"
+    } ],
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "treeGridMode" : 0,
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "enableRootSelect" : false,
+    "outputIconDefault" : true,
+    "rootVisible" : false,
+    "name" : "tree",
+    "modelid" : "60CFB2A6-4261-4E45-9748-FB2BF8C48CAD",
+    "modeltype" : "PSDETREEVIEW"
+  } ],
+  "getPSDEViewCodeName" : "OrgDataTreeView",
+  "getPSDEViewId" : "682FE91E-5E27-440E-BEC3-8CF24A717BF8",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDETREEVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "组织数据树视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DETREEVIEW",
+  "xDataControlName" : "tree",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "modelid" : "784c0a31d9ed5dfb101e59fabe927cc1",
+  "modeltype" : "PSAPPDEVIEW"
+}

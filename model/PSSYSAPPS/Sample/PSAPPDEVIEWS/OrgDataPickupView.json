@@ -1,0 +1,478 @@
+{
+  "accUserMode" : 2,
+  "caption" : "组织数据",
+  "codeName" : "OrgDataPickupView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrgDataPickupView.json",
+  "funcViewMode" : "PICKUPVIEW",
+  "name" : "OrgDataPickupView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "PickupView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "pickupviewpanel",
+      "name" : "PICKUPVIEWPANEL",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "PickupViewpickupviewpanel",
+    "controlType" : "PICKUPVIEWPANEL",
+    "getEmbeddedPSAppDEView" : {
+      "accUserMode" : 2,
+      "caption" : "组织数据",
+      "codeName" : "OrgDataPickupGridView",
+      "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrgDataPickupGridView.json",
+      "gridRowActiveMode" : 2,
+      "name" : "OrgDataPickupGridView",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+      },
+      "getPSAppViewEngines" : [ {
+        "engineCat" : "VIEW",
+        "engineType" : "PickupGridView",
+        "name" : "engine",
+        "getPSUIEngineParams" : [ {
+          "ctrlName" : "grid",
+          "name" : "GRID",
+          "paramType" : "CTRL"
+        }, {
+          "ctrlName" : "searchform",
+          "name" : "SEARCHFORM",
+          "paramType" : "CTRL"
+        } ]
+      } ],
+      "getPSControls" : [ {
+        "aggMode" : "NONE",
+        "codeName" : "Main",
+        "columnEnableLink" : 2,
+        "controlType" : "GRID",
+        "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData/PSGRIDS/Main.json",
+        "getFetchPSControlAction" : {
+          "modelref" : true,
+          "id" : "fetch"
+        },
+        "groupMode" : "NONE",
+        "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
+        "logicName" : "主表格",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+        },
+        "getPSControlHandler" : {
+          "getPSHandlerActions" : [ {
+            "actionName" : "Update",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "UPDATE",
+            "name" : "update",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+            }
+          }, {
+            "actionType" : "DEDATASET",
+            "name" : "fetch",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+            }
+          }, {
+            "actionName" : "Remove",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "DELETE",
+            "name" : "remove",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+            }
+          }, {
+            "actionName" : "Get",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "READ",
+            "name" : "load",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+            }
+          }, {
+            "actionName" : "GetDraft",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "CREATE",
+            "name" : "loaddraft",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "GetDraft"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+            }
+          }, {
+            "actionName" : "Create",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "CREATE",
+            "name" : "create",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+            }
+          } ],
+          "userDRAction" : "READ",
+          "enableDEFieldPrivilege" : false,
+          "id" : "数据表格处理器"
+        },
+        "getPSControlLogics" : [ {
+          "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;LOAD;BEFORELOAD",
+          "logicTag" : "grid",
+          "logicType" : "APPVIEWENGINE",
+          "name" : "engine_grid",
+          "getPSAppViewEngine" : {
+            "modelref" : true,
+            "id" : "engine"
+          }
+        } ],
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "id" : "GRID"
+        },
+        "getPSDEGridColumns" : [ {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "组织名称",
+          "codeName" : "orgdataname",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "orgdataname",
+          "excelCaption" : "组织名称",
+          "name" : "orgdataname",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ORGDATANAME",
+            "codeName" : "OrgDataName"
+          },
+          "width" : 200,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "组织编码",
+          "codeName" : "orgdatacode",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "orgdatacode",
+          "excelCaption" : "组织编码",
+          "name" : "orgdatacode",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ORGDATACODE",
+            "codeName" : "Orgdatacode"
+          },
+          "width" : 200,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        }, {
+          "align" : "LEFT",
+          "cLConvertMode" : "NONE",
+          "caption" : "父级组织",
+          "codeName" : "porgdataname",
+          "columnType" : "DEFGRIDCOLUMN",
+          "dataItemName" : "porgdataname",
+          "excelCaption" : "父级组织",
+          "name" : "porgdataname",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "PORGDATANAME",
+            "codeName" : "Porgdataname"
+          },
+          "width" : 200,
+          "widthUnit" : "PX",
+          "enableSort" : true
+        } ],
+        "getPSDEGridDataItems" : [ {
+          "dataType" : 25,
+          "name" : "porgdataname",
+          "getPSAppDEField" : {
+            "name" : "PORGDATANAME",
+            "codeName" : "Porgdataname"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "orgdataname",
+          "getPSAppDEField" : {
+            "name" : "ORGDATANAME",
+            "codeName" : "OrgDataName"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "porgdataid",
+          "getPSAppDEField" : {
+            "name" : "PORGDATAID",
+            "codeName" : "Porgdataid"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "orgdatacode",
+          "getPSAppDEField" : {
+            "name" : "ORGDATACODE",
+            "codeName" : "Orgdatacode"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfmajortext",
+          "getPSAppDEField" : {
+            "name" : "ORGDATANAME",
+            "codeName" : "OrgDataName"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfdataaccaction",
+          "getPSAppDEField" : {
+            "name" : "ORGDATAID",
+            "codeName" : "OrgDataId"
+          },
+          "dataAccessAction" : true
+        }, {
+          "dataType" : 25,
+          "name" : "srfkey",
+          "getPSAppDEField" : {
+            "name" : "ORGDATAID",
+            "codeName" : "OrgDataId"
+          }
+        } ],
+        "getPSDEGridEditItems" : [ {
+          "caption" : "组织数据标识",
+          "codeName" : "srfkey",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "name" : "srfkey",
+          "getPSAppDEField" : {
+            "name" : "ORGDATAID",
+            "codeName" : "OrgDataId"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "srfkey"
+          },
+          "allowEmpty" : true
+        } ],
+        "pagingSize" : 20,
+        "getRemovePSControlAction" : {
+          "actionName" : "Remove",
+          "actionType" : "DEACTION",
+          "dataAccessAction" : "DELETE",
+          "name" : "remove",
+          "getPSAppDEMethod" : {
+            "modelref" : true,
+            "id" : "Remove"
+          },
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+          }
+        },
+        "sortMode" : "REMOTE",
+        "hasWFDataItems" : false,
+        "enableColFilter" : false,
+        "enableCustomized" : true,
+        "enableGroup" : false,
+        "enablePagingBar" : true,
+        "enableRowEdit" : false,
+        "enableRowEditOrder" : false,
+        "enableRowNew" : false,
+        "forceFit" : false,
+        "hideHeader" : false,
+        "noSort" : false,
+        "singleSelect" : false,
+        "name" : "grid",
+        "modelid" : "8e18dc8fd7f7ba50ffac8fbca0d4ff24",
+        "modeltype" : "PSDEGRID"
+      }, {
+        "codeName" : "Default",
+        "controlType" : "SEARCHFORM",
+        "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData/PSSEARCHFORMS/Default.json",
+        "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+        "logicName" : "默认搜索表单",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+        },
+        "getPSControlHandler" : {
+          "getPSHandlerActions" : [ {
+            "actionType" : "FILTERACTION",
+            "name" : "search",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FilterSearch"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+            }
+          }, {
+            "actionType" : "FILTERACTION",
+            "name" : "load",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FilterGet"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+            }
+          }, {
+            "actionType" : "FILTERACTION",
+            "name" : "loaddraft",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FilterGetDraft"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+            }
+          } ],
+          "enableDEFieldPrivilege" : false,
+          "id" : "搜索表单处理器"
+        },
+        "getPSControlLogics" : [ {
+          "eventNames" : "SEARCH;LOAD;SAVE",
+          "logicTag" : "searchform",
+          "logicType" : "APPVIEWENGINE",
+          "name" : "engine_searchform",
+          "getPSAppViewEngine" : {
+            "modelref" : true,
+            "id" : "engine"
+          }
+        } ],
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "id" : "SEARCHFORM"
+        },
+        "getPSDEFormPages" : [ {
+          "caption" : "常规条件",
+          "codeName" : "formpage1",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMPAGE",
+          "name" : "formpage1",
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "searchButtonStyle" : "DEFAULT",
+        "tabHeaderPos" : "TOP",
+        "enableAdvanceSearch" : false,
+        "enableAutoSearch" : false,
+        "enableFilterSave" : false,
+        "noTabHeader" : true,
+        "name" : "searchform",
+        "modelid" : "b27629e3b722b917b0392b19a55cc561",
+        "modeltype" : "PSDEFORM_SEARCHFORM"
+      } ],
+      "getPSDEViewCodeName" : "PickupGridView",
+      "getPSDEViewId" : "d79e0e6632c81b4bd5f07991a70a0353",
+      "getPSViewLayoutPanel" : {
+        "codeName" : "Layoutpanel",
+        "controlStyle" : "APPDEPICKUPGRIDVIEW",
+        "controlType" : "VIEWLAYOUTPANEL",
+        "name" : "layoutpanel",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+        },
+        "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
+        "layoutPanel" : true,
+        "useDefaultLayout" : true
+      },
+      "title" : "组织数据选择表格视图",
+      "viewStyle" : "DEFAULT",
+      "viewType" : "DEPICKUPGRIDVIEW",
+      "xDataControlName" : "grid",
+      "enableDP" : true,
+      "enableExport" : true,
+      "enableFilter" : true,
+      "enableImport" : true,
+      "enableRowEdit" : false,
+      "enableSearch" : true,
+      "expandSearchForm" : true,
+      "pickupMode" : true,
+      "rowEditDefault" : false,
+      "modelid" : "d314bdb1635f55f6a0bd9002ff69b3a7",
+      "modeltype" : "PSAPPDEVIEW"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "name" : "pickupviewpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD;ACTIVATED",
+      "logicTag" : "pickupviewpanel",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_pickupviewpanel",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "PICKUPVIEWPANEL"
+    }
+  } ],
+  "getPSDEViewCodeName" : "PickupView",
+  "getPSDEViewId" : "021303eccb19e62a6a835b853c792ee6",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEPICKUPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "组织数据数据选择视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEPICKUPVIEW",
+  "enableDP" : true,
+  "showCaptionBar" : false,
+  "modelid" : "645450286483bbbadb3054ec5dc1af71",
+  "modeltype" : "PSAPPDEVIEW"
+}

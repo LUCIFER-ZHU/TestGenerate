@@ -1,0 +1,431 @@
+{
+  "accUserMode" : 2,
+  "caption" : "图表",
+  "codeName" : "ChartDataMobPickupView",
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ChartDataMobPickupView.json",
+  "name" : "ChartDataMobPickupView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "MobPickupView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "pickupviewpanel",
+      "name" : "PICKUPVIEWPANEL",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "MobPickupViewpickupviewpanel",
+    "controlType" : "PICKUPVIEWPANEL",
+    "getEmbeddedPSAppDEView" : {
+      "accUserMode" : 2,
+      "caption" : "图表",
+      "codeName" : "ChartDataMobMDView",
+      "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ChartDataMobMDView.json",
+      "name" : "ChartDataMobMDView",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSAppViewEngines" : [ {
+        "engineCat" : "VIEW",
+        "engineType" : "MobMDView",
+        "name" : "engine",
+        "getPSUIEngineParams" : [ {
+          "appViewLogicName" : "opendata",
+          "name" : "OPENDATA",
+          "paramType" : "LOGIC"
+        }, {
+          "ctrlName" : "mdctrl",
+          "name" : "MDCTRL",
+          "paramType" : "CTRL"
+        }, {
+          "appViewLogicName" : "newdata",
+          "name" : "NEWDATA",
+          "paramType" : "LOGIC"
+        } ]
+      } ],
+      "getPSAppViewLogics" : [ {
+        "logicTrigger" : "CUSTOM",
+        "logicType" : "SYSUILOGIC",
+        "name" : "newdata",
+        "getPSAppUILogic" : {
+          "actionAfterWizard" : "DEFAULT",
+          "logicType" : "PREDEFINED",
+          "name" : "新建数据",
+          "viewLogicType" : "APP_NEWDATA",
+          "batchAddOnly" : false,
+          "enableBatchAdd" : false,
+          "enableWizardAdd" : false
+        }
+      }, {
+        "logicTrigger" : "CUSTOM",
+        "logicType" : "SYSUILOGIC",
+        "name" : "opendata",
+        "getPSAppUILogic" : {
+          "logicType" : "PREDEFINED",
+          "name" : "打开数据",
+          "viewLogicType" : "APP_OPENDATA",
+          "editMode" : true
+        }
+      } ],
+      "getPSControls" : [ {
+        "codeName" : "MobMDCtrl",
+        "controlStyle" : "LISTVIEW",
+        "controlType" : "MOBMDCTRL",
+        "getCreatePSControlAction" : {
+          "modelref" : true,
+          "id" : "create"
+        },
+        "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData/PSMOBMDCTRLS/MobMDCtrl.json",
+        "getFetchPSControlAction" : {
+          "modelref" : true,
+          "id" : "fetch"
+        },
+        "getGetPSControlAction" : {
+          "modelref" : true,
+          "id" : "load"
+        },
+        "groupMode" : "NONE",
+        "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+        "logicName" : "MobMDCtrl",
+        "mobListStyle" : "LISTVIEW",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "getPSAppViewLogics" : [ {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "APPVIEWUIACTION",
+          "name" : "mdctrl_memo_u9bb1cbc_click",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "移动端编辑"
+          }
+        }, {
+          "logicTrigger" : "CUSTOM",
+          "logicType" : "APPVIEWUIACTION",
+          "name" : "mdctrl_memo_u5125240_click",
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "测试后台界面行为"
+          }
+        } ],
+        "getPSAppViewUIActions" : [ {
+          "name" : "移动端编辑",
+          "getPSUIAction" : {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+            },
+            "modelref" : true,
+            "id" : "MobEdit@ChartData"
+          },
+          "uIActionTarget" : "SINGLEKEY",
+          "xDataControlName" : "mdctrl"
+        }, {
+          "name" : "测试后台界面行为",
+          "getPSUIAction" : {
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+            },
+            "modelref" : true,
+            "id" : "TestBackUIAction@ChartData"
+          },
+          "uIActionTarget" : "SINGLEKEY",
+          "xDataControlName" : "mdctrl"
+        } ],
+        "getPSControlHandler" : {
+          "getPSHandlerActions" : [ {
+            "actionName" : "Update",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "UPDATE",
+            "name" : "update",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Update"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+            }
+          }, {
+            "actionType" : "DEDATASET",
+            "name" : "fetch",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+            }
+          }, {
+            "actionName" : "Remove",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "DELETE",
+            "name" : "remove",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Remove"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+            }
+          }, {
+            "actionName" : "Get",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "READ",
+            "name" : "load",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Get"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+            }
+          }, {
+            "actionName" : "Create",
+            "actionType" : "DEACTION",
+            "dataAccessAction" : "CREATE",
+            "name" : "create",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "Create"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+            }
+          } ],
+          "userDRAction" : "READ",
+          "enableDEFieldPrivilege" : false,
+          "id" : "列表控件处理器"
+        },
+        "getPSControlLogics" : [ {
+          "eventNames" : "ROWCLICK;LOAD;SELECTIONCHANGE;BEFORELOAD",
+          "logicTag" : "mdctrl",
+          "logicType" : "APPVIEWENGINE",
+          "name" : "engine_mdctrl",
+          "getPSAppViewEngine" : {
+            "modelref" : true,
+            "id" : "engine"
+          }
+        } ],
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true,
+          "id" : "MDCTRL"
+        },
+        "getPSDEListDataItems" : [ {
+          "dataType" : 25,
+          "name" : "chartdataid",
+          "getPSAppDEField" : {
+            "name" : "CHARTDATAID",
+            "codeName" : "ChartDataId"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "chartdataname",
+          "getPSAppDEField" : {
+            "name" : "CHARTDATANAME",
+            "codeName" : "ChartDataName"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfkey",
+          "getPSAppDEField" : {
+            "name" : "CHARTDATAID",
+            "codeName" : "ChartDataId"
+          }
+        }, {
+          "dataType" : 25,
+          "name" : "srfmajortext",
+          "getPSAppDEField" : {
+            "name" : "CHARTDATANAME",
+            "codeName" : "ChartDataName"
+          }
+        } ],
+        "getPSDEListItems" : [ {
+          "align" : "LEFT",
+          "dataItemName" : "memo",
+          "itemType" : "ACTIONITEM",
+          "name" : "memo",
+          "getPSDEUIActionGroup" : {
+            "codeName" : "Auto13",
+            "name" : "多数据部件测试左滑行为组",
+            "getPSUIActionGroupDetails" : [ {
+              "detailType" : "DEUIACTION",
+              "name" : "u9bb1cbc",
+              "getPSUIAction" : {
+                "actionTarget" : "SINGLEKEY",
+                "caption" : "移动端编辑",
+                "codeName" : "MobEdit",
+                "getFrontPSAppView" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ChartDataMobEditView.json",
+                  "viewType" : "DEMOBEDITVIEW"
+                },
+                "frontProcessType" : "WIZARD",
+                "fullCodeName" : "ChartData_MobEdit",
+                "name" : "移动端编辑",
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+                },
+                "timeout" : 60000,
+                "uIActionMode" : "FRONT",
+                "uIActionTag" : "MobEdit",
+                "uIActionType" : "DEUIACTION",
+                "id" : "MobEdit@ChartData"
+              },
+              "addSeparator" : false,
+              "showCaption" : true,
+              "showIcon" : true
+            }, {
+              "detailType" : "DEUIACTION",
+              "name" : "u5125240",
+              "getPSUIAction" : {
+                "actionTarget" : "SINGLEKEY",
+                "caption" : "测试后台界面行为",
+                "codeName" : "TestBackUIAction",
+                "fullCodeName" : "ChartData_TestBackUIAction",
+                "name" : "测试后台界面行为",
+                "getPSAppDEMethod" : {
+                  "modelref" : true,
+                  "id" : "TestBackEndAction"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+                },
+                "timeout" : 60000,
+                "uIActionMode" : "BACKEND",
+                "uIActionTag" : "TestBackUIAction",
+                "uIActionType" : "DEUIACTION",
+                "enableConfirm" : true,
+                "id" : "TestBackUIAction@ChartData"
+              },
+              "addSeparator" : false,
+              "showCaption" : true,
+              "showIcon" : true
+            } ]
+          },
+          "width" : 150,
+          "widthString" : "150px",
+          "enableSort" : false
+        } ],
+        "pagingSize" : 1000,
+        "getRemovePSControlAction" : {
+          "modelref" : true,
+          "id" : "remove"
+        },
+        "getUpdatePSControlAction" : {
+          "modelref" : true,
+          "id" : "update"
+        },
+        "hasWFDataItems" : false,
+        "enableGroup" : false,
+        "enableRowEdit" : false,
+        "enableRowEditGroup" : false,
+        "enableRowEditOrder" : false,
+        "enableRowNew" : false,
+        "noSort" : false,
+        "showHeader" : true,
+        "name" : "mdctrl",
+        "modelid" : "9CFC9278-1ABA-4EDA-B4D6-0E3C5361E2CD",
+        "modeltype" : "PSDELIST"
+      }, {
+        "codeName" : "MobMDViewrighttoolbar",
+        "controlType" : "TOOLBAR",
+        "name" : "righttoolbar",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "getPSControlParam" : {
+          "id" : "RIGHTTOOLBAR"
+        },
+        "toolbarStyle" : "MOBNAVRIGHTMENU",
+        "modelid" : "f9e6255dd733c3bebb0b51bc1e27a67a_righttoolbar",
+        "modeltype" : "PSDETOOLBAR"
+      } ],
+      "getPSDEViewCodeName" : "MobMDView",
+      "getPSDEViewId" : "76423226-A357-49EB-A396-32FCE75E1646",
+      "getPSViewLayoutPanel" : {
+        "codeName" : "Layoutpanel",
+        "controlStyle" : "APPDEMOBMDVIEW",
+        "controlType" : "VIEWLAYOUTPANEL",
+        "name" : "layoutpanel",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "getPSControlParam" : { },
+        "layoutBodyOnly" : true,
+        "layoutPanel" : true,
+        "useDefaultLayout" : true
+      },
+      "title" : "图表移动端多数据视图",
+      "viewStyle" : "DEFAULT",
+      "viewType" : "DEMOBMDVIEW",
+      "xDataControlName" : "mdctrl",
+      "enableDP" : true,
+      "enableFilter" : false,
+      "enablePullDownRefresh" : false,
+      "enableQuickSearch" : true,
+      "modelid" : "f9e6255dd733c3bebb0b51bc1e27a67a",
+      "modeltype" : "PSAPPDEVIEW"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+    "name" : "pickupviewpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SELECTIONCHANGE;LOAD",
+      "logicTag" : "pickupviewpanel",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_pickupviewpanel",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "PICKUPVIEWPANEL"
+    }
+  } ],
+  "getPSDEViewCodeName" : "MobPickupView",
+  "getPSDEViewId" : "49812391-7924-43E0-83E2-4052BFD9E32B",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMOBPICKUPVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "图表移动端数据选择视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMOBPICKUPVIEW",
+  "enableDP" : true,
+  "enablePullDownRefresh" : false,
+  "showCaptionBar" : false,
+  "modelid" : "332d06bb352e26c866eea35679105f4c",
+  "modeltype" : "PSAPPDEVIEW"
+}

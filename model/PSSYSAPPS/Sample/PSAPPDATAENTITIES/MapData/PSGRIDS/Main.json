@@ -1,0 +1,246 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "名称",
+    "codeName" : "mapdataname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "mapdataname",
+    "excelCaption" : "名称",
+    "name" : "mapdataname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "MAPDATANAME",
+      "codeName" : "MapDataName"
+    },
+    "width" : 1,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "排序值",
+    "codeName" : "sortvalue",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "sortvalue",
+    "excelCaption" : "排序值",
+    "name" : "sortvalue",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "SORTVALUE",
+      "codeName" : "Sortvalue"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "分组",
+    "codeName" : "grouping",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "grouping",
+    "excelCaption" : "分组",
+    "name" : "grouping",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "GROUPING",
+      "codeName" : "Grouping"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "类型",
+    "codeName" : "type",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "type",
+    "excelCaption" : "类型",
+    "name" : "type",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/MapDataType.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "经度",
+    "codeName" : "longitude",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "longitude",
+    "excelCaption" : "经度",
+    "name" : "longitude",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "LONGITUDE",
+      "codeName" : "Longitude"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "纬度",
+    "codeName" : "latitude",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "latitude",
+    "excelCaption" : "纬度",
+    "name" : "latitude",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "LATITUDE",
+      "codeName" : "Latitude"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "grouping",
+    "getPSAppDEField" : {
+      "name" : "GROUPING",
+      "codeName" : "Grouping"
+    }
+  }, {
+    "dataType" : 6,
+    "name" : "longitude",
+    "getPSAppDEField" : {
+      "name" : "LONGITUDE",
+      "codeName" : "Longitude"
+    }
+  }, {
+    "dataType" : 6,
+    "name" : "latitude",
+    "getPSAppDEField" : {
+      "name" : "LATITUDE",
+      "codeName" : "Latitude"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "mapdataname",
+    "getPSAppDEField" : {
+      "name" : "MAPDATANAME",
+      "codeName" : "MapDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "type",
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "sortvalue",
+    "getPSAppDEField" : {
+      "name" : "SORTVALUE",
+      "codeName" : "Sortvalue"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "MAPDATANAME",
+      "codeName" : "MapDataName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "MAPDATAID",
+      "codeName" : "MapDataId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "MAPDATAID",
+      "codeName" : "MapDataId"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "地图示例数据标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "MAPDATAID",
+      "codeName" : "MapDataId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "5190b20e46239f8e9c7eeaa0e4a87d42",
+  "modeltype" : "PSDEGRID"
+}

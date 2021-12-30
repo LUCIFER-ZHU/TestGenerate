@@ -1,0 +1,134 @@
+{
+  "accUserMode" : 0,
+  "appSwitchMode" : 0,
+  "caption" : "计数器示例",
+  "codeName" : "CounterAppIndexView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPINDEXVIEWS/CounterAppIndexView.json",
+  "mainMenuAlign" : "CENTER",
+  "name" : "CounterAppIndexView",
+  "getPSAppCounterRefs" : [ {
+    "getPSAppCounter" : {
+      "codeName" : "IndexCounter",
+      "counterType" : "CUSTOM",
+      "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPCOUNTERS/IndexCounter.json",
+      "getGetPSAppDEAction" : {
+        "modelref" : true,
+        "id" : "GetRandom"
+      },
+      "name" : "首页计数器",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CounterData2.json"
+      },
+      "timer" : 60000
+    },
+    "tag" : "7d213e85d938e9ee6c0b16e6f3fde748",
+    "id" : "7d213e85d938e9ee6c0b16e6f3fde748"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "CounterAppIndexView",
+    "controlType" : "APPMENU",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "应用首页视图默认菜单",
+    "name" : "appmenu",
+    "getPSAppCounterRef" : {
+      "modelref" : true,
+      "id" : "7d213e85d938e9ee6c0b16e6f3fde748"
+    },
+    "getPSAppMenuItems" : [ {
+      "accUserMode" : 0,
+      "caption" : "菜单计数器",
+      "itemType" : "MENUITEM",
+      "name" : "menuitem1",
+      "getPSAppMenuItems" : [ {
+        "accUserMode" : 0,
+        "caption" : "计数1",
+        "counterId" : "countertag",
+        "itemType" : "MENUITEM",
+        "name" : "menuitem2",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "tooltip" : "计数1"
+      }, {
+        "accUserMode" : 0,
+        "caption" : "计数2",
+        "counterId" : "countertag2",
+        "itemType" : "MENUITEM",
+        "name" : "menuitem3",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "tooltip" : "计数2"
+      }, {
+        "accUserMode" : 0,
+        "caption" : "计数3",
+        "counterId" : "countertag3",
+        "itemType" : "MENUITEM",
+        "name" : "menuitem4",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "tooltip" : "计数3"
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "tooltip" : "菜单计数器"
+    } ],
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "appmenu"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
+    },
+    "enableCustomize" : false,
+    "modelid" : "E931BAA6-3738-4FC9-94F0-D4744F5A84FA",
+    "modeltype" : "PSAPPMENU"
+  } ],
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPINDEXVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "getPortalPSAppCounterRef" : {
+    "modelref" : true,
+    "id" : "7d213e85d938e9ee6c0b16e6f3fde748"
+  },
+  "title" : "计数器示例",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "APPINDEXVIEW",
+  "blankMode" : false,
+  "enableAppSwitch" : false,
+  "enableDP" : true,
+  "showCaptionBar" : false,
+  "modelid" : "39A958C4-934F-4354-A5DC-17344FEDB40F",
+  "modeltype" : "PSAPPINDEXVIEW"
+}

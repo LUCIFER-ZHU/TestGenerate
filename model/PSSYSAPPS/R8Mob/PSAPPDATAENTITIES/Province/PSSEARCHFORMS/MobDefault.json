@@ -1,0 +1,113 @@
+{
+  "codeName" : "MobDefault",
+  "controlType" : "SEARCHFORM",
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province/PSSEARCHFORMS/MobDefault.json",
+  "height" : 500.0,
+  "hookEventNames" : [ "SEARCH", "LOAD" ],
+  "logicName" : "移动端默认搜索表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SEARCH;LOAD",
+    "logicTag" : "searchform",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_searchform",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "n_provincename_like",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PROVINCENAME",
+      "codeName" : "ProvinceName"
+    }
+  }, {
+    "id" : "formitem",
+    "dataType" : 25
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "测试",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "caption" : "省份名称(%)",
+      "codeName" : "n_provincename_like",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "TOP",
+      "labelWidth" : 130,
+      "name" : "n_provincename_like",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "PROVINCENAME",
+        "codeName" : "ProvinceName"
+      },
+      "getPSEditor" : {
+        "editorType" : "MOBTEXT",
+        "name" : "n_provincename_like"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "resetItemName" : "N_PROVINCENAME_LIKE",
+      "resetItemNames" : [ "N_PROVINCENAME_LIKE" ],
+      "allowEmpty" : true,
+      "showCaption" : true
+    }, {
+      "codeName" : "formitem",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "formitem",
+      "noPrivDisplayMode" : 1,
+      "getPSEditor" : {
+        "editorType" : "MOBTEXT",
+        "name" : "formitem"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysPFPlugin" : {
+        "pluginType" : "LIST_ITEMRENDER",
+        "pluginCode" : "mobCtrlItemPlugin"
+      },
+      "allowEmpty" : true,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "searchButtonStyle" : "DEFAULT",
+  "tabHeaderPos" : "TOP",
+  "width" : 500.0,
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : false,
+  "enableFilterSave" : false,
+  "mobileControl" : true,
+  "noTabHeader" : true,
+  "modelid" : "CCB5EC50-ADF1-4974-97B0-D54FB603879D",
+  "modeltype" : "PSDEFORM_SEARCHFORM"
+}

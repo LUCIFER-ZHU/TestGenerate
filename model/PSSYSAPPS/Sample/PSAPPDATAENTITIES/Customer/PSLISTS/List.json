@@ -1,0 +1,254 @@
+{
+  "codeName" : "List",
+  "controlStyle" : "LISTVIEW",
+  "controlType" : "LIST",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer/PSLISTS/List.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "getItemPSLayoutPanel" : {
+    "getAllPSPanelFields" : [ {
+      "id" : "image",
+      "viewFieldName" : "IMAGE"
+    }, {
+      "id" : "customername",
+      "viewFieldName" : "CUSTOMERNAME"
+    }, {
+      "id" : "street",
+      "viewFieldName" : "STREET"
+    }, {
+      "id" : "email",
+      "viewFieldName" : "EMAIL"
+    } ],
+    "codeName" : "List",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer/PSPANELS/List.json",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "List项布局面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "layout" : "FLEX"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTAINER",
+        "name" : "container2",
+        "getPSLayout" : {
+          "layout" : "FLEX"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "getPSPanelItems" : [ {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "image",
+          "getPSEditor" : {
+            "editorParams" : {
+              "MAXCOUNT" : "1",
+              "READONLY" : "TRUE"
+            },
+            "editorType" : "PICTURE_ONE",
+            "maxFileCount" : 1,
+            "maxFileSize" : -1,
+            "minFileCount" : 0,
+            "name" : "image",
+            "readOnly" : true
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "viewFieldName" : "IMAGE",
+          "hidden" : false,
+          "showCaption" : false
+        } ]
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTAINER",
+        "name" : "container3",
+        "getPSLayout" : {
+          "dir" : "column",
+          "layout" : "FLEX"
+        },
+        "getPSLayoutPos" : {
+          "grow" : -1,
+          "layout" : "FLEX"
+        },
+        "getPSPanelItems" : [ {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "customername",
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "customername",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "getPSSysCss" : {
+            "cssName" : "h1-title"
+          },
+          "viewFieldName" : "CUSTOMERNAME",
+          "hidden" : false,
+          "showCaption" : false
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "street",
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "street",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "viewFieldName" : "STREET",
+          "hidden" : false,
+          "showCaption" : false
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "email",
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "email",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX"
+          },
+          "viewFieldName" : "EMAIL",
+          "hidden" : false,
+          "showCaption" : false
+        } ]
+      } ]
+    } ],
+    "name" : "list_itempanel",
+    "modelid" : "D8139FA4-8D60-4964-862F-26B7513021F5",
+    "modeltype" : "PSSYSVIEWPANEL"
+  },
+  "logicName" : "List",
+  "mobListStyle" : "LISTVIEW",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "list",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_list",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "name" : "email"
+  }, {
+    "dataType" : 25,
+    "name" : "image"
+  }, {
+    "dataType" : 25,
+    "name" : "customername"
+  }, {
+    "dataType" : 25,
+    "name" : "street"
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "pcustomerid",
+    "getPSAppDEField" : {
+      "name" : "PCUSTOMERID",
+      "codeName" : "Pcustomerid"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "provinceid",
+    "getPSAppDEField" : {
+      "name" : "PROVINCEID",
+      "codeName" : "ProvinceId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "cityid",
+    "getPSAppDEField" : {
+      "name" : "CITYID",
+      "codeName" : "CityId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "districtid",
+    "getPSAppDEField" : {
+      "name" : "DISTRICTID",
+      "codeName" : "DistrictId"
+    }
+  } ],
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
+  "modelid" : "E00DE596-2CE6-420F-A01D-0EC9071728EF",
+  "modeltype" : "PSDELIST"
+}

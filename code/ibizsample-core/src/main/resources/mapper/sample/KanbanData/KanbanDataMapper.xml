@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="ibizsample.core.sample.mapper.KanbanDataMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="KanbanDataResultMap" type="ibizsample.core.sample.domain.KanbanData" autoMapping="true">
+		<id property="kanbanDataId" column="kanbandataid" /><!--主键字段映射-->
+    </resultMap>
+
+    <select id="selectById"  resultMap="KanbanDataResultMap">
+        <include refid="view" /> 
+         where 
+        t1.kanbandataid=#{id}
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`BEGINTIME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ENDTIME`, t1.`KANBANDATAID`, t1.`KANBANDATANAME`, t1.`MEMO`, t1.`ORGID`, t1.`TASKSTATUS`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_KANBANDATA` t1  
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`KANBANDATAID`, t1.`KANBANDATANAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_KANBANDATA` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`BEGINTIME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ENDTIME`, t1.`KANBANDATAID`, t1.`KANBANDATANAME`, t1.`MEMO`, t1.`ORGID`, t1.`TASKSTATUS`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_KANBANDATA` t1  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="ibizsample.core.sample.filter.KanbanDataSearchContext"  resultType="KanbanDataResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+
+</mapper>

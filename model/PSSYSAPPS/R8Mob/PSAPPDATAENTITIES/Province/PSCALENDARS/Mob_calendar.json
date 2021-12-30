@@ -1,0 +1,90 @@
+{
+  "calendarStyle" : "MONTH",
+  "codeName" : "Mob_calendar",
+  "controlType" : "CALENDAR",
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province/PSCALENDARS/Mob_calendar.json",
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "LOAD" ],
+  "legendPos" : "TOP",
+  "logicName" : "移动端日历部件",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD",
+    "logicTag" : "calendar",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_calendar",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSSysCalendarItems" : [ {
+    "getBeginTimePSAppDEField" : {
+      "name" : "CREATEDATE",
+      "codeName" : "CreateDate"
+    },
+    "getEndTimePSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "getIdPSAppDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    },
+    "itemStyle" : "DEFAULT",
+    "itemType" : "item2",
+    "maxSize" : -1,
+    "name" : "图表",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    },
+    "enableQuickCreate" : false,
+    "id" : "item2"
+  }, {
+    "getBeginTimePSAppDEField" : {
+      "name" : "CREATEDATE",
+      "codeName" : "CreateDate"
+    },
+    "getEndTimePSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "getIdPSAppDEField" : {
+      "name" : "PROVINCEID",
+      "codeName" : "ProvinceId"
+    },
+    "itemStyle" : "DEFAULT",
+    "itemType" : "item",
+    "maxSize" : -1,
+    "name" : "省份",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "PROVINCENAME",
+      "codeName" : "ProvinceName"
+    },
+    "enableQuickCreate" : false,
+    "id" : "item"
+  } ],
+  "enableGroup" : false,
+  "modelid" : "576D2415-5135-491F-9B66-03FA5D1340C2",
+  "modeltype" : "PSSYSCALENDAR"
+}

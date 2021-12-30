@@ -1,0 +1,91 @@
+{
+  "calendarStyle" : "TIMELINE",
+  "codeName" : "Calendar_itemlayout",
+  "controlType" : "CALENDAR",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData/PSCALENDARS/Calendar_itemlayout.json",
+  "groupMode" : "NONE",
+  "legendPos" : "NONE",
+  "logicName" : "日历部件（项布局时间轴）",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+  },
+  "getPSSysCalendarItems" : [ {
+    "bKColor" : "rgba(47, 225, 160, 1)",
+    "getBeginTimePSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    },
+    "color" : "rgba(231, 12, 12, 1)",
+    "getEndTimePSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    },
+    "getIdPSAppDEField" : {
+      "name" : "CALENDARDATAID",
+      "codeName" : "CalendarDataId"
+    },
+    "itemStyle" : "DEFAULT",
+    "itemType" : "calendardata",
+    "maxSize" : -1,
+    "name" : "日历示例数据",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+    },
+    "getPSLayoutPanel" : {
+      "getAllPSPanelFields" : [ {
+        "id" : "calendardataname",
+        "viewFieldName" : "CALENDARDATAName"
+      } ],
+      "codeName" : "Auto8",
+      "controlType" : "PANEL",
+      "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData/PSPANELS/Auto8.json",
+      "layoutMode" : "TABLE_24COL",
+      "logicName" : "项布局面板（日历时间轴）",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+      },
+      "getPSControlParam" : { },
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getRootPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "calendardataname",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "calendardataname",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "viewFieldName" : "CALENDARDATAName",
+        "hidden" : false,
+        "showCaption" : false
+      } ],
+      "layoutPanel" : true,
+      "name" : "calendardatalayoutpanel",
+      "modelid" : "A2C92ECC-86A4-404F-9FB7-381A84BE5AD8",
+      "modeltype" : "PSSYSVIEWPANEL"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "CALENDARDATANAME",
+      "codeName" : "CalendarDataName"
+    },
+    "enableQuickCreate" : false,
+    "id" : "calendardata"
+  } ],
+  "enableGroup" : false,
+  "modelid" : "9C5B2993-EE00-4121-9DF1-50B8DFDD929C",
+  "modeltype" : "PSSYSCALENDAR"
+}

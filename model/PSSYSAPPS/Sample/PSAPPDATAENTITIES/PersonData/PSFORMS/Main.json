@@ -1,0 +1,490 @@
+{
+  "codeName" : "Main",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData/PSFORMS/Main.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "主编辑表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PERSONDATAID",
+      "codeName" : "PersonDataId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PERSONDATANAME",
+      "codeName" : "PersonDataName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "persondataname",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PERSONDATANAME",
+      "codeName" : "PersonDataName"
+    }
+  }, {
+    "id" : "orgdataname",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "ORGDATANAME",
+      "codeName" : "OrgDataName"
+    }
+  }, {
+    "id" : "deptdataname",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "DEPTDATANAME",
+      "codeName" : "DeptDataName"
+    }
+  }, {
+    "id" : "idcard",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "IDCARD",
+      "codeName" : "Idcard"
+    }
+  }, {
+    "id" : "gender",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "GENDER",
+      "codeName" : "Gender"
+    }
+  }, {
+    "id" : "age",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "AGE",
+      "codeName" : "Age"
+    }
+  }, {
+    "id" : "orgdataid",
+    "hidden" : true,
+    "dataType" : 25,
+    "createDVT" : "CONTEXT",
+    "createDV" : "orgdataid",
+    "getPSAppDEField" : {
+      "name" : "ORGDATAID",
+      "codeName" : "OrgDataId"
+    }
+  }, {
+    "id" : "deptdataid",
+    "hidden" : true,
+    "dataType" : 25,
+    "createDVT" : "CONTEXT",
+    "createDV" : "deptdataid",
+    "getPSAppDEField" : {
+      "name" : "DEPTDATAID",
+      "codeName" : "DeptDataId"
+    }
+  }, {
+    "id" : "avatar",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "AVATAR",
+      "codeName" : "Avatar"
+    }
+  }, {
+    "id" : "persondataid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "PERSONDATAID",
+      "codeName" : "PersonDataId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "人员数据基本信息",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel1",
+        "getPSDEFormDetails" : [ {
+          "caption" : "姓名",
+          "codeName" : "persondataname",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "persondataname",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "PERSONDATANAME",
+            "codeName" : "PersonDataName"
+          },
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "maxLength" : 200,
+            "name" : "persondataname"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : false,
+          "showCaption" : true
+        }, {
+          "caption" : "组织名称",
+          "codeName" : "orgdataname",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "orgdataname",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ORGDATANAME",
+            "codeName" : "OrgDataName"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "orgdataname",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "orgdataid",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "部门名称",
+          "codeName" : "deptdataname",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "deptdataname",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "DEPTDATANAME",
+            "codeName" : "DeptDataName"
+          },
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "deptdataname",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "deptdataid",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "身份证",
+          "codeName" : "idcard",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "idcard",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "IDCARD",
+            "codeName" : "Idcard"
+          },
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "maxLength" : 18,
+            "name" : "idcard"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "性别",
+          "codeName" : "gender",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "gender",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "GENDER",
+            "codeName" : "Gender"
+          },
+          "getPSEditor" : {
+            "editorType" : "DROPDOWNLIST",
+            "name" : "gender",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/Gender.json"
+            },
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "needCodeListConfig" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "年龄",
+          "codeName" : "age",
+          "dataType" : 9,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "age",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "AGE",
+            "codeName" : "Age"
+          },
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "age"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "组织数据标识",
+          "codeName" : "orgdataid",
+          "createDV" : "orgdataid",
+          "createDVT" : "CONTEXT",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "orgdataid",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ORGDATAID",
+            "codeName" : "OrgDataId"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "orgdataid"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "hidden" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "部门数据标识",
+          "codeName" : "deptdataid",
+          "createDV" : "deptdataid",
+          "createDVT" : "CONTEXT",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "deptdataid",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "DEPTDATAID",
+            "codeName" : "DeptDataId"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "deptdataid"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "hidden" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 16,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      }, {
+        "caption" : "头像",
+        "codeName" : "avatar",
+        "contentHeight" : 300.0,
+        "contentWidth" : 300.0,
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "height" : 300.0,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "avatar",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "AVATAR",
+          "codeName" : "Avatar"
+        },
+        "getPSEditor" : {
+          "editorParams" : {
+            "MAXCOUNT" : "1"
+          },
+          "editorType" : "PICTURE_ONE",
+          "maxFileCount" : 1,
+          "maxFileSize" : -1,
+          "minFileCount" : 0,
+          "name" : "avatar"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "height" : 300,
+          "layout" : "TABLE_24COL",
+          "width" : 300
+        },
+        "width" : 300.0,
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "13647246a90bcdbea162bfd36074a45f",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

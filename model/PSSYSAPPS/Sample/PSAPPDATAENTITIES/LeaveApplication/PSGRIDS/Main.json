@@ -1,0 +1,310 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Main",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/LeaveApplication/PSGRIDS/Main.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "主表格",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/LeaveApplication.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "请假申请名称",
+    "codeName" : "leaveapplicationname",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "leaveapplicationname",
+    "excelCaption" : "请假申请名称",
+    "name" : "leaveapplicationname",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "LEAVEAPPLICATIONNAME",
+      "codeName" : "LeaveApplicationName"
+    },
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "FRONT",
+    "caption" : "申请状态",
+    "codeName" : "state",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "state",
+    "excelCaption" : "申请状态",
+    "name" : "state",
+    "noPrivDisplayMode" : 1,
+    "getPSAppCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/LeaveApplicationState.json"
+    },
+    "getPSAppDEField" : {
+      "name" : "STATE",
+      "codeName" : "State"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "审批步骤",
+    "codeName" : "step",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "step",
+    "excelCaption" : "审批步骤",
+    "name" : "step",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "STEP",
+      "codeName" : "Step"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "客户名称",
+    "codeName" : "customername",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "customername",
+    "excelCaption" : "客户名称",
+    "name" : "customername",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "扩展数据",
+    "codeName" : "ext_data",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "ext_data",
+    "excelCaption" : "扩展数据",
+    "name" : "ext_data",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "EXT_DATA",
+      "codeName" : "Ext_Data"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "扩展参数",
+    "codeName" : "ext_param",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "ext_param",
+    "excelCaption" : "扩展参数",
+    "name" : "ext_param",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "EXT_PARAM",
+      "codeName" : "ExtParam"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "扩展参数2",
+    "codeName" : "ext_param2",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "ext_param2",
+    "excelCaption" : "扩展参数2",
+    "name" : "ext_param2",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "EXT_PARAM2",
+      "codeName" : "Ext_param2"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "更新时间",
+    "codeName" : "updatedate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "updatedate",
+    "excelCaption" : "更新时间",
+    "name" : "updatedate",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "ext_param2",
+    "getPSAppDEField" : {
+      "name" : "EXT_PARAM2",
+      "codeName" : "Ext_param2"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "leaveapplicationname",
+    "getPSAppDEField" : {
+      "name" : "LEAVEAPPLICATIONNAME",
+      "codeName" : "LeaveApplicationName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "ext_data",
+    "getPSAppDEField" : {
+      "name" : "EXT_DATA",
+      "codeName" : "Ext_Data"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "state",
+    "getPSAppDEField" : {
+      "name" : "STATE",
+      "codeName" : "State"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "LEAVEAPPLICATIONID",
+      "codeName" : "LeaveApplicationId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "LEAVEAPPLICATIONID",
+      "codeName" : "LeaveApplicationId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "LEAVEAPPLICATIONNAME",
+      "codeName" : "LeaveApplicationName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "ext_param",
+    "getPSAppDEField" : {
+      "name" : "EXT_PARAM",
+      "codeName" : "ExtParam"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "customerid",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERID",
+      "codeName" : "CustomerId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfwfstep",
+    "getPSAppDEField" : {
+      "name" : "STEP",
+      "codeName" : "Step"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "updatedate",
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "step",
+    "getPSAppDEField" : {
+      "name" : "STEP",
+      "codeName" : "Step"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "customername",
+    "getPSAppDEField" : {
+      "name" : "CUSTOMERNAME",
+      "codeName" : "CustomerName"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "请假申请标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "LEAVEAPPLICATIONID",
+      "codeName" : "LeaveApplicationId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/LeaveApplication.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : true,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "724dbbe971063cd33a2aec706c6f9e02",
+  "modeltype" : "PSDEGRID"
+}

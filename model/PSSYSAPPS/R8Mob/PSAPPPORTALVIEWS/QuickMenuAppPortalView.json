@@ -1,0 +1,338 @@
+{
+  "accUserMode" : 0,
+  "caption" : "快捷菜单",
+  "codeName" : "QuickMenuAppPortalView",
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPPORTALVIEWS/QuickMenuAppPortalView.json",
+  "name" : "QuickMenuAppPortalView",
+  "getPSControls" : [ {
+    "codeName" : "QuickMenuAppPortalView_db",
+    "controlType" : "DASHBOARD",
+    "name" : "dashboard",
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "dashboard"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
+    },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSControls" : [ {
+      "aMListStyle" : "ICONVIEW",
+      "codeName" : "MobQuickMenu",
+      "getContentPSControl" : {
+        "name" : "db_appmenu1_appmenu"
+      },
+      "controlType" : "PORTLET",
+      "name" : "db_appmenu1",
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "db_appmenu1"
+      },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true
+      },
+      "getPSControls" : [ {
+        "appMenuStyle" : "ICONVIEW",
+        "codeName" : "MobQuickMenu",
+        "controlStyle" : "ICONVIEW",
+        "controlType" : "APPMENU",
+        "layoutMode" : "TABLE_24COL",
+        "logicName" : "移动端快捷菜单",
+        "name" : "db_appmenu1_appmenu",
+        "getPSAppMenuItems" : [ {
+          "accUserMode" : 2,
+          "caption" : "表单",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem1",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc3"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysCss" : {
+            "cssName" : "test"
+          },
+          "getPSSysImage" : {
+            "cssClass" : "ribbon"
+          },
+          "tooltip" : "图表实体编辑视图"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "多数据视图",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem2",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "OpenProvince"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "tooltip" : "多数据视图"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "面板测试",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem3",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc2"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf06e@FontAwesome",
+            "cssClass" : "fa fa-eye"
+          },
+          "tooltip" : "面板测试"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "面板视图",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem4",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc6"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "tooltip" : "面板视图"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "日历",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem5",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc7"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "tooltip" : "日历"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "树视图",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem6",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc8"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "tooltip" : "树视图"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "图表",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem7",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc9"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf004@FontAwesome",
+            "cssClass" : "fa fa-heart"
+          },
+          "tooltip" : "图表"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "地图",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem8",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc10"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "tooltip" : "地图"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "分页导航",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem9",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc11"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "tooltip" : "分页导航"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "多表单编辑",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem10",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc13"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "tooltip" : "多表单编辑"
+        }, {
+          "accUserMode" : 0,
+          "caption" : "看板视图",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem11",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc14"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "tooltip" : "看板视图"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "HTML视图",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem12",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc12"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "tooltip" : "HTML视图"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "实体数据看板视图",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem13",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc16"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "tooltip" : "实体数据看板视图"
+        } ],
+        "getPSControlHandler" : {
+          "enableDEFieldPrivilege" : false,
+          "id" : "db_appmenu1_appmenu"
+        },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true
+        },
+        "enableCustomize" : false,
+        "modelid" : "42BF4EB7-6F3E-4AB2-B748-11272DE5B550",
+        "modeltype" : "PSAPPMENU"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "portletType" : "APPMENU",
+      "title" : "快捷菜单",
+      "showTitleBar" : false,
+      "modelid" : "42BF4EB7-6F3E-4AB2-B748-11272DE5B550",
+      "modeltype" : "PSSYSDBPART"
+    } ],
+    "enableCustomized" : false,
+    "modelid" : "4BCEF00D-9F91-49B9-9D30-9398C246152F",
+    "modeltype" : "PSSYSDASHBOARD"
+  } ],
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPPORTALVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "应用门户视图（快捷菜单）",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "APPPORTALVIEW",
+  "enableDP" : true,
+  "modelid" : "4BCEF00D-9F91-49B9-9D30-9398C246152F",
+  "modeltype" : "PSAPPPORTALVIEW"
+}

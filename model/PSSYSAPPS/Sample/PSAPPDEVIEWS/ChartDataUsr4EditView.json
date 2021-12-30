@@ -1,0 +1,850 @@
+{
+  "accUserMode" : 2,
+  "caption" : "图表",
+  "codeName" : "ChartDataUsr4EditView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr4EditView.json",
+  "name" : "ChartDataUsr4EditView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "EditView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "form",
+      "name" : "FORM",
+      "paramType" : "CTRL"
+    }, {
+      "name" : "P2K",
+      "paramType" : "VALUE",
+      "value" : 0
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "Usr4EditViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "modelid" : "36fba9c6c6d45d92398b741dde4ee547_toolbar",
+    "modeltype" : "PSDETOOLBAR"
+  }, {
+    "codeName" : "Main_3",
+    "controlType" : "FORM",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSFORMS/Main_3.json",
+    "getGetDraftFromPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraftfrom"
+    },
+    "getGetDraftPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraft"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "logicName" : "选择测试表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "GETDRAFTFROM",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraftfrom",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "编辑表单处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;SAVE;REMOVE",
+      "logicTag" : "form",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_form",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "getPSDEFormItemUpdates" : [ {
+      "codeName" : "testupdate",
+      "name" : "更改b更新a",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "Get"
+      },
+      "getPSDEFIUpdateDetails" : [ {
+        "name" : "formitem14"
+      } ]
+    } ],
+    "getPSDEFormItems" : [ {
+      "id" : "srfupdatedate",
+      "hidden" : true,
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      }
+    }, {
+      "id" : "srforikey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfkey",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "CHARTDATAID",
+        "codeName" : "ChartDataId"
+      }
+    }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "CHARTDATANAME",
+        "codeName" : "ChartDataName"
+      }
+    }, {
+      "id" : "srftempmode",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfuf",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfdeid",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfsourcekey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "formitem",
+      "dataType" : 25
+    }, {
+      "id" : "formitem1",
+      "dataType" : 25
+    }, {
+      "id" : "formitem2",
+      "dataType" : 25
+    }, {
+      "id" : "formitem3",
+      "dataType" : 25
+    }, {
+      "id" : "formitem4",
+      "dataType" : 25
+    }, {
+      "id" : "formitem5",
+      "dataType" : 25
+    }, {
+      "id" : "formitem6",
+      "dataType" : 25
+    }, {
+      "id" : "formitem7",
+      "dataType" : 25
+    }, {
+      "id" : "formitem8",
+      "dataType" : 25
+    }, {
+      "id" : "formitem9",
+      "dataType" : 25
+    }, {
+      "id" : "formitem10",
+      "dataType" : 25
+    }, {
+      "id" : "formitem11",
+      "dataType" : 25
+    }, {
+      "id" : "formitem12",
+      "dataType" : 25
+    }, {
+      "id" : "formitem13",
+      "dataType" : 25
+    }, {
+      "id" : "formitem14",
+      "dataType" : 25
+    }, {
+      "id" : "formitem15",
+      "dataType" : 25
+    }, {
+      "id" : "chartdataid",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "CHARTDATAID",
+        "codeName" : "ChartDataId"
+      }
+    } ],
+    "getPSDEFormPages" : [ {
+      "caption" : "选择测试",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "单项选择",
+        "codeName" : "grouppanel1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel1",
+        "getPSDEFormDetails" : [ {
+          "caption" : "单项选择表格",
+          "codeName" : "formitem",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_NOAC",
+            "name" : "formitem",
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataPickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
+            "valueItemName" : "formitem1",
+            "enableAC" : false,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "colXS" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem1",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "值项",
+          "codeName" : "formitem1",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem1",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem1",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "单选选择树",
+          "codeName" : "formitem2",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem2",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_NOAC",
+            "name" : "formitem2",
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr2PickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
+            "valueItemName" : "formitem3",
+            "enableAC" : false,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "colXS" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem3",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "值项",
+          "codeName" : "formitem3",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem3",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem3",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 12,
+            "colSM" : 12,
+            "colXS" : 12,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "树导航（列表）",
+          "codeName" : "formitem4",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem4",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_NOAC",
+            "name" : "formitem4",
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataPickupView2.json",
+              "viewType" : "DEPICKUPVIEW2"
+            },
+            "valueItemName" : "formitem5",
+            "enableAC" : false,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem5",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "值项",
+          "codeName" : "formitem5",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem5",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem5",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "单项选择列表",
+          "codeName" : "formitem6",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem6",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_NOAC",
+            "name" : "formitem6",
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr3PickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
+            "valueItemName" : "formitem7",
+            "enableAC" : false,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem7",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "值项",
+          "codeName" : "formitem7",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem7",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem7",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "单选卡片",
+          "codeName" : "formitem8",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem8",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_NOAC",
+            "name" : "formitem8",
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr4PickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
+            "valueItemName" : "formitem9",
+            "enableAC" : false,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem9",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "值项",
+          "codeName" : "formitem9",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem9",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem9",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "树导航（卡片）",
+          "codeName" : "formitem10",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem10",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_NOAC",
+            "name" : "formitem10",
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr2PickupView2.json",
+              "viewType" : "DEPICKUPVIEW2"
+            },
+            "valueItemName" : "formitem11",
+            "enableAC" : false,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem11",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "值项",
+          "codeName" : "formitem11",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem11",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem11",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "树导航（表格）",
+          "codeName" : "formitem12",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem12",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorParams" : {
+              "AC" : "FALSE",
+              "TRIGGER" : "TRUE",
+              "PICKUPVIEW" : "TRUE"
+            },
+            "editorType" : "PICKEREX_NOAC",
+            "name" : "formitem12",
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr3PickupView2.json",
+              "viewType" : "DEPICKUPVIEW2"
+            },
+            "valueItemName" : "formitem13",
+            "enableAC" : false,
+            "enablePickupView" : true,
+            "forceSelection" : true,
+            "showTrigger" : true,
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "valueItemName" : "formitem13",
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "值项",
+          "codeName" : "formitem13",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem13",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "formitem13",
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "表单项a",
+          "codeName" : "formitem14",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem14",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem14"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "resetItemName" : "formitem15",
+          "resetItemNames" : [ "formitem15" ],
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "表单项b",
+          "codeName" : "formitem15",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem15",
+          "noPrivDisplayMode" : 1,
+          "getPSDEFormItemUpdate" : {
+            "modelref" : true,
+            "id" : "testupdate"
+          },
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem15"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "tabHeaderPos" : "TOP",
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "noTabHeader" : true,
+    "name" : "form",
+    "modelid" : "B3BE1993-277A-4DF1-BF42-807D5FAB8410",
+    "modeltype" : "PSDEFORM_EDITFORM"
+  } ],
+  "getPSDEViewCodeName" : "Usr4EditView",
+  "getPSDEViewId" : "C0144B8E-513F-4B14-AFF1-ECD2194B1A61",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEEDITVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "图表编辑视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEEDITVIEW",
+  "xDataControlName" : "form",
+  "enableDP" : true,
+  "showDataInfoBar" : true,
+  "modelid" : "36fba9c6c6d45d92398b741dde4ee547",
+  "modeltype" : "PSAPPDEVIEW"
+}

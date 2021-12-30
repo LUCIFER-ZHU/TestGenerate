@@ -1,0 +1,123 @@
+{
+  "codeName" : "Default",
+  "controlType" : "SEARCHFORM",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSSEARCHFORMS/Default.json",
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "logicName" : "默认搜索表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SEARCH;LOAD;SAVE",
+    "logicTag" : "searchform",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_searchform",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "n_state_eq",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "STATE",
+      "codeName" : "State"
+    }
+  }, {
+    "id" : "n_ordername_like",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "ORDERNAME",
+      "codeName" : "OrderName"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "常规条件",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "caption" : "订单状态(等于(=))",
+      "codeName" : "n_state_eq",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_state_eq",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "STATE",
+        "codeName" : "State"
+      },
+      "getPSEditor" : {
+        "editorType" : "DROPDOWNLIST",
+        "name" : "n_state_eq",
+        "getPSAppCodeList" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/OrderState.json"
+        },
+        "singleSelect" : true
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 8,
+        "colSM" : 12,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "needCodeListConfig" : true,
+      "showCaption" : true
+    }, {
+      "caption" : "订单名称(文本包含(%))",
+      "codeName" : "n_ordername_like",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 130,
+      "name" : "n_ordername_like",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "ORDERNAME",
+        "codeName" : "OrderName"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "n_ordername_like"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 8,
+        "colMD" : 8,
+        "colSM" : 12,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "searchButtonStyle" : "DEFAULT",
+  "tabHeaderPos" : "TOP",
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : false,
+  "enableFilterSave" : false,
+  "noTabHeader" : true,
+  "modelid" : "7210bd856c534ffc0abc5a12493c518d",
+  "modeltype" : "PSDEFORM_SEARCHFORM"
+}

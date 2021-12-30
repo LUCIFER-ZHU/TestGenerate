@@ -1,0 +1,204 @@
+{
+  "codeName" : "WizardForm3",
+  "controlType" : "FORM",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData/PSFORMS/WizardForm3.json",
+  "formFuncMode" : "WIZARDFORM",
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "LOAD" ],
+  "logicName" : "步骤三（向导表单）",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "SAVE",
+    "logicTag" : "wizardpanel_form_WizardForm3",
+    "logicType" : "CUSTOM",
+    "name" : "wizardpanel_formsave"
+  }, {
+    "eventNames" : "LOAD",
+    "logicTag" : "wizardpanel_form_WizardForm3",
+    "logicType" : "CUSTOM",
+    "name" : "wizardpanel_formload"
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "WIZARDDATAID",
+      "codeName" : "WizardDataId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "WIZARDDATANAME",
+      "codeName" : "WizardDataName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "timefield",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "TIMEFIELD",
+      "codeName" : "Timefield"
+    }
+  }, {
+    "id" : "srfnextform",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "SRFNEXTFORM",
+      "codeName" : "Srfnextform"
+    }
+  }, {
+    "id" : "wizarddataid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "WIZARDDATAID",
+      "codeName" : "WizardDataId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "模式2",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "时间属性",
+        "codeName" : "timefield",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "timefield",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "TIMEFIELD",
+          "codeName" : "Timefield"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "timefield",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "下一步表单",
+        "codeName" : "srfnextform",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "srfnextform",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "SRFNEXTFORM",
+          "codeName" : "Srfnextform"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "srfnextform"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "hidden" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSDEWizardForm" : {
+    "formTag" : "WizardForm3",
+    "name" : "模式2",
+    "getPSDEFormName" : "步骤三（向导表单）",
+    "getPSDEWizardStep" : {
+      "modelref" : true,
+      "id" : "过程步骤一"
+    },
+    "stepActions" : [ "PREV", "NEXT" ],
+    "firstForm" : false
+  },
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "3209BF9F-09A2-43BA-B388-56A343344140",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

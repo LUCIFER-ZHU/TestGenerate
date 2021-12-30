@@ -1,0 +1,271 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "Layout",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSGRIDS/Layout.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "表格布局",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+    "logicTag" : "grid",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_grid",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEDataImport" : {
+    "modelref" : true,
+    "id" : "DataImport"
+  },
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "1*",
+    "codeName" : "examplename",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "examplename",
+    "excelCaption" : "1*",
+    "name" : "examplename",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "EXAMPLENAME",
+      "codeName" : "ExampleName"
+    },
+    "width" : 1,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "100宽",
+    "codeName" : "fieldx",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "fieldx",
+    "excelCaption" : "100宽",
+    "name" : "fieldx",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "FIELDX",
+      "codeName" : "Fieldx"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "200宽",
+    "codeName" : "fieldy",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "fieldy",
+    "excelCaption" : "200宽",
+    "name" : "fieldy",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "FIELDY",
+      "codeName" : "Fieldy"
+    },
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "300宽",
+    "codeName" : "fieldz",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "fieldz",
+    "excelCaption" : "300宽",
+    "name" : "fieldz",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "FIELDZ",
+      "codeName" : "Fieldz"
+    },
+    "width" : 300,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "CENTER",
+    "cLConvertMode" : "NONE",
+    "caption" : "标题居中",
+    "codeName" : "begintime",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "begintime",
+    "excelCaption" : "标题居中",
+    "name" : "begintime",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "RIGHT",
+    "cLConvertMode" : "NONE",
+    "caption" : "标题右对齐",
+    "codeName" : "updatedate",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "updatedate",
+    "excelCaption" : "标题右对齐",
+    "name" : "updatedate",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 6,
+    "name" : "fieldz",
+    "getPSAppDEField" : {
+      "name" : "FIELDZ",
+      "codeName" : "Fieldz"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "begintime",
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    }
+  }, {
+    "dataType" : 6,
+    "name" : "fieldx",
+    "getPSAppDEField" : {
+      "name" : "FIELDX",
+      "codeName" : "Fieldx"
+    }
+  }, {
+    "dataType" : 6,
+    "name" : "fieldy",
+    "getPSAppDEField" : {
+      "name" : "FIELDY",
+      "codeName" : "Fieldy"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "provinceid",
+    "getPSAppDEField" : {
+      "name" : "PROVINCEID",
+      "codeName" : "ProvinceId"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "updatedate",
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "districtid",
+    "getPSAppDEField" : {
+      "name" : "DISTRICTID",
+      "codeName" : "DistrictId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "EXAMPLENAME",
+      "codeName" : "ExampleName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "cityid",
+    "getPSAppDEField" : {
+      "name" : "CITYID",
+      "codeName" : "CityId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "examplename",
+    "getPSAppDEField" : {
+      "name" : "EXAMPLENAME",
+      "codeName" : "ExampleName"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "示例标识",
+    "codeName" : "srfkey",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "pagingSize" : 20,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : true,
+  "enableRowEdit" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "forceFit" : true,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : false,
+  "modelid" : "3AA0FE3C-F61A-48BD-B1B9-09525D7BE178",
+  "modeltype" : "PSDEGRID"
+}

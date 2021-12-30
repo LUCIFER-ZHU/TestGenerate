@@ -1,0 +1,162 @@
+{
+  "accUserMode" : 2,
+  "caption" : "搜索栏-常规",
+  "codeName" : "ExampleSearchbarBaseCustomView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleSearchbarBaseCustomView.json",
+  "name" : "ExampleSearchbarBaseCustomView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSControls" : [ {
+    "codeName" : "Base",
+    "controlType" : "SEARCHBAR",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSSEARCHBARS/Base.json",
+    "logicName" : "常规",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlParam" : {
+      "id" : "SEARCHBAR"
+    },
+    "getPSSearchBarFilters" : [ {
+      "caption" : "省份(%)",
+      "dataType" : 25,
+      "itemType" : "FILTER",
+      "labelPos" : "NONE",
+      "labelWidth" : 0,
+      "name" : "filter",
+      "getPSAppDEField" : {
+        "name" : "PROVINCENAME",
+        "codeName" : "ProvinceName"
+      },
+      "getPSDEFSearchMode" : {
+        "codeName" : "N_PROVINCENAME_LIKE",
+        "name" : "N_PROVINCENAME_LIKE",
+        "stdDataType" : 25,
+        "valueOP" : "LIKE"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "filter"
+      },
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "caption" : "市(%)",
+      "dataType" : 25,
+      "itemType" : "FILTER",
+      "labelPos" : "NONE",
+      "labelWidth" : 0,
+      "name" : "filter2",
+      "getPSAppDEField" : {
+        "name" : "CITYNAME",
+        "codeName" : "CityName"
+      },
+      "getPSDEFSearchMode" : {
+        "codeName" : "N_CITYNAME_LIKE",
+        "name" : "N_CITYNAME_LIKE",
+        "stdDataType" : 25,
+        "valueOP" : "LIKE"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "filter2"
+      },
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "caption" : "区/县(%)",
+      "dataType" : 25,
+      "itemType" : "FILTER",
+      "labelPos" : "NONE",
+      "labelWidth" : 0,
+      "name" : "filter3",
+      "getPSAppDEField" : {
+        "name" : "DISTRICTNAME",
+        "codeName" : "DistrictName"
+      },
+      "getPSDEFSearchMode" : {
+        "codeName" : "N_DISTRICTNAME_LIKE",
+        "name" : "N_DISTRICTNAME_LIKE",
+        "stdDataType" : 25,
+        "valueOP" : "LIKE"
+      },
+      "getPSEditor" : {
+        "editorType" : "TEXTBOX",
+        "name" : "filter3"
+      },
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "showCaption" : false
+    } ],
+    "getPSSearchBarGroups" : [ {
+      "itemType" : "GROUP",
+      "name" : "group",
+      "getPSAppDEField" : {
+        "name" : "DATATYPE",
+        "codeName" : "DataType"
+      },
+      "width" : 0.0,
+      "addSeparator" : false
+    } ],
+    "quickGroupCount" : -1,
+    "quickSearchMode" : 1,
+    "quickSearchWidth" : 0,
+    "enableFilter" : true,
+    "enableGroup" : true,
+    "enableQuickSearch" : true,
+    "mobileSearchBar" : false,
+    "name" : "searchbar",
+    "modelid" : "4EEAC836-07CB-4180-8BA5-40C97E080E1D",
+    "modeltype" : "PSSYSSEARCHBAR"
+  } ],
+  "getPSDEViewCodeName" : "SearchbarBaseCustomView",
+  "getPSDEViewId" : "34F53044-0505-4896-80B7-D5A599CE8E02",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Auto5_2542",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "搜索栏（常规）布局面板",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CTRLPOS",
+      "name" : "searchbar",
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSSysCss" : {
+        "cssName" : "form-red-border"
+      }
+    } ],
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : false,
+    "modelid" : "79E7CB93-E451-44FA-9D24-66EAB3B2BAF7",
+    "modeltype" : "PSSYSVIEWLAYOUTPANEL"
+  },
+  "title" : "示例自定义视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DECUSTOMVIEW",
+  "enableDP" : true,
+  "showCaptionBar" : false,
+  "modelid" : "ee4fd8413cdd48891dcb3d8f7b2afae2",
+  "modeltype" : "PSAPPDEVIEW"
+}

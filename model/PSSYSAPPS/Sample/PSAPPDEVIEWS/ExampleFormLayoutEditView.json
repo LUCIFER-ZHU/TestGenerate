@@ -1,0 +1,1933 @@
+{
+  "accUserMode" : 2,
+  "caption" : "表单逻辑",
+  "codeName" : "ExampleFormLayoutEditView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleFormLayoutEditView.json",
+  "name" : "ExampleFormLayoutEditView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "EditView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "form",
+      "name" : "FORM",
+      "paramType" : "CTRL"
+    }, {
+      "name" : "P2K",
+      "paramType" : "VALUE",
+      "value" : 0
+    } ]
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "Layout",
+    "controlType" : "FORM",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/Layout.json",
+    "getGetDraftFromPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraftfrom"
+    },
+    "getGetDraftPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraft"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+    "logicName" : "布局",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "GETDRAFTFROM",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraftfrom",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "编辑表单处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "LOAD;SAVE;REMOVE",
+      "logicTag" : "form",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_form",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "getPSDEFormItems" : [ {
+      "id" : "srfupdatedate",
+      "hidden" : true,
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      }
+    }, {
+      "id" : "srforikey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfkey",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "EXAMPLEID",
+        "codeName" : "ExampleId"
+      }
+    }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "EXAMPLENAME",
+        "codeName" : "ExampleName"
+      }
+    }, {
+      "id" : "srftempmode",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfuf",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfdeid",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfsourcekey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "formitem",
+      "dataType" : 25
+    }, {
+      "id" : "formitem1",
+      "dataType" : 25
+    }, {
+      "id" : "formitem2",
+      "dataType" : 25
+    }, {
+      "id" : "formitem4",
+      "dataType" : 25
+    }, {
+      "id" : "formitem5",
+      "dataType" : 25
+    }, {
+      "id" : "formitem3",
+      "dataType" : 25
+    }, {
+      "id" : "formitem6",
+      "dataType" : 25,
+      "createDV" : "编辑器宽200"
+    }, {
+      "id" : "formitem7",
+      "dataType" : 25,
+      "createDV" : "编辑器高150"
+    }, {
+      "id" : "exampleid",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "EXAMPLEID",
+        "codeName" : "ExampleId"
+      }
+    } ],
+    "getPSDEFormPages" : [ {
+      "caption" : "基本信息",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "栅格布局",
+        "codeName" : "group1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "group1",
+        "getPSDEFormDetails" : [ {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "分组面板",
+          "codeName" : "grouppanel1",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel1",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem1",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem1",
+            "getPSLayoutPos" : {
+              "colLG" : 1,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "1",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem2",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem2",
+            "getPSLayoutPos" : {
+              "colLG" : 1,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "1",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : false
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "分组面板",
+          "codeName" : "grouppanel2",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel2",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem3",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem3",
+            "getPSLayoutPos" : {
+              "colLG" : 4,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "4",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem4",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem4",
+            "getPSLayoutPos" : {
+              "colLG" : 4,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "4",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : false
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "分组面板",
+          "codeName" : "grouppanel3",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel3",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem5",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem5",
+            "getPSLayoutPos" : {
+              "colLG" : 8,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "8",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem6",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem6",
+            "getPSLayoutPos" : {
+              "colLG" : 8,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "8",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : false
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "分组面板",
+          "codeName" : "grouppanel4",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel4",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem7",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem7",
+            "getPSLayoutPos" : {
+              "colLG" : 12,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "12",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem8",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem8",
+            "getPSLayoutPos" : {
+              "colLG" : 12,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "12",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : false
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "分组面板",
+          "codeName" : "grouppanel5",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel5",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem9",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem9",
+            "getPSLayoutPos" : {
+              "colLG" : 24,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "24",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : false
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "偏移",
+          "codeName" : "grouppanel6",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel6",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem10",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem10",
+            "getPSLayoutPos" : {
+              "colLG" : 4,
+              "colLGOffset" : 1,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "4（偏移1）",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem11",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem11",
+            "getPSLayoutPos" : {
+              "colLG" : 12,
+              "colLGOffset" : 7,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "12（偏移7）",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : false
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "定高宽",
+          "codeName" : "grouppanel8",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel8",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem12",
+            "contentHeight" : 100.0,
+            "contentType" : "RAW",
+            "contentWidth" : 100.0,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "height" : 100.0,
+            "name" : "rawitem12",
+            "getPSLayoutPos" : {
+              "colLG" : 12,
+              "colMD" : 24,
+              "height" : 100,
+              "layout" : "TABLE_24COL",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "12（100*100）",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "width" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : false
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "enableAnchor" : true,
+        "infoGroupMode" : false,
+        "showCaption" : true
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "Flex布局",
+        "codeName" : "grouppanel7",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel7",
+        "getPSDEFormDetails" : [ {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex从上到下",
+          "codeName" : "grouppanel10",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel10",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem14",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem14",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem15",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem15",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem16",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem16",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "dir" : "column",
+            "layout" : "FLEX"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex从下到上",
+          "codeName" : "grouppanel12",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel12",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem17",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem17",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem18",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem18",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem19",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem19",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "dir" : "column-reverse",
+            "layout" : "FLEX"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex水平向左",
+          "codeName" : "grouppanel13",
+          "contentHeight" : 184.0,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "height" : 200.0,
+          "name" : "grouppanel13",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem20",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem20",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem21",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem21",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem22",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem22",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "dir" : "row",
+            "layout" : "FLEX"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "height" : 200,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex水平向右",
+          "codeName" : "grouppanel14",
+          "contentHeight" : 184.0,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "height" : 200.0,
+          "name" : "grouppanel14",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem23",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem23",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem24",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem24",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem25",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem25",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "dir" : "row-reverse",
+            "layout" : "FLEX"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "height" : 200,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex水平居中",
+          "codeName" : "grouppanel15",
+          "contentHeight" : 184.0,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "height" : 200.0,
+          "name" : "grouppanel15",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem26",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem26",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem27",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem27",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem28",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem28",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "align" : "center",
+            "layout" : "FLEX"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "height" : 200,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex水平两端对齐",
+          "codeName" : "grouppanel16",
+          "contentHeight" : 184.0,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "height" : 200.0,
+          "name" : "grouppanel16",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem29",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem29",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem30",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem30",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem31",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem31",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "align" : "space-between",
+            "layout" : "FLEX"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "height" : 200,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex水平间隔相同",
+          "codeName" : "grouppanel17",
+          "contentHeight" : 184.0,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "height" : 200.0,
+          "name" : "grouppanel17",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem32",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem32",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem33",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem33",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem34",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem34",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "align" : "space-around",
+            "layout" : "FLEX"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "height" : 200,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex垂直上对齐",
+          "codeName" : "grouppanel19",
+          "contentHeight" : 184.0,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "height" : 200.0,
+          "name" : "grouppanel19",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem35",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem35",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 40,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : 40.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem36",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem36",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 70,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : 70.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem37",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem37",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "layout" : "FLEX",
+            "vAlign" : "flex-start"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "height" : 200,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex垂直下对齐",
+          "codeName" : "grouppanel20",
+          "contentHeight" : 184.0,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "height" : 200.0,
+          "name" : "grouppanel20",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem38",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem38",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 40,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : 40.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem39",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem39",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 70,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : 70.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem40",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem40",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "layout" : "FLEX",
+            "vAlign" : "flex-end"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "height" : 200,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex垂直居中",
+          "codeName" : "grouppanel21",
+          "contentHeight" : 184.0,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "height" : 200.0,
+          "name" : "grouppanel21",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem41",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem41",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 40,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : 40.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem42",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem42",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 70,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : 70.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem43",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem43",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "layout" : "FLEX",
+            "vAlign" : "center"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "height" : 200,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex垂直基线对齐",
+          "codeName" : "grouppanel22",
+          "contentHeight" : 184.0,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "height" : 200.0,
+          "name" : "grouppanel22",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem44",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem44",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 40,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light baseline-warning"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : 40.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem45",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem45",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 70,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : 70.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem46",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem46",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "height" : 100,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light baseline-message"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : 100.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "layout" : "FLEX",
+            "vAlign" : "baseline"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "height" : 200,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex垂直占满",
+          "codeName" : "grouppanel23",
+          "contentHeight" : 184.0,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "height" : 200.0,
+          "name" : "grouppanel23",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem47",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem47",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem48",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem48",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem49",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem49",
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "layout" : "FLEX",
+              "width" : 100
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : 100.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "layout" : "FLEX",
+            "vAlign" : "stretch"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "height" : 200,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "Flex自适应",
+          "codeName" : "grouppanel24",
+          "contentHeight" : 184.0,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "height" : 200.0,
+          "name" : "grouppanel24",
+          "getPSDEFormDetails" : [ {
+            "codeName" : "rawitem50",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem50",
+            "getPSLayoutPos" : {
+              "grow" : 1,
+              "layout" : "FLEX"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--warning is-light"
+            },
+            "rawContent" : "A",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem51",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem51",
+            "getPSLayoutPos" : {
+              "grow" : 3,
+              "layout" : "FLEX"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--success is-light"
+            },
+            "rawContent" : "B",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          }, {
+            "codeName" : "rawitem52",
+            "contentType" : "RAW",
+            "detailStyle" : "DEFAULT",
+            "detailType" : "RAWITEM",
+            "name" : "rawitem52",
+            "getPSLayoutPos" : {
+              "grow" : 1,
+              "layout" : "FLEX"
+            },
+            "getPSSysCss" : {
+              "cssName" : "el-alert el-alert--info is-light"
+            },
+            "rawContent" : "C",
+            "rawItemHeight" : -1.0,
+            "rawItemWidth" : -1.0,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "layout" : "FLEX"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 12,
+            "colMD" : 24,
+            "height" : 200,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "enableAnchor" : true,
+        "infoGroupMode" : false,
+        "showCaption" : false
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "分组面板",
+        "codeName" : "grouppanel11",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel11",
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "表单项标签布局",
+        "codeName" : "grouppanel9",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel9",
+        "getPSDEFormDetails" : [ {
+          "caption" : "上方标签",
+          "codeName" : "formitem",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "TOP",
+          "labelWidth" : 130,
+          "name" : "formitem",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "左侧标签",
+          "codeName" : "formitem1",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem1",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem1"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "左侧标签（宽200）",
+          "codeName" : "formitem2",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 200,
+          "name" : "formitem2",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem2"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "右侧标签",
+          "codeName" : "formitem4",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "RIGHT",
+          "labelWidth" : 130,
+          "name" : "formitem4",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem4"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "下方标签",
+          "codeName" : "formitem5",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "BOTTOM",
+          "labelWidth" : 130,
+          "name" : "formitem5",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem5"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "codeName" : "rawitem13",
+          "contentType" : "RAW",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "RAWITEM",
+          "name" : "rawitem13",
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysCss" : {
+            "cssName" : "el-alert el-alert--info is-light"
+          },
+          "rawContent" : "无标签",
+          "rawItemHeight" : -1.0,
+          "rawItemWidth" : -1.0,
+          "showCaption" : true
+        }, {
+          "codeName" : "formitem3",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "NONE",
+          "labelWidth" : 0,
+          "name" : "formitem3",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "name" : "formitem3"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "enableAnchor" : true,
+        "infoGroupMode" : false,
+        "showCaption" : true
+      }, {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "表单项编辑器布局",
+        "codeName" : "grouppanel18",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "grouppanel18",
+        "getPSDEFormDetails" : [ {
+          "caption" : "表单项",
+          "codeName" : "formitem6",
+          "createDV" : "编辑器宽200",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 330.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem6",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorType" : "TEXTBOX",
+            "editorWidth" : 200.0,
+            "name" : "formitem6"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "表单项",
+          "codeName" : "formitem7",
+          "createDV" : "编辑器高150",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemHeight" : 150.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "formitem7",
+          "noPrivDisplayMode" : 1,
+          "getPSEditor" : {
+            "editorHeight" : 150.0,
+            "editorType" : "TEXTAREA",
+            "name" : "formitem7",
+            "showMaxLength" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "enableAnchor" : true,
+        "infoGroupMode" : false,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "tabHeaderPos" : "TOP",
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "noTabHeader" : true,
+    "showFormNavBar" : true,
+    "name" : "form",
+    "modelid" : "74599B0D-0210-49DE-8B33-1F88595AF0B2",
+    "modeltype" : "PSDEFORM_EDITFORM"
+  } ],
+  "getPSDEViewCodeName" : "FormLayoutEditView",
+  "getPSDEViewId" : "A2F85F08-2A18-4202-8E3A-809438C78264",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEEDITVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "示例编辑视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEEDITVIEW",
+  "xDataControlName" : "form",
+  "enableDP" : true,
+  "showCaptionBar" : false,
+  "showDataInfoBar" : true,
+  "modelid" : "70430d60540ba83ccc3cdf190d66ccab",
+  "modeltype" : "PSAPPDEVIEW"
+}

@@ -1,0 +1,62 @@
+{
+  "codeName" : "MobMap",
+  "controlType" : "MAP",
+  "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData/PSMAPS/MobMap.json",
+  "hookEventNames" : [ "BEFORELOAD", "ROWCLICK", "LOAD" ],
+  "legendPos" : "NONE",
+  "logicName" : " 地图（移动端）",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "ROWCLICK;LOAD;BEFORELOAD",
+    "logicTag" : "map",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_map",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSSysMapItems" : [ {
+    "borderWidth" : 0,
+    "getContentPSAppDEField" : {
+      "name" : "DATA",
+      "codeName" : "Data"
+    },
+    "getIdPSAppDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    },
+    "itemStyle" : "POINT",
+    "itemType" : "chart",
+    "getLatitudePSAppDEField" : {
+      "name" : "LATITUDE",
+      "codeName" : "Latitude"
+    },
+    "getLongitudePSAppDEField" : {
+      "name" : "LONGITUDE",
+      "codeName" : "Longitude"
+    },
+    "maxSize" : -1,
+    "name" : "测试",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "radius" : 0,
+    "getTextPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    },
+    "enableQuickCreate" : false,
+    "id" : "chart"
+  } ],
+  "modelid" : "B696EBD3-2BA5-4EFD-90F8-436806718A68",
+  "modeltype" : "PSSYSMAPVIEW"
+}

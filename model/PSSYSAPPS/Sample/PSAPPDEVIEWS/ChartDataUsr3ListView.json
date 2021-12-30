@@ -1,0 +1,1670 @@
+{
+  "accUserMode" : 2,
+  "caption" : "图表实体列表视图(样式适配)",
+  "codeName" : "ChartDataUsr3ListView",
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr3ListView.json",
+  "mDCtrlActiveMode" : 0,
+  "name" : "ChartDataUsr3ListView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "ListView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "ctrlName" : "list",
+      "name" : "LIST",
+      "paramType" : "CTRL"
+    }, {
+      "appViewLogicName" : "opendata",
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "appViewLogicName" : "newdata",
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "ctrlName" : "searchform",
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction1"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "eventArg" : "deuiaction2",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction2_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction2"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "eventArg" : "deuiaction3",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction3_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction3"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "eventArg" : "deuiaction4",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction4_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction4"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "eventArg" : "deuiaction5",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "toolbar_deuiaction5_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "toolbar_deuiaction5"
+    },
+    "getPSViewCtrlName" : "toolbar"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "getNewDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+          "viewType" : "DEEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA",
+      "editMode" : true
+    }
+  } ],
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA",
+    "realTitle" : "图表编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA",
+    "realTitle" : "图表编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "toolbar_deuiaction1",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "New"
+    },
+    "xDataControlName" : "list"
+  }, {
+    "name" : "toolbar_deuiaction2",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "xDataControlName" : "list"
+  }, {
+    "name" : "toolbar_deuiaction3",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "modelref" : true,
+      "id" : "Count@ChartData"
+    },
+    "uIActionTarget" : "NONE",
+    "xDataControlName" : "list"
+  }, {
+    "name" : "toolbar_deuiaction4",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "modelref" : true,
+      "id" : "custom1@ChartData"
+    },
+    "uIActionTarget" : "SINGLEDATA",
+    "xDataControlName" : "list"
+  }, {
+    "name" : "toolbar_deuiaction5",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "modelref" : true,
+      "id" : "custom2@ChartData"
+    },
+    "uIActionTarget" : "NONE",
+    "xDataControlName" : "list"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "Usr3ListViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "测试",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlLogics" : [ {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction1_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1_click"
+      }
+    }, {
+      "eventArg" : "deuiaction2",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction2_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2_click"
+      }
+    }, {
+      "eventArg" : "deuiaction3",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction3_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3_click"
+      }
+    }, {
+      "eventArg" : "deuiaction4",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction4_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4_click"
+      }
+    }, {
+      "eventArg" : "deuiaction5",
+      "eventNames" : "CLICK",
+      "logicTag" : "toolbar",
+      "logicType" : "APPVIEWLOGIC",
+      "name" : "toolbar_deuiaction5_click",
+      "getPSAppViewLogic" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction5_click"
+      }
+    } ],
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.NEW"
+      },
+      "caption" : "新建",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf0f6@FontAwesome",
+        "cssClass" : "fa fa-file-text-o"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.NEW"
+        },
+        "caption" : "新建",
+        "codeName" : "New",
+        "fullCodeName" : "New",
+        "name" : "表格界面_新建操作",
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.NEW"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "New",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "新建",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.NEW"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.SAVE"
+      },
+      "caption" : "保存",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction2",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction2"
+      },
+      "getPSSysImage" : {
+        "imagePath" : "/assets/images/test.png"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.SAVE"
+        },
+        "caption" : "保存",
+        "codeName" : "Save",
+        "fullCodeName" : "Save",
+        "name" : "编辑界面_保存操作",
+        "getPSSysImage" : {
+          "glyph" : "xf0c7@FontAwesome",
+          "cssClass" : "fa fa-save"
+        },
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "Save",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "保存",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+      },
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "计数器",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction3",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction3"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "计数器",
+        "codeName" : "Count",
+        "counterId" : "countertag",
+        "frontProcessType" : "OTHER",
+        "fullCodeName" : "ChartData_Count",
+        "name" : "计数器",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "getPSSysPFPlugin" : {
+          "pluginType" : "DEUIACTION",
+          "pluginCode" : "actionPluginTest"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "Count",
+        "uIActionType" : "DEUIACTION",
+        "id" : "Count@ChartData"
+      },
+      "tooltip" : "计数器",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "测试1",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction4",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction4"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEDATA",
+        "caption" : "界面行为测试1",
+        "codeName" : "custom1",
+        "dialogResult" : "OK",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+          "viewType" : "DEMOBMDVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "ChartData_custom1",
+        "htmlPageUrl" : "https://www.baidu.com/",
+        "name" : "界面行为测试1",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "custom1",
+        "uIActionType" : "DEUIACTION",
+        "closeEditView" : true,
+        "closePopupView" : true,
+        "reloadData" : true,
+        "id" : "custom1@ChartData"
+      },
+      "tooltip" : "测试1",
+      "showCaption" : true,
+      "showIcon" : true
+    }, {
+      "caption" : "测试2",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction5",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "toolbar_deuiaction5"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "界面行为测试2",
+        "codeName" : "custom2",
+        "confirmMsg" : "1354652",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMDView.json",
+          "viewType" : "DEMOBMDVIEW"
+        },
+        "fullCodeName" : "ChartData_custom2",
+        "name" : "界面行为测试2",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetRandom"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "successMsg" : "35+62654",
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "custom2",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "id" : "custom2@ChartData"
+      },
+      "tooltip" : "测试2",
+      "showCaption" : true,
+      "showIcon" : true
+    } ],
+    "modelid" : "1E98CD1B-5069-4A8D-A534-DD302C04AD09",
+    "modeltype" : "PSDETOOLBAR"
+  }, {
+    "codeName" : "ListStyle",
+    "controlType" : "LIST",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSLISTS/ListStyle.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "logicName" : "ListStyle",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "eventArg" : "tbitem3",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem3_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem3"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem4",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem4_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem4"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem5",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem5_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem5"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem6",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem6_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem6"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem24",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem24_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem24"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem25",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem25_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem25"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem8",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem8_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem8"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem13",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem13_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem13"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem11",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem11_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem11"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem21",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem21_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem21"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem23",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem23_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem23"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem19",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem19_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem19"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "tbitem18",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_tbitem18_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_tbitem18"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "eventArg" : "deuiaction1",
+      "eventNames" : "CLICK",
+      "logicTrigger" : "CTRLEVENT",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_batchtoolbar_deuiaction1_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "list_batchtoolbar_deuiaction1"
+      },
+      "getPSViewCtrlName" : "list_batchtoolbar"
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_caozuo_u0c7ccd3_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "表格界面_刷新操作"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "list_caozuo_u953df17_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "移动端编辑"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "list_batchtoolbar_tbitem3",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "New"
+      },
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_tbitem4",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Edit"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_tbitem5",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "View"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_tbitem6",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Copy"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_tbitem24",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "ToggleRowEdit"
+      },
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_tbitem25",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "NewRow"
+      },
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_tbitem8",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Remove"
+      },
+      "uIActionTarget" : "MULTIKEY",
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_tbitem13",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "ExportExcel"
+      },
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_tbitem11",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Print"
+      },
+      "uIActionTarget" : "MULTIKEY",
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_tbitem21",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "ExportModel"
+      },
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_tbitem23",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Import"
+      },
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_tbitem19",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "ToggleFilter"
+      },
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_tbitem18",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Help"
+      },
+      "xDataControlName" : "list"
+    }, {
+      "name" : "list_batchtoolbar_deuiaction1",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "SaveRow"
+      },
+      "xDataControlName" : "list"
+    }, {
+      "name" : "表格界面_刷新操作",
+      "getPSUIAction" : {
+        "modelref" : true,
+        "id" : "Refresh"
+      },
+      "xDataControlName" : "list"
+    }, {
+      "name" : "移动端编辑",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        },
+        "modelref" : true,
+        "id" : "MobEdit@ChartData"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "list"
+    } ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "列表控件处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "ROWDBLCLICK;SELECTIONCHANGE;REMOVE;LOAD;BEFORELOAD",
+      "logicTag" : "list",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_list",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "LIST"
+    },
+    "getPSControls" : [ {
+      "codeName" : "Usr3ListViewlist_batchtoolbar",
+      "controlType" : "TOOLBAR",
+      "hookEventNames" : [ "CLICK" ],
+      "logicName" : "工具栏模板（默认表格界面）",
+      "name" : "list_batchtoolbar",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
+      "getPSControlLogics" : [ {
+        "eventArg" : "tbitem3",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem3_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem3_click"
+        }
+      }, {
+        "eventArg" : "tbitem4",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem4_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem4_click"
+        }
+      }, {
+        "eventArg" : "tbitem5",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem5_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem5_click"
+        }
+      }, {
+        "eventArg" : "tbitem6",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem6_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem6_click"
+        }
+      }, {
+        "eventArg" : "tbitem24",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem24_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem24_click"
+        }
+      }, {
+        "eventArg" : "tbitem25",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem25_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem25_click"
+        }
+      }, {
+        "eventArg" : "tbitem8",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem8_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem8_click"
+        }
+      }, {
+        "eventArg" : "tbitem13",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem13_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem13_click"
+        }
+      }, {
+        "eventArg" : "tbitem11",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem11_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem11_click"
+        }
+      }, {
+        "eventArg" : "tbitem21",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem21_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem21_click"
+        }
+      }, {
+        "eventArg" : "tbitem23",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem23_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem23_click"
+        }
+      }, {
+        "eventArg" : "tbitem19",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem19_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem19_click"
+        }
+      }, {
+        "eventArg" : "tbitem18",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_tbitem18_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem18_click"
+        }
+      }, {
+        "eventArg" : "deuiaction1",
+        "eventNames" : "CLICK",
+        "logicTag" : "list_batchtoolbar",
+        "logicType" : "APPVIEWLOGIC",
+        "name" : "list_batchtoolbar_deuiaction1_click",
+        "getPSAppViewLogic" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_deuiaction1_click"
+        }
+      } ],
+      "getPSControlParam" : {
+        "id" : "list_batchtoolbar"
+      },
+      "getPSDEToolbarItems" : [ {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.NEW"
+        },
+        "caption" : "新建",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem3",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem3"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.NEW"
+          },
+          "caption" : "新建",
+          "codeName" : "New",
+          "fullCodeName" : "New",
+          "name" : "表格界面_新建操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0f6@FontAwesome",
+            "cssClass" : "fa fa-file-text-o"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.NEW"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "New",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "新建",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.NEW"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.EDIT"
+        },
+        "caption" : "编辑",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem4",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem4"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf044@FontAwesome",
+          "cssClass" : "fa fa-edit"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.EDIT"
+          },
+          "caption" : "编辑",
+          "codeName" : "Edit",
+          "fullCodeName" : "Edit",
+          "name" : "表格界面_编辑操作",
+          "getPSSysImage" : {
+            "glyph" : "xf044@FontAwesome",
+            "cssClass" : "fa fa-edit"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Edit",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "编辑",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.COPY"
+        },
+        "caption" : "拷贝",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem6",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem6"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0c5@FontAwesome",
+          "cssClass" : "fa fa-copy"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.COPY"
+          },
+          "caption" : "拷贝",
+          "codeName" : "Copy",
+          "fullCodeName" : "Copy",
+          "name" : "表格界面_拷贝操作",
+          "getPSSysImage" : {
+            "glyph" : "xf0c5@FontAwesome",
+            "cssClass" : "fa fa-copy"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.COPY"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Copy",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "拷贝",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.COPY"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "itemType" : "SEPERATOR",
+        "name" : "tbitem7",
+        "spanMode" : false
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.REMOVE"
+        },
+        "caption" : "删除",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem8",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem8"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf00d@FontAwesome",
+          "cssClass" : "fa fa-remove"
+        },
+        "getPSUIAction" : {
+          "actionTarget" : "MULTIKEY",
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.REMOVE"
+          },
+          "caption" : "删除",
+          "codeName" : "Remove",
+          "fullCodeName" : "Remove",
+          "name" : "表格界面_删除操作",
+          "getPSSysImage" : {
+            "glyph" : "xf00d@FontAwesome",
+            "cssClass" : "fa fa-remove"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Remove",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "删除",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "itemType" : "SEPERATOR",
+        "name" : "tbitem9",
+        "spanMode" : false
+      }, {
+        "caption" : "其它",
+        "itemType" : "ITEMS",
+        "name" : "tbitem16",
+        "getPSDEToolbarItems" : [ {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF"
+          },
+          "caption" : "导出数据模型",
+          "groupExtractMode" : "ITEM",
+          "itemType" : "DEUIACTION",
+          "name" : "tbitem21",
+          "noPrivDisplayMode" : 2,
+          "getPSAppViewUIAction" : {
+            "modelref" : true,
+            "id" : "list_batchtoolbar_tbitem21"
+          },
+          "getPSSysImage" : {
+            "glyph" : "xf019@FontAwesome",
+            "cssClass" : "fa fa-download"
+          },
+          "getPSUIAction" : {
+            "getCapPSLanguageRes" : {
+              "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF"
+            },
+            "caption" : "导出数据模型",
+            "codeName" : "ExportModel",
+            "fullCodeName" : "ExportModel",
+            "name" : "表格界面_导出数据模型",
+            "getPSSysImage" : {
+              "glyph" : "xf019@FontAwesome",
+              "cssClass" : "fa fa-download"
+            },
+            "timeout" : 60000,
+            "uIActionMode" : "SYS",
+            "uIActionTag" : "ExportModel",
+            "uIActionType" : "DEUIACTION"
+          },
+          "tooltip" : "导出数据模型",
+          "showCaption" : true,
+          "showIcon" : true
+        } ],
+        "tooltip" : "其它",
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "itemType" : "SEPERATOR",
+        "name" : "tbitem17",
+        "spanMode" : false
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.FILTER"
+        },
+        "caption" : "过滤",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem19",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem19"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0b0@FontAwesome",
+          "cssClass" : "fa fa-filter"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.FILTER"
+          },
+          "caption" : "过滤",
+          "codeName" : "ToggleFilter",
+          "fullCodeName" : "ToggleFilter",
+          "name" : "表格界面_搜索栏",
+          "getPSSysImage" : {
+            "glyph" : "xf0b0@FontAwesome",
+            "cssClass" : "fa fa-filter"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "ToggleFilter",
+          "uIActionType" : "DEUIACTION",
+          "enableToggleMode" : true
+        },
+        "tooltip" : "过滤",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+        },
+        "enableToggleMode" : true,
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.HELP"
+        },
+        "caption" : "帮助",
+        "groupExtractMode" : "ITEM",
+        "itemType" : "DEUIACTION",
+        "name" : "tbitem18",
+        "noPrivDisplayMode" : 2,
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "list_batchtoolbar_tbitem18"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf128@FontAwesome",
+          "cssClass" : "fa fa-question"
+        },
+        "getPSUIAction" : {
+          "getCapPSLanguageRes" : {
+            "lanResTag" : "TBB.TEXT.*.HELP"
+          },
+          "caption" : "帮助",
+          "codeName" : "Help",
+          "fullCodeName" : "Help",
+          "name" : "表格界面_帮助操作",
+          "getPSSysImage" : {
+            "glyph" : "xf128@FontAwesome",
+            "cssClass" : "fa fa-question"
+          },
+          "timeout" : 60000,
+          "getTooltipPSLanguageRes" : {
+            "lanResTag" : "TBB.TOOLTIP.*.HELP"
+          },
+          "uIActionMode" : "SYS",
+          "uIActionTag" : "Help",
+          "uIActionType" : "DEUIACTION"
+        },
+        "tooltip" : "帮助",
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.HELP"
+        },
+        "showCaption" : true,
+        "showIcon" : true
+      } ],
+      "modelid" : "b912ff540f5614f63914a38067d84728",
+      "modeltype" : "PSDETOOLBAR"
+    } ],
+    "getPSDEListDataItems" : [ {
+      "dataType" : 25,
+      "name" : "chartdataname",
+      "getPSAppDEField" : {
+        "name" : "CHARTDATANAME",
+        "codeName" : "ChartDataName"
+      }
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+      },
+      "name" : "createman",
+      "getPSAppDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "orgid",
+      "getPSAppDEField" : {
+        "name" : "ORGID",
+        "codeName" : "OrgId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "CHARTDATAID",
+        "codeName" : "ChartDataId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "CHARTDATANAME",
+        "codeName" : "ChartDataName"
+      }
+    } ],
+    "getPSDEListItems" : [ {
+      "align" : "LEFT",
+      "dataItemName" : "caozuo",
+      "itemType" : "ACTIONITEM",
+      "name" : "caozuo",
+      "getPSDEUIActionGroup" : {
+        "codeName" : "Auto3",
+        "name" : "看板界面行为组",
+        "getPSUIActionGroupDetails" : [ {
+          "detailType" : "DEUIACTION",
+          "name" : "u0c7ccd3",
+          "getPSUIAction" : {
+            "caption" : "刷新",
+            "codeName" : "Refresh",
+            "fullCodeName" : "Refresh",
+            "name" : "表格界面_刷新操作",
+            "getPSSysImage" : {
+              "glyph" : "xf021@FontAwesome",
+              "cssClass" : "fa fa-refresh"
+            },
+            "timeout" : 60000,
+            "uIActionMode" : "SYS",
+            "uIActionTag" : "Refresh",
+            "uIActionType" : "DEUIACTION"
+          },
+          "addSeparator" : true,
+          "showCaption" : true,
+          "showIcon" : true
+        }, {
+          "detailType" : "DEUIACTION",
+          "name" : "u953df17",
+          "getPSUIAction" : {
+            "actionTarget" : "SINGLEKEY",
+            "caption" : "移动端编辑",
+            "codeName" : "MobEdit",
+            "getFrontPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataMobEditView.json",
+              "viewType" : "DEMOBEDITVIEW"
+            },
+            "frontProcessType" : "WIZARD",
+            "fullCodeName" : "ChartData_MobEdit",
+            "name" : "移动端编辑",
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            },
+            "timeout" : 60000,
+            "uIActionMode" : "FRONT",
+            "uIActionTag" : "MobEdit",
+            "uIActionType" : "DEUIACTION",
+            "id" : "MobEdit@ChartData"
+          },
+          "addSeparator" : false,
+          "showCaption" : true,
+          "showIcon" : true
+        } ]
+      },
+      "width" : 150,
+      "widthString" : "150px",
+      "enableSort" : false
+    } ],
+    "pagingSize" : 1000,
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "hasWFDataItems" : false,
+    "enableGroup" : false,
+    "enableRowEdit" : false,
+    "enableRowEditGroup" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "noSort" : false,
+    "showHeader" : true,
+    "name" : "list",
+    "modelid" : "355D20BE-6E0D-44F3-98DB-AC5B9B04A75C",
+    "modeltype" : "PSDELIST"
+  }, {
+    "codeName" : "Default",
+    "controlType" : "SEARCHFORM",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSSEARCHFORMS/Default.json",
+    "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+    "logicName" : "默认搜索表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionType" : "FILTERACTION",
+        "name" : "search",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSControlLogics" : [ {
+      "eventNames" : "SEARCH;LOAD;SAVE",
+      "logicTag" : "searchform",
+      "logicType" : "APPVIEWENGINE",
+      "name" : "engine_searchform",
+      "getPSAppViewEngine" : {
+        "modelref" : true,
+        "id" : "engine"
+      }
+    } ],
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "getPSDEFormItems" : [ {
+      "id" : "n_chartdataname_like",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "CHARTDATANAME",
+        "codeName" : "ChartDataName"
+      }
+    }, {
+      "id" : "n_datatype_eq",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "DATATYPE",
+        "codeName" : "DataType"
+      }
+    } ],
+    "getPSDEFormPages" : [ {
+      "caption" : "常规条件",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "图表名称(%)",
+        "codeName" : "n_chartdataname_like",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "n_chartdataname_like",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CHARTDATANAME",
+          "codeName" : "ChartDataName"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "n_chartdataname_like"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "数据分类(等于(=))",
+        "codeName" : "n_datatype_eq",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "n_datatype_eq",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "DATATYPE",
+          "codeName" : "DataType"
+        },
+        "getPSEditor" : {
+          "editorType" : "DROPDOWNLIST",
+          "name" : "n_datatype_eq",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/DataType.json"
+          },
+          "singleSelect" : true
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "needCodeListConfig" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "searchButtonStyle" : "DEFAULT",
+    "tabHeaderPos" : "TOP",
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "enableFilterSave" : false,
+    "noTabHeader" : true,
+    "name" : "searchform",
+    "modelid" : "b00f170a574453ea974476955bd83442",
+    "modeltype" : "PSDEFORM_SEARCHFORM"
+  } ],
+  "getPSDEViewCodeName" : "Usr3ListView",
+  "getPSDEViewId" : "E8D0F7E4-CF1C-4E49-A8E7-AF213848E1BA",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDELISTVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
+    "getPSControlParam" : { },
+    "layoutBodyOnly" : true,
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "列表视图（样式适配）",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DELISTVIEW",
+  "xDataControlName" : "list",
+  "enableDP" : true,
+  "enableFilter" : true,
+  "enableQuickSearch" : true,
+  "enableSearch" : true,
+  "modelid" : "eaa7f11b646bb0e18b5df262a1de482c",
+  "modeltype" : "PSAPPDEVIEW"
+}

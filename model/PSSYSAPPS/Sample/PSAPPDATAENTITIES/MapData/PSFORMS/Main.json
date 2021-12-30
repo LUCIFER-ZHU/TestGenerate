@@ -1,0 +1,385 @@
+{
+  "codeName" : "Main",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData/PSFORMS/Main.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
+  "logicName" : "主编辑表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+  },
+  "getPSControlLogics" : [ {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "MAPDATAID",
+      "codeName" : "MapDataId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "MAPDATANAME",
+      "codeName" : "MapDataName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "mapdataname",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "MAPDATANAME",
+      "codeName" : "MapDataName"
+    }
+  }, {
+    "id" : "mapdatacode",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "MAPDATACODE",
+      "codeName" : "Mapdatacode"
+    }
+  }, {
+    "id" : "longitude",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "LONGITUDE",
+      "codeName" : "Longitude"
+    }
+  }, {
+    "id" : "latitude",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "LATITUDE",
+      "codeName" : "Latitude"
+    }
+  }, {
+    "id" : "sortvalue",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "SORTVALUE",
+      "codeName" : "Sortvalue"
+    }
+  }, {
+    "id" : "grouping",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "GROUPING",
+      "codeName" : "Grouping"
+    }
+  }, {
+    "id" : "type",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "TYPE",
+      "codeName" : "Type"
+    }
+  }, {
+    "id" : "mapdataid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "MAPDATAID",
+      "codeName" : "MapDataId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "地图示例数据基本信息",
+      "codeName" : "group1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "名称",
+        "codeName" : "mapdataname",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "mapdataname",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "MAPDATANAME",
+          "codeName" : "MapDataName"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 200,
+          "name" : "mapdataname"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "编码",
+        "codeName" : "mapdatacode",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "mapdatacode",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "MAPDATACODE",
+          "codeName" : "Mapdatacode"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "mapdatacode"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "经度",
+        "codeName" : "longitude",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "longitude",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "LONGITUDE",
+          "codeName" : "Longitude"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "longitude",
+          "precision" : 6
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "纬度",
+        "codeName" : "latitude",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "latitude",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "LATITUDE",
+          "codeName" : "Latitude"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "latitude",
+          "precision" : 6
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "排序值",
+        "codeName" : "sortvalue",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "sortvalue",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "SORTVALUE",
+          "codeName" : "Sortvalue"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "sortvalue"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "分组",
+        "codeName" : "grouping",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "grouping",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "GROUPING",
+          "codeName" : "Grouping"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 100,
+          "name" : "grouping"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "类型",
+        "codeName" : "type",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "type",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "TYPE",
+          "codeName" : "Type"
+        },
+        "getPSEditor" : {
+          "editorType" : "DROPDOWNLIST",
+          "name" : "type",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/MapDataType.json"
+          },
+          "singleSelect" : true
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 12,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "needCodeListConfig" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : true,
+  "modelid" : "2a851bbe598f7f620f88b29bbc3977e9",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

@@ -1,0 +1,37 @@
+{
+  "dBType" : "MYSQL5",
+  "name" : "MySQL5",
+  "getPSDEDataQueryCodeExps" : [ {
+    "expression" : "t1.`CITYID`",
+    "name" : "CITYID"
+  }, {
+    "expression" : "t1.`CITYNAME`",
+    "name" : "CITYNAME"
+  }, {
+    "expression" : "t1.`CODE`",
+    "name" : "CODE"
+  }, {
+    "expression" : "t1.`CREATEDATE`",
+    "name" : "CREATEDATE"
+  }, {
+    "expression" : "t1.`CREATEMAN`",
+    "name" : "CREATEMAN"
+  }, {
+    "expression" : "t1.`MEMO`",
+    "name" : "MEMO"
+  }, {
+    "expression" : "t1.`PROVINCEID`",
+    "name" : "PROVINCEID"
+  }, {
+    "expression" : "t11.`PROVINCENAME`",
+    "name" : "PROVINCENAME"
+  }, {
+    "expression" : "t1.`UPDATEDATE`",
+    "name" : "UPDATEDATE"
+  }, {
+    "expression" : "t1.`UPDATEMAN`",
+    "name" : "UPDATEMAN"
+  } ],
+  "queryCode" : "SELECT\nt1.`CITYID`,\nt1.`CITYNAME`,\nt1.`CODE`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`MEMO`,\nt1.`PROVINCEID`,\nt11.`PROVINCENAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_CITY` t1 \nLEFT JOIN `T_PROVINCE` t11 ON t1.`PROVINCEID` = t11.`PROVINCEID` \n",
+  "id" : "PSMODULES/Sample/PSDATAENTITIES/City/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
+}

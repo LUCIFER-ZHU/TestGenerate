@@ -1,0 +1,1126 @@
+{
+  "codeName" : "Main",
+  "controlType" : "FORM",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSFORMS/Main.json",
+  "getGetDraftFromPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraftfrom"
+  },
+  "getGetDraftPSControlAction" : {
+    "modelref" : true,
+    "id" : "loaddraft"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "hookEventNames" : [ "SAVE", "ONBEFORELOADDRAFT", "REMOVE", "LOAD" ],
+  "logicName" : "主编辑表单",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSControlLogics" : [ {
+    "logicTag" : "form",
+    "logicType" : "SCRIPT",
+    "name" : "logic2",
+    "scriptCode" : "console.log('只挂接')",
+    "triggerType" : "CUSTOM"
+  }, {
+    "eventNames" : "onBeforeLoadDraft",
+    "logicTag" : "form",
+    "logicType" : "SCRIPT",
+    "name" : "logic6",
+    "scriptCode" : "console.log(\"表单界面逻辑部件自定义触发成功！！！\")"
+  }, {
+    "logicTag" : "form",
+    "logicType" : "SCRIPT",
+    "name" : "logic",
+    "scriptCode" : "console.log('定时器触发')",
+    "triggerType" : "TIMER"
+  }, {
+    "eventNames" : "LOAD;SAVE;REMOVE",
+    "logicTag" : "form",
+    "logicType" : "APPVIEWENGINE",
+    "name" : "engine_form",
+    "getPSAppViewEngine" : {
+      "modelref" : true,
+      "id" : "engine"
+    }
+  } ],
+  "getPSDEFormItemUpdates" : [ {
+    "codeName" : "formItemUpdate",
+    "name" : "表单项更新测试",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "getPSDEFIUpdateDetails" : [ {
+      "name" : "datatype"
+    }, {
+      "name" : "updatedate"
+    }, {
+      "name" : "datetime"
+    }, {
+      "name" : "createman"
+    }, {
+      "name" : "updateman"
+    }, {
+      "name" : "begintime"
+    }, {
+      "name" : "latitude"
+    } ]
+  } ],
+  "getPSDEFormItems" : [ {
+    "id" : "srfupdatedate",
+    "hidden" : true,
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "srforikey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfkey",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    }
+  }, {
+    "id" : "srfmajortext",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    }
+  }, {
+    "id" : "srftempmode",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfuf",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfdeid",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "srfsourcekey",
+    "hidden" : true,
+    "dataType" : 25
+  }, {
+    "id" : "chartdataname",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CHARTDATANAME",
+      "codeName" : "ChartDataName"
+    }
+  }, {
+    "id" : "year",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "YEAR",
+      "codeName" : "Year"
+    }
+  }, {
+    "id" : "season",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "SEASON",
+      "codeName" : "Season"
+    }
+  }, {
+    "id" : "totalprice",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "TOTALPRICE",
+      "codeName" : "Totalprice"
+    }
+  }, {
+    "id" : "month",
+    "dataType" : 9,
+    "getPSAppDEField" : {
+      "name" : "MONTH",
+      "codeName" : "Month"
+    }
+  }, {
+    "id" : "latitude",
+    "dataType" : 7,
+    "getPSAppDEField" : {
+      "name" : "LATITUDE",
+      "codeName" : "Latitude"
+    }
+  }, {
+    "id" : "longitude",
+    "dataType" : 7,
+    "getPSAppDEField" : {
+      "name" : "LONGITUDE",
+      "codeName" : "Longitude"
+    }
+  }, {
+    "id" : "datetime",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "DATETIME",
+      "codeName" : "DateTime"
+    }
+  }, {
+    "id" : "datatype",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "DATATYPE",
+      "codeName" : "DataType"
+    }
+  }, {
+    "id" : "data",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "DATA",
+      "codeName" : "Data"
+    }
+  }, {
+    "id" : "begintime",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "BEGINTIME",
+      "codeName" : "BeginTime"
+    }
+  }, {
+    "id" : "endtime",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "ENDTIME",
+      "codeName" : "EndTime"
+    }
+  }, {
+    "id" : "open",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "OPEN",
+      "codeName" : "Open"
+    }
+  }, {
+    "id" : "close",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "CLOSE",
+      "codeName" : "Close"
+    }
+  }, {
+    "id" : "lowest",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "LOWEST",
+      "codeName" : "Lowest"
+    }
+  }, {
+    "id" : "highest",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "HIGHEST",
+      "codeName" : "Highest"
+    }
+  }, {
+    "id" : "planincome",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "PLANINCOME",
+      "codeName" : "Planincome"
+    }
+  }, {
+    "id" : "realincome",
+    "dataType" : 6,
+    "getPSAppDEField" : {
+      "name" : "REALINCOME",
+      "codeName" : "Realincome"
+    }
+  }, {
+    "id" : "deptid",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "DEPTID",
+      "codeName" : "DeptId"
+    }
+  }, {
+    "id" : "orgid",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "ORGID",
+      "codeName" : "OrgId"
+    }
+  }, {
+    "id" : "imagepath",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "IMAGEPATH",
+      "codeName" : "Imagepath"
+    }
+  }, {
+    "id" : "createman",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CREATEMAN",
+      "codeName" : "CreateMan"
+    }
+  }, {
+    "id" : "createdate",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "CREATEDATE",
+      "codeName" : "CreateDate"
+    }
+  }, {
+    "id" : "updateman",
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "UPDATEMAN",
+      "codeName" : "UpdateMan"
+    }
+  }, {
+    "id" : "updatedate",
+    "dataType" : 5,
+    "getPSAppDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    }
+  }, {
+    "id" : "chartdataid",
+    "hidden" : true,
+    "dataType" : 25,
+    "getPSAppDEField" : {
+      "name" : "CHARTDATAID",
+      "codeName" : "ChartDataId"
+    }
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "基本信息",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "图表基本信息",
+      "codeName" : "group1",
+      "detailStyle" : "STYLE2",
+      "detailType" : "GROUPPANEL",
+      "name" : "group1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "图表名称",
+        "codeName" : "chartdataname",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "chartdataname",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CHARTDATANAME",
+          "codeName" : "ChartDataName"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 200,
+          "name" : "chartdataname"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "年份",
+        "codeName" : "year",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "year",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "YEAR",
+          "codeName" : "Year"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "year"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "季度",
+        "codeName" : "season",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "season",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "SEASON",
+          "codeName" : "Season"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "season"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "总计价格",
+        "codeName" : "totalprice",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "totalprice",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "TOTALPRICE",
+          "codeName" : "Totalprice"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 100,
+          "name" : "totalprice"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "月份",
+        "codeName" : "month",
+        "dataType" : 9,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "month",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "MONTH",
+          "codeName" : "Month"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "month"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "纬度",
+        "codeName" : "latitude",
+        "dataType" : 7,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "latitude",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "LATITUDE",
+          "codeName" : "Latitude"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "latitude"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "经度",
+        "codeName" : "longitude",
+        "dataType" : 7,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "longitude",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "LONGITUDE",
+          "codeName" : "Longitude"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "longitude"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "数据时间",
+        "codeName" : "datetime",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "itemWidth" : 290.0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "datetime",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "DATETIME",
+          "codeName" : "DateTime"
+        },
+        "getPSEditor" : {
+          "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+          "editorParams" : {
+            "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+          },
+          "editorType" : "DATEPICKER",
+          "editorWidth" : 160.0,
+          "name" : "datetime"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "数据分类",
+        "codeName" : "datatype",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "datatype",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "DATATYPE",
+          "codeName" : "DataType"
+        },
+        "getPSEditor" : {
+          "editorType" : "DROPDOWNLIST",
+          "name" : "datatype",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/DataType.json"
+          },
+          "singleSelect" : true
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "needCodeListConfig" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "数据",
+        "codeName" : "data",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "data",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "DATA",
+          "codeName" : "Data"
+        },
+        "getPSDEFormItemUpdate" : {
+          "modelref" : true,
+          "id" : "formItemUpdate"
+        },
+        "getPSEditor" : {
+          "editorType" : "NUMBER",
+          "name" : "data"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "开始时间",
+        "codeName" : "begintime",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "itemWidth" : 290.0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "begintime",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "BEGINTIME",
+          "codeName" : "BeginTime"
+        },
+        "getPSEditor" : {
+          "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+          "editorParams" : {
+            "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+          },
+          "editorType" : "DATEPICKER",
+          "editorWidth" : 160.0,
+          "name" : "begintime"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "结束时间",
+        "codeName" : "endtime",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "itemWidth" : 290.0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "endtime",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ENDTIME",
+          "codeName" : "EndTime"
+        },
+        "getPSEditor" : {
+          "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+          "editorParams" : {
+            "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+          },
+          "editorType" : "DATEPICKER",
+          "editorWidth" : 160.0,
+          "name" : "endtime"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "开盘值",
+        "codeName" : "open",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "open",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "OPEN",
+          "codeName" : "Open"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "open"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "收盘值",
+        "codeName" : "close",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "close",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CLOSE",
+          "codeName" : "Close"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "close"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "最小值",
+        "codeName" : "lowest",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "lowest",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "LOWEST",
+          "codeName" : "Lowest"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "lowest"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "最大值",
+        "codeName" : "highest",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "highest",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "HIGHEST",
+          "codeName" : "Highest"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "highest"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "计划收入",
+        "codeName" : "planincome",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "planincome",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PLANINCOME",
+          "codeName" : "Planincome"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "planincome"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "实际收入",
+        "codeName" : "realincome",
+        "dataType" : 6,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "realincome",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "REALINCOME",
+          "codeName" : "Realincome"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "name" : "realincome"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 24,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    }, {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "分组面板",
+      "codeName" : "grouppanel1",
+      "detailStyle" : "STYLE2",
+      "detailType" : "GROUPPANEL",
+      "name" : "grouppanel1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "组织部门标识",
+        "codeName" : "deptid",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "deptid",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "DEPTID",
+          "codeName" : "DeptId"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 60,
+          "name" : "deptid"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "组织机构标识",
+        "codeName" : "orgid",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "orgid",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ORGID",
+          "codeName" : "OrgId"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 60,
+          "name" : "orgid"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "图片路径",
+        "codeName" : "imagepath",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "imagepath",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "IMAGEPATH",
+          "codeName" : "Imagepath"
+        },
+        "getPSEditor" : {
+          "editorType" : "TEXTBOX",
+          "maxLength" : 100,
+          "name" : "imagepath"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 8,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 24,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  }, {
+    "caption" : "其它",
+    "codeName" : "formpage2",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage2",
+    "getPSDEFormDetails" : [ {
+      "actionGroupExtractMode" : "ITEM",
+      "caption" : "操作信息",
+      "codeName" : "group2",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "GROUPPANEL",
+      "name" : "group2",
+      "getPSDEFormDetails" : [ {
+        "caption" : "建立人",
+        "codeName" : "createman",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "createman",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CREATEMAN",
+          "codeName" : "CreateMan"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "createman",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+          },
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "convertToCodeItemText" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "建立时间",
+        "codeName" : "createdate",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "createdate",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CREATEDATE",
+          "codeName" : "CreateDate"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "createdate",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "更新人",
+        "codeName" : "updateman",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "updateman",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "UPDATEMAN",
+          "codeName" : "UpdateMan"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "updateman",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/SysOperator.json"
+          },
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "convertToCodeItemText" : true,
+        "showCaption" : true
+      }, {
+        "caption" : "更新时间",
+        "codeName" : "updatedate",
+        "dataType" : 5,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 3,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "updatedate",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "UPDATEDATE",
+          "codeName" : "UpdateDate"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "updatedate",
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "valueFormat" : "YYYY-MM-DD HH:mm:ss",
+        "allowEmpty" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "tabHeaderPos" : "TOP",
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "noTabHeader" : false,
+  "modelid" : "b459365c3d04b5d5d77ccf9ae7c26a96",
+  "modeltype" : "PSDEFORM_EDITFORM"
+}

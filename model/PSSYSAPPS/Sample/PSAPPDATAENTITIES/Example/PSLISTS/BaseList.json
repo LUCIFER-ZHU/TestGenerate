@@ -1,0 +1,152 @@
+{
+  "codeName" : "BaseList",
+  "controlStyle" : "LISTVIEW",
+  "controlType" : "LIST",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSLISTS/BaseList.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "height" : 300.0,
+  "getItemPSLayoutPanel" : {
+    "getAllPSPanelFields" : [ {
+      "id" : "fieldx",
+      "viewFieldName" : "fieldx"
+    }, {
+      "id" : "temp",
+      "viewFieldName" : "Temp"
+    } ],
+    "codeName" : "ListBase",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSPANELS/ListBase.json",
+    "layoutMode" : "TABLE_24COL",
+    "logicName" : "列表常规项布局面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "fieldx",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "fieldx",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "fieldx",
+      "hidden" : false,
+      "showCaption" : false
+    }, {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "FIELD",
+      "name" : "temp",
+      "getPSEditor" : {
+        "editorType" : "SPAN",
+        "name" : "temp",
+        "enableLinkView" : false
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "viewFieldName" : "Temp",
+      "hidden" : false,
+      "showCaption" : false
+    } ],
+    "name" : "dashboard_sysportlet1_list_itempanel",
+    "modelid" : "12DFF436-575A-43D1-B4EA-8D252DEC2C50",
+    "modeltype" : "PSSYSVIEWPANEL"
+  },
+  "logicName" : "BaseList",
+  "mobListStyle" : "LISTVIEW",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSDEDataImport" : {
+    "modelref" : true,
+    "id" : "DataImport"
+  },
+  "getPSDEListDataItems" : [ {
+    "dataType" : 6,
+    "name" : "fieldx"
+  }, {
+    "dataType" : 25,
+    "name" : "temp",
+    "scriptCode" : "return '<a href=\"https://www.ibizsys.cn\" target=\"_blank\">www.ibizsys.cn</a>';",
+    "customCode" : true
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "EXAMPLEID",
+      "codeName" : "ExampleId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "EXAMPLENAME",
+      "codeName" : "ExampleName"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "cityid",
+    "getPSAppDEField" : {
+      "name" : "CITYID",
+      "codeName" : "CityId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "provinceid",
+    "getPSAppDEField" : {
+      "name" : "PROVINCEID",
+      "codeName" : "ProvinceId"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "districtid",
+    "getPSAppDEField" : {
+      "name" : "DISTRICTID",
+      "codeName" : "DistrictId"
+    }
+  } ],
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
+  "modelid" : "5800F733-0CC8-4894-95AC-FD0752953BF6",
+  "modeltype" : "PSDELIST"
+}
