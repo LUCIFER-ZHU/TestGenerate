@@ -13,6 +13,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc80",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem2",
@@ -20,9 +21,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "应用功能配置",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem3",
@@ -30,9 +32,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "应用多语言",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem4",
@@ -40,12 +43,11 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "应用故事板",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ],
-  funcs: [
-
-  ],
+  funcs: [],
 };

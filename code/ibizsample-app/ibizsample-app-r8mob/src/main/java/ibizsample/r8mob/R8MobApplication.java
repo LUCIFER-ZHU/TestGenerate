@@ -13,7 +13,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import ibizsample.util.web.SearchContextHandlerMethodArgumentResolver;
+import cn.ibizlab.util.web.SearchContextHandlerMethodArgumentResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
@@ -25,7 +25,7 @@ import java.util.List;
 @Configuration
 @EnableFeignClients(basePackages = {"ibizsample" })
 @EnableZuulProxy
-@ComponentScan(basePackages = {"ibizsample.r8mob","ibizsample.util"})
+@ComponentScan(basePackages = {"ibizsample.r8mob","cn.ibizlab.util"})
 @MapperScan("ibizsample.*.mapper")
 @SpringBootApplication(exclude = {
         org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class,

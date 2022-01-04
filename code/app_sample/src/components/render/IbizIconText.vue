@@ -1,6 +1,4 @@
 <script setup lang="ts">
-
-// props声明和默认值处理
 interface Props {
   text?: string
   iconClass?: string,
@@ -14,7 +12,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const hasIcon = computed(() => props.iconClass || props.imgPath)
-
 
 const extraClass = {
   "ibiz-icon-text--no-icon": !hasIcon.value,

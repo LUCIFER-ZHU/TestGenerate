@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface ContactMapper extends BaseMapper<Contact> {
@@ -26,6 +26,10 @@ public interface ContactMapper extends BaseMapper<Contact> {
 
     @Override
     Contact selectById(Serializable id);
+
+    Contact selectEntity(Contact entity);
+
+    List<Contact> selectEntities(@Param("list") List<Contact> list);
 
     @Override
     int insert(Contact entity);

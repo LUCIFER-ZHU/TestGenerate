@@ -1,39 +1,5 @@
-import { ControlVOBase, verifyRules } from '@ibiz-core';
-import { ControlService } from './info-form-service';
-
-export const CtrlConfig = {
-  controlCodeName: 'Info',
-  controlName: 'form',
-  controlService: new ControlService(),
-  data: {},
-  itemsModel: [
-{
-  caption: '示例版本基本信息',
-  codeName: 'group1',
-  name: 'group1',
-},
-{
-  caption: '标题',
-  codeName: 'samplevername',
-  name: 'samplevername',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '内容',
-  codeName: 'content',
-  name: 'content',
-  dataType: '21',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-  ],
-  rules: {
-  },
-};
+import { ControlVOBase, verifyRules, EditFormService } from '@ibiz-core';
+import { SampleVerService } from '@service/entity/sample-ver/sample-ver-service';
 
 /**
  * 部件展示数据对象
@@ -41,6 +7,16 @@ export const CtrlConfig = {
  * @class ControlVO
  */
 export class ControlVO extends ControlVOBase {
+  /**
+   * 用后台数据对象创建部件数据对象
+   * @param data 后台数据
+   */
+  constructor(data: any){
+    super(data);
+    // 记录没有映射的属性
+    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','samplevername','content','sampleverid'];  
+  }
+
   // 表单里映射了属性的字段
   get srfupdatedate() {
     return this.$DO.updatedate;
@@ -85,10 +61,40 @@ export class ControlVO extends ControlVOBase {
   }
 
 
-  // 表单里没有映射实体属性的字段
+  // 表单里没有映射实体属性的字段(srfuf除外)
   srforikey: any;
   srftempmode: any;
-  srfuf: any;
   srfdeid: any;
   srfsourcekey: any;
 }
+
+// 部件配置对象
+export const CtrlConfig = {
+  controlCodeName: 'Info',
+  controlName: 'form',
+  controlService: new EditFormService<ControlVO>(ControlVO, new SampleVerService() ),
+  data: new ControlVO({}),
+  formDetails: [
+    {
+      caption: '示例版本基本信息',
+      codeName: 'group1',
+      name: 'group1',
+    },
+    {
+      caption: '标题',
+      codeName: 'samplevername',
+      name: 'samplevername',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '内容',
+      codeName: 'content',
+      name: 'content',
+      dataType: '21',
+      detailStyle: 'DEFAULT',
+    },
+  ],
+  rules: {
+  },
+};

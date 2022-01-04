@@ -12,18 +12,21 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.DigestUtils;
-import ibizsample.util.domain.EntityBase;
-import ibizsample.util.annotation.DEField;
-import ibizsample.util.enums.DEPredefinedFieldType;
-import ibizsample.util.enums.DEFieldDefaultValueType;
-import ibizsample.util.helper.DataObject;
-import ibizsample.util.annotation.Audit;
-import ibizsample.util.enums.DupCheck;
-import ibizsample.util.domain.EntityMP;
+import org.springframework.util.Assert;
+import cn.ibizlab.util.domain.EntityBase;
+import cn.ibizlab.util.annotation.DEField;
+import cn.ibizlab.util.enums.DEPredefinedFieldType;
+import cn.ibizlab.util.enums.DEFieldDefaultValueType;
+import cn.ibizlab.util.helper.DataObject;
+import cn.ibizlab.util.annotation.Audit;
+import cn.ibizlab.util.enums.DupCheck;
+import cn.ibizlab.util.domain.EntityMP;
 import java.io.Serializable;
 import lombok.*;
+import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Transient;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -232,4 +235,30 @@ public class ProductCategory extends EntityMP implements Serializable
 
 
 
+
+
+    @Override
+    public Serializable getDefaultKey(boolean gen) {
+        Assert.notNull(getProductId(),"未设置产品标识");    
+        Assert.notNull(getCategoryId(),"未设置类别标识");    
+        String key = String.format("%s||%s"
+            ,getProductId(),getCategoryId());
+        key = DigestUtils.md5DigestAsHex(key.getBytes());    
+        return key;
+    }
+
+
+
+    /**
+     * 复制当前对象数据到目标对象(粘贴重置)
+     * @param targetEntity 目标数据对象
+     * @param bIncEmpty  是否包括空值
+     * @param <T>
+     * @return
+     */
+    @Override
+    public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
+        this.reset("productcategoryid");        
+        return super.copyTo(targetEntity, bIncEmpty);
+    }    
 }

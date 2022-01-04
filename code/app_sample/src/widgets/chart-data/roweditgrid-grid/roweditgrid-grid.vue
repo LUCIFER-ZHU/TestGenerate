@@ -31,7 +31,7 @@ interface CtrlEmit {
 }
 const emit = defineEmits<CtrlEmit>();
 // 安装功能模块，提供状态和能力方法
-const { state, load, handleEditorEvent } = new GridControl(CtrlConfig).moduleInstall(props);
+const { state, load, handleEditorEvent, handleToolbarEvent } = new GridControl(CtrlConfig).moduleInstall(props);
 // 表格滚动条配置
 const gridScrollOption = computed(() => {
   return {
@@ -71,7 +71,7 @@ const customRow = (record: IParam, index: number) => {
 }
 // 表格选择功能配置
 const rowSelectionOption = computed(() => {
-  if (props.rowEditState || props.selectFirstDefault) {
+  if (props.selectFirstDefault) {
     return false;
   }
   return {
@@ -127,91 +127,129 @@ const handleChange = (pagination: IParam, filters: IParam, sorter: IParam, data:
       </div>
     </template>
     <template #bodyCell="{ column, text, record, index }">
-
-<div v-if="Object.is(column.dataIndex, 'name')" class="table-cell">
+<div v-if="Object.is(column.dataIndex, 'chartdataname')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizInput
+  name="name"
+  :maxLength="200"
+  type="text"
+  :value="record.name"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
+    
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'chartdate')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizDatePicker
+  name="chartdate"
+  dateFormat="YYYY-MM-DD HH:mm:ss"
+  dateType="dateTime"
+  :value="record.chartdate"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'datatype')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizDropdownList
+  name="datatype"
+  :data="state.data"
+  :contextProp="state.context"
+  :viewParamsProp="state.viewParams"
+  :value="record.datatype"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'year')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizInput
+  name="year"
+  type="text"
+  :value="record.year"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
+    
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
-<div v-if="Object.is(column.dataIndex, 'testData')" class="table-cell">
+<div v-if="Object.is(column.dataIndex, 'data')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizInput
+  name="testData"
+  type="number"
+  :value="record.testData"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
+    
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'datetime')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizDatePicker
+  name="datetime"
+  dateFormat="YYYY-MM-DD HH:mm:ss"
+  dateType="dateTime"
+  :value="record.datetime"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
-<div v-if="Object.is(column.dataIndex, 'person')" class="table-cell">
+<div v-if="Object.is(column.dataIndex, 'updateman')" class="table-cell">
 
   <div class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'updatedate')" class="table-cell">
 
   <div class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
     </template>
     <template #summary>
-      <a-table-summary-row>
-        <a-table-summary-cell>数据聚合</a-table-summary-cell>
-        <a-table-summary-cell v-for="(item, index) in state.dataAgg" :key="index">
-          <span>{{item}}</span>
-        </a-table-summary-cell>
-      </a-table-summary-row>
+      <a-table-summary>
+        <a-table-summary-row>
+          <a-table-summary-cell align="center">数据聚合</a-table-summary-cell>
+          <a-table-summary-cell v-for="(item, index) in state.dataAgg" :key="index">
+            <span>{{item}}</span>
+          </a-table-summary-cell>
+        </a-table-summary-row>
+      </a-table-summary>
     </template>
     
   </a-table>
 </template>
 <style lang="scss">
 .ibiz-grid {
-  margin: 20px;
+  height: 100%;
   .table-striped {
     background-color: #fafafa;
   }

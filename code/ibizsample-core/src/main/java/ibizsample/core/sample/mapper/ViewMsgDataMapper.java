@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface ViewMsgDataMapper extends BaseMapper<ViewMsgData> {
@@ -26,6 +26,10 @@ public interface ViewMsgDataMapper extends BaseMapper<ViewMsgData> {
 
     @Override
     ViewMsgData selectById(Serializable id);
+
+    ViewMsgData selectEntity(ViewMsgData entity);
+
+    List<ViewMsgData> selectEntities(@Param("list") List<ViewMsgData> list);
 
     @Override
     int insert(ViewMsgData entity);

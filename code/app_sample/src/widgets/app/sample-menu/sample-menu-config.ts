@@ -13,7 +13,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc2",
   hidden: false,
   disableClose: false,
-  iconCls: "fa fa-indent",
+  iconClass: "fa fa-indent",
 },
 { 
 	name: "menuitem10",
@@ -24,7 +24,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc14",
   hidden: false,
   disableClose: false,
-  iconCls: "fa fa-cogs",
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem11",
@@ -35,7 +35,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc15",
   hidden: false,
   disableClose: false,
-  iconCls: "fa fa-cogs",
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem12",
@@ -46,6 +46,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc42",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem51",
@@ -56,6 +57,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc55",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem60",
@@ -63,9 +65,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "样式表及图片",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem63",
@@ -76,6 +79,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc75",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem66",
@@ -86,6 +90,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc78",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem6",
@@ -93,9 +98,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "示例数据",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem9",
@@ -106,7 +112,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc13",
   hidden: false,
   disableClose: false,
-  iconCls: "fa fa-cogs",
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem7",
@@ -117,7 +123,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc6",
   hidden: false,
   disableClose: false,
-  iconCls: "fa fa-users",
+  iconClass: "fa fa-users",
 },
 { 
 	name: "menuitem1",
@@ -128,7 +134,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc5",
   hidden: false,
   disableClose: false,
-  iconCls: "fa fa-cube",
+  iconClass: "fa fa-cube",
 },
 { 
 	name: "menuitem2",
@@ -139,7 +145,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc4",
   hidden: false,
   disableClose: false,
-  iconCls: "fa fa-cogs",
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem3",
@@ -150,7 +156,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc",
   hidden: false,
   disableClose: false,
-  iconCls: "fa fa-file-text",
+  iconClass: "fa fa-file-text",
 },
 { 
 	name: "menuitem69",
@@ -161,7 +167,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc83",
   hidden: false,
   disableClose: false,
-  iconCls: "fa fa-file-text",
+  iconClass: "fa fa-file-text",
 },
 { 
 	name: "menuitem16",
@@ -172,7 +178,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc20",
   hidden: false,
   disableClose: false,
-  iconCls: "fa fa-bar-chart",
+  iconClass: "fa fa-bar-chart",
 },
 { 
 	name: "menuitem52",
@@ -183,7 +189,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc51",
   hidden: false,
   disableClose: false,
-  iconCls: "fa fa-calendar",
+  iconClass: "fa fa-calendar",
 },
 { 
 	name: "menuitem53",
@@ -194,6 +200,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc53",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem55",
@@ -204,6 +211,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc65",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem58",
@@ -214,6 +222,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc70",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem59",
@@ -224,6 +233,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc71",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem61",
@@ -234,6 +244,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc73",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem64",
@@ -244,6 +255,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc76",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem65",
@@ -254,6 +266,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc77",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem70",
@@ -264,6 +277,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc84",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem71",
@@ -274,6 +288,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc85",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -283,9 +298,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "报表管理",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem5",
@@ -296,6 +312,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc3",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -305,9 +322,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "功能确认",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem20",
@@ -315,9 +333,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "地图",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem21",
@@ -328,6 +347,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc23",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem22",
@@ -338,6 +358,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc24",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -347,9 +368,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "列表",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem17",
@@ -360,6 +382,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc21",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem15",
@@ -370,6 +393,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc18",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem27",
@@ -380,6 +404,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc27",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -389,9 +414,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "图表",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem18",
@@ -402,6 +428,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc19",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem19",
@@ -412,6 +439,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc22",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem67",
@@ -422,6 +450,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc81",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -431,9 +460,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "表格",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem25",
@@ -444,7 +474,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc25",
   hidden: false,
   disableClose: false,
-  iconCls: "grid",
+  iconClass: "grid",
 },
 { 
 	name: "menuitem26",
@@ -455,6 +485,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc26",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem54",
@@ -465,6 +496,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc57",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -474,9 +506,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "树",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem29",
@@ -487,6 +520,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc28",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem30",
@@ -497,6 +531,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc19",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -506,9 +541,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "日历",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem32",
@@ -519,6 +555,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc29",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem33",
@@ -529,6 +566,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc30",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem46",
@@ -539,6 +577,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc39",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem47",
@@ -549,6 +588,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc40",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem48",
@@ -559,6 +599,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc41",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -568,9 +609,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "数据",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem37",
@@ -582,6 +624,7 @@ export const CtrlConfig = {
   hidden: false,
   disableClose: false,
   counterId: "countertag",
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem40",
@@ -593,6 +636,7 @@ export const CtrlConfig = {
   hidden: false,
   disableClose: false,
   counterId: "countertag2",
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem41",
@@ -604,6 +648,7 @@ export const CtrlConfig = {
   hidden: false,
   disableClose: false,
   counterId: "countertag3",
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -613,9 +658,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "树表格",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem38",
@@ -626,6 +672,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc34",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -635,9 +682,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "多表单编辑",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem39",
@@ -648,6 +696,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc33",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -660,6 +709,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc36",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem43",
@@ -667,9 +717,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "报表",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem44",
@@ -680,6 +731,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc37",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -692,6 +744,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc38",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem49",
@@ -699,9 +752,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "表单",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem50",
@@ -712,6 +766,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc43",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem56",
@@ -722,6 +777,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc68",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -734,6 +790,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc69",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -746,6 +803,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc74",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem68",
@@ -756,6 +814,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc82",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem72",
@@ -766,9 +825,8 @@ export const CtrlConfig = {
   funcTag: "AppFunc86",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ],
-  funcs: [
-
-  ],
+  funcs: [],
 };

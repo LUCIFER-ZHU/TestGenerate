@@ -13,6 +13,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc15",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem2",
@@ -23,7 +24,7 @@ export const CtrlConfig = {
   funcTag: "AppFunc3",
   hidden: false,
   disableClose: false,
-  iconCls: "heart",
+  iconClass: "heart",
 },
 { 
 	name: "menuitem4",
@@ -34,9 +35,8 @@ export const CtrlConfig = {
   funcTag: "AppFunc7",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ],
-  funcs: [
-
-  ],
+  funcs: [],
 };

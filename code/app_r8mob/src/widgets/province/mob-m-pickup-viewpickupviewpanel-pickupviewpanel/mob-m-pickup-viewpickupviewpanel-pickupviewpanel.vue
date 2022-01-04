@@ -1,7 +1,7 @@
 <script setup lang="ts">
 	import { Subject } from 'rxjs';
 	import { IActionParam, IParam, ControlAction, PickupViewPanelControl } from '@ibiz-core';
-	import { CtrlConfig } from './mob-m-pickup-viewpickupviewpanel-pickupviewpanel-config';
+	import { CtrlConfig } from './-pickupviewpanel-config';
 
 	interface Props {
 		context: IParam;

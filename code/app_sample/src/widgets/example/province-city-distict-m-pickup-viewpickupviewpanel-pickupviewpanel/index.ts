@@ -1,3 +1,3 @@
-import ProvinceCityDistictMPickupViewpickupviewpanelPickupViewPanel from "./province-city-distict-m-pickup-viewpickupviewpanel-pickupviewpanel.vue";
+import ProvinceCityDistictMPickupViewpickupviewpanelPickupViewPanel from "./-pickupviewpanel.vue";
 
 export { ProvinceCityDistictMPickupViewpickupviewpanelPickupViewPanel };

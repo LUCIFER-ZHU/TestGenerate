@@ -75,6 +75,23 @@ export class ControlVOBase {
   }
 
   /**
+   * 克隆方法(创建一个新的ControlVO对象)
+   * 拥有ControlVO的功能，且与原对象的互不影响。
+   *
+   */
+  public clone(){
+
+  }
+
+  /**
+   * 转换成普通js对象，拷贝所有的数据
+   *
+   */
+  public toObject(){
+    return {};
+  }
+
+  /**
    * 用后台数据重置数据对象
    * @param data 后台数据
    */

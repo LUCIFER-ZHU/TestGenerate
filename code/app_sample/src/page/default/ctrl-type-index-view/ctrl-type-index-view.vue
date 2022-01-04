@@ -28,19 +28,22 @@ const emit = defineEmits<ViewEmit>();
 // 安装功能模块，提供状态和能力方法
 const { state } = new IndexView(ViewConfig).moduleInstall(props, emit);
 const collapsed: Ref<boolean> = ref(false);
+const collapsedChange = () => {
+  collapsed.value = !collapsed.value;
+}
 </script>
 
 <template>
   <IbizDefaultIndexViewLayout class="ibiz-index-view" :menuAlign="state.menuAlign" :collapsed="collapsed">
-    <template #header>
+    <template #caption>
       <div class="index-view-header">
         {{state.viewCaption}}
         <MenuUnfoldOutlined
           v-if="collapsed"
           class="trigger"
-          @click="() => (collapsed = !collapsed)"
+          @click="collapsedChange"
         />
-        <MenuFoldOutlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
+        <MenuFoldOutlined v-else class="trigger" @click="collapsedChange" />
       </div>
     </template>
     <template #user>
@@ -56,7 +59,7 @@ const collapsed: Ref<boolean> = ref(false);
         :viewSubject="state.viewSubject"
       ></CtrlTypeIndexViewMenu>
     </template>
-    <template #content>
+    <template #router>
       <router-view />
     </template>
   </IbizDefaultIndexViewLayout>

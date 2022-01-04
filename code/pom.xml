@@ -19,8 +19,6 @@
     <modules>
         <!-- dependencies -->
         <module>ibizsample-dependencies</module>
-        <!-- utils -->
-        <module>ibizsample-util</module>
         <!-- cores -->
         <module>ibizsample-core</module>
         <!-- services -->
@@ -37,6 +35,19 @@
             <id>aliyunmaven</id>
             <name>阿里云公共仓库</name>
             <url>https://maven.aliyun.com/repository/public/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>ibizmvnrepository</id>
+            <name>ibizmvnrepository</name>
+            <url>http://172.16.240.220:8081/nexus/content/groups/public/</url>
             <layout>default</layout>
             <releases>
                 <enabled>true</enabled>

@@ -1,3 +1,3 @@
-import TreeMPickupViewpickupviewpanelPickupViewPanel from "./tree-m-pickup-viewpickupviewpanel-pickupviewpanel.vue";
+import TreeMPickupViewpickupviewpanelPickupViewPanel from "./-pickupviewpanel.vue";
 
 export { TreeMPickupViewpickupviewpanelPickupViewPanel };

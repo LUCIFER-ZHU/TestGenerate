@@ -34,55 +34,85 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     style=""
     :model="state.data" 
     :rules="state.rules">
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="group1" title="订单基本信息">
     <a-row>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 12, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="customername" label="客户">
 <IbizSpan
   name="customername"
-  :value="state.data.customername"
   dataType="25"
+  :value="state.data.customername"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 12, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="ordername" label="订单号">
 <IbizSpan
   name="ordername"
-  :value="state.data.ordername"
   dataType="25"
+  :value="state.data.ordername"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 12, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="orderdate" label="订单时间">
 <IbizSpan
   name="orderdate"
-  :value="state.data.orderdate"
   dataType="5"
+  :value="state.data.orderdate"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 12, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="state" label="订单状态">
 <IbizSpan
   name="state"
-  :value="state.data.state"
   dataType="25"
+  :value="state.data.state"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 12, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="amount" label="金额">
 <IbizSpan
   name="amount"
-  :value="state.data.amount"
   dataType="7"
+  :value="state.data.amount"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
@@ -93,7 +123,10 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   </a-form>
 </template>
 <style lang="scss">
-.ibiz-form {
-  margin: 20px !important;
-}
+  .ibiz-form {
+    .ant-card-head {
+      padding: 0;
+      margin: 0 10px;
+    }
+  }
 </style>

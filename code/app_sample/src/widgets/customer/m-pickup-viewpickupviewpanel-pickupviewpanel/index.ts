@@ -1,3 +1,3 @@
-import MPickupViewpickupviewpanelPickupViewPanel from "./m-pickup-viewpickupviewpanel-pickupviewpanel.vue";
+import MPickupViewpickupviewpanelPickupViewPanel from "./-pickupviewpanel.vue";
 
 export { MPickupViewpickupviewpanelPickupViewPanel };

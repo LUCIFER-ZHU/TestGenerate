@@ -1,102 +1,5 @@
-import { ControlVOBase, verifyRules } from '@ibiz-core';
-import { ControlService } from './main-form-service';
-
-export const CtrlConfig = {
-  controlCodeName: 'Main',
-  controlName: 'form',
-  controlService: new ControlService(),
-  data: {},
-  itemsModel: [
-{
-  caption: '计算器数据2基本信息',
-  codeName: 'group1',
-  name: 'group1',
-},
-{
-  caption: '计数1',
-  codeName: 'countertag',
-  name: 'countertag',
-  dataType: '9',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '计数2',
-  codeName: 'countertag2',
-  name: 'countertag2',
-  dataType: '9',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '计数3',
-  codeName: 'countertag3',
-  name: 'countertag3',
-  dataType: '9',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '计数4',
-  codeName: 'countertag4',
-  name: 'countertag4',
-  dataType: '9',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '计数5',
-  codeName: 'countertag5',
-  name: 'countertag5',
-  dataType: '9',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '计数6',
-  codeName: 'countertag6',
-  name: 'countertag6',
-  dataType: '9',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '计数7',
-  codeName: 'countertag7',
-  name: 'countertag7',
-  dataType: '9',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '计数8',
-  codeName: 'countertag8',
-  name: 'countertag8',
-  dataType: '9',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '计数9',
-  codeName: 'countertag9',
-  name: 'countertag9',
-  dataType: '9',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-  ],
-  rules: {
-  },
-};
+import { ControlVOBase, verifyRules, EditFormService } from '@ibiz-core';
+import { CounterData2Service } from '@service/entity/counter-data2/counter-data2-service';
 
 /**
  * 部件展示数据对象
@@ -104,6 +7,16 @@ export const CtrlConfig = {
  * @class ControlVO
  */
 export class ControlVO extends ControlVOBase {
+  /**
+   * 用后台数据对象创建部件数据对象
+   * @param data 后台数据
+   */
+  constructor(data: any){
+    super(data);
+    // 记录没有映射的属性
+    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','countertag','countertag2','countertag3','countertag4','countertag5','countertag6','countertag7','countertag8','countertag9','counterdata2id'];  
+  }
+
   // 表单里映射了属性的字段
   get srfupdatedate() {
     return this.$DO.updatedate;
@@ -197,10 +110,89 @@ export class ControlVO extends ControlVOBase {
   }
 
 
-  // 表单里没有映射实体属性的字段
+  // 表单里没有映射实体属性的字段(srfuf除外)
   srforikey: any;
   srftempmode: any;
-  srfuf: any;
   srfdeid: any;
   srfsourcekey: any;
 }
+
+// 部件配置对象
+export const CtrlConfig = {
+  controlCodeName: 'Main',
+  controlName: 'form',
+  controlService: new EditFormService<ControlVO>(ControlVO, new CounterData2Service() ),
+  data: new ControlVO({}),
+  formDetails: [
+    {
+      caption: '计算器数据2基本信息',
+      codeName: 'group1',
+      name: 'group1',
+    },
+    {
+      caption: '计数1',
+      codeName: 'countertag',
+      name: 'countertag',
+      dataType: '9',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '计数2',
+      codeName: 'countertag2',
+      name: 'countertag2',
+      dataType: '9',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '计数3',
+      codeName: 'countertag3',
+      name: 'countertag3',
+      dataType: '9',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '计数4',
+      codeName: 'countertag4',
+      name: 'countertag4',
+      dataType: '9',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '计数5',
+      codeName: 'countertag5',
+      name: 'countertag5',
+      dataType: '9',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '计数6',
+      codeName: 'countertag6',
+      name: 'countertag6',
+      dataType: '9',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '计数7',
+      codeName: 'countertag7',
+      name: 'countertag7',
+      dataType: '9',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '计数8',
+      codeName: 'countertag8',
+      name: 'countertag8',
+      dataType: '9',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '计数9',
+      codeName: 'countertag9',
+      name: 'countertag9',
+      dataType: '9',
+      detailStyle: 'DEFAULT',
+    },
+  ],
+  rules: {
+  },
+};

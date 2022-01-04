@@ -34,18 +34,29 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     style=""
     :model="state.data" 
     :rules="state.rules">
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="group1" title="示例基本信息">
     <a-row>
-      /*未找到模板[RAWITEM]*/<a-col :span="24">
+      /*未找到模板[RAWITEM]*/<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="acfield" label="自动填充属性">
 <IbizAutoComplete
   name="acfield"
-  :value="state.data.acfield"
   :data="state.data"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.acfield"
+  @editorEvent="handleEditorEvent"
+/>
   </IbizFormItem>
 </a-col>
     </a-row>
@@ -54,7 +65,10 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   </a-form>
 </template>
 <style lang="scss">
-.ibiz-form {
-  margin: 20px !important;
-}
+  .ibiz-form {
+    .ant-card-head {
+      padding: 0;
+      margin: 0 10px;
+    }
+  }
 </style>

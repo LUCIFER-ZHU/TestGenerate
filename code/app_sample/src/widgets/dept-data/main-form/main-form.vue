@@ -34,28 +34,45 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     style=""
     :model="state.data" 
     :rules="state.rules">
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="group1" title="部门数据基本信息">
     <a-row>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="orgdataname" label="组织名称">
 <IbizDataPicker
   name="orgdataname"
-  :value="state.data.orgdataname"
   :data="state.data"
   valueItem="orgdataid"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"
-  @editorEvent="handleEditorEvent"/>  </IbizFormItem>
+  :value="state.data.orgdataname"
+  @editorEvent="handleEditorEvent"
+/>   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="deptdataname" label="部门名称">
 <IbizInput
   name="deptdataname"
-  :value="state.data.deptdataname"
   :maxLength="200"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.deptdataname"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
@@ -65,7 +82,10 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   </a-form>
 </template>
 <style lang="scss">
-.ibiz-form {
-  margin: 20px !important;
-}
+  .ibiz-form {
+    .ant-card-head {
+      padding: 0;
+      margin: 0 10px;
+    }
+  }
 </style>

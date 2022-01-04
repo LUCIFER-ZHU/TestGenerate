@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface LogicValidDataMapper extends BaseMapper<LogicValidData> {
@@ -26,6 +26,10 @@ public interface LogicValidDataMapper extends BaseMapper<LogicValidData> {
 
     @Override
     LogicValidData selectById(Serializable id);
+
+    LogicValidData selectEntity(LogicValidData entity);
+
+    List<LogicValidData> selectEntities(@Param("list") List<LogicValidData> list);
 
     @Override
     int insert(LogicValidData entity);

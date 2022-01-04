@@ -43,6 +43,13 @@ export interface ViewStateBase {
    */
   viewSubject: Subject<IActionParam>;
 
+  /**
+   * @description 视图工具栏模型
+   * @type {IParam[]}
+   * @memberof ViewStateBase
+   */
+  viewToolbarModel: IParam[];
+
   // 声明任意属性
   [propName: string]: any;
 }

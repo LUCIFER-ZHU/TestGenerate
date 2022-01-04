@@ -12,6 +12,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.math.BigInteger;
 import lombok.extern.slf4j.Slf4j;
+
+import cn.ibizlab.util.security.SpringContextHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;
@@ -20,23 +22,22 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.util.Assert;
 import org.springframework.beans.factory.annotation.Value;
-import ibizsample.util.errors.BadRequestAlertException;
-<#system.enableGlobalTransaction>
-import io.seata.spring.annotation.GlobalTransactional;
-</system.enableGlobalTransaction>
+import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Lazy;
 import ibizsample.core.sample.domain.CalendarData;
 import ibizsample.core.sample.filter.CalendarDataSearchContext;
 import ibizsample.core.sample.service.ICalendarDataService;
-import ibizsample.core.sample.mapper.${item.getCodeName()}Mapper;
-import ibizsample.util.helper.CachedBeanCopier;
-import ibizsample.util.helper.DEFieldCacheMap;
+import ibizsample.core.sample.mapper.CalendarDataMapper;
+import cn.ibizlab.util.helper.CachedBeanCopier;
+import cn.ibizlab.util.helper.DEFieldCacheMap;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 
 
@@ -45,49 +46,123 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
  */
 @Slf4j
 @Service("CalendarDataServiceImpl")
-public class CalendarDataServiceImpl extends ServiceImpl<CalendarData> implements ICalendarDataService {
+public class CalendarDataServiceImpl extends ServiceImpl<CalendarDataMapper,CalendarData> implements ICalendarDataService {
 
     protected ICalendarDataService calendarDataService = SpringContextHolder.getBean(this.getClass());
 
 
+    protected int batchSize = 500;
 
-    public CalendarData get(String key) {
-        CalendarData et = getById(key);
-        Assert.notNull(et,"数据不存在,日历示例数据:"+key);
+    public CalendarData get(CalendarData et) {
+        CalendarData rt = this.baseMapper.selectEntity(et);
+        Assert.notNull(rt,"数据不存在,日历示例数据:"+et.getCalendarDataId());
+        CachedBeanCopier.copy(rt, et);
+        return et;
     }
-    List<CalendarData> getByIds(Collection<String> idList);
-    List<CalendarData> getByEntities(Collection<CalendarData> entities);
+    
+    public List<CalendarData> getByEntities(List<CalendarData> entities) {
+        return this.baseMapper.selectEntities(entities);
+    }
 
-    CalendarData getDraft(CalendarData et);
 
-    boolean checkKey(CalendarData et);
+    public CalendarData getDraft(CalendarData et) {
+        return et;
+    }
+
+    public boolean checkKey(CalendarData et) {
+        return this.count(Wrappers.lambdaQuery(et))>0;
+    }
 
     @Override
     @Transactional
     public boolean create(CalendarData et) {
         if(!this.retBool(this.baseMapper.insert(et))) 
             return false;
+        get(et);
         return true;
     }
     @Transactional
     public boolean createBatch(List<CalendarData> list) {
-
+        this.saveBatch(list, batchSize);        
+        return true;
     }
 
-    boolean update(CalendarData et);
-    boolean updateBatch(List<CalendarData> list);
+    @Transactional
+    public boolean update(CalendarData et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true)
+                .eq("calendardataid", et.getCalendarDataId())
+            )) {
+            return false;
+        }
+        get(et);
+        return true;
+    }
 
-    boolean save(CalendarData et);
-    boolean saveBatch(List<CalendarData> list);
+    @Transactional
+    public boolean updateBatch(List<CalendarData> list) {
+        updateBatchById(list, batchSize);
+        return true;
+    }
 
-    boolean remove(String key);
-    boolean removeBatch(Collection<String> idList);
+    @Transactional
+    public boolean save(CalendarData et) {
+        if(checkKey(et))
+            return calendarDataService.update(et);
+        else
+            return calendarDataService.create(et);
+    }
 
-    CalendarData (CalendarData et);
-    boolean Batch(List<CalendarData> list);
+    @Transactional
+    public boolean saveBatch(List<CalendarData> list) {
+        List<CalendarData> rt=this.getByEntities(list);
+        Set<Serializable> keys=new HashSet<>();
+        rt.forEach(et->{
+            Serializable key = et.getCalendarDataId();
+            if(!ObjectUtils.isEmpty(key))
+                keys.add(key);
+        });
+        List<CalendarData> create=new ArrayList<>();
+        List<CalendarData> update=new ArrayList<>();
+        list.forEach(et-> {
+            Serializable key = et.getCalendarDataId();
+            if(keys.contains(key))
+                update.add(et);
+            else
+                create.add(et);
+        });
+        List rtList=new ArrayList<>();
+        if(update.size()>0 && (!calendarDataService.updateBatch(update)))
+            return false;
+        if(create.size()>0 && (!calendarDataService.createBatch(create)))
+            return false;
+        return true;
+    }
 
-    Page<CalendarData> searchDefault(CalendarDataSearchContext context);
-    List<CalendarData> listDefault(CalendarDataSearchContext context);
+    @Transactional
+    public boolean remove(CalendarData et) {
+        String key = et.getCalendarDataId();
+
+        if(!remove(new QueryWrapper<CalendarData>()
+                .eq("calendardataid", et.getCalendarDataId())
+            )) {
+            return false;
+        }
+        return true ;
+    }
+    
+    @Transactional
+    public boolean removeBatch(Collection<String> ids) {
+        removeByIds(ids);
+        return true;
+    }
+
+    public Page<CalendarData> searchDefault(CalendarDataSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<CalendarData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<CalendarData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+    public List<CalendarData> listDefault(CalendarDataSearchContext context) {
+        return baseMapper.listDefault(context,context.getSelectCond());
+    }
 
 
 }

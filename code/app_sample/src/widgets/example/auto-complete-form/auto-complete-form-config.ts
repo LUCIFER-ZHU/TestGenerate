@@ -1,35 +1,5 @@
-import { ControlVOBase, verifyRules } from '@ibiz-core';
-import { ControlService } from './auto-complete-form-service';
-
-export const CtrlConfig = {
-  controlCodeName: 'AutoComplete',
-  controlName: 'form',
-  controlService: new ControlService(),
-  data: {},
-  itemsModel: [
-{
-  caption: '示例基本信息',
-  codeName: 'group1',
-  name: 'group1',
-},
-{
-  caption: '',
-  codeName: 'rawitem1',
-  name: 'rawitem1',
-},
-{
-  caption: '自动填充属性',
-  codeName: 'acfield',
-  name: 'acfield',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-  ],
-  rules: {
-  },
-};
+import { ControlVOBase, verifyRules, EditFormService } from '@ibiz-core';
+import { ExampleService } from '@service/entity/example/example-service';
 
 /**
  * 部件展示数据对象
@@ -37,6 +7,16 @@ export const CtrlConfig = {
  * @class ControlVO
  */
 export class ControlVO extends ControlVOBase {
+  /**
+   * 用后台数据对象创建部件数据对象
+   * @param data 后台数据
+   */
+  constructor(data: any){
+    super(data);
+    // 记录没有映射的属性
+    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','acfield','exampleid'];  
+  }
+
   // 表单里映射了属性的字段
   get srfupdatedate() {
     return this.$DO.updatedate;
@@ -74,10 +54,38 @@ export class ControlVO extends ControlVOBase {
   }
 
 
-  // 表单里没有映射实体属性的字段
+  // 表单里没有映射实体属性的字段(srfuf除外)
   srforikey: any;
   srftempmode: any;
-  srfuf: any;
   srfdeid: any;
   srfsourcekey: any;
 }
+
+// 部件配置对象
+export const CtrlConfig = {
+  controlCodeName: 'AutoComplete',
+  controlName: 'form',
+  controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
+  data: new ControlVO({}),
+  formDetails: [
+    {
+      caption: '示例基本信息',
+      codeName: 'group1',
+      name: 'group1',
+    },
+    {
+      caption: '',
+      codeName: 'rawitem1',
+      name: 'rawitem1',
+    },
+    {
+      caption: '自动填充属性',
+      codeName: 'acfield',
+      name: 'acfield',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+  ],
+  rules: {
+  },
+};

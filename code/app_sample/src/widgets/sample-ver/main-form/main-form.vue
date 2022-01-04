@@ -34,54 +34,88 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     style=""
     :model="state.data" 
     :rules="state.rules">
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="group1" title="示例版本基本信息">
     <a-row>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="samplevername" label="标题">
 <IbizInput
   name="samplevername"
-  :value="state.data.samplevername"
   :maxLength="200"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.samplevername"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="verstr" label="版本号">
 <IbizInput
   name="verstr"
-  :value="state.data.verstr"
   :maxLength="100"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.verstr"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="type" label="分类">
 <IbizDropdownList
   name="type"
-  :value="state.data.type"
   :data="state.data"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.type"
+  @editorEvent="handleEditorEvent"
+/> 
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="content" label="内容">
     /*未找到模板[MARKDOWN]*/  </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="memo" label="备注">
 <IbizInput
   name="memo"
-  :value="state.data.memo"
   :maxLength="1000"
   :showMaxLength="true"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.memo"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
@@ -91,7 +125,10 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   </a-form>
 </template>
 <style lang="scss">
-.ibiz-form {
-  margin: 20px !important;
-}
+  .ibiz-form {
+    .ant-card-head {
+      padding: 0;
+      margin: 0 10px;
+    }
+  }
 </style>

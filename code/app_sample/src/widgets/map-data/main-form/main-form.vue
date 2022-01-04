@@ -34,80 +34,127 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     style=""
     :model="state.data" 
     :rules="state.rules">
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="group1" title="地图示例数据基本信息">
     <a-row>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="mapdataname" label="名称">
 <IbizInput
   name="mapdataname"
-  :value="state.data.mapdataname"
   :maxLength="200"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.mapdataname"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="mapdatacode" label="编码">
 <IbizInput
   name="mapdatacode"
-  :value="state.data.mapdatacode"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.mapdatacode"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="longitude" label="经度">
 <IbizInput
   name="longitude"
-  :value="state.data.longitude"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.longitude"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="latitude" label="纬度">
 <IbizInput
   name="latitude"
-  :value="state.data.latitude"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.latitude"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="sortvalue" label="排序值">
 <IbizInput
   name="sortvalue"
-  :value="state.data.sortvalue"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.sortvalue"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="grouping" label="分组">
 <IbizInput
   name="grouping"
-  :value="state.data.grouping"
   :maxLength="100"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.grouping"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="type" label="类型">
 <IbizDropdownList
   name="type"
-  :value="state.data.type"
   :data="state.data"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.type"
+  @editorEvent="handleEditorEvent"
+/> 
   </IbizFormItem>
 </a-col>
     </a-row>
@@ -116,7 +163,10 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   </a-form>
 </template>
 <style lang="scss">
-.ibiz-form {
-  margin: 20px !important;
-}
+  .ibiz-form {
+    .ant-card-head {
+      padding: 0;
+      margin: 0 10px;
+    }
+  }
 </style>

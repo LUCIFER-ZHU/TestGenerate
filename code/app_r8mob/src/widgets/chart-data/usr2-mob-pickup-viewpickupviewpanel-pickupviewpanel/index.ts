@@ -1,3 +1,3 @@
-import Usr2MobPickupViewpickupviewpanelPickupViewPanel from "./usr2-mob-pickup-viewpickupviewpanel-pickupviewpanel.vue";
+import Usr2MobPickupViewpickupviewpanelPickupViewPanel from "./-pickupviewpanel.vue";
 
 export { Usr2MobPickupViewpickupviewpanelPickupViewPanel };

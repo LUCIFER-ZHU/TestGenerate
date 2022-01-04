@@ -10,9 +10,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "常规",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem4",
@@ -20,9 +21,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "打开应用视图",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem5",
@@ -30,9 +32,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "打开HTML页面",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -42,9 +45,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "预置",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem6",
@@ -52,9 +56,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "预置应用功能",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
@@ -64,9 +69,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "高级",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem7",
@@ -74,14 +80,13 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "执行JavaScript",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
 },
   ]
 },
   ],
-  funcs: [
-
-  ],
+  funcs: [],
 };

@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface OrgDataMapper extends BaseMapper<OrgData> {
@@ -29,6 +29,10 @@ public interface OrgDataMapper extends BaseMapper<OrgData> {
 
     @Override
     OrgData selectById(Serializable id);
+
+    OrgData selectEntity(OrgData entity);
+
+    List<OrgData> selectEntities(@Param("list") List<OrgData> list);
 
     @Override
     int insert(OrgData entity);

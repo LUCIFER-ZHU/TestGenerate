@@ -10,9 +10,10 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "菜单计数器",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
+  iconClass: "fa fa-cogs",
   items: [
 { 
 	name: "menuitem2",
@@ -20,10 +21,11 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "计数1",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
   counterId: "countertag",
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem3",
@@ -31,10 +33,11 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "计数2",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
   counterId: "countertag2",
+  iconClass: "fa fa-cogs",
 },
 { 
 	name: "menuitem4",
@@ -42,15 +45,14 @@ export const CtrlConfig = {
 	itemType: "MENUITEM",
   expanded: false,
 	tooltip: "计数3",
-  funcTag: '',
+  funcTag: "",
   hidden: false,
   disableClose: false,
   counterId: "countertag3",
+  iconClass: "fa fa-cogs",
 },
   ]
 },
   ],
-  funcs: [
-
-  ],
+  funcs: [],
 };

@@ -1,107 +1,5 @@
-import { ControlVOBase, verifyRules } from '@ibiz-core';
-import { ControlService } from './main-form-service';
-
-export const CtrlConfig = {
-  controlCodeName: 'Main',
-  controlName: 'form',
-  controlService: new ControlService(),
-  data: {},
-  itemsModel: [
-{
-  caption: '看板数据基本信息',
-  codeName: 'group1',
-  name: 'group1',
-},
-{
-  caption: '任务名称',
-  codeName: 'kanbandataname',
-  name: 'kanbandataname',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '任务状态',
-  codeName: 'taskstatus',
-  name: 'taskstatus',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '开始时间',
-  codeName: 'begintime',
-  name: 'begintime',
-  dataType: '5',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '结束时间',
-  codeName: 'endtime',
-  name: 'endtime',
-  dataType: '5',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '备注',
-  codeName: 'memo',
-  name: 'memo',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '操作信息',
-  codeName: 'group2',
-  name: 'group2',
-},
-{
-  caption: '建立人',
-  codeName: 'createman',
-  name: 'createman',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '建立时间',
-  codeName: 'createdate',
-  name: 'createdate',
-  dataType: '5',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '更新人',
-  codeName: 'updateman',
-  name: 'updateman',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '更新时间',
-  codeName: 'updatedate',
-  name: 'updatedate',
-  dataType: '5',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-  ],
-  rules: {
-  },
-};
+import { ControlVOBase, verifyRules, EditFormService } from '@ibiz-core';
+import { KanbanDataService } from '@service/entity/kanban-data/kanban-data-service';
 
 /**
  * 部件展示数据对象
@@ -109,6 +7,16 @@ export const CtrlConfig = {
  * @class ControlVO
  */
 export class ControlVO extends ControlVOBase {
+  /**
+   * 用后台数据对象创建部件数据对象
+   * @param data 后台数据
+   */
+  constructor(data: any){
+    super(data);
+    // 记录没有映射的属性
+    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','kanbandataname','taskstatus','begintime','endtime','memo','createman','createdate','updateman','updatedate','kanbandataid'];  
+  }
+
   // 表单里映射了属性的字段
   get srfupdatedate() {
     return this.$DO.updatedate;
@@ -202,10 +110,94 @@ export class ControlVO extends ControlVOBase {
   }
 
 
-  // 表单里没有映射实体属性的字段
+  // 表单里没有映射实体属性的字段(srfuf除外)
   srforikey: any;
   srftempmode: any;
-  srfuf: any;
   srfdeid: any;
   srfsourcekey: any;
 }
+
+// 部件配置对象
+export const CtrlConfig = {
+  controlCodeName: 'Main',
+  controlName: 'form',
+  controlService: new EditFormService<ControlVO>(ControlVO, new KanbanDataService() ),
+  data: new ControlVO({}),
+  formDetails: [
+    {
+      caption: '看板数据基本信息',
+      codeName: 'group1',
+      name: 'group1',
+    },
+    {
+      caption: '任务名称',
+      codeName: 'kanbandataname',
+      name: 'kanbandataname',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '任务状态',
+      codeName: 'taskstatus',
+      name: 'taskstatus',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '开始时间',
+      codeName: 'begintime',
+      name: 'begintime',
+      dataType: '5',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '结束时间',
+      codeName: 'endtime',
+      name: 'endtime',
+      dataType: '5',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '备注',
+      codeName: 'memo',
+      name: 'memo',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '操作信息',
+      codeName: 'group2',
+      name: 'group2',
+    },
+    {
+      caption: '建立人',
+      codeName: 'createman',
+      name: 'createman',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '建立时间',
+      codeName: 'createdate',
+      name: 'createdate',
+      dataType: '5',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '更新人',
+      codeName: 'updateman',
+      name: 'updateman',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '更新时间',
+      codeName: 'updatedate',
+      name: 'updatedate',
+      dataType: '5',
+      detailStyle: 'DEFAULT',
+    },
+  ],
+  rules: {
+  },
+};

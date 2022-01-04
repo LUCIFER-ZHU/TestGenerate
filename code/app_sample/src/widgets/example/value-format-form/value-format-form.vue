@@ -34,46 +34,72 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     style=""
     :model="state.data" 
     :rules="state.rules">
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="group1" title="分组">
     <a-row>
-      /*未找到模板[RAWITEM]*/<a-col :span="24">
+      /*未找到模板[RAWITEM]*/<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="format1" label="数值编辑器格式化">
 <IbizInput
   name="format1"
-  :value="state.data.format1"
   type="number"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.format1"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-      /*未找到模板[RAWITEM]*/<a-col :span="24">
+      /*未找到模板[RAWITEM]*/<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="format2" label="标签编辑器格式化">
 <IbizSpan
   name="format2"
-  :value="state.data.format2"
   dataType="6"
   :precision="4"
+  :value="state.data.format2"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-      /*未找到模板[RAWITEM]*/<a-col :span="24">
+      /*未找到模板[RAWITEM]*/<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="datatype" label="表单项">
 <IbizSpan
   name="datatype"
-  :value="state.data.datatype"
   dataType="25"
+  :value="state.data.datatype"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-      /*未找到模板[RAWITEM]*/<a-col :span="24">
+      /*未找到模板[RAWITEM]*/<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="formitem" label="表单项">
 <IbizSpan
   name="formitem"
-  :value="state.data.formitem"
   dataType="25"
+  :value="state.data.formitem"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
@@ -84,7 +110,10 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   </a-form>
 </template>
 <style lang="scss">
-.ibiz-form {
-  margin: 20px !important;
-}
+  .ibiz-form {
+    .ant-card-head {
+      padding: 0;
+      margin: 0 10px;
+    }
+  }
 </style>

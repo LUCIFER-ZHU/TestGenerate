@@ -34,55 +34,85 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     style=""
     :model="state.data" 
     :rules="state.rules">
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="group1" title="属性计算逻辑">
     <a-row>
-<a-col :span="24">
+<a-col
+  :lg="{span: 6, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="fieldx" label="X值">
 <IbizSpan
   name="fieldx"
-  :value="state.data.fieldx"
   dataType="6"
+  :value="state.data.fieldx"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 6, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="fieldy" label="Y值">
 <IbizSpan
   name="fieldy"
-  :value="state.data.fieldy"
   dataType="6"
+  :value="state.data.fieldy"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 6, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="appfield" label="XY前端计算值">
 <IbizSpan
   name="appfield"
-  :value="state.data.appfield"
   dataType="25"
+  :value="state.data.appfield"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 6, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="appfield2" label="XY前端计算值2">
 <IbizSpan
   name="appfield2"
-  :value="state.data.appfield2"
   dataType="25"
+  :value="state.data.appfield2"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 6, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="appfield4" label="XY前端计算值4">
 <IbizSpan
   name="appfield4"
-  :value="state.data.appfield4"
   dataType="25"
+  :value="state.data.appfield4"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
@@ -90,16 +120,23 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     </a-row>
   </IbizFormGroup>
 </a-col>
-      /*未找到模板[RAWITEM]*/<a-col :span="24">
+      /*未找到模板[RAWITEM]*/<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="grouppanel1" title="属性变更逻辑">
     <div class="app-form-layout-flex" style="">
-<a-col :span="24">
+<a-col
+ >
   <IbizFormItem name="appfield3" label="XY前端计算值3">
 <IbizInput
   name="appfield3"
-  :value="state.data.appfield3"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.appfield3"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
@@ -109,7 +146,10 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
       /*未找到模板[RAWITEM]*/  </a-form>
 </template>
 <style lang="scss">
-.ibiz-form {
-  margin: 20px !important;
-}
+  .ibiz-form {
+    .ant-card-head {
+      padding: 0;
+      margin: 0 10px;
+    }
+  }
 </style>

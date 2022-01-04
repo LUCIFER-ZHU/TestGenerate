@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface ProvinceMapper extends BaseMapper<Province> {
@@ -29,6 +29,10 @@ public interface ProvinceMapper extends BaseMapper<Province> {
 
     @Override
     Province selectById(Serializable id);
+
+    Province selectEntity(Province entity);
+
+    List<Province> selectEntities(@Param("list") List<Province> list);
 
     @Override
     int insert(Province entity);

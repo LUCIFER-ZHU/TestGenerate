@@ -1,57 +1,5 @@
-import { ControlVOBase, verifyRules } from '@ibiz-core';
-import { ControlService } from './quick-form-service';
-
-export const CtrlConfig = {
-  controlCodeName: 'Quick',
-  controlName: 'form',
-  controlService: new ControlService(),
-  data: {},
-  itemsModel: [
-{
-  caption: '快速新建',
-  codeName: 'group1',
-  name: 'group1',
-},
-{
-  caption: '客户名称',
-  codeName: 'customername',
-  name: 'customername',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '上级客户',
-  codeName: 'pcustomername',
-  name: 'pcustomername',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: 'pcustomerid',
-},
-{
-  caption: '类型',
-  codeName: 'type',
-  name: 'type',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '备注',
-  codeName: 'memo',
-  name: 'memo',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-  ],
-  rules: {
-  },
-};
+import { ControlVOBase, verifyRules, EditFormService } from '@ibiz-core';
+import { CustomerService } from '@service/entity/customer/customer-service';
 
 /**
  * 部件展示数据对象
@@ -59,6 +7,16 @@ export const CtrlConfig = {
  * @class ControlVO
  */
 export class ControlVO extends ControlVOBase {
+  /**
+   * 用后台数据对象创建部件数据对象
+   * @param data 后台数据
+   */
+  constructor(data: any){
+    super(data);
+    // 记录没有映射的属性
+    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','customername','pcustomername','type','memo','customerid','pcustomerid'];  
+  }
+
   // 表单里映射了属性的字段
   get srfupdatedate() {
     return this.$DO.updatedate;
@@ -124,10 +82,55 @@ export class ControlVO extends ControlVOBase {
   }
 
 
-  // 表单里没有映射实体属性的字段
+  // 表单里没有映射实体属性的字段(srfuf除外)
   srforikey: any;
   srftempmode: any;
-  srfuf: any;
   srfdeid: any;
   srfsourcekey: any;
 }
+
+// 部件配置对象
+export const CtrlConfig = {
+  controlCodeName: 'Quick',
+  controlName: 'form',
+  controlService: new EditFormService<ControlVO>(ControlVO, new CustomerService() ),
+  data: new ControlVO({}),
+  formDetails: [
+    {
+      caption: '快速新建',
+      codeName: 'group1',
+      name: 'group1',
+    },
+    {
+      caption: '客户名称',
+      codeName: 'customername',
+      name: 'customername',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '上级客户',
+      codeName: 'pcustomername',
+      name: 'pcustomername',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+      valueItemName: 'pcustomerid',
+    },
+    {
+      caption: '类型',
+      codeName: 'type',
+      name: 'type',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '备注',
+      codeName: 'memo',
+      name: 'memo',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+  ],
+  rules: {
+  },
+};

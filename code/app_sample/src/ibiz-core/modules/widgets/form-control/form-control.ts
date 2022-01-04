@@ -40,7 +40,7 @@ export class FormControl extends MainControl {
    * @memberof FormControl
    */
   public resetFormData(name: string) {
-    const formItems: any[] = this.controlState.itemsModel;
+    const formItems: any[] = this.controlState.formDetails;
     if (formItems && formItems.length > 0) {
       for (const item of formItems) {
           if (item.resetItemName && item.resetItemName == name) {
@@ -50,7 +50,39 @@ export class FormControl extends MainControl {
               }
           }
       }
+    }
   }
+
+  /**
+   * @description 动态显示逻辑
+   * @memberof FormControl
+   */
+  public displayLogic(name: string) {
+    const formItems: any[] = this.controlState.formDetails;
+    // 表单动态逻辑
+  //   allFormDetails?.forEach((detail: IPSDEFormDetail) => {
+  //     detail.getPSDEFDGroupLogics()?.forEach((logic: IPSDEFDCatGroupLogic) => {
+  //         // todo lxm 缺少getRelatedDetailNames
+  //         let relatedNames = logic.getRelatedDetailNames() || [];
+  //         if (Object.is(name, '') || relatedNames.indexOf(name) != -1) {
+  //             let ret = this.verifyGroupLogic(this.data, logic);
+  //             switch (logic.logicCat) {
+  //                 // 动态空输入，不满足则必填
+  //                 case 'ITEMBLANK':
+  //                     this.detailsModel[detail.name].required = !ret;
+  //                     break;
+  //                 // 动态启用，满足则启用
+  //                 case 'ITEMENABLE':
+  //                     this.detailsModel[detail.name].setDisabled(!ret);
+  //                     break;
+  //                 // 动态显示，满足则显示
+  //                 case 'PANELVISIBLE':
+  //                     this.detailsModel[detail.name].setVisible(ret);
+  //                     break;
+  //             }
+  //         }
+  //     })
+  // })
   }
 
   /**

@@ -1,21 +1,23 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import ExampleEditorEditView from '@page/example/example-editor-edit-view';
-// import { JobsRegistryGridView } from '@page/jobs-registry/jobs-registry-grid-view';
+
 const routes = [
   {
-    path: '/ExampleEditorEditView',
-    component: ExampleEditorEditView
+    path: "/apps/:app?",
+    meta: {  
+      captionTag: "",
+      caption: "桌面端应用示例",
+      viewType: "APPINDEXVIEW",
+      requireAuth: false,
+    },
+    component: () => import("@page/default/sample"),
+    children: [
+    ]
   },
-  // {
-  //   path: '/JobsRegistryGridView',
-  //   component: JobsRegistryGridView
-  // },
   {
-    path: '/',
-    redirect: 'ExampleEditorEditView'
+    path: "/",
+    redirect: "/apps/sample"
   },
 ]
-
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
@@ -27,5 +29,4 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   next();
 })
-
 export default router;

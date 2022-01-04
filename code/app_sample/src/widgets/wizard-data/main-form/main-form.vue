@@ -34,37 +34,60 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     style=""
     :model="state.data" 
     :rules="state.rules">
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="group1" title="向导数据基本信息">
     <a-row>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="textfield" label="文本属性">
 <IbizInput
   name="textfield"
-  :value="state.data.textfield"
   :maxLength="100"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.textfield"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="timefield" label="时间属性">
 <IbizDatePicker
   name="timefield"
-  :value="state.data.timefield"
   dateFormat="YYYY-MM-DD HH:mm:ss"
   dateType="dateTime"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.timefield"
+  @editorEvent="handleEditorEvent"
+/> 
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="numfield" label="数值属性">
 <IbizInput
   name="numfield"
-  :value="state.data.numfield"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.numfield"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
@@ -74,7 +97,10 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   </a-form>
 </template>
 <style lang="scss">
-.ibiz-form {
-  margin: 20px !important;
-}
+  .ibiz-form {
+    .ant-card-head {
+      padding: 0;
+      margin: 0 10px;
+    }
+  }
 </style>

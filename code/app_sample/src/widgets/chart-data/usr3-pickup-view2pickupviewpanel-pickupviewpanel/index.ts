@@ -1,3 +1,3 @@
-import Usr3PickupView2pickupviewpanelPickupViewPanel from "./usr3-pickup-view2pickupviewpanel-pickupviewpanel.vue";
+import Usr3PickupView2pickupviewpanelPickupViewPanel from "./-pickupviewpanel.vue";
 
 export { Usr3PickupView2pickupviewpanelPickupViewPanel };

@@ -12,6 +12,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.math.BigInteger;
 import lombok.extern.slf4j.Slf4j;
+
+import cn.ibizlab.util.security.SpringContextHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;
@@ -20,23 +22,22 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.util.Assert;
 import org.springframework.beans.factory.annotation.Value;
-import ibizsample.util.errors.BadRequestAlertException;
-<#system.enableGlobalTransaction>
-import io.seata.spring.annotation.GlobalTransactional;
-</system.enableGlobalTransaction>
+import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Lazy;
 import ibizsample.core.sample.domain.KanbanData;
 import ibizsample.core.sample.filter.KanbanDataSearchContext;
 import ibizsample.core.sample.service.IKanbanDataService;
-import ibizsample.core.sample.mapper.${item.getCodeName()}Mapper;
-import ibizsample.util.helper.CachedBeanCopier;
-import ibizsample.util.helper.DEFieldCacheMap;
+import ibizsample.core.sample.mapper.KanbanDataMapper;
+import cn.ibizlab.util.helper.CachedBeanCopier;
+import cn.ibizlab.util.helper.DEFieldCacheMap;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 
 
@@ -45,49 +46,123 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
  */
 @Slf4j
 @Service("KanbanDataServiceImpl")
-public class KanbanDataServiceImpl extends ServiceImpl<KanbanData> implements IKanbanDataService {
+public class KanbanDataServiceImpl extends ServiceImpl<KanbanDataMapper,KanbanData> implements IKanbanDataService {
 
     protected IKanbanDataService kanbanDataService = SpringContextHolder.getBean(this.getClass());
 
 
+    protected int batchSize = 500;
 
-    public KanbanData get(String key) {
-        KanbanData et = getById(key);
-        Assert.notNull(et,"数据不存在,看板数据:"+key);
+    public KanbanData get(KanbanData et) {
+        KanbanData rt = this.baseMapper.selectEntity(et);
+        Assert.notNull(rt,"数据不存在,看板数据:"+et.getKanbanDataId());
+        CachedBeanCopier.copy(rt, et);
+        return et;
     }
-    List<KanbanData> getByIds(Collection<String> idList);
-    List<KanbanData> getByEntities(Collection<KanbanData> entities);
+    
+    public List<KanbanData> getByEntities(List<KanbanData> entities) {
+        return this.baseMapper.selectEntities(entities);
+    }
 
-    KanbanData getDraft(KanbanData et);
 
-    boolean checkKey(KanbanData et);
+    public KanbanData getDraft(KanbanData et) {
+        return et;
+    }
+
+    public boolean checkKey(KanbanData et) {
+        return this.count(Wrappers.lambdaQuery(et))>0;
+    }
 
     @Override
     @Transactional
     public boolean create(KanbanData et) {
         if(!this.retBool(this.baseMapper.insert(et))) 
             return false;
+        get(et);
         return true;
     }
     @Transactional
     public boolean createBatch(List<KanbanData> list) {
-
+        this.saveBatch(list, batchSize);        
+        return true;
     }
 
-    boolean update(KanbanData et);
-    boolean updateBatch(List<KanbanData> list);
+    @Transactional
+    public boolean update(KanbanData et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true)
+                .eq("kanbandataid", et.getKanbanDataId())
+            )) {
+            return false;
+        }
+        get(et);
+        return true;
+    }
 
-    boolean save(KanbanData et);
-    boolean saveBatch(List<KanbanData> list);
+    @Transactional
+    public boolean updateBatch(List<KanbanData> list) {
+        updateBatchById(list, batchSize);
+        return true;
+    }
 
-    boolean remove(String key);
-    boolean removeBatch(Collection<String> idList);
+    @Transactional
+    public boolean save(KanbanData et) {
+        if(checkKey(et))
+            return kanbanDataService.update(et);
+        else
+            return kanbanDataService.create(et);
+    }
 
-    KanbanData (KanbanData et);
-    boolean Batch(List<KanbanData> list);
+    @Transactional
+    public boolean saveBatch(List<KanbanData> list) {
+        List<KanbanData> rt=this.getByEntities(list);
+        Set<Serializable> keys=new HashSet<>();
+        rt.forEach(et->{
+            Serializable key = et.getKanbanDataId();
+            if(!ObjectUtils.isEmpty(key))
+                keys.add(key);
+        });
+        List<KanbanData> create=new ArrayList<>();
+        List<KanbanData> update=new ArrayList<>();
+        list.forEach(et-> {
+            Serializable key = et.getKanbanDataId();
+            if(keys.contains(key))
+                update.add(et);
+            else
+                create.add(et);
+        });
+        List rtList=new ArrayList<>();
+        if(update.size()>0 && (!kanbanDataService.updateBatch(update)))
+            return false;
+        if(create.size()>0 && (!kanbanDataService.createBatch(create)))
+            return false;
+        return true;
+    }
 
-    Page<KanbanData> searchDefault(KanbanDataSearchContext context);
-    List<KanbanData> listDefault(KanbanDataSearchContext context);
+    @Transactional
+    public boolean remove(KanbanData et) {
+        String key = et.getKanbanDataId();
+
+        if(!remove(new QueryWrapper<KanbanData>()
+                .eq("kanbandataid", et.getKanbanDataId())
+            )) {
+            return false;
+        }
+        return true ;
+    }
+    
+    @Transactional
+    public boolean removeBatch(Collection<String> ids) {
+        removeByIds(ids);
+        return true;
+    }
+
+    public Page<KanbanData> searchDefault(KanbanDataSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<KanbanData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<KanbanData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+    public List<KanbanData> listDefault(KanbanDataSearchContext context) {
+        return baseMapper.listDefault(context,context.getSelectCond());
+    }
 
 
 }

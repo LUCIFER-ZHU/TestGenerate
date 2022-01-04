@@ -34,44 +34,64 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     style=""
     :model="state.data" 
     :rules="state.rules">
-      /*未找到模板[RAWITEM]*/<a-col :span="24">
+      /*未找到模板[RAWITEM]*/<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="grouppanel1" title="分组面板">
     <div class="app-form-layout-flex" style="">
-<a-col :span="24">
+<a-col
+ >
   <IbizFormItem name="inputtext" label="输入提示">
 <IbizInput
   name="inputtext"
-  :value="state.data.inputtext"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.inputtext"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
       /*未找到模板[BUTTON]*/    </div>
   </IbizFormGroup>
 </a-col>
-      /*未找到模板[RAWITEM]*/<a-col :span="24">
+      /*未找到模板[RAWITEM]*/<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="grouppanel2" title="分组面板">
     <a-row>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="grouppanel5" title="分组面板">
     <div class="app-form-layout-flex" style="">
-<a-col :span="24">
+<a-col
+ >
   <IbizFormItem name="exampleid" label="数据主键">
 <IbizInput
   name="exampleid"
-  :value="state.data.exampleid"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.exampleid"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-      /*未找到模板[BUTTON]*/<a-col :span="24">
+      /*未找到模板[BUTTON]*/<a-col
+ >
   <IbizFormItem name="fieldx" label="X值回显">
 <IbizSpan
   name="fieldx"
-  :value="state.data.fieldx"
   dataType="25"
+  :value="state.data.fieldx"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
@@ -79,35 +99,43 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     </div>
   </IbizFormGroup>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="grouppanel6" title="分组面板">
     <div class="app-form-layout-flex" style="">
-<a-col :span="24">
+<a-col
+ >
   <IbizFormItem name="formitem" label="">
 <IbizSpan
   name="formitem"
-  :value="state.data.formitem"
   dataType="25"
+  :value="state.data.formitem"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-      /*未找到模板[BUTTON]*/<a-col :span="24">
+      /*未找到模板[BUTTON]*/<a-col
+ >
   <IbizFormItem name="fieldz" label="Z值回显">
 <IbizSpan
   name="fieldz"
-  :value="state.data.fieldz"
   dataType="25"
+  :value="state.data.fieldz"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+ >
   <IbizFormItem name="currentdate" label="当前日期">
 <IbizSpan
   name="currentdate"
-  :value="state.data.currentdate"
   dataType="5"
+  :value="state.data.currentdate"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
@@ -118,16 +146,23 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     </a-row>
   </IbizFormGroup>
 </a-col>
-      /*未找到模板[RAWITEM]*/<a-col :span="24">
+      /*未找到模板[RAWITEM]*/<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="grouppanel3" title="分组面板">
     <div class="app-form-layout-flex" style="">
-<a-col :span="24">
+<a-col
+ >
   <IbizFormItem name="fieldupdate" label="更新值回显">
 <IbizInput
   name="fieldupdate"
-  :value="state.data.fieldupdate"
   type="number"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.fieldupdate"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
@@ -137,7 +172,10 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   </a-form>
 </template>
 <style lang="scss">
-.ibiz-form {
-  margin: 20px !important;
-}
+  .ibiz-form {
+    .ant-card-head {
+      padding: 0;
+      margin: 0 10px;
+    }
+  }
 </style>

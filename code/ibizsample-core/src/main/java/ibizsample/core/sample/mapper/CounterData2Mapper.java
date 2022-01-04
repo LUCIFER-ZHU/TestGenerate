@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface CounterData2Mapper extends BaseMapper<CounterData2> {
@@ -26,6 +26,10 @@ public interface CounterData2Mapper extends BaseMapper<CounterData2> {
 
     @Override
     CounterData2 selectById(Serializable id);
+
+    CounterData2 selectEntity(CounterData2 entity);
+
+    List<CounterData2> selectEntities(@Param("list") List<CounterData2> list);
 
     @Override
     int insert(CounterData2 entity);

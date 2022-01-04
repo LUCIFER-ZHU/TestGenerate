@@ -1,8 +1,8 @@
 package ibizsample.sample.config;
 
-import ibizsample.util.security.AuthenticationEntryPoint;
-import ibizsample.util.security.AuthorizationTokenFilter;
-import ibizsample.util.service.AuthenticationUserService;
+import cn.ibizlab.util.security.AuthenticationEntryPoint;
+import cn.ibizlab.util.security.AuthorizationTokenFilter;
+import cn.ibizlab.util.service.AuthenticationUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -39,22 +39,22 @@ public class SampleSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     AuthorizationTokenFilter authenticationTokenFilter;
 
-    @Value("${ibiz.auth.path:v7/login}"})
+    @Value("${ibiz.auth.path:v7/login}")
     private String loginPath;
 
-    @Value("${ibiz.auth.logoutpath:v7/logout}"})
+    @Value("${ibiz.auth.logoutpath:v7/logout}")
     private String logoutPath;
 
-    @Value("${ibiz.file.uploadpath:ibizutil/upload}"})
+    @Value("${ibiz.file.uploadpath:ibizutil/upload}")
     private String uploadpath;
 
-    @Value("${ibiz.file.downloadpath:ibizutil/download}"})
+    @Value("${ibiz.file.downloadpath:ibizutil/download}")
     private String downloadpath;
 
-    @Value("${ibiz.file.previewpath:ibizutil/preview}"})
+    @Value("${ibiz.file.previewpath:ibizutil/preview}")
     private String previewpath;
     
-    @Value("${ibiz.auth.excludesPattern:}"})
+    @Value("${ibiz.auth.excludesPattern:}")
     private String[] excludesPattern;
 
     @Autowired

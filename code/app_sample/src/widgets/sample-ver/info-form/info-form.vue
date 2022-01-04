@@ -34,28 +34,36 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     style=""
     :model="state.data" 
     :rules="state.rules">
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="group1" title="示例版本基本信息">
     <div class="app-form-layout-flex" style="flex-direction: column;">
-<a-col :span="24">
+<a-col
+ >
   <IbizFormItem name="samplevername" label="标题">
 <IbizSpan
   name="samplevername"
-  :value="state.data.samplevername"
   dataType="25"
+  :value="state.data.samplevername"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+ >
   <IbizFormItem name="content" label="内容">
 <IbizRaw
   name="content"
-  :value="state.data.content"
   :date="state.data"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.content"
+  @editorEvent="handleEditorEvent"
+/> 
   </IbizFormItem>
 </a-col>
     </div>
@@ -64,7 +72,10 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   </a-form>
 </template>
 <style lang="scss">
-.ibiz-form {
-  margin: 20px !important;
-}
+  .ibiz-form {
+    .ant-card-head {
+      padding: 0;
+      margin: 0 10px;
+    }
+  }
 </style>

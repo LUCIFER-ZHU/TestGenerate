@@ -31,7 +31,7 @@ interface CtrlEmit {
 }
 const emit = defineEmits<CtrlEmit>();
 // 安装功能模块，提供状态和能力方法
-const { state, load, handleEditorEvent } = new GridControl(CtrlConfig).moduleInstall(props);
+const { state, load, handleEditorEvent, handleToolbarEvent } = new GridControl(CtrlConfig).moduleInstall(props);
 // 表格滚动条配置
 const gridScrollOption = computed(() => {
   return {
@@ -71,7 +71,7 @@ const customRow = (record: IParam, index: number) => {
 }
 // 表格选择功能配置
 const rowSelectionOption = computed(() => {
-  if (props.rowEditState || props.selectFirstDefault) {
+  if (props.selectFirstDefault) {
     return false;
   }
   return {
@@ -127,203 +127,340 @@ const handleChange = (pagination: IParam, filters: IParam, sorter: IParam, data:
       </div>
     </template>
     <template #bodyCell="{ column, text, record, index }">
-
 <div v-if="Object.is(column.dataIndex, 'dropdownlist')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizDropdownList
+  name="dropdownlist"
+  :data="state.data"
+  :contextProp="state.context"
+  :viewParamsProp="state.viewParams"
+  :value="record.dropdownlist"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'mdropdownlist')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizDropdownList
+  name="mdropdownlist"
+  :data="state.data"
+  :multiple="true"
+  :contextProp="state.context"
+  :viewParamsProp="state.viewParams"
+  :value="record.mdropdownlist"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'switchval')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizSwitch
+  name="switchval"
+  :value="record.switchval"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'numberval')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizInput
+  name="numberval"
+  type="text"
+  :value="record.numberval"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
+    
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'customername')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-  </div>
+<IbizDataPicker
+  name="customername"
+  :data="state.data"
+  valueItem="customerid"
+  :contextProp="state.context"
+  :viewParamsProp="state.viewParams"
+  :value="record.customername"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/>   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'customername2')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-  </div>
+<IbizDataPickerView
+  name="customername2"
+  :data="state.data"
+  valueItem="customerid2"
+  :contextProp="state.context"
+  :viewParamsProp="state.viewParams"
+  :value="record.customername2"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/>   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'customername3')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-  </div>
+<IbizDataPicker
+  name="customername3"
+  :data="state.data"
+  valueItem="customerid3"
+  :contextProp="state.context"
+  :viewParamsProp="state.viewParams"
+  :isDropdown="true"
+  :value="record.customername3"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/>   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'customername4')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-  </div>
+<IbizDataPicker
+  name="customername4"
+  :data="state.data"
+  valueItem="customerid4"
+  :contextProp="state.context"
+  :viewParamsProp="state.viewParams"
+  :noAC="true"
+  :value="record.customername4"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/>   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'customername5')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-  </div>
+<IbizDataPicker
+  name="customername5"
+  :data="state.data"
+  valueItem="customerid5"
+  :contextProp="state.context"
+  :viewParamsProp="state.viewParams"
+  :value="record.customername5"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/>   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'textbox')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizInput
+  name="textbox"
+  :maxLength="100"
+  type="text"
+  :value="record.textbox"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
+    
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'datepicker')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizDatePicker
+  name="datepicker"
+  dateFormat="YYYY-MM-DD HH:mm:ss"
+  dateType="dateTime"
+  :value="record.datepicker"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'datepickerex_hour')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizDatePicker
+  name="datepickerex_hour"
+  dateFormat="YYYY-MM-DD HH"
+  dateType="dateTime"
+  :value="record.datepickerex_hour"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'datepickerex_minute')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizDatePicker
+  name="datepickerex_minute"
+  dateFormat="YYYY-MM-DD HH:mm"
+  dateType="dateTime"
+  :value="record.datepickerex_minute"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'datepickerex_noday')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizDatePicker
+  name="datepickerex_noday"
+  dateFormat="HH:mm:ss"
+  dateType="time"
+  :value="record.datepickerex_noday"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'datepickerex_noday_nosecond')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizDatePicker
+  name="datepickerex_noday_nosecond"
+  dateFormat="HH:mm"
+  dateType="time"
+  :value="record.datepickerex_noday_nosecond"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'datepickerex_notime')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizDatePicker
+  name="datepickerex_notime"
+  dateFormat="YYYY-MM-DD"
+  dateType="date"
+  :value="record.datepickerex_notime"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'datepickerex_second')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizDatePicker
+  name="datepickerex_second"
+  dateFormat="YYYY-MM-DD HH:mm:ss"
+  dateType="dateTime"
+  :value="record.datepickerex_second"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'stepper')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizStepper
+  name="stepper"
+  :step="1.0"
+  :value="record.stepper"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'slider')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizSlider
+  name="slider"
+  :date="state.data"
+  :step="1.0"
+  :value="record.slider"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'ac')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizAutoComplete
+  name="ac"
+  :data="state.data"
+  :contextProp="state.context"
+  :viewParamsProp="state.viewParams"
+  :value="record.ac"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/>
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'rating')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizRating
+  name="rating"
+  :value="record.rating"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'checkbox')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
+<IbizCheckbox
+  name="checkbox"
+  :value="record.checkbox"
+  @editorEvent="($event) => handleEditorEvent(index,$event)"
+/> 
   </div>
   <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
     </template>
 
@@ -331,7 +468,7 @@ const handleChange = (pagination: IParam, filters: IParam, sorter: IParam, data:
 </template>
 <style lang="scss">
 .ibiz-grid {
-  margin: 20px;
+  height: 100%;
   .table-striped {
     background-color: #fafafa;
   }

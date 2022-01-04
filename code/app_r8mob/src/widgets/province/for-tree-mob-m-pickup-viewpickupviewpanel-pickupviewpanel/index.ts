@@ -1,3 +1,3 @@
-import ForTreeMobMPickupViewpickupviewpanelPickupViewPanel from "./for-tree-mob-m-pickup-viewpickupviewpanel-pickupviewpanel.vue";
+import ForTreeMobMPickupViewpickupviewpanelPickupViewPanel from "./-pickupviewpanel.vue";
 
 export { ForTreeMobMPickupViewpickupviewpanelPickupViewPanel };

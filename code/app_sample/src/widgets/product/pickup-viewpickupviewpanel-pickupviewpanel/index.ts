@@ -1,3 +1,3 @@
-import PickupViewpickupviewpanelPickupViewPanel from "./pickup-viewpickupviewpanel-pickupviewpanel.vue";
+import PickupViewpickupviewpanelPickupViewPanel from "./-pickupviewpanel.vue";
 
 export { PickupViewpickupviewpanelPickupViewPanel };

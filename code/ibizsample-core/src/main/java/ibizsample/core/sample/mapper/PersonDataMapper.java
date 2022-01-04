@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface PersonDataMapper extends BaseMapper<PersonData> {
@@ -26,6 +26,10 @@ public interface PersonDataMapper extends BaseMapper<PersonData> {
 
     @Override
     PersonData selectById(Serializable id);
+
+    PersonData selectEntity(PersonData entity);
+
+    List<PersonData> selectEntities(@Param("list") List<PersonData> list);
 
     @Override
     int insert(PersonData entity);

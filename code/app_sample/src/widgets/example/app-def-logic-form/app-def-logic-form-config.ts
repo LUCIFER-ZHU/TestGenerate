@@ -1,95 +1,5 @@
-import { ControlVOBase, verifyRules } from '@ibiz-core';
-import { ControlService } from './app-def-logic-form-service';
-
-export const CtrlConfig = {
-  controlCodeName: 'AppDEFLogic',
-  controlName: 'form',
-  controlService: new ControlService(),
-  data: {},
-  itemsModel: [
-{
-  caption: '属性计算逻辑',
-  codeName: 'group1',
-  name: 'group1',
-},
-{
-  caption: 'X值',
-  codeName: 'fieldx',
-  name: 'fieldx',
-  dataType: '6',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: 'Y值',
-  codeName: 'fieldy',
-  name: 'fieldy',
-  dataType: '6',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: 'XY前端计算值',
-  codeName: 'appfield',
-  name: 'appfield',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: 'XY前端计算值2',
-  codeName: 'appfield2',
-  name: 'appfield2',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: 'XY前端计算值4',
-  codeName: 'appfield4',
-  name: 'appfield4',
-  dataType: '25',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '',
-  codeName: 'rawitem1',
-  name: 'rawitem1',
-},
-{
-  caption: '属性变更逻辑',
-  codeName: 'grouppanel1',
-  name: 'grouppanel1',
-},
-{
-  caption: 'XY前端计算值3',
-  codeName: 'appfield3',
-  name: 'appfield3',
-  dataType: '9',
-  detailStyle: 'DEFAULT',
-  resetItemName: '',
-  valueItemName: '',
-},
-{
-  caption: '保存',
-  codeName: 'button1',
-  name: 'button1',
-},
-{
-  caption: '',
-  codeName: 'rawitem2',
-  name: 'rawitem2',
-},
-  ],
-  rules: {
-  },
-};
+import { ControlVOBase, verifyRules, EditFormService } from '@ibiz-core';
+import { ExampleService } from '@service/entity/example/example-service';
 
 /**
  * 部件展示数据对象
@@ -97,6 +7,16 @@ export const CtrlConfig = {
  * @class ControlVO
  */
 export class ControlVO extends ControlVOBase {
+  /**
+   * 用后台数据对象创建部件数据对象
+   * @param data 后台数据
+   */
+  constructor(data: any){
+    super(data);
+    // 记录没有映射的属性
+    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','fieldx','fieldy','appfield','appfield2','appfield4','appfield3','exampleid'];  
+  }
+
   // 表单里映射了属性的字段
   get srfupdatedate() {
     return this.$DO.updatedate;
@@ -169,10 +89,88 @@ export class ControlVO extends ControlVOBase {
   }
 
 
-  // 表单里没有映射实体属性的字段
+  // 表单里没有映射实体属性的字段(srfuf除外)
   srforikey: any;
   srftempmode: any;
-  srfuf: any;
   srfdeid: any;
   srfsourcekey: any;
 }
+
+// 部件配置对象
+export const CtrlConfig = {
+  controlCodeName: 'AppDEFLogic',
+  controlName: 'form',
+  controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
+  data: new ControlVO({}),
+  formDetails: [
+    {
+      caption: '属性计算逻辑',
+      codeName: 'group1',
+      name: 'group1',
+    },
+    {
+      caption: 'X值',
+      codeName: 'fieldx',
+      name: 'fieldx',
+      dataType: '6',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: 'Y值',
+      codeName: 'fieldy',
+      name: 'fieldy',
+      dataType: '6',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: 'XY前端计算值',
+      codeName: 'appfield',
+      name: 'appfield',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: 'XY前端计算值2',
+      codeName: 'appfield2',
+      name: 'appfield2',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: 'XY前端计算值4',
+      codeName: 'appfield4',
+      name: 'appfield4',
+      dataType: '25',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '',
+      codeName: 'rawitem1',
+      name: 'rawitem1',
+    },
+    {
+      caption: '属性变更逻辑',
+      codeName: 'grouppanel1',
+      name: 'grouppanel1',
+    },
+    {
+      caption: 'XY前端计算值3',
+      codeName: 'appfield3',
+      name: 'appfield3',
+      dataType: '9',
+      detailStyle: 'DEFAULT',
+    },
+    {
+      caption: '保存',
+      codeName: 'button1',
+      name: 'button1',
+    },
+    {
+      caption: '',
+      codeName: 'rawitem2',
+      name: 'rawitem2',
+    },
+  ],
+  rules: {
+  },
+};

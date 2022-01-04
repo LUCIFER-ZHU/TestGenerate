@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface CalendarDataMapper extends BaseMapper<CalendarData> {
@@ -26,6 +26,10 @@ public interface CalendarDataMapper extends BaseMapper<CalendarData> {
 
     @Override
     CalendarData selectById(Serializable id);
+
+    CalendarData selectEntity(CalendarData entity);
+
+    List<CalendarData> selectEntities(@Param("list") List<CalendarData> list);
 
     @Override
     int insert(CalendarData entity);

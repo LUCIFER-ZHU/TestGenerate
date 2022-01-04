@@ -12,6 +12,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.math.BigInteger;
 import lombok.extern.slf4j.Slf4j;
+
+import cn.ibizlab.util.security.SpringContextHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;
@@ -20,23 +22,22 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.util.Assert;
 import org.springframework.beans.factory.annotation.Value;
-import ibizsample.util.errors.BadRequestAlertException;
-<#system.enableGlobalTransaction>
-import io.seata.spring.annotation.GlobalTransactional;
-</system.enableGlobalTransaction>
+import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Lazy;
 import ibizsample.core.sample.domain.CounterData;
 import ibizsample.core.sample.filter.CounterDataSearchContext;
 import ibizsample.core.sample.service.ICounterDataService;
-import ibizsample.core.sample.mapper.${item.getCodeName()}Mapper;
-import ibizsample.util.helper.CachedBeanCopier;
-import ibizsample.util.helper.DEFieldCacheMap;
+import ibizsample.core.sample.mapper.CounterDataMapper;
+import cn.ibizlab.util.helper.CachedBeanCopier;
+import cn.ibizlab.util.helper.DEFieldCacheMap;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 
 
@@ -45,49 +46,123 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
  */
 @Slf4j
 @Service("CounterDataServiceImpl")
-public class CounterDataServiceImpl extends ServiceImpl<CounterData> implements ICounterDataService {
+public class CounterDataServiceImpl extends ServiceImpl<CounterDataMapper,CounterData> implements ICounterDataService {
 
     protected ICounterDataService counterDataService = SpringContextHolder.getBean(this.getClass());
 
 
+    protected int batchSize = 500;
 
-    public CounterData get(String key) {
-        CounterData et = getById(key);
-        Assert.notNull(et,"数据不存在,计数器数据:"+key);
+    public CounterData get(CounterData et) {
+        CounterData rt = this.baseMapper.selectEntity(et);
+        Assert.notNull(rt,"数据不存在,计数器数据:"+et.getCounterDataId());
+        CachedBeanCopier.copy(rt, et);
+        return et;
     }
-    List<CounterData> getByIds(Collection<String> idList);
-    List<CounterData> getByEntities(Collection<CounterData> entities);
+    
+    public List<CounterData> getByEntities(List<CounterData> entities) {
+        return this.baseMapper.selectEntities(entities);
+    }
 
-    CounterData getDraft(CounterData et);
 
-    boolean checkKey(CounterData et);
+    public CounterData getDraft(CounterData et) {
+        return et;
+    }
+
+    public boolean checkKey(CounterData et) {
+        return this.count(Wrappers.lambdaQuery(et))>0;
+    }
 
     @Override
     @Transactional
     public boolean create(CounterData et) {
         if(!this.retBool(this.baseMapper.insert(et))) 
             return false;
+        get(et);
         return true;
     }
     @Transactional
     public boolean createBatch(List<CounterData> list) {
-
+        this.saveBatch(list, batchSize);        
+        return true;
     }
 
-    boolean update(CounterData et);
-    boolean updateBatch(List<CounterData> list);
+    @Transactional
+    public boolean update(CounterData et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true)
+                .eq("counterdataid", et.getCounterDataId())
+            )) {
+            return false;
+        }
+        get(et);
+        return true;
+    }
 
-    boolean save(CounterData et);
-    boolean saveBatch(List<CounterData> list);
+    @Transactional
+    public boolean updateBatch(List<CounterData> list) {
+        updateBatchById(list, batchSize);
+        return true;
+    }
 
-    boolean remove(String key);
-    boolean removeBatch(Collection<String> idList);
+    @Transactional
+    public boolean save(CounterData et) {
+        if(checkKey(et))
+            return counterDataService.update(et);
+        else
+            return counterDataService.create(et);
+    }
 
-    CounterData (CounterData et);
-    boolean Batch(List<CounterData> list);
+    @Transactional
+    public boolean saveBatch(List<CounterData> list) {
+        List<CounterData> rt=this.getByEntities(list);
+        Set<Serializable> keys=new HashSet<>();
+        rt.forEach(et->{
+            Serializable key = et.getCounterDataId();
+            if(!ObjectUtils.isEmpty(key))
+                keys.add(key);
+        });
+        List<CounterData> create=new ArrayList<>();
+        List<CounterData> update=new ArrayList<>();
+        list.forEach(et-> {
+            Serializable key = et.getCounterDataId();
+            if(keys.contains(key))
+                update.add(et);
+            else
+                create.add(et);
+        });
+        List rtList=new ArrayList<>();
+        if(update.size()>0 && (!counterDataService.updateBatch(update)))
+            return false;
+        if(create.size()>0 && (!counterDataService.createBatch(create)))
+            return false;
+        return true;
+    }
 
-    Page<CounterData> searchDefault(CounterDataSearchContext context);
-    List<CounterData> listDefault(CounterDataSearchContext context);
+    @Transactional
+    public boolean remove(CounterData et) {
+        String key = et.getCounterDataId();
+
+        if(!remove(new QueryWrapper<CounterData>()
+                .eq("counterdataid", et.getCounterDataId())
+            )) {
+            return false;
+        }
+        return true ;
+    }
+    
+    @Transactional
+    public boolean removeBatch(Collection<String> ids) {
+        removeByIds(ids);
+        return true;
+    }
+
+    public Page<CounterData> searchDefault(CounterDataSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<CounterData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<CounterData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+    public List<CounterData> listDefault(CounterDataSearchContext context) {
+        return baseMapper.listDefault(context,context.getSelectCond());
+    }
 
 
 }

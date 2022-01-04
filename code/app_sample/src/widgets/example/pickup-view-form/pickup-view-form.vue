@@ -34,27 +34,43 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     style=""
     :model="state.data" 
     :rules="state.rules">
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="group1" title="单项选择">
     <a-row>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="formitem" label="单项选择表格视图">
 <IbizDataPicker
   name="formitem"
-  :value="state.data.formitem"
   :data="state.data"
   valueItem="formitem1"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"
   :noAC="true"
-  @editorEvent="handleEditorEvent"/>  </IbizFormItem>
+  :value="state.data.formitem"
+  @editorEvent="handleEditorEvent"
+/>   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 12, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="formitem1" label="值项">
 <IbizSpan
   name="formitem1"
-  :value="state.data.formitem1"
   dataType="25"
+  :value="state.data.formitem1"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"/>
   </IbizFormItem>
@@ -65,7 +81,10 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   </a-form>
 </template>
 <style lang="scss">
-.ibiz-form {
-  margin: 20px !important;
-}
+  .ibiz-form {
+    .ant-card-head {
+      padding: 0;
+      margin: 0 10px;
+    }
+  }
 </style>

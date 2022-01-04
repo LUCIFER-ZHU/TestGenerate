@@ -23,11 +23,11 @@ export interface GridControlState extends MainControlState {
   columnsModel: IParam[];
 
   /**
-   * @description 表格界面行为模型
+   * @description 表格操作列行为模型
    * @type {IParam}
    * @memberof GridControlState
    */
-  actionModel: IParam;
+  uAColumnModel: IParam[];
 
   /**
    * @description 值规则

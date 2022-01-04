@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface MapDataMapper extends BaseMapper<MapData> {
@@ -26,6 +26,10 @@ public interface MapDataMapper extends BaseMapper<MapData> {
 
     @Override
     MapData selectById(Serializable id);
+
+    MapData selectEntity(MapData entity);
+
+    List<MapData> selectEntities(@Param("list") List<MapData> list);
 
     @Override
     int insert(MapData entity);

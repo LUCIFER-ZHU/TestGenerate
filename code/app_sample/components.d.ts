@@ -4,31 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    IbizAutoComplete: typeof import('./src/components/editors/IbizAutoComplete.vue')['default']
-    IbizCheckbox: typeof import('./src/components/editors/IbizCheckbox.vue')['default']
-    IbizCheckboxList: typeof import('./src/components/editors/IbizCheckboxList.vue')['default']
-    IbizDataPicker: typeof import('./src/components/editors/IbizDataPicker.vue')['default']
-    IbizDataPickerView: typeof import('./src/components/editors/IbizDataPickerView.vue')['default']
-    IbizDatePicker: typeof import('./src/components/editors/IbizDatePicker.vue')['default']
-    IbizDefaultIndexViewLayout: typeof import('./src/components/layout/IbizDefaultIndexViewLayout.vue')['default']
-    IbizDefaultViewLayout: typeof import('./src/components/layout/IbizDefaultViewLayout.vue')['default']
-    IbizDropdownList: typeof import('./src/components/editors/IbizDropdownList.vue')['default']
-    IbizFormGroup: typeof import('./src/components/render/IbizFormGroup.vue')['default']
-    IbizFormItem: typeof import('./src/components/render/IbizFormItem.vue')['default']
-    IbizIconText: typeof import('./src/components/render/IbizIconText.vue')['default']
-    IbizInput: typeof import('./src/components/editors/IbizInput.vue')['default']
-    IbizInputIp: typeof import('./src/components/editors/IbizInputIp.vue')['default']
-    IbizLoading: typeof import('./src/components/render/IbizLoading.vue')['default']
-    IbizMenuItem: typeof import('./src/components/render/IbizMenuItem.vue')['default']
-    IbizRadioGroup: typeof import('./src/components/editors/IbizRadioGroup.vue')['default']
-    IbizRating: typeof import('./src/components/editors/IbizRating.vue')['default']
-    IbizRaw: typeof import('./src/components/editors/IbizRaw.vue')['default']
-    IbizSlider: typeof import('./src/components/editors/IbizSlider.vue')['default']
-    IbizSpan: typeof import('./src/components/editors/IbizSpan.vue')['default']
-    IbizStepper: typeof import('./src/components/editors/IbizStepper.vue')['default']
-    IbizSwitch: typeof import('./src/components/editors/IbizSwitch.vue')['default']
-    IbizToolbar: typeof import('./src/components/render/ibizToolbar.vue')['default']
-    IbizUpload: typeof import('./src/components/editors/IbizUpload.vue')['default']
+    
   }
 }
 

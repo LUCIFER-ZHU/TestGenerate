@@ -12,6 +12,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.math.BigInteger;
 import lombok.extern.slf4j.Slf4j;
+
+import cn.ibizlab.util.security.SpringContextHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;
@@ -20,23 +22,22 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.util.Assert;
 import org.springframework.beans.factory.annotation.Value;
-import ibizsample.util.errors.BadRequestAlertException;
-<#system.enableGlobalTransaction>
-import io.seata.spring.annotation.GlobalTransactional;
-</system.enableGlobalTransaction>
+import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Lazy;
 import ibizsample.core.sample.domain.Contact;
 import ibizsample.core.sample.filter.ContactSearchContext;
 import ibizsample.core.sample.service.IContactService;
-import ibizsample.core.sample.mapper.${item.getCodeName()}Mapper;
-import ibizsample.util.helper.CachedBeanCopier;
-import ibizsample.util.helper.DEFieldCacheMap;
+import ibizsample.core.sample.mapper.ContactMapper;
+import cn.ibizlab.util.helper.CachedBeanCopier;
+import cn.ibizlab.util.helper.DEFieldCacheMap;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 
 
@@ -45,26 +46,40 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
  */
 @Slf4j
 @Service("ContactServiceImpl")
-public class ContactServiceImpl extends ServiceImpl<Contact> implements IContactService {
+public class ContactServiceImpl extends ServiceImpl<ContactMapper,Contact> implements IContactService {
 
     protected IContactService contactService = SpringContextHolder.getBean(this.getClass());
 
     @Autowired
     @Lazy
-    protected ibizsample.core.Customer.service.ICustomerService customerService;
+    protected ibizsample.core.sample.service.ICustomerService customerService;
+   
 
+    protected int batchSize = 500;
 
-
-    public Contact get(String key) {
-        Contact et = getById(key);
-        Assert.notNull(et,"数据不存在,联系人:"+key);
+    public Contact get(Contact et) {
+        Contact rt = this.baseMapper.selectEntity(et);
+        Assert.notNull(rt,"数据不存在,联系人:"+et.getContactId());
+        CachedBeanCopier.copy(rt, et);
+        return et;
     }
-    List<Contact> getByIds(Collection<String> idList);
-    List<Contact> getByEntities(Collection<Contact> entities);
+    
+    public List<Contact> getByEntities(List<Contact> entities) {
+        return this.baseMapper.selectEntities(entities);
+    }
 
-    Contact getDraft(Contact et);
+    public void fillParentData(Contact et) {
+        
+    }
 
-    boolean checkKey(Contact et);
+    public Contact getDraft(Contact et) {
+        fillParentData(et);
+        return et;
+    }
+
+    public boolean checkKey(Contact et) {
+        return this.count(Wrappers.lambdaQuery(et))>0;
+    }
 
     @Override
     @Transactional
@@ -72,32 +87,135 @@ public class ContactServiceImpl extends ServiceImpl<Contact> implements IContact
         fillParentData(et);
         if(!this.retBool(this.baseMapper.insert(et))) 
             return false;
-
+        get(et);
         return true;
     }
     @Transactional
     public boolean createBatch(List<Contact> list) {
-
+        list.forEach(et->fillParentData(et));
+        this.saveBatch(list, batchSize);        
+        return true;
     }
 
-    boolean update(Contact et);
-    boolean updateBatch(List<Contact> list);
+    @Transactional
+    public boolean update(Contact et) {
+        fillParentData(et);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true)
+                .eq("contactid", et.getContactId())
+            )) {
+            return false;
+        }
+        get(et);
+        return true;
+    }
 
-    boolean save(Contact et);
-    boolean saveBatch(List<Contact> list);
+    @Transactional
+    public boolean updateBatch(List<Contact> list) {
+        list.forEach(et->fillParentData(et));
+        updateBatchById(list, batchSize);
+        return true;
+    }
 
-    boolean remove(String key);
-    boolean removeBatch(Collection<String> idList);
+    @Transactional
+    public boolean save(Contact et) {
+        if(checkKey(et))
+            return contactService.update(et);
+        else
+            return contactService.create(et);
+    }
 
-    Contact (Contact et);
-    boolean Batch(List<Contact> list);
+    @Transactional
+    public boolean saveBatch(List<Contact> list) {
+        List<Contact> rt=this.getByEntities(list);
+        Set<Serializable> keys=new HashSet<>();
+        rt.forEach(et->{
+            Serializable key = et.getContactId();
+            if(!ObjectUtils.isEmpty(key))
+                keys.add(key);
+        });
+        List<Contact> create=new ArrayList<>();
+        List<Contact> update=new ArrayList<>();
+        list.forEach(et-> {
+            Serializable key = et.getContactId();
+            if(keys.contains(key))
+                update.add(et);
+            else
+                create.add(et);
+        });
+        List rtList=new ArrayList<>();
+        if(update.size()>0 && (!contactService.updateBatch(update)))
+            return false;
+        if(create.size()>0 && (!contactService.createBatch(create)))
+            return false;
+        return true;
+    }
 
-    Page<Contact> searchDefault(ContactSearchContext context);
-    List<Contact> listDefault(ContactSearchContext context);
+    @Transactional
+    public boolean remove(Contact et) {
+        String key = et.getContactId();
 
-    List<Contact> selectByCustomerId(String customerId);
-    boolean removeByCustomerId(String customerId);
-    boolean saveByCustomerId(String customerId,List<Contact> list);
+        if(!remove(new QueryWrapper<Contact>()
+                .eq("contactid", et.getContactId())
+            )) {
+            return false;
+        }
+        return true ;
+    }
+    
+    @Transactional
+    public boolean removeBatch(Collection<String> ids) {
+        removeByIds(ids);
+        return true;
+    }
+
+    public Page<Contact> searchDefault(ContactSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Contact> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Contact>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+    public List<Contact> listDefault(ContactSearchContext context) {
+        return baseMapper.listDefault(context,context.getSelectCond());
+    }
+
+    public List<Contact> selectByCustomerId(String customerId) {
+        return baseMapper.selectByCustomerId(customerId);
+    }
+
+    public boolean removeByCustomerId(String customerId) {
+        return this.remove(new QueryWrapper<Contact>().eq("customerid",customerId));
+    }
+
+    public boolean resetByCustomerId(String customerId) {
+        return this.update(new UpdateWrapper<Contact>().set("customerid",null).eq("customerid",customerId));
+    }
+
+    public boolean saveByCustomerId(String customerId,List<Contact> list) {
+        if(list==null)
+            return true;
+        Set<String> delIds=new HashSet<String>();
+        List<Contact> _update=new ArrayList<Contact>();
+        List<Contact> _create=new ArrayList<Contact>();
+        for(Contact before:selectByCustomerId(customerId)){
+            delIds.add(before.getContactId());
+        }
+        for(Contact sub:list) {
+            sub.setCustomerId(customerId);
+            if(ObjectUtils.isEmpty(sub.getContactId()))
+                sub.setContactId((String)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getContactId())) {
+                delIds.remove(sub.getContactId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0 && (!contactService.updateBatch(_update)))
+            return false;
+        if(_create.size()>0 && (!contactService.createBatch(_create)))
+            return false;
+        if(delIds.size()>0 && (!contactService.removeBatch(delIds)))
+            return false;
+        return true;
+    }
 
 
 }

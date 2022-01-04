@@ -21,6 +21,16 @@ export function isExist(arg: any): boolean{
 }
 
 /**
+ * @description 除undefined，null,NaN,空字符串以外都为true
+ * @export
+ * @param {*} arg
+ * @return {*}  {boolean}
+ */
+export function notEmpty(arg: any): boolean{
+  return isExist(arg) && arg != '';
+}
+
+/**
  * @description 是否拥有某个方法
  * @param {*} arg 校验对象
  * @param fnName 方法名

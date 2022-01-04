@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface OrderMapper extends BaseMapper<Order> {
@@ -35,6 +35,10 @@ public interface OrderMapper extends BaseMapper<Order> {
 
     @Override
     Order selectById(Serializable id);
+
+    Order selectEntity(Order entity);
+
+    List<Order> selectEntities(@Param("list") List<Order> list);
 
     @Override
     int insert(Order entity);

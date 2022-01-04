@@ -12,6 +12,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.math.BigInteger;
 import lombok.extern.slf4j.Slf4j;
+
+import cn.ibizlab.util.security.SpringContextHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;
@@ -20,23 +22,22 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.util.Assert;
 import org.springframework.beans.factory.annotation.Value;
-import ibizsample.util.errors.BadRequestAlertException;
-<#system.enableGlobalTransaction>
-import io.seata.spring.annotation.GlobalTransactional;
-</system.enableGlobalTransaction>
+import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Lazy;
 import ibizsample.core.sample.domain.LogicValidData;
 import ibizsample.core.sample.filter.LogicValidDataSearchContext;
 import ibizsample.core.sample.service.ILogicValidDataService;
-import ibizsample.core.sample.mapper.${item.getCodeName()}Mapper;
-import ibizsample.util.helper.CachedBeanCopier;
-import ibizsample.util.helper.DEFieldCacheMap;
+import ibizsample.core.sample.mapper.LogicValidDataMapper;
+import cn.ibizlab.util.helper.CachedBeanCopier;
+import cn.ibizlab.util.helper.DEFieldCacheMap;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 
 
@@ -45,49 +46,123 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
  */
 @Slf4j
 @Service("LogicValidDataServiceImpl")
-public class LogicValidDataServiceImpl extends ServiceImpl<LogicValidData> implements ILogicValidDataService {
+public class LogicValidDataServiceImpl extends ServiceImpl<LogicValidDataMapper,LogicValidData> implements ILogicValidDataService {
 
     protected ILogicValidDataService logicValidDataService = SpringContextHolder.getBean(this.getClass());
 
 
+    protected int batchSize = 500;
 
-    public LogicValidData get(String key) {
-        LogicValidData et = getById(key);
-        Assert.notNull(et,"数据不存在,示例数据（启用逻辑删除）:"+key);
+    public LogicValidData get(LogicValidData et) {
+        LogicValidData rt = this.baseMapper.selectEntity(et);
+        Assert.notNull(rt,"数据不存在,示例数据（启用逻辑删除）:"+et.getLogicValidDataId());
+        CachedBeanCopier.copy(rt, et);
+        return et;
     }
-    List<LogicValidData> getByIds(Collection<String> idList);
-    List<LogicValidData> getByEntities(Collection<LogicValidData> entities);
+    
+    public List<LogicValidData> getByEntities(List<LogicValidData> entities) {
+        return this.baseMapper.selectEntities(entities);
+    }
 
-    LogicValidData getDraft(LogicValidData et);
 
-    boolean checkKey(LogicValidData et);
+    public LogicValidData getDraft(LogicValidData et) {
+        return et;
+    }
+
+    public boolean checkKey(LogicValidData et) {
+        return this.count(Wrappers.lambdaQuery(et))>0;
+    }
 
     @Override
     @Transactional
     public boolean create(LogicValidData et) {
         if(!this.retBool(this.baseMapper.insert(et))) 
             return false;
+        get(et);
         return true;
     }
     @Transactional
     public boolean createBatch(List<LogicValidData> list) {
-
+        this.saveOrUpdateBatch(list,batchSize);
+        return true;
     }
 
-    boolean update(LogicValidData et);
-    boolean updateBatch(List<LogicValidData> list);
+    @Transactional
+    public boolean update(LogicValidData et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true)
+                .eq("logicvaliddataid", et.getLogicValidDataId())
+            )) {
+            return false;
+        }
+        get(et);
+        return true;
+    }
 
-    boolean save(LogicValidData et);
-    boolean saveBatch(List<LogicValidData> list);
+    @Transactional
+    public boolean updateBatch(List<LogicValidData> list) {
+        updateBatchById(list, batchSize);
+        return true;
+    }
 
-    boolean remove(String key);
-    boolean removeBatch(Collection<String> idList);
+    @Transactional
+    public boolean save(LogicValidData et) {
+        if(checkKey(et))
+            return logicValidDataService.update(et);
+        else
+            return logicValidDataService.create(et);
+    }
 
-    LogicValidData (LogicValidData et);
-    boolean Batch(List<LogicValidData> list);
+    @Transactional
+    public boolean saveBatch(List<LogicValidData> list) {
+        List<LogicValidData> rt=this.getByEntities(list);
+        Set<Serializable> keys=new HashSet<>();
+        rt.forEach(et->{
+            Serializable key = et.getLogicValidDataId();
+            if(!ObjectUtils.isEmpty(key))
+                keys.add(key);
+        });
+        List<LogicValidData> create=new ArrayList<>();
+        List<LogicValidData> update=new ArrayList<>();
+        list.forEach(et-> {
+            Serializable key = et.getLogicValidDataId();
+            if(keys.contains(key))
+                update.add(et);
+            else
+                create.add(et);
+        });
+        List rtList=new ArrayList<>();
+        if(update.size()>0 && (!logicValidDataService.updateBatch(update)))
+            return false;
+        if(create.size()>0 && (!logicValidDataService.createBatch(create)))
+            return false;
+        return true;
+    }
 
-    Page<LogicValidData> searchDefault(LogicValidDataSearchContext context);
-    List<LogicValidData> listDefault(LogicValidDataSearchContext context);
+    @Transactional
+    public boolean remove(LogicValidData et) {
+        String key = et.getLogicValidDataId();
+
+        if(!remove(new QueryWrapper<LogicValidData>()
+                .eq("logicvaliddataid", et.getLogicValidDataId())
+            )) {
+            return false;
+        }
+        return true ;
+    }
+    
+    @Transactional
+    public boolean removeBatch(Collection<String> ids) {
+        removeByIds(ids);
+        return true;
+    }
+
+    public Page<LogicValidData> searchDefault(LogicValidDataSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<LogicValidData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<LogicValidData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+    public List<LogicValidData> listDefault(LogicValidDataSearchContext context) {
+        return baseMapper.listDefault(context,context.getSelectCond());
+    }
 
 
 }

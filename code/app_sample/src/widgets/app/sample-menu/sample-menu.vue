@@ -25,11 +25,12 @@ const { state, menuSelect } = new MenuControl(CtrlConfig).moduleInstall(props, e
 
 <template>
   <a-menu
+    class="ibiz-menu"
     v-model:openKeys="state.defaultOpens"
     v-model:selectedKeys="state.defaultSelect"
     :mode="Object.is('LEFT', state.menuAlign) ? 'inline' : 'horizontal'"
     @select="menuSelect">
-    <IbizMenuItem :items="state.menus" />
+    <IbizMenuItem :items="state.menus" :collapsed="collapsed"/>
   </a-menu>
 </template>
 

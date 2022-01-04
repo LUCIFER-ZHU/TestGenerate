@@ -12,6 +12,8 @@ import java.util.Objects;
 import java.util.Optional;
 import java.math.BigInteger;
 import lombok.extern.slf4j.Slf4j;
+
+import cn.ibizlab.util.security.SpringContextHolder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.beans.BeanCopier;
 import org.springframework.stereotype.Service;
@@ -20,23 +22,22 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
+import org.springframework.util.Assert;
 import org.springframework.beans.factory.annotation.Value;
-import ibizsample.util.errors.BadRequestAlertException;
-<#system.enableGlobalTransaction>
-import io.seata.spring.annotation.GlobalTransactional;
-</system.enableGlobalTransaction>
+import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Lazy;
 import ibizsample.core.sample.domain.MapData;
 import ibizsample.core.sample.filter.MapDataSearchContext;
 import ibizsample.core.sample.service.IMapDataService;
-import ibizsample.core.sample.mapper.${item.getCodeName()}Mapper;
-import ibizsample.util.helper.CachedBeanCopier;
-import ibizsample.util.helper.DEFieldCacheMap;
+import ibizsample.core.sample.mapper.MapDataMapper;
+import cn.ibizlab.util.helper.CachedBeanCopier;
+import cn.ibizlab.util.helper.DEFieldCacheMap;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 
 
@@ -45,49 +46,123 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
  */
 @Slf4j
 @Service("MapDataServiceImpl")
-public class MapDataServiceImpl extends ServiceImpl<MapData> implements IMapDataService {
+public class MapDataServiceImpl extends ServiceImpl<MapDataMapper,MapData> implements IMapDataService {
 
     protected IMapDataService mapDataService = SpringContextHolder.getBean(this.getClass());
 
 
+    protected int batchSize = 500;
 
-    public MapData get(String key) {
-        MapData et = getById(key);
-        Assert.notNull(et,"数据不存在,地图示例数据:"+key);
+    public MapData get(MapData et) {
+        MapData rt = this.baseMapper.selectEntity(et);
+        Assert.notNull(rt,"数据不存在,地图示例数据:"+et.getMapDataId());
+        CachedBeanCopier.copy(rt, et);
+        return et;
     }
-    List<MapData> getByIds(Collection<String> idList);
-    List<MapData> getByEntities(Collection<MapData> entities);
+    
+    public List<MapData> getByEntities(List<MapData> entities) {
+        return this.baseMapper.selectEntities(entities);
+    }
 
-    MapData getDraft(MapData et);
 
-    boolean checkKey(MapData et);
+    public MapData getDraft(MapData et) {
+        return et;
+    }
+
+    public boolean checkKey(MapData et) {
+        return this.count(Wrappers.lambdaQuery(et))>0;
+    }
 
     @Override
     @Transactional
     public boolean create(MapData et) {
         if(!this.retBool(this.baseMapper.insert(et))) 
             return false;
+        get(et);
         return true;
     }
     @Transactional
     public boolean createBatch(List<MapData> list) {
-
+        this.saveBatch(list, batchSize);        
+        return true;
     }
 
-    boolean update(MapData et);
-    boolean updateBatch(List<MapData> list);
+    @Transactional
+    public boolean update(MapData et) {
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true)
+                .eq("mapdataid", et.getMapDataId())
+            )) {
+            return false;
+        }
+        get(et);
+        return true;
+    }
 
-    boolean save(MapData et);
-    boolean saveBatch(List<MapData> list);
+    @Transactional
+    public boolean updateBatch(List<MapData> list) {
+        updateBatchById(list, batchSize);
+        return true;
+    }
 
-    boolean remove(String key);
-    boolean removeBatch(Collection<String> idList);
+    @Transactional
+    public boolean save(MapData et) {
+        if(checkKey(et))
+            return mapDataService.update(et);
+        else
+            return mapDataService.create(et);
+    }
 
-    MapData (MapData et);
-    boolean Batch(List<MapData> list);
+    @Transactional
+    public boolean saveBatch(List<MapData> list) {
+        List<MapData> rt=this.getByEntities(list);
+        Set<Serializable> keys=new HashSet<>();
+        rt.forEach(et->{
+            Serializable key = et.getMapDataId();
+            if(!ObjectUtils.isEmpty(key))
+                keys.add(key);
+        });
+        List<MapData> create=new ArrayList<>();
+        List<MapData> update=new ArrayList<>();
+        list.forEach(et-> {
+            Serializable key = et.getMapDataId();
+            if(keys.contains(key))
+                update.add(et);
+            else
+                create.add(et);
+        });
+        List rtList=new ArrayList<>();
+        if(update.size()>0 && (!mapDataService.updateBatch(update)))
+            return false;
+        if(create.size()>0 && (!mapDataService.createBatch(create)))
+            return false;
+        return true;
+    }
 
-    Page<MapData> searchDefault(MapDataSearchContext context);
-    List<MapData> listDefault(MapDataSearchContext context);
+    @Transactional
+    public boolean remove(MapData et) {
+        String key = et.getMapDataId();
+
+        if(!remove(new QueryWrapper<MapData>()
+                .eq("mapdataid", et.getMapDataId())
+            )) {
+            return false;
+        }
+        return true ;
+    }
+    
+    @Transactional
+    public boolean removeBatch(Collection<String> ids) {
+        removeByIds(ids);
+        return true;
+    }
+
+    public Page<MapData> searchDefault(MapDataSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<MapData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<MapData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+    public List<MapData> listDefault(MapDataSearchContext context) {
+        return baseMapper.listDefault(context,context.getSelectCond());
+    }
 
 
 }

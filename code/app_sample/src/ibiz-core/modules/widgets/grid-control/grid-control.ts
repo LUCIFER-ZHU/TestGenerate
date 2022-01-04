@@ -53,10 +53,10 @@ export class GridControl extends MainControl {
    * @memberof GridControl
    */
   public getActionAuthState(rowData: IParam) {
-    const { UIService, actionModel } = this.controlState;
-    let tempActionModel: any = deepCopy(actionModel);
-    calcActionItemAuthState(rowData, tempActionModel, UIService);
-    return tempActionModel;
+    const { UIService, uAColumnModel } = this.controlState;
+    let tempModel: any = deepCopy(uAColumnModel);
+    calcActionItemAuthState(rowData, tempModel, UIService);
+    return tempModel;
   }
 
   /**
@@ -349,16 +349,16 @@ export class GridControl extends MainControl {
     const { viewSubject, controlName } = this.controlState;
     const load = async (opt: any = {})=>{
       try {
-        const loadAction = this.controlState.controlAction.loadAction;
         const { 
           controlService, context, viewParams, showBusyIndicator, noSort, minorSortDir, minorSortPSDEF,
-          enablePagingBar
+          enablePagingBar, controlAction
         } = this.controlState;
         const dataRef = toRef(this.controlState, "items");
         const paginationRef = toRef(this.controlState, "pagination");
-        // if(!loadAction){
-        //   return;
-        // }
+        if(!controlAction.loadAction){
+          return;
+        }
+        const arg: any = { ...opt };
         let _context = deepCopy(context ? context : {});
         let _viewParams = deepCopy(viewParams ? context : {});
         if (noSort && minorSortDir && minorSortPSDEF) {
@@ -369,32 +369,22 @@ export class GridControl extends MainControl {
           const pageSizeRef = toRef(this.controlState, "pageSize");
           Object.assign(_viewParams, { page: currentRef.value - 1, size: pageSizeRef.value});
         }
-        // const response = await controlService.get(loadAction, _context, {viewParams: _viewParams}, showBusyIndicator );
-        // if (!response.status || response.status !== 200) {
-        //   return
-        // }
-        const data = [];
-        for (let i = 0; i < 100; i++) {
-          data.push({
-            group: i % 2 === 1 ? "分组1": "分组2",
-            srfkey: i,
-            tefsubjecttypename: `Edrward ${i}`,
-            nian: i,
-            testdata: i,
-            updatedate: 32,
-            description: `London Park no. ${i}`,
-          });
+        Object.assign(arg, { viewParams: _viewParams });
+        const response = await controlService.get(
+          _context, 
+          arg,
+          { action: controlAction.loadAction, isLoading: showBusyIndicator}
+        );
+        if (response.status || response.status == 200) {
+          dataRef.value = response.data;
+          if (enablePagingBar) {
+            paginationRef.value['total'] = response.total;
+          }
+          this.calcGridAuthState();
+          this.handleDefaultSelect();
+          this.handleGridGroup();
+          this.handleDataAgg();
         }
-        dataRef.value = data;
-        // dataRef.value = response.data;
-        if (enablePagingBar) {
-          // paginationRef.value['total'] = response.total;
-          paginationRef.value["total"] = 100;
-        }
-        this.calcGridAuthState();
-        this.handleDefaultSelect();
-        this.handleGridGroup();
-        this.handleDataAgg();
       } catch (error) {
         // todo 错误异常处理
         console.error(error)
@@ -420,6 +410,165 @@ export class GridControl extends MainControl {
   }
 
   /**
+   * @description 使用保存功能模块
+   * @param {GridControlProps} props 传入的props
+   * @return {*} 
+   * @memberof GridControl
+   */
+  public useSave(props: GridControlProps) {
+    const { viewSubject, controlName } = this.controlState;
+    const save = async (opt: any = {}) => {
+      try {
+        const { controlService, context, viewParams, showBusyIndicator, items, controlAction } = this.controlState;
+        // TODO 值规则校验处理
+
+        for (const item of items) {
+          const { updateAction, createAction } = controlAction;
+          const saveAction: any = item.rowDataState == "update" ? updateAction : item.rowDataState == "create" ? createAction : "create";
+          const saveFunName = item.rowDataState;
+          if (!saveAction || !saveFunName) {
+            return;
+          }
+          const arg: any = { ...opt };
+          let _context = deepCopy(context);
+          let _viewParams = deepCopy(viewParams);
+          Object.assign(arg, item.getDo());
+          Object.assign(arg, { viewParams: _viewParams });
+          const response = await controlService[saveFunName](
+            _context,
+            arg,
+            { action: saveAction, isLoading: showBusyIndicator },
+          );
+          if (response.status || response.status == 200) {
+            
+          }
+        }
+      } catch (error) {
+        // TODO 错误异常处理
+        console.log(error);
+      }
+    };
+    // 订阅viewSubject,监听load行为
+    if (viewSubject) {
+      let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam) => {
+        if (Object.is(controlName, tag) && Object.is("save", action)) {
+          save(data);
+        }
+      });
+      // 部件卸载时退订viewSubject
+      onUnmounted(() => {
+        subscription.unsubscribe();
+      });
+    }
+
+    return {
+      save: save,
+    };
+  }
+
+  /**
+   * @description 使用删除功能模块
+   * @param {GridControlProps} props 传入的props
+   * @return {*} 
+   * @memberof GridControl
+   */
+  public useRemove(props: GridControlProps) {
+    const { viewSubject, controlName } = this.controlState;
+    const remove = async (opt: any = {}) => {
+      try {
+        const { controlService, context, viewParams, showBusyIndicator, controlAction } = this.controlState;
+        if (!controlAction.removeAction) {
+          return;
+        }
+
+        let _context = deepCopy(context);
+        let _viewParams = deepCopy(viewParams);
+        const arg: any = opt[0];
+        Object.assign(arg, { viewParams: _viewParams });
+        const response = await controlService.remove(
+          _context,
+          arg,
+          { action: controlAction.removeAction, isLoading: showBusyIndicator },
+        );
+        if (response.status || response.status == 200) {
+
+        }
+      } catch (error) {
+        // TODO 错误异常处理
+        console.log(error);
+      }
+    };
+
+    // 订阅viewSubject,监听load行为
+    if (viewSubject) {
+      let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam) => {
+        if (Object.is(controlName, tag) && Object.is("remove", action)) {
+          remove(data);
+        }
+      });
+      // 部件卸载时退订viewSubject
+      onUnmounted(() => {
+        subscription.unsubscribe();
+      });
+    }
+
+    return {
+      remove: remove,
+    };
+  }
+
+  /**
+   * @description 使用新建行功能模块
+   * @param {GridControlProps} props 传入的props
+   * @return {*} 
+   * @memberof GridControl
+   */
+  public useNewRow(props: GridControlProps) {
+    const { viewSubject, controlName } = this.controlState;
+    const newRow = async (opt: any = {}) => {
+      try {
+        const { controlService, context, viewParams, showBusyIndicator, controlAction } = this.controlState;
+        if (!controlAction.loadDraftAction) {
+          return;
+        }
+        const dataRef = toRef(this.controlState, "items");
+        let _context = deepCopy(context);
+        let _viewParams = deepCopy(viewParams);
+        const arg: any = {...opt};
+        Object.assign(arg, { viewParams: _viewParams });
+        const response = await controlService.loadDraft(
+          _context,
+          arg,
+          { action: controlAction.loadDraftAction, isLoading: showBusyIndicator },
+        );
+        if (response.status || response.status == 200) {
+          dataRef.value = [...dataRef.value,[response.data]];
+        }
+      } catch (error) {
+        // TODO 错误异常处理
+        console.log(error);
+      }
+    };
+
+    // 订阅viewSubject,监听load行为
+    if (viewSubject) {
+      let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam) => {
+        if (Object.is(controlName, tag) && Object.is("newRow", action)) {
+          newRow(data);
+        }
+      });
+      // 部件卸载时退订viewSubject
+      onUnmounted(() => {
+        subscription.unsubscribe();
+      });
+    }
+
+    return {
+      remove: newRow,
+    };
+  }
+
+  /**
    * @description 处理编辑器事件
    * @param {IActionParam} actionParam 行为参数
    * @memberof GridControl
@@ -433,6 +582,17 @@ export class GridControl extends MainControl {
       default:
         break;
     }
+  }
+
+  /**
+   * @description 处理工具栏事件
+   * @param {IActionParam} actionParam 行为参数
+   * @param {IParam} [row] 表格行数据
+   * @memberof GridControl
+   */
+  public handleToolbarEvent(actionParam: IActionParam, row?: IParam) {
+    const { tag, action, data } = actionParam;
+    console.log('触发界面行为', actionParam, row);
   }
 
   /**
@@ -451,6 +611,7 @@ export class GridControl extends MainControl {
       state: this.controlState,
       load,
       handleEditorEvent: this.handleEditorEvent.bind(this),
+      handleToolbarEvent: this.handleToolbarEvent.bind(this),
     };
   }
 }

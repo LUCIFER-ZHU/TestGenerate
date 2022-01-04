@@ -34,66 +34,106 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     style=""
     :model="state.data" 
     :rules="state.rules">
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="group1" title="订单基本信息">
     <a-row>
-<a-col :span="24">
+<a-col
+  :lg="{span: 6, offset: 0 }"
+  :md="{span: 8, offset: 0 }"
+  :sm="{span: 12, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="ordername" label="订单号">
 <IbizInput
   name="ordername"
-  :value="state.data.ordername"
   :maxLength="200"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.ordername"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 18, offset: 0 }"
+  :md="{span: 18, offset: 0 }"
+  :sm="{span: 18, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="customername" label="客户">
 <IbizDataPicker
   name="customername"
-  :value="state.data.customername"
   :data="state.data"
   valueItem="customerid"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"
-  @editorEvent="handleEditorEvent"/>  </IbizFormItem>
+  :value="state.data.customername"
+  @editorEvent="handleEditorEvent"
+/>   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 6, offset: 0 }"
+  :md="{span: 8, offset: 0 }"
+  :sm="{span: 12, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="orderdate" label="订单时间">
 <IbizDatePicker
   name="orderdate"
-  :value="state.data.orderdate"
   dateFormat="YYYY-MM-DD"
   dateType="date"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.orderdate"
+  @editorEvent="handleEditorEvent"
+/> 
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 6, offset: 0 }"
+  :md="{span: 8, offset: 0 }"
+  :sm="{span: 12, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="amount" label="金额">
 <IbizInput
   name="amount"
-  :value="state.data.amount"
   type="text"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.amount"
+  @editorEvent="handleEditorEvent"
+/> 
     
   </IbizFormItem>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 6, offset: 0 }"
+  :md="{span: 8, offset: 0 }"
+  :sm="{span: 12, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormItem name="state" label="订单状态">
 <IbizDropdownList
   name="state"
-  :value="state.data.state"
   :data="state.data"
   :contextProp="state.context"
   :viewParamsProp="state.viewParams"
-  @editorEvent="handleEditorEvent"/>
+  :value="state.data.state"
+  @editorEvent="handleEditorEvent"
+/> 
   </IbizFormItem>
 </a-col>
     </a-row>
   </IbizFormGroup>
 </a-col>
-<a-col :span="24">
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
   <IbizFormGroup name="grouppanel1" title="订单明细">
     <a-row>
       /*未找到模板[DRUIPART]*/    </a-row>
@@ -102,7 +142,10 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   </a-form>
 </template>
 <style lang="scss">
-.ibiz-form {
-  margin: 20px !important;
-}
+  .ibiz-form {
+    .ant-card-head {
+      padding: 0;
+      margin: 0 10px;
+    }
+  }
 </style>

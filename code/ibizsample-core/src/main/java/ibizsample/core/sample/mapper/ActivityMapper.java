@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface ActivityMapper extends BaseMapper<Activity> {
@@ -38,6 +38,10 @@ public interface ActivityMapper extends BaseMapper<Activity> {
 
     @Override
     Activity selectById(Serializable id);
+
+    Activity selectEntity(Activity entity);
+
+    List<Activity> selectEntities(@Param("list") List<Activity> list);
 
     @Override
     int insert(Activity entity);

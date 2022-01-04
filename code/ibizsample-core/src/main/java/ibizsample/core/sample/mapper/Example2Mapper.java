@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface Example2Mapper extends BaseMapper<Example2> {
@@ -26,6 +26,10 @@ public interface Example2Mapper extends BaseMapper<Example2> {
 
     @Override
     Example2 selectById(Serializable id);
+
+    Example2 selectEntity(Example2 entity);
+
+    List<Example2> selectEntities(@Param("list") List<Example2> list);
 
     @Override
     int insert(Example2 entity);

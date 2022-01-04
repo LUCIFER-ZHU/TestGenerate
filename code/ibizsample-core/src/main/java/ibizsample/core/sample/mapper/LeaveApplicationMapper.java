@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface LeaveApplicationMapper extends BaseMapper<LeaveApplication> {
@@ -26,6 +26,10 @@ public interface LeaveApplicationMapper extends BaseMapper<LeaveApplication> {
 
     @Override
     LeaveApplication selectById(Serializable id);
+
+    LeaveApplication selectEntity(LeaveApplication entity);
+
+    List<LeaveApplication> selectEntities(@Param("list") List<LeaveApplication> list);
 
     @Override
     int insert(LeaveApplication entity);

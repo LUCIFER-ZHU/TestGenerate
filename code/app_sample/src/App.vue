@@ -1,23 +1,18 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+import {App} from '@service'
 
-import { Ref } from "vue";
-import { AppModal } from "./utils"
-function showConfirm(this: any) {
-  AppModal.getInstance().openModal({name:'ExampleEditorEditView',title:'标题',fileDir:'@page/example/example-editor-edit-view'})
-}
+onMounted(async ()=>{
+  await App.init();
+  // App.openViewService.openView({codeName: 'ExampleEditorEditView'},{context: {},viewParams:{}})
+})
 
-const visible: Ref<boolean> = ref(false);
-const showModal = () => {
-  visible.value = !visible.value;
-}
+
 </script>
 
 <template>
-  <a-button @click="showConfirm">
-    Confirm
-  </a-button>
+  <router-view />
 </template>
 
 <style>

@@ -1,5 +1,6 @@
 import { Ref } from 'vue';
-import { MenuControlProps, MenuControlState, IActionParam, ControlBase, IParam } from '@ibiz-core';
+import { MenuControlProps, MenuControlState, IActionParam, ControlBase, IParam, AppFuncService, deepCopy } from '@ibiz-core';
+import { App } from '@service';
 
 /**
  * @description 菜单部件
@@ -163,7 +164,8 @@ export class MenuControl extends ControlBase {
    * @memberof MenuControl
    */
   public menuClick(item: IParam) {
-    console.log(item);
+    const { context, viewParams } = this.controlState;
+    App.appFuncService.executeAppFunc(item, deepCopy(context), deepCopy(viewParams));
   }
 
   /**

@@ -31,7 +31,7 @@ interface CtrlEmit {
 }
 const emit = defineEmits<CtrlEmit>();
 // 安装功能模块，提供状态和能力方法
-const { state, load, handleEditorEvent } = new GridControl(CtrlConfig).moduleInstall(props);
+const { state, load, handleEditorEvent, handleToolbarEvent } = new GridControl(CtrlConfig).moduleInstall(props);
 // 表格滚动条配置
 const gridScrollOption = computed(() => {
   return {
@@ -71,7 +71,7 @@ const customRow = (record: IParam, index: number) => {
 }
 // 表格选择功能配置
 const rowSelectionOption = computed(() => {
-  if (props.rowEditState || props.selectFirstDefault) {
+  if (props.selectFirstDefault) {
     return false;
   }
   return {
@@ -127,69 +127,61 @@ const handleChange = (pagination: IParam, filters: IParam, sorter: IParam, data:
       </div>
     </template>
     <template #bodyCell="{ column, text, record, index }">
-
 <div v-if="Object.is(column.dataIndex, 'customername')" class="table-cell">
 
   <div class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'monthval')" class="table-cell">
 
   <div class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'quarterval')" class="table-cell">
 
   <div class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'yearval')" class="table-cell">
 
   <div class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'processingval')" class="table-cell">
 
   <div class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'payingval')" class="table-cell">
 
   <div class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'finishedval')" class="table-cell">
 
   <div class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
-
 <div v-if="Object.is(column.dataIndex, 'totalval')" class="table-cell">
 
   <div class="text-cell">
     <span class="text">{{text}}</span>
   </div>
-  
+    
 </div>
     </template>
 
@@ -197,7 +189,7 @@ const handleChange = (pagination: IParam, filters: IParam, sorter: IParam, data:
 </template>
 <style lang="scss">
 .ibiz-grid {
-  margin: 20px;
+  height: 100%;
   .table-striped {
     background-color: #fafafa;
   }

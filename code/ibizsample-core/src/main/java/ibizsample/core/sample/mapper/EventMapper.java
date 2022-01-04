@@ -15,7 +15,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import java.io.Serializable;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import om.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.alibaba.fastjson.JSONObject;
 
 public interface EventMapper extends BaseMapper<Event> {
@@ -26,6 +26,10 @@ public interface EventMapper extends BaseMapper<Event> {
 
     @Override
     Event selectById(Serializable id);
+
+    Event selectEntity(Event entity);
+
+    List<Event> selectEntities(@Param("list") List<Event> list);
 
     @Override
     int insert(Event entity);

@@ -17,13 +17,17 @@ const props = withDefaults(defineProps<LayoutProps>(), {
 </script>
 
 <template>
-  <a-layout class="app-index-view">
-    <a-layout-header>
-      <slot name="header"></slot>
+  <IbizIndexViewBaseLayout class="ibiz-default-index-view">
+    <template v-slot:header-left>
+      <slot name="caption"></slot>
+    </template>
+    <template v-slot:header-content>
       <slot name="menu" v-if="Object.is(menuAlign, 'TOP')"></slot>
+    </template>
+    <template v-slot:header-right>
       <slot name="user"></slot>
-    </a-layout-header>
-    <a-layout>
+    </template>
+    <template v-slot:side-left>
       <a-layout-sider 
         v-if="Object.is(menuAlign, 'LEFT')" 
         theme="light"
@@ -32,24 +36,15 @@ const props = withDefaults(defineProps<LayoutProps>(), {
         :collapsed="collapsed">
         <slot name="menu"></slot>
       </a-layout-sider>
-      <a-layout-content>
-        <slot name="content"></slot>
-      </a-layout-content>
-    </a-layout>
-  </a-layout>
+    </template>
+    <template v-slot:content>
+      <!-- <div class="ibiz-page-tag"></div> -->
+      <slot name="router" />
+    </template>
+  </IbizIndexViewBaseLayout>
 </template>
 
 <style lang="scss">
-.app-index-view {
-  width: 100%;
-  height: 100%;
-  .ant-layout-header {
-    display: flex;
-    background-color: #fff;
-    justify-content: space-between;
-  }
-  .ant-layout-sider {
-    overflow-y: auto;
-  }
+.ibiz-default-index-view {
 }
 </style>
