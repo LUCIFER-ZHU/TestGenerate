@@ -2,6 +2,7 @@
   "getAllPSDEACModes" : [ {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeacmodes/DEFAULT",
     "name" : "DEFAULT",
     "getPSDEACModeDataItems" : [ {
       "dataType" : 25,
@@ -11,12 +12,14 @@
       "name" : "text"
     } ],
     "pagingSize" : 50,
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeacmodes/DEFAULT",
     "defaultMode" : true,
     "enablePagingBar" : false,
     "id" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACMODES/Default.json"
   }, {
     "codeName" : "NameAndCode",
     "logicName" : "自定义数据项",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeacmodes/NameAndCode",
     "name" : "NameAndCode",
     "getPSDEACModeDataItems" : [ {
       "dataType" : 25,
@@ -41,6 +44,7 @@
       "customCode" : true
     } ],
     "pagingSize" : 50,
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeacmodes/NameAndCode",
     "defaultMode" : false,
     "enablePagingBar" : false,
     "id" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACMODES/NameAndCode.json"
@@ -51,21 +55,27 @@
     "codeName" : "Create",
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/Create.json",
     "logicName" : "Create",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/Create",
     "name" : "Create",
     "orderValue" : 1,
     "getPSDEActionInput" : {
+      "mOSFilePath" : "psdeactioninputs/CreateInput",
       "name" : "CreateInput",
       "getPSDEMethodDTO" : {
         "modelref" : true,
         "id" : "ProductDTO"
       },
+      "rTMOSFilePath" : "psdeactioninputs/CreateInput",
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "mOSFilePath" : "psdeactionreturns/CreateResult",
       "name" : "CreateResult",
+      "rTMOSFilePath" : "psdeactionreturns/CreateResult",
       "type" : "VOID"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/Create",
     "builtinAction" : true
   }, {
     "actionMode" : "UPDATE",
@@ -73,21 +83,27 @@
     "codeName" : "Update",
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/Update.json",
     "logicName" : "Update",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/Update",
     "name" : "Update",
     "orderValue" : 11,
     "getPSDEActionInput" : {
+      "mOSFilePath" : "psdeactioninputs/UpdateInput",
       "name" : "UpdateInput",
       "getPSDEMethodDTO" : {
         "modelref" : true,
         "id" : "ProductDTO"
       },
+      "rTMOSFilePath" : "psdeactioninputs/UpdateInput",
       "type" : "DTO",
       "output" : true
     },
     "getPSDEActionReturn" : {
+      "mOSFilePath" : "psdeactionreturns/UpdateResult",
       "name" : "UpdateResult",
+      "rTMOSFilePath" : "psdeactionreturns/UpdateResult",
       "type" : "VOID"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/Update",
     "builtinAction" : true
   }, {
     "actionMode" : "DELETE",
@@ -96,6 +112,7 @@
     "codeName" : "Remove",
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json",
     "logicName" : "Remove",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/Remove",
     "name" : "Remove",
     "orderValue" : 21,
     "getPSDEActionInput" : {
@@ -103,13 +120,18 @@
         "name" : "PRODUCTID",
         "codeName" : "ProductId"
       },
+      "mOSFilePath" : "psdeactioninputs/RemoveInput",
       "name" : "RemoveInput",
+      "rTMOSFilePath" : "psdeactioninputs/RemoveInput",
       "type" : "KEYFIELDS"
     },
     "getPSDEActionReturn" : {
+      "mOSFilePath" : "psdeactionreturns/RemoveResult",
       "name" : "RemoveResult",
+      "rTMOSFilePath" : "psdeactionreturns/RemoveResult",
       "type" : "VOID"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/Remove",
     "batchAction" : true,
     "builtinAction" : true
   }, {
@@ -118,6 +140,7 @@
     "codeName" : "Get",
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/Get.json",
     "logicName" : "Get",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/Get",
     "name" : "Get",
     "orderValue" : 31,
     "getPSDEActionInput" : {
@@ -125,17 +148,22 @@
         "name" : "PRODUCTID",
         "codeName" : "ProductId"
       },
+      "mOSFilePath" : "psdeactioninputs/GetInput",
       "name" : "GetInput",
+      "rTMOSFilePath" : "psdeactioninputs/GetInput",
       "type" : "KEYFIELD"
     },
     "getPSDEActionReturn" : {
+      "mOSFilePath" : "psdeactionreturns/GetResult",
       "name" : "GetResult",
       "getPSDEMethodDTO" : {
         "modelref" : true,
         "id" : "ProductDTO"
       },
+      "rTMOSFilePath" : "psdeactionreturns/GetResult",
       "type" : "DTO"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/Get",
     "builtinAction" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -143,24 +171,30 @@
     "codeName" : "GetDraft",
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/GetDraft.json",
     "logicName" : "GetDraft",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/GetDraft",
     "name" : "GetDraft",
     "orderValue" : 41,
     "getPSDEActionInput" : {
+      "mOSFilePath" : "psdeactioninputs/GetDraftInput",
       "name" : "GetDraftInput",
       "getPSDEMethodDTO" : {
         "modelref" : true,
         "id" : "ProductDTO"
       },
+      "rTMOSFilePath" : "psdeactioninputs/GetDraftInput",
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "mOSFilePath" : "psdeactionreturns/GetDraftResult",
       "name" : "GetDraftResult",
       "getPSDEMethodDTO" : {
         "modelref" : true,
         "id" : "ProductDTO"
       },
+      "rTMOSFilePath" : "psdeactionreturns/GetDraftResult",
       "type" : "DTO"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/GetDraft",
     "builtinAction" : true
   }, {
     "actionMode" : "CHECKKEY",
@@ -168,20 +202,26 @@
     "codeName" : "CheckKey",
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/CheckKey.json",
     "logicName" : "CheckKey",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/CheckKey",
     "name" : "CheckKey",
     "getPSDEActionInput" : {
+      "mOSFilePath" : "psdeactioninputs/CheckKeyInput",
       "name" : "CheckKeyInput",
       "getPSDEMethodDTO" : {
         "modelref" : true,
         "id" : "ProductDTO"
       },
+      "rTMOSFilePath" : "psdeactioninputs/CheckKeyInput",
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "mOSFilePath" : "psdeactionreturns/CheckKeyResult",
       "name" : "CheckKeyResult",
+      "rTMOSFilePath" : "psdeactionreturns/CheckKeyResult",
       "stdDataType" : 9,
       "type" : "SIMPLE"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/CheckKey",
     "builtinAction" : true
   }, {
     "actionMode" : "UNKNOWN",
@@ -189,25 +229,33 @@
     "codeName" : "Save",
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEACTIONS/Save.json",
     "logicName" : "Save",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/Save",
     "name" : "Save",
     "getPSDEActionInput" : {
+      "mOSFilePath" : "psdeactioninputs/SaveInput",
       "name" : "SaveInput",
       "getPSDEMethodDTO" : {
         "modelref" : true,
         "id" : "ProductDTO"
       },
+      "rTMOSFilePath" : "psdeactioninputs/SaveInput",
       "type" : "DTO"
     },
     "getPSDEActionReturn" : {
+      "mOSFilePath" : "psdeactionreturns/SaveResult",
       "name" : "SaveResult",
+      "rTMOSFilePath" : "psdeactionreturns/SaveResult",
       "type" : "VOID"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeactions/Save",
     "builtinAction" : true
   } ],
   "getAllPSDEDBConfigs" : [ {
     "dBType" : "MYSQL5",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedbcfgs/MYSQL5",
     "name" : "MYSQL5",
     "objNameCase" : "DEFAULT",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedbcfgs/MYSQL5",
     "standardTableName" : "`T_PRODUCT`",
     "tableName" : "T_PRODUCT",
     "valid" : true
@@ -237,11 +285,13 @@
     } ],
     "codeName" : "Table",
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDETABLES/Table.json",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdetables/Table",
     "name" : "T_PRODUCT",
     "getPSSysDBTable" : {
       "modelref" : true,
       "id" : "T_PRODUCT"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdetables/Table",
     "tableType" : "MAIN"
   } ],
   "getAllPSDEDataQueries" : [ {
@@ -251,6 +301,7 @@
     } ],
     "codeName" : "ByCategory",
     "logicName" : "根据类别",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedataqueries/ByCategory",
     "name" : "ByCategory",
     "getPSDEDQMain" : {
       "getChildPSDEDQJoins" : [ {
@@ -307,7 +358,8 @@
         "id" : "ProductDTO"
       },
       "type" : "DTOS"
-    }
+    },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedataqueries/ByCategory"
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "modelref" : true,
@@ -315,6 +367,7 @@
     } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedataqueries/DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDQMain" : {
       "getJoinPSDataEntity" : {
@@ -340,6 +393,7 @@
       },
       "type" : "DTOS"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedataqueries/DEFAULT",
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -349,6 +403,7 @@
     "codeName" : "Simple",
     "dEFGroupType" : "BASEFIELDS",
     "logicName" : "基础属性查询",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedataqueries/SIMPLE",
     "name" : "SIMPLE",
     "getPSDEDQMain" : {
       "getJoinPSDataEntity" : {
@@ -374,6 +429,7 @@
       },
       "type" : "DTOS"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedataqueries/SIMPLE",
     "viewLevel" : 100
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -382,6 +438,7 @@
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedataqueries/VIEW",
     "name" : "VIEW",
     "getPSDEDQMain" : {
       "getJoinPSDataEntity" : {
@@ -407,11 +464,13 @@
       },
       "type" : "DTOS"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedataqueries/VIEW",
     "viewLevel" : 0
   } ],
   "getAllPSDEDataSets" : [ {
     "codeName" : "ByCategory",
     "logicName" : "根据类别",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedatasets/ByCategory",
     "name" : "ByCategory",
     "getPSDEDataQueries" : [ {
       "modelref" : true,
@@ -433,11 +492,13 @@
       },
       "type" : "PAGE"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedatasets/ByCategory",
     "enableBackend" : true,
     "enableFront" : true
   }, {
     "codeName" : "Default",
     "logicName" : "数据集",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedatasets/DEFAULT",
     "name" : "DEFAULT",
     "getPSDEDataQueries" : [ {
       "modelref" : true,
@@ -459,9 +520,14 @@
       },
       "type" : "PAGE"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdedatasets/DEFAULT",
     "defaultMode" : true,
     "enableBackend" : true,
     "enableFront" : true
+  } ],
+  "getAllPSDEFGroups" : [ {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEFGROUPS/Simple.json"
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {
@@ -471,41 +537,44 @@
       "queryCodeExp" : "t1.`PRODUCTID`",
       "standardColumnName" : "`PRODUCTID`"
     } ],
-    "getAllPSDEFSearchModes" : [ {
-      "codeName" : "N_PRODUCTID_EQ",
-      "name" : "N_PRODUCTID_EQ",
-      "stdDataType" : 25,
-      "valueOP" : "EQ"
-    } ],
     "getAllPSDEFUIModes" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTID/psdefuimodes/Default",
       "name" : "[PRODUCTID][产品标识]",
       "getPSDEFFormItem" : {
         "codeName" : "Default",
         "editorType" : "SPAN",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTID/psdefformitems/Default",
         "name" : "[PRODUCTID][产品标识]",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTID/psdefformitems/Default",
         "stringLength" : 100,
         "uIMode" : "DEFAULT",
         "allowEmpty" : false
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTID/psdefuimodes/Default",
       "type" : "DEFAULT"
     }, {
       "codeName" : "MobileDefault",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTID/psdefuimodes/MobileDefault",
       "name" : "[PRODUCTID][产品标识]移动端默认",
       "getPSDEFFormItem" : {
         "codeName" : "MobileDefault",
         "editorType" : "SPAN",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTID/psdefformitems/MobileDefault",
         "name" : "[PRODUCTID][产品标识]移动端默认",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTID/psdefformitems/MobileDefault",
         "stringLength" : 100,
         "uIMode" : "MOBILEDEFAULT",
         "allowEmpty" : false,
         "mobileMode" : true
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTID/psdefuimodes/MobileDefault",
       "type" : "MOBILEDEFAULT",
       "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTID/psdefvaluerules/Default",
       "name" : "默认规则",
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -523,6 +592,7 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTID/psdefvaluerules/Default",
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -535,6 +605,7 @@
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "产品标识",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTID",
     "name" : "PRODUCTID",
     "getPSDEDBTable" : {
       "modelref" : true,
@@ -544,6 +615,7 @@
       "modelref" : true,
       "id" : "PRODUCTID"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTID",
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
@@ -560,33 +632,42 @@
     } ],
     "getAllPSDEFUIModes" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEMAN/psdefuimodes/Default",
       "name" : "[CREATEMAN][建立人]",
       "getPSDEFFormItem" : {
         "codeName" : "Default",
         "editorType" : "SPAN",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEMAN/psdefformitems/Default",
         "name" : "[CREATEMAN][建立人]",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEMAN/psdefformitems/Default",
         "stringLength" : 60,
         "uIMode" : "DEFAULT",
         "allowEmpty" : false
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEMAN/psdefuimodes/Default",
       "type" : "DEFAULT"
     }, {
       "codeName" : "MobileDefault",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEMAN/psdefuimodes/MobileDefault",
       "name" : "[CREATEMAN][建立人]移动端默认",
       "getPSDEFFormItem" : {
         "codeName" : "MobileDefault",
         "editorType" : "SPAN",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEMAN/psdefformitems/MobileDefault",
         "name" : "[CREATEMAN][建立人]移动端默认",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEMAN/psdefformitems/MobileDefault",
         "stringLength" : 60,
         "uIMode" : "MOBILEDEFAULT",
         "allowEmpty" : false,
         "mobileMode" : true
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEMAN/psdefuimodes/MobileDefault",
       "type" : "MOBILEDEFAULT",
       "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEMAN/psdefvaluerules/Default",
       "name" : "默认规则",
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -604,6 +685,7 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEMAN/psdefvaluerules/Default",
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -616,6 +698,7 @@
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "建立人",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEMAN",
     "name" : "CREATEMAN",
     "getPSCodeList" : {
       "modelref" : true,
@@ -630,6 +713,7 @@
       "id" : "CREATEMAN"
     },
     "predefinedType" : "CREATEMAN",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEMAN",
     "stdDataType" : 25,
     "stringLength" : 60,
     "valueFormat" : "%1$s",
@@ -645,39 +729,49 @@
     } ],
     "getAllPSDEFUIModes" : [ {
       "codeName" : "MobileDefault",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEDATE/psdefuimodes/MobileDefault",
       "name" : "[CREATEDATE][建立时间]移动端默认",
       "getPSDEFFormItem" : {
         "codeName" : "MobileDefault",
         "editorType" : "SPAN",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEDATE/psdefformitems/MobileDefault",
         "name" : "[CREATEDATE][建立时间]移动端默认",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEDATE/psdefformitems/MobileDefault",
         "uIMode" : "MOBILEDEFAULT",
         "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
         "allowEmpty" : false,
         "mobileMode" : true
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEDATE/psdefuimodes/MobileDefault",
       "type" : "MOBILEDEFAULT",
       "mobileMode" : true
     }, {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEDATE/psdefuimodes/Default",
       "name" : "[CREATEDATE][建立时间]",
       "getPSDEFFormItem" : {
         "codeName" : "Default",
         "editorType" : "SPAN",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEDATE/psdefformitems/Default",
         "name" : "[CREATEDATE][建立时间]",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEDATE/psdefformitems/Default",
         "uIMode" : "DEFAULT",
         "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
         "allowEmpty" : false
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEDATE/psdefuimodes/Default",
       "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEDATE/psdefvaluerules/Default",
       "name" : "默认规则",
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEDATE/psdefvaluerules/Default",
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -690,6 +784,7 @@
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "建立时间",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEDATE",
     "name" : "CREATEDATE",
     "getPSDEDBTable" : {
       "modelref" : true,
@@ -700,6 +795,7 @@
       "id" : "CREATEDATE"
     },
     "predefinedType" : "CREATEDATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/CREATEDATE",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
     "allowEmpty" : false,
@@ -714,39 +810,49 @@
     } ],
     "getAllPSDEFUIModes" : [ {
       "codeName" : "MobileDefault",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEDATE/psdefuimodes/MobileDefault",
       "name" : "[UPDATEDATE][更新时间]移动端默认",
       "getPSDEFFormItem" : {
         "codeName" : "MobileDefault",
         "editorType" : "SPAN",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEDATE/psdefformitems/MobileDefault",
         "name" : "[UPDATEDATE][更新时间]移动端默认",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEDATE/psdefformitems/MobileDefault",
         "uIMode" : "MOBILEDEFAULT",
         "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
         "allowEmpty" : false,
         "mobileMode" : true
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEDATE/psdefuimodes/MobileDefault",
       "type" : "MOBILEDEFAULT",
       "mobileMode" : true
     }, {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEDATE/psdefuimodes/Default",
       "name" : "[UPDATEDATE][更新时间]",
       "getPSDEFFormItem" : {
         "codeName" : "Default",
         "editorType" : "SPAN",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEDATE/psdefformitems/Default",
         "name" : "[UPDATEDATE][更新时间]",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEDATE/psdefformitems/Default",
         "uIMode" : "DEFAULT",
         "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
         "allowEmpty" : false
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEDATE/psdefuimodes/Default",
       "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEDATE/psdefvaluerules/Default",
       "name" : "默认规则",
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
         "name" : "默认组"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEDATE/psdefvaluerules/Default",
       "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -759,6 +865,7 @@
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "更新时间",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEDATE",
     "name" : "UPDATEDATE",
     "getPSDEDBTable" : {
       "modelref" : true,
@@ -769,6 +876,7 @@
       "id" : "UPDATEDATE"
     },
     "predefinedType" : "UPDATEDATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEDATE",
     "stdDataType" : 5,
     "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
     "allowEmpty" : false,
@@ -783,33 +891,42 @@
     } ],
     "getAllPSDEFUIModes" : [ {
       "codeName" : "MobileDefault",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEMAN/psdefuimodes/MobileDefault",
       "name" : "[UPDATEMAN][更新人]移动端默认",
       "getPSDEFFormItem" : {
         "codeName" : "MobileDefault",
         "editorType" : "SPAN",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEMAN/psdefformitems/MobileDefault",
         "name" : "[UPDATEMAN][更新人]移动端默认",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEMAN/psdefformitems/MobileDefault",
         "stringLength" : 60,
         "uIMode" : "MOBILEDEFAULT",
         "allowEmpty" : false,
         "mobileMode" : true
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEMAN/psdefuimodes/MobileDefault",
       "type" : "MOBILEDEFAULT",
       "mobileMode" : true
     }, {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEMAN/psdefuimodes/Default",
       "name" : "[UPDATEMAN][更新人]",
       "getPSDEFFormItem" : {
         "codeName" : "Default",
         "editorType" : "SPAN",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEMAN/psdefformitems/Default",
         "name" : "[UPDATEMAN][更新人]",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEMAN/psdefformitems/Default",
         "stringLength" : 60,
         "uIMode" : "DEFAULT",
         "allowEmpty" : false
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEMAN/psdefuimodes/Default",
       "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEMAN/psdefvaluerules/Default",
       "name" : "默认规则",
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -827,6 +944,7 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[60]"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEMAN/psdefvaluerules/Default",
       "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -839,6 +957,7 @@
     "importOrder" : 1000,
     "length" : 60,
     "logicName" : "更新人",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEMAN",
     "name" : "UPDATEMAN",
     "getPSCodeList" : {
       "modelref" : true,
@@ -853,6 +972,7 @@
       "id" : "UPDATEMAN"
     },
     "predefinedType" : "UPDATEMAN",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/UPDATEMAN",
     "stdDataType" : 25,
     "stringLength" : 60,
     "valueFormat" : "%1$s",
@@ -868,37 +988,48 @@
     } ],
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PRODUCTNAME_LIKE",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME/psdefsfitems/N_PRODUCTNAME_LIKE",
       "name" : "N_PRODUCTNAME_LIKE",
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME/psdefsfitems/N_PRODUCTNAME_LIKE",
       "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFUIModes" : [ {
       "codeName" : "MobileDefault",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME/psdefuimodes/MobileDefault",
       "name" : "[PRODUCTNAME][产品名称]移动端默认",
       "getPSDEFFormItem" : {
         "codeName" : "MobileDefault",
         "editorType" : "MOBTEXT",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME/psdefformitems/MobileDefault",
         "name" : "[PRODUCTNAME][产品名称]移动端默认",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME/psdefformitems/MobileDefault",
         "stringLength" : 200,
         "uIMode" : "MOBILEDEFAULT",
         "mobileMode" : true
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME/psdefuimodes/MobileDefault",
       "type" : "MOBILEDEFAULT",
       "mobileMode" : true
     }, {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME/psdefuimodes/Default",
       "name" : "[PRODUCTNAME][产品名称]",
       "getPSDEFFormItem" : {
         "codeName" : "Default",
         "editorType" : "TEXTBOX",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME/psdefformitems/Default",
         "name" : "[PRODUCTNAME][产品名称]",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME/psdefformitems/Default",
         "stringLength" : 200,
         "uIMode" : "DEFAULT"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME/psdefuimodes/Default",
       "type" : "DEFAULT"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME/psdefvaluerules/Default",
       "name" : "默认规则",
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -916,6 +1047,7 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[200]"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME/psdefvaluerules/Default",
       "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -928,6 +1060,7 @@
     "importOrder" : 1000,
     "length" : 200,
     "logicName" : "产品名称",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME",
     "name" : "PRODUCTNAME",
     "getPSDEDBTable" : {
       "modelref" : true,
@@ -937,6 +1070,7 @@
       "modelref" : true,
       "id" : "PRODUCTNAME"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTNAME",
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
@@ -952,31 +1086,55 @@
     } ],
     "getAllPSDEFUIModes" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE/psdefuimodes/Default",
       "name" : "[PRODUCTCODE][产品编码]",
       "getPSDEFFormItem" : {
         "codeName" : "Default",
         "editorType" : "TEXTBOX",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE/psdefformitems/Default",
         "name" : "[PRODUCTCODE][产品编码]",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE/psdefformitems/Default",
         "stringLength" : 100,
         "uIMode" : "DEFAULT"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE/psdefuimodes/Default",
       "type" : "DEFAULT"
     }, {
       "codeName" : "MobileDefault",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE/psdefuimodes/MobileDefault",
       "name" : "[PRODUCTCODE][产品编码]移动端默认",
       "getPSDEFFormItem" : {
         "codeName" : "MobileDefault",
         "editorType" : "MOBTEXT",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE/psdefformitems/MobileDefault",
         "name" : "[PRODUCTCODE][产品编码]移动端默认",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE/psdefformitems/MobileDefault",
         "stringLength" : 100,
         "uIMode" : "MOBILEDEFAULT",
         "mobileMode" : true
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE/psdefuimodes/MobileDefault",
       "type" : "MOBILEDEFAULT",
       "mobileMode" : true
     } ],
     "getAllPSDEFValueRules" : [ {
+      "codeName" : "ValueRule",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE/psdefvaluerules/ValueRule",
+      "name" : "值规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE/psdefvaluerules/ValueRule",
+      "ruleInfo" : "值规则",
+      "checkDefault" : false,
+      "defaultMode" : false,
+      "enableBackend" : true,
+      "enableFront" : true
+    }, {
       "codeName" : "Default",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE/psdefvaluerules/Default",
       "name" : "默认规则",
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
@@ -994,6 +1152,7 @@
         } ],
         "ruleInfo" : "内容长度必须小于等于[100]"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE/psdefvaluerules/Default",
       "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
@@ -1006,6 +1165,7 @@
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "产品编码",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE",
     "name" : "PRODUCTCODE",
     "getPSDEDBTable" : {
       "modelref" : true,
@@ -1015,19 +1175,23 @@
       "modelref" : true,
       "id" : "PRODUCTCODE"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdefields/PRODUCTCODE",
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
   } ],
   "getAllPSDEMethodDTOs" : [ {
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO",
     "name" : "ProductDTO",
     "getPSDEMethodDTOFields" : [ {
       "logicName" : "建立时间",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/CreateDate",
       "name" : "CreateDate",
       "getPSDEField" : {
         "name" : "CREATEDATE",
         "codeName" : "CreateDate"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/CreateDate",
       "sourceType" : "DEFIELD",
       "stdDataType" : 5,
       "type" : "SIMPLE",
@@ -1035,11 +1199,13 @@
       "readOnly" : true
     }, {
       "logicName" : "建立人",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/CreateMan",
       "name" : "CreateMan",
       "getPSDEField" : {
         "name" : "CREATEMAN",
         "codeName" : "CreateMan"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/CreateMan",
       "sourceType" : "DEFIELD",
       "stdDataType" : 25,
       "stringLength" : 60,
@@ -1048,11 +1214,13 @@
       "readOnly" : true
     }, {
       "logicName" : "产品标识",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/ProductId",
       "name" : "ProductId",
       "getPSDEField" : {
         "name" : "PRODUCTID",
         "codeName" : "ProductId"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/ProductId",
       "sourceType" : "DEFIELD",
       "stdDataType" : 25,
       "stringLength" : 100,
@@ -1060,33 +1228,39 @@
       "allowEmpty" : false
     }, {
       "logicName" : "产品名称",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/ProductName",
       "name" : "ProductName",
       "getPSDEField" : {
         "name" : "PRODUCTNAME",
         "codeName" : "ProductName"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/ProductName",
       "sourceType" : "DEFIELD",
       "stdDataType" : 25,
       "stringLength" : 200,
       "type" : "SIMPLE"
     }, {
       "logicName" : "产品编码",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/Productcode",
       "name" : "Productcode",
       "getPSDEField" : {
         "name" : "PRODUCTCODE",
         "codeName" : "Productcode"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/Productcode",
       "sourceType" : "DEFIELD",
       "stdDataType" : 25,
       "stringLength" : 100,
       "type" : "SIMPLE"
     }, {
       "logicName" : "更新时间",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/UpdateDate",
       "name" : "UpdateDate",
       "getPSDEField" : {
         "name" : "UPDATEDATE",
         "codeName" : "UpdateDate"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/UpdateDate",
       "sourceType" : "DEFIELD",
       "stdDataType" : 5,
       "type" : "SIMPLE",
@@ -1094,11 +1268,13 @@
       "readOnly" : true
     }, {
       "logicName" : "更新人",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/UpdateMan",
       "name" : "UpdateMan",
       "getPSDEField" : {
         "name" : "UPDATEMAN",
         "codeName" : "UpdateMan"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO/psdemethoddtofields/UpdateMan",
       "sourceType" : "DEFIELD",
       "stdDataType" : 25,
       "stringLength" : 60,
@@ -1106,13 +1282,16 @@
       "allowEmpty" : false,
       "readOnly" : true
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductDTO",
     "sourceType" : "DE",
     "type" : "DEFAULT",
     "defaultMode" : true
   }, {
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductFilterDTO",
     "name" : "ProductFilterDTO",
     "getPSDEFilterDTOFields" : [ {
       "logicName" : "产品名称",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductFilterDTO/psdemethoddtofields/N_PRODUCTNAME_LIKE",
       "name" : "N_PRODUCTNAME_LIKE",
       "getPSDEFSearchMode" : {
         "modelref" : true,
@@ -1122,23 +1301,28 @@
         "name" : "PRODUCTNAME",
         "codeName" : "ProductName"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductFilterDTO/psdemethoddtofields/N_PRODUCTNAME_LIKE",
       "sourceType" : "DEFSEARCHMODE",
       "stdDataType" : 25,
       "stringLength" : 200,
       "type" : "SIMPLE"
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductFilterDTO",
     "sourceType" : "DE",
     "type" : "DEFILTER",
     "defaultMode" : true
   }, {
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO",
     "name" : "ProductSimpleDTO",
     "getPSDEMethodDTOFields" : [ {
       "logicName" : "建立时间",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO/psdemethoddtofields/CreateDate",
       "name" : "CreateDate",
       "getPSDEField" : {
         "name" : "CREATEDATE",
         "codeName" : "CreateDate"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO/psdemethoddtofields/CreateDate",
       "sourceType" : "DEFGROUPDETAIL",
       "stdDataType" : 5,
       "type" : "SIMPLE",
@@ -1146,11 +1330,13 @@
       "readOnly" : true
     }, {
       "logicName" : "建立人",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO/psdemethoddtofields/CreateMan",
       "name" : "CreateMan",
       "getPSDEField" : {
         "name" : "CREATEMAN",
         "codeName" : "CreateMan"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO/psdemethoddtofields/CreateMan",
       "sourceType" : "DEFGROUPDETAIL",
       "stdDataType" : 25,
       "stringLength" : 60,
@@ -1159,11 +1345,13 @@
       "readOnly" : true
     }, {
       "logicName" : "产品标识",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO/psdemethoddtofields/ProductId",
       "name" : "ProductId",
       "getPSDEField" : {
         "name" : "PRODUCTID",
         "codeName" : "ProductId"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO/psdemethoddtofields/ProductId",
       "sourceType" : "DEFGROUPDETAIL",
       "stdDataType" : 25,
       "stringLength" : 100,
@@ -1171,22 +1359,26 @@
       "allowEmpty" : false
     }, {
       "logicName" : "产品名称",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO/psdemethoddtofields/ProductName",
       "name" : "ProductName",
       "getPSDEField" : {
         "name" : "PRODUCTNAME",
         "codeName" : "ProductName"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO/psdemethoddtofields/ProductName",
       "sourceType" : "DEFGROUPDETAIL",
       "stdDataType" : 25,
       "stringLength" : 200,
       "type" : "SIMPLE"
     }, {
       "logicName" : "更新时间",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO/psdemethoddtofields/UpdateDate",
       "name" : "UpdateDate",
       "getPSDEField" : {
         "name" : "UPDATEDATE",
         "codeName" : "UpdateDate"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO/psdemethoddtofields/UpdateDate",
       "sourceType" : "DEFGROUPDETAIL",
       "stdDataType" : 5,
       "type" : "SIMPLE",
@@ -1194,11 +1386,13 @@
       "readOnly" : true
     }, {
       "logicName" : "更新人",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO/psdemethoddtofields/UpdateMan",
       "name" : "UpdateMan",
       "getPSDEField" : {
         "name" : "UPDATEMAN",
         "codeName" : "UpdateMan"
       },
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO/psdemethoddtofields/UpdateMan",
       "sourceType" : "DEFGROUPDETAIL",
       "stdDataType" : 25,
       "stringLength" : 60,
@@ -1206,24 +1400,34 @@
       "allowEmpty" : false,
       "readOnly" : true
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdemethoddtos/ProductSimpleDTO",
     "sourceType" : "DE",
     "type" : "DEFAULT"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
-    "name" : "CREATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeopprivs/CREATE",
+    "name" : "CREATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeopprivs/CREATE"
   }, {
     "logicName" : "删除",
-    "name" : "DELETE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeopprivs/DELETE",
+    "name" : "DELETE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeopprivs/DELETE"
   }, {
     "logicName" : "读取",
-    "name" : "READ"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeopprivs/READ",
+    "name" : "READ",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeopprivs/READ"
   }, {
     "logicName" : "更新",
-    "name" : "UPDATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeopprivs/UPDATE",
+    "name" : "UPDATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeopprivs/UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEUSERROLES/CURDEPT_R.json",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeuserroles/CURDEPT_R",
     "name" : "当前部门（读）",
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "READ",
@@ -1233,12 +1437,14 @@
         "id" : "READ"
       }
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeuserroles/CURDEPT_R",
     "roleTag" : "CURDEPT_R",
     "secDR" : 1,
     "userDRAction" : "READ",
     "enableSecDR" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEUSERROLES/CURDEPT_RW.json",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeuserroles/CURDEPT_RW",
     "name" : "当前部门（读写）",
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "READ",
@@ -1262,12 +1468,14 @@
         "id" : "UPDATE"
       }
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeuserroles/CURDEPT_RW",
     "roleTag" : "CURDEPT_RW",
     "secDR" : 1,
     "userDRAction" : "READ",
     "enableSecDR" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEUSERROLES/CURORG_R.json",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeuserroles/CURORG_R",
     "name" : "当前组织（读）",
     "orgDR" : 1,
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1278,11 +1486,13 @@
         "id" : "READ"
       }
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeuserroles/CURORG_R",
     "roleTag" : "CURORG_R",
     "userDRAction" : "READ",
     "enableOrgDR" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Product/PSDEUSERROLES/CURORG_RW.json",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeuserroles/CURORG_RW",
     "name" : "当前组织（读写）",
     "orgDR" : 1,
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1307,6 +1517,7 @@
         "id" : "DELETE"
       }
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeuserroles/CURORG_RW",
     "roleTag" : "CURORG_RW",
     "userDRAction" : "READ",
     "enableOrgDR" : true
@@ -1314,80 +1525,104 @@
   "getAllPSModelDatas" : [ {
     "codeName" : "Main",
     "logicName" : "主编辑表单",
+    "mOSFilePath" : "psmodeldata$psdataentities/Main",
     "modelTag2" : "0",
     "name" : "主编辑表单",
+    "rTMOSFilePath" : "psmodeldata$psdataentities/Main",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "GridView",
     "logicName" : "产品实体表格视图",
+    "mOSFilePath" : "psmodeldata$psdataentities/GridView",
     "modelTag" : "MDATAVIEW",
     "name" : "产品实体表格视图",
+    "rTMOSFilePath" : "psmodeldata$psdataentities/GridView",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView",
     "logicName" : "产品实体编辑视图",
+    "mOSFilePath" : "psmodeldata$psdataentities/EditView",
     "modelTag" : "EDITVIEW",
     "name" : "产品实体编辑视图",
+    "rTMOSFilePath" : "psmodeldata$psdataentities/EditView",
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupGridView",
     "logicName" : "产品实体选择表格视图（部件视图）",
+    "mOSFilePath" : "psmodeldata$psdataentities/PickupGridView",
     "name" : "产品实体选择表格视图（部件视图）",
+    "rTMOSFilePath" : "psmodeldata$psdataentities/PickupGridView",
     "realModelSubType" : "DEPICKUPGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "MPickupView",
     "logicName" : "产品实体数据多项选择视图",
+    "mOSFilePath" : "psmodeldata$psdataentities/MPickupView",
     "modelTag" : "MPICKUPVIEW",
     "name" : "产品实体数据多项选择视图",
+    "rTMOSFilePath" : "psmodeldata$psdataentities/MPickupView",
     "realModelSubType" : "DEMPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "RedirectView",
     "logicName" : "产品实体数据重定向视图",
+    "mOSFilePath" : "psmodeldata$psdataentities/RedirectView",
     "modelTag" : "REDIRECTVIEW",
     "name" : "产品实体数据重定向视图",
+    "rTMOSFilePath" : "psmodeldata$psdataentities/RedirectView",
     "realModelSubType" : "DEREDIRECTVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "ByCategoryGridView",
     "logicName" : "产品实体表格视图（根据类型）",
+    "mOSFilePath" : "psmodeldata$psdataentities/ByCategoryGridView",
     "name" : "产品实体表格视图（根据类型）",
+    "rTMOSFilePath" : "psmodeldata$psdataentities/ByCategoryGridView",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditDataView",
     "logicName" : "产品实体编辑视图（示例数据）",
+    "mOSFilePath" : "psmodeldata$psdataentities/EditDataView",
     "name" : "产品实体编辑视图（示例数据）",
+    "rTMOSFilePath" : "psmodeldata$psdataentities/EditDataView",
     "realModelSubType" : "DEEDITVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "PickupView",
     "logicName" : "产品实体数据选择视图",
+    "mOSFilePath" : "psmodeldata$psdataentities/PickupView",
     "modelTag" : "PICKUPVIEW",
     "name" : "产品实体数据选择视图",
+    "rTMOSFilePath" : "psmodeldata$psdataentities/PickupView",
     "realModelSubType" : "DEPICKUPVIEW",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "EditView2",
     "logicName" : "产品实体编辑视图（左右关系）",
+    "mOSFilePath" : "psmodeldata$psdataentities/EditView2",
     "name" : "产品实体编辑视图（左右关系）",
+    "rTMOSFilePath" : "psmodeldata$psdataentities/EditView2",
     "realModelSubType" : "DEEDITVIEW2",
     "realModelType" : "PSDEVIEWBASE"
   }, {
     "codeName" : "Data",
     "logicName" : "示例数据",
+    "mOSFilePath" : "psmodeldata$psdataentities/Data",
     "modelTag2" : "0",
     "name" : "示例数据",
+    "rTMOSFilePath" : "psmodeldata$psdataentities/Data",
     "realModelSubType" : "EDITFORM",
     "realModelType" : "PSDEFORM"
   }, {
     "codeName" : "GridDataView",
     "logicName" : "产品实体表格视图（示例数据）",
+    "mOSFilePath" : "psmodeldata$psdataentities/GridDataView",
     "name" : "产品实体表格视图（示例数据）",
+    "rTMOSFilePath" : "psmodeldata$psdataentities/GridDataView",
     "realModelSubType" : "DEGRIDVIEW",
     "realModelType" : "PSDEVIEWBASE"
   } ],
@@ -1398,6 +1633,10 @@
   "dataAccCtrlMode" : 1,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
+  "getDefaultPSDEDataQuery" : {
+    "modelref" : true,
+    "id" : "Default"
+  },
   "getDefaultPSDEDataSet" : {
     "modelref" : true,
     "id" : "Default"
@@ -1413,6 +1652,7 @@
     "codeName" : "ProductId"
   },
   "logicName" : "产品",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT",
   "getMajorPSDEField" : {
     "name" : "PRODUCTNAME",
     "codeName" : "ProductName"
@@ -1422,6 +1662,7 @@
     "dERType" : "DER1N",
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/OrderDetail/PSDERS/DER1N_ORDERDETAIL_PRODUCT_PRODUCTID.json",
     "logicName" : "产品",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERDETAIL/minorpsders/DER1N_ORDERDETAIL_PRODUCT_PRODUCTID",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/Sample/PSDATAENTITIES/Product.json"
@@ -1443,6 +1684,7 @@
       "codeName" : "ProductName"
     },
     "pickupDEFName" : "PRODUCTID",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORDERDETAIL/minorpsders/DER1N_ORDERDETAIL_PRODUCT_PRODUCTID",
     "removeActionType" : -1,
     "removeOrder" : 0
   }, {
@@ -1450,6 +1692,7 @@
     "dERType" : "DER1N",
     "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/ProductCategory/PSDERS/DER1N_PRODUCTCATEGORY_PRODUCT_PRODUCTID.json",
     "logicName" : "产品",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCTCATEGORY/minorpsders/DER1N_PRODUCTCATEGORY_PRODUCT_PRODUCTID",
     "getMajorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/Sample/PSDATAENTITIES/Product.json"
@@ -1471,6 +1714,7 @@
       "codeName" : "ProductName"
     },
     "pickupDEFName" : "PRODUCTID",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCTCATEGORY/minorpsders/DER1N_PRODUCTCATEGORY_PRODUCT_PRODUCTID",
     "removeActionType" : -1,
     "removeOrder" : 0
   } ],
@@ -1483,6 +1727,7 @@
     "modelref" : true,
     "path" : "PSMODULES/Sample.json"
   },
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
   "saaSMode" : 4,

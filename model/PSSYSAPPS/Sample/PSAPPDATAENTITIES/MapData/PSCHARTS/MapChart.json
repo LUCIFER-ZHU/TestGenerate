@@ -8,6 +8,7 @@
   },
   "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "logicName" : "MapChart",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/MAPDATA/psdecharts/MapChart",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
@@ -32,6 +33,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "DEFAULT",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {
@@ -117,6 +126,7 @@
     "showTitle" : true,
     "id" : "0"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/MapDataMapChartExpView/psappviewctrls/chartexpbar_chart",
   "readOnly" : true,
   "modelid" : "29D39E86-2328-4693-B11E-DF9131901508",
   "modeltype" : "PSDECHART",

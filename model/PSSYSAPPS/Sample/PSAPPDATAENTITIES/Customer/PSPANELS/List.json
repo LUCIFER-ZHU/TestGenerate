@@ -17,17 +17,24 @@
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer/PSPANELS/List.json",
   "layoutMode" : "TABLE_24COL",
   "logicName" : "List项布局面板",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/pssysviewpanels/List",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
   },
   "getPSLayout" : {
+    "childColLG" : -1,
+    "childColMD" : 24,
+    "childColSM" : -1,
+    "childColXS" : -1,
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerListView/psappviewctrls/list_itempanel",
   "getRootPSPanelItems" : [ {
     "itemStyle" : "DEFAULT",
     "itemType" : "CONTAINER",
+    "mOSFilePath" : "pssysviewpanelitem_containers/container1",
     "name" : "container1",
     "getPSLayout" : {
       "layout" : "FLEX"
@@ -39,6 +46,7 @@
     "getPSPanelItems" : [ {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container2",
       "name" : "container2",
       "getPSLayout" : {
         "layout" : "FLEX"
@@ -50,6 +58,7 @@
       "getPSPanelItems" : [ {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/image",
         "name" : "image",
         "getPSEditor" : {
           "editorParams" : {
@@ -67,13 +76,17 @@
           "grow" : -1,
           "layout" : "FLEX"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/image",
         "viewFieldName" : "IMAGE",
         "hidden" : false,
         "showCaption" : false
-      } ]
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container2",
+      "showCaption" : true
     }, {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container3",
       "name" : "container3",
       "getPSLayout" : {
         "dir" : "column",
@@ -86,6 +99,7 @@
       "getPSPanelItems" : [ {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/customername",
         "name" : "customername",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -99,12 +113,14 @@
         "getPSSysCss" : {
           "cssName" : "h1-title"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/customername",
         "viewFieldName" : "CUSTOMERNAME",
         "hidden" : false,
         "showCaption" : false
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/street",
         "name" : "street",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -115,12 +131,14 @@
           "grow" : -1,
           "layout" : "FLEX"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/street",
         "viewFieldName" : "STREET",
         "hidden" : false,
         "showCaption" : false
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/email",
         "name" : "email",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -131,11 +149,16 @@
           "grow" : -1,
           "layout" : "FLEX"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/email",
         "viewFieldName" : "EMAIL",
         "hidden" : false,
         "showCaption" : false
-      } ]
-    } ]
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container3",
+      "showCaption" : true
+    } ],
+    "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
+    "showCaption" : true
   } ],
   "modelid" : "D8139FA4-8D60-4964-862F-26B7513021F5",
   "modeltype" : "PSSYSVIEWPANEL"

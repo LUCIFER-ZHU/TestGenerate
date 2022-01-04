@@ -10,6 +10,7 @@
   },
   "groupMode" : "NONE",
   "logicName" : "操作列样式2",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdegrids/ActionColumnStyle2",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -48,12 +49,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "examplename",
     "excelCaption" : "名称",
+    "mOSFilePath" : "psdegridcols/examplename",
     "name" : "examplename",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "EXAMPLENAME",
       "codeName" : "ExampleName"
     },
+    "rTMOSFilePath" : "psdegridcols/examplename",
     "width" : 150,
     "widthUnit" : "PX",
     "enableSort" : true
@@ -63,10 +66,12 @@
     "codeName" : "uagridcolumn1",
     "columnStyle" : "MENU",
     "columnType" : "UAGRIDCOLUMN",
+    "mOSFilePath" : "psdegridcols/uagridcolumn1",
     "name" : "uagridcolumn1",
     "noPrivDisplayMode" : 1,
     "getPSDEUIActionGroup" : {
       "codeName" : "Auto4",
+      "mOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto4",
       "name" : "表格操作列",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",
@@ -76,6 +81,7 @@
           "caption" : "表单项更新前台计算",
           "codeName" : "CalcPF",
           "fullCodeName" : "Example_CalcPF",
+          "mOSFilePath" : "psappdeuiactions/CalcPF",
           "name" : "表单项更新前台计算",
           "getPSAppDEMethod" : {
             "modelref" : true,
@@ -85,6 +91,7 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
           },
+          "rTMOSFilePath" : "psappdeuiactions/CalcPF",
           "timeout" : 60000,
           "uIActionMode" : "BACKEND",
           "uIActionTag" : "CalcPF",
@@ -95,8 +102,10 @@
         "addSeparator" : false,
         "showCaption" : true,
         "showIcon" : true
-      } ]
+      } ],
+      "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto4"
     },
+    "rTMOSFilePath" : "psdegridcols/uagridcolumn1",
     "width" : 200,
     "widthUnit" : "PX",
     "enableSort" : false
@@ -157,6 +166,7 @@
     "codeName" : "srfkey",
     "enableCond" : 3,
     "ignoreInput" : 0,
+    "mOSFilePath" : "psdegridcols/srfkey",
     "name" : "srfkey",
     "getPSAppDEField" : {
       "name" : "EXAMPLEID",
@@ -166,9 +176,11 @@
       "editorType" : "HIDDEN",
       "name" : "srfkey"
     },
+    "rTMOSFilePath" : "psdegridcols/srfkey",
     "allowEmpty" : true
   } ],
   "pagingSize" : 20,
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleGridActionColumnCustomView/psappviewctrls/grid2",
   "getRemovePSControlAction" : {
     "actionName" : "Remove",
     "actionType" : "DEACTION",

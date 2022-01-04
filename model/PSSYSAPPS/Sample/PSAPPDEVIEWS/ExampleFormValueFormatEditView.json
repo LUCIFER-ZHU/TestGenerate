@@ -3,14 +3,20 @@
   "caption" : "值显示",
   "codeName" : "ExampleFormValueFormatEditView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleFormValueFormatEditView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormValueFormatEditView",
   "name" : "ExampleFormValueFormatEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "EditView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "form",
@@ -20,7 +26,8 @@
       "name" : "P2K",
       "paramType" : "VALUE",
       "value" : 0
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "ValueFormat",
@@ -29,6 +36,7 @@
       "modelref" : true,
       "id" : "create"
     },
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/ValueFormat.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
@@ -44,6 +52,7 @@
     },
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "logicName" : "值显示",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeform_editforms/ValueFormat",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -227,6 +236,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -234,12 +244,14 @@
         "codeName" : "group1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group1",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "codeName" : "rawitem1",
           "contentType" : "RAW",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "mOSFilePath" : "psdeformdetail_rawitems/rawitem1",
           "name" : "rawitem1",
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -248,6 +260,7 @@
           "getPSSysCss" : {
             "cssName" : "el-alert el-alert--info is-light"
           },
+          "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem1",
           "rawContent" : "值【1234.1】，使用【#.#\\元】进行格式化，预期效果【1234.1元】",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
@@ -263,6 +276,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/format1",
           "name" : "format1",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -278,6 +292,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/format1",
           "valueFormat" : "#.#\\元",
           "allowEmpty" : true,
           "showCaption" : true
@@ -286,6 +301,7 @@
           "contentType" : "RAW",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "mOSFilePath" : "psdeformdetail_rawitems/rawitem2",
           "name" : "rawitem2",
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -294,6 +310,7 @@
           "getPSSysCss" : {
             "cssName" : "el-alert el-alert--info is-light"
           },
+          "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem2",
           "rawContent" : "值【100.14】，使用【¥*-#.##】进行格式化，预期效果【¥----------100.14】",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
@@ -310,6 +327,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/format2",
           "name" : "format2",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -327,6 +345,7 @@
             "layout" : "TABLE_24COL",
             "width" : 500
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/format2",
           "valueFormat" : "¥*-#.##",
           "width" : 500.0,
           "allowEmpty" : true,
@@ -336,6 +355,7 @@
           "contentType" : "RAW",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "mOSFilePath" : "psdeformdetail_rawitems/rawitem3",
           "name" : "rawitem3",
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -344,6 +364,7 @@
           "getPSSysCss" : {
             "cssName" : "el-alert el-alert--info is-light"
           },
+          "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem3",
           "rawContent" : "标签显示属性代码表原值",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
@@ -358,6 +379,7 @@
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/datatype",
           "name" : "datatype",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -377,6 +399,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/datatype",
           "allowEmpty" : true,
           "convertToCodeItemText" : true,
           "showCaption" : true
@@ -385,6 +408,7 @@
           "contentType" : "RAW",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "mOSFilePath" : "psdeformdetail_rawitems/rawitem4",
           "name" : "rawitem4",
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -393,6 +417,7 @@
           "getPSSysCss" : {
             "cssName" : "el-alert el-alert--info is-light"
           },
+          "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem4",
           "rawContent" : "标签显示属性代码表值文本",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
@@ -408,6 +433,7 @@
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem",
           "name" : "formitem",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -423,11 +449,16 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem",
           "allowEmpty" : true,
           "convertToCodeItemText" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -435,19 +466,30 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
         "infoGroupMode" : false,
         "showCaption" : false
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormValueFormatEditView/psappviewctrls/form",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -468,16 +510,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormValueFormatEditView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormValueFormatEditView",
   "title" : "示例编辑视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEEDITVIEW",

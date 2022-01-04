@@ -4,18 +4,24 @@
   "codeName" : "ClickPlus",
   "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickPlus.json",
   "logicName" : "ClickPlus",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/psdeactions/ClickPlus",
   "name" : "ClickPlus",
   "getPSDEActionInput" : {
+    "mOSFilePath" : "psdeactioninputs/ClickPlusInput",
     "name" : "ClickPlusInput",
     "getPSDEMethodDTO" : {
       "modelref" : true,
       "id" : "CalculatorDTO"
     },
+    "rTMOSFilePath" : "psdeactioninputs/ClickPlusInput",
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "mOSFilePath" : "psdeactionreturns/ClickPlusResult",
     "name" : "ClickPlusResult",
+    "rTMOSFilePath" : "psdeactionreturns/ClickPlusResult",
     "type" : "VOID"
   },
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/psdeactions/ClickPlus",
   "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'+';"
 }

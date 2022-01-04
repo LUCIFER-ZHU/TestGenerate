@@ -3,20 +3,27 @@
   "caption" : "省份",
   "codeName" : "ProvinceMobMPickupView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobMPickupView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ProvinceMobMPickupView",
   "name" : "ProvinceMobMPickupView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "MobMPickupView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "pickupviewpanel",
       "name" : "PICKUPVIEWPANEL",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "MobMPickupViewpickupviewpanel",
@@ -26,20 +33,27 @@
       "caption" : "省份",
       "codeName" : "ProvinceMobPickupMDView",
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProvinceMobPickupMDView.json",
+      "mOSFilePath" : "pssysapps/Sample/psappdeviews/ProvinceMobPickupMDView",
       "name" : "ProvinceMobPickupMDView",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
       },
+      "getPSAppModule" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+      },
       "getPSAppViewEngines" : [ {
         "engineCat" : "VIEW",
         "engineType" : "MobPickupMDView",
+        "mOSFilePath" : "psappviewengines/engine",
         "name" : "engine",
         "getPSUIEngineParams" : [ {
           "ctrlName" : "mdctrl",
           "name" : "MDCTRL",
           "paramType" : "CTRL"
-        } ]
+        } ],
+        "rTMOSFilePath" : "psappviewengines/engine"
       } ],
       "getPSControls" : [ {
         "codeName" : "Mob",
@@ -62,6 +76,7 @@
         "groupMode" : "NONE",
         "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
         "logicName" : "MOB",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdelists/Mob",
         "mobListStyle" : "LISTVIEW",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -167,6 +182,7 @@
           }
         } ],
         "pagingSize" : 30,
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ProvinceMobPickupMDView/psappviewctrls/mdctrl",
         "getRemovePSControlAction" : {
           "modelref" : true,
           "id" : "remove"
@@ -193,16 +209,19 @@
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPDEMOBPICKUPMDVIEW",
         "controlType" : "VIEWLAYOUTPANEL",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/pssysviewlayoutpanels/Layoutpanel",
         "name" : "layoutpanel",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
         },
         "getPSControlParam" : { },
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ProvinceMobPickupMDView/psappviewctrls/layoutpanel",
         "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ProvinceMobPickupMDView",
       "title" : "省份移动端选择多数据视图",
       "viewStyle" : "DEFAULT",
       "viewType" : "DEMOBPICKUPMDVIEW",
@@ -215,6 +234,7 @@
       "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psviewpanels/MobMPickupViewpickupviewpanel",
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -232,7 +252,8 @@
     } ],
     "getPSControlParam" : {
       "id" : "PICKUPVIEWPANEL"
-    }
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ProvinceMobMPickupView/psappviewctrls/pickupviewpanel"
   } ],
   "getPSDEViewCodeName" : "MobMPickupView",
   "getPSDEViewId" : "5D42B9E1-C6B8-42EA-AF5A-9A927D16BF3A",
@@ -240,16 +261,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMPICKUPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Province.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ProvinceMobMPickupView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ProvinceMobMPickupView",
   "title" : "省份移动端多数据选择视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEMOBMPICKUPVIEW",

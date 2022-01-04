@@ -3,20 +3,27 @@
   "caption" : "图表",
   "codeName" : "ChartDataUsr2CalendarExpView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr2CalendarExpView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2CalendarExpView",
   "name" : "ChartDataUsr2CalendarExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "CalendarExpView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "calendarexpbar",
       "name" : "CALENDAREXPBAR",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -46,6 +53,7 @@
     "codeName" : "Usr2CalendarExpViewcalendarexpbar",
     "controlType" : "CALENDAREXPBAR",
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psexpbars/Usr2CalendarExpViewcalendarexpbar",
     "name" : "calendarexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -88,6 +96,7 @@
       "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "legendPos" : "NONE",
       "logicName" : "时间轴视图",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssyscalendars/Calendartimeline",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
@@ -151,11 +160,13 @@
         "enableQuickCreate" : false,
         "id" : "chart"
       } ],
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2CalendarExpView/psappviewctrls/calendarexpbar_calendar",
       "enableGroup" : false,
       "name" : "calendarexpbar_calendar",
       "modelid" : "0F8E5E1E-8D51-4A63-BA5F-FBD501F5D854",
       "modeltype" : "PSSYSCALENDAR"
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2CalendarExpView/psappviewctrls/calendarexpbar",
     "xDataControlName" : "calendarexpbar_calendar",
     "enableCounter" : true,
     "enableSearch" : false,
@@ -169,16 +180,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDECALENDAREXPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2CalendarExpView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2CalendarExpView",
   "sideBarLayout" : "LEFT",
   "title" : "图表日历导航视图",
   "viewStyle" : "DEFAULT",

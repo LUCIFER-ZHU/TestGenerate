@@ -4,18 +4,24 @@
   "codeName" : "ClickMultiply",
   "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickMultiply.json",
   "logicName" : "ClickMultiply",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/psdeactions/ClickMultiply",
   "name" : "ClickMultiply",
   "getPSDEActionInput" : {
+    "mOSFilePath" : "psdeactioninputs/ClickMultiplyInput",
     "name" : "ClickMultiplyInput",
     "getPSDEMethodDTO" : {
       "modelref" : true,
       "id" : "CalculatorDTO"
     },
+    "rTMOSFilePath" : "psdeactioninputs/ClickMultiplyInput",
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "mOSFilePath" : "psdeactionreturns/ClickMultiplyResult",
     "name" : "ClickMultiplyResult",
+    "rTMOSFilePath" : "psdeactionreturns/ClickMultiplyResult",
     "type" : "VOID"
   },
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/psdeactions/ClickMultiply",
   "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'*';"
 }

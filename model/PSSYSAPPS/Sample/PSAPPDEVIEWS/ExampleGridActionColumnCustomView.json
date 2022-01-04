@@ -3,29 +3,38 @@
   "caption" : "表格操作列",
   "codeName" : "ExampleGridActionColumnCustomView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleGridActionColumnCustomView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleGridActionColumnCustomView",
   "name" : "ExampleGridActionColumnCustomView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "CTRL",
     "engineType" : "CtrlLoadTrigger",
+    "mOSFilePath" : "psappviewengines/engine_grid2_default",
     "name" : "engine_grid2_default",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "grid2",
       "name" : "CTRL",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine_grid2_default"
   }, {
     "engineCat" : "CTRL",
     "engineType" : "CtrlLoadTrigger",
+    "mOSFilePath" : "psappviewengines/engine_grid_default",
     "name" : "engine_grid_default",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "grid",
       "name" : "CTRL",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine_grid_default"
   } ],
   "getPSControls" : [ {
     "aggMode" : "NONE",
@@ -39,6 +48,7 @@
     },
     "groupMode" : "NONE",
     "logicName" : "操作列样式2",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdegrids/ActionColumnStyle2",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -164,12 +174,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "examplename",
       "excelCaption" : "名称",
+      "mOSFilePath" : "psdegridcols/examplename",
       "name" : "examplename",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "EXAMPLENAME",
         "codeName" : "ExampleName"
       },
+      "rTMOSFilePath" : "psdegridcols/examplename",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -179,10 +191,12 @@
       "codeName" : "uagridcolumn1",
       "columnStyle" : "MENU",
       "columnType" : "UAGRIDCOLUMN",
+      "mOSFilePath" : "psdegridcols/uagridcolumn1",
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
         "codeName" : "Auto4",
+        "mOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto4",
         "name" : "表格操作列",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -192,6 +206,7 @@
             "caption" : "表单项更新前台计算",
             "codeName" : "CalcPF",
             "fullCodeName" : "Example_CalcPF",
+            "mOSFilePath" : "psappdeuiactions/CalcPF",
             "name" : "表单项更新前台计算",
             "getPSAppDEMethod" : {
               "modelref" : true,
@@ -201,6 +216,7 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
             },
+            "rTMOSFilePath" : "psappdeuiactions/CalcPF",
             "timeout" : 60000,
             "uIActionMode" : "BACKEND",
             "uIActionTag" : "CalcPF",
@@ -211,8 +227,10 @@
           "addSeparator" : false,
           "showCaption" : true,
           "showIcon" : true
-        } ]
+        } ],
+        "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto4"
       },
+      "rTMOSFilePath" : "psdegridcols/uagridcolumn1",
       "width" : 200,
       "widthUnit" : "PX",
       "enableSort" : false
@@ -273,6 +291,7 @@
       "codeName" : "srfkey",
       "enableCond" : 3,
       "ignoreInput" : 0,
+      "mOSFilePath" : "psdegridcols/srfkey",
       "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "EXAMPLEID",
@@ -282,9 +301,11 @@
         "editorType" : "HIDDEN",
         "name" : "srfkey"
       },
+      "rTMOSFilePath" : "psdegridcols/srfkey",
       "allowEmpty" : true
     } ],
     "pagingSize" : 20,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleGridActionColumnCustomView/psappviewctrls/grid2",
     "getRemovePSControlAction" : {
       "actionName" : "Remove",
       "actionType" : "DEACTION",
@@ -327,6 +348,7 @@
     },
     "groupMode" : "NONE",
     "logicName" : "操作列样式1",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdegrids/ActionColumnStyle1",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -452,12 +474,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "examplename",
       "excelCaption" : "名称",
+      "mOSFilePath" : "psdegridcols/examplename",
       "name" : "examplename",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "EXAMPLENAME",
         "codeName" : "ExampleName"
       },
+      "rTMOSFilePath" : "psdegridcols/examplename",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -467,10 +491,12 @@
       "codeName" : "uagridcolumn1",
       "columnStyle" : "EXPAND",
       "columnType" : "UAGRIDCOLUMN",
+      "mOSFilePath" : "psdegridcols/uagridcolumn1",
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
         "codeName" : "Auto4",
+        "mOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto4",
         "name" : "表格操作列",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -480,6 +506,7 @@
             "caption" : "表单项更新前台计算",
             "codeName" : "CalcPF",
             "fullCodeName" : "Example_CalcPF",
+            "mOSFilePath" : "psappdeuiactions/CalcPF",
             "name" : "表单项更新前台计算",
             "getPSAppDEMethod" : {
               "modelref" : true,
@@ -489,6 +516,7 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
             },
+            "rTMOSFilePath" : "psappdeuiactions/CalcPF",
             "timeout" : 60000,
             "uIActionMode" : "BACKEND",
             "uIActionTag" : "CalcPF",
@@ -499,8 +527,10 @@
           "addSeparator" : false,
           "showCaption" : true,
           "showIcon" : true
-        } ]
+        } ],
+        "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto4"
       },
+      "rTMOSFilePath" : "psdegridcols/uagridcolumn1",
       "width" : 200,
       "widthUnit" : "PX",
       "enableSort" : false
@@ -561,6 +591,7 @@
       "codeName" : "srfkey",
       "enableCond" : 3,
       "ignoreInput" : 0,
+      "mOSFilePath" : "psdegridcols/srfkey",
       "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "EXAMPLEID",
@@ -570,9 +601,11 @@
         "editorType" : "HIDDEN",
         "name" : "srfkey"
       },
+      "rTMOSFilePath" : "psdegridcols/srfkey",
       "allowEmpty" : true
     } ],
     "pagingSize" : 20,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleGridActionColumnCustomView/psappviewctrls/grid",
     "getRemovePSControlAction" : {
       "actionName" : "Remove",
       "actionType" : "DEACTION",
@@ -611,6 +644,7 @@
     "controlType" : "VIEWLAYOUTPANEL",
     "layoutMode" : "TABLE_24COL",
     "logicName" : "表格操作列样式面板",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Auto6",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -618,15 +652,25 @@
     },
     "getPSControlParam" : { },
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleGridActionColumnCustomView/psappviewctrls/layoutpanel",
     "getRootPSPanelItems" : [ {
       "caption" : "操作列展开模式",
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container1",
       "name" : "container1",
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -639,20 +683,29 @@
         "height" : 300.0,
         "itemStyle" : "DEFAULT",
         "itemType" : "CTRLPOS",
+        "mOSFilePath" : "pssysviewpanelitem_ctrlpos/grid",
         "name" : "grid",
         "getPSLayoutPos" : {
           "colMD" : 24,
           "height" : 300,
           "layout" : "TABLE_24COL"
-        }
+        },
+        "rTMOSFilePath" : "pssysviewpanelitem_ctrlpos/grid",
+        "showCaption" : true
       } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
       "showCaption" : true
     }, {
       "caption" : "操作列菜单模式",
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container2",
       "name" : "container2",
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -665,13 +718,17 @@
         "height" : 300.0,
         "itemStyle" : "DEFAULT",
         "itemType" : "CTRLPOS",
+        "mOSFilePath" : "pssysviewpanelitem_ctrlpos/grid2",
         "name" : "grid2",
         "getPSLayoutPos" : {
           "colMD" : 24,
           "height" : 300,
           "layout" : "TABLE_24COL"
-        }
+        },
+        "rTMOSFilePath" : "pssysviewpanelitem_ctrlpos/grid2",
+        "showCaption" : true
       } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container2",
       "showCaption" : true
     } ],
     "layoutBodyOnly" : true,
@@ -680,6 +737,7 @@
     "modelid" : "A98CE2A3-004F-4C08-A8F0-DFC8DE6FE8EC",
     "modeltype" : "PSSYSVIEWLAYOUTPANEL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleGridActionColumnCustomView",
   "title" : "示例自定义视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DECUSTOMVIEW",

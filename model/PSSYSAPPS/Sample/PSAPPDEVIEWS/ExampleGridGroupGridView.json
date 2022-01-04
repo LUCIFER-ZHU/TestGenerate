@@ -4,14 +4,20 @@
   "codeName" : "ExampleGridGroupGridView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleGridGroupGridView.json",
   "gridRowActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleGridGroupGridView",
   "name" : "ExampleGridGroupGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "GridView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "appViewLogicName" : "opendata",
@@ -25,7 +31,8 @@
       "ctrlName" : "grid",
       "name" : "GRID",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -36,6 +43,8 @@
       "logicType" : "PREDEFINED",
       "name" : "新建数据",
       "getNewDataPSAppView" : {
+        "mOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleEditView.json",
@@ -43,6 +52,8 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "mOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleEditView.json",
@@ -62,6 +73,8 @@
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
       "getOpenDataPSAppView" : {
+        "mOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleEditView.json",
@@ -69,6 +82,8 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "mOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleEditView.json",
@@ -115,8 +130,13 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPCODELISTS/ExampleDataType.json"
     },
+    "getGroupPSDEField" : {
+      "name" : "DATATYPE",
+      "codeName" : "DataType"
+    },
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "logicName" : "表格分组",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdegrids/Group",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -230,6 +250,7 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "datatype",
       "excelCaption" : "数据分类",
+      "mOSFilePath" : "psdegridcols/datatype",
       "name" : "datatype",
       "noPrivDisplayMode" : 1,
       "getPSAppCodeList" : {
@@ -240,6 +261,7 @@
         "name" : "DATATYPE",
         "codeName" : "DataType"
       },
+      "rTMOSFilePath" : "psdegridcols/datatype",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -251,12 +273,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "examplename",
       "excelCaption" : "名称",
+      "mOSFilePath" : "psdegridcols/examplename",
       "name" : "examplename",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "EXAMPLENAME",
         "codeName" : "ExampleName"
       },
+      "rTMOSFilePath" : "psdegridcols/examplename",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -268,12 +292,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "fieldx",
       "excelCaption" : "X值",
+      "mOSFilePath" : "psdegridcols/fieldx",
       "name" : "fieldx",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "FIELDX",
         "codeName" : "Fieldx"
       },
+      "rTMOSFilePath" : "psdegridcols/fieldx",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -285,12 +311,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "fieldy",
       "excelCaption" : "Y值",
+      "mOSFilePath" : "psdegridcols/fieldy",
       "name" : "fieldy",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "FIELDY",
         "codeName" : "Fieldy"
       },
+      "rTMOSFilePath" : "psdegridcols/fieldy",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -302,12 +330,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "fieldz",
       "excelCaption" : "Z值",
+      "mOSFilePath" : "psdegridcols/fieldz",
       "name" : "fieldz",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "FIELDZ",
         "codeName" : "Fieldz"
       },
+      "rTMOSFilePath" : "psdegridcols/fieldz",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -396,6 +426,7 @@
       "codeName" : "srfkey",
       "enableCond" : 3,
       "ignoreInput" : 0,
+      "mOSFilePath" : "psdegridcols/srfkey",
       "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "EXAMPLEID",
@@ -405,9 +436,11 @@
         "editorType" : "HIDDEN",
         "name" : "srfkey"
       },
+      "rTMOSFilePath" : "psdegridcols/srfkey",
       "allowEmpty" : true
     } ],
     "pagingSize" : 20,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleGridGroupGridView/psappviewctrls/grid",
     "getRemovePSControlAction" : {
       "actionName" : "Remove",
       "actionType" : "DEACTION",
@@ -445,16 +478,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleGridGroupGridView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleGridGroupGridView",
   "title" : "示例表格视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEGRIDVIEW",

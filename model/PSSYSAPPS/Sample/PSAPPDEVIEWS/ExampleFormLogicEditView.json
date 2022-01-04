@@ -3,14 +3,20 @@
   "caption" : "表单逻辑",
   "codeName" : "ExampleFormLogicEditView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleFormLogicEditView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormLogicEditView",
   "name" : "ExampleFormLogicEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "EditView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "form",
@@ -20,7 +26,8 @@
       "name" : "P2K",
       "paramType" : "VALUE",
       "value" : 0
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "FormLogic",
@@ -29,6 +36,7 @@
       "modelref" : true,
       "id" : "create"
     },
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/FormLogic.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
@@ -44,6 +52,7 @@
     },
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "logicName" : "表单逻辑演示",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeform_editforms/FormLogic",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -144,6 +153,7 @@
     },
     "getPSDEFormItemUpdates" : [ {
       "codeName" : "CalcPF2",
+      "mOSFilePath" : "psdefiupdates/CalcPF2",
       "name" : "前台计算（实体行为）",
       "getPSAppDEMethod" : {
         "modelref" : true,
@@ -153,15 +163,18 @@
         "name" : "fieldz"
       }, {
         "name" : "formitem17"
-      } ]
+      } ],
+      "rTMOSFilePath" : "psdefiupdates/CalcPF2"
     }, {
       "codeName" : "CalcPF3",
+      "mOSFilePath" : "psdefiupdates/CalcPF3",
       "name" : "前台计算（直接脚本）",
       "getPSDEFIUpdateDetails" : [ {
         "name" : "fieldz1"
       }, {
         "name" : "formitem18"
       } ],
+      "rTMOSFilePath" : "psdefiupdates/CalcPF3",
       "scriptCode" : "if((data.fieldx1 || data.fieldx1 == 0) && (data.fieldy1 || data.fieldy1 == 0)) {\n    data.fieldz1 = (parseFloat(data.fieldx1) + parseFloat(data.fieldy1))*2;\n    data.formitem18 = 'X值'+data.fieldx1 +'加Y值'+data.fieldy1+'再乘以2等于Z值'+data.fieldz1;\n}",
       "customCode" : true
     } ],
@@ -361,6 +374,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -368,6 +382,7 @@
         "codeName" : "group2",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group2",
         "name" : "group2",
         "getPSDEFormDetails" : [ {
           "actionGroupExtractMode" : "ITEM",
@@ -375,6 +390,7 @@
           "codeName" : "grouppanel1_1",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel1_1",
           "name" : "grouppanel1_1",
           "getPSDEFormDetails" : [ {
             "caption" : "是否显示",
@@ -387,6 +403,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/formitem",
             "name" : "formitem",
             "noPrivDisplayMode" : 1,
             "getPSEditor" : {
@@ -403,6 +420,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/formitem",
             "allowEmpty" : true,
             "needCodeListConfig" : true,
             "showCaption" : true
@@ -416,6 +434,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/formitem1",
             "name" : "formitem1",
             "noPrivDisplayMode" : 1,
             "getPSDEFDGroupLogics" : [ {
@@ -442,10 +461,15 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/formitem1",
             "allowEmpty" : true,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -453,6 +477,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel1_1",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -461,6 +486,7 @@
           "codeName" : "grouppanel2_1",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel2_1",
           "name" : "grouppanel2_1",
           "getPSDEFormDetails" : [ {
             "caption" : "是否启用",
@@ -473,6 +499,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/formitem2",
             "name" : "formitem2",
             "noPrivDisplayMode" : 1,
             "getPSEditor" : {
@@ -489,6 +516,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/formitem2",
             "allowEmpty" : true,
             "needCodeListConfig" : true,
             "showCaption" : true
@@ -502,6 +530,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/formitem3",
             "name" : "formitem3",
             "noPrivDisplayMode" : 1,
             "getPSDEFDGroupLogics" : [ {
@@ -528,10 +557,15 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/formitem3",
             "allowEmpty" : true,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -539,6 +573,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel2_1",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -547,6 +582,7 @@
           "codeName" : "grouppanel3_1",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel3_1",
           "name" : "grouppanel3_1",
           "getPSDEFormDetails" : [ {
             "caption" : "是否空输入",
@@ -559,6 +595,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/formitem4",
             "name" : "formitem4",
             "noPrivDisplayMode" : 1,
             "getPSEditor" : {
@@ -575,6 +612,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/formitem4",
             "allowEmpty" : true,
             "needCodeListConfig" : true,
             "showCaption" : true
@@ -588,6 +626,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/formitem5",
             "name" : "formitem5",
             "noPrivDisplayMode" : 1,
             "getPSDEFDGroupLogics" : [ {
@@ -614,10 +653,15 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/formitem5",
             "allowEmpty" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -625,6 +669,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel3_1",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -633,6 +678,7 @@
           "codeName" : "grouppanel4_1",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel4_1",
           "name" : "grouppanel4_1",
           "getPSDEFormDetails" : [ {
             "caption" : "值变化置空",
@@ -644,6 +690,7 @@
             "ignoreInput" : 3,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/formitem6",
             "name" : "formitem6",
             "noPrivDisplayMode" : 1,
             "getPSEditor" : {
@@ -655,6 +702,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/formitem6",
             "allowEmpty" : true,
             "convertToCodeItemText" : true,
             "showCaption" : true
@@ -669,6 +717,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/formitem7",
             "name" : "formitem7",
             "noPrivDisplayMode" : 1,
             "getPSEditor" : {
@@ -680,6 +729,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/formitem7",
             "resetItemName" : "formitem6",
             "resetItemNames" : [ "formitem6" ],
             "allowEmpty" : true,
@@ -690,6 +740,7 @@
             "codeName" : "grouppanel8",
             "detailStyle" : "DEFAULT",
             "detailType" : "GROUPPANEL",
+            "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel8",
             "name" : "grouppanel8",
             "getPSDEFormDetails" : [ {
               "actionGroupExtractMode" : "ITEM",
@@ -697,6 +748,7 @@
               "codeName" : "grouppanel5",
               "detailStyle" : "DEFAULT",
               "detailType" : "GROUPPANEL",
+              "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel5",
               "name" : "grouppanel5",
               "getPSDEFormDetails" : [ {
                 "caption" : "值1",
@@ -708,6 +760,7 @@
                 "ignoreInput" : 0,
                 "labelPos" : "LEFT",
                 "labelWidth" : 130,
+                "mOSFilePath" : "psdeformdetail_formitems/formitem11",
                 "name" : "formitem11",
                 "noPrivDisplayMode" : 1,
                 "getPSEditor" : {
@@ -719,6 +772,7 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "rTMOSFilePath" : "psdeformdetail_formitems/formitem11",
                 "allowEmpty" : true,
                 "showCaption" : true
               }, {
@@ -731,6 +785,7 @@
                 "ignoreInput" : 0,
                 "labelPos" : "LEFT",
                 "labelWidth" : 130,
+                "mOSFilePath" : "psdeformdetail_formitems/formitem12",
                 "name" : "formitem12",
                 "noPrivDisplayMode" : 1,
                 "getPSEditor" : {
@@ -742,6 +797,7 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "rTMOSFilePath" : "psdeformdetail_formitems/formitem12",
                 "allowEmpty" : true,
                 "showCaption" : true
               }, {
@@ -754,6 +810,7 @@
                 "ignoreInput" : 0,
                 "labelPos" : "LEFT",
                 "labelWidth" : 130,
+                "mOSFilePath" : "psdeformdetail_formitems/formitem13",
                 "name" : "formitem13",
                 "noPrivDisplayMode" : 1,
                 "getPSDEFDGroupLogics" : [ {
@@ -785,10 +842,15 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "rTMOSFilePath" : "psdeformdetail_formitems/formitem13",
                 "allowEmpty" : true,
                 "showCaption" : true
               } ],
               "getPSLayout" : {
+                "childColLG" : -1,
+                "childColMD" : 24,
+                "childColSM" : -1,
+                "childColXS" : -1,
                 "columnCount" : 24,
                 "layout" : "TABLE_24COL"
               },
@@ -796,6 +858,7 @@
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
               },
+              "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel5",
               "infoGroupMode" : false,
               "showCaption" : false
             }, {
@@ -804,6 +867,7 @@
               "codeName" : "grouppanel7",
               "detailStyle" : "DEFAULT",
               "detailType" : "GROUPPANEL",
+              "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel7",
               "name" : "grouppanel7",
               "getPSDEFormDetails" : [ {
                 "caption" : "值3",
@@ -815,6 +879,7 @@
                 "ignoreInput" : 0,
                 "labelPos" : "LEFT",
                 "labelWidth" : 130,
+                "mOSFilePath" : "psdeformdetail_formitems/formitem14",
                 "name" : "formitem14",
                 "noPrivDisplayMode" : 1,
                 "getPSEditor" : {
@@ -826,6 +891,7 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "rTMOSFilePath" : "psdeformdetail_formitems/formitem14",
                 "allowEmpty" : true,
                 "showCaption" : true
               }, {
@@ -838,6 +904,7 @@
                 "ignoreInput" : 0,
                 "labelPos" : "LEFT",
                 "labelWidth" : 130,
+                "mOSFilePath" : "psdeformdetail_formitems/formitem15",
                 "name" : "formitem15",
                 "noPrivDisplayMode" : 1,
                 "getPSEditor" : {
@@ -849,6 +916,7 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "rTMOSFilePath" : "psdeformdetail_formitems/formitem15",
                 "allowEmpty" : true,
                 "showCaption" : true
               }, {
@@ -861,6 +929,7 @@
                 "ignoreInput" : 0,
                 "labelPos" : "LEFT",
                 "labelWidth" : 130,
+                "mOSFilePath" : "psdeformdetail_formitems/formitem16",
                 "name" : "formitem16",
                 "noPrivDisplayMode" : 1,
                 "getPSDEFDGroupLogics" : [ {
@@ -898,10 +967,15 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "rTMOSFilePath" : "psdeformdetail_formitems/formitem16",
                 "allowEmpty" : true,
                 "showCaption" : true
               } ],
               "getPSLayout" : {
+                "childColLG" : -1,
+                "childColMD" : 24,
+                "childColSM" : -1,
+                "childColXS" : -1,
                 "columnCount" : 24,
                 "layout" : "TABLE_24COL"
               },
@@ -909,10 +983,15 @@
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
               },
+              "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel7",
               "infoGroupMode" : false,
               "showCaption" : false
             } ],
             "getPSLayout" : {
+              "childColLG" : -1,
+              "childColMD" : 24,
+              "childColSM" : -1,
+              "childColXS" : -1,
               "columnCount" : 24,
               "layout" : "TABLE_24COL"
             },
@@ -920,10 +999,15 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel8",
             "infoGroupMode" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -931,10 +1015,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel4_1",
           "infoGroupMode" : false,
           "showCaption" : false
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -942,6 +1031,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group2",
         "infoGroupMode" : false,
         "showCaption" : true
       }, {
@@ -950,6 +1040,7 @@
         "codeName" : "group1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group1",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "actionGroupExtractMode" : "ITEM",
@@ -957,6 +1048,7 @@
           "codeName" : "grouppanel1",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
           "name" : "grouppanel1",
           "getPSDEFormDetails" : [ {
             "caption" : "省份",
@@ -968,6 +1060,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/provincename",
             "name" : "provincename",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1006,6 +1099,7 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/provincename",
             "valueItemName" : "provinceid",
             "allowEmpty" : true,
             "showCaption" : true
@@ -1019,6 +1113,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 25,
+            "mOSFilePath" : "psdeformdetail_formitems/cityname",
             "name" : "cityname",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1078,6 +1173,7 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/cityname",
             "resetItemName" : "provinceid",
             "resetItemNames" : [ "provinceid" ],
             "valueItemName" : "cityid",
@@ -1093,6 +1189,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 45,
+            "mOSFilePath" : "psdeformdetail_formitems/districtname",
             "name" : "districtname",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1152,6 +1249,7 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/districtname",
             "resetItemName" : "cityid",
             "resetItemNames" : [ "cityid" ],
             "valueItemName" : "districtid",
@@ -1165,6 +1263,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -1177,6 +1276,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/cityid",
           "name" : "cityid",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -1191,6 +1291,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/cityid",
           "allowEmpty" : true,
           "hidden" : true,
           "showCaption" : true
@@ -1204,6 +1305,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/provinceid",
           "name" : "provinceid",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -1218,6 +1320,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/provinceid",
           "allowEmpty" : true,
           "hidden" : true,
           "showCaption" : true
@@ -1231,6 +1334,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/districtid",
           "name" : "districtid",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -1245,11 +1349,16 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/districtid",
           "allowEmpty" : true,
           "hidden" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1257,6 +1366,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
         "infoGroupMode" : false,
         "showCaption" : true
       }, {
@@ -1265,6 +1375,7 @@
         "codeName" : "grouppanel9",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel9",
         "name" : "grouppanel9",
         "getPSDEFormDetails" : [ {
           "actionGroupExtractMode" : "ITEM",
@@ -1272,6 +1383,7 @@
           "codeName" : "grouppanel10",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel10",
           "name" : "grouppanel10",
           "getPSDEFormDetails" : [ {
             "caption" : "(x值",
@@ -1283,6 +1395,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/fieldx1",
             "name" : "fieldx1",
             "noPrivDisplayMode" : 1,
             "getPSDEFormItemUpdate" : {
@@ -1297,6 +1410,7 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/fieldx1",
             "allowEmpty" : true,
             "showCaption" : true
           }, {
@@ -1309,6 +1423,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 50,
+            "mOSFilePath" : "psdeformdetail_formitems/fieldy1",
             "name" : "fieldy1",
             "noPrivDisplayMode" : 1,
             "getPSDEFormItemUpdate" : {
@@ -1323,6 +1438,7 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/fieldy1",
             "allowEmpty" : true,
             "showCaption" : true
           }, {
@@ -1335,6 +1451,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 80,
+            "mOSFilePath" : "psdeformdetail_formitems/fieldz1",
             "name" : "fieldz1",
             "noPrivDisplayMode" : 1,
             "getPSEditor" : {
@@ -1346,6 +1463,7 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/fieldz1",
             "allowEmpty" : true,
             "showCaption" : true
           } ],
@@ -1357,6 +1475,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel10",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -1368,6 +1487,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem18",
           "name" : "formitem18",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1383,11 +1503,16 @@
           "getPSSysCss" : {
             "cssName" : "el-alert el-alert--info is-light"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem18",
           "allowEmpty" : true,
           "emptyCaption" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : 8,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1395,6 +1520,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel9",
         "infoGroupMode" : false,
         "showCaption" : true
       }, {
@@ -1403,6 +1529,7 @@
         "codeName" : "grouppanel2",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
         "name" : "grouppanel2",
         "getPSDEFormDetails" : [ {
           "actionGroupExtractMode" : "ITEM",
@@ -1410,6 +1537,7 @@
           "codeName" : "grouppanel6",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel6",
           "name" : "grouppanel6",
           "getPSDEFormDetails" : [ {
             "caption" : "(x值",
@@ -1421,6 +1549,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/fieldx",
             "name" : "fieldx",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1439,6 +1568,7 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/fieldx",
             "allowEmpty" : true,
             "showCaption" : true
           }, {
@@ -1451,6 +1581,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 50,
+            "mOSFilePath" : "psdeformdetail_formitems/fieldy",
             "name" : "fieldy",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1469,6 +1600,7 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/fieldy",
             "allowEmpty" : true,
             "showCaption" : true
           }, {
@@ -1481,6 +1613,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 80,
+            "mOSFilePath" : "psdeformdetail_formitems/fieldz",
             "name" : "fieldz",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1496,6 +1629,7 @@
               "grow" : -1,
               "layout" : "FLEX"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/fieldz",
             "allowEmpty" : true,
             "showCaption" : true
           } ],
@@ -1507,6 +1641,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel6",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -1518,6 +1653,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem17",
           "name" : "formitem17",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1533,11 +1669,16 @@
           "getPSSysCss" : {
             "cssName" : "el-alert el-alert--info is-light"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem17",
           "allowEmpty" : true,
           "emptyCaption" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : 8,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1545,6 +1686,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
         "infoGroupMode" : false,
         "showCaption" : true
       }, {
@@ -1554,6 +1696,7 @@
         "codeName" : "grouppanel3",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel3",
         "name" : "grouppanel3",
         "getPSDEFormDetails" : [ {
           "codeName" : "formitem8",
@@ -1565,6 +1708,7 @@
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "labelWidth" : 0,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem8",
           "name" : "formitem8",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1575,9 +1719,14 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem8",
           "allowEmpty" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1585,6 +1734,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel3",
         "infoGroupMode" : false,
         "showCaption" : true
       }, {
@@ -1593,6 +1743,7 @@
         "codeName" : "grouppanel4",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel4",
         "name" : "grouppanel4",
         "getPSDEFormDetails" : [ {
           "codeName" : "formitem10",
@@ -1604,6 +1755,7 @@
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "labelWidth" : 0,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem10",
           "name" : "formitem10",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1616,6 +1768,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem10",
           "allowEmpty" : true
         }, {
           "captionItemName" : "formitem10",
@@ -1627,6 +1780,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem9",
           "name" : "formitem9",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1638,10 +1792,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem9",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1649,19 +1808,30 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel4",
         "infoGroupMode" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormLogicEditView/psappviewctrls/form",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -1682,16 +1852,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormLogicEditView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormLogicEditView",
   "title" : "示例编辑视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEEDITVIEW",

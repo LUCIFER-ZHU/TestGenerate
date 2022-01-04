@@ -5,6 +5,7 @@
     "modelref" : true,
     "id" : "create"
   },
+  "defaultLabelWidth" : 130,
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData/PSFORMS/New.json",
   "getGetDraftFromPSControlAction" : {
     "modelref" : true,
@@ -20,6 +21,7 @@
   },
   "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "logicName" : "新建数据",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CALENDARDATA/psdeform_editforms/New",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
@@ -120,6 +122,7 @@
     "codeName" : "formpage1",
     "detailStyle" : "DEFAULT",
     "detailType" : "FORMPAGE",
+    "mOSFilePath" : "psdeformdetail_formpages/formpage1",
     "name" : "formpage1",
     "getPSDEFormDetails" : [ {
       "actionGroupExtractMode" : "ITEM",
@@ -127,6 +130,7 @@
       "codeName" : "group1",
       "detailStyle" : "DEFAULT",
       "detailType" : "GROUPPANEL",
+      "mOSFilePath" : "psdeformdetail_grouppanels/group1",
       "name" : "group1",
       "getPSDEFormDetails" : [ {
         "caption" : "事项",
@@ -138,6 +142,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/calendardataname",
         "name" : "calendardataname",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -154,6 +159,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/calendardataname",
         "allowEmpty" : false,
         "showCaption" : true
       }, {
@@ -167,6 +173,7 @@
         "itemWidth" : 290.0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/begintime",
         "name" : "begintime",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -187,6 +194,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/begintime",
         "valueFormat" : "YYYY-MM-DD HH:mm:ss",
         "allowEmpty" : false,
         "showCaption" : true
@@ -201,6 +209,7 @@
         "itemWidth" : 290.0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/endtime",
         "name" : "endtime",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -221,6 +230,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/endtime",
         "valueFormat" : "YYYY-MM-DD HH:mm:ss",
         "allowEmpty" : true,
         "showCaption" : true
@@ -235,6 +245,7 @@
         "itemHeight" : 200.0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/memo",
         "name" : "memo",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -256,10 +267,15 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/memo",
         "allowEmpty" : true,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : 12,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -267,19 +283,30 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
       "infoGroupMode" : false,
       "showCaption" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
     "infoGroupMode" : false
   } ],
   "getPSLayout" : {
+    "childColLG" : -1,
+    "childColMD" : 24,
+    "childColSM" : -1,
+    "childColXS" : -1,
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CalendarDataNewEditView/psappviewctrls/form",
   "getRemovePSControlAction" : {
     "modelref" : true,
     "id" : "remove"

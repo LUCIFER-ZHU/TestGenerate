@@ -5,6 +5,7 @@
     "modelref" : true,
     "id" : "create"
   },
+  "defaultLabelWidth" : 130,
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/UILogic.json",
   "getGetDraftFromPSControlAction" : {
     "modelref" : true,
@@ -20,6 +21,7 @@
   },
   "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "logicName" : "界面逻辑",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeform_editforms/UILogic",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -194,12 +196,14 @@
     "codeName" : "formpage1",
     "detailStyle" : "DEFAULT",
     "detailType" : "FORMPAGE",
+    "mOSFilePath" : "psdeformdetail_formpages/formpage1",
     "name" : "formpage1",
     "getPSDEFormDetails" : [ {
       "codeName" : "rawitem1",
       "contentType" : "RAW",
       "detailStyle" : "DEFAULT",
       "detailType" : "RAWITEM",
+      "mOSFilePath" : "psdeformdetail_rawitems/rawitem1",
       "name" : "rawitem1",
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -208,6 +212,7 @@
       "getPSSysCss" : {
         "cssName" : "el-alert el-alert--info is-light"
       },
+      "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem1",
       "rawContent" : "表单项输入数据后点击【显示对话框】按钮",
       "rawItemHeight" : -1.0,
       "rawItemWidth" : -1.0,
@@ -218,6 +223,7 @@
       "codeName" : "grouppanel1",
       "detailStyle" : "DEFAULT",
       "detailType" : "GROUPPANEL",
+      "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
       "name" : "grouppanel1",
       "getPSDEFormDetails" : [ {
         "caption" : "输入提示",
@@ -230,6 +236,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/inputtext",
         "name" : "inputtext",
         "noPrivDisplayMode" : 1,
         "getPSEditor" : {
@@ -241,6 +248,7 @@
           "layout" : "FLEX",
           "width" : 400
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/inputtext",
         "allowEmpty" : true,
         "showCaption" : true
       }, {
@@ -249,6 +257,7 @@
         "codeName" : "button1",
         "detailStyle" : "DEFAULT",
         "detailType" : "BUTTON",
+        "mOSFilePath" : "psdeformdetail_buttons/button1",
         "name" : "button1",
         "getPSAppViewUIAction" : {
           "modelref" : true,
@@ -264,6 +273,7 @@
           "codeName" : "CallUISimple",
           "frontProcessType" : "OTHER",
           "fullCodeName" : "Example_CallUISimple",
+          "mOSFilePath" : "psappdeuiactions/CallUISimple",
           "name" : "执行显示对话框逻辑",
           "getPSAppDEUILogic" : {
             "modelref" : true,
@@ -273,6 +283,7 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
           },
+          "rTMOSFilePath" : "psappdeuiactions/CallUISimple",
           "timeout" : 60000,
           "uIActionMode" : "FRONT",
           "uIActionTag" : "CallUISimple",
@@ -281,6 +292,7 @@
           "uILogicType" : "DEUILOGIC",
           "id" : "CallUISimple@Example"
         },
+        "rTMOSFilePath" : "psdeformdetail_buttons/button1",
         "tooltip" : "显示对话框",
         "showCaption" : true
       } ],
@@ -291,6 +303,7 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
       "infoGroupMode" : false,
       "showCaption" : false
     }, {
@@ -299,6 +312,7 @@
       "detailStyle" : "DEFAULT",
       "detailType" : "RAWITEM",
       "htmlContent" : "<p>1.通过【数据主键】打开视图，在视图中编辑X值后点击视图中的【保存并关闭】按钮，刚才编辑的X值回显到【X值回显】 <br />2.点击【动态设置上下文并获取数据】，通过数据主键获取数据回显到【Z值回显】、设置当前时间为当前日期</p>",
+      "mOSFilePath" : "psdeformdetail_rawitems/rawitem2",
       "name" : "rawitem2",
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -307,6 +321,7 @@
       "getPSSysCss" : {
         "cssName" : "el-alert el-alert--info is-light"
       },
+      "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem2",
       "rawItemHeight" : -1.0,
       "rawItemWidth" : -1.0,
       "showCaption" : true
@@ -316,6 +331,7 @@
       "codeName" : "grouppanel2",
       "detailStyle" : "DEFAULT",
       "detailType" : "GROUPPANEL",
+      "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
       "name" : "grouppanel2",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -323,6 +339,7 @@
         "codeName" : "grouppanel5",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel5",
         "name" : "grouppanel5",
         "getPSDEFormDetails" : [ {
           "caption" : "数据主键",
@@ -335,6 +352,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/exampleid",
           "name" : "exampleid",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -346,6 +364,7 @@
             "layout" : "FLEX",
             "width" : 400
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/exampleid",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -354,6 +373,7 @@
           "codeName" : "button2",
           "detailStyle" : "DEFAULT",
           "detailType" : "BUTTON",
+          "mOSFilePath" : "psdeformdetail_buttons/button2",
           "name" : "button2",
           "getPSAppViewUIAction" : {
             "modelref" : true,
@@ -369,6 +389,7 @@
             "codeName" : "CallUIActionTest",
             "frontProcessType" : "OTHER",
             "fullCodeName" : "Example_CallUIActionTest",
+            "mOSFilePath" : "psappdeuiactions/CallUIActionTest",
             "name" : "执行界面行为调用逻辑",
             "getPSAppDEUILogic" : {
               "modelref" : true,
@@ -378,6 +399,7 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
             },
+            "rTMOSFilePath" : "psappdeuiactions/CallUIActionTest",
             "timeout" : 60000,
             "uIActionMode" : "FRONT",
             "uIActionTag" : "CallUIActionTest",
@@ -386,6 +408,7 @@
             "uILogicType" : "DEUILOGIC",
             "id" : "CallUIActionTest@Example"
           },
+          "rTMOSFilePath" : "psdeformdetail_buttons/button2",
           "tooltip" : "调用界面行为打开视图",
           "showCaption" : true
         }, {
@@ -398,6 +421,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/fieldx",
           "name" : "fieldx",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -409,6 +433,7 @@
             "grow" : -1,
             "layout" : "FLEX"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/fieldx",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
@@ -419,6 +444,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel5",
         "infoGroupMode" : false,
         "showCaption" : false
       }, {
@@ -427,6 +453,7 @@
         "codeName" : "grouppanel6",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel6",
         "name" : "grouppanel6",
         "getPSDEFormDetails" : [ {
           "codeName" : "formitem",
@@ -437,6 +464,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem",
           "name" : "formitem",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -449,6 +477,7 @@
             "layout" : "FLEX",
             "width" : 400
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem",
           "allowEmpty" : true,
           "emptyCaption" : true,
           "showCaption" : true
@@ -458,6 +487,7 @@
           "codeName" : "button4",
           "detailStyle" : "DEFAULT",
           "detailType" : "BUTTON",
+          "mOSFilePath" : "psdeformdetail_buttons/button4",
           "name" : "button4",
           "getPSAppViewUIAction" : {
             "modelref" : true,
@@ -472,6 +502,7 @@
             "caption" : "动态设置上下文并获取数据",
             "codeName" : "PrepareCtx",
             "fullCodeName" : "Example_PrepareCtx",
+            "mOSFilePath" : "psappdeuiactions/PrepareCtx",
             "name" : "动态设置上下文并获取数据",
             "getPSAppDEMethod" : {
               "modelref" : true,
@@ -481,6 +512,7 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
             },
+            "rTMOSFilePath" : "psappdeuiactions/PrepareCtx",
             "timeout" : 60000,
             "uIActionMode" : "BACKEND",
             "uIActionTag" : "PrepareCtx",
@@ -488,6 +520,7 @@
             "enableConfirm" : true,
             "id" : "PrepareCtx@Example"
           },
+          "rTMOSFilePath" : "psdeformdetail_buttons/button4",
           "tooltip" : "动态设置上下文并获取数据",
           "showCaption" : true
         }, {
@@ -500,6 +533,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/fieldz",
           "name" : "fieldz",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -511,6 +545,7 @@
             "grow" : -1,
             "layout" : "FLEX"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/fieldz",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -523,6 +558,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/currentdate",
           "name" : "currentdate",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -538,6 +574,7 @@
             "grow" : -1,
             "layout" : "FLEX"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/currentdate",
           "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : true,
           "showCaption" : true
@@ -549,10 +586,15 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel6",
         "infoGroupMode" : false,
         "showCaption" : false
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -560,6 +602,7 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
       "infoGroupMode" : false,
       "showCaption" : false
     }, {
@@ -567,6 +610,7 @@
       "contentType" : "RAW",
       "detailStyle" : "DEFAULT",
       "detailType" : "RAWITEM",
+      "mOSFilePath" : "psdeformdetail_rawitems/rawitem3",
       "name" : "rawitem3",
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -575,6 +619,7 @@
       "getPSSysCss" : {
         "cssName" : "el-alert el-alert--info is-light"
       },
+      "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem3",
       "rawContent" : "通过【数据主键】和【更新值回显】更新指定数据的值属性，更新完成后打开视图显示，视图中对属性【更新值】修改后将回显【更新值回显】",
       "rawItemHeight" : -1.0,
       "rawItemWidth" : -1.0,
@@ -585,6 +630,7 @@
       "codeName" : "grouppanel3",
       "detailStyle" : "DEFAULT",
       "detailType" : "GROUPPANEL",
+      "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel3",
       "name" : "grouppanel3",
       "getPSDEFormDetails" : [ {
         "caption" : "更新值回显",
@@ -597,6 +643,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/fieldupdate",
         "name" : "fieldupdate",
         "noPrivDisplayMode" : 1,
         "getPSEditor" : {
@@ -608,6 +655,7 @@
           "layout" : "FLEX",
           "width" : 400
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/fieldupdate",
         "allowEmpty" : true,
         "showCaption" : true
       }, {
@@ -616,6 +664,7 @@
         "codeName" : "button3",
         "detailStyle" : "DEFAULT",
         "detailType" : "BUTTON",
+        "mOSFilePath" : "psdeformdetail_buttons/button3",
         "name" : "button3",
         "getPSAppViewUIAction" : {
           "modelref" : true,
@@ -631,6 +680,7 @@
           "codeName" : "CallUpdateFieldy",
           "frontProcessType" : "OTHER",
           "fullCodeName" : "Example_CallUpdateFieldy",
+          "mOSFilePath" : "psappdeuiactions/CallUpdateFieldy",
           "name" : "执行界面行为更新Y值",
           "getPSAppDEUILogic" : {
             "modelref" : true,
@@ -640,6 +690,7 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
           },
+          "rTMOSFilePath" : "psappdeuiactions/CallUpdateFieldy",
           "timeout" : 60000,
           "uIActionMode" : "FRONT",
           "uIActionTag" : "CallUpdateFieldy",
@@ -648,6 +699,7 @@
           "uILogicType" : "DEUILOGIC",
           "id" : "CallUpdateFieldy@Example"
         },
+        "rTMOSFilePath" : "psdeformdetail_buttons/button3",
         "tooltip" : "调用后台更新值",
         "showCaption" : true
       } ],
@@ -658,19 +710,30 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel3",
       "infoGroupMode" : false,
       "showCaption" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
     "infoGroupMode" : false
   } ],
   "getPSLayout" : {
+    "childColLG" : -1,
+    "childColMD" : 24,
+    "childColSM" : -1,
+    "childColXS" : -1,
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleUILogicEditView/psappviewctrls/form",
   "getRemovePSControlAction" : {
     "modelref" : true,
     "id" : "remove"

@@ -4,20 +4,27 @@
   "codeName" : "PersonDataPickupView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/PersonDataPickupView.json",
   "funcViewMode" : "PICKUPVIEW",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/PersonDataPickupView",
   "name" : "PersonDataPickupView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "PickupView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "pickupviewpanel",
       "name" : "PICKUPVIEWPANEL",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "PickupViewpickupviewpanel",
@@ -28,14 +35,20 @@
       "codeName" : "PersonDataPickupGridView",
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/PersonDataPickupGridView.json",
       "gridRowActiveMode" : 2,
+      "mOSFilePath" : "pssysapps/Sample/psappdeviews/PersonDataPickupGridView",
       "name" : "PersonDataPickupGridView",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
       },
+      "getPSAppModule" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+      },
       "getPSAppViewEngines" : [ {
         "engineCat" : "VIEW",
         "engineType" : "PickupGridView",
+        "mOSFilePath" : "psappviewengines/engine",
         "name" : "engine",
         "getPSUIEngineParams" : [ {
           "ctrlName" : "grid",
@@ -45,7 +58,8 @@
           "ctrlName" : "searchform",
           "name" : "SEARCHFORM",
           "paramType" : "CTRL"
-        } ]
+        } ],
+        "rTMOSFilePath" : "psappviewengines/engine"
       } ],
       "getPSControls" : [ {
         "aggMode" : "NONE",
@@ -60,6 +74,7 @@
         "groupMode" : "NONE",
         "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
         "logicName" : "主表格",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/psdegrids/Main",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
@@ -169,12 +184,14 @@
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "persondataname",
           "excelCaption" : "姓名",
+          "mOSFilePath" : "psdegridcols/persondataname",
           "name" : "persondataname",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PERSONDATANAME",
             "codeName" : "PersonDataName"
           },
+          "rTMOSFilePath" : "psdegridcols/persondataname",
           "width" : 150,
           "widthUnit" : "PX",
           "enableSort" : true
@@ -186,6 +203,7 @@
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "updateman",
           "excelCaption" : "更新人",
+          "mOSFilePath" : "psdegridcols/updateman",
           "name" : "updateman",
           "noPrivDisplayMode" : 1,
           "getPSAppCodeList" : {
@@ -196,6 +214,7 @@
             "name" : "UPDATEMAN",
             "codeName" : "UpdateMan"
           },
+          "rTMOSFilePath" : "psdegridcols/updateman",
           "width" : 150,
           "widthUnit" : "PX",
           "enableSort" : true
@@ -207,12 +226,14 @@
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "updatedate",
           "excelCaption" : "更新时间",
+          "mOSFilePath" : "psdegridcols/updatedate",
           "name" : "updatedate",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "UPDATEDATE",
             "codeName" : "UpdateDate"
           },
+          "rTMOSFilePath" : "psdegridcols/updatedate",
           "valueFormat" : "YYYY-MM-DD HH:mm:ss",
           "width" : 150,
           "widthUnit" : "PX",
@@ -282,6 +303,7 @@
           "codeName" : "srfkey",
           "enableCond" : 3,
           "ignoreInput" : 0,
+          "mOSFilePath" : "psdegridcols/srfkey",
           "name" : "srfkey",
           "getPSAppDEField" : {
             "name" : "PERSONDATAID",
@@ -291,9 +313,11 @@
             "editorType" : "HIDDEN",
             "name" : "srfkey"
           },
+          "rTMOSFilePath" : "psdegridcols/srfkey",
           "allowEmpty" : true
         } ],
         "pagingSize" : 20,
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/PersonDataPickupGridView/psappviewctrls/grid",
         "getRemovePSControlAction" : {
           "actionName" : "Remove",
           "actionType" : "DEACTION",
@@ -327,9 +351,11 @@
       }, {
         "codeName" : "Default",
         "controlType" : "SEARCHFORM",
+        "defaultLabelWidth" : 130,
         "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData/PSSEARCHFORMS/Default.json",
         "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
         "logicName" : "默认搜索表单",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/psdeform_searchforms/Default",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
@@ -392,17 +418,28 @@
           "codeName" : "formpage1",
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMPAGE",
+          "mOSFilePath" : "psdeformdetail_formpages/formpage1",
           "name" : "formpage1",
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
           "infoGroupMode" : false
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/PersonDataPickupGridView/psappviewctrls/searchform",
         "searchButtonStyle" : "DEFAULT",
         "tabHeaderPos" : "TOP",
         "enableAdvanceSearch" : false,
@@ -419,16 +456,19 @@
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPDEPICKUPGRIDVIEW",
         "controlType" : "VIEWLAYOUTPANEL",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/pssysviewlayoutpanels/Layoutpanel",
         "name" : "layoutpanel",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
         },
         "getPSControlParam" : { },
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/PersonDataPickupGridView/psappviewctrls/layoutpanel",
         "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/PersonDataPickupGridView",
       "title" : "人员数据选择表格视图",
       "viewStyle" : "DEFAULT",
       "viewType" : "DEPICKUPGRIDVIEW",
@@ -448,6 +488,7 @@
         "actionRSMode" : 1,
         "codeName" : "PersonData",
         "dataRSMode" : 0,
+        "mOSFilePath" : "pssysapps/Sample/psappders/PersonData",
         "getMajorPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
@@ -461,10 +502,12 @@
           "name" : "ORGDATAID",
           "codeName" : "OrgDataId"
         },
-        "rSMode" : 2
+        "rSMode" : 2,
+        "rTMOSFilePath" : "pssysapps/Sample/psappders/PersonData"
       } ] ]
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/psviewpanels/PickupViewpickupviewpanel",
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -482,7 +525,8 @@
     } ],
     "getPSControlParam" : {
       "id" : "PICKUPVIEWPANEL"
-    }
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/PersonDataPickupView/psappviewctrls/pickupviewpanel"
   } ],
   "getPSDEViewCodeName" : "PickupView",
   "getPSDEViewId" : "2d4a638f1c8f4fa23dd23eace027ad0c",
@@ -490,16 +534,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPICKUPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/PersonDataPickupView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/PersonDataPickupView",
   "title" : "人员数据数据选择视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPICKUPVIEW",
@@ -511,6 +558,7 @@
     "actionRSMode" : 1,
     "codeName" : "PersonData",
     "dataRSMode" : 0,
+    "mOSFilePath" : "pssysapps/Sample/psappders/PersonData",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
@@ -524,6 +572,7 @@
       "name" : "ORGDATAID",
       "codeName" : "OrgDataId"
     },
-    "rSMode" : 2
+    "rSMode" : 2,
+    "rTMOSFilePath" : "pssysapps/Sample/psappders/PersonData"
   } ] ]
 }

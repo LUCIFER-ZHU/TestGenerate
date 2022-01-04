@@ -3,20 +3,27 @@
   "caption" : "图表",
   "codeName" : "ChartDataUsr2PickupView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr2PickupView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2PickupView",
   "name" : "ChartDataUsr2PickupView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "PickupView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "pickupviewpanel",
       "name" : "PICKUPVIEWPANEL",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "Usr2PickupViewpickupviewpanel",
@@ -27,20 +34,27 @@
       "codeName" : "ChartDataPickupTreeView",
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataPickupTreeView.json",
       "mDCtrlActiveMode" : 2,
+      "mOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataPickupTreeView",
       "name" : "ChartDataPickupTreeView",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
       },
+      "getPSAppModule" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+      },
       "getPSAppViewEngines" : [ {
         "engineCat" : "VIEW",
         "engineType" : "PickupTreeView",
+        "mOSFilePath" : "psappviewengines/engine",
         "name" : "engine",
         "getPSUIEngineParams" : [ {
           "ctrlName" : "tree",
           "name" : "TREE",
           "paramType" : "CTRL"
-        } ]
+        } ],
+        "rTMOSFilePath" : "psappviewengines/engine"
       } ],
       "getPSControls" : [ {
         "codeName" : "Treeview",
@@ -60,11 +74,13 @@
         },
         "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
         "logicName" : "树视图",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdetreeviews/Treeview",
         "getPSAppCounterRef" : {
           "modelref" : true,
           "id" : "00c9c4b585c3e46574dab52ad2cb020e"
         },
         "getPSAppCounterRefs" : [ {
+          "mOSFilePath" : "pssyscounterrefs/00c9c4b585c3e46574dab52ad2cb020e",
           "getPSAppCounter" : {
             "codeName" : "chartTreeCounter",
             "counterType" : "CUSTOM",
@@ -73,13 +89,16 @@
               "modelref" : true,
               "id" : "GetRandom"
             },
+            "mOSFilePath" : "pssysapps/Sample/psappcounters/chartTreeCounter",
             "name" : "图表实体树计数器",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
             },
+            "rTMOSFilePath" : "pssysapps/Sample/psappcounters/chartTreeCounter",
             "timer" : 60000
           },
+          "rTMOSFilePath" : "pssyscounterrefs/00c9c4b585c3e46574dab52ad2cb020e",
           "tag" : "00c9c4b585c3e46574dab52ad2cb020e",
           "id" : "00c9c4b585c3e46574dab52ad2cb020e"
         } ],
@@ -282,6 +301,7 @@
           "controlType" : "CONTEXTMENU",
           "hookEventNames" : [ "CLICK" ],
           "logicName" : "测试树节点刷新上下文菜单",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdetoolbars/PickupTreeViewdynamic1_cm",
           "name" : "dynamic1_cm",
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -339,11 +359,13 @@
               "caption" : "刷新",
               "codeName" : "Refresh",
               "fullCodeName" : "Refresh",
+              "mOSFilePath" : "pssysappdeuiactions/Refresh",
               "name" : "表格界面_刷新操作",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/Refresh",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "Refresh",
@@ -370,11 +392,13 @@
               "caption" : "刷新",
               "codeName" : "RefreshParent",
               "fullCodeName" : "RefreshParent",
+              "mOSFilePath" : "pssysappdeuiactions/RefreshParent",
               "name" : "树界面_刷新父节点操作",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/RefreshParent",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -401,11 +425,13 @@
               "caption" : "刷新",
               "codeName" : "RefreshAll",
               "fullCodeName" : "RefreshAll",
+              "mOSFilePath" : "pssysappdeuiactions/RefreshAll",
               "name" : "树界面_刷新全部操作",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/RefreshAll",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshAll",
@@ -415,6 +441,7 @@
             "showCaption" : true,
             "showIcon" : true
           } ],
+          "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataPickupTreeView/psappviewctrls/dynamic1_cm",
           "modelid" : "A063BD38-40B5-466E-9914-D034506CDFA6",
           "modeltype" : "PSDETOOLBAR"
         }, {
@@ -422,6 +449,7 @@
           "controlType" : "CONTEXTMENU",
           "hookEventNames" : [ "CLICK" ],
           "logicName" : "测试树节点刷新上下文菜单",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdetoolbars/PickupTreeViewtestrefresh_cm",
           "name" : "testrefresh_cm",
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -479,11 +507,13 @@
               "caption" : "刷新",
               "codeName" : "Refresh",
               "fullCodeName" : "Refresh",
+              "mOSFilePath" : "pssysappdeuiactions/Refresh",
               "name" : "表格界面_刷新操作",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/Refresh",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "Refresh",
@@ -510,11 +540,13 @@
               "caption" : "刷新",
               "codeName" : "RefreshParent",
               "fullCodeName" : "RefreshParent",
+              "mOSFilePath" : "pssysappdeuiactions/RefreshParent",
               "name" : "树界面_刷新父节点操作",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/RefreshParent",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshParent",
@@ -541,11 +573,13 @@
               "caption" : "刷新",
               "codeName" : "RefreshAll",
               "fullCodeName" : "RefreshAll",
+              "mOSFilePath" : "pssysappdeuiactions/RefreshAll",
               "name" : "树界面_刷新全部操作",
               "getPSSysImage" : {
                 "glyph" : "xf021@FontAwesome",
                 "cssClass" : "fa fa-refresh"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/RefreshAll",
               "timeout" : 60000,
               "uIActionMode" : "SYS",
               "uIActionTag" : "RefreshAll",
@@ -555,6 +589,7 @@
             "showCaption" : true,
             "showIcon" : true
           } ],
+          "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataPickupTreeView/psappviewctrls/testrefresh_cm",
           "modelid" : "A063BD38-40B5-466E-9914-D034506CDFA6",
           "modeltype" : "PSDETOOLBAR"
         } ],
@@ -753,6 +788,7 @@
             "controlType" : "CONTEXTMENU",
             "hookEventNames" : [ "CLICK" ],
             "logicName" : "测试树节点刷新上下文菜单",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdetoolbars/PickupTreeViewdynamic1_cm",
             "name" : "dynamic1_cm",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -810,11 +846,13 @@
                 "caption" : "刷新",
                 "codeName" : "Refresh",
                 "fullCodeName" : "Refresh",
+                "mOSFilePath" : "pssysappdeuiactions/Refresh",
                 "name" : "表格界面_刷新操作",
                 "getPSSysImage" : {
                   "glyph" : "xf021@FontAwesome",
                   "cssClass" : "fa fa-refresh"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/Refresh",
                 "timeout" : 60000,
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "Refresh",
@@ -841,11 +879,13 @@
                 "caption" : "刷新",
                 "codeName" : "RefreshParent",
                 "fullCodeName" : "RefreshParent",
+                "mOSFilePath" : "pssysappdeuiactions/RefreshParent",
                 "name" : "树界面_刷新父节点操作",
                 "getPSSysImage" : {
                   "glyph" : "xf021@FontAwesome",
                   "cssClass" : "fa fa-refresh"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/RefreshParent",
                 "timeout" : 60000,
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "RefreshParent",
@@ -872,11 +912,13 @@
                 "caption" : "刷新",
                 "codeName" : "RefreshAll",
                 "fullCodeName" : "RefreshAll",
+                "mOSFilePath" : "pssysappdeuiactions/RefreshAll",
                 "name" : "树界面_刷新全部操作",
                 "getPSSysImage" : {
                   "glyph" : "xf021@FontAwesome",
                   "cssClass" : "fa fa-refresh"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/RefreshAll",
                 "timeout" : 60000,
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "RefreshAll",
@@ -886,6 +928,7 @@
               "showCaption" : true,
               "showIcon" : true
             } ],
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataPickupTreeView/psappviewctrls/dynamic1_cm",
             "modelid" : "A063BD38-40B5-466E-9914-D034506CDFA6",
             "modeltype" : "PSDETOOLBAR"
           },
@@ -1018,6 +1061,7 @@
             "controlType" : "CONTEXTMENU",
             "hookEventNames" : [ "CLICK" ],
             "logicName" : "测试树节点刷新上下文菜单",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdetoolbars/PickupTreeViewtestrefresh_cm",
             "name" : "testrefresh_cm",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -1075,11 +1119,13 @@
                 "caption" : "刷新",
                 "codeName" : "Refresh",
                 "fullCodeName" : "Refresh",
+                "mOSFilePath" : "pssysappdeuiactions/Refresh",
                 "name" : "表格界面_刷新操作",
                 "getPSSysImage" : {
                   "glyph" : "xf021@FontAwesome",
                   "cssClass" : "fa fa-refresh"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/Refresh",
                 "timeout" : 60000,
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "Refresh",
@@ -1106,11 +1152,13 @@
                 "caption" : "刷新",
                 "codeName" : "RefreshParent",
                 "fullCodeName" : "RefreshParent",
+                "mOSFilePath" : "pssysappdeuiactions/RefreshParent",
                 "name" : "树界面_刷新父节点操作",
                 "getPSSysImage" : {
                   "glyph" : "xf021@FontAwesome",
                   "cssClass" : "fa fa-refresh"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/RefreshParent",
                 "timeout" : 60000,
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "RefreshParent",
@@ -1137,11 +1185,13 @@
                 "caption" : "刷新",
                 "codeName" : "RefreshAll",
                 "fullCodeName" : "RefreshAll",
+                "mOSFilePath" : "pssysappdeuiactions/RefreshAll",
                 "name" : "树界面_刷新全部操作",
                 "getPSSysImage" : {
                   "glyph" : "xf021@FontAwesome",
                   "cssClass" : "fa fa-refresh"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/RefreshAll",
                 "timeout" : 60000,
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "RefreshAll",
@@ -1151,6 +1201,7 @@
               "showCaption" : true,
               "showIcon" : true
             } ],
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataPickupTreeView/psappviewctrls/testrefresh_cm",
             "modelid" : "A063BD38-40B5-466E-9914-D034506CDFA6",
             "modeltype" : "PSDETOOLBAR"
           },
@@ -1173,6 +1224,7 @@
           "selected" : false,
           "id" : "TestRefresh"
         } ],
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataPickupTreeView/psappviewctrls/tree",
         "getRemovePSControlAction" : {
           "modelref" : true,
           "id" : "remove"
@@ -1195,16 +1247,19 @@
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPDEPICKUPTREEVIEW",
         "controlType" : "VIEWLAYOUTPANEL",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysviewlayoutpanels/Layoutpanel",
         "name" : "layoutpanel",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
         },
         "getPSControlParam" : { },
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataPickupTreeView/psappviewctrls/layoutpanel",
         "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataPickupTreeView",
       "title" : "图表选择树视图",
       "viewStyle" : "DEFAULT",
       "viewType" : "DEPICKUPTREEVIEW",
@@ -1217,6 +1272,7 @@
       "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psviewpanels/Usr2PickupViewpickupviewpanel",
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -1234,7 +1290,8 @@
     } ],
     "getPSControlParam" : {
       "id" : "PICKUPVIEWPANEL"
-    }
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2PickupView/psappviewctrls/pickupviewpanel"
   } ],
   "getPSDEViewCodeName" : "Usr2PickupView",
   "getPSDEViewId" : "63341F87-C57C-4E8C-BF54-2190E1CB970A",
@@ -1242,16 +1299,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPICKUPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2PickupView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2PickupView",
   "title" : "图表数据选择视图（树视图）",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPICKUPVIEW",

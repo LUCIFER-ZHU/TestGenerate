@@ -4,20 +4,27 @@
   "codeName" : "OrgDataOrgDataPickupTreeView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrgDataOrgDataPickupTreeView.json",
   "mDCtrlActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/OrgDataOrgDataPickupTreeView",
   "name" : "OrgDataOrgDataPickupTreeView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "PickupTreeView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "tree",
       "name" : "TREE",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "OrgDataTree",
@@ -37,6 +44,7 @@
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
     "logicName" : "组织数据树",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/psdetreeviews/OrgDataTree",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
@@ -136,11 +144,29 @@
         "dERType" : "DER1N",
         "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/OrgData/PSDERS/DER1N_ORGDATA_ORGDATA_PORGDATAID.json",
         "logicName" : "父级组织",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/minorpsders/DER1N_ORGDATA_ORGDATA_PORGDATAID",
+        "getMajorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/Sample/PSDATAENTITIES/OrgData.json"
+        },
         "masterOrder" : -1,
         "masterRS" : 0,
+        "getMinorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/Sample/PSDATAENTITIES/OrgData.json"
+        },
         "name" : "DER1N_ORGDATA_ORGDATA_PORGDATAID",
         "orderValue" : 100,
+        "getPSPickupDEField" : {
+          "name" : "PORGDATAID",
+          "codeName" : "Porgdataid"
+        },
+        "getPSPickupTextDEField" : {
+          "name" : "PORGDATANAME",
+          "codeName" : "Porgdataname"
+        },
         "pickupDEFName" : "PORGDATAID",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/minorpsders/DER1N_ORGDATA_ORGDATA_PORGDATAID",
         "removeActionType" : -1,
         "removeOrder" : 0
       },
@@ -165,11 +191,29 @@
         "dERType" : "DER1N",
         "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/OrgData/PSDERS/DER1N_ORGDATA_ORGDATA_PORGDATAID.json",
         "logicName" : "父级组织",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/minorpsders/DER1N_ORGDATA_ORGDATA_PORGDATAID",
+        "getMajorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/Sample/PSDATAENTITIES/OrgData.json"
+        },
         "masterOrder" : -1,
         "masterRS" : 0,
+        "getMinorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/Sample/PSDATAENTITIES/OrgData.json"
+        },
         "name" : "DER1N_ORGDATA_ORGDATA_PORGDATAID",
         "orderValue" : 100,
+        "getPSPickupDEField" : {
+          "name" : "PORGDATAID",
+          "codeName" : "Porgdataid"
+        },
+        "getPSPickupTextDEField" : {
+          "name" : "PORGDATANAME",
+          "codeName" : "Porgdataname"
+        },
         "pickupDEFName" : "PORGDATAID",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/minorpsders/DER1N_ORGDATA_ORGDATA_PORGDATAID",
         "removeActionType" : -1,
         "removeOrder" : 0
       },
@@ -292,6 +336,7 @@
       "selected" : false,
       "id" : "RootOrg"
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrgDataOrgDataPickupTreeView/psappviewctrls/tree",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -314,16 +359,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPICKUPTREEVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrgDataOrgDataPickupTreeView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrgDataOrgDataPickupTreeView",
   "title" : "组织数据选择树视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPICKUPTREEVIEW",

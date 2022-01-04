@@ -5,6 +5,7 @@
     "modelref" : true,
     "id" : "create"
   },
+  "defaultLabelWidth" : 130,
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/PickupView.json",
   "getGetDraftFromPSControlAction" : {
     "modelref" : true,
@@ -20,6 +21,7 @@
   },
   "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "logicName" : "选择视图示例",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeform_editforms/PickupView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -98,6 +100,7 @@
     "codeName" : "formpage1",
     "detailStyle" : "DEFAULT",
     "detailType" : "FORMPAGE",
+    "mOSFilePath" : "psdeformdetail_formpages/formpage1",
     "name" : "formpage1",
     "getPSDEFormDetails" : [ {
       "actionGroupExtractMode" : "ITEM",
@@ -105,6 +108,7 @@
       "codeName" : "group1",
       "detailStyle" : "DEFAULT",
       "detailType" : "GROUPPANEL",
+      "mOSFilePath" : "psdeformdetail_grouppanels/group1",
       "name" : "group1",
       "getPSDEFormDetails" : [ {
         "caption" : "单项选择表格视图",
@@ -116,6 +120,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/formitem",
         "name" : "formitem",
         "noPrivDisplayMode" : 1,
         "getPSEditor" : {
@@ -143,6 +148,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/formitem",
         "valueItemName" : "formitem1",
         "allowEmpty" : true,
         "showCaption" : true
@@ -156,6 +162,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/formitem1",
         "name" : "formitem1",
         "noPrivDisplayMode" : 1,
         "getPSEditor" : {
@@ -168,10 +175,15 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/formitem1",
         "allowEmpty" : true,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : 12,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -179,19 +191,30 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
       "infoGroupMode" : false,
       "showCaption" : true
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
     "infoGroupMode" : false
   } ],
   "getPSLayout" : {
+    "childColLG" : -1,
+    "childColMD" : 24,
+    "childColSM" : -1,
+    "childColXS" : -1,
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExamplePickupViewEditView/psappviewctrls/form",
   "getRemovePSControlAction" : {
     "modelref" : true,
     "id" : "remove"

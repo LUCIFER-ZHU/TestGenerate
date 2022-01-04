@@ -3,14 +3,20 @@
   "caption" : "表单逻辑",
   "codeName" : "ExampleFormLayoutEditView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleFormLayoutEditView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormLayoutEditView",
   "name" : "ExampleFormLayoutEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "EditView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "form",
@@ -20,7 +26,8 @@
       "name" : "P2K",
       "paramType" : "VALUE",
       "value" : 0
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "Layout",
@@ -29,6 +36,7 @@
       "modelref" : true,
       "id" : "create"
     },
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/Layout.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
@@ -44,6 +52,7 @@
     },
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "logicName" : "布局",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeform_editforms/Layout",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -226,6 +235,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -233,6 +243,7 @@
         "codeName" : "group1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group1",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "actionGroupExtractMode" : "ITEM",
@@ -240,12 +251,14 @@
           "codeName" : "grouppanel1",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
           "name" : "grouppanel1",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem1",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem1",
             "name" : "rawitem1",
             "getPSLayoutPos" : {
               "colLG" : 1,
@@ -255,6 +268,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem1",
             "rawContent" : "1",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
@@ -264,6 +278,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem2",
             "name" : "rawitem2",
             "getPSLayoutPos" : {
               "colLG" : 1,
@@ -273,12 +288,17 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem2",
             "rawContent" : "1",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : 1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -286,6 +306,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -294,12 +315,14 @@
           "codeName" : "grouppanel2",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
           "name" : "grouppanel2",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem3",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem3",
             "name" : "rawitem3",
             "getPSLayoutPos" : {
               "colLG" : 4,
@@ -309,6 +332,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem3",
             "rawContent" : "4",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
@@ -318,6 +342,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem4",
             "name" : "rawitem4",
             "getPSLayoutPos" : {
               "colLG" : 4,
@@ -327,12 +352,17 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem4",
             "rawContent" : "4",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : 4,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -340,6 +370,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -348,12 +379,14 @@
           "codeName" : "grouppanel3",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel3",
           "name" : "grouppanel3",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem5",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem5",
             "name" : "rawitem5",
             "getPSLayoutPos" : {
               "colLG" : 8,
@@ -363,6 +396,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem5",
             "rawContent" : "8",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
@@ -372,6 +406,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem6",
             "name" : "rawitem6",
             "getPSLayoutPos" : {
               "colLG" : 8,
@@ -381,12 +416,17 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem6",
             "rawContent" : "8",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : 8,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -394,6 +434,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel3",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -402,12 +443,14 @@
           "codeName" : "grouppanel4",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel4",
           "name" : "grouppanel4",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem7",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem7",
             "name" : "rawitem7",
             "getPSLayoutPos" : {
               "colLG" : 12,
@@ -417,6 +460,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem7",
             "rawContent" : "12",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
@@ -426,6 +470,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem8",
             "name" : "rawitem8",
             "getPSLayoutPos" : {
               "colLG" : 12,
@@ -435,12 +480,17 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem8",
             "rawContent" : "12",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : 12,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -448,6 +498,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel4",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -456,12 +507,14 @@
           "codeName" : "grouppanel5",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel5",
           "name" : "grouppanel5",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem9",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem9",
             "name" : "rawitem9",
             "getPSLayoutPos" : {
               "colLG" : 24,
@@ -471,12 +524,17 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem9",
             "rawContent" : "24",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : 24,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -484,6 +542,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel5",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -492,12 +551,14 @@
           "codeName" : "grouppanel6",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel6",
           "name" : "grouppanel6",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem10",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem10",
             "name" : "rawitem10",
             "getPSLayoutPos" : {
               "colLG" : 4,
@@ -508,6 +569,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem10",
             "rawContent" : "4（偏移1）",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
@@ -517,6 +579,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem11",
             "name" : "rawitem11",
             "getPSLayoutPos" : {
               "colLG" : 12,
@@ -527,12 +590,17 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem11",
             "rawContent" : "12（偏移7）",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -540,6 +608,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel6",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -548,6 +617,7 @@
           "codeName" : "grouppanel8",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel8",
           "name" : "grouppanel8",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem12",
@@ -557,6 +627,7 @@
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
             "height" : 100.0,
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem12",
             "name" : "rawitem12",
             "getPSLayoutPos" : {
               "colLG" : 12,
@@ -568,6 +639,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem12",
             "rawContent" : "12（100*100）",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -575,6 +647,10 @@
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -582,10 +658,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel8",
           "infoGroupMode" : false,
           "showCaption" : false
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -593,6 +674,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
         "enableAnchor" : true,
         "infoGroupMode" : false,
         "showCaption" : true
@@ -602,6 +684,7 @@
         "codeName" : "grouppanel7",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel7",
         "name" : "grouppanel7",
         "getPSDEFormDetails" : [ {
           "actionGroupExtractMode" : "ITEM",
@@ -609,12 +692,14 @@
           "codeName" : "grouppanel10",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel10",
           "name" : "grouppanel10",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem14",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem14",
             "name" : "rawitem14",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -625,6 +710,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem14",
             "rawContent" : "A",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -634,6 +720,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem15",
             "name" : "rawitem15",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -644,6 +731,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem15",
             "rawContent" : "B",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -653,6 +741,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem16",
             "name" : "rawitem16",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -663,6 +752,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem16",
             "rawContent" : "C",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -677,6 +767,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel10",
           "infoGroupMode" : false,
           "showCaption" : true
         }, {
@@ -685,12 +776,14 @@
           "codeName" : "grouppanel12",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel12",
           "name" : "grouppanel12",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem17",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem17",
             "name" : "rawitem17",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -701,6 +794,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem17",
             "rawContent" : "A",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -710,6 +804,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem18",
             "name" : "rawitem18",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -720,6 +815,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem18",
             "rawContent" : "B",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -729,6 +825,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem19",
             "name" : "rawitem19",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -739,6 +836,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem19",
             "rawContent" : "C",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -753,6 +851,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel12",
           "infoGroupMode" : false,
           "showCaption" : true
         }, {
@@ -763,12 +862,14 @@
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
           "height" : 200.0,
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel13",
           "name" : "grouppanel13",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem20",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem20",
             "name" : "rawitem20",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -779,6 +880,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem20",
             "rawContent" : "A",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -788,6 +890,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem21",
             "name" : "rawitem21",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -798,6 +901,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem21",
             "rawContent" : "B",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -807,6 +911,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem22",
             "name" : "rawitem22",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -817,6 +922,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem22",
             "rawContent" : "C",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -832,6 +938,7 @@
             "height" : 200,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel13",
           "infoGroupMode" : false,
           "showCaption" : true
         }, {
@@ -842,12 +949,14 @@
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
           "height" : 200.0,
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel14",
           "name" : "grouppanel14",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem23",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem23",
             "name" : "rawitem23",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -858,6 +967,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem23",
             "rawContent" : "A",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -867,6 +977,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem24",
             "name" : "rawitem24",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -877,6 +988,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem24",
             "rawContent" : "B",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
@@ -886,6 +998,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem25",
             "name" : "rawitem25",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -896,6 +1009,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem25",
             "rawContent" : "C",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -911,6 +1025,7 @@
             "height" : 200,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel14",
           "infoGroupMode" : false,
           "showCaption" : true
         }, {
@@ -921,12 +1036,14 @@
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
           "height" : 200.0,
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel15",
           "name" : "grouppanel15",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem26",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem26",
             "name" : "rawitem26",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -937,6 +1054,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem26",
             "rawContent" : "A",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -946,6 +1064,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem27",
             "name" : "rawitem27",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -956,6 +1075,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem27",
             "rawContent" : "B",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -965,6 +1085,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem28",
             "name" : "rawitem28",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -975,6 +1096,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem28",
             "rawContent" : "C",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -990,6 +1112,7 @@
             "height" : 200,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel15",
           "infoGroupMode" : false,
           "showCaption" : true
         }, {
@@ -1000,12 +1123,14 @@
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
           "height" : 200.0,
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel16",
           "name" : "grouppanel16",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem29",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem29",
             "name" : "rawitem29",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1016,6 +1141,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem29",
             "rawContent" : "A",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -1025,6 +1151,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem30",
             "name" : "rawitem30",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1035,6 +1162,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem30",
             "rawContent" : "B",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -1044,6 +1172,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem31",
             "name" : "rawitem31",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1054,6 +1183,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem31",
             "rawContent" : "C",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -1069,6 +1199,7 @@
             "height" : 200,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel16",
           "infoGroupMode" : false,
           "showCaption" : true
         }, {
@@ -1079,12 +1210,14 @@
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
           "height" : 200.0,
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel17",
           "name" : "grouppanel17",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem32",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem32",
             "name" : "rawitem32",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1095,6 +1228,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem32",
             "rawContent" : "A",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -1104,6 +1238,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem33",
             "name" : "rawitem33",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1114,6 +1249,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem33",
             "rawContent" : "B",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -1123,6 +1259,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem34",
             "name" : "rawitem34",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1133,6 +1270,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem34",
             "rawContent" : "C",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -1148,6 +1286,7 @@
             "height" : 200,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel17",
           "infoGroupMode" : false,
           "showCaption" : true
         }, {
@@ -1158,12 +1297,14 @@
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
           "height" : 200.0,
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel19",
           "name" : "grouppanel19",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem35",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem35",
             "name" : "rawitem35",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1174,6 +1315,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem35",
             "rawContent" : "A",
             "rawItemHeight" : 40.0,
             "rawItemWidth" : 100.0,
@@ -1183,6 +1325,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem36",
             "name" : "rawitem36",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1193,6 +1336,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem36",
             "rawContent" : "B",
             "rawItemHeight" : 70.0,
             "rawItemWidth" : 100.0,
@@ -1202,6 +1346,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem37",
             "name" : "rawitem37",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1212,6 +1357,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem37",
             "rawContent" : "C",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -1227,6 +1373,7 @@
             "height" : 200,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel19",
           "infoGroupMode" : false,
           "showCaption" : true
         }, {
@@ -1237,12 +1384,14 @@
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
           "height" : 200.0,
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel20",
           "name" : "grouppanel20",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem38",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem38",
             "name" : "rawitem38",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1253,6 +1402,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem38",
             "rawContent" : "A",
             "rawItemHeight" : 40.0,
             "rawItemWidth" : 100.0,
@@ -1262,6 +1412,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem39",
             "name" : "rawitem39",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1272,6 +1423,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem39",
             "rawContent" : "B",
             "rawItemHeight" : 70.0,
             "rawItemWidth" : 100.0,
@@ -1281,6 +1433,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem40",
             "name" : "rawitem40",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1291,6 +1444,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem40",
             "rawContent" : "C",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -1306,6 +1460,7 @@
             "height" : 200,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel20",
           "infoGroupMode" : false,
           "showCaption" : true
         }, {
@@ -1316,12 +1471,14 @@
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
           "height" : 200.0,
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel21",
           "name" : "grouppanel21",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem41",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem41",
             "name" : "rawitem41",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1332,6 +1489,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem41",
             "rawContent" : "A",
             "rawItemHeight" : 40.0,
             "rawItemWidth" : 100.0,
@@ -1341,6 +1499,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem42",
             "name" : "rawitem42",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1351,6 +1510,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem42",
             "rawContent" : "B",
             "rawItemHeight" : 70.0,
             "rawItemWidth" : 100.0,
@@ -1360,6 +1520,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem43",
             "name" : "rawitem43",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1370,6 +1531,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem43",
             "rawContent" : "C",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -1385,6 +1547,7 @@
             "height" : 200,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel21",
           "infoGroupMode" : false,
           "showCaption" : true
         }, {
@@ -1395,12 +1558,14 @@
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
           "height" : 200.0,
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel22",
           "name" : "grouppanel22",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem44",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem44",
             "name" : "rawitem44",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1411,6 +1576,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light baseline-warning"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem44",
             "rawContent" : "A",
             "rawItemHeight" : 40.0,
             "rawItemWidth" : 100.0,
@@ -1420,6 +1586,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem45",
             "name" : "rawitem45",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1430,6 +1597,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem45",
             "rawContent" : "B",
             "rawItemHeight" : 70.0,
             "rawItemWidth" : 100.0,
@@ -1439,6 +1607,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem46",
             "name" : "rawitem46",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1449,6 +1618,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light baseline-message"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem46",
             "rawContent" : "C",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
@@ -1464,6 +1634,7 @@
             "height" : 200,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel22",
           "infoGroupMode" : false,
           "showCaption" : true
         }, {
@@ -1474,12 +1645,14 @@
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
           "height" : 200.0,
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel23",
           "name" : "grouppanel23",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem47",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem47",
             "name" : "rawitem47",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1489,6 +1662,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem47",
             "rawContent" : "A",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : 100.0,
@@ -1498,6 +1672,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem48",
             "name" : "rawitem48",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1507,6 +1682,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem48",
             "rawContent" : "B",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : 100.0,
@@ -1516,6 +1692,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem49",
             "name" : "rawitem49",
             "getPSLayoutPos" : {
               "grow" : -1,
@@ -1525,6 +1702,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem49",
             "rawContent" : "C",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : 100.0,
@@ -1540,6 +1718,7 @@
             "height" : 200,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel23",
           "infoGroupMode" : false,
           "showCaption" : true
         }, {
@@ -1550,12 +1729,14 @@
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
           "height" : 200.0,
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel24",
           "name" : "grouppanel24",
           "getPSDEFormDetails" : [ {
             "codeName" : "rawitem50",
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem50",
             "name" : "rawitem50",
             "getPSLayoutPos" : {
               "grow" : 1,
@@ -1564,6 +1745,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--warning is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem50",
             "rawContent" : "A",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
@@ -1573,6 +1755,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem51",
             "name" : "rawitem51",
             "getPSLayoutPos" : {
               "grow" : 3,
@@ -1581,6 +1764,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--success is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem51",
             "rawContent" : "B",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
@@ -1590,6 +1774,7 @@
             "contentType" : "RAW",
             "detailStyle" : "DEFAULT",
             "detailType" : "RAWITEM",
+            "mOSFilePath" : "psdeformdetail_rawitems/rawitem52",
             "name" : "rawitem52",
             "getPSLayoutPos" : {
               "grow" : 1,
@@ -1598,6 +1783,7 @@
             "getPSSysCss" : {
               "cssName" : "el-alert el-alert--info is-light"
             },
+            "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem52",
             "rawContent" : "C",
             "rawItemHeight" : -1.0,
             "rawItemWidth" : -1.0,
@@ -1612,10 +1798,15 @@
             "height" : 200,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel24",
           "infoGroupMode" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : 12,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1623,6 +1814,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel7",
         "enableAnchor" : true,
         "infoGroupMode" : false,
         "showCaption" : false
@@ -1632,8 +1824,13 @@
         "codeName" : "grouppanel11",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel11",
         "name" : "grouppanel11",
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1641,6 +1838,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel11",
         "infoGroupMode" : false,
         "showCaption" : false
       }, {
@@ -1649,6 +1847,7 @@
         "codeName" : "grouppanel9",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel9",
         "name" : "grouppanel9",
         "getPSDEFormDetails" : [ {
           "caption" : "上方标签",
@@ -1660,6 +1859,7 @@
           "ignoreInput" : 0,
           "labelPos" : "TOP",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem",
           "name" : "formitem",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1670,6 +1870,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -1682,6 +1883,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem1",
           "name" : "formitem1",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1692,6 +1894,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem1",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -1704,6 +1907,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 200,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem2",
           "name" : "formitem2",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1714,6 +1918,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem2",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -1726,6 +1931,7 @@
           "ignoreInput" : 0,
           "labelPos" : "RIGHT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem4",
           "name" : "formitem4",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1736,6 +1942,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem4",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -1748,6 +1955,7 @@
           "ignoreInput" : 0,
           "labelPos" : "BOTTOM",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem5",
           "name" : "formitem5",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1758,6 +1966,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem5",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -1765,6 +1974,7 @@
           "contentType" : "RAW",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "mOSFilePath" : "psdeformdetail_rawitems/rawitem13",
           "name" : "rawitem13",
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -1773,6 +1983,7 @@
           "getPSSysCss" : {
             "cssName" : "el-alert el-alert--info is-light"
           },
+          "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem13",
           "rawContent" : "无标签",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
@@ -1786,6 +1997,7 @@
           "ignoreInput" : 0,
           "labelPos" : "NONE",
           "labelWidth" : 0,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem3",
           "name" : "formitem3",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1796,9 +2008,14 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem3",
           "allowEmpty" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1806,6 +2023,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel9",
         "enableAnchor" : true,
         "infoGroupMode" : false,
         "showCaption" : true
@@ -1815,6 +2033,7 @@
         "codeName" : "grouppanel18",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel18",
         "name" : "grouppanel18",
         "getPSDEFormDetails" : [ {
           "caption" : "表单项",
@@ -1828,6 +2047,7 @@
           "itemWidth" : 330.0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem6",
           "name" : "formitem6",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1839,6 +2059,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem6",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -1853,6 +2074,7 @@
           "itemHeight" : 150.0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem7",
           "name" : "formitem7",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -1865,10 +2087,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem7",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1876,20 +2103,31 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel18",
         "enableAnchor" : true,
         "infoGroupMode" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormLayoutEditView/psappviewctrls/form",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -1911,16 +2149,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormLayoutEditView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormLayoutEditView",
   "title" : "示例编辑视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEEDITVIEW",

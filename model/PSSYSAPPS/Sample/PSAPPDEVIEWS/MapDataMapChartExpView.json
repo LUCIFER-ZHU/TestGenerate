@@ -3,10 +3,15 @@
   "caption" : "地图示例数据",
   "codeName" : "MapDataMapChartExpView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/MapDataMapChartExpView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/MapDataMapChartExpView",
   "name" : "MapDataMapChartExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+  },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
   },
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -35,6 +40,7 @@
   "getPSControls" : [ {
     "codeName" : "MapChartExpViewchartexpbar",
     "controlType" : "CHARTEXPBAR",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/MAPDATA/psexpbars/MapChartExpViewchartexpbar",
     "name" : "chartexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -69,6 +75,7 @@
       },
       "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "logicName" : "MapChart",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/MAPDATA/psdecharts/MapChart",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
@@ -93,6 +100,14 @@
       "getPSChartDataSetGroups" : [ {
         "index" : 0,
         "name" : "DEFAULT",
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
+        },
         "id" : "0"
       } ],
       "getPSChartDataSets" : [ {
@@ -252,6 +267,7 @@
         "showTitle" : true,
         "id" : "0"
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/MapDataMapChartExpView/psappviewctrls/chartexpbar_chart",
       "readOnly" : true,
       "name" : "chartexpbar_chart",
       "modelid" : "29D39E86-2328-4693-B11E-DF9131901508",
@@ -260,6 +276,7 @@
         "mapName" : "guangxi"
       }
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/MapDataMapChartExpView/psappviewctrls/chartexpbar",
     "xDataControlName" : "chartexpbar_chart",
     "enableCounter" : true,
     "enableSearch" : false,
@@ -273,16 +290,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDECHARTEXPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/MAPDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/MapData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/MapDataMapChartExpView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/MapDataMapChartExpView",
   "sideBarLayout" : "LEFT",
   "title" : "地图示例数据图表导航视图",
   "viewStyle" : "DEFAULT",

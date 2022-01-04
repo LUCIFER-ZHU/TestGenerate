@@ -4,20 +4,27 @@
   "codeName" : "ProvinceMobCalendarView",
   "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobCalendarView.json",
   "mDCtrlActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobCalendarView",
   "name" : "ProvinceMobCalendarView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "MobCalendarView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "calendar",
       "name" : "CALENDAR",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -52,6 +59,7 @@
     "hookEventNames" : [ "LOAD" ],
     "legendPos" : "TOP",
     "logicName" : "移动端日历部件",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/pssyscalendars/Mob_calendar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
@@ -138,6 +146,7 @@
       "enableQuickCreate" : false,
       "id" : "item"
     } ],
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobCalendarView/psappviewctrls/calendar",
     "enableGroup" : false,
     "name" : "calendar",
     "modelid" : "576D2415-5135-491F-9B66-03FA5D1340C2",
@@ -149,16 +158,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBCALENDARVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobCalendarView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobCalendarView",
   "title" : "省份移动端日历视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEMOBCALENDARVIEW",

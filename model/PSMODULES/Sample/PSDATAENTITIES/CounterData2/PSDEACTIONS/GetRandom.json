@@ -4,22 +4,28 @@
   "codeName" : "GetRandom",
   "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/CounterData2/PSDEACTIONS/GetRandom.json",
   "logicName" : "获取随机数",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/COUNTERDATA2/psdeactions/getRandom",
   "name" : "getRandom",
   "getPSDEActionInput" : {
     "getKeyPSDEField" : {
       "name" : "COUNTERDATA2ID",
       "codeName" : "CounterData2Id"
     },
+    "mOSFilePath" : "psdeactioninputs/GetRandomInput",
     "name" : "GetRandomInput",
+    "rTMOSFilePath" : "psdeactioninputs/GetRandomInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "mOSFilePath" : "psdeactionreturns/GetRandomResult",
     "name" : "GetRandomResult",
     "getPSDEMethodDTO" : {
       "modelref" : true,
       "id" : "CounterData2DTO"
     },
+    "rTMOSFilePath" : "psdeactionreturns/GetRandomResult",
     "type" : "DTO"
   },
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/COUNTERDATA2/psdeactions/getRandom",
   "scriptCode" : "data.countertag=Math.floor(Math.random()*100+1);\ndata.countertag2=Math.floor(Math.random()*100+1);\ndata.countertag3=Math.floor(Math.random()*100+1);\nconsole.log(\"获取随机数给【首页计数器】供数\");\nconsole.log(data);"
 }

@@ -5,6 +5,7 @@
     "modelref" : true,
     "id" : "create"
   },
+  "defaultLabelWidth" : 130,
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSFORMS/Info.json",
   "getGetDraftFromPSControlAction" : {
     "modelref" : true,
@@ -19,6 +20,7 @@
     "id" : "load"
   },
   "logicName" : "信息表单",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdeform_editforms/Info",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -129,6 +131,7 @@
     "codeName" : "formpage1",
     "detailStyle" : "DEFAULT",
     "detailType" : "FORMPAGE",
+    "mOSFilePath" : "psdeformdetail_formpages/formpage1",
     "name" : "formpage1",
     "getPSDEFormDetails" : [ {
       "actionGroupExtractMode" : "ITEM",
@@ -136,6 +139,7 @@
       "codeName" : "group1",
       "detailStyle" : "DEFAULT",
       "detailType" : "GROUPPANEL",
+      "mOSFilePath" : "psdeformdetail_grouppanels/group1",
       "name" : "group1",
       "getPSDEFormDetails" : [ {
         "caption" : "客户",
@@ -147,6 +151,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/customername",
         "name" : "customername",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -163,6 +168,7 @@
           "colMD" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/customername",
         "allowEmpty" : true,
         "showCaption" : true
       }, {
@@ -175,6 +181,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/ordername",
         "name" : "ordername",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -191,6 +198,7 @@
           "colMD" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/ordername",
         "allowEmpty" : true,
         "showCaption" : true
       }, {
@@ -203,6 +211,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/orderdate",
         "name" : "orderdate",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -219,6 +228,7 @@
           "colMD" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/orderdate",
         "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
         "showCaption" : true
@@ -233,6 +243,7 @@
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/state",
         "name" : "state",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -253,6 +264,7 @@
           "colMD" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/state",
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
         "showCaption" : true
@@ -266,6 +278,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/amount",
         "name" : "amount",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -282,10 +295,15 @@
           "colMD" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/amount",
         "allowEmpty" : true,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : 12,
+        "childColMD" : 12,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -293,19 +311,30 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
       "infoGroupMode" : true,
       "showCaption" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
     "infoGroupMode" : true
   } ],
   "getPSLayout" : {
+    "childColLG" : -1,
+    "childColMD" : 24,
+    "childColSM" : -1,
+    "childColXS" : -1,
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerCountCustomView/psappviewctrls/form",
   "getRemovePSControlAction" : {
     "modelref" : true,
     "id" : "remove"

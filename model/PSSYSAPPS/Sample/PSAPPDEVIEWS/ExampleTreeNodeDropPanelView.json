@@ -3,10 +3,15 @@
   "caption" : "树节点拖拽",
   "codeName" : "ExampleTreeNodeDropPanelView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleTreeNodeDropPanelView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleTreeNodeDropPanelView",
   "name" : "ExampleTreeNodeDropPanelView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
   },
   "getPSControls" : [ {
     "getAllPSPanelFields" : [ {
@@ -24,6 +29,7 @@
     },
     "layoutMode" : "FLEX",
     "logicName" : "树节点拖拽",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewpanels/TreeNodeDrop",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -78,19 +84,23 @@
         "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrgDataOrgDeptDataTreeView.json",
         "viewType" : "DETREEVIEW"
       },
+      "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psviewpanels/TreeNodeDropPanelViewcontrol1",
       "name" : "control1",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
       },
-      "getPSControlParam" : { }
+      "getPSControlParam" : { },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleTreeNodeDropPanelView/psappviewctrls/control1"
     } ],
     "getPSLayout" : {
       "layout" : "FLEX"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleTreeNodeDropPanelView/psappviewctrls/panel",
     "getRootPSPanelItems" : [ {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container1",
       "name" : "container1",
       "getPSLayout" : {
         "dir" : "column",
@@ -106,6 +116,7 @@
         "height" : 50.0,
         "itemStyle" : "DEFAULT",
         "itemType" : "RAWITEM",
+        "mOSFilePath" : "pssysviewpanelitem_rawitems/rawitem1",
         "name" : "rawitem1",
         "getPSLayoutPos" : {
           "grow" : -1,
@@ -115,11 +126,14 @@
         "getPSSysCss" : {
           "cssName" : "el-alert el-alert--info is-light"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_rawitems/rawitem1",
         "rawContent" : "树节点拖拽：节点拖拽过程中，右侧内容区显示拖拽节点信息",
-        "rawItemHeight" : 50.0
+        "rawItemHeight" : 50.0,
+        "showCaption" : true
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTAINER",
+        "mOSFilePath" : "pssysviewpanelitem_containers/container2",
         "name" : "container2",
         "getPSLayout" : {
           "dir" : "row",
@@ -133,6 +147,7 @@
           "contentWidth" : 300.0,
           "itemStyle" : "DEFAULT",
           "itemType" : "CONTROL",
+          "mOSFilePath" : "pssysviewpanelitem_controls/control1",
           "name" : "control1",
           "getPSControl" : {
             "codeName" : "TreeNodeDropPanelViewcontrol1",
@@ -142,22 +157,27 @@
               "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrgDataOrgDeptDataTreeView.json",
               "viewType" : "DETREEVIEW"
             },
+            "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psviewpanels/TreeNodeDropPanelViewcontrol1",
             "name" : "control1",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
             },
-            "getPSControlParam" : { }
+            "getPSControlParam" : { },
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleTreeNodeDropPanelView/psappviewctrls/control1"
           },
           "getPSLayoutPos" : {
             "grow" : -1,
             "layout" : "FLEX",
             "width" : 300
           },
-          "width" : 300.0
+          "rTMOSFilePath" : "pssysviewpanelitem_controls/control1",
+          "width" : 300.0,
+          "showCaption" : true
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "CONTAINER",
+          "mOSFilePath" : "pssysviewpanelitem_containers/container3",
           "name" : "container3",
           "getPSLayout" : {
             "align" : "flex-end",
@@ -171,6 +191,7 @@
           "getPSPanelItems" : [ {
             "itemStyle" : "DEFAULT",
             "itemType" : "CONTAINER",
+            "mOSFilePath" : "pssysviewpanelitem_containers/container4",
             "name" : "container4",
             "getPSLayout" : {
               "dir" : "row-reverse",
@@ -186,6 +207,7 @@
               "contentWidth" : 90.0,
               "itemStyle" : "DEFAULT",
               "itemType" : "BUTTON",
+              "mOSFilePath" : "pssysviewpanelitem_buttons/button1",
               "name" : "button1",
               "getPSAppViewUIAction" : {
                 "modelref" : true,
@@ -201,6 +223,7 @@
                 "caption" : "清空内容",
                 "codeName" : "ClearContent",
                 "fullCodeName" : "Example_ClearContent",
+                "mOSFilePath" : "psappdeuiactions/ClearContent",
                 "name" : "清空内容",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
@@ -210,6 +233,7 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
                 },
+                "rTMOSFilePath" : "psappdeuiactions/ClearContent",
                 "timeout" : 60000,
                 "uIActionMode" : "BACKEND",
                 "uIActionTag" : "ClearContent",
@@ -217,13 +241,17 @@
                 "enableConfirm" : true,
                 "id" : "ClearContent@Example"
               },
+              "rTMOSFilePath" : "pssysviewpanelitem_buttons/button1",
               "tooltip" : "清空内容",
               "width" : 90.0,
               "showCaption" : true
-            } ]
+            } ],
+            "rTMOSFilePath" : "pssysviewpanelitem_containers/container4",
+            "showCaption" : true
           }, {
             "itemStyle" : "DEFAULT",
             "itemType" : "FIELD",
+            "mOSFilePath" : "pssysviewpanelitem_fields/content",
             "name" : "content",
             "getPSEditor" : {
               "editorType" : "TEXTAREA",
@@ -234,12 +262,19 @@
               "grow" : 1,
               "layout" : "FLEX"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_fields/content",
             "viewFieldName" : "content",
             "hidden" : false,
             "showCaption" : false
-          } ]
-        } ]
-      } ]
+          } ],
+          "rTMOSFilePath" : "pssysviewpanelitem_containers/container3",
+          "showCaption" : true
+        } ],
+        "rTMOSFilePath" : "pssysviewpanelitem_containers/container2",
+        "showCaption" : true
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
+      "showCaption" : true
     } ],
     "name" : "panel",
     "modelid" : "EFBCD31E-86BD-4AAA-8B3A-07E830948D4C",
@@ -251,16 +286,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPANELVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleTreeNodeDropPanelView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleTreeNodeDropPanelView",
   "title" : "示例面板视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPANELVIEW",

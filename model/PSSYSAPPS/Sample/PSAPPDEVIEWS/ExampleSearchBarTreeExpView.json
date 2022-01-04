@@ -3,20 +3,27 @@
   "caption" : "搜索栏示例",
   "codeName" : "ExampleSearchBarTreeExpView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleSearchBarTreeExpView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleSearchBarTreeExpView",
   "name" : "ExampleSearchBarTreeExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "TreeExpView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "treeexpbar",
       "name" : "TREEEXPBAR",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -46,6 +53,7 @@
     "codeName" : "SearchBarTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psexpbars/SearchBarTreeExpViewtreeexpbar",
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -97,6 +105,7 @@
       },
       "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "logicName" : "搜索栏树",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdetreeviews/SearchBarTree",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -444,6 +453,7 @@
         "selected" : false,
         "id" : "Group"
       } ],
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleSearchBarTreeExpView/psappviewctrls/treeexpbar_tree",
       "getRemovePSControlAction" : {
         "modelref" : true,
         "id" : "remove"
@@ -460,6 +470,7 @@
       "modelid" : "2525FD2C-3676-4E47-86B3-EFFAB15A4149",
       "modeltype" : "PSDETREEVIEW"
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleSearchBarTreeExpView/psappviewctrls/treeexpbar",
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
     "enableSearch" : false,
@@ -473,16 +484,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEEXPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleSearchBarTreeExpView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleSearchBarTreeExpView",
   "title" : "示例树导航视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DETREEEXPVIEW",

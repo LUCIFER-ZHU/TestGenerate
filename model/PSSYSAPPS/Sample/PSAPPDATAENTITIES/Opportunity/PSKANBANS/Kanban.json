@@ -48,18 +48,25 @@
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity/PSPANELS/Kanban.json",
     "layoutMode" : "TABLE_24COL",
     "logicName" : "商机看板项布局面板",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/OPPORTUNITY/pssysviewpanels/Kanban",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity.json"
     },
     "getPSControlParam" : { },
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OPPORTUNITYKanbanView/psappviewctrls/itemlayoutpanel",
     "getRootPSPanelItems" : [ {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container1",
       "name" : "container1",
       "getPSLayout" : {
         "dir" : "column",
@@ -72,6 +79,7 @@
       "getPSPanelItems" : [ {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/opportunityname",
         "name" : "opportunityname",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -85,12 +93,14 @@
         "getPSSysCss" : {
           "cssName" : "h1-title"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/opportunityname",
         "viewFieldName" : "OPPORTUNITYNAME",
         "hidden" : false,
         "showCaption" : false
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/exprevenue",
         "name" : "exprevenue",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -101,6 +111,7 @@
           "grow" : 1,
           "layout" : "FLEX"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/exprevenue",
         "valueFormat" : "￥#,###",
         "viewFieldName" : "EXPREVENUE",
         "hidden" : false,
@@ -108,6 +119,7 @@
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/priority",
         "name" : "priority",
         "getPSEditor" : {
           "editorParams" : {
@@ -123,12 +135,14 @@
           "grow" : 1,
           "layout" : "FLEX"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/priority",
         "viewFieldName" : "PRIORITY",
         "hidden" : false,
         "showCaption" : false
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/customername",
         "name" : "customername",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -139,13 +153,17 @@
           "grow" : 1,
           "layout" : "FLEX"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/customername",
         "viewFieldName" : "CUSTOMERNAME",
         "hidden" : false,
         "showCaption" : false
-      } ]
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
+      "showCaption" : true
     }, {
       "itemStyle" : "DEFAULT",
       "itemType" : "FIELD",
+      "mOSFilePath" : "pssysviewpanelitem_fields/customerid",
       "name" : "customerid",
       "getPSEditor" : {
         "editorType" : "HIDDEN",
@@ -155,6 +173,7 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "pssysviewpanelitem_fields/customerid",
       "viewFieldName" : "CUSTOMERID",
       "hidden" : true,
       "showCaption" : false
@@ -164,6 +183,7 @@
     "modeltype" : "PSSYSVIEWPANEL"
   },
   "logicName" : "商机看板",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/OPPORTUNITY/psdekanbans/Kanban",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity.json"
@@ -291,6 +311,7 @@
     "enableSort" : true
   } ],
   "pagingSize" : 20,
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OPPORTUNITYKanbanView/psappviewctrls/kanban",
   "getRemovePSControlAction" : {
     "modelref" : true,
     "id" : "remove"

@@ -3,20 +3,27 @@
   "caption" : "表单示例",
   "codeName" : "ExampleFormTreeExpView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleFormTreeExpView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormTreeExpView",
   "name" : "ExampleFormTreeExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "TreeExpView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "treeexpbar",
       "name" : "TREEEXPBAR",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -46,6 +53,7 @@
     "codeName" : "FormTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psexpbars/FormTreeExpViewtreeexpbar",
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -145,6 +153,7 @@
       },
       "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "logicName" : "表单树",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdetreeviews/Form",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -572,6 +581,7 @@
         "selected" : false,
         "id" : "ValueFormat"
       } ],
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormTreeExpView/psappviewctrls/treeexpbar_tree",
       "getRemovePSControlAction" : {
         "modelref" : true,
         "id" : "remove"
@@ -588,6 +598,7 @@
       "modelid" : "F98B6262-0B25-457C-B929-73FA6BE20B51",
       "modeltype" : "PSDETREEVIEW"
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormTreeExpView/psappviewctrls/treeexpbar",
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
     "enableSearch" : false,
@@ -601,16 +612,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEEXPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormTreeExpView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormTreeExpView",
   "title" : "示例树导航视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DETREEEXPVIEW",

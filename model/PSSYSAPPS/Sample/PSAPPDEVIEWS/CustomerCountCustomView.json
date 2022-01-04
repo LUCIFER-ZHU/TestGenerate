@@ -3,14 +3,20 @@
   "caption" : "客户",
   "codeName" : "CustomerCountCustomView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerCountCustomView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerCountCustomView",
   "name" : "CustomerCountCustomView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "CTRL",
     "engineType" : "CtrlLoadTrigger",
+    "mOSFilePath" : "psappviewengines/engine_chart2_default",
     "name" : "engine_chart2_default",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "chart2",
@@ -20,10 +26,12 @@
       "ctrlName" : "searchform",
       "name" : "TRIGGER",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine_chart2_default"
   }, {
     "engineCat" : "CTRL",
     "engineType" : "CtrlLoadTrigger",
+    "mOSFilePath" : "psappviewengines/engine_chart_default",
     "name" : "engine_chart_default",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "chart",
@@ -33,10 +41,12 @@
       "ctrlName" : "searchform",
       "name" : "TRIGGER",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine_chart_default"
   }, {
     "engineCat" : "CTRL",
     "engineType" : "CtrlLoadTrigger",
+    "mOSFilePath" : "psappviewengines/engine_form_default",
     "name" : "engine_form_default",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "form",
@@ -46,10 +56,12 @@
       "ctrlName" : "list",
       "name" : "TRIGGER",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine_form_default"
   }, {
     "engineCat" : "CTRL",
     "engineType" : "CtrlLoadTrigger",
+    "mOSFilePath" : "psappviewengines/engine_list_default",
     "name" : "engine_list_default",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "list",
@@ -59,16 +71,19 @@
       "ctrlName" : "searchform",
       "name" : "TRIGGER",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine_list_default"
   }, {
     "engineCat" : "CTRL",
     "engineType" : "CtrlLoadAndSearch",
+    "mOSFilePath" : "psappviewengines/engine_searchform_default",
     "name" : "engine_searchform_default",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "searchform",
       "name" : "CTRL",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine_searchform_default"
   } ],
   "getPSControls" : [ {
     "codeName" : "Info",
@@ -77,6 +92,7 @@
       "modelref" : true,
       "id" : "create"
     },
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSFORMS/Info.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
@@ -91,6 +107,7 @@
       "id" : "load"
     },
     "logicName" : "信息表单",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdeform_editforms/Info",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -289,6 +306,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -296,6 +314,7 @@
         "codeName" : "group1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group1",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "caption" : "客户",
@@ -307,6 +326,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/customername",
           "name" : "customername",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -323,6 +343,7 @@
             "colMD" : 12,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/customername",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -335,6 +356,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/ordername",
           "name" : "ordername",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -351,6 +373,7 @@
             "colMD" : 12,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/ordername",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -363,6 +386,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/orderdate",
           "name" : "orderdate",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -379,6 +403,7 @@
             "colMD" : 12,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/orderdate",
           "valueFormat" : "YYYY-MM-DD",
           "allowEmpty" : true,
           "showCaption" : true
@@ -393,6 +418,7 @@
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/state",
           "name" : "state",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -413,6 +439,7 @@
             "colMD" : 12,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/state",
           "allowEmpty" : true,
           "convertToCodeItemText" : true,
           "showCaption" : true
@@ -426,6 +453,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/amount",
           "name" : "amount",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -442,10 +470,15 @@
             "colMD" : 12,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/amount",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : 12,
+          "childColMD" : 12,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -453,19 +486,30 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
         "infoGroupMode" : true,
         "showCaption" : false
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : true
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerCountCustomView/psappviewctrls/form",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -489,6 +533,7 @@
       "id" : "fetch"
     },
     "logicName" : "Pie",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERDETAIL/psdecharts/Pie",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
@@ -503,6 +548,14 @@
     "getPSChartDataSetGroups" : [ {
       "index" : 0,
       "name" : "DEFAULT",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
+      },
       "id" : "0"
     } ],
     "getPSChartDataSets" : [ {
@@ -631,6 +684,7 @@
       "showTitle" : true,
       "id" : "0"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerCountCustomView/psappviewctrls/chart2",
     "readOnly" : true,
     "name" : "chart2",
     "modelid" : "4F579DB8-597A-4D1D-8F05-6D18A49CA8AF",
@@ -644,6 +698,7 @@
       "id" : "fetch"
     },
     "logicName" : "Line",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdecharts/Line",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -676,6 +731,14 @@
     "getPSChartDataSetGroups" : [ {
       "index" : 0,
       "name" : "DEFAULT",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+      },
       "id" : "0"
     } ],
     "getPSChartDataSets" : [ {
@@ -699,14 +762,7 @@
       "index" : 0,
       "name" : "[line]直角坐标系[0]",
       "getPSChartCoordinateSystem" : {
-        "eChartsType" : "cartesian2d",
-        "index" : 0,
-        "name" : "[line]直角坐标系[0]",
-        "getPSChartGrid" : {
-          "modelref" : true,
-          "id" : "0"
-        },
-        "type" : "XY",
+        "modelref" : true,
         "id" : "0"
       },
       "getPSChartGridXAxis0" : {
@@ -822,7 +878,9 @@
     },
     "getPSDEChartSerieses" : [ {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "CONTROL.CHART.LINE.CAPTION"
+        "lanResTag" : "CONTROL.CHART.LINE.CAPTION",
+        "mOSFilePath" : "psmodules/Sample/pslanguageres/Auto291",
+        "rTMOSFilePath" : "psmodules/Sample/pslanguageres/Auto291"
       },
       "caption" : "订单折线图",
       "catalogField" : "orderdate",
@@ -868,6 +926,7 @@
       "showTitle" : true,
       "id" : "0"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerCountCustomView/psappviewctrls/chart",
     "readOnly" : true,
     "name" : "chart",
     "modelid" : "44378081-017D-4E64-A20A-89B53DA7D583",
@@ -890,6 +949,7 @@
     },
     "groupMode" : "NONE",
     "logicName" : "List",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdelists/List",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -1006,6 +1066,7 @@
       }
     } ],
     "pagingSize" : 1000,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerCountCustomView/psappviewctrls/list",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -1028,8 +1089,10 @@
   }, {
     "codeName" : "TimeRange",
     "controlType" : "SEARCHFORM",
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSSEARCHFORMS/TimeRange.json",
     "logicName" : "时间范围",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdeform_searchforms/TimeRange",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -1097,6 +1160,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "caption" : "订单时间(大于等于(>=))",
@@ -1108,6 +1172,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/n_orderdate_gtandeq",
         "name" : "n_orderdate_gtandeq",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -1128,6 +1193,7 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/n_orderdate_gtandeq",
         "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
         "showCaption" : true
@@ -1141,6 +1207,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/n_orderdate_ltandeq",
         "name" : "n_orderdate_ltandeq",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -1161,20 +1228,31 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/n_orderdate_ltandeq",
         "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : true,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : 8,
+        "childColMD" : 8,
+        "childColSM" : 12,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerCountCustomView/psappviewctrls/searchform",
     "searchButtonPos" : "RIGHT",
     "searchButtonStyle" : "SEARCHONLY",
     "tabHeaderPos" : "TOP",
@@ -1193,6 +1271,7 @@
     "controlType" : "VIEWLAYOUTPANEL",
     "layoutMode" : "TABLE_24COL",
     "logicName" : "客户统计",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/pssysviewlayoutpanels/Auto3",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -1200,14 +1279,24 @@
     },
     "getPSControlParam" : { },
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerCountCustomView/psappviewctrls/layoutpanel",
     "getRootPSPanelItems" : [ {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container3",
       "name" : "container3",
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -1218,15 +1307,21 @@
       "getPSPanelItems" : [ {
         "itemStyle" : "DEFAULT",
         "itemType" : "CTRLPOS",
+        "mOSFilePath" : "pssysviewpanelitem_ctrlpos/searchform",
         "name" : "searchform",
         "getPSLayoutPos" : {
           "colMD" : 24,
           "layout" : "TABLE_24COL"
-        }
-      } ]
+        },
+        "rTMOSFilePath" : "pssysviewpanelitem_ctrlpos/searchform",
+        "showCaption" : true
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container3",
+      "showCaption" : true
     }, {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container1",
       "name" : "container1",
       "getPSLayout" : {
         "dir" : "row-reverse",
@@ -1242,6 +1337,7 @@
         "height" : 250.0,
         "itemStyle" : "DEFAULT",
         "itemType" : "CTRLPOS",
+        "mOSFilePath" : "pssysviewpanelitem_ctrlpos/chart2",
         "name" : "chart2",
         "getPSLayoutPos" : {
           "grow" : -1,
@@ -1249,24 +1345,35 @@
           "layout" : "FLEX",
           "width" : 250
         },
-        "width" : 250.0
+        "rTMOSFilePath" : "pssysviewpanelitem_ctrlpos/chart2",
+        "width" : 250.0,
+        "showCaption" : true
       }, {
         "contentHeight" : 250.0,
         "height" : 250.0,
         "itemStyle" : "DEFAULT",
         "itemType" : "CTRLPOS",
+        "mOSFilePath" : "pssysviewpanelitem_ctrlpos/chart",
         "name" : "chart",
         "getPSLayoutPos" : {
           "grow" : 1,
           "height" : 250,
           "layout" : "FLEX"
-        }
-      } ]
+        },
+        "rTMOSFilePath" : "pssysviewpanelitem_ctrlpos/chart",
+        "showCaption" : true
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container1"
     }, {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container4",
       "name" : "container4",
       "getPSLayout" : {
+        "childColLG" : 12,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -1278,8 +1385,13 @@
         "caption" : "订单列表",
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTAINER",
+        "mOSFilePath" : "pssysviewpanelitem_containers/container5",
         "name" : "container5",
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1293,20 +1405,29 @@
           "height" : 300.0,
           "itemStyle" : "DEFAULT",
           "itemType" : "CTRLPOS",
+          "mOSFilePath" : "pssysviewpanelitem_ctrlpos/list",
           "name" : "list",
           "getPSLayoutPos" : {
             "colMD" : 24,
             "height" : 300,
             "layout" : "TABLE_24COL"
-          }
+          },
+          "rTMOSFilePath" : "pssysviewpanelitem_ctrlpos/list",
+          "showCaption" : true
         } ],
+        "rTMOSFilePath" : "pssysviewpanelitem_containers/container5",
         "showCaption" : true
       }, {
         "caption" : "订单信息",
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTAINER",
+        "mOSFilePath" : "pssysviewpanelitem_containers/container2",
         "name" : "container2",
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1320,15 +1441,20 @@
           "height" : 300.0,
           "itemStyle" : "DEFAULT",
           "itemType" : "CTRLPOS",
+          "mOSFilePath" : "pssysviewpanelitem_ctrlpos/form",
           "name" : "form",
           "getPSLayoutPos" : {
             "colMD" : 24,
             "height" : 300,
             "layout" : "TABLE_24COL"
-          }
+          },
+          "rTMOSFilePath" : "pssysviewpanelitem_ctrlpos/form",
+          "showCaption" : true
         } ],
+        "rTMOSFilePath" : "pssysviewpanelitem_containers/container2",
         "showCaption" : true
-      } ]
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container4"
     } ],
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
@@ -1336,6 +1462,7 @@
     "modelid" : "1DFC8BC8-0503-42BB-98D0-2EB2E4D9C087",
     "modeltype" : "PSSYSVIEWLAYOUTPANEL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerCountCustomView",
   "title" : "客户自定义视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DECUSTOMVIEW",

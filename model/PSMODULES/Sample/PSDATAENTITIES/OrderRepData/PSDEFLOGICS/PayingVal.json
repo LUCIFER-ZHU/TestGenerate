@@ -5,6 +5,7 @@
   "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEFLOGICS/PayingVal.json",
   "logicName" : "待支付金额",
   "logicSubType" : "DEFIELD",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeflogics/PayingVal",
   "name" : "待支付金额",
   "getPSDEField" : {
     "name" : "PAYINGVAL",
@@ -13,6 +14,7 @@
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeflogics/PayingVal/psdelogicnodes/Begin",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
@@ -52,10 +54,12 @@
       },
       "defaultLink" : true
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeflogics/PayingVal/psdelogicnodes/Begin",
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam2",
     "logicNodeType" : "PREPAREPARAM",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeflogics/PayingVal/psdelogicnodes/Prepareparam2",
     "name" : "默认0",
     "getPSDELogicNodeParams" : [ {
       "dstFieldName" : "FINISHEDVAL",
@@ -68,10 +72,12 @@
       "srcValue" : "0",
       "srcValueType" : "SRCVALUE"
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeflogics/PayingVal/psdelogicnodes/Prepareparam2",
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeflogics/PayingVal/psdelogicnodes/Prepareparam1",
     "name" : "已处理金额",
     "getPSDELogicNodeParams" : [ {
       "dstFieldName" : "PAYINGVAL",
@@ -88,17 +94,21 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeflogics/PayingVal/psdelogicnodes/Prepareparam1",
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeflogics/PayingVal/psdelogicparams/Default",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData.json"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeflogics/PayingVal/psdelogicparams/Default",
     "default" : true
   } ],
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeflogics/PayingVal",
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"

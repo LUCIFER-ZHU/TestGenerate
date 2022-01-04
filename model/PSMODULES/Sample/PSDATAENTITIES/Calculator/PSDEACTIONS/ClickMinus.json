@@ -4,18 +4,24 @@
   "codeName" : "ClickMinus",
   "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickMinus.json",
   "logicName" : "ClickMinus",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/psdeactions/ClickMinus",
   "name" : "ClickMinus",
   "getPSDEActionInput" : {
+    "mOSFilePath" : "psdeactioninputs/ClickMinusInput",
     "name" : "ClickMinusInput",
     "getPSDEMethodDTO" : {
       "modelref" : true,
       "id" : "CalculatorDTO"
     },
+    "rTMOSFilePath" : "psdeactioninputs/ClickMinusInput",
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "mOSFilePath" : "psdeactionreturns/ClickMinusResult",
     "name" : "ClickMinusResult",
+    "rTMOSFilePath" : "psdeactionreturns/ClickMinusResult",
     "type" : "VOID"
   },
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/psdeactions/ClickMinus",
   "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'-';"
 }

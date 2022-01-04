@@ -5,6 +5,7 @@
     "modelref" : true,
     "id" : "create"
   },
+  "defaultLabelWidth" : 130,
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSFORMS/Main.json",
   "getGetDraftFromPSControlAction" : {
     "modelref" : true,
@@ -20,6 +21,7 @@
   },
   "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "logicName" : "主编辑表单",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdeform_editforms/Main",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -157,6 +159,7 @@
     "codeName" : "formpage1",
     "detailStyle" : "DEFAULT",
     "detailType" : "FORMPAGE",
+    "mOSFilePath" : "psdeformdetail_formpages/formpage1",
     "name" : "formpage1",
     "getPSDEFormDetails" : [ {
       "actionGroupExtractMode" : "ITEM",
@@ -164,6 +167,7 @@
       "codeName" : "group1",
       "detailStyle" : "DEFAULT",
       "detailType" : "GROUPPANEL",
+      "mOSFilePath" : "psdeformdetail_grouppanels/group1",
       "name" : "group1",
       "getPSDEFormDetails" : [ {
         "caption" : "订单号",
@@ -175,6 +179,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/ordername",
         "name" : "ordername",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -192,6 +197,7 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/ordername",
         "allowEmpty" : false,
         "showCaption" : true
       }, {
@@ -204,6 +210,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/customername",
         "name" : "customername",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -232,6 +239,7 @@
           },
           "getPSUIActionGroup" : {
             "codeName" : "Auto1",
+            "mOSFilePath" : "pssysapps/Sample/psappdataentities/Customer/psappdeuagroups/Auto1",
             "name" : "自动填充",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -247,6 +255,7 @@
                 },
                 "frontProcessType" : "WIZARD",
                 "fullCodeName" : "Customer_ACCreate",
+                "mOSFilePath" : "psappdeuiactions/ACCreate",
                 "name" : "自动填充-新建",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -256,6 +265,7 @@
                   "glyph" : "xf044@FontAwesome",
                   "cssClass" : "fa fa-edit"
                 },
+                "rTMOSFilePath" : "psappdeuiactions/ACCreate",
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",
                 "uIActionTag" : "ACCreate",
@@ -265,7 +275,8 @@
               "addSeparator" : false,
               "showCaption" : true,
               "showIcon" : true
-            } ]
+            } ],
+            "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/Customer/psappdeuagroups/Auto1"
           },
           "getPickupPSAppView" : {
             "modelref" : true,
@@ -285,6 +296,7 @@
           "colSM" : 18,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/customername",
         "valueItemName" : "customerid",
         "allowEmpty" : true,
         "showCaption" : true
@@ -299,6 +311,7 @@
         "itemWidth" : 230.0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/orderdate",
         "name" : "orderdate",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -320,6 +333,7 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/orderdate",
         "valueFormat" : "YYYY-MM-DD",
         "allowEmpty" : false,
         "showCaption" : true
@@ -333,6 +347,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/amount",
         "name" : "amount",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -349,6 +364,7 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/amount",
         "allowEmpty" : false,
         "showCaption" : true
       }, {
@@ -362,6 +378,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/state",
         "name" : "state",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -383,11 +400,16 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/state",
         "allowEmpty" : false,
         "needCodeListConfig" : true,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : 6,
+        "childColMD" : 8,
+        "childColSM" : 12,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -395,6 +417,7 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
       "infoGroupMode" : false,
       "showCaption" : false
     }, {
@@ -403,11 +426,13 @@
       "codeName" : "grouppanel1",
       "detailStyle" : "DEFAULT",
       "detailType" : "GROUPPANEL",
+      "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
       "name" : "grouppanel1",
       "getPSDEFormDetails" : [ {
         "codeName" : "druipart1",
         "detailStyle" : "DEFAULT",
         "detailType" : "DRUIPART",
+        "mOSFilePath" : "psdeformdetail_druiparts/druipart1",
         "name" : "druipart1",
         "getPSAppView" : {
           "accUserMode" : 2,
@@ -415,14 +440,20 @@
           "codeName" : "OrderDetailLineEditGridView",
           "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderDetailLineEditGridView.json",
           "gridRowActiveMode" : 0,
+          "mOSFilePath" : "pssysapps/Sample/psappdeviews/OrderDetailLineEditGridView",
           "name" : "OrderDetailLineEditGridView",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
           },
+          "getPSAppModule" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+          },
           "getPSAppViewEngines" : [ {
             "engineCat" : "VIEW",
             "engineType" : "GridView",
+            "mOSFilePath" : "psappviewengines/engine",
             "name" : "engine",
             "getPSUIEngineParams" : [ {
               "appViewLogicName" : "opendata",
@@ -436,7 +467,8 @@
               "ctrlName" : "grid",
               "name" : "GRID",
               "paramType" : "CTRL"
-            } ]
+            } ],
+            "rTMOSFilePath" : "psappviewengines/engine"
           } ],
           "getPSAppViewLogics" : [ {
             "eventArg" : "deuiaction1",
@@ -491,6 +523,8 @@
               "logicType" : "PREDEFINED",
               "name" : "新建数据",
               "getNewDataPSAppView" : {
+                "mOSFilePath" : "psappviewlogicrefviews/OrderDetailEditView",
+                "rTMOSFilePath" : "psappviewlogicrefviews/OrderDetailEditView",
                 "getRefPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderDetailEditView.json",
@@ -498,6 +532,8 @@
                 }
               },
               "getPSAppUILogicRefViews" : [ {
+                "mOSFilePath" : "psappviewlogicrefviews/OrderDetailEditView",
+                "rTMOSFilePath" : "psappviewlogicrefviews/OrderDetailEditView",
                 "getRefPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderDetailEditView.json",
@@ -517,6 +553,8 @@
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
               "getOpenDataPSAppView" : {
+                "mOSFilePath" : "psappviewlogicrefviews/OrderDetailEditView",
+                "rTMOSFilePath" : "psappviewlogicrefviews/OrderDetailEditView",
                 "getRefPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderDetailEditView.json",
@@ -524,6 +562,8 @@
                 }
               },
               "getPSAppUILogicRefViews" : [ {
+                "mOSFilePath" : "psappviewlogicrefviews/OrderDetailEditView",
+                "rTMOSFilePath" : "psappviewlogicrefviews/OrderDetailEditView",
                 "getRefPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderDetailEditView.json",
@@ -588,6 +628,7 @@
             "controlType" : "TOOLBAR",
             "hookEventNames" : [ "CLICK" ],
             "logicName" : "工具栏模板（行编辑表格界面）",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERDETAIL/psdetoolbars/LineEditGridViewtoolbar",
             "name" : "toolbar",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -655,11 +696,13 @@
                 "caption" : "行编辑",
                 "codeName" : "ToggleRowEdit",
                 "fullCodeName" : "ToggleRowEdit",
+                "mOSFilePath" : "pssysappdeuiactions/ToggleRowEdit",
                 "name" : "表格界面_行编辑开关操作",
                 "getPSSysImage" : {
                   "glyph" : "xf0ce@FontAwesome",
                   "cssClass" : "fa fa-table"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/ToggleRowEdit",
                 "timeout" : 60000,
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "ToggleRowEdit",
@@ -688,11 +731,13 @@
                 "caption" : "新建行",
                 "codeName" : "NewRow",
                 "fullCodeName" : "NewRow",
+                "mOSFilePath" : "pssysappdeuiactions/NewRow",
                 "name" : "表格界面_新建行",
                 "getPSSysImage" : {
                   "glyph" : "xf067@FontAwesome",
                   "cssClass" : "fa fa-plus"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/NewRow",
                 "timeout" : 60000,
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "NewRow",
@@ -719,11 +764,13 @@
                 "caption" : "保存行",
                 "codeName" : "SaveRow",
                 "fullCodeName" : "SaveRow",
+                "mOSFilePath" : "pssysappdeuiactions/SaveRow",
                 "name" : "表格界面_保存行",
                 "getPSSysImage" : {
                   "glyph" : "xf0c7@FontAwesome",
                   "cssClass" : "fa fa-save"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/SaveRow",
                 "timeout" : 60000,
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "SaveRow",
@@ -734,7 +781,9 @@
               "showIcon" : true
             }, {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.REMOVE"
+                "lanResTag" : "TBB.TEXT.*.REMOVE",
+                "mOSFilePath" : "pslanguageres/Auto159",
+                "rTMOSFilePath" : "pslanguageres/Auto159"
               },
               "caption" : "删除行",
               "groupExtractMode" : "ITEM",
@@ -752,19 +801,25 @@
               "getPSUIAction" : {
                 "actionTarget" : "MULTIKEY",
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.REMOVE"
+                  "lanResTag" : "TBB.TEXT.*.REMOVE",
+                  "mOSFilePath" : "pslanguageres/Auto159",
+                  "rTMOSFilePath" : "pslanguageres/Auto159"
                 },
                 "caption" : "删除",
                 "codeName" : "Remove",
                 "fullCodeName" : "Remove",
+                "mOSFilePath" : "pssysappdeuiactions/Remove",
                 "name" : "表格界面_删除操作",
                 "getPSSysImage" : {
                   "glyph" : "xf00d@FontAwesome",
                   "cssClass" : "fa fa-remove"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/Remove",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+                  "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+                  "mOSFilePath" : "pslanguageres/Auto286",
+                  "rTMOSFilePath" : "pslanguageres/Auto286"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "Remove",
@@ -772,11 +827,14 @@
               },
               "tooltip" : "删除行",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+                "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+                "mOSFilePath" : "pslanguageres/Auto286",
+                "rTMOSFilePath" : "pslanguageres/Auto286"
               },
               "showCaption" : true,
               "showIcon" : true
             } ],
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrderDetailLineEditGridView/psappviewctrls/toolbar",
             "modelid" : "D80F8D3F-131E-43FC-BEE9-CCF84182C710",
             "modeltype" : "PSDETOOLBAR"
           }, {
@@ -834,6 +892,7 @@
             "groupMode" : "NONE",
             "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
             "logicName" : "行编辑表格",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERDETAIL/psdegrids/LineEdit",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
@@ -943,12 +1002,14 @@
               "columnType" : "DEFGRIDCOLUMN",
               "dataItemName" : "productname",
               "excelCaption" : "产品",
+              "mOSFilePath" : "psdegridcols/productname",
               "name" : "productname",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "PRODUCTNAME",
                 "codeName" : "ProductName"
               },
+              "rTMOSFilePath" : "psdegridcols/productname",
               "width" : 100,
               "widthUnit" : "PX",
               "enableRowEdit" : true,
@@ -961,12 +1022,14 @@
               "columnType" : "DEFGRIDCOLUMN",
               "dataItemName" : "price",
               "excelCaption" : "单价",
+              "mOSFilePath" : "psdegridcols/price",
               "name" : "price",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "PRICE",
                 "codeName" : "Price"
               },
+              "rTMOSFilePath" : "psdegridcols/price",
               "width" : 100,
               "widthUnit" : "PX",
               "enableRowEdit" : true,
@@ -979,12 +1042,14 @@
               "columnType" : "DEFGRIDCOLUMN",
               "dataItemName" : "qty",
               "excelCaption" : "数量",
+              "mOSFilePath" : "psdegridcols/qty",
               "name" : "qty",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "QTY",
                 "codeName" : "Qty"
               },
+              "rTMOSFilePath" : "psdegridcols/qty",
               "width" : 100,
               "widthUnit" : "PX",
               "enableRowEdit" : true,
@@ -997,12 +1062,14 @@
               "columnType" : "DEFGRIDCOLUMN",
               "dataItemName" : "amount",
               "excelCaption" : "小计",
+              "mOSFilePath" : "psdegridcols/amount",
               "name" : "amount",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "AMOUNT",
                 "codeName" : "Amount"
               },
+              "rTMOSFilePath" : "psdegridcols/amount",
               "width" : 100,
               "widthUnit" : "PX",
               "enableSort" : true
@@ -1014,12 +1081,14 @@
               "columnType" : "DEFGRIDCOLUMN",
               "dataItemName" : "productid",
               "excelCaption" : "产品标识",
+              "mOSFilePath" : "psdegridcols/productid",
               "name" : "productid",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "PRODUCTID",
                 "codeName" : "ProductId"
               },
+              "rTMOSFilePath" : "psdegridcols/productid",
               "width" : 100,
               "widthUnit" : "PX",
               "enableSort" : true,
@@ -1095,6 +1164,7 @@
               "codeName" : "price",
               "enableCond" : 3,
               "ignoreInput" : 0,
+              "mOSFilePath" : "psdegridcols/price",
               "name" : "price",
               "getPSAppDEField" : {
                 "name" : "PRICE",
@@ -1104,6 +1174,7 @@
                 "editorType" : "TEXTBOX",
                 "name" : "price"
               },
+              "rTMOSFilePath" : "psdegridcols/price",
               "allowEmpty" : true
             }, {
               "name" : "productid"
@@ -1112,6 +1183,7 @@
               "codeName" : "qty",
               "enableCond" : 3,
               "ignoreInput" : 0,
+              "mOSFilePath" : "psdegridcols/qty",
               "name" : "qty",
               "getPSAppDEField" : {
                 "name" : "QTY",
@@ -1121,12 +1193,14 @@
                 "editorType" : "TEXTBOX",
                 "name" : "qty"
               },
+              "rTMOSFilePath" : "psdegridcols/qty",
               "allowEmpty" : true
             }, {
               "caption" : "订单明细标识",
               "codeName" : "srfkey",
               "enableCond" : 3,
               "ignoreInput" : 0,
+              "mOSFilePath" : "psdegridcols/srfkey",
               "name" : "srfkey",
               "getPSAppDEField" : {
                 "name" : "ORDERDETAILID",
@@ -1136,12 +1210,14 @@
                 "editorType" : "HIDDEN",
                 "name" : "srfkey"
               },
+              "rTMOSFilePath" : "psdegridcols/srfkey",
               "allowEmpty" : true
             }, {
               "caption" : "产品",
               "codeName" : "productname",
               "enableCond" : 3,
               "ignoreInput" : 0,
+              "mOSFilePath" : "psdegridcols/productname",
               "name" : "productname",
               "getPSAppDEField" : {
                 "name" : "PRODUCTNAME",
@@ -1179,10 +1255,12 @@
                 "showTrigger" : true,
                 "singleSelect" : true
               },
+              "rTMOSFilePath" : "psdegridcols/productname",
               "valueItemName" : "productid",
               "allowEmpty" : true
             } ],
             "pagingSize" : 20,
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrderDetailLineEditGridView/psappviewctrls/grid",
             "getRemovePSControlAction" : {
               "actionName" : "Remove",
               "actionType" : "DEACTION",
@@ -1234,16 +1312,19 @@
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW",
             "controlType" : "VIEWLAYOUTPANEL",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERDETAIL/pssysviewlayoutpanels/Layoutpanel",
             "name" : "layoutpanel",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderDetail.json"
             },
             "getPSControlParam" : { },
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrderDetailLineEditGridView/psappviewctrls/layoutpanel",
             "layoutBodyOnly" : true,
             "layoutPanel" : true,
             "useDefaultLayout" : true
           },
+          "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrderDetailLineEditGridView",
           "title" : "订单明细表格视图",
           "viewStyle" : "DEFAULT",
           "viewType" : "DEGRIDVIEW",
@@ -1260,6 +1341,7 @@
             "actionRSMode" : 1,
             "codeName" : "Orders",
             "dataRSMode" : 0,
+            "mOSFilePath" : "pssysapps/Sample/psappders/Orders",
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
@@ -1273,11 +1355,13 @@
               "name" : "CUSTOMERID",
               "codeName" : "CustomerId"
             },
-            "rSMode" : 2
+            "rSMode" : 2,
+            "rTMOSFilePath" : "pssysapps/Sample/psappders/Orders"
           }, {
             "actionRSMode" : 1,
             "codeName" : "OrderDetails",
             "dataRSMode" : 0,
+            "mOSFilePath" : "pssysapps/Sample/psappders/OrderDetails",
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -1291,11 +1375,13 @@
               "name" : "ORDERID",
               "codeName" : "OrderId"
             },
-            "rSMode" : 2
+            "rSMode" : 2,
+            "rTMOSFilePath" : "pssysapps/Sample/psappders/OrderDetails"
           } ], [ {
             "actionRSMode" : 1,
             "codeName" : "OrderDetails",
             "dataRSMode" : 0,
+            "mOSFilePath" : "pssysapps/Sample/psappders/OrderDetails",
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -1309,7 +1395,8 @@
               "name" : "ORDERID",
               "codeName" : "OrderId"
             },
-            "rSMode" : 2
+            "rSMode" : 2,
+            "rTMOSFilePath" : "pssysapps/Sample/psappders/OrderDetails"
           } ] ]
         },
         "getPSLayoutPos" : {
@@ -1323,11 +1410,16 @@
           "srfparentmode" : "DER1N_ORDERDETAIL_ORDER_ORDERID",
           "SRFDER1NID" : "DER1N_ORDERDETAIL_ORDER_ORDERID"
         },
+        "rTMOSFilePath" : "psdeformdetail_druiparts/druipart1",
         "needSave" : false,
         "refreshItemsSetParamOnly" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -1335,19 +1427,30 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
       "infoGroupMode" : false,
       "showCaption" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
     "infoGroupMode" : false
   } ],
   "getPSLayout" : {
+    "childColLG" : -1,
+    "childColMD" : 24,
+    "childColSM" : -1,
+    "childColXS" : -1,
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrderEditView/psappviewctrls/form",
   "getRemovePSControlAction" : {
     "modelref" : true,
     "id" : "remove"

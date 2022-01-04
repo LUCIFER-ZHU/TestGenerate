@@ -3,14 +3,20 @@
   "caption" : "分组高级",
   "codeName" : "ExampleFormAdvGroupEditView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleFormAdvGroupEditView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormAdvGroupEditView",
   "name" : "ExampleFormAdvGroupEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "EditView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "form",
@@ -20,7 +26,8 @@
       "name" : "P2K",
       "paramType" : "VALUE",
       "value" : 0
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "AdvGroup",
@@ -29,6 +36,7 @@
       "modelref" : true,
       "id" : "create"
     },
+    "defaultLabelWidth" : 200,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/AdvGroup.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
@@ -44,6 +52,7 @@
     },
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "logicName" : "分组高级",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeform_editforms/AdvGroup",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -301,12 +310,14 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "codeName" : "rawitem1",
         "contentType" : "RAW",
         "detailStyle" : "DEFAULT",
         "detailType" : "RAWITEM",
+        "mOSFilePath" : "psdeformdetail_rawitems/rawitem1",
         "name" : "rawitem1",
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -315,6 +326,7 @@
         "getPSSysCss" : {
           "cssName" : "el-alert el-alert--info is-light"
         },
+        "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem1",
         "rawContent" : "默认展开分组中的表单项，点击分组图标收缩分组",
         "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
@@ -325,6 +337,7 @@
         "codeName" : "group1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group1",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "caption" : "表单项（默认已展开）",
@@ -336,6 +349,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 200,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem",
           "name" : "formitem",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -346,10 +360,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -357,6 +376,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
         "titleBarCloseMode" : 1,
         "infoGroupMode" : false,
         "showCaption" : true
@@ -365,6 +385,7 @@
         "contentType" : "RAW",
         "detailStyle" : "DEFAULT",
         "detailType" : "RAWITEM",
+        "mOSFilePath" : "psdeformdetail_rawitems/rawitem2",
         "name" : "rawitem2",
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -373,6 +394,7 @@
         "getPSSysCss" : {
           "cssName" : "el-alert el-alert--info is-light"
         },
+        "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem2",
         "rawContent" : "默认关闭分组中的表单项，点击分组图标展开分组",
         "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
@@ -383,6 +405,7 @@
         "codeName" : "grouppanel1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
         "name" : "grouppanel1",
         "getPSDEFormDetails" : [ {
           "caption" : "表单项（打开才能看到）",
@@ -394,6 +417,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 200,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem1",
           "name" : "formitem1",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -404,10 +428,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem1",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -415,6 +444,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
         "titleBarCloseMode" : 2,
         "infoGroupMode" : false,
         "showCaption" : true
@@ -423,6 +453,7 @@
         "contentType" : "RAW",
         "detailStyle" : "DEFAULT",
         "detailType" : "RAWITEM",
+        "mOSFilePath" : "psdeformdetail_rawitems/rawitem4",
         "name" : "rawitem4",
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -431,6 +462,7 @@
         "getPSSysCss" : {
           "cssName" : "el-alert el-alert--info is-light"
         },
+        "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem4",
         "rawContent" : "分组中使用界面行为组，行为按钮将在分组标题区右侧平铺展示",
         "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
@@ -441,6 +473,7 @@
         "codeName" : "grouppanel2",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
         "name" : "grouppanel2",
         "getPSDEFormDetails" : [ {
           "caption" : "表单项",
@@ -452,6 +485,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 200,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem2",
           "name" : "formitem2",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -462,10 +496,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem2",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -475,6 +514,7 @@
         },
         "getPSUIActionGroup" : {
           "codeName" : "Auto2",
+          "mOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto2",
           "name" : "表单分组",
           "getPSUIActionGroupDetails" : [ {
             "detailType" : "DEUIACTION",
@@ -484,6 +524,7 @@
               "caption" : "表单项更新前台计算",
               "codeName" : "CalcPF",
               "fullCodeName" : "Example_CalcPF",
+              "mOSFilePath" : "psappdeuiactions/CalcPF",
               "name" : "表单项更新前台计算",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -493,6 +534,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/CalcPF",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "CalcPF",
@@ -512,6 +554,7 @@
               "codeName" : "CallUISimple",
               "frontProcessType" : "OTHER",
               "fullCodeName" : "Example_CallUISimple",
+              "mOSFilePath" : "psappdeuiactions/CallUISimple",
               "name" : "执行显示对话框逻辑",
               "getPSAppDEUILogic" : {
                 "modelref" : true,
@@ -521,6 +564,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/CallUISimple",
               "timeout" : 60000,
               "uIActionMode" : "FRONT",
               "uIActionTag" : "CallUISimple",
@@ -532,8 +576,10 @@
             "addSeparator" : false,
             "showCaption" : true,
             "showIcon" : true
-          } ]
+          } ],
+          "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto2"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
         "infoGroupMode" : false,
         "showCaption" : true
       }, {
@@ -541,6 +587,7 @@
         "contentType" : "RAW",
         "detailStyle" : "DEFAULT",
         "detailType" : "RAWITEM",
+        "mOSFilePath" : "psdeformdetail_rawitems/rawitem3",
         "name" : "rawitem3",
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -549,6 +596,7 @@
         "getPSSysCss" : {
           "cssName" : "el-alert el-alert--info is-light"
         },
+        "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem3",
         "rawContent" : "点击【隐藏字段】按钮之后，隐藏受控内容“更多表单项1”和“更多表单项2”，点击【显示更多字段】按钮后则显示",
         "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
@@ -559,6 +607,7 @@
         "codeName" : "grouppanel3",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel3",
         "name" : "grouppanel3",
         "getPSDEFormDetails" : [ {
           "caption" : "表单项",
@@ -570,6 +619,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 200,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem3",
           "name" : "formitem3",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -580,6 +630,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem3",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -588,6 +639,7 @@
           "codeName" : "grouppanel4",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel4",
           "name" : "grouppanel4",
           "getPSDEFormDetails" : [ {
             "caption" : "更多表单项1",
@@ -599,6 +651,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 200,
+            "mOSFilePath" : "psdeformdetail_formitems/formitem4",
             "name" : "formitem4",
             "noPrivDisplayMode" : 1,
             "getPSEditor" : {
@@ -609,6 +662,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/formitem4",
             "getShowMoreMgrPSDEFormDetail" : {
               "modelref" : true,
               "id" : "grouppanel3"
@@ -627,6 +681,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 200,
+            "mOSFilePath" : "psdeformdetail_formitems/formitem5",
             "name" : "formitem5",
             "noPrivDisplayMode" : 1,
             "getPSEditor" : {
@@ -637,6 +692,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/formitem5",
             "getShowMoreMgrPSDEFormDetail" : {
               "modelref" : true,
               "id" : "grouppanel3"
@@ -647,6 +703,10 @@
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -654,6 +714,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel4",
           "getShowMoreMgrPSDEFormDetail" : {
             "modelref" : true,
             "id" : "grouppanel3"
@@ -663,6 +724,10 @@
           "showCaption" : false
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -670,6 +735,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel3",
         "showMoreMode" : 2,
         "infoGroupMode" : false,
         "showCaption" : true
@@ -678,6 +744,7 @@
         "contentType" : "RAW",
         "detailStyle" : "DEFAULT",
         "detailType" : "RAWITEM",
+        "mOSFilePath" : "psdeformdetail_rawitems/rawitem5",
         "name" : "rawitem5",
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -686,6 +753,7 @@
         "getPSSysCss" : {
           "cssName" : "el-alert el-alert--info is-light"
         },
+        "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem5",
         "rawContent" : "分组中隐藏空值的表单项",
         "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
@@ -696,6 +764,7 @@
         "codeName" : "grouppanel5",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel5",
         "name" : "grouppanel5",
         "getPSDEFormDetails" : [ {
           "caption" : "X值",
@@ -707,6 +776,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 200,
+          "mOSFilePath" : "psdeformdetail_formitems/fieldx",
           "name" : "fieldx",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -739,6 +809,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/fieldx",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -751,6 +822,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 200,
+          "mOSFilePath" : "psdeformdetail_formitems/fieldy",
           "name" : "fieldy",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -783,6 +855,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/fieldy",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -795,6 +868,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 200,
+          "mOSFilePath" : "psdeformdetail_formitems/fieldz",
           "name" : "fieldz",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -827,10 +901,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/fieldz",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -840,6 +919,7 @@
         },
         "getPSUIActionGroup" : {
           "codeName" : "Auto5",
+          "mOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto5",
           "name" : "表单快速配置",
           "getPSUIActionGroupDetails" : [ {
             "detailType" : "DEUIACTION",
@@ -855,11 +935,13 @@
               },
               "frontProcessType" : "WIZARD",
               "fullCodeName" : "Example_Edit",
+              "mOSFilePath" : "psappdeuiactions/Edit",
               "name" : "快速配置",
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/Edit",
               "refreshMode" : 1,
               "timeout" : 60000,
               "uIActionMode" : "FRONT",
@@ -871,22 +953,34 @@
             "addSeparator" : false,
             "showCaption" : true,
             "showIcon" : true
-          } ]
+          } ],
+          "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto5"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel5",
         "hideEmptyItems" : true,
         "infoGroupMode" : true,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormAdvGroupEditView/psappviewctrls/form",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -907,16 +1001,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormAdvGroupEditView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleFormAdvGroupEditView",
   "title" : "示例编辑视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEEDITVIEW",

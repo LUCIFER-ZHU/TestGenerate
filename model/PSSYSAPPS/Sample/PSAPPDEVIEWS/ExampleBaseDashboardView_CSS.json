@@ -3,20 +3,27 @@
   "caption" : "常规",
   "codeName" : "ExampleBaseDashboardView_CSS",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleBaseDashboardView_CSS.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS",
   "name" : "ExampleBaseDashboardView_CSS",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "PortalView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "dashboard",
       "name" : "DASHBOARD",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "CSS",
@@ -24,6 +31,7 @@
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSDASHBOARDS/CSS.json",
     "hookEventNames" : [ "LOAD" ],
     "logicName" : "样式",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysdashboards/CSS",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -52,6 +60,10 @@
       "id" : "DASHBOARD"
     },
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
@@ -60,6 +72,7 @@
       "contentType" : "HTML",
       "controlType" : "PORTLET",
       "htmlContent" : "<p>数据看板常用于系统首页，部件可定制，支持以下部件：&lt;/br&gt;<br />实体列表、实体图表、实体视图、工具栏、操作栏、网页部件</p>",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysdbparts/BaseDashboardView_CSSdashboard_rawitem1",
       "name" : "dashboard_rawitem1",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -81,10 +94,12 @@
         "cssName" : "el-alert el-alert--info is-light"
       },
       "portletType" : "RAWITEM",
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard_rawitem1",
       "showTitleBar" : true
     }, {
       "codeName" : "BaseDashboardView_CSSdashboard_container1",
       "controlType" : "PORTLET",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysdbparts/BaseDashboardView_CSSdashboard_container1",
       "name" : "dashboard_container1",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -99,6 +114,10 @@
         "showBusyIndicator" : true
       },
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -113,6 +132,7 @@
         },
         "controlType" : "PORTLET",
         "height" : 300.0,
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysdbparts/list",
         "name" : "dashboard_sysportlet1",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -158,18 +178,25 @@
             "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSPANELS/ListBase.json",
             "layoutMode" : "TABLE_24COL",
             "logicName" : "列表常规项布局面板",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewpanels/ListBase",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
             },
             "getPSControlParam" : { },
             "getPSLayout" : {
+              "childColLG" : -1,
+              "childColMD" : 24,
+              "childColSM" : -1,
+              "childColXS" : -1,
               "columnCount" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard_sysportlet1_list_itempanel",
             "getRootPSPanelItems" : [ {
               "itemStyle" : "DEFAULT",
               "itemType" : "FIELD",
+              "mOSFilePath" : "pssysviewpanelitem_fields/fieldx",
               "name" : "fieldx",
               "getPSEditor" : {
                 "editorType" : "SPAN",
@@ -180,12 +207,14 @@
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
               },
+              "rTMOSFilePath" : "pssysviewpanelitem_fields/fieldx",
               "viewFieldName" : "fieldx",
               "hidden" : false,
               "showCaption" : false
             }, {
               "itemStyle" : "DEFAULT",
               "itemType" : "FIELD",
+              "mOSFilePath" : "pssysviewpanelitem_fields/temp",
               "name" : "temp",
               "getPSEditor" : {
                 "editorType" : "SPAN",
@@ -196,6 +225,7 @@
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
               },
+              "rTMOSFilePath" : "pssysviewpanelitem_fields/temp",
               "viewFieldName" : "Temp",
               "hidden" : false,
               "showCaption" : false
@@ -205,6 +235,7 @@
             "modeltype" : "PSSYSVIEWPANEL"
           },
           "logicName" : "BaseList",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelists/BaseList",
           "mobListStyle" : "LISTVIEW",
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -333,6 +364,7 @@
             }
           } ],
           "pagingSize" : 1000,
+          "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard_sysportlet1_list",
           "getRemovePSControlAction" : {
             "modelref" : true,
             "id" : "remove"
@@ -362,6 +394,7 @@
           "cssName" : "list-css"
         },
         "portletType" : "LIST",
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard_sysportlet1",
         "title" : "实体列表",
         "showTitleBar" : true,
         "modelid" : "8AE76570-2D0F-4846-94C5-13031F9E2B48",
@@ -373,6 +406,7 @@
         },
         "controlType" : "PORTLET",
         "height" : 300.0,
+        "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysdbparts/chart",
         "name" : "dashboard_sysportlet2",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -396,6 +430,7 @@
           },
           "height" : 300.0,
           "logicName" : "PieChart",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdecharts/PieChart",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
@@ -410,6 +445,14 @@
           "getPSChartDataSetGroups" : [ {
             "index" : 0,
             "name" : "DEFAULT",
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+            },
             "id" : "0"
           } ],
           "getPSChartDataSets" : [ {
@@ -551,6 +594,7 @@
             "showTitle" : true,
             "id" : "0"
           },
+          "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard_sysportlet2_chart",
           "readOnly" : true,
           "name" : "dashboard_sysportlet2_chart",
           "modelid" : "A13D1C2B-1F2C-478A-A857-97078D999843",
@@ -565,6 +609,7 @@
           "cssName" : "calendar-css"
         },
         "portletType" : "CHART",
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard_sysportlet2",
         "title" : "实体图表",
         "showTitleBar" : true,
         "modelid" : "04B67D84-A73F-4956-9551-CC75CEE3C31A",
@@ -573,6 +618,7 @@
         "codeName" : "view",
         "controlType" : "PORTLET",
         "height" : 300.0,
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysdbparts/view",
         "name" : "dashboard_sysportlet3",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -599,14 +645,20 @@
           "codeName" : "ProductGridDataView",
           "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProductGridDataView.json",
           "gridRowActiveMode" : 2,
+          "mOSFilePath" : "pssysapps/Sample/psappdeviews/ProductGridDataView",
           "name" : "ProductGridDataView",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Product.json"
           },
+          "getPSAppModule" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+          },
           "getPSAppViewEngines" : [ {
             "engineCat" : "VIEW",
             "engineType" : "GridView",
+            "mOSFilePath" : "psappviewengines/engine",
             "name" : "engine",
             "getPSUIEngineParams" : [ {
               "appViewLogicName" : "opendata",
@@ -624,7 +676,8 @@
               "ctrlName" : "searchform",
               "name" : "SEARCHFORM",
               "paramType" : "CTRL"
-            } ]
+            } ],
+            "rTMOSFilePath" : "psappviewengines/engine"
           } ],
           "getPSAppViewLogics" : [ {
             "eventArg" : "tbitem3",
@@ -789,6 +842,8 @@
               "logicType" : "PREDEFINED",
               "name" : "新建数据",
               "getNewDataPSAppView" : {
+                "mOSFilePath" : "psappviewlogicrefviews/ProductEditDataView",
+                "rTMOSFilePath" : "psappviewlogicrefviews/ProductEditDataView",
                 "getRefPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProductEditDataView.json",
@@ -796,6 +851,8 @@
                 }
               },
               "getPSAppUILogicRefViews" : [ {
+                "mOSFilePath" : "psappviewlogicrefviews/ProductEditDataView",
+                "rTMOSFilePath" : "psappviewlogicrefviews/ProductEditDataView",
                 "getRefPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProductEditDataView.json",
@@ -815,6 +872,8 @@
               "logicType" : "PREDEFINED",
               "name" : "打开数据",
               "getOpenDataPSAppView" : {
+                "mOSFilePath" : "psappviewlogicrefviews/ProductEditDataView",
+                "rTMOSFilePath" : "psappviewlogicrefviews/ProductEditDataView",
                 "getRefPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProductEditDataView.json",
@@ -822,6 +881,8 @@
                 }
               },
               "getPSAppUILogicRefViews" : [ {
+                "mOSFilePath" : "psappviewlogicrefviews/ProductEditDataView",
+                "rTMOSFilePath" : "psappviewlogicrefviews/ProductEditDataView",
                 "getRefPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ProductEditDataView.json",
@@ -958,6 +1019,7 @@
             "controlType" : "TOOLBAR",
             "hookEventNames" : [ "CLICK" ],
             "logicName" : "工具栏模板（默认表格界面）",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdetoolbars/GridDataViewtoolbar",
             "name" : "toolbar",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -1109,7 +1171,9 @@
             },
             "getPSDEToolbarItems" : [ {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.NEW"
+                "lanResTag" : "TBB.TEXT.*.NEW",
+                "mOSFilePath" : "pslanguageres/Auto275",
+                "rTMOSFilePath" : "pslanguageres/Auto275"
               },
               "caption" : "新建",
               "groupExtractMode" : "ITEM",
@@ -1126,19 +1190,25 @@
               },
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.NEW"
+                  "lanResTag" : "TBB.TEXT.*.NEW",
+                  "mOSFilePath" : "pslanguageres/Auto275",
+                  "rTMOSFilePath" : "pslanguageres/Auto275"
                 },
                 "caption" : "新建",
                 "codeName" : "New",
                 "fullCodeName" : "New",
+                "mOSFilePath" : "pssysappdeuiactions/New",
                 "name" : "表格界面_新建操作",
                 "getPSSysImage" : {
                   "glyph" : "xf0f6@FontAwesome",
                   "cssClass" : "fa fa-file-text-o"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/New",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.NEW"
+                  "lanResTag" : "TBB.TOOLTIP.*.NEW",
+                  "mOSFilePath" : "pslanguageres/Auto44",
+                  "rTMOSFilePath" : "pslanguageres/Auto44"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "New",
@@ -1146,13 +1216,17 @@
               },
               "tooltip" : "新建",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.NEW"
+                "lanResTag" : "TBB.TOOLTIP.*.NEW",
+                "mOSFilePath" : "pslanguageres/Auto44",
+                "rTMOSFilePath" : "pslanguageres/Auto44"
               },
               "showCaption" : true,
               "showIcon" : true
             }, {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.EDIT"
+                "lanResTag" : "TBB.TEXT.*.EDIT",
+                "mOSFilePath" : "pslanguageres/Auto253",
+                "rTMOSFilePath" : "pslanguageres/Auto253"
               },
               "caption" : "编辑",
               "groupExtractMode" : "ITEM",
@@ -1170,19 +1244,25 @@
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.EDIT"
+                  "lanResTag" : "TBB.TEXT.*.EDIT",
+                  "mOSFilePath" : "pslanguageres/Auto253",
+                  "rTMOSFilePath" : "pslanguageres/Auto253"
                 },
                 "caption" : "编辑",
                 "codeName" : "Edit",
                 "fullCodeName" : "Edit",
+                "mOSFilePath" : "pssysappdeuiactions/Edit",
                 "name" : "表格界面_编辑操作",
                 "getPSSysImage" : {
                   "glyph" : "xf044@FontAwesome",
                   "cssClass" : "fa fa-edit"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/Edit",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+                  "lanResTag" : "TBB.TOOLTIP.*.EDIT",
+                  "mOSFilePath" : "pslanguageres/Auto130",
+                  "rTMOSFilePath" : "pslanguageres/Auto130"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "Edit",
@@ -1190,13 +1270,17 @@
               },
               "tooltip" : "编辑",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+                "lanResTag" : "TBB.TOOLTIP.*.EDIT",
+                "mOSFilePath" : "pslanguageres/Auto130",
+                "rTMOSFilePath" : "pslanguageres/Auto130"
               },
               "showCaption" : true,
               "showIcon" : true
             }, {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.COPY"
+                "lanResTag" : "TBB.TEXT.*.COPY",
+                "mOSFilePath" : "pslanguageres/Auto83",
+                "rTMOSFilePath" : "pslanguageres/Auto83"
               },
               "caption" : "拷贝",
               "groupExtractMode" : "ITEM",
@@ -1214,19 +1298,25 @@
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.COPY"
+                  "lanResTag" : "TBB.TEXT.*.COPY",
+                  "mOSFilePath" : "pslanguageres/Auto83",
+                  "rTMOSFilePath" : "pslanguageres/Auto83"
                 },
                 "caption" : "拷贝",
                 "codeName" : "Copy",
                 "fullCodeName" : "Copy",
+                "mOSFilePath" : "pssysappdeuiactions/Copy",
                 "name" : "表格界面_拷贝操作",
                 "getPSSysImage" : {
                   "glyph" : "xf0c5@FontAwesome",
                   "cssClass" : "fa fa-copy"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/Copy",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.COPY"
+                  "lanResTag" : "TBB.TOOLTIP.*.COPY",
+                  "mOSFilePath" : "pslanguageres/Auto243",
+                  "rTMOSFilePath" : "pslanguageres/Auto243"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "Copy",
@@ -1234,7 +1324,9 @@
               },
               "tooltip" : "拷贝",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.COPY"
+                "lanResTag" : "TBB.TOOLTIP.*.COPY",
+                "mOSFilePath" : "pslanguageres/Auto243",
+                "rTMOSFilePath" : "pslanguageres/Auto243"
               },
               "showCaption" : true,
               "showIcon" : true
@@ -1244,7 +1336,9 @@
               "spanMode" : false
             }, {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.REMOVE"
+                "lanResTag" : "TBB.TEXT.*.REMOVE",
+                "mOSFilePath" : "pslanguageres/Auto159",
+                "rTMOSFilePath" : "pslanguageres/Auto159"
               },
               "caption" : "删除",
               "groupExtractMode" : "ITEM",
@@ -1262,19 +1356,25 @@
               "getPSUIAction" : {
                 "actionTarget" : "MULTIKEY",
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.REMOVE"
+                  "lanResTag" : "TBB.TEXT.*.REMOVE",
+                  "mOSFilePath" : "pslanguageres/Auto159",
+                  "rTMOSFilePath" : "pslanguageres/Auto159"
                 },
                 "caption" : "删除",
                 "codeName" : "Remove",
                 "fullCodeName" : "Remove",
+                "mOSFilePath" : "pssysappdeuiactions/Remove",
                 "name" : "表格界面_删除操作",
                 "getPSSysImage" : {
                   "glyph" : "xf00d@FontAwesome",
                   "cssClass" : "fa fa-remove"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/Remove",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+                  "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+                  "mOSFilePath" : "pslanguageres/Auto286",
+                  "rTMOSFilePath" : "pslanguageres/Auto286"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "Remove",
@@ -1282,7 +1382,9 @@
               },
               "tooltip" : "删除",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+                "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+                "mOSFilePath" : "pslanguageres/Auto286",
+                "rTMOSFilePath" : "pslanguageres/Auto286"
               },
               "showCaption" : true,
               "showIcon" : true
@@ -1292,7 +1394,9 @@
               "spanMode" : false
             }, {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.EXPORT"
+                "lanResTag" : "TBB.TEXT.*.EXPORT",
+                "mOSFilePath" : "pslanguageres/Auto268",
+                "rTMOSFilePath" : "pslanguageres/Auto268"
               },
               "caption" : "导出",
               "groupExtractMode" : "ITEM",
@@ -1309,19 +1413,25 @@
               },
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.EXPORT"
+                  "lanResTag" : "TBB.TEXT.*.EXPORT",
+                  "mOSFilePath" : "pslanguageres/Auto268",
+                  "rTMOSFilePath" : "pslanguageres/Auto268"
                 },
                 "caption" : "导出",
                 "codeName" : "ExportExcel",
                 "fullCodeName" : "ExportExcel",
+                "mOSFilePath" : "pssysappdeuiactions/ExportExcel",
                 "name" : "表格界面_导出操作（Excel）",
                 "getPSSysImage" : {
                   "glyph" : "xf1c3@FontAwesome",
                   "cssClass" : "fa fa-file-excel-o"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/ExportExcel",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+                  "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+                  "mOSFilePath" : "pslanguageres/Auto27",
+                  "rTMOSFilePath" : "pslanguageres/Auto27"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "ExportExcel",
@@ -1329,7 +1439,9 @@
               },
               "tooltip" : "导出",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+                "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+                "mOSFilePath" : "pslanguageres/Auto27",
+                "rTMOSFilePath" : "pslanguageres/Auto27"
               },
               "showCaption" : true,
               "showIcon" : true
@@ -1343,7 +1455,9 @@
               "name" : "tbitem16",
               "getPSDEToolbarItems" : [ {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF"
+                  "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF",
+                  "mOSFilePath" : "pslanguageres/Auto231",
+                  "rTMOSFilePath" : "pslanguageres/Auto231"
                 },
                 "caption" : "导出数据模型",
                 "groupExtractMode" : "ITEM",
@@ -1360,16 +1474,20 @@
                 },
                 "getPSUIAction" : {
                   "getCapPSLanguageRes" : {
-                    "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF"
+                    "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF",
+                    "mOSFilePath" : "pslanguageres/Auto231",
+                    "rTMOSFilePath" : "pslanguageres/Auto231"
                   },
                   "caption" : "导出数据模型",
                   "codeName" : "ExportModel",
                   "fullCodeName" : "ExportModel",
+                  "mOSFilePath" : "pssysappdeuiactions/ExportModel",
                   "name" : "表格界面_导出数据模型",
                   "getPSSysImage" : {
                     "glyph" : "xf019@FontAwesome",
                     "cssClass" : "fa fa-download"
                   },
+                  "rTMOSFilePath" : "pssysappdeuiactions/ExportModel",
                   "timeout" : 60000,
                   "uIActionMode" : "SYS",
                   "uIActionTag" : "ExportModel",
@@ -1396,11 +1514,13 @@
                   "caption" : "数据导入",
                   "codeName" : "Import",
                   "fullCodeName" : "Import",
+                  "mOSFilePath" : "pssysappdeuiactions/Import",
                   "name" : "表格界面_数据导入栏",
                   "getPSSysImage" : {
                     "glyph" : "xf093@FontAwesome",
                     "cssClass" : "fa fa-upload"
                   },
+                  "rTMOSFilePath" : "pssysappdeuiactions/Import",
                   "timeout" : 60000,
                   "uIActionMode" : "SYS",
                   "uIActionTag" : "Import",
@@ -1419,7 +1539,9 @@
               "spanMode" : false
             }, {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.FILTER"
+                "lanResTag" : "TBB.TEXT.*.FILTER",
+                "mOSFilePath" : "pslanguageres/Auto229",
+                "rTMOSFilePath" : "pslanguageres/Auto229"
               },
               "caption" : "过滤",
               "groupExtractMode" : "ITEM",
@@ -1436,19 +1558,25 @@
               },
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.FILTER"
+                  "lanResTag" : "TBB.TEXT.*.FILTER",
+                  "mOSFilePath" : "pslanguageres/Auto229",
+                  "rTMOSFilePath" : "pslanguageres/Auto229"
                 },
                 "caption" : "过滤",
                 "codeName" : "ToggleFilter",
                 "fullCodeName" : "ToggleFilter",
+                "mOSFilePath" : "pssysappdeuiactions/ToggleFilter",
                 "name" : "表格界面_搜索栏",
                 "getPSSysImage" : {
                   "glyph" : "xf0b0@FontAwesome",
                   "cssClass" : "fa fa-filter"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/ToggleFilter",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+                  "lanResTag" : "TBB.TOOLTIP.*.FILTER",
+                  "mOSFilePath" : "pslanguageres/Auto122",
+                  "rTMOSFilePath" : "pslanguageres/Auto122"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "ToggleFilter",
@@ -1457,14 +1585,18 @@
               },
               "tooltip" : "过滤",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.FILTER"
+                "lanResTag" : "TBB.TOOLTIP.*.FILTER",
+                "mOSFilePath" : "pslanguageres/Auto122",
+                "rTMOSFilePath" : "pslanguageres/Auto122"
               },
               "enableToggleMode" : true,
               "showCaption" : true,
               "showIcon" : true
             }, {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.HELP"
+                "lanResTag" : "TBB.TEXT.*.HELP",
+                "mOSFilePath" : "pslanguageres/Auto276",
+                "rTMOSFilePath" : "pslanguageres/Auto276"
               },
               "caption" : "帮助",
               "groupExtractMode" : "ITEM",
@@ -1481,19 +1613,25 @@
               },
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.HELP"
+                  "lanResTag" : "TBB.TEXT.*.HELP",
+                  "mOSFilePath" : "pslanguageres/Auto276",
+                  "rTMOSFilePath" : "pslanguageres/Auto276"
                 },
                 "caption" : "帮助",
                 "codeName" : "Help",
                 "fullCodeName" : "Help",
+                "mOSFilePath" : "pssysappdeuiactions/Help",
                 "name" : "表格界面_帮助操作",
                 "getPSSysImage" : {
                   "glyph" : "xf128@FontAwesome",
                   "cssClass" : "fa fa-question"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/Help",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.HELP"
+                  "lanResTag" : "TBB.TOOLTIP.*.HELP",
+                  "mOSFilePath" : "pslanguageres/Auto259",
+                  "rTMOSFilePath" : "pslanguageres/Auto259"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "Help",
@@ -1501,11 +1639,14 @@
               },
               "tooltip" : "帮助",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.HELP"
+                "lanResTag" : "TBB.TOOLTIP.*.HELP",
+                "mOSFilePath" : "pslanguageres/Auto259",
+                "rTMOSFilePath" : "pslanguageres/Auto259"
               },
               "showCaption" : true,
               "showIcon" : true
             } ],
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ProductGridDataView/psappviewctrls/toolbar",
             "modelid" : "b912ff540f5614f63914a38067d84728",
             "modeltype" : "PSDETOOLBAR"
           }, {
@@ -1521,6 +1662,7 @@
             "groupMode" : "NONE",
             "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
             "logicName" : "主表格",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdegrids/Main",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Product.json"
@@ -1630,12 +1772,14 @@
               "columnType" : "DEFGRIDCOLUMN",
               "dataItemName" : "productname",
               "excelCaption" : "产品名称",
+              "mOSFilePath" : "psdegridcols/productname",
               "name" : "productname",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "PRODUCTNAME",
                 "codeName" : "ProductName"
               },
+              "rTMOSFilePath" : "psdegridcols/productname",
               "width" : 150,
               "widthUnit" : "PX",
               "enableSort" : true
@@ -1647,12 +1791,14 @@
               "columnType" : "DEFGRIDCOLUMN",
               "dataItemName" : "productcode",
               "excelCaption" : "产品编码",
+              "mOSFilePath" : "psdegridcols/productcode",
               "name" : "productcode",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "PRODUCTCODE",
                 "codeName" : "Productcode"
               },
+              "rTMOSFilePath" : "psdegridcols/productcode",
               "width" : 150,
               "widthUnit" : "PX",
               "enableSort" : true
@@ -1664,6 +1810,7 @@
               "columnType" : "DEFGRIDCOLUMN",
               "dataItemName" : "updateman",
               "excelCaption" : "更新人",
+              "mOSFilePath" : "psdegridcols/updateman",
               "name" : "updateman",
               "noPrivDisplayMode" : 1,
               "getPSAppCodeList" : {
@@ -1674,6 +1821,7 @@
                 "name" : "UPDATEMAN",
                 "codeName" : "UpdateMan"
               },
+              "rTMOSFilePath" : "psdegridcols/updateman",
               "width" : 150,
               "widthUnit" : "PX",
               "enableSort" : true
@@ -1685,12 +1833,14 @@
               "columnType" : "DEFGRIDCOLUMN",
               "dataItemName" : "updatedate",
               "excelCaption" : "更新时间",
+              "mOSFilePath" : "psdegridcols/updatedate",
               "name" : "updatedate",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
                 "name" : "UPDATEDATE",
                 "codeName" : "UpdateDate"
               },
+              "rTMOSFilePath" : "psdegridcols/updatedate",
               "valueFormat" : "YYYY-MM-DD HH:mm:ss",
               "width" : 180,
               "widthUnit" : "PX",
@@ -1753,6 +1903,7 @@
               "codeName" : "srfkey",
               "enableCond" : 3,
               "ignoreInput" : 0,
+              "mOSFilePath" : "psdegridcols/srfkey",
               "name" : "srfkey",
               "getPSAppDEField" : {
                 "name" : "PRODUCTID",
@@ -1762,9 +1913,11 @@
                 "editorType" : "HIDDEN",
                 "name" : "srfkey"
               },
+              "rTMOSFilePath" : "psdegridcols/srfkey",
               "allowEmpty" : true
             } ],
             "pagingSize" : 20,
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ProductGridDataView/psappviewctrls/grid",
             "getRemovePSControlAction" : {
               "actionName" : "Remove",
               "actionType" : "DEACTION",
@@ -1798,9 +1951,11 @@
           }, {
             "codeName" : "Default",
             "controlType" : "SEARCHFORM",
+            "defaultLabelWidth" : 130,
             "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Product/PSSEARCHFORMS/Default.json",
             "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
             "logicName" : "默认搜索表单",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/psdeform_searchforms/Default",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Product.json"
@@ -1863,17 +2018,28 @@
               "codeName" : "formpage1",
               "detailStyle" : "DEFAULT",
               "detailType" : "FORMPAGE",
+              "mOSFilePath" : "psdeformdetail_formpages/formpage1",
               "name" : "formpage1",
               "getPSLayout" : {
+                "childColLG" : -1,
+                "childColMD" : 24,
+                "childColSM" : -1,
+                "childColXS" : -1,
                 "columnCount" : 24,
                 "layout" : "TABLE_24COL"
               },
+              "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
               "infoGroupMode" : false
             } ],
             "getPSLayout" : {
+              "childColLG" : -1,
+              "childColMD" : 24,
+              "childColSM" : -1,
+              "childColXS" : -1,
               "columnCount" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ProductGridDataView/psappviewctrls/searchform",
             "searchButtonStyle" : "DEFAULT",
             "tabHeaderPos" : "TOP",
             "enableAdvanceSearch" : false,
@@ -1890,16 +2056,19 @@
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEGRIDVIEW",
             "controlType" : "VIEWLAYOUTPANEL",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCT/pssysviewlayoutpanels/Layoutpanel",
             "name" : "layoutpanel",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Product.json"
             },
             "getPSControlParam" : { },
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ProductGridDataView/psappviewctrls/layoutpanel",
             "layoutBodyOnly" : true,
             "layoutPanel" : true,
             "useDefaultLayout" : true
           },
+          "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ProductGridDataView",
           "title" : "产品表格视图",
           "viewStyle" : "DEFAULT",
           "viewType" : "DEGRIDVIEW",
@@ -1916,6 +2085,7 @@
           "modeltype" : "PSAPPDEVIEW"
         },
         "portletType" : "VIEW",
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard_sysportlet3",
         "title" : "实体视图",
         "showTitleBar" : true,
         "modelid" : "E2105687-6F78-4F62-913D-9D1A3BCCA724",
@@ -1927,6 +2097,7 @@
         },
         "controlType" : "PORTLET",
         "height" : 300.0,
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysdbparts/toolbar",
         "name" : "dashboard_sysportlet4",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -2204,6 +2375,7 @@
           "controlType" : "TOOLBAR",
           "hookEventNames" : [ "CLICK" ],
           "logicName" : "工具栏模板（默认表格界面）",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdetoolbars/BaseDashboardView_CSSdashboard_sysportlet4_toolbar",
           "name" : "dashboard_sysportlet4_toolbar",
           "getPSAppDataEntity" : {
             "modelref" : true,
@@ -2353,7 +2525,9 @@
           "getPSControlParam" : { },
           "getPSDEToolbarItems" : [ {
             "getCapPSLanguageRes" : {
-              "lanResTag" : "TBB.TEXT.*.NEW"
+              "lanResTag" : "TBB.TEXT.*.NEW",
+              "mOSFilePath" : "pslanguageres/Auto275",
+              "rTMOSFilePath" : "pslanguageres/Auto275"
             },
             "caption" : "新建",
             "groupExtractMode" : "ITEM",
@@ -2370,19 +2544,25 @@
             },
             "getPSUIAction" : {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.NEW"
+                "lanResTag" : "TBB.TEXT.*.NEW",
+                "mOSFilePath" : "pslanguageres/Auto275",
+                "rTMOSFilePath" : "pslanguageres/Auto275"
               },
               "caption" : "新建",
               "codeName" : "New",
               "fullCodeName" : "New",
+              "mOSFilePath" : "pssysappdeuiactions/New",
               "name" : "表格界面_新建操作",
               "getPSSysImage" : {
                 "glyph" : "xf0f6@FontAwesome",
                 "cssClass" : "fa fa-file-text-o"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/New",
               "timeout" : 60000,
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.NEW"
+                "lanResTag" : "TBB.TOOLTIP.*.NEW",
+                "mOSFilePath" : "pslanguageres/Auto44",
+                "rTMOSFilePath" : "pslanguageres/Auto44"
               },
               "uIActionMode" : "SYS",
               "uIActionTag" : "New",
@@ -2390,13 +2570,17 @@
             },
             "tooltip" : "新建",
             "getTooltipPSLanguageRes" : {
-              "lanResTag" : "TBB.TOOLTIP.*.NEW"
+              "lanResTag" : "TBB.TOOLTIP.*.NEW",
+              "mOSFilePath" : "pslanguageres/Auto44",
+              "rTMOSFilePath" : "pslanguageres/Auto44"
             },
             "showCaption" : true,
             "showIcon" : true
           }, {
             "getCapPSLanguageRes" : {
-              "lanResTag" : "TBB.TEXT.*.EDIT"
+              "lanResTag" : "TBB.TEXT.*.EDIT",
+              "mOSFilePath" : "pslanguageres/Auto253",
+              "rTMOSFilePath" : "pslanguageres/Auto253"
             },
             "caption" : "编辑",
             "groupExtractMode" : "ITEM",
@@ -2414,19 +2598,25 @@
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.EDIT"
+                "lanResTag" : "TBB.TEXT.*.EDIT",
+                "mOSFilePath" : "pslanguageres/Auto253",
+                "rTMOSFilePath" : "pslanguageres/Auto253"
               },
               "caption" : "编辑",
               "codeName" : "Edit",
               "fullCodeName" : "Edit",
+              "mOSFilePath" : "pssysappdeuiactions/Edit",
               "name" : "表格界面_编辑操作",
               "getPSSysImage" : {
                 "glyph" : "xf044@FontAwesome",
                 "cssClass" : "fa fa-edit"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/Edit",
               "timeout" : 60000,
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+                "lanResTag" : "TBB.TOOLTIP.*.EDIT",
+                "mOSFilePath" : "pslanguageres/Auto130",
+                "rTMOSFilePath" : "pslanguageres/Auto130"
               },
               "uIActionMode" : "SYS",
               "uIActionTag" : "Edit",
@@ -2434,13 +2624,17 @@
             },
             "tooltip" : "编辑",
             "getTooltipPSLanguageRes" : {
-              "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+              "lanResTag" : "TBB.TOOLTIP.*.EDIT",
+              "mOSFilePath" : "pslanguageres/Auto130",
+              "rTMOSFilePath" : "pslanguageres/Auto130"
             },
             "showCaption" : true,
             "showIcon" : true
           }, {
             "getCapPSLanguageRes" : {
-              "lanResTag" : "TBB.TEXT.*.VIEW"
+              "lanResTag" : "TBB.TEXT.*.VIEW",
+              "mOSFilePath" : "pslanguageres/Auto85",
+              "rTMOSFilePath" : "pslanguageres/Auto85"
             },
             "caption" : "查看",
             "groupExtractMode" : "ITEM",
@@ -2458,19 +2652,25 @@
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.VIEW"
+                "lanResTag" : "TBB.TEXT.*.VIEW",
+                "mOSFilePath" : "pslanguageres/Auto85",
+                "rTMOSFilePath" : "pslanguageres/Auto85"
               },
               "caption" : "查看",
               "codeName" : "View",
               "fullCodeName" : "View",
+              "mOSFilePath" : "pssysappdeuiactions/View",
               "name" : "表格界面_查看操作",
               "getPSSysImage" : {
                 "glyph" : "xf044@FontAwesome",
                 "cssClass" : "fa fa-edit"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/View",
               "timeout" : 60000,
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.VIEW"
+                "lanResTag" : "TBB.TOOLTIP.*.VIEW",
+                "mOSFilePath" : "pslanguageres/Auto69",
+                "rTMOSFilePath" : "pslanguageres/Auto69"
               },
               "uIActionMode" : "SYS",
               "uIActionTag" : "View",
@@ -2478,13 +2678,17 @@
             },
             "tooltip" : "查看",
             "getTooltipPSLanguageRes" : {
-              "lanResTag" : "TBB.TOOLTIP.*.VIEW"
+              "lanResTag" : "TBB.TOOLTIP.*.VIEW",
+              "mOSFilePath" : "pslanguageres/Auto69",
+              "rTMOSFilePath" : "pslanguageres/Auto69"
             },
             "showCaption" : true,
             "showIcon" : true
           }, {
             "getCapPSLanguageRes" : {
-              "lanResTag" : "TBB.TEXT.*.COPY"
+              "lanResTag" : "TBB.TEXT.*.COPY",
+              "mOSFilePath" : "pslanguageres/Auto83",
+              "rTMOSFilePath" : "pslanguageres/Auto83"
             },
             "caption" : "拷贝",
             "groupExtractMode" : "ITEM",
@@ -2502,19 +2706,25 @@
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.COPY"
+                "lanResTag" : "TBB.TEXT.*.COPY",
+                "mOSFilePath" : "pslanguageres/Auto83",
+                "rTMOSFilePath" : "pslanguageres/Auto83"
               },
               "caption" : "拷贝",
               "codeName" : "Copy",
               "fullCodeName" : "Copy",
+              "mOSFilePath" : "pssysappdeuiactions/Copy",
               "name" : "表格界面_拷贝操作",
               "getPSSysImage" : {
                 "glyph" : "xf0c5@FontAwesome",
                 "cssClass" : "fa fa-copy"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/Copy",
               "timeout" : 60000,
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.COPY"
+                "lanResTag" : "TBB.TOOLTIP.*.COPY",
+                "mOSFilePath" : "pslanguageres/Auto243",
+                "rTMOSFilePath" : "pslanguageres/Auto243"
               },
               "uIActionMode" : "SYS",
               "uIActionTag" : "Copy",
@@ -2522,7 +2732,9 @@
             },
             "tooltip" : "拷贝",
             "getTooltipPSLanguageRes" : {
-              "lanResTag" : "TBB.TOOLTIP.*.COPY"
+              "lanResTag" : "TBB.TOOLTIP.*.COPY",
+              "mOSFilePath" : "pslanguageres/Auto243",
+              "rTMOSFilePath" : "pslanguageres/Auto243"
             },
             "showCaption" : true,
             "showIcon" : true
@@ -2532,7 +2744,9 @@
             "spanMode" : false
           }, {
             "getCapPSLanguageRes" : {
-              "lanResTag" : "TBB.TEXT.*.REMOVE"
+              "lanResTag" : "TBB.TEXT.*.REMOVE",
+              "mOSFilePath" : "pslanguageres/Auto159",
+              "rTMOSFilePath" : "pslanguageres/Auto159"
             },
             "caption" : "删除",
             "groupExtractMode" : "ITEM",
@@ -2550,19 +2764,25 @@
             "getPSUIAction" : {
               "actionTarget" : "MULTIKEY",
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.REMOVE"
+                "lanResTag" : "TBB.TEXT.*.REMOVE",
+                "mOSFilePath" : "pslanguageres/Auto159",
+                "rTMOSFilePath" : "pslanguageres/Auto159"
               },
               "caption" : "删除",
               "codeName" : "Remove",
               "fullCodeName" : "Remove",
+              "mOSFilePath" : "pssysappdeuiactions/Remove",
               "name" : "表格界面_删除操作",
               "getPSSysImage" : {
                 "glyph" : "xf00d@FontAwesome",
                 "cssClass" : "fa fa-remove"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/Remove",
               "timeout" : 60000,
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+                "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+                "mOSFilePath" : "pslanguageres/Auto286",
+                "rTMOSFilePath" : "pslanguageres/Auto286"
               },
               "uIActionMode" : "SYS",
               "uIActionTag" : "Remove",
@@ -2570,7 +2790,9 @@
             },
             "tooltip" : "删除",
             "getTooltipPSLanguageRes" : {
-              "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+              "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+              "mOSFilePath" : "pslanguageres/Auto286",
+              "rTMOSFilePath" : "pslanguageres/Auto286"
             },
             "showCaption" : true,
             "showIcon" : true
@@ -2580,7 +2802,9 @@
             "spanMode" : false
           }, {
             "getCapPSLanguageRes" : {
-              "lanResTag" : "TBB.TEXT.*.EXPORT"
+              "lanResTag" : "TBB.TEXT.*.EXPORT",
+              "mOSFilePath" : "pslanguageres/Auto268",
+              "rTMOSFilePath" : "pslanguageres/Auto268"
             },
             "caption" : "导出",
             "groupExtractMode" : "ITEM",
@@ -2597,19 +2821,25 @@
             },
             "getPSUIAction" : {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.EXPORT"
+                "lanResTag" : "TBB.TEXT.*.EXPORT",
+                "mOSFilePath" : "pslanguageres/Auto268",
+                "rTMOSFilePath" : "pslanguageres/Auto268"
               },
               "caption" : "导出",
               "codeName" : "ExportExcel",
               "fullCodeName" : "ExportExcel",
+              "mOSFilePath" : "pssysappdeuiactions/ExportExcel",
               "name" : "表格界面_导出操作（Excel）",
               "getPSSysImage" : {
                 "glyph" : "xf1c3@FontAwesome",
                 "cssClass" : "fa fa-file-excel-o"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/ExportExcel",
               "timeout" : 60000,
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+                "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+                "mOSFilePath" : "pslanguageres/Auto27",
+                "rTMOSFilePath" : "pslanguageres/Auto27"
               },
               "uIActionMode" : "SYS",
               "uIActionTag" : "ExportExcel",
@@ -2617,7 +2847,9 @@
             },
             "tooltip" : "导出",
             "getTooltipPSLanguageRes" : {
-              "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
+              "lanResTag" : "TBB.TOOLTIP.*.EXPORT",
+              "mOSFilePath" : "pslanguageres/Auto27",
+              "rTMOSFilePath" : "pslanguageres/Auto27"
             },
             "showCaption" : true,
             "showIcon" : true
@@ -2631,7 +2863,9 @@
             "name" : "tbitem16",
             "getPSDEToolbarItems" : [ {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF"
+                "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF",
+                "mOSFilePath" : "pslanguageres/Auto231",
+                "rTMOSFilePath" : "pslanguageres/Auto231"
               },
               "caption" : "导出数据模型",
               "groupExtractMode" : "ITEM",
@@ -2648,16 +2882,20 @@
               },
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF"
+                  "lanResTag" : "MENUITEM.CAPTION.*.EXPORTSRF",
+                  "mOSFilePath" : "pslanguageres/Auto231",
+                  "rTMOSFilePath" : "pslanguageres/Auto231"
                 },
                 "caption" : "导出数据模型",
                 "codeName" : "ExportModel",
                 "fullCodeName" : "ExportModel",
+                "mOSFilePath" : "pssysappdeuiactions/ExportModel",
                 "name" : "表格界面_导出数据模型",
                 "getPSSysImage" : {
                   "glyph" : "xf019@FontAwesome",
                   "cssClass" : "fa fa-download"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/ExportModel",
                 "timeout" : 60000,
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "ExportModel",
@@ -2684,11 +2922,13 @@
                 "caption" : "数据导入",
                 "codeName" : "Import",
                 "fullCodeName" : "Import",
+                "mOSFilePath" : "pssysappdeuiactions/Import",
                 "name" : "表格界面_数据导入栏",
                 "getPSSysImage" : {
                   "glyph" : "xf093@FontAwesome",
                   "cssClass" : "fa fa-upload"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/Import",
                 "timeout" : 60000,
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "Import",
@@ -2707,7 +2947,9 @@
             "spanMode" : false
           }, {
             "getCapPSLanguageRes" : {
-              "lanResTag" : "TBB.TEXT.*.HELP"
+              "lanResTag" : "TBB.TEXT.*.HELP",
+              "mOSFilePath" : "pslanguageres/Auto276",
+              "rTMOSFilePath" : "pslanguageres/Auto276"
             },
             "caption" : "帮助",
             "groupExtractMode" : "ITEM",
@@ -2724,19 +2966,25 @@
             },
             "getPSUIAction" : {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.*.HELP"
+                "lanResTag" : "TBB.TEXT.*.HELP",
+                "mOSFilePath" : "pslanguageres/Auto276",
+                "rTMOSFilePath" : "pslanguageres/Auto276"
               },
               "caption" : "帮助",
               "codeName" : "Help",
               "fullCodeName" : "Help",
+              "mOSFilePath" : "pssysappdeuiactions/Help",
               "name" : "表格界面_帮助操作",
               "getPSSysImage" : {
                 "glyph" : "xf128@FontAwesome",
                 "cssClass" : "fa fa-question"
               },
+              "rTMOSFilePath" : "pssysappdeuiactions/Help",
               "timeout" : 60000,
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.*.HELP"
+                "lanResTag" : "TBB.TOOLTIP.*.HELP",
+                "mOSFilePath" : "pslanguageres/Auto259",
+                "rTMOSFilePath" : "pslanguageres/Auto259"
               },
               "uIActionMode" : "SYS",
               "uIActionTag" : "Help",
@@ -2744,11 +2992,14 @@
             },
             "tooltip" : "帮助",
             "getTooltipPSLanguageRes" : {
-              "lanResTag" : "TBB.TOOLTIP.*.HELP"
+              "lanResTag" : "TBB.TOOLTIP.*.HELP",
+              "mOSFilePath" : "pslanguageres/Auto259",
+              "rTMOSFilePath" : "pslanguageres/Auto259"
             },
             "showCaption" : true,
             "showIcon" : true
           } ],
+          "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard_sysportlet4_toolbar",
           "modelid" : "b912ff540f5614f63914a38067d84728",
           "modeltype" : "PSDETOOLBAR"
         } ],
@@ -2758,6 +3009,7 @@
           "layout" : "TABLE_24COL"
         },
         "portletType" : "TOOLBAR",
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard_sysportlet4",
         "title" : "工具栏",
         "showTitleBar" : true,
         "modelid" : "6884EC20-485B-42A0-99E0-430DA0660E2A",
@@ -2767,6 +3019,7 @@
         "codeName" : "actionbar",
         "controlType" : "PORTLET",
         "height" : 300.0,
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysdbparts/actionbar",
         "name" : "dashboard_sysportlet5",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -2832,6 +3085,7 @@
         },
         "getPSUIActionGroup" : {
           "codeName" : "Auto2",
+          "mOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto2",
           "name" : "表单分组",
           "getPSUIActionGroupDetails" : [ {
             "detailType" : "DEUIACTION",
@@ -2841,6 +3095,7 @@
               "caption" : "表单项更新前台计算",
               "codeName" : "CalcPF",
               "fullCodeName" : "Example_CalcPF",
+              "mOSFilePath" : "psappdeuiactions/CalcPF",
               "name" : "表单项更新前台计算",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -2850,6 +3105,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/CalcPF",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "CalcPF",
@@ -2869,6 +3125,7 @@
               "codeName" : "CallUISimple",
               "frontProcessType" : "OTHER",
               "fullCodeName" : "Example_CallUISimple",
+              "mOSFilePath" : "psappdeuiactions/CallUISimple",
               "name" : "执行显示对话框逻辑",
               "getPSAppDEUILogic" : {
                 "modelref" : true,
@@ -2878,6 +3135,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/CallUISimple",
               "timeout" : 60000,
               "uIActionMode" : "FRONT",
               "uIActionTag" : "CallUISimple",
@@ -2889,9 +3147,11 @@
             "addSeparator" : false,
             "showCaption" : true,
             "showIcon" : true
-          } ]
+          } ],
+          "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto2"
         },
         "portletType" : "ACTIONBAR",
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard_sysportlet5",
         "title" : "操作栏",
         "showTitleBar" : true,
         "modelid" : "36F21A0B-A785-4648-B04E-DAD05BACA8CC",
@@ -2901,6 +3161,7 @@
         "controlType" : "PORTLET",
         "height" : 300.0,
         "htmlShowMode" : "INNER",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysdbparts/webpagepart",
         "name" : "dashboard_sysportlet6",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -2920,14 +3181,17 @@
         },
         "pageUrl" : "\thttps://www.ibizsys.cn/imgs/ibizlogo.svg",
         "portletType" : "HTML",
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard_sysportlet6",
         "title" : "网页部件",
         "showTitleBar" : true,
         "modelid" : "405D6B58-B864-4348-9778-6C0E86C562AD",
         "modeltype" : "PSSYSDBPART"
       } ],
       "portletType" : "CONTAINER",
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard_container1",
       "showTitleBar" : true
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/dashboard",
     "enableCustomized" : true,
     "name" : "dashboard",
     "modelid" : "d8c2554f9fc137cd919ef0487c1feab4",
@@ -2939,16 +3203,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPORTALVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleBaseDashboardView_CSS",
   "title" : "示例数据看板视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPORTALVIEW",

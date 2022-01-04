@@ -3,20 +3,27 @@
   "caption" : "卡片示例",
   "codeName" : "ExampleCardTreeExpView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleCardTreeExpView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleCardTreeExpView",
   "name" : "ExampleCardTreeExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "TreeExpView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "treeexpbar",
       "name" : "TREEEXPBAR",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -46,6 +53,7 @@
     "codeName" : "CardTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psexpbars/CardTreeExpViewtreeexpbar",
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -129,6 +137,7 @@
       },
       "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "logicName" : "卡片树",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdetreeviews/CardTree",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -610,6 +619,7 @@
         "selected" : false,
         "id" : "Layout"
       } ],
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleCardTreeExpView/psappviewctrls/treeexpbar_tree",
       "getRemovePSControlAction" : {
         "modelref" : true,
         "id" : "remove"
@@ -626,6 +636,7 @@
       "modelid" : "5FF36120-A40B-4A79-98E4-AD99FAB0FF1C",
       "modeltype" : "PSDETREEVIEW"
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleCardTreeExpView/psappviewctrls/treeexpbar",
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
     "enableSearch" : false,
@@ -639,16 +650,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEEXPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleCardTreeExpView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleCardTreeExpView",
   "title" : "示例树导航视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DETREEEXPVIEW",

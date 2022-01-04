@@ -4,20 +4,27 @@
   "codeName" : "MapDataMobMapView",
   "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/MapDataMobMapView.json",
   "mDCtrlActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/R8Mob/psappdeviews/MapDataMobMapView",
   "name" : "MapDataMobMapView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/MapData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "MobMapView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "map",
       "name" : "MAP",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -50,6 +57,7 @@
     "hookEventNames" : [ "BEFORELOAD", "ROWCLICK", "LOAD" ],
     "legendPos" : "NONE",
     "logicName" : " 地图（移动端）",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysmapviews/MobMap",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
@@ -111,6 +119,7 @@
       "enableQuickCreate" : false,
       "id" : "chart"
     } ],
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/MapDataMobMapView/psappviewctrls/map",
     "name" : "map",
     "modelid" : "B696EBD3-2BA5-4EFD-90F8-436806718A68",
     "modeltype" : "PSSYSMAPVIEW"
@@ -121,16 +130,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBMAPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/MAPDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/MapData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/MapDataMobMapView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/MapDataMobMapView",
   "title" : "地图示例数据地图视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEMOBMAPVIEW",

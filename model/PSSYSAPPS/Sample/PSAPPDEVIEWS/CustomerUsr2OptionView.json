@@ -4,15 +4,21 @@
   "codeName" : "CustomerUsr2OptionView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerUsr2OptionView.json",
   "height" : 400,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerUsr2OptionView",
   "name" : "CustomerUsr2OptionView",
   "openMode" : "POPUPMODAL",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "OptionView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "form",
@@ -22,7 +28,8 @@
       "name" : "P2K",
       "paramType" : "VALUE",
       "value" : 0
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "Quick",
@@ -31,6 +38,7 @@
       "modelref" : true,
       "id" : "create"
     },
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer/PSFORMS/Quick.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
@@ -46,6 +54,7 @@
     },
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "logicName" : "快速新建",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/psdeform_editforms/Quick",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
@@ -259,6 +268,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -266,6 +276,7 @@
         "codeName" : "group1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group1",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "caption" : "客户名称",
@@ -277,6 +288,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/customername",
           "name" : "customername",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -292,6 +304,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/customername",
           "allowEmpty" : false,
           "showCaption" : true
         }, {
@@ -304,6 +317,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/pcustomername",
           "name" : "pcustomername",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -332,6 +346,7 @@
             },
             "getPSUIActionGroup" : {
               "codeName" : "Auto1",
+              "mOSFilePath" : "pssysapps/Sample/psappdataentities/Customer/psappdeuagroups/Auto1",
               "name" : "自动填充",
               "getPSUIActionGroupDetails" : [ {
                 "detailType" : "DEUIACTION",
@@ -347,6 +362,7 @@
                   },
                   "frontProcessType" : "WIZARD",
                   "fullCodeName" : "Customer_ACCreate",
+                  "mOSFilePath" : "psappdeuiactions/ACCreate",
                   "name" : "自动填充-新建",
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -356,6 +372,7 @@
                     "glyph" : "xf044@FontAwesome",
                     "cssClass" : "fa fa-edit"
                   },
+                  "rTMOSFilePath" : "psappdeuiactions/ACCreate",
                   "timeout" : 60000,
                   "uIActionMode" : "FRONT",
                   "uIActionTag" : "ACCreate",
@@ -365,7 +382,8 @@
                 "addSeparator" : false,
                 "showCaption" : true,
                 "showIcon" : true
-              } ]
+              } ],
+              "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/Customer/psappdeuagroups/Auto1"
             },
             "getPickupPSAppView" : {
               "modelref" : true,
@@ -383,6 +401,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/pcustomername",
           "valueItemName" : "pcustomerid",
           "allowEmpty" : true,
           "showCaption" : true
@@ -396,6 +415,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/type",
           "name" : "type",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -414,6 +434,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/type",
           "allowEmpty" : false,
           "needCodeListConfig" : true,
           "showCaption" : true
@@ -428,6 +449,7 @@
           "itemHeight" : 200.0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/memo",
           "name" : "memo",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -448,10 +470,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/memo",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -459,19 +486,30 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
         "infoGroupMode" : false,
         "showCaption" : false
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerUsr2OptionView/psappviewctrls/form",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -492,16 +530,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEOPTVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerUsr2OptionView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerUsr2OptionView",
   "title" : "客户选项操作视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEOPTVIEW",

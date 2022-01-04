@@ -2,6 +2,7 @@
   "getAllPSAppDEACModes" : [ {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdeacmodes/DEFAULT",
     "name" : "DEFAULT",
     "getPSDEACModeDataItems" : [ {
       "dataType" : 25,
@@ -19,6 +20,7 @@
       }
     } ],
     "pagingSize" : 50,
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdeacmodes/DEFAULT",
     "getTextPSAppDEField" : {
       "name" : "PROVINCENAME",
       "codeName" : "ProvinceName"
@@ -34,53 +36,176 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/Update",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchConditions",
     "methodType" : "FETCH",
+    "name" : "FetchConditions",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Conditions"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchConditions"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/FetchConditions",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/FetchDefault",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "ProvinceName",
     "logicName" : "省份名称",
     "name" : "PROVINCENAME",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdefields/ProvinceName",
     "stdDataType" : 25,
     "stringLength" : 200,
     "enableQuickSearch" : true,
@@ -89,6 +214,7 @@
     "codeName" : "ProvinceId",
     "logicName" : "省份标识",
     "name" : "PROVINCEID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdefields/ProvinceId",
     "stdDataType" : 25,
     "stringLength" : 100,
     "keyField" : true
@@ -96,141 +222,344 @@
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "name" : "CREATEDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdefields/CreateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "name" : "UPDATEMAN",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdefields/UpdateMan",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "CreateMan",
     "logicName" : "建立人",
     "name" : "CREATEMAN",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdefields/CreateMan",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "name" : "UPDATEDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdefields/UpdateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "Code",
     "logicName" : "编号",
     "name" : "CODE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdefields/Code",
     "stdDataType" : 25,
     "stringLength" : 30
   }, {
     "codeName" : "Memo",
     "logicName" : "备注",
     "name" : "MEMO",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdefields/Memo",
     "stdDataType" : 25,
     "stringLength" : 1000
   }, {
     "codeName" : "Sn",
     "logicName" : "序号",
     "name" : "SN",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdefields/Sn",
     "stdDataType" : 9
   } ],
   "getAllPSAppDEMethods" : [ {
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Province/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/Update",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchConditions",
     "methodType" : "FETCH",
+    "name" : "FetchConditions",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Conditions"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchConditions"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/FetchConditions",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/FilterCreate",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/FilterFetch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGET",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/FilterGet",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGetDraft",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/FilterGetDraft",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterRemove",
     "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/FilterRemove",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/FilterSearch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/FilterUpdate",
     "builtinMethod" : true
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province/psappdemethods/Select",
     "builtinMethod" : false
+  } ],
+  "getAllPSAppViews" : [ {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobPickupMDView.json",
+    "viewType" : "DEMOBPICKUPMDVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceUsr2MobEditView.json",
+    "viewType" : "DEMOBEDITVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobPickupTreeView.json",
+    "viewType" : "DEMOBPICKUPTREEVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceForTreeMobMPickupView.json",
+    "viewType" : "DEMOBMPICKUPVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobMPickupView.json",
+    "viewType" : "DEMOBMPICKUPVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobEditView.json",
+    "viewType" : "DEMOBEDITVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobMEditView9.json",
+    "viewType" : "DEMOBMEDITVIEW9"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobHtmlView.json",
+    "viewType" : "DEMOBHTMLVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobCalendarView.json",
+    "viewType" : "DEMOBCALENDARVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobPickupForTreeView.json",
+    "viewType" : "DEMOBPICKUPVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobPickupView.json",
+    "viewType" : "DEMOBPICKUPVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobMDView.json",
+    "viewType" : "DEMOBMDVIEW"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
-    "name" : "CREATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdeopprivs/CREATE",
+    "name" : "CREATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdeopprivs/CREATE"
   }, {
     "logicName" : "删除",
-    "name" : "DELETE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdeopprivs/DELETE",
+    "name" : "DELETE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdeopprivs/DELETE"
   }, {
     "logicName" : "读取",
-    "name" : "READ"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdeopprivs/READ",
+    "name" : "READ",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdeopprivs/READ"
   }, {
     "logicName" : "更新",
-    "name" : "UPDATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdeopprivs/UPDATE",
+    "name" : "UPDATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdeopprivs/UPDATE"
   } ],
   "codeName" : "Province",
   "dataAccCtrlArch" : 1,
@@ -238,12 +567,26 @@
   "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json",
   "enableUIActions" : 15,
   "logicName" : "省份",
+  "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province",
   "name" : "PROVINCE",
   "getPSDEName" : "PROVINCE",
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "id" : "Province"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample/PSDATAENTITIES/Province.json"
+  },
+  "getPSSysServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSSYSSERVICEAPIS/SampleApi.json"
+  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "PROVINCENAME",
     "codeName" : "ProvinceName"
   } ],
+  "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Province",
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,

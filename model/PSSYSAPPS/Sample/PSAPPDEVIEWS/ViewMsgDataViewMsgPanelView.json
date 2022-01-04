@@ -3,10 +3,15 @@
   "caption" : "视图消息数据",
   "codeName" : "ViewMsgDataViewMsgPanelView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ViewMsgDataViewMsgPanelView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ViewMsgDataViewMsgPanelView",
   "name" : "ViewMsgDataViewMsgPanelView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
+  },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
   },
   "getPSControls" : [ {
     "codeName" : "ViewMsg",
@@ -14,6 +19,7 @@
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData/PSPANELS/ViewMsg.json",
     "layoutMode" : "TABLE_24COL",
     "logicName" : "视图消息",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/VIEWMSGDATA/pssysviewpanels/ViewMsg",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
@@ -29,12 +35,14 @@
         "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleViewMsg1CustomView.json",
         "viewType" : "DECUSTOMVIEW"
       },
+      "mOSFilePath" : "psmodules/Sample/psdataentities/VIEWMSGDATA/psviewpanels/ViewMsgPanelViewcontrol1",
       "name" : "control1",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
       },
-      "getPSControlParam" : { }
+      "getPSControlParam" : { },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ViewMsgDataViewMsgPanelView/psappviewctrls/control1"
     }, {
       "codeName" : "ViewMsgPanelViewcontrol2",
       "controlType" : "VIEWPANEL",
@@ -43,20 +51,28 @@
         "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleViewMsg2CustomView.json",
         "viewType" : "DECUSTOMVIEW"
       },
+      "mOSFilePath" : "psmodules/Sample/psdataentities/VIEWMSGDATA/psviewpanels/ViewMsgPanelViewcontrol2",
       "name" : "control2",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
       },
-      "getPSControlParam" : { }
+      "getPSControlParam" : { },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ViewMsgDataViewMsgPanelView/psappviewctrls/control2"
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ViewMsgDataViewMsgPanelView/psappviewctrls/panel",
     "getRootPSPanelItems" : [ {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container1",
       "name" : "container1",
       "getPSLayout" : {
         "dir" : "column",
@@ -69,6 +85,7 @@
       "getPSPanelItems" : [ {
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTROL",
+        "mOSFilePath" : "pssysviewpanelitem_controls/control1",
         "name" : "control1",
         "getPSControl" : {
           "codeName" : "ViewMsgPanelViewcontrol1",
@@ -78,20 +95,25 @@
             "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleViewMsg1CustomView.json",
             "viewType" : "DECUSTOMVIEW"
           },
+          "mOSFilePath" : "psmodules/Sample/psdataentities/VIEWMSGDATA/psviewpanels/ViewMsgPanelViewcontrol1",
           "name" : "control1",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
           },
-          "getPSControlParam" : { }
+          "getPSControlParam" : { },
+          "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ViewMsgDataViewMsgPanelView/psappviewctrls/control1"
         },
         "getPSLayoutPos" : {
           "grow" : 1,
           "layout" : "FLEX"
-        }
+        },
+        "rTMOSFilePath" : "pssysviewpanelitem_controls/control1",
+        "showCaption" : true
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTROL",
+        "mOSFilePath" : "pssysviewpanelitem_controls/control2",
         "name" : "control2",
         "getPSControl" : {
           "codeName" : "ViewMsgPanelViewcontrol2",
@@ -101,18 +123,24 @@
             "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleViewMsg2CustomView.json",
             "viewType" : "DECUSTOMVIEW"
           },
+          "mOSFilePath" : "psmodules/Sample/psdataentities/VIEWMSGDATA/psviewpanels/ViewMsgPanelViewcontrol2",
           "name" : "control2",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
           },
-          "getPSControlParam" : { }
+          "getPSControlParam" : { },
+          "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ViewMsgDataViewMsgPanelView/psappviewctrls/control2"
         },
         "getPSLayoutPos" : {
           "grow" : 1,
           "layout" : "FLEX"
-        }
-      } ]
+        },
+        "rTMOSFilePath" : "pssysviewpanelitem_controls/control2",
+        "showCaption" : true
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
+      "showCaption" : true
     } ],
     "name" : "panel",
     "modelid" : "F0C9D8AE-776A-466F-AF7A-81EF83F857A0",
@@ -124,16 +152,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPANELVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/VIEWMSGDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ViewMsgData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ViewMsgDataViewMsgPanelView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ViewMsgDataViewMsgPanelView",
   "title" : "视图消息数据面板视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPANELVIEW",

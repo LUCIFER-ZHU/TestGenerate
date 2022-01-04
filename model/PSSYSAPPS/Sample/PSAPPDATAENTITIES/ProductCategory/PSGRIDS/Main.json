@@ -11,6 +11,7 @@
   "groupMode" : "NONE",
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "logicName" : "主表格",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/PRODUCTCATEGORY/psdegrids/Main",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ProductCategory.json"
@@ -33,12 +34,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "productname",
     "excelCaption" : "产品",
+    "mOSFilePath" : "psdegridcols/productname",
     "name" : "productname",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "PRODUCTNAME",
       "codeName" : "ProductName"
     },
+    "rTMOSFilePath" : "psdegridcols/productname",
     "width" : 100,
     "widthUnit" : "PX",
     "enableSort" : true
@@ -50,12 +53,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "categoryname",
     "excelCaption" : "类别",
+    "mOSFilePath" : "psdegridcols/categoryname",
     "name" : "categoryname",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "CATEGORYNAME",
       "codeName" : "CategoryName"
     },
+    "rTMOSFilePath" : "psdegridcols/categoryname",
     "width" : 100,
     "widthUnit" : "PX",
     "enableSort" : true
@@ -116,6 +121,7 @@
     "codeName" : "srfkey",
     "enableCond" : 3,
     "ignoreInput" : 0,
+    "mOSFilePath" : "psdegridcols/srfkey",
     "name" : "srfkey",
     "getPSAppDEField" : {
       "name" : "PRODUCTCATEGORYID",
@@ -125,9 +131,11 @@
       "editorType" : "HIDDEN",
       "name" : "srfkey"
     },
+    "rTMOSFilePath" : "psdegridcols/srfkey",
     "allowEmpty" : true
   } ],
   "pagingSize" : 20,
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ProductCategoryGridView/psappviewctrls/grid",
   "getRemovePSControlAction" : {
     "actionName" : "Remove",
     "actionType" : "DEACTION",

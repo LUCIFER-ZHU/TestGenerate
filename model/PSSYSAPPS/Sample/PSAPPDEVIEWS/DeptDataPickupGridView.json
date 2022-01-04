@@ -4,14 +4,20 @@
   "codeName" : "DeptDataPickupGridView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/DeptDataPickupGridView.json",
   "gridRowActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/DeptDataPickupGridView",
   "name" : "DeptDataPickupGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/DeptData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "PickupGridView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "grid",
@@ -21,7 +27,8 @@
       "ctrlName" : "searchform",
       "name" : "SEARCHFORM",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "aggMode" : "NONE",
@@ -36,6 +43,7 @@
     "groupMode" : "NONE",
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
     "logicName" : "主表格",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/DEPTDATA/psdegrids/Main",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/DeptData.json"
@@ -145,12 +153,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "deptdataname",
       "excelCaption" : "部门名称",
+      "mOSFilePath" : "psdegridcols/deptdataname",
       "name" : "deptdataname",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "DEPTDATANAME",
         "codeName" : "DeptDataName"
       },
+      "rTMOSFilePath" : "psdegridcols/deptdataname",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -162,12 +172,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "orgdataname",
       "excelCaption" : "组织名称",
+      "mOSFilePath" : "psdegridcols/orgdataname",
       "name" : "orgdataname",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "ORGDATANAME",
         "codeName" : "OrgDataName"
       },
+      "rTMOSFilePath" : "psdegridcols/orgdataname",
       "width" : 100,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -179,6 +191,7 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "updateman",
       "excelCaption" : "更新人",
+      "mOSFilePath" : "psdegridcols/updateman",
       "name" : "updateman",
       "noPrivDisplayMode" : 1,
       "getPSAppCodeList" : {
@@ -189,6 +202,7 @@
         "name" : "UPDATEMAN",
         "codeName" : "UpdateMan"
       },
+      "rTMOSFilePath" : "psdegridcols/updateman",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -200,12 +214,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "updatedate",
       "excelCaption" : "更新时间",
+      "mOSFilePath" : "psdegridcols/updatedate",
       "name" : "updatedate",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "UPDATEDATE",
         "codeName" : "UpdateDate"
       },
+      "rTMOSFilePath" : "psdegridcols/updatedate",
       "valueFormat" : "YYYY-MM-DD HH:mm:ss",
       "width" : 150,
       "widthUnit" : "PX",
@@ -275,6 +291,7 @@
       "codeName" : "srfkey",
       "enableCond" : 3,
       "ignoreInput" : 0,
+      "mOSFilePath" : "psdegridcols/srfkey",
       "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "DEPTDATAID",
@@ -284,9 +301,11 @@
         "editorType" : "HIDDEN",
         "name" : "srfkey"
       },
+      "rTMOSFilePath" : "psdegridcols/srfkey",
       "allowEmpty" : true
     } ],
     "pagingSize" : 20,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/DeptDataPickupGridView/psappviewctrls/grid",
     "getRemovePSControlAction" : {
       "actionName" : "Remove",
       "actionType" : "DEACTION",
@@ -320,9 +339,11 @@
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/DeptData/PSSEARCHFORMS/Default.json",
     "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "logicName" : "默认搜索表单",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/DEPTDATA/psdeform_searchforms/Default",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/DeptData.json"
@@ -385,17 +406,28 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/DeptDataPickupGridView/psappviewctrls/searchform",
     "searchButtonStyle" : "DEFAULT",
     "tabHeaderPos" : "TOP",
     "enableAdvanceSearch" : false,
@@ -412,16 +444,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPICKUPGRIDVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/DEPTDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/DeptData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/DeptDataPickupGridView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/DeptDataPickupGridView",
   "title" : "部门数据选择表格视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPICKUPGRIDVIEW",

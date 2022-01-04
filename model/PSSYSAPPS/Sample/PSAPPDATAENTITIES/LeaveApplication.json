@@ -2,6 +2,7 @@
   "getAllPSAppDEACModes" : [ {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "mOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdeacmodes/DEFAULT",
     "name" : "DEFAULT",
     "getPSDEACModeDataItems" : [ {
       "dataType" : 25,
@@ -19,6 +20,7 @@
       }
     } ],
     "pagingSize" : 50,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdeacmodes/DEFAULT",
     "getTextPSAppDEField" : {
       "name" : "LEAVEAPPLICATIONNAME",
       "codeName" : "LeaveApplicationName"
@@ -31,46 +33,150 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "actionMode" : "CUSTOM",
+    "actionMode" : "UNKNOWN",
     "codeName" : "A",
     "methodType" : "DEACTION",
+    "name" : "A",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/A.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "A"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/A",
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/Update",
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
@@ -78,6 +184,11 @@
     "codeName" : "WFError",
     "methodType" : "DEACTION",
     "name" : "WFError",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/WFError.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/WFError",
     "builtinMethod" : true
   }, {
     "actionMode" : "UNKNOWN",
@@ -85,6 +196,11 @@
     "codeName" : "WFFinish",
     "methodType" : "DEACTION",
     "name" : "WFFinish",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/WFFinish.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/WFFinish",
     "builtinMethod" : true
   }, {
     "actionMode" : "UNKNOWN",
@@ -92,6 +208,11 @@
     "codeName" : "WFInit",
     "methodType" : "DEACTION",
     "name" : "WFInit",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/WFInit.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/WFInit",
     "builtinMethod" : true
   }, {
     "actionMode" : "UNKNOWN",
@@ -99,6 +220,11 @@
     "codeName" : "WFStart",
     "methodType" : "DEACTION",
     "name" : "WFStart",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/WFStart.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/WFStart",
     "builtinMethod" : true
   }, {
     "actionMode" : "UNKNOWN",
@@ -106,17 +232,37 @@
     "codeName" : "WFUpdate",
     "methodType" : "DEACTION",
     "name" : "WFUpdate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/WFUpdate.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/WFUpdate",
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/FetchDefault",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "LeaveApplicationName",
     "logicName" : "请假申请名称",
     "name" : "LEAVEAPPLICATIONNAME",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/LeaveApplicationName",
     "stdDataType" : 25,
     "stringLength" : 200,
     "enableQuickSearch" : true,
@@ -125,6 +271,7 @@
     "codeName" : "LeaveApplicationId",
     "logicName" : "请假申请标识",
     "name" : "LEAVEAPPLICATIONID",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/LeaveApplicationId",
     "stdDataType" : 25,
     "stringLength" : 100,
     "keyField" : true
@@ -132,128 +279,246 @@
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "name" : "UPDATEDATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/UpdateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "name" : "CREATEDATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/CreateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "name" : "UPDATEMAN",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/UpdateMan",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "CreateMan",
     "logicName" : "建立人",
     "name" : "CREATEMAN",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/CreateMan",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "OrgId",
     "logicName" : "组织机构标识",
     "name" : "ORGID",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/OrgId",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "DeptId",
     "logicName" : "组织部门标识",
     "name" : "DEPTID",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/DeptId",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "State",
     "logicName" : "申请状态",
     "name" : "STATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/State",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "Step",
     "logicName" : "审批步骤",
     "name" : "STEP",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/Step",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "CustomerId",
     "logicName" : "客户标识",
     "name" : "CUSTOMERID",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/CustomerId",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "CustomerName",
     "logicName" : "客户名称",
     "name" : "CUSTOMERNAME",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/CustomerName",
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
     "codeName" : "Ext_Data",
     "logicName" : "扩展数据",
     "name" : "EXT_DATA",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/Ext_Data",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "ExtParam",
     "logicName" : "扩展参数",
     "name" : "EXT_PARAM",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/ExtParam",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Ext_param2",
     "logicName" : "扩展参数2",
     "name" : "EXT_PARAM2",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/Ext_param2",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Ext_Data2",
     "logicName" : "扩展数据2",
     "name" : "EXTDATA2",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdefields/Ext_Data2",
     "stdDataType" : 25,
     "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
-    "actionMode" : "CUSTOM",
+    "actionMode" : "UNKNOWN",
     "codeName" : "A",
     "methodType" : "DEACTION",
+    "name" : "A",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/A.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "A"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/A",
     "builtinMethod" : false
   }, {
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/Update",
     "builtinMethod" : false
   }, {
     "actionMode" : "UNKNOWN",
@@ -261,6 +526,11 @@
     "codeName" : "WFError",
     "methodType" : "DEACTION",
     "name" : "WFError",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/WFError.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/WFError",
     "builtinMethod" : true
   }, {
     "actionMode" : "UNKNOWN",
@@ -268,6 +538,11 @@
     "codeName" : "WFFinish",
     "methodType" : "DEACTION",
     "name" : "WFFinish",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/WFFinish.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/WFFinish",
     "builtinMethod" : true
   }, {
     "actionMode" : "UNKNOWN",
@@ -275,6 +550,11 @@
     "codeName" : "WFInit",
     "methodType" : "DEACTION",
     "name" : "WFInit",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/WFInit.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/WFInit",
     "builtinMethod" : true
   }, {
     "actionMode" : "UNKNOWN",
@@ -282,6 +562,11 @@
     "codeName" : "WFStart",
     "methodType" : "DEACTION",
     "name" : "WFStart",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/WFStart.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/WFStart",
     "builtinMethod" : true
   }, {
     "actionMode" : "UNKNOWN",
@@ -289,63 +574,128 @@
     "codeName" : "WFUpdate",
     "methodType" : "DEACTION",
     "name" : "WFUpdate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSDEACTIONS/WFUpdate.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/WFUpdate",
     "builtinMethod" : true
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/FilterCreate",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/FilterFetch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGET",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/FilterGet",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGetDraft",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/FilterGetDraft",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterRemove",
     "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/FilterRemove",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/FilterSearch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/FilterUpdate",
     "builtinMethod" : true
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication/psappdemethods/Select",
     "builtinMethod" : false
+  } ],
+  "getAllPSAppViews" : [ {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/LeaveApplicationEditView.json",
+    "viewType" : "DEEDITVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/LeaveApplicationGridView.json",
+    "viewType" : "DEGRIDVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/LeaveApplicationLeaveApplication_D_WFGridView.json",
+    "viewType" : "DEWFGRIDVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/LeaveApplicationWFGridView.json",
+    "viewType" : "DEGRIDVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/LeaveApplicationWFDynaEditView3.json",
+    "viewType" : "DEWFDYNAEDITVIEW3"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
-    "name" : "CREATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/LEAVEAPPLICATION/psdeopprivs/CREATE",
+    "name" : "CREATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/LEAVEAPPLICATION/psdeopprivs/CREATE"
   }, {
     "logicName" : "删除",
-    "name" : "DELETE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/LEAVEAPPLICATION/psdeopprivs/DELETE",
+    "name" : "DELETE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/LEAVEAPPLICATION/psdeopprivs/DELETE"
   }, {
     "logicName" : "读取",
-    "name" : "READ"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/LEAVEAPPLICATION/psdeopprivs/READ",
+    "name" : "READ",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/LEAVEAPPLICATION/psdeopprivs/READ"
   }, {
     "logicName" : "更新",
-    "name" : "UPDATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/LEAVEAPPLICATION/psdeopprivs/UPDATE",
+    "name" : "UPDATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/LEAVEAPPLICATION/psdeopprivs/UPDATE"
   } ],
   "codeName" : "LeaveApplication",
   "dataAccCtrlArch" : 1,
@@ -353,12 +703,26 @@
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/LeaveApplication.json",
   "enableUIActions" : 15,
   "logicName" : "请假申请",
+  "mOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication",
   "name" : "LEAVEAPPLICATION",
   "getPSDEName" : "LEAVEAPPLICATION",
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "id" : "LeaveApplication"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication.json"
+  },
+  "getPSSysServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSSYSSERVICEAPIS/SampleApi.json"
+  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "LEAVEAPPLICATIONNAME",
     "codeName" : "LeaveApplicationName"
   } ],
+  "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/LeaveApplication",
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,

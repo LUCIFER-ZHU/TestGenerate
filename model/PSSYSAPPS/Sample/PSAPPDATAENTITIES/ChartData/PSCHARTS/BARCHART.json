@@ -8,6 +8,7 @@
   },
   "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
   "logicName" : "BARCHART",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdecharts/BARCHART",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
@@ -40,6 +41,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "DEFAULT",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {
@@ -71,14 +80,7 @@
     "index" : 0,
     "name" : "[bar]直角坐标系[0]",
     "getPSChartCoordinateSystem" : {
-      "eChartsType" : "cartesian2d",
-      "index" : 0,
-      "name" : "[bar]直角坐标系[0]",
-      "getPSChartGrid" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "type" : "XY",
+      "modelref" : true,
       "id" : "0"
     },
     "getPSChartGridXAxis0" : {
@@ -180,6 +182,7 @@
     "showTitle" : true,
     "id" : "0"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataBarChartView/psappviewctrls/chart",
   "readOnly" : true,
   "modelid" : "9CC8AF1C-6659-4262-8988-85010B96D285",
   "modeltype" : "PSDECHART"

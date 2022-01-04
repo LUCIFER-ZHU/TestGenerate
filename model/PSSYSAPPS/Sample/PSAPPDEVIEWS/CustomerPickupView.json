@@ -4,20 +4,27 @@
   "codeName" : "CustomerPickupView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupView.json",
   "funcViewMode" : "PICKUPVIEW",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerPickupView",
   "name" : "CustomerPickupView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "PickupView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "pickupviewpanel",
       "name" : "PICKUPVIEWPANEL",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "PickupViewpickupviewpanel",
@@ -28,14 +35,20 @@
       "codeName" : "CustomerPickupGridView",
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerPickupGridView.json",
       "gridRowActiveMode" : 2,
+      "mOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerPickupGridView",
       "name" : "CustomerPickupGridView",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
       },
+      "getPSAppModule" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+      },
       "getPSAppViewEngines" : [ {
         "engineCat" : "VIEW",
         "engineType" : "PickupGridView",
+        "mOSFilePath" : "psappviewengines/engine",
         "name" : "engine",
         "getPSUIEngineParams" : [ {
           "ctrlName" : "grid",
@@ -45,7 +58,8 @@
           "ctrlName" : "searchform",
           "name" : "SEARCHFORM",
           "paramType" : "CTRL"
-        } ]
+        } ],
+        "rTMOSFilePath" : "psappviewengines/engine"
       } ],
       "getPSControls" : [ {
         "aggMode" : "NONE",
@@ -60,6 +74,7 @@
         "groupMode" : "NONE",
         "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
         "logicName" : "主表格",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/psdegrids/Main",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
@@ -219,12 +234,14 @@
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "customername",
           "excelCaption" : "客户名称",
+          "mOSFilePath" : "psdegridcols/customername",
           "name" : "customername",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "CUSTOMERNAME",
             "codeName" : "CustomerName"
           },
+          "rTMOSFilePath" : "psdegridcols/customername",
           "width" : 100,
           "widthUnit" : "STAR",
           "enableSort" : true
@@ -236,6 +253,7 @@
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "type",
           "excelCaption" : "类型",
+          "mOSFilePath" : "psdegridcols/type",
           "name" : "type",
           "noPrivDisplayMode" : 1,
           "getPSAppCodeList" : {
@@ -246,6 +264,7 @@
             "name" : "TYPE",
             "codeName" : "Type"
           },
+          "rTMOSFilePath" : "psdegridcols/type",
           "width" : 100,
           "widthUnit" : "PX",
           "enableSort" : true
@@ -257,12 +276,14 @@
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "pcustomername",
           "excelCaption" : "上级客户",
+          "mOSFilePath" : "psdegridcols/pcustomername",
           "name" : "pcustomername",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PCUSTOMERNAME",
             "codeName" : "Pcustomername"
           },
+          "rTMOSFilePath" : "psdegridcols/pcustomername",
           "width" : 120,
           "widthUnit" : "PX",
           "enableSort" : true
@@ -274,12 +295,14 @@
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "phone",
           "excelCaption" : "电话",
+          "mOSFilePath" : "psdegridcols/phone",
           "name" : "phone",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "PHONE",
             "codeName" : "Phone"
           },
+          "rTMOSFilePath" : "psdegridcols/phone",
           "width" : 150,
           "widthUnit" : "PX",
           "enableSort" : true
@@ -291,12 +314,14 @@
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "mobile",
           "excelCaption" : "手机",
+          "mOSFilePath" : "psdegridcols/mobile",
           "name" : "mobile",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "MOBILE",
             "codeName" : "Mobile"
           },
+          "rTMOSFilePath" : "psdegridcols/mobile",
           "width" : 150,
           "widthUnit" : "PX",
           "enableSort" : true
@@ -308,12 +333,14 @@
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "email",
           "excelCaption" : "电子邮箱",
+          "mOSFilePath" : "psdegridcols/email",
           "name" : "email",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "EMAIL",
             "codeName" : "Email"
           },
+          "rTMOSFilePath" : "psdegridcols/email",
           "width" : 150,
           "widthUnit" : "PX",
           "enableSort" : true
@@ -322,10 +349,12 @@
           "caption" : "操作",
           "codeName" : "uagridcolumn1",
           "columnType" : "UAGRIDCOLUMN",
+          "mOSFilePath" : "psdegridcols/uagridcolumn1",
           "name" : "uagridcolumn1",
           "noPrivDisplayMode" : 1,
           "getPSDEUIActionGroup" : {
             "codeName" : "Auto6",
+            "mOSFilePath" : "pssysapps/Sample/psappdataentities/Customer/psappdeuagroups/Auto6",
             "name" : "表格操作列",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -333,19 +362,25 @@
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.EDIT"
+                  "lanResTag" : "TBB.TEXT.*.EDIT",
+                  "mOSFilePath" : "pslanguageres/Auto253",
+                  "rTMOSFilePath" : "pslanguageres/Auto253"
                 },
                 "caption" : "编辑",
                 "codeName" : "Edit",
                 "fullCodeName" : "Edit",
+                "mOSFilePath" : "pssysappdeuiactions/Edit",
                 "name" : "表格界面_编辑操作",
                 "getPSSysImage" : {
                   "glyph" : "xf044@FontAwesome",
                   "cssClass" : "fa fa-edit"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/Edit",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+                  "lanResTag" : "TBB.TOOLTIP.*.EDIT",
+                  "mOSFilePath" : "pslanguageres/Auto130",
+                  "rTMOSFilePath" : "pslanguageres/Auto130"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "Edit",
@@ -360,19 +395,25 @@
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.COPY"
+                  "lanResTag" : "TBB.TEXT.*.COPY",
+                  "mOSFilePath" : "pslanguageres/Auto83",
+                  "rTMOSFilePath" : "pslanguageres/Auto83"
                 },
                 "caption" : "拷贝",
                 "codeName" : "Copy",
                 "fullCodeName" : "Copy",
+                "mOSFilePath" : "pssysappdeuiactions/Copy",
                 "name" : "表格界面_拷贝操作",
                 "getPSSysImage" : {
                   "glyph" : "xf0c5@FontAwesome",
                   "cssClass" : "fa fa-copy"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/Copy",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.COPY"
+                  "lanResTag" : "TBB.TOOLTIP.*.COPY",
+                  "mOSFilePath" : "pslanguageres/Auto243",
+                  "rTMOSFilePath" : "pslanguageres/Auto243"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "Copy",
@@ -387,19 +428,25 @@
               "getPSUIAction" : {
                 "actionTarget" : "MULTIKEY",
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.*.REMOVE"
+                  "lanResTag" : "TBB.TEXT.*.REMOVE",
+                  "mOSFilePath" : "pslanguageres/Auto159",
+                  "rTMOSFilePath" : "pslanguageres/Auto159"
                 },
                 "caption" : "删除",
                 "codeName" : "Remove",
                 "fullCodeName" : "Remove",
+                "mOSFilePath" : "pssysappdeuiactions/Remove",
                 "name" : "表格界面_删除操作",
                 "getPSSysImage" : {
                   "glyph" : "xf00d@FontAwesome",
                   "cssClass" : "fa fa-remove"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/Remove",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+                  "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+                  "mOSFilePath" : "pslanguageres/Auto286",
+                  "rTMOSFilePath" : "pslanguageres/Auto286"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "Remove",
@@ -408,8 +455,10 @@
               "addSeparator" : false,
               "showCaption" : false,
               "showIcon" : true
-            } ]
+            } ],
+            "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/Customer/psappdeuagroups/Auto6"
           },
+          "rTMOSFilePath" : "psdegridcols/uagridcolumn1",
           "width" : 100,
           "widthUnit" : "PX",
           "enableSort" : false
@@ -512,6 +561,7 @@
           "codeName" : "srfkey",
           "enableCond" : 3,
           "ignoreInput" : 0,
+          "mOSFilePath" : "psdegridcols/srfkey",
           "name" : "srfkey",
           "getPSAppDEField" : {
             "name" : "CUSTOMERID",
@@ -521,9 +571,11 @@
             "editorType" : "HIDDEN",
             "name" : "srfkey"
           },
+          "rTMOSFilePath" : "psdegridcols/srfkey",
           "allowEmpty" : true
         } ],
         "pagingSize" : 20,
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerPickupGridView/psappviewctrls/grid",
         "getRemovePSControlAction" : {
           "actionName" : "Remove",
           "actionType" : "DEACTION",
@@ -557,9 +609,11 @@
       }, {
         "codeName" : "Default",
         "controlType" : "SEARCHFORM",
+        "defaultLabelWidth" : 130,
         "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer/PSSEARCHFORMS/Default.json",
         "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
         "logicName" : "默认搜索表单",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/psdeform_searchforms/Default",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
@@ -637,6 +691,7 @@
           "codeName" : "formpage1",
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMPAGE",
+          "mOSFilePath" : "psdeformdetail_formpages/formpage1",
           "name" : "formpage1",
           "getPSDEFormDetails" : [ {
             "caption" : "客户名称(文本包含(%))",
@@ -648,6 +703,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/n_customername_like",
             "name" : "n_customername_like",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -663,6 +719,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/n_customername_like",
             "allowEmpty" : true,
             "showCaption" : true
           }, {
@@ -675,6 +732,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/n_type_eq",
             "name" : "n_type_eq",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -696,20 +754,31 @@
               "colSM" : 6,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/n_type_eq",
             "allowEmpty" : true,
             "needCodeListConfig" : true,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
           "infoGroupMode" : false
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerPickupGridView/psappviewctrls/searchform",
         "searchButtonStyle" : "DEFAULT",
         "tabHeaderPos" : "TOP",
         "enableAdvanceSearch" : false,
@@ -726,16 +795,19 @@
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPDEPICKUPGRIDVIEW",
         "controlType" : "VIEWLAYOUTPANEL",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/pssysviewlayoutpanels/Layoutpanel",
         "name" : "layoutpanel",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
         },
         "getPSControlParam" : { },
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerPickupGridView/psappviewctrls/layoutpanel",
         "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerPickupGridView",
       "title" : "客户选择表格视图",
       "viewStyle" : "DEFAULT",
       "viewType" : "DEPICKUPGRIDVIEW",
@@ -753,6 +825,7 @@
       "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/psviewpanels/PickupViewpickupviewpanel",
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -770,7 +843,8 @@
     } ],
     "getPSControlParam" : {
       "id" : "PICKUPVIEWPANEL"
-    }
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerPickupView/psappviewctrls/pickupviewpanel"
   } ],
   "getPSDEViewCodeName" : "PickupView",
   "getPSDEViewId" : "57da6e223ac499809d030a1f333bc8e2",
@@ -778,16 +852,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPICKUPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerPickupView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerPickupView",
   "title" : "客户数据选择视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPICKUPVIEW",

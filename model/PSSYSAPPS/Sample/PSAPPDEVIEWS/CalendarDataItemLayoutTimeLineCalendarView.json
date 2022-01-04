@@ -4,10 +4,15 @@
   "codeName" : "CalendarDataItemLayoutTimeLineCalendarView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CalendarDataItemLayoutTimeLineCalendarView.json",
   "mDCtrlActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/CalendarDataItemLayoutTimeLineCalendarView",
   "name" : "CalendarDataItemLayoutTimeLineCalendarView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
+  },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
   },
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -30,6 +35,8 @@
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
       "getOpenDataPSAppView" : {
+        "mOSFilePath" : "psappviewlogicrefviews/CalendarDataEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/CalendarDataEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CalendarDataEditView.json",
@@ -37,6 +44,8 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "mOSFilePath" : "psappviewlogicrefviews/CalendarDataEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/CalendarDataEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CalendarDataEditView.json",
@@ -64,6 +73,7 @@
     "groupMode" : "NONE",
     "legendPos" : "NONE",
     "logicName" : "日历部件（项布局时间轴）",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CALENDARDATA/pssyscalendars/Calendar_itemlayout",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
@@ -114,18 +124,25 @@
         "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData/PSPANELS/Auto8.json",
         "layoutMode" : "TABLE_24COL",
         "logicName" : "项布局面板（日历时间轴）",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/CALENDARDATA/pssysviewpanels/Auto8",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
         },
         "getPSControlParam" : { },
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CalendarDataItemLayoutTimeLineCalendarView/psappviewctrls/calendardatalayoutpanel",
         "getRootPSPanelItems" : [ {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
+          "mOSFilePath" : "pssysviewpanelitem_fields/calendardataname",
           "name" : "calendardataname",
           "getPSEditor" : {
             "editorType" : "SPAN",
@@ -136,6 +153,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "pssysviewpanelitem_fields/calendardataname",
           "viewFieldName" : "CALENDARDATAName",
           "hidden" : false,
           "showCaption" : false
@@ -152,6 +170,7 @@
       "enableQuickCreate" : false,
       "id" : "calendardata"
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CalendarDataItemLayoutTimeLineCalendarView/psappviewctrls/calendar",
     "enableGroup" : false,
     "name" : "calendar",
     "modelid" : "9C5B2993-EE00-4121-9DF1-50B8DFDD929C",
@@ -163,16 +182,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDECALENDARVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CALENDARDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CalendarData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CalendarDataItemLayoutTimeLineCalendarView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CalendarDataItemLayoutTimeLineCalendarView",
   "title" : "日历示例数据日历视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DECALENDARVIEW",

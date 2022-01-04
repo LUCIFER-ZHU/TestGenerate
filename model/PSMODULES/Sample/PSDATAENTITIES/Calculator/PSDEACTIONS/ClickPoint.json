@@ -4,18 +4,24 @@
   "codeName" : "ClickPoint",
   "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickPoint.json",
   "logicName" : "ClickPoint",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/psdeactions/ClickPoint",
   "name" : "ClickPoint",
   "getPSDEActionInput" : {
+    "mOSFilePath" : "psdeactioninputs/ClickPointInput",
     "name" : "ClickPointInput",
     "getPSDEMethodDTO" : {
       "modelref" : true,
       "id" : "CalculatorDTO"
     },
+    "rTMOSFilePath" : "psdeactioninputs/ClickPointInput",
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "mOSFilePath" : "psdeactionreturns/ClickPointResult",
     "name" : "ClickPointResult",
+    "rTMOSFilePath" : "psdeactionreturns/ClickPointResult",
     "type" : "VOID"
   },
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/psdeactions/ClickPoint",
   "scriptCode" : "if(!data.input) {\n   data.input='';\n}\ndata.input=data.input+'.';"
 }

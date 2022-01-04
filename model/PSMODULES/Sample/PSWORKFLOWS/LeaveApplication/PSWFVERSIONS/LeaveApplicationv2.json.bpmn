@@ -34,18 +34,12 @@
 
      <userTask flowable:category="${businessKey}"   flowable:candidateUsers="" flowable:exclusive="true" id="tid-领导审批2-24c46bf65743b2b480b960e3b7a7db5c" name="领导审批2" >
          <documentation>${majortext}</documentation>
-         <extensionElements>
-         <flowable:form isEditable="false" editMode="0"  />
-         </extensionElements>
      </userTask>
      <startEvent id="sid-444a4b17e32d81241961d9294bce5fad" name="提交流程">
      </startEvent>
      <endEvent id="sid-7c9d6c3258c654046eb1ef776a73ad5a" name="处理"/>
      <userTask flowable:category="${businessKey}"   flowable:candidateUsers="" flowable:exclusive="true" id="tid-组长审批2-eb3966f108226e00c6de1aa22b99ebf5" name="组长审批2" >
          <documentation>${majortext}</documentation>
-         <extensionElements>
-         <flowable:form isEditable="false" editMode="0"  />
-         </extensionElements>
      </userTask>
       <sequenceFlow id="rid-d6f245f71c58526c3fdf6a780dc8253b" sourceRef="sid-444a4b17e32d81241961d9294bce5fad" targetRef="tid-组长审批2-eb3966f108226e00c6de1aa22b99ebf5" name="">
      </sequenceFlow>

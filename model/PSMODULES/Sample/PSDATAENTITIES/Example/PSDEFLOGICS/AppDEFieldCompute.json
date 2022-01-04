@@ -5,6 +5,7 @@
   "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEFLOGICS/AppDEFieldCompute.json",
   "logicName" : "XY属性计算逻辑",
   "logicSubType" : "DEFIELD",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeflogics/AppDEFieldCompute",
   "name" : "XY属性计算逻辑",
   "getPSDEField" : {
     "name" : "APPFIELD",
@@ -13,6 +14,7 @@
   "getPSDELogicNodes" : [ {
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeflogics/AppDEFieldCompute/psdelogicnodes/Prepareparam1",
     "name" : "计算",
     "getPSDELogicNodeParams" : [ {
       "dstFieldName" : "APPFIELD",
@@ -25,10 +27,12 @@
       "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "EXPRESSION"
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeflogics/AppDEFieldCompute/psdelogicnodes/Prepareparam1",
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeflogics/AppDEFieldCompute/psdelogicnodes/Begin",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
@@ -41,17 +45,21 @@
         "id" : "Begin"
       }
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeflogics/AppDEFieldCompute/psdelogicnodes/Begin",
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Default",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeflogics/AppDEFieldCompute/psdelogicparams/Default",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeflogics/AppDEFieldCompute/psdelogicparams/Default",
     "default" : true
   } ],
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeflogics/AppDEFieldCompute",
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"

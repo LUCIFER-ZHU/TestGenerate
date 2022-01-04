@@ -4,20 +4,27 @@
   "codeName" : "ExamplePickupView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExamplePickupView.json",
   "funcViewMode" : "PICKUPVIEW",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExamplePickupView",
   "name" : "ExamplePickupView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "PickupView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "pickupviewpanel",
       "name" : "PICKUPVIEWPANEL",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "PickupViewpickupviewpanel",
@@ -28,14 +35,20 @@
       "codeName" : "ExamplePickupGridView",
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExamplePickupGridView.json",
       "gridRowActiveMode" : 2,
+      "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExamplePickupGridView",
       "name" : "ExamplePickupGridView",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
       },
+      "getPSAppModule" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+      },
       "getPSAppViewEngines" : [ {
         "engineCat" : "VIEW",
         "engineType" : "PickupGridView",
+        "mOSFilePath" : "psappviewengines/engine",
         "name" : "engine",
         "getPSUIEngineParams" : [ {
           "ctrlName" : "grid",
@@ -45,7 +58,8 @@
           "ctrlName" : "searchform",
           "name" : "SEARCHFORM",
           "paramType" : "CTRL"
-        } ]
+        } ],
+        "rTMOSFilePath" : "psappviewengines/engine"
       } ],
       "getPSControls" : [ {
         "aggMode" : "NONE",
@@ -60,6 +74,7 @@
         "groupMode" : "NONE",
         "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "LOAD" ],
         "logicName" : "主表格",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdegrids/Main",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -173,12 +188,14 @@
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "examplename",
           "excelCaption" : "名称",
+          "mOSFilePath" : "psdegridcols/examplename",
           "name" : "examplename",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "EXAMPLENAME",
             "codeName" : "ExampleName"
           },
+          "rTMOSFilePath" : "psdegridcols/examplename",
           "width" : 150,
           "widthUnit" : "PX",
           "enableSort" : true
@@ -190,6 +207,7 @@
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "updateman",
           "excelCaption" : "更新人",
+          "mOSFilePath" : "psdegridcols/updateman",
           "name" : "updateman",
           "noPrivDisplayMode" : 1,
           "getPSAppCodeList" : {
@@ -200,6 +218,7 @@
             "name" : "UPDATEMAN",
             "codeName" : "UpdateMan"
           },
+          "rTMOSFilePath" : "psdegridcols/updateman",
           "width" : 150,
           "widthUnit" : "PX",
           "enableSort" : true
@@ -211,12 +230,14 @@
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "updatedate",
           "excelCaption" : "更新时间",
+          "mOSFilePath" : "psdegridcols/updatedate",
           "name" : "updatedate",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
             "name" : "UPDATEDATE",
             "codeName" : "UpdateDate"
           },
+          "rTMOSFilePath" : "psdegridcols/updatedate",
           "valueFormat" : "YYYY-MM-DD HH:mm:ss",
           "width" : 150,
           "widthUnit" : "PX",
@@ -293,6 +314,7 @@
           "codeName" : "srfkey",
           "enableCond" : 3,
           "ignoreInput" : 0,
+          "mOSFilePath" : "psdegridcols/srfkey",
           "name" : "srfkey",
           "getPSAppDEField" : {
             "name" : "EXAMPLEID",
@@ -302,9 +324,11 @@
             "editorType" : "HIDDEN",
             "name" : "srfkey"
           },
+          "rTMOSFilePath" : "psdegridcols/srfkey",
           "allowEmpty" : true
         } ],
         "pagingSize" : 20,
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExamplePickupGridView/psappviewctrls/grid",
         "getRemovePSControlAction" : {
           "actionName" : "Remove",
           "actionType" : "DEACTION",
@@ -338,9 +362,11 @@
       }, {
         "codeName" : "Default",
         "controlType" : "SEARCHFORM",
+        "defaultLabelWidth" : 130,
         "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSSEARCHFORMS/Default.json",
         "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
         "logicName" : "默认搜索表单",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeform_searchforms/Default",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -403,17 +429,28 @@
           "codeName" : "formpage1",
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMPAGE",
+          "mOSFilePath" : "psdeformdetail_formpages/formpage1",
           "name" : "formpage1",
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
           "infoGroupMode" : false
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExamplePickupGridView/psappviewctrls/searchform",
         "searchButtonStyle" : "DEFAULT",
         "tabHeaderPos" : "TOP",
         "enableAdvanceSearch" : false,
@@ -430,16 +467,19 @@
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPDEPICKUPGRIDVIEW",
         "controlType" : "VIEWLAYOUTPANEL",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
         "name" : "layoutpanel",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
         },
         "getPSControlParam" : { },
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExamplePickupGridView/psappviewctrls/layoutpanel",
         "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExamplePickupGridView",
       "title" : "示例选择表格视图",
       "viewStyle" : "DEFAULT",
       "viewType" : "DEPICKUPGRIDVIEW",
@@ -457,6 +497,7 @@
       "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psviewpanels/PickupViewpickupviewpanel",
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -474,7 +515,8 @@
     } ],
     "getPSControlParam" : {
       "id" : "PICKUPVIEWPANEL"
-    }
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExamplePickupView/psappviewctrls/pickupviewpanel"
   } ],
   "getPSDEViewCodeName" : "PickupView",
   "getPSDEViewId" : "64caa9ce38d403eb4ecab07eade88320",
@@ -482,16 +524,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPICKUPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExamplePickupView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExamplePickupView",
   "title" : "示例数据选择视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPICKUPVIEW",

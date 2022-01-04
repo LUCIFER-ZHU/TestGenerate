@@ -11,6 +11,7 @@
   "groupMode" : "NONE",
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "logicName" : "主表格",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/KANBANDATA/psdegrids/Main",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
@@ -33,12 +34,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "kanbandataname",
     "excelCaption" : "任务名称",
+    "mOSFilePath" : "psdegridcols/kanbandataname",
     "name" : "kanbandataname",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "KANBANDATANAME",
       "codeName" : "KanbanDataName"
     },
+    "rTMOSFilePath" : "psdegridcols/kanbandataname",
     "width" : 1,
     "widthUnit" : "STAR",
     "enableSort" : true
@@ -50,6 +53,7 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "taskstatus",
     "excelCaption" : "任务状态",
+    "mOSFilePath" : "psdegridcols/taskstatus",
     "name" : "taskstatus",
     "noPrivDisplayMode" : 1,
     "getPSAppCodeList" : {
@@ -60,6 +64,7 @@
       "name" : "TASKSTATUS",
       "codeName" : "Taskstatus"
     },
+    "rTMOSFilePath" : "psdegridcols/taskstatus",
     "width" : 150,
     "widthUnit" : "PX",
     "enableSort" : true
@@ -71,12 +76,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "begintime",
     "excelCaption" : "开始时间",
+    "mOSFilePath" : "psdegridcols/begintime",
     "name" : "begintime",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "BEGINTIME",
       "codeName" : "BeginTime"
     },
+    "rTMOSFilePath" : "psdegridcols/begintime",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "width" : 180,
     "widthUnit" : "PX",
@@ -89,12 +96,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "endtime",
     "excelCaption" : "结束时间",
+    "mOSFilePath" : "psdegridcols/endtime",
     "name" : "endtime",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "ENDTIME",
       "codeName" : "EndTime"
     },
+    "rTMOSFilePath" : "psdegridcols/endtime",
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "width" : 180,
     "widthUnit" : "PX",
@@ -107,12 +116,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "memo",
     "excelCaption" : "备注",
+    "mOSFilePath" : "psdegridcols/memo",
     "name" : "memo",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "MEMO",
       "codeName" : "Memo"
     },
+    "rTMOSFilePath" : "psdegridcols/memo",
     "width" : 200,
     "widthUnit" : "PX",
     "enableSort" : true
@@ -182,6 +193,7 @@
     "codeName" : "srfkey",
     "enableCond" : 3,
     "ignoreInput" : 0,
+    "mOSFilePath" : "psdegridcols/srfkey",
     "name" : "srfkey",
     "getPSAppDEField" : {
       "name" : "KANBANDATAID",
@@ -191,9 +203,11 @@
       "editorType" : "HIDDEN",
       "name" : "srfkey"
     },
+    "rTMOSFilePath" : "psdegridcols/srfkey",
     "allowEmpty" : true
   } ],
   "pagingSize" : 20,
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/KanbanDataGridView/psappviewctrls/grid",
   "getRemovePSControlAction" : {
     "actionName" : "Remove",
     "actionType" : "DEACTION",

@@ -3,16 +3,23 @@
   "caption" : "订单",
   "codeName" : "OrderReportView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrderReportView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/OrderReportView",
   "name" : "OrderReportView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSControls" : [ {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSSEARCHFORMS/Default.json",
     "logicName" : "默认搜索表单",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdeform_searchforms/Default",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -80,6 +87,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "caption" : "订单状态(等于(=))",
@@ -91,6 +99,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/n_state_eq",
         "name" : "n_state_eq",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -112,6 +121,7 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/n_state_eq",
         "allowEmpty" : true,
         "needCodeListConfig" : true,
         "showCaption" : true
@@ -125,6 +135,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/n_ordername_like",
         "name" : "n_ordername_like",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -141,19 +152,30 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/n_ordername_like",
         "allowEmpty" : true,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : 8,
+        "childColMD" : 8,
+        "childColSM" : 12,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrderReportView/psappviewctrls/searchform",
     "searchButtonStyle" : "DEFAULT",
     "tabHeaderPos" : "TOP",
     "enableAdvanceSearch" : false,
@@ -167,6 +189,7 @@
     "codeName" : "Report",
     "controlType" : "REPORTPANEL",
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSREPORTPANELS/Report.json",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdereportpanels/Report",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -174,6 +197,7 @@
     "getPSControlParam" : {
       "id" : "REPORTPANEL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrderReportView/psappviewctrls/reportpanel",
     "name" : "reportpanel"
   } ],
   "getPSDEViewCodeName" : "ReportView",
@@ -182,16 +206,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEREPORTVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrderReportView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrderReportView",
   "title" : "订单报表视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEREPORTVIEW",
@@ -207,6 +234,7 @@
     "actionRSMode" : 1,
     "codeName" : "Orders",
     "dataRSMode" : 0,
+    "mOSFilePath" : "pssysapps/Sample/psappders/Orders",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
@@ -220,6 +248,7 @@
       "name" : "CUSTOMERID",
       "codeName" : "CustomerId"
     },
-    "rSMode" : 2
+    "rSMode" : 2,
+    "rTMOSFilePath" : "pssysapps/Sample/psappders/Orders"
   } ] ]
 }

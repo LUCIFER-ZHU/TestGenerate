@@ -3,20 +3,27 @@
   "caption" : "树导航传参",
   "codeName" : "ExampleTreeNavParamTreeExpView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleTreeNavParamTreeExpView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleTreeNavParamTreeExpView",
   "name" : "ExampleTreeNavParamTreeExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "TreeExpView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "treeexpbar",
       "name" : "TREEEXPBAR",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -46,6 +53,7 @@
     "codeName" : "TreeNavParamTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psexpbars/TreeNavParamTreeExpViewtreeexpbar",
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -119,6 +127,7 @@
       },
       "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "logicName" : "树导航传参树",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdetreeviews/TreeNavParam",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -299,11 +308,29 @@
           "dERType" : "DER1N",
           "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/City/PSDERS/DER1N_CITY_PROVINCE_PROVINCEID.json",
           "logicName" : "省",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/CITY/minorpsders/DER1N_CITY_PROVINCE_PROVINCEID",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/Province.json"
+          },
           "masterOrder" : -1,
           "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/City.json"
+          },
           "name" : "DER1N_CITY_PROVINCE_PROVINCEID",
           "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "PROVINCEID",
+            "codeName" : "ProvinceId"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "PROVINCENAME",
+            "codeName" : "ProvinceName"
+          },
           "pickupDEFName" : "PROVINCEID",
+          "rTMOSFilePath" : "psmodules/Sample/psdataentities/CITY/minorpsders/DER1N_CITY_PROVINCE_PROVINCEID",
           "removeActionType" : -1,
           "removeOrder" : 0
         },
@@ -538,6 +565,7 @@
         "selected" : false,
         "id" : "viewparam"
       } ],
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleTreeNavParamTreeExpView/psappviewctrls/treeexpbar_tree",
       "getRemovePSControlAction" : {
         "modelref" : true,
         "id" : "remove"
@@ -554,6 +582,7 @@
       "modelid" : "868D058D-72D5-4502-A71E-C9DC5FD035CA",
       "modeltype" : "PSDETREEVIEW"
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleTreeNavParamTreeExpView/psappviewctrls/treeexpbar",
     "width" : 300.0,
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
@@ -568,16 +597,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEEXPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleTreeNavParamTreeExpView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleTreeNavParamTreeExpView",
   "title" : "示例树导航视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DETREEEXPVIEW",

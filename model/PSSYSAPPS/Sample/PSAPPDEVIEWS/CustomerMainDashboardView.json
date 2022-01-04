@@ -3,20 +3,27 @@
   "caption" : "客户",
   "codeName" : "CustomerMainDashboardView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerMainDashboardView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerMainDashboardView",
   "name" : "CustomerMainDashboardView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "PortalView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "dashboard",
       "name" : "DASHBOARD",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "Dashboard",
@@ -24,6 +31,7 @@
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer/PSDASHBOARDS/Dashboard.json",
     "hookEventNames" : [ "LOAD" ],
     "logicName" : "客户数据看板",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/pssysdashboards/Dashboard",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
@@ -53,6 +61,7 @@
     "getPSControls" : [ {
       "codeName" : "MainDashboardViewdashboard_container1",
       "controlType" : "PORTLET",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/pssysdbparts/MainDashboardViewdashboard_container1",
       "name" : "dashboard_container1",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -78,6 +87,7 @@
         "codeName" : "BaseInfo",
         "controlType" : "PORTLET",
         "height" : 1.0,
+        "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/pssysdbparts/BaseInfo",
         "name" : "dashboard_sysportlet1",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -102,14 +112,20 @@
           "caption" : "基本信息",
           "codeName" : "CustomerBaseInfoEditView9",
           "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CustomerBaseInfoEditView9.json",
+          "mOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerBaseInfoEditView9",
           "name" : "CustomerBaseInfoEditView9",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
           },
+          "getPSAppModule" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+          },
           "getPSAppViewEngines" : [ {
             "engineCat" : "VIEW",
             "engineType" : "EditView9",
+            "mOSFilePath" : "psappviewengines/engine",
             "name" : "engine",
             "getPSUIEngineParams" : [ {
               "ctrlName" : "form",
@@ -119,7 +135,8 @@
               "name" : "P2K",
               "paramType" : "VALUE",
               "value" : 0
-            } ]
+            } ],
+            "rTMOSFilePath" : "psappviewengines/engine"
           } ],
           "getPSControls" : [ {
             "codeName" : "BaseInfo",
@@ -128,6 +145,7 @@
               "modelref" : true,
               "id" : "create"
             },
+            "defaultLabelWidth" : 130,
             "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer/PSFORMS/BaseInfo.json",
             "getGetDraftFromPSControlAction" : {
               "modelref" : true,
@@ -143,6 +161,7 @@
             },
             "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
             "logicName" : "信息表单",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/psdeform_editforms/BaseInfo",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
@@ -422,6 +441,7 @@
               "codeName" : "formpage1",
               "detailStyle" : "DEFAULT",
               "detailType" : "FORMPAGE",
+              "mOSFilePath" : "psdeformdetail_formpages/formpage1",
               "name" : "formpage1",
               "getPSDEFormDetails" : [ {
                 "actionGroupExtractMode" : "ITEM",
@@ -429,6 +449,7 @@
                 "codeName" : "group1",
                 "detailStyle" : "DEFAULT",
                 "detailType" : "GROUPPANEL",
+                "mOSFilePath" : "psdeformdetail_grouppanels/group1",
                 "name" : "group1",
                 "getPSDEFormDetails" : [ {
                   "actionGroupExtractMode" : "ITEM",
@@ -436,6 +457,7 @@
                   "codeName" : "grouppanel2",
                   "detailStyle" : "DEFAULT",
                   "detailType" : "GROUPPANEL",
+                  "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
                   "name" : "grouppanel2",
                   "getPSDEFormDetails" : [ {
                     "actionGroupExtractMode" : "ITEM",
@@ -443,6 +465,7 @@
                     "codeName" : "grouppanel7",
                     "detailStyle" : "DEFAULT",
                     "detailType" : "GROUPPANEL",
+                    "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel7",
                     "name" : "grouppanel7",
                     "getPSDEFormDetails" : [ {
                       "codeName" : "customername",
@@ -455,6 +478,7 @@
                       "itemWidth" : 530.0,
                       "labelPos" : "LEFT",
                       "labelWidth" : 130,
+                      "mOSFilePath" : "psdeformdetail_formitems/customername",
                       "name" : "customername",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
@@ -472,6 +496,7 @@
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "rTMOSFilePath" : "psdeformdetail_formitems/customername",
                       "allowEmpty" : true,
                       "emptyCaption" : true,
                       "showCaption" : true
@@ -484,6 +509,7 @@
                       "ignoreInput" : 3,
                       "labelPos" : "LEFT",
                       "labelWidth" : 130,
+                      "mOSFilePath" : "psdeformdetail_formitems/type",
                       "name" : "type",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
@@ -504,12 +530,17 @@
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "rTMOSFilePath" : "psdeformdetail_formitems/type",
                       "allowEmpty" : true,
                       "convertToCodeItemText" : true,
                       "emptyCaption" : true,
                       "showCaption" : true
                     } ],
                     "getPSLayout" : {
+                      "childColLG" : -1,
+                      "childColMD" : 24,
+                      "childColSM" : -1,
+                      "childColXS" : -1,
                       "columnCount" : 24,
                       "layout" : "TABLE_24COL"
                     },
@@ -518,6 +549,7 @@
                       "colMD" : 12,
                       "layout" : "TABLE_24COL"
                     },
+                    "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel7",
                     "infoGroupMode" : true,
                     "showCaption" : false
                   }, {
@@ -526,6 +558,7 @@
                     "codeName" : "grouppanel8",
                     "detailStyle" : "DEFAULT",
                     "detailType" : "GROUPPANEL",
+                    "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel8",
                     "name" : "grouppanel8",
                     "getPSDEFormDetails" : [ {
                       "caption" : "图像",
@@ -537,6 +570,7 @@
                       "ignoreInput" : 0,
                       "labelPos" : "LEFT",
                       "labelWidth" : 130,
+                      "mOSFilePath" : "psdeformdetail_formitems/image",
                       "name" : "image",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
@@ -558,10 +592,15 @@
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "rTMOSFilePath" : "psdeformdetail_formitems/image",
                       "allowEmpty" : true,
                       "showCaption" : true
                     } ],
                     "getPSLayout" : {
+                      "childColLG" : -1,
+                      "childColMD" : 24,
+                      "childColSM" : -1,
+                      "childColXS" : -1,
                       "columnCount" : 24,
                       "layout" : "TABLE_24COL"
                     },
@@ -570,10 +609,15 @@
                       "colMD" : 12,
                       "layout" : "TABLE_24COL"
                     },
+                    "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel8",
                     "infoGroupMode" : true,
                     "showCaption" : false
                   } ],
                   "getPSLayout" : {
+                    "childColLG" : -1,
+                    "childColMD" : 24,
+                    "childColSM" : -1,
+                    "childColXS" : -1,
                     "columnCount" : 24,
                     "layout" : "TABLE_24COL"
                   },
@@ -581,6 +625,7 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
                   "infoGroupMode" : true,
                   "showCaption" : false
                 }, {
@@ -589,6 +634,7 @@
                   "codeName" : "grouppanel3",
                   "detailStyle" : "DEFAULT",
                   "detailType" : "GROUPPANEL",
+                  "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel3",
                   "name" : "grouppanel3",
                   "getPSDEFormDetails" : [ {
                     "actionGroupExtractMode" : "ITEM",
@@ -596,6 +642,7 @@
                     "codeName" : "grouppanel6",
                     "detailStyle" : "DEFAULT",
                     "detailType" : "GROUPPANEL",
+                    "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel6",
                     "name" : "grouppanel6",
                     "getPSDEFormDetails" : [ {
                       "caption" : "上级客户",
@@ -607,6 +654,7 @@
                       "ignoreInput" : 0,
                       "labelPos" : "LEFT",
                       "labelWidth" : 130,
+                      "mOSFilePath" : "psdeformdetail_formitems/pcustomername",
                       "name" : "pcustomername",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
@@ -622,6 +670,7 @@
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "rTMOSFilePath" : "psdeformdetail_formitems/pcustomername",
                       "allowEmpty" : true,
                       "showCaption" : true
                     }, {
@@ -630,6 +679,7 @@
                       "codeName" : "grouppanel1",
                       "detailStyle" : "DEFAULT",
                       "detailType" : "GROUPPANEL",
+                      "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
                       "name" : "grouppanel1",
                       "getPSDEFormDetails" : [ {
                         "caption" : "公司地址",
@@ -641,6 +691,7 @@
                         "ignoreInput" : 0,
                         "labelPos" : "LEFT",
                         "labelWidth" : 130,
+                        "mOSFilePath" : "psdeformdetail_formitems/provincename",
                         "name" : "provincename",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {
@@ -656,6 +707,7 @@
                           "grow" : 1,
                           "layout" : "FLEX"
                         },
+                        "rTMOSFilePath" : "psdeformdetail_formitems/provincename",
                         "allowEmpty" : true,
                         "showCaption" : true
                       }, {
@@ -668,6 +720,7 @@
                         "ignoreInput" : 0,
                         "labelPos" : "NONE",
                         "labelWidth" : 0,
+                        "mOSFilePath" : "psdeformdetail_formitems/cityname",
                         "name" : "cityname",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {
@@ -706,6 +759,7 @@
                           "grow" : 1,
                           "layout" : "FLEX"
                         },
+                        "rTMOSFilePath" : "psdeformdetail_formitems/cityname",
                         "resetItemName" : "provinceid",
                         "resetItemNames" : [ "provinceid" ],
                         "allowEmpty" : true
@@ -719,6 +773,7 @@
                         "ignoreInput" : 0,
                         "labelPos" : "NONE",
                         "labelWidth" : 0,
+                        "mOSFilePath" : "psdeformdetail_formitems/districtname",
                         "name" : "districtname",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {
@@ -757,6 +812,7 @@
                           "grow" : 1,
                           "layout" : "FLEX"
                         },
+                        "rTMOSFilePath" : "psdeformdetail_formitems/districtname",
                         "resetItemName" : "cityid",
                         "resetItemNames" : [ "cityid" ],
                         "allowEmpty" : true
@@ -768,6 +824,7 @@
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
                       "infoGroupMode" : true,
                       "showCaption" : false
                     }, {
@@ -779,6 +836,7 @@
                       "ignoreInput" : 0,
                       "labelPos" : "LEFT",
                       "labelWidth" : 130,
+                      "mOSFilePath" : "psdeformdetail_formitems/street",
                       "name" : "street",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
@@ -795,6 +853,7 @@
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "rTMOSFilePath" : "psdeformdetail_formitems/street",
                       "allowEmpty" : true,
                       "emptyCaption" : true,
                       "showCaption" : true
@@ -808,6 +867,7 @@
                       "ignoreInput" : 0,
                       "labelPos" : "LEFT",
                       "labelWidth" : 130,
+                      "mOSFilePath" : "psdeformdetail_formitems/taxno",
                       "name" : "taxno",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
@@ -823,10 +883,15 @@
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "rTMOSFilePath" : "psdeformdetail_formitems/taxno",
                       "allowEmpty" : true,
                       "showCaption" : true
                     } ],
                     "getPSLayout" : {
+                      "childColLG" : -1,
+                      "childColMD" : 24,
+                      "childColSM" : -1,
+                      "childColXS" : -1,
                       "columnCount" : 24,
                       "layout" : "TABLE_24COL"
                     },
@@ -835,6 +900,7 @@
                       "colMD" : 12,
                       "layout" : "TABLE_24COL"
                     },
+                    "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel6",
                     "infoGroupMode" : true,
                     "showCaption" : false
                   }, {
@@ -843,6 +909,7 @@
                     "codeName" : "grouppanel4",
                     "detailStyle" : "DEFAULT",
                     "detailType" : "GROUPPANEL",
+                    "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel4",
                     "name" : "grouppanel4",
                     "getPSDEFormDetails" : [ {
                       "caption" : "电话",
@@ -854,6 +921,7 @@
                       "ignoreInput" : 0,
                       "labelPos" : "LEFT",
                       "labelWidth" : 130,
+                      "mOSFilePath" : "psdeformdetail_formitems/phone",
                       "name" : "phone",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
@@ -869,6 +937,7 @@
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "rTMOSFilePath" : "psdeformdetail_formitems/phone",
                       "allowEmpty" : true,
                       "showCaption" : true
                     }, {
@@ -881,6 +950,7 @@
                       "ignoreInput" : 0,
                       "labelPos" : "LEFT",
                       "labelWidth" : 130,
+                      "mOSFilePath" : "psdeformdetail_formitems/mobile",
                       "name" : "mobile",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
@@ -896,6 +966,7 @@
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "rTMOSFilePath" : "psdeformdetail_formitems/mobile",
                       "allowEmpty" : true,
                       "showCaption" : true
                     }, {
@@ -908,6 +979,7 @@
                       "ignoreInput" : 0,
                       "labelPos" : "LEFT",
                       "labelWidth" : 130,
+                      "mOSFilePath" : "psdeformdetail_formitems/email",
                       "name" : "email",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
@@ -923,6 +995,7 @@
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "rTMOSFilePath" : "psdeformdetail_formitems/email",
                       "allowEmpty" : true,
                       "showCaption" : true
                     }, {
@@ -935,6 +1008,7 @@
                       "ignoreInput" : 0,
                       "labelPos" : "LEFT",
                       "labelWidth" : 130,
+                      "mOSFilePath" : "psdeformdetail_formitems/website",
                       "name" : "website",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
@@ -950,10 +1024,15 @@
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "rTMOSFilePath" : "psdeformdetail_formitems/website",
                       "allowEmpty" : true,
                       "showCaption" : true
                     } ],
                     "getPSLayout" : {
+                      "childColLG" : -1,
+                      "childColMD" : 24,
+                      "childColSM" : -1,
+                      "childColXS" : -1,
                       "columnCount" : 24,
                       "layout" : "TABLE_24COL"
                     },
@@ -962,10 +1041,15 @@
                       "colMD" : 12,
                       "layout" : "TABLE_24COL"
                     },
+                    "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel4",
                     "infoGroupMode" : true,
                     "showCaption" : false
                   } ],
                   "getPSLayout" : {
+                    "childColLG" : 12,
+                    "childColMD" : 12,
+                    "childColSM" : -1,
+                    "childColXS" : -1,
                     "columnCount" : 24,
                     "layout" : "TABLE_24COL"
                   },
@@ -973,6 +1057,7 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel3",
                   "infoGroupMode" : true,
                   "showCaption" : false
                 }, {
@@ -985,6 +1070,7 @@
                   "ignoreInput" : 0,
                   "labelPos" : "LEFT",
                   "labelWidth" : 130,
+                  "mOSFilePath" : "psdeformdetail_formitems/cityid",
                   "name" : "cityid",
                   "noPrivDisplayMode" : 1,
                   "getPSAppDEField" : {
@@ -999,6 +1085,7 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "rTMOSFilePath" : "psdeformdetail_formitems/cityid",
                   "allowEmpty" : true,
                   "hidden" : true,
                   "showCaption" : true
@@ -1012,6 +1099,7 @@
                   "ignoreInput" : 0,
                   "labelPos" : "LEFT",
                   "labelWidth" : 130,
+                  "mOSFilePath" : "psdeformdetail_formitems/provinceid",
                   "name" : "provinceid",
                   "noPrivDisplayMode" : 1,
                   "getPSAppDEField" : {
@@ -1026,6 +1114,7 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "rTMOSFilePath" : "psdeformdetail_formitems/provinceid",
                   "allowEmpty" : true,
                   "hidden" : true,
                   "showCaption" : true
@@ -1039,6 +1128,7 @@
                   "ignoreInput" : 0,
                   "labelPos" : "LEFT",
                   "labelWidth" : 130,
+                  "mOSFilePath" : "psdeformdetail_formitems/districtid",
                   "name" : "districtid",
                   "noPrivDisplayMode" : 1,
                   "getPSAppDEField" : {
@@ -1053,6 +1143,7 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "rTMOSFilePath" : "psdeformdetail_formitems/districtid",
                   "allowEmpty" : true,
                   "hidden" : true,
                   "showCaption" : true
@@ -1060,12 +1151,14 @@
                   "codeName" : "tabpanel1",
                   "detailStyle" : "DEFAULT",
                   "detailType" : "TABPANEL",
+                  "mOSFilePath" : "psdeformdetail_tabpanels/tabpanel1",
                   "name" : "tabpanel1",
                   "getPSDEFormTabPages" : [ {
                     "caption" : "内部备注",
                     "codeName" : "tabpage1",
                     "detailStyle" : "DEFAULT",
                     "detailType" : "TABPAGE",
+                    "mOSFilePath" : "psdeformdetail_tabpages/tabpage1",
                     "name" : "tabpage1",
                     "getPSDEFormDetails" : [ {
                       "caption" : "备注",
@@ -1077,6 +1170,7 @@
                       "ignoreInput" : 0,
                       "labelPos" : "LEFT",
                       "labelWidth" : 130,
+                      "mOSFilePath" : "psdeformdetail_formitems/memo",
                       "name" : "memo",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
@@ -1092,22 +1186,33 @@
                         "colMD" : 24,
                         "layout" : "TABLE_24COL"
                       },
+                      "rTMOSFilePath" : "psdeformdetail_formitems/memo",
                       "allowEmpty" : true,
                       "showCaption" : true
                     } ],
                     "getPSLayout" : {
+                      "childColLG" : -1,
+                      "childColMD" : 24,
+                      "childColSM" : -1,
+                      "childColXS" : -1,
                       "columnCount" : 24,
                       "layout" : "TABLE_24COL"
                     },
+                    "rTMOSFilePath" : "psdeformdetail_tabpages/tabpage1",
                     "infoGroupMode" : true,
                     "showCaption" : true
                   } ],
                   "getPSLayoutPos" : {
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
-                  }
+                  },
+                  "rTMOSFilePath" : "psdeformdetail_tabpanels/tabpanel1"
                 } ],
                 "getPSLayout" : {
+                  "childColLG" : -1,
+                  "childColMD" : 24,
+                  "childColSM" : -1,
+                  "childColXS" : -1,
                   "columnCount" : 24,
                   "layout" : "TABLE_24COL"
                 },
@@ -1115,19 +1220,30 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
                 "infoGroupMode" : true,
                 "showCaption" : false
               } ],
               "getPSLayout" : {
+                "childColLG" : -1,
+                "childColMD" : 24,
+                "childColSM" : -1,
+                "childColXS" : -1,
                 "columnCount" : 24,
                 "layout" : "TABLE_24COL"
               },
+              "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
               "infoGroupMode" : true
             } ],
             "getPSLayout" : {
+              "childColLG" : -1,
+              "childColMD" : 24,
+              "childColSM" : -1,
+              "childColXS" : -1,
               "columnCount" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerBaseInfoEditView9/psappviewctrls/form",
             "getRemovePSControlAction" : {
               "modelref" : true,
               "id" : "remove"
@@ -1150,16 +1266,19 @@
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEEDITVIEW9",
             "controlType" : "VIEWLAYOUTPANEL",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/pssysviewlayoutpanels/Layoutpanel",
             "name" : "layoutpanel",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
             },
             "getPSControlParam" : { },
+            "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerBaseInfoEditView9/psappviewctrls/layoutpanel",
             "layoutBodyOnly" : true,
             "layoutPanel" : true,
             "useDefaultLayout" : true
           },
+          "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerBaseInfoEditView9",
           "title" : "客户编辑视图",
           "viewStyle" : "DEFAULT",
           "viewType" : "DEEDITVIEW9",
@@ -1171,14 +1290,17 @@
           "modeltype" : "PSAPPDEVIEW"
         },
         "portletType" : "VIEW",
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerMainDashboardView/psappviewctrls/dashboard_sysportlet1",
         "title" : "基本信息",
         "showTitleBar" : true,
         "modelid" : "14A0BC3F-5FF5-42B4-A3B8-5F0EAFA2F096",
         "modeltype" : "PSSYSDBPART"
       } ],
       "portletType" : "CONTAINER",
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerMainDashboardView/psappviewctrls/dashboard_container1",
       "showTitleBar" : true
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerMainDashboardView/psappviewctrls/dashboard",
     "enableCustomized" : false,
     "name" : "dashboard",
     "modelid" : "051aafa33bf511fabcd40caf989d65bc",
@@ -1190,16 +1312,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPORTALVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerMainDashboardView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerMainDashboardView",
   "title" : "客户数据看板视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPORTALVIEW",

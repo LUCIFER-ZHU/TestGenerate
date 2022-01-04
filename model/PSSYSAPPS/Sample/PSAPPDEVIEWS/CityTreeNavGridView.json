@@ -4,14 +4,20 @@
   "codeName" : "CityTreeNavGridView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CityTreeNavGridView.json",
   "gridRowActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/CityTreeNavGridView",
   "name" : "CityTreeNavGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/City.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "GridView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "appViewLogicName" : "opendata",
@@ -25,7 +31,8 @@
       "ctrlName" : "grid",
       "name" : "GRID",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -36,6 +43,8 @@
       "logicType" : "PREDEFINED",
       "name" : "新建数据",
       "getNewDataPSAppView" : {
+        "mOSFilePath" : "psappviewlogicrefviews/CityEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/CityEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CityEditView.json",
@@ -43,6 +52,8 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "mOSFilePath" : "psappviewlogicrefviews/CityEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/CityEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CityEditView.json",
@@ -62,6 +73,8 @@
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
       "getOpenDataPSAppView" : {
+        "mOSFilePath" : "psappviewlogicrefviews/CityEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/CityEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CityEditView.json",
@@ -69,6 +82,8 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "mOSFilePath" : "psappviewlogicrefviews/CityEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/CityEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CityEditView.json",
@@ -109,6 +124,7 @@
     "groupMode" : "NONE",
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "logicName" : "树导航表格",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CITY/psdegrids/TreeNav",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/City.json"
@@ -218,12 +234,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "cityname",
       "excelCaption" : "市名称",
+      "mOSFilePath" : "psdegridcols/cityname",
       "name" : "cityname",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "CITYNAME",
         "codeName" : "CityName"
       },
+      "rTMOSFilePath" : "psdegridcols/cityname",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -235,6 +253,7 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "updateman",
       "excelCaption" : "更新人",
+      "mOSFilePath" : "psdegridcols/updateman",
       "name" : "updateman",
       "noPrivDisplayMode" : 1,
       "getPSAppCodeList" : {
@@ -245,6 +264,7 @@
         "name" : "UPDATEMAN",
         "codeName" : "UpdateMan"
       },
+      "rTMOSFilePath" : "psdegridcols/updateman",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -256,12 +276,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "updatedate",
       "excelCaption" : "更新时间",
+      "mOSFilePath" : "psdegridcols/updatedate",
       "name" : "updatedate",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "UPDATEDATE",
         "codeName" : "UpdateDate"
       },
+      "rTMOSFilePath" : "psdegridcols/updatedate",
       "valueFormat" : "YYYY-MM-DD HH:mm:ss",
       "width" : 150,
       "widthUnit" : "PX",
@@ -324,6 +346,7 @@
       "codeName" : "srfkey",
       "enableCond" : 3,
       "ignoreInput" : 0,
+      "mOSFilePath" : "psdegridcols/srfkey",
       "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "CITYID",
@@ -333,9 +356,11 @@
         "editorType" : "HIDDEN",
         "name" : "srfkey"
       },
+      "rTMOSFilePath" : "psdegridcols/srfkey",
       "allowEmpty" : true
     } ],
     "pagingSize" : 20,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CityTreeNavGridView/psappviewctrls/grid",
     "getRemovePSControlAction" : {
       "actionName" : "Remove",
       "actionType" : "DEACTION",
@@ -373,16 +398,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CITY/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/City.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CityTreeNavGridView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CityTreeNavGridView",
   "title" : "市表格视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEGRIDVIEW",

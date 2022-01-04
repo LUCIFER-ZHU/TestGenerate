@@ -3,16 +3,22 @@
   "caption" : "搜索栏-常规",
   "codeName" : "ExampleSearchbarBaseCustomView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleSearchbarBaseCustomView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleSearchbarBaseCustomView",
   "name" : "ExampleSearchbarBaseCustomView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
   },
   "getPSControls" : [ {
     "codeName" : "Base",
     "controlType" : "SEARCHBAR",
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSSEARCHBARS/Base.json",
     "logicName" : "常规",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssyssearchbars/Base",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -33,7 +39,9 @@
       },
       "getPSDEFSearchMode" : {
         "codeName" : "N_PROVINCENAME_LIKE",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdefields/PROVINCENAME/psdefsfitems/N_PROVINCENAME_LIKE",
         "name" : "N_PROVINCENAME_LIKE",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdefields/PROVINCENAME/psdefsfitems/N_PROVINCENAME_LIKE",
         "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
@@ -58,7 +66,9 @@
       },
       "getPSDEFSearchMode" : {
         "codeName" : "N_CITYNAME_LIKE",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdefields/CITYNAME/psdefsfitems/N_CITYNAME_LIKE",
         "name" : "N_CITYNAME_LIKE",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdefields/CITYNAME/psdefsfitems/N_CITYNAME_LIKE",
         "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
@@ -83,7 +93,9 @@
       },
       "getPSDEFSearchMode" : {
         "codeName" : "N_DISTRICTNAME_LIKE",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdefields/DISTRICTNAME/psdefsfitems/N_DISTRICTNAME_LIKE",
         "name" : "N_DISTRICTNAME_LIKE",
+        "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdefields/DISTRICTNAME/psdefsfitems/N_DISTRICTNAME_LIKE",
         "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
@@ -109,6 +121,7 @@
     "quickGroupCount" : -1,
     "quickSearchMode" : 1,
     "quickSearchWidth" : 0,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleSearchbarBaseCustomView/psappviewctrls/searchbar",
     "enableFilter" : true,
     "enableGroup" : true,
     "enableQuickSearch" : true,
@@ -124,6 +137,7 @@
     "controlType" : "VIEWLAYOUTPANEL",
     "layoutMode" : "TABLE_24COL",
     "logicName" : "搜索栏（常规）布局面板",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Auto5_2542",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -131,12 +145,18 @@
     },
     "getPSControlParam" : { },
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleSearchbarBaseCustomView/psappviewctrls/layoutpanel",
     "getRootPSPanelItems" : [ {
       "itemStyle" : "DEFAULT",
       "itemType" : "CTRLPOS",
+      "mOSFilePath" : "pssysviewpanelitem_ctrlpos/searchbar",
       "name" : "searchbar",
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -144,7 +164,9 @@
       },
       "getPSSysCss" : {
         "cssName" : "form-red-border"
-      }
+      },
+      "rTMOSFilePath" : "pssysviewpanelitem_ctrlpos/searchbar",
+      "showCaption" : true
     } ],
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
@@ -152,6 +174,7 @@
     "modelid" : "79E7CB93-E451-44FA-9D24-66EAB3B2BAF7",
     "modeltype" : "PSSYSVIEWLAYOUTPANEL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleSearchbarBaseCustomView",
   "title" : "示例自定义视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DECUSTOMVIEW",

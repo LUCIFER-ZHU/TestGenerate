@@ -7,6 +7,7 @@
     "id" : "fetch"
   },
   "logicName" : "Line",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdecharts/Line",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -39,6 +40,14 @@
   "getPSChartDataSetGroups" : [ {
     "index" : 0,
     "name" : "DEFAULT",
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
+    },
     "id" : "0"
   } ],
   "getPSChartDataSets" : [ {
@@ -62,14 +71,7 @@
     "index" : 0,
     "name" : "[line]直角坐标系[0]",
     "getPSChartCoordinateSystem" : {
-      "eChartsType" : "cartesian2d",
-      "index" : 0,
-      "name" : "[line]直角坐标系[0]",
-      "getPSChartGrid" : {
-        "modelref" : true,
-        "id" : "0"
-      },
-      "type" : "XY",
+      "modelref" : true,
       "id" : "0"
     },
     "getPSChartGridXAxis0" : {
@@ -111,7 +113,9 @@
   },
   "getPSDEChartSerieses" : [ {
     "getCapPSLanguageRes" : {
-      "lanResTag" : "CONTROL.CHART.LINE.CAPTION"
+      "lanResTag" : "CONTROL.CHART.LINE.CAPTION",
+      "mOSFilePath" : "psmodules/Sample/pslanguageres/Auto291",
+      "rTMOSFilePath" : "psmodules/Sample/pslanguageres/Auto291"
     },
     "caption" : "订单折线图",
     "catalogField" : "orderdate",
@@ -157,6 +161,7 @@
     "showTitle" : true,
     "id" : "0"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerCountCustomView/psappviewctrls/chart",
   "readOnly" : true,
   "modelid" : "44378081-017D-4E64-A20A-89B53DA7D583",
   "modeltype" : "PSDECHART"

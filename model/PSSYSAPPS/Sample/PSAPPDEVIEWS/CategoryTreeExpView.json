@@ -3,20 +3,27 @@
   "caption" : "产品",
   "codeName" : "CategoryTreeExpView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CategoryTreeExpView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryTreeExpView",
   "name" : "CategoryTreeExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Category.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "TreeExpView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "treeexpbar",
       "name" : "TREEEXPBAR",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -46,19 +53,24 @@
     "codeName" : "TreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CATEGORY/psexpbars/TreeExpViewtreeexpbar",
     "name" : "treeexpbar",
     "getPSAppCounterRef" : {
       "modelref" : true,
       "id" : "4933383d1495407b8dce51fca408d36e"
     },
     "getPSAppCounterRefs" : [ {
+      "mOSFilePath" : "pssyscounterrefs/4933383d1495407b8dce51fca408d36e",
       "getPSAppCounter" : {
         "codeName" : "ProductCategoryProductCount",
         "counterType" : "CUSTOM",
         "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPCOUNTERS/ProductCategoryProductCount.json",
+        "mOSFilePath" : "pssysapps/Sample/psappcounters/ProductCategoryProductCount",
         "name" : "产品类型产品数量",
+        "rTMOSFilePath" : "pssysapps/Sample/psappcounters/ProductCategoryProductCount",
         "timer" : 60000
       },
+      "rTMOSFilePath" : "pssyscounterrefs/4933383d1495407b8dce51fca408d36e",
       "tag" : "4933383d1495407b8dce51fca408d36e",
       "id" : "4933383d1495407b8dce51fca408d36e"
     } ],
@@ -120,6 +132,7 @@
       },
       "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "logicName" : "Category",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/CATEGORY/psdetreeviews/Category",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Category.json"
@@ -366,6 +379,7 @@
         "selected" : false,
         "id" : "ChildCategory"
       } ],
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryTreeExpView/psappviewctrls/treeexpbar_tree",
       "getRemovePSControlAction" : {
         "modelref" : true,
         "id" : "remove"
@@ -382,6 +396,7 @@
       "modelid" : "AAE1C238-5213-4320-9283-D9646A8BB706",
       "modeltype" : "PSDETREEVIEW"
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryTreeExpView/psappviewctrls/treeexpbar",
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
     "enableSearch" : true,
@@ -395,16 +410,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEEXPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CATEGORY/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Category.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryTreeExpView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryTreeExpView",
   "title" : "类别树导航视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DETREEEXPVIEW",

@@ -2,6 +2,7 @@
   "getAllPSAppDEACModes" : [ {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "mOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdeacmodes/DEFAULT",
     "name" : "DEFAULT",
     "getPSDEACModeDataItems" : [ {
       "dataType" : 25,
@@ -19,6 +20,7 @@
       }
     } ],
     "pagingSize" : 50,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdeacmodes/DEFAULT",
     "getTextPSAppDEField" : {
       "name" : "WIZARDDATANAME",
       "codeName" : "WizardDataName"
@@ -36,6 +38,15 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/CheckKey",
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
@@ -43,6 +54,15 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/Create",
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
@@ -50,6 +70,15 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/Get",
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -57,6 +86,15 @@
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/GetDraft",
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -64,6 +102,11 @@
     "codeName" : "GotoFinishForm",
     "methodType" : "DEACTION",
     "name" : "GotoFinishForm",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/GotoFinishForm.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/GotoFinishForm",
     "scriptCode" : "data.srfnextform='FinishForm';",
     "builtinMethod" : false,
     "customCode" : true
@@ -74,6 +117,15 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/Remove",
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -82,6 +134,11 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/Save.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/Save",
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
@@ -89,6 +146,15 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/Update",
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
@@ -96,12 +162,18 @@
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/FetchDefault",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "WizardDataId",
     "logicName" : "向导数据标识",
     "name" : "WIZARDDATAID",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdefields/WizardDataId",
     "stdDataType" : 25,
     "stringLength" : 100,
     "enableFrontOnly" : true,
@@ -110,6 +182,7 @@
     "codeName" : "CreateMan",
     "logicName" : "建立人",
     "name" : "CREATEMAN",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdefields/CreateMan",
     "stdDataType" : 25,
     "stringLength" : 60,
     "enableFrontOnly" : true
@@ -117,6 +190,7 @@
     "codeName" : "WizardDataName",
     "logicName" : "向导数据名称",
     "name" : "WIZARDDATANAME",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdefields/WizardDataName",
     "stdDataType" : 25,
     "stringLength" : 200,
     "enableFrontOnly" : true,
@@ -126,6 +200,7 @@
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "name" : "CREATEDATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdefields/CreateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "enableFrontOnly" : true
@@ -133,6 +208,7 @@
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "name" : "UPDATEDATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdefields/UpdateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "enableFrontOnly" : true
@@ -140,6 +216,7 @@
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "name" : "UPDATEMAN",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdefields/UpdateMan",
     "stdDataType" : 25,
     "stringLength" : 60,
     "enableFrontOnly" : true
@@ -147,6 +224,7 @@
     "codeName" : "DeptId",
     "logicName" : "组织部门标识",
     "name" : "DEPTID",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdefields/DeptId",
     "stdDataType" : 25,
     "stringLength" : 60,
     "enableFrontOnly" : true
@@ -154,6 +232,7 @@
     "codeName" : "OrgId",
     "logicName" : "组织机构标识",
     "name" : "ORGID",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdefields/OrgId",
     "stdDataType" : 25,
     "stringLength" : 60,
     "enableFrontOnly" : true
@@ -161,6 +240,7 @@
     "codeName" : "Textfield",
     "logicName" : "文本属性",
     "name" : "TEXTFIELD",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdefields/Textfield",
     "stdDataType" : 25,
     "stringLength" : 100,
     "enableFrontOnly" : true
@@ -168,6 +248,7 @@
     "codeName" : "Timefield",
     "logicName" : "时间属性",
     "name" : "TIMEFIELD",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdefields/Timefield",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss",
     "enableFrontOnly" : true
@@ -175,12 +256,14 @@
     "codeName" : "Numfield",
     "logicName" : "数值属性",
     "name" : "NUMFIELD",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdefields/Numfield",
     "stdDataType" : 6,
     "enableFrontOnly" : true
   }, {
     "codeName" : "Srfnextform",
     "logicName" : "下一步表单",
     "name" : "SRFNEXTFORM",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdefields/Srfnextform",
     "stdDataType" : 25,
     "stringLength" : 60,
     "enableFrontOnly" : true
@@ -191,6 +274,15 @@
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/CheckKey",
     "builtinMethod" : true
   }, {
     "actionMode" : "CREATE",
@@ -198,6 +290,15 @@
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/Create",
     "builtinMethod" : true
   }, {
     "actionMode" : "READ",
@@ -205,6 +306,15 @@
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/Get",
     "builtinMethod" : true
   }, {
     "actionMode" : "GETDRAFT",
@@ -212,6 +322,15 @@
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/GetDraft",
     "builtinMethod" : true
   }, {
     "actionMode" : "CUSTOM",
@@ -219,6 +338,11 @@
     "codeName" : "GotoFinishForm",
     "methodType" : "DEACTION",
     "name" : "GotoFinishForm",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/GotoFinishForm.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/GotoFinishForm",
     "scriptCode" : "data.srfnextform='FinishForm';",
     "builtinMethod" : false,
     "customCode" : true
@@ -229,6 +353,15 @@
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/Remove",
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
@@ -237,6 +370,11 @@
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/Save.json"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/Save",
     "builtinMethod" : true
   }, {
     "actionMode" : "UPDATE",
@@ -244,47 +382,68 @@
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/Update",
     "builtinMethod" : true
   }, {
     "codeName" : "FetchDefault",
     "dataSetType" : "DATAQUERY",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/FilterCreate",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/FilterFetch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGET",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/FilterGet",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGetDraft",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/FilterGetDraft",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterRemove",
     "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/FilterRemove",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/FilterSearch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdemethods/FilterUpdate",
     "builtinMethod" : true
   } ],
   "getAllPSAppDEUIActions" : [ {
@@ -298,11 +457,13 @@
     },
     "frontProcessType" : "WIZARD",
     "fullCodeName" : "WizardData_OpenWizardExample",
+    "mOSFilePath" : "psappdeuiactions/OpenWizardExample",
     "name" : "打开向导示例页面",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
     },
+    "rTMOSFilePath" : "psappdeuiactions/OpenWizardExample",
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
     "uIActionTag" : "OpenWizardExample",
@@ -314,6 +475,7 @@
     "codeName" : "CallReturnWizardData",
     "frontProcessType" : "OTHER",
     "fullCodeName" : "WizardData_CallReturnWizardData",
+    "mOSFilePath" : "psappdeuiactions/CallReturnWizardData",
     "name" : "调用向导数据回填",
     "getPSAppDEUILogic" : {
       "modelref" : true,
@@ -323,6 +485,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
     },
+    "rTMOSFilePath" : "psappdeuiactions/CallReturnWizardData",
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
     "uIActionTag" : "CallReturnWizardData",
@@ -335,6 +498,7 @@
     "codeName" : "ReturnWizardData",
     "defaultParamName" : "Default",
     "logicName" : "向导数据回填",
+    "mOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdeuilogics/ReturnWizardData",
     "name" : "向导数据回填",
     "getPSDEUILogicNodes" : [ {
       "codeName" : "Deuiaction1",
@@ -355,6 +519,7 @@
         "id" : "Temp"
       },
       "logicNodeType" : "DEUIACTION",
+      "mOSFilePath" : "psappdeuilogicnodes/Deuiaction1",
       "name" : "打开完成步骤页面",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -368,10 +533,12 @@
           "id" : "Deuiaction1"
         }
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Deuiaction1",
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
+      "mOSFilePath" : "psappdeuilogicnodes/Begin",
       "name" : "开始",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -385,10 +552,12 @@
           "id" : "Begin"
         }
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Begin",
       "parallelOutput" : true
     }, {
       "codeName" : "Preparejsparam1",
       "logicNodeType" : "PREPAREJSPARAM",
+      "mOSFilePath" : "psappdeuilogicnodes/Preparejsparam1",
       "name" : "向导数据回填",
       "getPSDEUILogicNodeParams" : [ {
         "dstFieldName" : "srfnextform",
@@ -405,33 +574,72 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Preparejsparam1",
       "parallelOutput" : true
     } ],
     "getPSDEUILogicParams" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "psappdeuilogicparams/Default",
       "name" : "传入变量",
+      "rTMOSFilePath" : "psappdeuilogicparams/Default",
       "default" : true
     }, {
       "codeName" : "Temp",
-      "name" : "临时变量"
+      "mOSFilePath" : "psappdeuilogicparams/Temp",
+      "name" : "临时变量",
+      "rTMOSFilePath" : "psappdeuilogicparams/Temp"
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData/psappdeuilogics/ReturnWizardData",
     "getStartPSDEUILogicNode" : {
       "modelref" : true,
       "id" : "Begin"
     }
   } ],
+  "getAllPSAppViews" : [ {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/WizardDataEditView.json",
+    "viewType" : "DEEDITVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/WizardDataStyleWizardView_8964.json",
+    "viewType" : "DEWIZARDVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/WizardDataExampleWizardView.json",
+    "viewType" : "DEWIZARDVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/WizardDataBaseWizardView.json",
+    "viewType" : "DEWIZARDVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/WizardDataExamplePanelView.json",
+    "viewType" : "DEPANELVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/WizardDataGridView.json",
+    "viewType" : "DEGRIDVIEW"
+  } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
-    "name" : "CREATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeopprivs/CREATE",
+    "name" : "CREATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeopprivs/CREATE"
   }, {
     "logicName" : "删除",
-    "name" : "DELETE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeopprivs/DELETE",
+    "name" : "DELETE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeopprivs/DELETE"
   }, {
     "logicName" : "读取",
-    "name" : "READ"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeopprivs/READ",
+    "name" : "READ",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeopprivs/READ"
   }, {
     "logicName" : "更新",
-    "name" : "UPDATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeopprivs/UPDATE",
+    "name" : "UPDATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeopprivs/UPDATE"
   } ],
   "codeName" : "WizardData",
   "dataAccCtrlArch" : 1,
@@ -439,12 +647,18 @@
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json",
   "enableUIActions" : 15,
   "logicName" : "向导数据",
+  "mOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData",
   "name" : "WIZARDDATA",
   "getPSDEName" : "WIZARDDATA",
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample/PSDATAENTITIES/WizardData.json"
+  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "WIZARDDATANAME",
     "codeName" : "WizardDataName"
   } ],
+  "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/WizardData",
   "storageMode" : 1,
   "defaultMode" : true,
   "enableFilterActions" : true,

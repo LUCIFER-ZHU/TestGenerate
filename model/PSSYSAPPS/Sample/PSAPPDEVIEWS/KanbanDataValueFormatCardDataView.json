@@ -4,14 +4,20 @@
   "codeName" : "KanbanDataValueFormatCardDataView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/KanbanDataValueFormatCardDataView.json",
   "mDCtrlActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/KanbanDataValueFormatCardDataView",
   "name" : "KanbanDataValueFormatCardDataView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "DataView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "appViewLogicName" : "opendata",
@@ -29,7 +35,8 @@
       "ctrlName" : "dataview",
       "name" : "DATAVIEW",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -40,6 +47,8 @@
       "logicType" : "PREDEFINED",
       "name" : "新建数据",
       "getNewDataPSAppView" : {
+        "mOSFilePath" : "psappviewlogicrefviews/KanbanDataEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/KanbanDataEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/KanbanDataEditView.json",
@@ -47,6 +56,8 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "mOSFilePath" : "psappviewlogicrefviews/KanbanDataEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/KanbanDataEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/KanbanDataEditView.json",
@@ -66,6 +77,8 @@
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
       "getOpenDataPSAppView" : {
+        "mOSFilePath" : "psappviewlogicrefviews/KanbanDataEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/KanbanDataEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/KanbanDataEditView.json",
@@ -73,6 +86,8 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "mOSFilePath" : "psappviewlogicrefviews/KanbanDataEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/KanbanDataEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/KanbanDataEditView.json",
@@ -103,6 +118,7 @@
   "getPSControls" : [ {
     "codeName" : "ValueFormatCardDataViewtoolbar",
     "controlType" : "TOOLBAR",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/KANBANDATA/psdetoolbars/ValueFormatCardDataViewtoolbar",
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -111,14 +127,17 @@
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/KanbanDataValueFormatCardDataView/psappviewctrls/toolbar",
     "modelid" : "5abe4c1a0878da1eeba02a995862b3f7_toolbar",
     "modeltype" : "PSDETOOLBAR"
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData/PSSEARCHFORMS/Default.json",
     "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "logicName" : "默认搜索表单",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/KANBANDATA/psdeform_searchforms/Default",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
@@ -181,17 +200,28 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/KanbanDataValueFormatCardDataView/psappviewctrls/searchform",
     "searchButtonStyle" : "DEFAULT",
     "tabHeaderPos" : "TOP",
     "enableAdvanceSearch" : false,
@@ -240,20 +270,31 @@
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData/PSPANELS/ValueFormat.json",
       "layoutMode" : "TABLE_24COL",
       "logicName" : "值显示项布局面板",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/KANBANDATA/pssysviewpanels/ValueFormat",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
       },
       "getPSControlParam" : { },
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/KanbanDataValueFormatCardDataView/psappviewctrls/itemlayoutpanel",
       "getRootPSPanelItems" : [ {
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTAINER",
+        "mOSFilePath" : "pssysviewpanelitem_containers/container1",
         "name" : "container1",
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -264,6 +305,7 @@
         "getPSPanelItems" : [ {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
+          "mOSFilePath" : "pssysviewpanelitem_fields/temp2",
           "name" : "temp2",
           "getPSEditor" : {
             "editorType" : "SPAN",
@@ -274,6 +316,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "pssysviewpanelitem_fields/temp2",
           "valueFormat" : "00000",
           "viewFieldName" : "Temp2",
           "hidden" : false,
@@ -281,6 +324,7 @@
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
+          "mOSFilePath" : "pssysviewpanelitem_fields/temp3",
           "name" : "temp3",
           "getPSEditor" : {
             "editorType" : "SPAN",
@@ -291,6 +335,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "pssysviewpanelitem_fields/temp3",
           "valueFormat" : "#,###",
           "viewFieldName" : "Temp3",
           "hidden" : false,
@@ -298,6 +343,7 @@
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
+          "mOSFilePath" : "pssysviewpanelitem_fields/begintime",
           "name" : "begintime",
           "getPSEditor" : {
             "editorType" : "SPAN",
@@ -308,6 +354,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "pssysviewpanelitem_fields/begintime",
           "valueFormat" : "YYYY-MM-DD",
           "viewFieldName" : "BEGINTIME",
           "hidden" : false,
@@ -315,6 +362,7 @@
         }, {
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
+          "mOSFilePath" : "pssysviewpanelitem_fields/endtime",
           "name" : "endtime",
           "getPSEditor" : {
             "editorType" : "SPAN",
@@ -325,17 +373,21 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "pssysviewpanelitem_fields/endtime",
           "valueFormat" : "YYYY",
           "viewFieldName" : "ENDTIME",
           "hidden" : false,
           "showCaption" : false
-        } ]
+        } ],
+        "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
+        "showCaption" : true
       } ],
       "name" : "itemlayoutpanel",
       "modelid" : "B258134C-D47E-4DB0-8CA4-B0597F60EC34",
       "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "值显示",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/KANBANDATA/psdedataviews/ValueFormat",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
@@ -577,6 +629,7 @@
       "enableSort" : false
     } ],
     "pagingSize" : 20,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/KanbanDataValueFormatCardDataView/psappviewctrls/dataview",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -605,16 +658,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEDATAVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/KANBANDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/KanbanData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/KanbanDataValueFormatCardDataView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/KanbanDataValueFormatCardDataView",
   "title" : "看板数据数据视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEDATAVIEW",

@@ -3,10 +3,12 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDELOGICS/PrepareCtx.json",
   "logicName" : "动态准备应用上下文",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx",
   "name" : "动态准备应用上下文",
   "getPSDELogicNodes" : [ {
     "codeName" : "Prepareparam2",
     "logicNodeType" : "PREPAREPARAM",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicnodes/Prepareparam2",
     "name" : "回显",
     "getPSDELogicNodeParams" : [ {
       "dstFieldName" : "FIELDZ",
@@ -33,10 +35,12 @@
       "paramAction" : "SETPARAMVALUE",
       "srcValueType" : "EXPRESSION"
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicnodes/Prepareparam2",
     "parallelOutput" : true
   }, {
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicnodes/Begin",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
@@ -49,10 +53,12 @@
         "id" : "Begin"
       }
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicnodes/Begin",
     "parallelOutput" : true
   }, {
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicnodes/Prepareparam1",
     "name" : "准备键值",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
@@ -80,6 +86,7 @@
       },
       "srcValueType" : "SRCDLPARAM"
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicnodes/Prepareparam1",
     "parallelOutput" : true
   }, {
     "codeName" : "Deaction1",
@@ -96,6 +103,7 @@
       "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
     },
     "logicNodeType" : "DEACTION",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicnodes/Deaction1",
     "name" : "获取数据",
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
@@ -108,27 +116,35 @@
         "id" : "Deaction1"
       }
     } ],
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicnodes/Deaction1",
     "parallelOutput" : true
   } ],
   "getPSDELogicParams" : [ {
     "codeName" : "Temp",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicparams/Temp",
     "name" : "临时",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
-    }
+    },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicparams/Temp"
   }, {
     "codeName" : "Default",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicparams/Default",
     "name" : "传入变量",
     "getParamPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicparams/Default",
     "default" : true
   }, {
     "codeName" : "context",
-    "name" : "应用上下文"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicparams/context",
+    "name" : "应用上下文",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx/psdelogicparams/context"
   } ],
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdelogics/PrepareCtx",
   "getStartPSDELogicNode" : {
     "modelref" : true,
     "id" : "Begin"

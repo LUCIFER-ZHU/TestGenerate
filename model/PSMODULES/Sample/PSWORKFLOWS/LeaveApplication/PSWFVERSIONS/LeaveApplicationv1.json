@@ -1,6 +1,7 @@
 {
   "codeName" : "LeaveApplicationv1",
   "dynaModelFilePath" : "PSMODULES/Sample/PSWORKFLOWS/LeaveApplication/PSWFVERSIONS/LeaveApplicationv1.json",
+  "mOSFilePath" : "psmodules/Sample/psworkflows/LeaveApplication/pswfversions/LeaveApplicationv1",
   "name" : "请假申请流程 v1",
   "getPSWFLinks" : [ {
     "getFromPSWFProcess" : {
@@ -45,6 +46,7 @@
     "height" : 80,
     "leftPos" : 388,
     "logicName" : "领导审批",
+    "mOSFilePath" : "pswfprocesses/Interactive002",
     "msgType" : 0,
     "multiInstMode" : "NONE",
     "name" : "领导审批",
@@ -56,6 +58,7 @@
       "name" : "[当前操作者]",
       "wFProcessRoleType" : "CURACTOR"
     } ],
+    "rTMOSFilePath" : "pswfprocesses/Interactive002",
     "timeout" : -1,
     "topPos" : 74,
     "wFProcessType" : "INTERACTIVE",
@@ -69,6 +72,7 @@
     "height" : 80,
     "leftPos" : 243,
     "logicName" : "组长审批",
+    "mOSFilePath" : "pswfprocesses/Interactive001",
     "msgType" : 0,
     "multiInstMode" : "NONE",
     "name" : "组长审批",
@@ -80,6 +84,7 @@
       "name" : "[当前操作者]",
       "wFProcessRoleType" : "CURACTOR"
     } ],
+    "rTMOSFilePath" : "pswfprocesses/Interactive001",
     "timeout" : -1,
     "topPos" : 74,
     "wFProcessType" : "INTERACTIVE",
@@ -93,7 +98,9 @@
     "height" : 30,
     "leftPos" : 533,
     "logicName" : "处理",
+    "mOSFilePath" : "pswfprocesses/End001",
     "name" : "处理",
+    "rTMOSFilePath" : "pswfprocesses/End001",
     "timeout" : -1,
     "topPos" : 100,
     "wFProcessType" : "END",
@@ -106,11 +113,13 @@
     "height" : 30,
     "leftPos" : 168,
     "logicName" : "提交流程",
+    "mOSFilePath" : "pswfprocesses/Start001",
     "name" : "提交流程",
     "getPSWFLinks" : [ {
       "modelref" : true,
       "id" : "连接34"
     } ],
+    "rTMOSFilePath" : "pswfprocesses/Start001",
     "timeout" : -1,
     "topPos" : 99,
     "wFProcessType" : "START",
@@ -119,6 +128,7 @@
     "enableTimeout" : false,
     "startProcess" : true
   } ],
+  "rTMOSFilePath" : "psmodules/Sample/psworkflows/LeaveApplication/pswfversions/LeaveApplicationv1",
   "getStartPSWFProcess" : {
     "modelref" : true,
     "id" : "Start001"

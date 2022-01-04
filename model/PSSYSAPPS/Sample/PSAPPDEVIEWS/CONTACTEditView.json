@@ -4,14 +4,20 @@
   "codeName" : "CONTACTEditView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CONTACTEditView.json",
   "funcViewMode" : "EDITVIEW",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/CONTACTEditView",
   "name" : "CONTACTEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "EditView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "form",
@@ -21,7 +27,8 @@
       "name" : "P2K",
       "paramType" : "VALUE",
       "value" : 0
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "eventArg" : "tbitem3",
@@ -290,6 +297,7 @@
     "controlType" : "TOOLBAR",
     "hookEventNames" : [ "CLICK" ],
     "logicName" : "工具栏模板（默认编辑界面）",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/psdetoolbars/EditViewtoolbar",
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -441,7 +449,9 @@
     },
     "getPSDEToolbarItems" : [ {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.SAVE"
+        "lanResTag" : "TBB.TEXT.*.SAVE",
+        "mOSFilePath" : "pslanguageres/Auto8",
+        "rTMOSFilePath" : "pslanguageres/Auto8"
       },
       "caption" : "保存",
       "groupExtractMode" : "ITEM",
@@ -458,19 +468,25 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.SAVE"
+          "lanResTag" : "TBB.TEXT.*.SAVE",
+          "mOSFilePath" : "pslanguageres/Auto8",
+          "rTMOSFilePath" : "pslanguageres/Auto8"
         },
         "caption" : "保存",
         "codeName" : "Save",
         "fullCodeName" : "Save",
+        "mOSFilePath" : "pssysappdeuiactions/Save",
         "name" : "编辑界面_保存操作",
         "getPSSysImage" : {
           "glyph" : "xf0c7@FontAwesome",
           "cssClass" : "fa fa-save"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/Save",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+          "lanResTag" : "TBB.TOOLTIP.*.SAVE",
+          "mOSFilePath" : "pslanguageres/Auto261",
+          "rTMOSFilePath" : "pslanguageres/Auto261"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "Save",
@@ -478,13 +494,17 @@
       },
       "tooltip" : "保存",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+        "lanResTag" : "TBB.TOOLTIP.*.SAVE",
+        "mOSFilePath" : "pslanguageres/Auto261",
+        "rTMOSFilePath" : "pslanguageres/Auto261"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDNEW"
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDNEW",
+        "mOSFilePath" : "pslanguageres/Auto68",
+        "rTMOSFilePath" : "pslanguageres/Auto68"
       },
       "caption" : "保存并新建",
       "groupExtractMode" : "ITEM",
@@ -500,18 +520,24 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDNEW"
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDNEW",
+          "mOSFilePath" : "pslanguageres/Auto68",
+          "rTMOSFilePath" : "pslanguageres/Auto68"
         },
         "caption" : "保存并新建",
         "codeName" : "SaveAndNew",
         "fullCodeName" : "SaveAndNew",
+        "mOSFilePath" : "pssysappdeuiactions/SaveAndNew",
         "name" : "编辑界面_保存并新建操作",
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandnew"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/SaveAndNew",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW"
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW",
+          "mOSFilePath" : "pslanguageres/Auto82",
+          "rTMOSFilePath" : "pslanguageres/Auto82"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "SaveAndNew",
@@ -519,13 +545,17 @@
       },
       "tooltip" : "保存并新建",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW"
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW",
+        "mOSFilePath" : "pslanguageres/Auto82",
+        "rTMOSFilePath" : "pslanguageres/Auto82"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+        "mOSFilePath" : "pslanguageres/Auto97",
+        "rTMOSFilePath" : "pslanguageres/Auto97"
       },
       "caption" : "保存并关闭",
       "groupExtractMode" : "ITEM",
@@ -541,18 +571,24 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+          "mOSFilePath" : "pslanguageres/Auto97",
+          "rTMOSFilePath" : "pslanguageres/Auto97"
         },
         "caption" : "保存并关闭",
         "codeName" : "SaveAndExit",
         "fullCodeName" : "SaveAndExit",
+        "mOSFilePath" : "pssysappdeuiactions/SaveAndExit",
         "name" : "编辑界面_保存并退出操作",
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/SaveAndExit",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+          "mOSFilePath" : "pslanguageres/Auto43",
+          "rTMOSFilePath" : "pslanguageres/Auto43"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "SaveAndExit",
@@ -560,7 +596,9 @@
       },
       "tooltip" : "保存并关闭",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+        "mOSFilePath" : "pslanguageres/Auto43",
+        "rTMOSFilePath" : "pslanguageres/Auto43"
       },
       "showCaption" : true,
       "showIcon" : true
@@ -570,7 +608,9 @@
       "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
+        "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE",
+        "mOSFilePath" : "pslanguageres/Auto101",
+        "rTMOSFilePath" : "pslanguageres/Auto101"
       },
       "caption" : "删除并关闭",
       "groupExtractMode" : "ITEM",
@@ -588,19 +628,25 @@
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
+          "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE",
+          "mOSFilePath" : "pslanguageres/Auto101",
+          "rTMOSFilePath" : "pslanguageres/Auto101"
         },
         "caption" : "删除并关闭",
         "codeName" : "RemoveAndExit",
         "fullCodeName" : "RemoveAndExit",
+        "mOSFilePath" : "pssysappdeuiactions/RemoveAndExit",
         "name" : "编辑界面_删除并退出操作",
         "getPSSysImage" : {
           "glyph" : "xf00d@FontAwesome",
           "cssClass" : "fa fa-remove"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/RemoveAndExit",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE",
+          "mOSFilePath" : "pslanguageres/Auto191",
+          "rTMOSFilePath" : "pslanguageres/Auto191"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "RemoveAndExit",
@@ -608,7 +654,9 @@
       },
       "tooltip" : "删除并关闭",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE",
+        "mOSFilePath" : "pslanguageres/Auto191",
+        "rTMOSFilePath" : "pslanguageres/Auto191"
       },
       "showCaption" : true,
       "showIcon" : true
@@ -618,7 +666,9 @@
       "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.NEW"
+        "lanResTag" : "TBB.TEXT.*.NEW",
+        "mOSFilePath" : "pslanguageres/Auto275",
+        "rTMOSFilePath" : "pslanguageres/Auto275"
       },
       "caption" : "新建",
       "groupExtractMode" : "ITEM",
@@ -635,19 +685,25 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.NEW"
+          "lanResTag" : "TBB.TEXT.*.NEW",
+          "mOSFilePath" : "pslanguageres/Auto275",
+          "rTMOSFilePath" : "pslanguageres/Auto275"
         },
         "caption" : "新建",
         "codeName" : "New",
         "fullCodeName" : "New",
+        "mOSFilePath" : "pssysappdeuiactions/New",
         "name" : "编辑界面_新建操作",
         "getPSSysImage" : {
           "glyph" : "xf0f6@FontAwesome",
           "cssClass" : "fa fa-file-text-o"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/New",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.NEW"
+          "lanResTag" : "TBB.TOOLTIP.*.NEW",
+          "mOSFilePath" : "pslanguageres/Auto44",
+          "rTMOSFilePath" : "pslanguageres/Auto44"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "New",
@@ -655,7 +711,9 @@
       },
       "tooltip" : "新建",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.NEW"
+        "lanResTag" : "TBB.TOOLTIP.*.NEW",
+        "mOSFilePath" : "pslanguageres/Auto44",
+        "rTMOSFilePath" : "pslanguageres/Auto44"
       },
       "showCaption" : true,
       "showIcon" : true
@@ -665,7 +723,9 @@
       "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.COPY"
+        "lanResTag" : "TBB.TEXT.*.COPY",
+        "mOSFilePath" : "pslanguageres/Auto83",
+        "rTMOSFilePath" : "pslanguageres/Auto83"
       },
       "caption" : "拷贝",
       "groupExtractMode" : "ITEM",
@@ -683,19 +743,25 @@
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.COPY"
+          "lanResTag" : "TBB.TEXT.*.COPY",
+          "mOSFilePath" : "pslanguageres/Auto83",
+          "rTMOSFilePath" : "pslanguageres/Auto83"
         },
         "caption" : "拷贝",
         "codeName" : "Copy",
         "fullCodeName" : "Copy",
+        "mOSFilePath" : "pssysappdeuiactions/Copy",
         "name" : "编辑界面_拷贝操作",
         "getPSSysImage" : {
           "glyph" : "xf0c5@FontAwesome",
           "cssClass" : "fa fa-copy"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/Copy",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.COPY"
+          "lanResTag" : "TBB.TOOLTIP.*.COPY",
+          "mOSFilePath" : "pslanguageres/Auto243",
+          "rTMOSFilePath" : "pslanguageres/Auto243"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "Copy",
@@ -703,7 +769,9 @@
       },
       "tooltip" : "拷贝",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.COPY"
+        "lanResTag" : "TBB.TOOLTIP.*.COPY",
+        "mOSFilePath" : "pslanguageres/Auto243",
+        "rTMOSFilePath" : "pslanguageres/Auto243"
       },
       "showCaption" : true,
       "showIcon" : true
@@ -730,11 +798,13 @@
         "caption" : "第一个记录",
         "codeName" : "FirstRecord",
         "fullCodeName" : "FirstRecord",
+        "mOSFilePath" : "pssysappdeuiactions/FirstRecord",
         "name" : "编辑界面_第一个记录",
         "getPSSysImage" : {
           "glyph" : "xf049@FontAwesome",
           "cssClass" : "fa fa-fast-backward"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/FirstRecord",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "FirstRecord",
@@ -762,11 +832,13 @@
         "caption" : "上一个记录",
         "codeName" : "PrevRecord",
         "fullCodeName" : "PrevRecord",
+        "mOSFilePath" : "pssysappdeuiactions/PrevRecord",
         "name" : "编辑界面_上一个记录",
         "getPSSysImage" : {
           "glyph" : "xf048@FontAwesome",
           "cssClass" : "fa fa-step-backward"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/PrevRecord",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "PrevRecord",
@@ -794,11 +866,13 @@
         "caption" : "下一个记录",
         "codeName" : "NextRecord",
         "fullCodeName" : "NextRecord",
+        "mOSFilePath" : "pssysappdeuiactions/NextRecord",
         "name" : "编辑界面_下一个记录",
         "getPSSysImage" : {
           "glyph" : "xf051@FontAwesome",
           "cssClass" : "fa fa-step-forward"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/NextRecord",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "NextRecord",
@@ -826,11 +900,13 @@
         "caption" : "最后一个记录",
         "codeName" : "LastRecord",
         "fullCodeName" : "LastRecord",
+        "mOSFilePath" : "pssysappdeuiactions/LastRecord",
         "name" : "编辑界面_最后一个记录",
         "getPSSysImage" : {
           "glyph" : "xf050@FontAwesome",
           "cssClass" : "fa fa-fast-forward"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/LastRecord",
         "timeout" : 60000,
         "uIActionMode" : "SYS",
         "uIActionTag" : "LastRecord",
@@ -845,7 +921,9 @@
       "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.HELP"
+        "lanResTag" : "TBB.TEXT.*.HELP",
+        "mOSFilePath" : "pslanguageres/Auto276",
+        "rTMOSFilePath" : "pslanguageres/Auto276"
       },
       "caption" : "帮助",
       "groupExtractMode" : "ITEM",
@@ -862,19 +940,25 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.HELP"
+          "lanResTag" : "TBB.TEXT.*.HELP",
+          "mOSFilePath" : "pslanguageres/Auto276",
+          "rTMOSFilePath" : "pslanguageres/Auto276"
         },
         "caption" : "帮助",
         "codeName" : "Help",
         "fullCodeName" : "Help",
+        "mOSFilePath" : "pssysappdeuiactions/Help",
         "name" : "编辑界面_帮助操作",
         "getPSSysImage" : {
           "glyph" : "xf128@FontAwesome",
           "cssClass" : "fa fa-question"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/Help",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.HELP"
+          "lanResTag" : "TBB.TOOLTIP.*.HELP",
+          "mOSFilePath" : "pslanguageres/Auto259",
+          "rTMOSFilePath" : "pslanguageres/Auto259"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "Help",
@@ -882,11 +966,14 @@
       },
       "tooltip" : "帮助",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.*.HELP"
+        "lanResTag" : "TBB.TOOLTIP.*.HELP",
+        "mOSFilePath" : "pslanguageres/Auto259",
+        "rTMOSFilePath" : "pslanguageres/Auto259"
       },
       "showCaption" : true,
       "showIcon" : true
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CONTACTEditView/psappviewctrls/toolbar",
     "modelid" : "a4eb00b17f8652bdf677cb4ed5231e63",
     "modeltype" : "PSDETOOLBAR"
   }, {
@@ -896,6 +983,7 @@
       "modelref" : true,
       "id" : "create"
     },
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact/PSFORMS/Main.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
@@ -911,6 +999,7 @@
     },
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "logicName" : "主编辑表单",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/psdeform_editforms/Main",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact.json"
@@ -1145,6 +1234,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -1152,6 +1242,7 @@
         "codeName" : "group1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group1",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "actionGroupExtractMode" : "ITEM",
@@ -1159,6 +1250,7 @@
           "codeName" : "grouppanel1",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
           "name" : "grouppanel1",
           "getPSDEFormDetails" : [ {
             "caption" : "头像",
@@ -1170,6 +1262,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/image",
             "name" : "image",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1190,10 +1283,15 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/image",
             "allowEmpty" : true,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -1202,6 +1300,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
           "infoGroupMode" : false,
           "showCaption" : false
         }, {
@@ -1210,6 +1309,7 @@
           "codeName" : "grouppanel2",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
           "name" : "grouppanel2",
           "getPSDEFormDetails" : [ {
             "caption" : "联系人姓名",
@@ -1221,6 +1321,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/contactname",
             "name" : "contactname",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1238,6 +1339,7 @@
               "colSM" : 12,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/contactname",
             "allowEmpty" : false,
             "showCaption" : true
           }, {
@@ -1250,6 +1352,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/post",
             "name" : "post",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1267,6 +1370,7 @@
               "colSM" : 12,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/post",
             "allowEmpty" : false,
             "showCaption" : true
           }, {
@@ -1279,6 +1383,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/phone",
             "name" : "phone",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1296,6 +1401,7 @@
               "colSM" : 12,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/phone",
             "allowEmpty" : true,
             "showCaption" : true
           }, {
@@ -1308,6 +1414,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/mobile",
             "name" : "mobile",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1325,6 +1432,7 @@
               "colSM" : 12,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/mobile",
             "allowEmpty" : true,
             "showCaption" : true
           }, {
@@ -1337,6 +1445,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/email",
             "name" : "email",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1352,6 +1461,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/email",
             "allowEmpty" : true,
             "showCaption" : true
           }, {
@@ -1364,6 +1474,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/customerid",
             "name" : "customerid",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1378,11 +1489,16 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/customerid",
             "allowEmpty" : true,
             "hidden" : true,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -1392,10 +1508,15 @@
             "colSM" : 16,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
           "infoGroupMode" : false,
           "showCaption" : false
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1403,19 +1524,26 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
         "infoGroupMode" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     }, {
       "caption" : "其它",
       "codeName" : "formpage2",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage2",
       "name" : "formpage2",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -1423,6 +1551,7 @@
         "codeName" : "group2",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group2",
         "name" : "group2",
         "getPSDEFormDetails" : [ {
           "caption" : "建立人",
@@ -1434,6 +1563,7 @@
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/createman",
           "name" : "createman",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -1453,6 +1583,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/createman",
           "allowEmpty" : true,
           "convertToCodeItemText" : true,
           "showCaption" : true
@@ -1466,6 +1597,7 @@
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/createdate",
           "name" : "createdate",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -1481,6 +1613,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/createdate",
           "valueFormat" : "YYYY-MM-DD HH:mm:ss",
           "allowEmpty" : true,
           "showCaption" : true
@@ -1494,6 +1627,7 @@
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/updateman",
           "name" : "updateman",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -1513,6 +1647,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/updateman",
           "allowEmpty" : true,
           "convertToCodeItemText" : true,
           "showCaption" : true
@@ -1526,6 +1661,7 @@
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/updatedate",
           "name" : "updatedate",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -1541,11 +1677,16 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/updatedate",
           "valueFormat" : "YYYY-MM-DD HH:mm:ss",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -1553,19 +1694,30 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group2",
         "infoGroupMode" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage2",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CONTACTEditView/psappviewctrls/form",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -1586,16 +1738,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CONTACTEditView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CONTACTEditView",
   "title" : "联系人编辑视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEEDITVIEW",
@@ -1608,6 +1763,7 @@
     "actionRSMode" : 1,
     "codeName" : "Contacts",
     "dataRSMode" : 0,
+    "mOSFilePath" : "pssysapps/Sample/psappders/Contacts",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
@@ -1621,6 +1777,7 @@
       "name" : "CUSTOMERID",
       "codeName" : "CustomerId"
     },
-    "rSMode" : 2
+    "rSMode" : 2,
+    "rTMOSFilePath" : "pssysapps/Sample/psappders/Contacts"
   } ] ]
 }

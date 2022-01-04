@@ -4,15 +4,21 @@
   "codeName" : "CounterData2EditView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CounterData2EditView.json",
   "funcViewMode" : "EDITVIEW",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/CounterData2EditView",
   "name" : "CounterData2EditView",
   "openMode" : "DRAWER_RIGHT",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CounterData2.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "EditView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "form",
@@ -22,7 +28,8 @@
       "name" : "P2K",
       "paramType" : "VALUE",
       "value" : 0
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "eventArg" : "tbitem1",
@@ -67,6 +74,7 @@
     "controlType" : "TOOLBAR",
     "hookEventNames" : [ "CLICK" ],
     "logicName" : "工具栏模板（弹出简单编辑表单，保存及关闭按钮）",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/COUNTERDATA2/psdetoolbars/EditViewtoolbar",
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -98,7 +106,9 @@
     },
     "getPSDEToolbarItems" : [ {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+        "mOSFilePath" : "pslanguageres/Auto97",
+        "rTMOSFilePath" : "pslanguageres/Auto97"
       },
       "caption" : "保存并关闭",
       "groupExtractMode" : "ITEM",
@@ -114,18 +124,24 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+          "mOSFilePath" : "pslanguageres/Auto97",
+          "rTMOSFilePath" : "pslanguageres/Auto97"
         },
         "caption" : "保存并关闭",
         "codeName" : "SaveAndExit",
         "fullCodeName" : "SaveAndExit",
+        "mOSFilePath" : "pssysappdeuiactions/SaveAndExit",
         "name" : "编辑界面_保存并退出操作",
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/SaveAndExit",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+          "mOSFilePath" : "pslanguageres/Auto43",
+          "rTMOSFilePath" : "pslanguageres/Auto43"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "SaveAndExit",
@@ -133,13 +149,17 @@
       },
       "tooltip" : "保存并关闭",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+        "mOSFilePath" : "pslanguageres/Auto43",
+        "rTMOSFilePath" : "pslanguageres/Auto43"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
+        "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
+        "mOSFilePath" : "pslanguageres/Auto223",
+        "rTMOSFilePath" : "pslanguageres/Auto223"
       },
       "caption" : "关闭",
       "groupExtractMode" : "ITEM",
@@ -156,19 +176,25 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
+          "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
+          "mOSFilePath" : "pslanguageres/Auto223",
+          "rTMOSFilePath" : "pslanguageres/Auto223"
         },
         "caption" : "关闭",
         "codeName" : "Exit",
         "fullCodeName" : "Exit",
+        "mOSFilePath" : "pssysappdeuiactions/Exit",
         "name" : "编辑界面_退出操作",
         "getPSSysImage" : {
           "glyph" : "xf08b@FontAwesome",
           "cssClass" : "fa fa-sign-out"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/Exit",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE"
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE",
+          "mOSFilePath" : "pslanguageres/Auto92",
+          "rTMOSFilePath" : "pslanguageres/Auto92"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "Exit",
@@ -176,11 +202,14 @@
       },
       "tooltip" : "关闭",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE"
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE",
+        "mOSFilePath" : "pslanguageres/Auto92",
+        "rTMOSFilePath" : "pslanguageres/Auto92"
       },
       "showCaption" : true,
       "showIcon" : true
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CounterData2EditView/psappviewctrls/toolbar",
     "modelid" : "a6c665af2c16f3092af6051f2fa70a83",
     "modeltype" : "PSDETOOLBAR"
   }, {
@@ -190,6 +219,7 @@
       "modelref" : true,
       "id" : "create"
     },
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CounterData2/PSFORMS/Main.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
@@ -205,6 +235,7 @@
     },
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "logicName" : "主编辑表单",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/COUNTERDATA2/psdeform_editforms/Main",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CounterData2.json"
@@ -424,6 +455,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -431,6 +463,7 @@
         "codeName" : "group1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group1",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "caption" : "计数1",
@@ -442,6 +475,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/countertag",
           "name" : "countertag",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -457,6 +491,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/countertag",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -469,6 +504,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/countertag2",
           "name" : "countertag2",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -484,6 +520,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/countertag2",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -496,6 +533,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/countertag3",
           "name" : "countertag3",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -511,6 +549,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/countertag3",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -523,6 +562,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/countertag4",
           "name" : "countertag4",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -538,6 +578,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/countertag4",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -550,6 +591,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/countertag5",
           "name" : "countertag5",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -565,6 +607,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/countertag5",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -577,6 +620,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/countertag6",
           "name" : "countertag6",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -592,6 +636,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/countertag6",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -604,6 +649,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/countertag7",
           "name" : "countertag7",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -619,6 +665,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/countertag7",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -631,6 +678,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/countertag8",
           "name" : "countertag8",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -646,6 +694,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/countertag8",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -658,6 +707,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/countertag9",
           "name" : "countertag9",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -673,10 +723,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/countertag9",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : 8,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -684,19 +739,30 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
         "infoGroupMode" : false,
         "showCaption" : false
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CounterData2EditView/psappviewctrls/form",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -717,16 +783,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/COUNTERDATA2/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/CounterData2.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CounterData2EditView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CounterData2EditView",
   "title" : "计数器数据2编辑视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEEDITVIEW",

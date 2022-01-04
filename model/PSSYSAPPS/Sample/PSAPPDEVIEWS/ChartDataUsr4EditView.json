@@ -3,14 +3,20 @@
   "caption" : "图表",
   "codeName" : "ChartDataUsr4EditView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr4EditView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr4EditView",
   "name" : "ChartDataUsr4EditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "EditView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "form",
@@ -20,11 +26,13 @@
       "name" : "P2K",
       "paramType" : "VALUE",
       "value" : 0
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "Usr4EditViewtoolbar",
     "controlType" : "TOOLBAR",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdetoolbars/Usr4EditViewtoolbar",
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -33,6 +41,7 @@
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr4EditView/psappviewctrls/toolbar",
     "modelid" : "36fba9c6c6d45d92398b741dde4ee547_toolbar",
     "modeltype" : "PSDETOOLBAR"
   }, {
@@ -42,6 +51,7 @@
       "modelref" : true,
       "id" : "create"
     },
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSFORMS/Main_3.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
@@ -57,6 +67,7 @@
     },
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "logicName" : "选择测试表单",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdeform_editforms/Main_3",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
@@ -157,6 +168,7 @@
     },
     "getPSDEFormItemUpdates" : [ {
       "codeName" : "testupdate",
+      "mOSFilePath" : "psdefiupdates/testupdate",
       "name" : "更改b更新a",
       "getPSAppDEMethod" : {
         "modelref" : true,
@@ -164,7 +176,8 @@
       },
       "getPSDEFIUpdateDetails" : [ {
         "name" : "formitem14"
-      } ]
+      } ],
+      "rTMOSFilePath" : "psdefiupdates/testupdate"
     } ],
     "getPSDEFormItems" : [ {
       "id" : "srfupdatedate",
@@ -272,6 +285,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -279,6 +293,7 @@
         "codeName" : "grouppanel1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
         "name" : "grouppanel1",
         "getPSDEFormDetails" : [ {
           "caption" : "单项选择表格",
@@ -290,6 +305,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem",
           "name" : "formitem",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -319,6 +335,7 @@
             "colXS" : 12,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem",
           "valueItemName" : "formitem1",
           "allowEmpty" : true,
           "showCaption" : true
@@ -332,6 +349,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem1",
           "name" : "formitem1",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -345,6 +363,7 @@
             "colSM" : 12,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem1",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -357,6 +376,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem2",
           "name" : "formitem2",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -386,6 +406,7 @@
             "colXS" : 12,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem2",
           "valueItemName" : "formitem3",
           "allowEmpty" : true,
           "showCaption" : true
@@ -399,6 +420,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem3",
           "name" : "formitem3",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -413,6 +435,7 @@
             "colXS" : 12,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem3",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -425,6 +448,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem4",
           "name" : "formitem4",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -452,6 +476,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem4",
           "valueItemName" : "formitem5",
           "allowEmpty" : true,
           "showCaption" : true
@@ -465,6 +490,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem5",
           "name" : "formitem5",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -477,6 +503,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem5",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -489,6 +516,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem6",
           "name" : "formitem6",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -516,6 +544,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem6",
           "valueItemName" : "formitem7",
           "allowEmpty" : true,
           "showCaption" : true
@@ -529,6 +558,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem7",
           "name" : "formitem7",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -541,6 +571,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem7",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -553,6 +584,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem8",
           "name" : "formitem8",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -580,6 +612,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem8",
           "valueItemName" : "formitem9",
           "allowEmpty" : true,
           "showCaption" : true
@@ -593,6 +626,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem9",
           "name" : "formitem9",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -605,6 +639,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem9",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -617,6 +652,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem10",
           "name" : "formitem10",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -644,6 +680,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem10",
           "valueItemName" : "formitem11",
           "allowEmpty" : true,
           "showCaption" : true
@@ -657,6 +694,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem11",
           "name" : "formitem11",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -669,6 +707,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem11",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -681,6 +720,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem12",
           "name" : "formitem12",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -708,6 +748,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem12",
           "valueItemName" : "formitem13",
           "allowEmpty" : true,
           "showCaption" : true
@@ -721,6 +762,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem13",
           "name" : "formitem13",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -733,6 +775,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem13",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -745,6 +788,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem14",
           "name" : "formitem14",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -756,6 +800,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem14",
           "resetItemName" : "formitem15",
           "resetItemNames" : [ "formitem15" ],
           "allowEmpty" : true,
@@ -770,6 +815,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/formitem15",
           "name" : "formitem15",
           "noPrivDisplayMode" : 1,
           "getPSDEFormItemUpdate" : {
@@ -785,10 +831,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/formitem15",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -796,19 +847,30 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
         "infoGroupMode" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr4EditView/psappviewctrls/form",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -829,16 +891,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr4EditView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr4EditView",
   "title" : "图表编辑视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEEDITVIEW",

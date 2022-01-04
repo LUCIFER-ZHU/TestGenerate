@@ -3,10 +3,15 @@
   "caption" : "向导示例",
   "codeName" : "WizardDataExamplePanelView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/WizardDataExamplePanelView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExamplePanelView",
   "name" : "WizardDataExamplePanelView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
+  },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
   },
   "getPSControls" : [ {
     "getAllPSPanelFields" : [ {
@@ -18,6 +23,7 @@
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData/PSPANELS/WizardPanel.json",
     "layoutMode" : "TABLE_24COL",
     "logicName" : "向导示例",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/pssysviewpanels/WizardPanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
@@ -48,15 +54,21 @@
       "id" : "PANEL"
     },
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExamplePanelView/psappviewctrls/panel",
     "getRootPSPanelItems" : [ {
       "contentHeight" : 150.0,
       "contentType" : "RAW",
       "height" : 150.0,
       "itemStyle" : "DEFAULT",
       "itemType" : "RAWITEM",
+      "mOSFilePath" : "pssysviewpanelitem_rawitems/rawitem1",
       "name" : "rawitem1",
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -66,11 +78,14 @@
       "getPSSysCss" : {
         "cssName" : "el-alert el-alert--info is-light"
       },
+      "rTMOSFilePath" : "pssysviewpanelitem_rawitems/rawitem1",
       "rawContent" : "点击【向导回填数据】按钮，弹出快速向导，向导完成后，将向导中的属性【下一步表单】值回填显示",
-      "rawItemHeight" : 150.0
+      "rawItemHeight" : 150.0,
+      "showCaption" : true
     }, {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container1",
       "name" : "container1",
       "getPSLayout" : {
         "layout" : "FLEX"
@@ -84,6 +99,7 @@
         "caption" : "回填向导数据",
         "itemStyle" : "DEFAULT",
         "itemType" : "BUTTON",
+        "mOSFilePath" : "pssysviewpanelitem_buttons/button1",
         "name" : "button1",
         "getPSAppViewUIAction" : {
           "modelref" : true,
@@ -99,6 +115,7 @@
           "codeName" : "CallReturnWizardData",
           "frontProcessType" : "OTHER",
           "fullCodeName" : "WizardData_CallReturnWizardData",
+          "mOSFilePath" : "psappdeuiactions/CallReturnWizardData",
           "name" : "调用向导数据回填",
           "getPSAppDEUILogic" : {
             "modelref" : true,
@@ -108,6 +125,7 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
           },
+          "rTMOSFilePath" : "psappdeuiactions/CallReturnWizardData",
           "timeout" : 60000,
           "uIActionMode" : "FRONT",
           "uIActionTag" : "CallReturnWizardData",
@@ -116,12 +134,14 @@
           "uILogicType" : "DEUILOGIC",
           "id" : "CallReturnWizardData@WizardData"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_buttons/button1",
         "tooltip" : "回填向导数据",
         "showCaption" : true
       }, {
         "caption" : "回填数据",
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/srfnextform",
         "name" : "srfnextform",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -132,10 +152,13 @@
           "grow" : -1,
           "layout" : "FLEX"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/srfnextform",
         "viewFieldName" : "srfnextform",
         "hidden" : false,
         "showCaption" : false
-      } ]
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
+      "showCaption" : true
     } ],
     "name" : "panel",
     "modelid" : "0FA72FF9-0369-44CD-B832-08976CA6F115",
@@ -147,16 +170,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPANELVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExamplePanelView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExamplePanelView",
   "title" : "向导数据面板视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPANELVIEW",

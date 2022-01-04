@@ -2,6 +2,7 @@
   "codeName" : "LeaveApplication",
   "dynaModelFilePath" : "PSMODULES/Sample/PSWORKFLOWS/LeaveApplication.json",
   "logicName" : "请假申请流程",
+  "mOSFilePath" : "psmodules/Sample/psworkflows/LeaveApplication",
   "name" : "请假申请流程",
   "getPSSystemModule" : {
     "modelref" : true,
@@ -9,11 +10,12 @@
   },
   "getPSWFDEs" : [ {
     "codeName" : "LeaveApplication",
-    "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/LeaveApplication/PSWFDES/LeaveApplication.json",
+    "dynaModelFilePath" : "PSMODULES/Sample/PSWORKFLOWS/LeaveApplication/PSWFDES/LeaveApplication.json",
     "getEntityStatePSCodeList" : {
       "modelref" : true,
       "path" : "PSMODULES/Sample/PSCODELISTS/LeaveApplicationState.json"
     },
+    "mOSFilePath" : "psmodules/Sample/psworkflows/LeaveApplication/pswfdes/LeaveApplication",
     "name" : "LEAVEAPPLICATION",
     "getPSDataEntity" : {
       "modelref" : true,
@@ -23,6 +25,7 @@
       "modelref" : true,
       "path" : "PSMODULES/Sample/PSWORKFLOWS/LeaveApplication.json"
     },
+    "rTMOSFilePath" : "psmodules/Sample/psworkflows/LeaveApplication/pswfdes/LeaveApplication",
     "getUDStatePSDEField" : {
       "name" : "STATE",
       "codeName" : "State"
@@ -43,6 +46,7 @@
     "modelref" : true,
     "path" : "PSMODULES/Sample/PSWORKFLOWS/LeaveApplication/PSWFVERSIONS/LeaveApplicationv2.json"
   } ],
+  "rTMOSFilePath" : "psmodules/Sample/psworkflows/LeaveApplication",
   "wFEngineCat" : "ACTIVITI",
   "wFEngineType" : "ACTIVITI",
   "wFProxyMode" : 0,

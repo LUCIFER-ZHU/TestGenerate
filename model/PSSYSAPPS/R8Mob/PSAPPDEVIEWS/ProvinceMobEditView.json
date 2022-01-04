@@ -3,20 +3,27 @@
   "caption" : "省份",
   "codeName" : "ProvinceMobEditView",
   "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobEditView.json",
+  "mOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobEditView",
   "name" : "ProvinceMobEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "MobEditView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "form",
       "name" : "FORM",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "eventArg" : "tbitem1",
@@ -63,6 +70,7 @@
       "modelref" : true,
       "id" : "create"
     },
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province/PSFORMS/Mob_main.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
@@ -78,6 +86,7 @@
     },
     "hookEventNames" : [ "SAVE", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
     "logicName" : "移动端主表单",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdeform_editforms/Mob_main",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
@@ -269,6 +278,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -276,6 +286,7 @@
         "codeName" : "group1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group1",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "caption" : "省份名称",
@@ -287,6 +298,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/provincename",
           "name" : "provincename",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -302,10 +314,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/provincename",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -313,19 +330,26 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
         "infoGroupMode" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     }, {
       "caption" : "其它",
       "codeName" : "formpage2",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage2",
       "name" : "formpage2",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -333,6 +357,7 @@
         "codeName" : "group2",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group2",
         "name" : "group2",
         "getPSDEFormDetails" : [ {
           "caption" : "建立人",
@@ -344,6 +369,7 @@
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/createman",
           "name" : "createman",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -363,6 +389,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/createman",
           "allowEmpty" : true,
           "convertToCodeItemText" : true,
           "showCaption" : true
@@ -376,6 +403,7 @@
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/createdate",
           "name" : "createdate",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -391,6 +419,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/createdate",
           "valueFormat" : "YYYY-MM-DD HH:mm:ss",
           "allowEmpty" : true,
           "showCaption" : true
@@ -404,6 +433,7 @@
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/updateman",
           "name" : "updateman",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -423,6 +453,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/updateman",
           "allowEmpty" : true,
           "convertToCodeItemText" : true,
           "showCaption" : true
@@ -436,6 +467,7 @@
           "ignoreInput" : 3,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/updatedate",
           "name" : "updatedate",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -451,11 +483,16 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/updatedate",
           "valueFormat" : "YYYY-MM-DD HH:mm:ss",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -463,19 +500,30 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group2",
         "infoGroupMode" : false,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage2",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobEditView/psappviewctrls/form",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -494,6 +542,7 @@
     "controlType" : "TOOLBAR",
     "hookEventNames" : [ "CLICK" ],
     "logicName" : "工具栏模板（移动端编辑视图）",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdetoolbars/MobEditViewrighttoolbar",
     "name" : "righttoolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -525,7 +574,9 @@
     },
     "getPSDEToolbarItems" : [ {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+        "mOSFilePath" : "pslanguageres/Auto97",
+        "rTMOSFilePath" : "pslanguageres/Auto97"
       },
       "caption" : "保存",
       "groupExtractMode" : "ITEM",
@@ -541,18 +592,24 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+          "mOSFilePath" : "pslanguageres/Auto97",
+          "rTMOSFilePath" : "pslanguageres/Auto97"
         },
         "caption" : "保存并关闭",
         "codeName" : "SaveAndExit",
         "fullCodeName" : "SaveAndExit",
+        "mOSFilePath" : "pssysappdeuiactions/SaveAndExit",
         "name" : "编辑界面_保存并退出操作",
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/SaveAndExit",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+          "mOSFilePath" : "pslanguageres/Auto43",
+          "rTMOSFilePath" : "pslanguageres/Auto43"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "SaveAndExit",
@@ -560,13 +617,17 @@
       },
       "tooltip" : "保存",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+        "mOSFilePath" : "pslanguageres/Auto43",
+        "rTMOSFilePath" : "pslanguageres/Auto43"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
+        "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
+        "mOSFilePath" : "pslanguageres/Auto223",
+        "rTMOSFilePath" : "pslanguageres/Auto223"
       },
       "caption" : "关闭",
       "groupExtractMode" : "ITEM",
@@ -583,19 +644,25 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
+          "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
+          "mOSFilePath" : "pslanguageres/Auto223",
+          "rTMOSFilePath" : "pslanguageres/Auto223"
         },
         "caption" : "关闭",
         "codeName" : "Exit",
         "fullCodeName" : "Exit",
+        "mOSFilePath" : "pssysappdeuiactions/Exit",
         "name" : "编辑界面_退出操作",
         "getPSSysImage" : {
           "glyph" : "xf08b@FontAwesome",
           "cssClass" : "fa fa-sign-out"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/Exit",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE"
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE",
+          "mOSFilePath" : "pslanguageres/Auto92",
+          "rTMOSFilePath" : "pslanguageres/Auto92"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "Exit",
@@ -603,11 +670,14 @@
       },
       "tooltip" : "关闭",
       "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE"
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE",
+        "mOSFilePath" : "pslanguageres/Auto92",
+        "rTMOSFilePath" : "pslanguageres/Auto92"
       },
       "showCaption" : true,
       "showIcon" : true
     } ],
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobEditView/psappviewctrls/righttoolbar",
     "toolbarStyle" : "MOBNAVRIGHTMENU",
     "modelid" : "c798012a3dda52e17ac452776aa498f0",
     "modeltype" : "PSDETOOLBAR"
@@ -618,16 +688,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBEDITVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobEditView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobEditView",
   "title" : "省份移动端编辑视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEMOBEDITVIEW",

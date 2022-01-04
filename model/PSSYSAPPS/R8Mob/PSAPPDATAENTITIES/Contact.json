@@ -2,6 +2,7 @@
   "getAllPSAppDEACModes" : [ {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdeacmodes/DEFAULT",
     "name" : "DEFAULT",
     "getPSDEACModeDataItems" : [ {
       "dataType" : 25,
@@ -19,6 +20,7 @@
       }
     } ],
     "pagingSize" : 50,
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdeacmodes/DEFAULT",
     "getTextPSAppDEField" : {
       "name" : "CONTACTNAME",
       "codeName" : "ContactName"
@@ -34,67 +36,179 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/Update",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/FetchDefault",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "name" : "CREATEDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/CreateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "name" : "UPDATEDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/UpdateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "name" : "UPDATEMAN",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/UpdateMan",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "ContactName",
     "logicName" : "联系人姓名",
     "name" : "CONTACTNAME",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/ContactName",
     "stdDataType" : 25,
     "stringLength" : 200,
     "enableQuickSearch" : true,
@@ -103,12 +217,14 @@
     "codeName" : "CreateMan",
     "logicName" : "建立人",
     "name" : "CREATEMAN",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/CreateMan",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "ContactId",
     "logicName" : "联系人标识",
     "name" : "CONTACTID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/ContactId",
     "stdDataType" : 25,
     "stringLength" : 100,
     "keyField" : true
@@ -116,54 +232,63 @@
     "codeName" : "OrgId",
     "logicName" : "组织机构标识",
     "name" : "ORGID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/OrgId",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "DeptId",
     "logicName" : "组织部门标识",
     "name" : "DEPTID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/DeptId",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "Phone",
     "logicName" : "电话",
     "name" : "PHONE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/Phone",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Mobile",
     "logicName" : "手机",
     "name" : "MOBILE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/Mobile",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Image",
     "logicName" : "头像",
     "name" : "IMAGE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/Image",
     "stdDataType" : 25,
     "stringLength" : 2000
   }, {
     "codeName" : "Email",
     "logicName" : "电子邮箱",
     "name" : "EMAIL",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/Email",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Post",
     "logicName" : "工作岗位",
     "name" : "POST",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/Post",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "CustomerId",
     "logicName" : "客户标识",
     "name" : "CUSTOMERID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/CustomerId",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "CustomerName",
     "logicName" : "客户名称",
     "name" : "CUSTOMERNAME",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdefields/CustomerName",
     "stdDataType" : 25,
     "stringLength" : 200
   } ],
@@ -171,95 +296,228 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/Update",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/FilterCreate",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/FilterFetch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGET",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/FilterGet",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGetDraft",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/FilterGetDraft",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterRemove",
     "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/FilterRemove",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/FilterSearch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/FilterUpdate",
     "builtinMethod" : true
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact/psappdemethods/Select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
-    "name" : "CREATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/psdeopprivs/CREATE",
+    "name" : "CREATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/psdeopprivs/CREATE"
   }, {
     "logicName" : "删除",
-    "name" : "DELETE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/psdeopprivs/DELETE",
+    "name" : "DELETE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/psdeopprivs/DELETE"
   }, {
     "logicName" : "读取",
-    "name" : "READ"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/psdeopprivs/READ",
+    "name" : "READ",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/psdeopprivs/READ"
   }, {
     "logicName" : "更新",
-    "name" : "UPDATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/psdeopprivs/UPDATE",
+    "name" : "UPDATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/psdeopprivs/UPDATE"
   } ],
   "codeName" : "Contact",
   "dataAccCtrlArch" : 1,
@@ -267,10 +525,12 @@
   "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Contact.json",
   "enableUIActions" : 15,
   "logicName" : "联系人",
+  "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact",
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "Contacts",
     "dataRSMode" : 0,
+    "mOSFilePath" : "pssysapps/R8Mob/psappders/Contacts",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Customer.json"
@@ -284,14 +544,28 @@
       "name" : "CUSTOMERID",
       "codeName" : "CustomerId"
     },
-    "rSMode" : 2
+    "rSMode" : 2,
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappders/Contacts"
   } ],
   "name" : "CONTACT",
   "getPSDEName" : "CONTACT",
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "id" : "Contact"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample/PSDATAENTITIES/Contact.json"
+  },
+  "getPSSysServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSSYSSERVICEAPIS/SampleApi.json"
+  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "CONTACTNAME",
     "codeName" : "ContactName"
   } ],
+  "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Contact",
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,

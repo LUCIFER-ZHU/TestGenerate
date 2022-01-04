@@ -3,10 +3,16 @@
   "caption" : "移动端应用看板视图",
   "codeName" : "AppPortalView",
   "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPPORTALVIEWS/AppPortalView.json",
+  "mOSFilePath" : "pssysapps/R8Mob/psappportalviews/AppPortalView",
   "name" : "AppPortalView",
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPMODULES/Ungroup.json"
+  },
   "getPSControls" : [ {
     "codeName" : "AppPortalView_db",
     "controlType" : "DASHBOARD",
+    "mOSFilePath" : "pssysdashboards/AppPortalView_db",
     "name" : "dashboard",
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
@@ -17,12 +23,17 @@
       "showBusyIndicator" : true
     },
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
     "getPSControls" : [ {
       "codeName" : "db_container1",
       "controlType" : "PORTLET",
+      "mOSFilePath" : "pssysdbparts/db_container1",
       "name" : "db_container1",
       "getPSControlHandler" : {
         "enableDEFieldPrivilege" : false,
@@ -33,6 +44,10 @@
         "showBusyIndicator" : true
       },
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -44,6 +59,7 @@
         "codeName" : "db_appview1",
         "controlType" : "PORTLET",
         "height" : 501.0,
+        "mOSFilePath" : "pssysdbparts/db_appview1",
         "name" : "db_appview1",
         "getPSControlHandler" : {
           "enableDEFieldPrivilege" : false,
@@ -64,20 +80,27 @@
           "caption" : "省份",
           "codeName" : "ProvinceMobEditView",
           "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobEditView.json",
+          "mOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobEditView",
           "name" : "ProvinceMobEditView",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
           },
+          "getPSAppModule" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/R8Mob/PSAPPMODULES/Sample.json"
+          },
           "getPSAppViewEngines" : [ {
             "engineCat" : "VIEW",
             "engineType" : "MobEditView",
+            "mOSFilePath" : "psappviewengines/engine",
             "name" : "engine",
             "getPSUIEngineParams" : [ {
               "ctrlName" : "form",
               "name" : "FORM",
               "paramType" : "CTRL"
-            } ]
+            } ],
+            "rTMOSFilePath" : "psappviewengines/engine"
           } ],
           "getPSAppViewLogics" : [ {
             "eventArg" : "tbitem1",
@@ -124,6 +147,7 @@
               "modelref" : true,
               "id" : "create"
             },
+            "defaultLabelWidth" : 130,
             "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province/PSFORMS/Mob_main.json",
             "getGetDraftFromPSControlAction" : {
               "modelref" : true,
@@ -139,6 +163,7 @@
             },
             "hookEventNames" : [ "SAVE", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
             "logicName" : "移动端主表单",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdeform_editforms/Mob_main",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
@@ -330,6 +355,7 @@
               "codeName" : "formpage1",
               "detailStyle" : "DEFAULT",
               "detailType" : "FORMPAGE",
+              "mOSFilePath" : "psdeformdetail_formpages/formpage1",
               "name" : "formpage1",
               "getPSDEFormDetails" : [ {
                 "actionGroupExtractMode" : "ITEM",
@@ -337,6 +363,7 @@
                 "codeName" : "group1",
                 "detailStyle" : "DEFAULT",
                 "detailType" : "GROUPPANEL",
+                "mOSFilePath" : "psdeformdetail_grouppanels/group1",
                 "name" : "group1",
                 "getPSDEFormDetails" : [ {
                   "caption" : "省份名称",
@@ -348,6 +375,7 @@
                   "ignoreInput" : 0,
                   "labelPos" : "LEFT",
                   "labelWidth" : 130,
+                  "mOSFilePath" : "psdeformdetail_formitems/provincename",
                   "name" : "provincename",
                   "noPrivDisplayMode" : 1,
                   "getPSAppDEField" : {
@@ -363,10 +391,15 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "rTMOSFilePath" : "psdeformdetail_formitems/provincename",
                   "allowEmpty" : true,
                   "showCaption" : true
                 } ],
                 "getPSLayout" : {
+                  "childColLG" : -1,
+                  "childColMD" : 24,
+                  "childColSM" : -1,
+                  "childColXS" : -1,
                   "columnCount" : 24,
                   "layout" : "TABLE_24COL"
                 },
@@ -374,19 +407,26 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
                 "infoGroupMode" : false,
                 "showCaption" : true
               } ],
               "getPSLayout" : {
+                "childColLG" : -1,
+                "childColMD" : 24,
+                "childColSM" : -1,
+                "childColXS" : -1,
                 "columnCount" : 24,
                 "layout" : "TABLE_24COL"
               },
+              "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
               "infoGroupMode" : false
             }, {
               "caption" : "其它",
               "codeName" : "formpage2",
               "detailStyle" : "DEFAULT",
               "detailType" : "FORMPAGE",
+              "mOSFilePath" : "psdeformdetail_formpages/formpage2",
               "name" : "formpage2",
               "getPSDEFormDetails" : [ {
                 "actionGroupExtractMode" : "ITEM",
@@ -394,6 +434,7 @@
                 "codeName" : "group2",
                 "detailStyle" : "DEFAULT",
                 "detailType" : "GROUPPANEL",
+                "mOSFilePath" : "psdeformdetail_grouppanels/group2",
                 "name" : "group2",
                 "getPSDEFormDetails" : [ {
                   "caption" : "建立人",
@@ -405,6 +446,7 @@
                   "ignoreInput" : 3,
                   "labelPos" : "LEFT",
                   "labelWidth" : 130,
+                  "mOSFilePath" : "psdeformdetail_formitems/createman",
                   "name" : "createman",
                   "noPrivDisplayMode" : 1,
                   "getPSAppDEField" : {
@@ -424,6 +466,7 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "rTMOSFilePath" : "psdeformdetail_formitems/createman",
                   "allowEmpty" : true,
                   "convertToCodeItemText" : true,
                   "showCaption" : true
@@ -437,6 +480,7 @@
                   "ignoreInput" : 3,
                   "labelPos" : "LEFT",
                   "labelWidth" : 130,
+                  "mOSFilePath" : "psdeformdetail_formitems/createdate",
                   "name" : "createdate",
                   "noPrivDisplayMode" : 1,
                   "getPSAppDEField" : {
@@ -452,6 +496,7 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "rTMOSFilePath" : "psdeformdetail_formitems/createdate",
                   "valueFormat" : "YYYY-MM-DD HH:mm:ss",
                   "allowEmpty" : true,
                   "showCaption" : true
@@ -465,6 +510,7 @@
                   "ignoreInput" : 3,
                   "labelPos" : "LEFT",
                   "labelWidth" : 130,
+                  "mOSFilePath" : "psdeformdetail_formitems/updateman",
                   "name" : "updateman",
                   "noPrivDisplayMode" : 1,
                   "getPSAppDEField" : {
@@ -484,6 +530,7 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "rTMOSFilePath" : "psdeformdetail_formitems/updateman",
                   "allowEmpty" : true,
                   "convertToCodeItemText" : true,
                   "showCaption" : true
@@ -497,6 +544,7 @@
                   "ignoreInput" : 3,
                   "labelPos" : "LEFT",
                   "labelWidth" : 130,
+                  "mOSFilePath" : "psdeformdetail_formitems/updatedate",
                   "name" : "updatedate",
                   "noPrivDisplayMode" : 1,
                   "getPSAppDEField" : {
@@ -512,11 +560,16 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "rTMOSFilePath" : "psdeformdetail_formitems/updatedate",
                   "valueFormat" : "YYYY-MM-DD HH:mm:ss",
                   "allowEmpty" : true,
                   "showCaption" : true
                 } ],
                 "getPSLayout" : {
+                  "childColLG" : -1,
+                  "childColMD" : 24,
+                  "childColSM" : -1,
+                  "childColXS" : -1,
                   "columnCount" : 24,
                   "layout" : "TABLE_24COL"
                 },
@@ -524,19 +577,30 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "rTMOSFilePath" : "psdeformdetail_grouppanels/group2",
                 "infoGroupMode" : false,
                 "showCaption" : true
               } ],
               "getPSLayout" : {
+                "childColLG" : -1,
+                "childColMD" : 24,
+                "childColSM" : -1,
+                "childColXS" : -1,
                 "columnCount" : 24,
                 "layout" : "TABLE_24COL"
               },
+              "rTMOSFilePath" : "psdeformdetail_formpages/formpage2",
               "infoGroupMode" : false
             } ],
             "getPSLayout" : {
+              "childColLG" : -1,
+              "childColMD" : 24,
+              "childColSM" : -1,
+              "childColXS" : -1,
               "columnCount" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobEditView/psappviewctrls/form",
             "getRemovePSControlAction" : {
               "modelref" : true,
               "id" : "remove"
@@ -555,6 +619,7 @@
             "controlType" : "TOOLBAR",
             "hookEventNames" : [ "CLICK" ],
             "logicName" : "工具栏模板（移动端编辑视图）",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdetoolbars/MobEditViewrighttoolbar",
             "name" : "righttoolbar",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -586,7 +651,9 @@
             },
             "getPSDEToolbarItems" : [ {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
+                "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+                "mOSFilePath" : "pslanguageres/Auto97",
+                "rTMOSFilePath" : "pslanguageres/Auto97"
               },
               "caption" : "保存",
               "groupExtractMode" : "ITEM",
@@ -602,18 +669,24 @@
               },
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
+                  "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+                  "mOSFilePath" : "pslanguageres/Auto97",
+                  "rTMOSFilePath" : "pslanguageres/Auto97"
                 },
                 "caption" : "保存并关闭",
                 "codeName" : "SaveAndExit",
                 "fullCodeName" : "SaveAndExit",
+                "mOSFilePath" : "pssysappdeuiactions/SaveAndExit",
                 "name" : "编辑界面_保存并退出操作",
                 "getPSSysImage" : {
                   "cssClass" : "sx-tb-saveandclose"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/SaveAndExit",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
+                  "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+                  "mOSFilePath" : "pslanguageres/Auto43",
+                  "rTMOSFilePath" : "pslanguageres/Auto43"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "SaveAndExit",
@@ -621,13 +694,17 @@
               },
               "tooltip" : "保存",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
+                "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+                "mOSFilePath" : "pslanguageres/Auto43",
+                "rTMOSFilePath" : "pslanguageres/Auto43"
               },
               "showCaption" : true,
               "showIcon" : true
             }, {
               "getCapPSLanguageRes" : {
-                "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
+                "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
+                "mOSFilePath" : "pslanguageres/Auto223",
+                "rTMOSFilePath" : "pslanguageres/Auto223"
               },
               "caption" : "关闭",
               "groupExtractMode" : "ITEM",
@@ -644,19 +721,25 @@
               },
               "getPSUIAction" : {
                 "getCapPSLanguageRes" : {
-                  "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
+                  "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE",
+                  "mOSFilePath" : "pslanguageres/Auto223",
+                  "rTMOSFilePath" : "pslanguageres/Auto223"
                 },
                 "caption" : "关闭",
                 "codeName" : "Exit",
                 "fullCodeName" : "Exit",
+                "mOSFilePath" : "pssysappdeuiactions/Exit",
                 "name" : "编辑界面_退出操作",
                 "getPSSysImage" : {
                   "glyph" : "xf08b@FontAwesome",
                   "cssClass" : "fa fa-sign-out"
                 },
+                "rTMOSFilePath" : "pssysappdeuiactions/Exit",
                 "timeout" : 60000,
                 "getTooltipPSLanguageRes" : {
-                  "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE"
+                  "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE",
+                  "mOSFilePath" : "pslanguageres/Auto92",
+                  "rTMOSFilePath" : "pslanguageres/Auto92"
                 },
                 "uIActionMode" : "SYS",
                 "uIActionTag" : "Exit",
@@ -664,11 +747,14 @@
               },
               "tooltip" : "关闭",
               "getTooltipPSLanguageRes" : {
-                "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE"
+                "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE",
+                "mOSFilePath" : "pslanguageres/Auto92",
+                "rTMOSFilePath" : "pslanguageres/Auto92"
               },
               "showCaption" : true,
               "showIcon" : true
             } ],
+            "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobEditView/psappviewctrls/righttoolbar",
             "toolbarStyle" : "MOBNAVRIGHTMENU",
             "modelid" : "c798012a3dda52e17ac452776aa498f0",
             "modeltype" : "PSDETOOLBAR"
@@ -679,16 +765,19 @@
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDEMOBEDITVIEW",
             "controlType" : "VIEWLAYOUTPANEL",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/pssysviewlayoutpanels/Layoutpanel",
             "name" : "layoutpanel",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
             },
             "getPSControlParam" : { },
+            "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobEditView/psappviewctrls/layoutpanel",
             "layoutBodyOnly" : true,
             "layoutPanel" : true,
             "useDefaultLayout" : true
           },
+          "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobEditView",
           "title" : "省份移动端编辑视图",
           "viewStyle" : "DEFAULT",
           "viewType" : "DEMOBEDITVIEW",
@@ -700,6 +789,7 @@
           "modeltype" : "PSAPPDEVIEW"
         },
         "portletType" : "VIEW",
+        "rTMOSFilePath" : "pssysapps/R8Mob/psappportalviews/AppPortalView/psappviewctrls/db_appview1",
         "title" : "树视图",
         "showTitleBar" : true,
         "modelid" : "6490015bfc628a41e753d228812057e5",
@@ -711,6 +801,7 @@
         },
         "controlType" : "PORTLET",
         "height" : 400.0,
+        "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysdbparts/MobDashBoardForChart",
         "name" : "db_sysportlet1",
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -735,6 +826,7 @@
           },
           "height" : 300.0,
           "logicName" : "LINECHART",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdecharts/LINECHART",
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
@@ -767,6 +859,14 @@
           "getPSChartDataSetGroups" : [ {
             "index" : 0,
             "name" : "DEFAULT",
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchDefault"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+            },
             "id" : "0"
           } ],
           "getPSChartDataSets" : [ {
@@ -795,14 +895,7 @@
             "index" : 0,
             "name" : "[line]直角坐标系[0]",
             "getPSChartCoordinateSystem" : {
-              "eChartsType" : "cartesian2d",
-              "index" : 0,
-              "name" : "[line]直角坐标系[0]",
-              "getPSChartGrid" : {
-                "modelref" : true,
-                "id" : "0"
-              },
-              "type" : "XY",
+              "modelref" : true,
               "id" : "0"
             },
             "getPSChartGridXAxis0" : {
@@ -964,6 +1057,7 @@
             "showTitle" : true,
             "id" : "0"
           },
+          "rTMOSFilePath" : "pssysapps/R8Mob/psappportalviews/AppPortalView/psappviewctrls/db_sysportlet1_chart",
           "readOnly" : true,
           "name" : "db_sysportlet1_chart",
           "modelid" : "2B90B156-57F7-448D-986E-2401AC68F59B",
@@ -975,12 +1069,14 @@
           "layout" : "TABLE_24COL"
         },
         "portletType" : "CHART",
+        "rTMOSFilePath" : "pssysapps/R8Mob/psappportalviews/AppPortalView/psappviewctrls/db_sysportlet1",
         "title" : "移动端图表数据看板",
         "showTitleBar" : true,
         "modelid" : "C7592DD4-9813-4DD0-9C7C-0489462D49BF",
         "modeltype" : "PSSYSDBPART"
       } ],
       "portletType" : "CONTAINER",
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappportalviews/AppPortalView/psappviewctrls/db_container1",
       "title" : "外层容器",
       "showTitleBar" : true
     }, {
@@ -990,6 +1086,7 @@
       },
       "controlType" : "PORTLET",
       "height" : 300.0,
+      "mOSFilePath" : "pssysdbparts/MobAppMenuForKanBan",
       "name" : "db_appmenu1",
       "getPSControlHandler" : {
         "enableDEFieldPrivilege" : false,
@@ -1005,6 +1102,7 @@
         "controlType" : "APPMENU",
         "layoutMode" : "TABLE_24COL",
         "logicName" : "移动端应用菜单",
+        "mOSFilePath" : "psappmenus/MobAppMenuForKanBan",
         "name" : "db_appmenu1_appmenu",
         "getPSAppMenuItems" : [ {
           "accUserMode" : 2,
@@ -1016,6 +1114,10 @@
             "id" : "AppFunc2"
           },
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -1034,6 +1136,10 @@
             "id" : "AppFunc8"
           },
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -1051,6 +1157,7 @@
           "autoLoad" : true,
           "showBusyIndicator" : true
         },
+        "rTMOSFilePath" : "pssysapps/R8Mob/psappportalviews/AppPortalView/psappviewctrls/db_appmenu1_appmenu",
         "enableCustomize" : false,
         "modelid" : "5196A3DE-455F-44A4-B00B-6B3AC339999B",
         "modeltype" : "PSAPPMENU"
@@ -1061,6 +1168,7 @@
         "layout" : "TABLE_24COL"
       },
       "portletType" : "APPMENU",
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappportalviews/AppPortalView/psappviewctrls/db_appmenu1",
       "title" : "应用快速菜单",
       "showTitleBar" : true,
       "modelid" : "5196A3DE-455F-44A4-B00B-6B3AC339999B",
@@ -1070,6 +1178,7 @@
       "codeName" : "MobActionBar",
       "controlType" : "PORTLET",
       "height" : 100.0,
+      "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysdbparts/MobActionBar",
       "name" : "db_sysportlet2",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -1078,28 +1187,21 @@
       "getPSAppViewLogics" : [ {
         "logicTrigger" : "CUSTOM",
         "logicType" : "APPVIEWUIACTION",
-        "name" : "db_sysportlet2_u0c7ccd3_click",
-        "getPSAppViewUIAction" : {
-          "modelref" : true,
-          "id" : "表格界面_刷新操作"
-        }
-      }, {
-        "logicTrigger" : "CUSTOM",
-        "logicType" : "APPVIEWUIACTION",
         "name" : "db_sysportlet2_u953df17_click",
         "getPSAppViewUIAction" : {
           "modelref" : true,
           "id" : "移动端编辑"
         }
+      }, {
+        "logicTrigger" : "CUSTOM",
+        "logicType" : "APPVIEWUIACTION",
+        "name" : "db_sysportlet2_u0c7ccd3_click",
+        "getPSAppViewUIAction" : {
+          "modelref" : true,
+          "id" : "表格界面_刷新操作"
+        }
       } ],
       "getPSAppViewUIActions" : [ {
-        "name" : "表格界面_刷新操作",
-        "getPSUIAction" : {
-          "modelref" : true,
-          "id" : "Refresh"
-        },
-        "xDataControlName" : "db_sysportlet2"
-      }, {
         "name" : "移动端编辑",
         "getPSUIAction" : {
           "getPSAppDataEntity" : {
@@ -1110,6 +1212,13 @@
           "id" : "MobEdit@ChartData"
         },
         "uIActionTarget" : "SINGLEKEY",
+        "xDataControlName" : "db_sysportlet2"
+      }, {
+        "name" : "表格界面_刷新操作",
+        "getPSUIAction" : {
+          "modelref" : true,
+          "id" : "Refresh"
+        },
         "xDataControlName" : "db_sysportlet2"
       } ],
       "getPSControlHandler" : {
@@ -1128,28 +1237,9 @@
       },
       "getPSUIActionGroup" : {
         "codeName" : "Auto3",
+        "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/ChartData/psappdeuagroups/Auto3",
         "name" : "看板界面行为组",
         "getPSUIActionGroupDetails" : [ {
-          "detailType" : "DEUIACTION",
-          "name" : "u0c7ccd3",
-          "getPSUIAction" : {
-            "caption" : "刷新",
-            "codeName" : "Refresh",
-            "fullCodeName" : "Refresh",
-            "name" : "表格界面_刷新操作",
-            "getPSSysImage" : {
-              "glyph" : "xf021@FontAwesome",
-              "cssClass" : "fa fa-refresh"
-            },
-            "timeout" : 60000,
-            "uIActionMode" : "SYS",
-            "uIActionTag" : "Refresh",
-            "uIActionType" : "DEUIACTION"
-          },
-          "addSeparator" : true,
-          "showCaption" : true,
-          "showIcon" : true
-        }, {
           "detailType" : "DEUIACTION",
           "name" : "u953df17",
           "getPSUIAction" : {
@@ -1163,11 +1253,13 @@
             },
             "frontProcessType" : "WIZARD",
             "fullCodeName" : "ChartData_MobEdit",
+            "mOSFilePath" : "psappdeuiactions/MobEdit",
             "name" : "移动端编辑",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
             },
+            "rTMOSFilePath" : "psappdeuiactions/MobEdit",
             "timeout" : 60000,
             "uIActionMode" : "FRONT",
             "uIActionTag" : "MobEdit",
@@ -1177,9 +1269,33 @@
           "addSeparator" : false,
           "showCaption" : true,
           "showIcon" : true
-        } ]
+        }, {
+          "detailType" : "DEUIACTION",
+          "name" : "u0c7ccd3",
+          "getPSUIAction" : {
+            "caption" : "刷新",
+            "codeName" : "Refresh",
+            "fullCodeName" : "Refresh",
+            "mOSFilePath" : "pssysappdeuiactions/Refresh",
+            "name" : "表格界面_刷新操作",
+            "getPSSysImage" : {
+              "glyph" : "xf021@FontAwesome",
+              "cssClass" : "fa fa-refresh"
+            },
+            "rTMOSFilePath" : "pssysappdeuiactions/Refresh",
+            "timeout" : 60000,
+            "uIActionMode" : "SYS",
+            "uIActionTag" : "Refresh",
+            "uIActionType" : "DEUIACTION"
+          },
+          "addSeparator" : true,
+          "showCaption" : true,
+          "showIcon" : true
+        } ],
+        "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/ChartData/psappdeuagroups/Auto3"
       },
       "portletType" : "ACTIONBAR",
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappportalviews/AppPortalView/psappviewctrls/db_sysportlet2",
       "title" : "操作栏",
       "showTitleBar" : true,
       "modelid" : "C5351232-F5F0-4EB6-8416-53D07C0678C5",
@@ -1189,6 +1305,7 @@
       "controlType" : "PORTLET",
       "height" : 300.0,
       "htmlShowMode" : "IFRAME",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysdbparts/MobKanBanForHTML",
       "name" : "db_sysportlet3",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -1208,11 +1325,13 @@
       },
       "pageUrl" : "https://www.baidu.com",
       "portletType" : "HTML",
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappportalviews/AppPortalView/psappviewctrls/db_sysportlet3",
       "title" : "HTML",
       "showTitleBar" : true,
       "modelid" : "8DB2E681-FDF3-4DBE-92A1-5A758E0663FE",
       "modeltype" : "PSSYSDBPART"
     } ],
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappportalviews/AppPortalView/psappviewctrls/dashboard",
     "enableCustomized" : false,
     "modelid" : "4C6D1E7A-94C9-4C40-BC60-B6F430C827CA",
     "modeltype" : "PSSYSDASHBOARD"
@@ -1221,12 +1340,15 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPPORTALVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappportalviews/AppPortalView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/R8Mob/psappportalviews/AppPortalView",
   "title" : "应用门户视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "APPPORTALVIEW",

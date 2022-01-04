@@ -4,21 +4,28 @@
   "codeName" : "WizardDataExampleWizardView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/WizardDataExampleWizardView.json",
   "height" : 600,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExampleWizardView",
   "name" : "WizardDataExampleWizardView",
   "openMode" : "POPUPMODAL",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "WizardView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "wizardpanel",
       "name" : "WIZARDPANEL",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "WizardTest",
@@ -34,6 +41,7 @@
       "id" : "init"
     },
     "logicName" : "向导测试",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdewizardpanels/WizardTest",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
@@ -85,6 +93,7 @@
     "getPSDEEditForms" : [ {
       "codeName" : "WizardForm1",
       "controlType" : "FORM",
+      "defaultLabelWidth" : 130,
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData/PSFORMS/WizardForm1.json",
       "formFuncMode" : "WIZARDFORM",
       "getGetPSControlAction" : {
@@ -93,6 +102,7 @@
       },
       "hookEventNames" : [ "SAVE", "LOAD" ],
       "logicName" : "步骤一（向导表单）",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeform_editforms/WizardForm1",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
@@ -211,6 +221,7 @@
         "codeName" : "formpage1",
         "detailStyle" : "DEFAULT",
         "detailType" : "FORMPAGE",
+        "mOSFilePath" : "psdeformdetail_formpages/formpage1",
         "name" : "formpage1",
         "getPSDEFormDetails" : [ {
           "actionGroupExtractMode" : "ITEM",
@@ -218,6 +229,7 @@
           "codeName" : "group1",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/group1",
           "name" : "group1",
           "getPSDEFormDetails" : [ {
             "caption" : "下一步表单",
@@ -229,6 +241,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/srfnextform",
             "name" : "srfnextform",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -247,11 +260,16 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/srfnextform",
             "allowEmpty" : false,
             "needCodeListConfig" : true,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -259,13 +277,19 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
           "infoGroupMode" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
         "infoGroupMode" : false
       } ],
       "getPSDEWizardForm" : {
@@ -280,9 +304,14 @@
         "firstForm" : true
       },
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExampleWizardView/psappviewctrls/wizardpanel_form_WelcomeForm",
       "tabHeaderPos" : "TOP",
       "getUpdatePSControlAction" : {
         "modelref" : true,
@@ -295,6 +324,7 @@
     }, {
       "codeName" : "WizardForm2",
       "controlType" : "FORM",
+      "defaultLabelWidth" : 130,
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData/PSFORMS/WizardForm2.json",
       "formFuncMode" : "WIZARDFORM",
       "getGetPSControlAction" : {
@@ -303,6 +333,7 @@
       },
       "hookEventNames" : [ "SAVE", "LOAD" ],
       "logicName" : "步骤二（向导表单）",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeform_editforms/WizardForm2",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
@@ -429,6 +460,7 @@
         "codeName" : "formpage1",
         "detailStyle" : "DEFAULT",
         "detailType" : "FORMPAGE",
+        "mOSFilePath" : "psdeformdetail_formpages/formpage1",
         "name" : "formpage1",
         "getPSDEFormDetails" : [ {
           "actionGroupExtractMode" : "ITEM",
@@ -436,6 +468,7 @@
           "codeName" : "group1",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/group1",
           "name" : "group1",
           "getPSDEFormDetails" : [ {
             "caption" : "文本属性",
@@ -447,6 +480,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/textfield",
             "name" : "textfield",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -462,6 +496,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/textfield",
             "allowEmpty" : true,
             "showCaption" : true
           }, {
@@ -474,6 +509,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/srfnextform",
             "name" : "srfnextform",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -488,11 +524,16 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/srfnextform",
             "allowEmpty" : true,
             "hidden" : true,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -500,13 +541,19 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
           "infoGroupMode" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
         "infoGroupMode" : false
       } ],
       "getPSDEWizardForm" : {
@@ -521,9 +568,14 @@
         "firstForm" : false
       },
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExampleWizardView/psappviewctrls/wizardpanel_form_WizardForm2",
       "tabHeaderPos" : "TOP",
       "getUpdatePSControlAction" : {
         "modelref" : true,
@@ -536,6 +588,7 @@
     }, {
       "codeName" : "WizardForm3",
       "controlType" : "FORM",
+      "defaultLabelWidth" : 130,
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData/PSFORMS/WizardForm3.json",
       "formFuncMode" : "WIZARDFORM",
       "getGetPSControlAction" : {
@@ -544,6 +597,7 @@
       },
       "hookEventNames" : [ "SAVE", "LOAD" ],
       "logicName" : "步骤三（向导表单）",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeform_editforms/WizardForm3",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
@@ -670,6 +724,7 @@
         "codeName" : "formpage1",
         "detailStyle" : "DEFAULT",
         "detailType" : "FORMPAGE",
+        "mOSFilePath" : "psdeformdetail_formpages/formpage1",
         "name" : "formpage1",
         "getPSDEFormDetails" : [ {
           "actionGroupExtractMode" : "ITEM",
@@ -677,6 +732,7 @@
           "codeName" : "group1",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/group1",
           "name" : "group1",
           "getPSDEFormDetails" : [ {
             "caption" : "时间属性",
@@ -688,6 +744,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/timefield",
             "name" : "timefield",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -703,6 +760,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/timefield",
             "valueFormat" : "YYYY-MM-DD HH:mm:ss",
             "allowEmpty" : true,
             "showCaption" : true
@@ -716,6 +774,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/srfnextform",
             "name" : "srfnextform",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -730,11 +789,16 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/srfnextform",
             "allowEmpty" : true,
             "hidden" : true,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -742,13 +806,19 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
           "infoGroupMode" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
         "infoGroupMode" : false
       } ],
       "getPSDEWizardForm" : {
@@ -763,9 +833,14 @@
         "firstForm" : false
       },
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExampleWizardView/psappviewctrls/wizardpanel_form_WizardForm3",
       "tabHeaderPos" : "TOP",
       "getUpdatePSControlAction" : {
         "modelref" : true,
@@ -778,6 +853,7 @@
     }, {
       "codeName" : "WizardForm4",
       "controlType" : "FORM",
+      "defaultLabelWidth" : 130,
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData/PSFORMS/WizardForm4.json",
       "formFuncMode" : "WIZARDFORM",
       "getGetPSControlAction" : {
@@ -786,6 +862,7 @@
       },
       "hookEventNames" : [ "SAVE", "LOAD" ],
       "logicName" : "步骤四（向导表单）",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeform_editforms/WizardForm4",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
@@ -912,6 +989,7 @@
         "codeName" : "formpage1",
         "detailStyle" : "DEFAULT",
         "detailType" : "FORMPAGE",
+        "mOSFilePath" : "psdeformdetail_formpages/formpage1",
         "name" : "formpage1",
         "getPSDEFormDetails" : [ {
           "actionGroupExtractMode" : "ITEM",
@@ -919,6 +997,7 @@
           "codeName" : "group1",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/group1",
           "name" : "group1",
           "getPSDEFormDetails" : [ {
             "caption" : "数值属性",
@@ -930,6 +1009,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/numfield",
             "name" : "numfield",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -945,6 +1025,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/numfield",
             "allowEmpty" : true,
             "showCaption" : true
           }, {
@@ -957,6 +1038,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/srfnextform",
             "name" : "srfnextform",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -971,11 +1053,16 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/srfnextform",
             "allowEmpty" : true,
             "hidden" : true,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -983,13 +1070,19 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
           "infoGroupMode" : false,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
         "infoGroupMode" : false
       } ],
       "getPSDEWizardForm" : {
@@ -1004,9 +1097,14 @@
         "firstForm" : false
       },
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExampleWizardView/psappviewctrls/wizardpanel_form_WizardForm4",
       "tabHeaderPos" : "TOP",
       "getUpdatePSControlAction" : {
         "modelref" : true,
@@ -1019,6 +1117,7 @@
     }, {
       "codeName" : "FinishForm",
       "controlType" : "FORM",
+      "defaultLabelWidth" : 130,
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData/PSFORMS/FinishForm.json",
       "formFuncMode" : "WIZARDFORM",
       "getGetPSControlAction" : {
@@ -1027,6 +1126,7 @@
       },
       "hookEventNames" : [ "SAVE", "LOAD" ],
       "logicName" : "完成步骤（向导表单）",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdeform_editforms/FinishForm",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
@@ -1166,6 +1266,7 @@
         "codeName" : "formpage1",
         "detailStyle" : "DEFAULT",
         "detailType" : "FORMPAGE",
+        "mOSFilePath" : "psdeformdetail_formpages/formpage1",
         "name" : "formpage1",
         "getPSDEFormDetails" : [ {
           "actionGroupExtractMode" : "ITEM",
@@ -1173,6 +1274,7 @@
           "codeName" : "group1",
           "detailStyle" : "DEFAULT",
           "detailType" : "GROUPPANEL",
+          "mOSFilePath" : "psdeformdetail_grouppanels/group1",
           "name" : "group1",
           "getPSDEFormDetails" : [ {
             "caption" : "文本属性",
@@ -1184,6 +1286,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/textfield",
             "name" : "textfield",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1199,6 +1302,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/textfield",
             "allowEmpty" : true,
             "showCaption" : true
           }, {
@@ -1211,6 +1315,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/timefield",
             "name" : "timefield",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1226,6 +1331,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/timefield",
             "valueFormat" : "YYYY-MM-DD HH:mm:ss",
             "allowEmpty" : true,
             "showCaption" : true
@@ -1239,6 +1345,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/numfield",
             "name" : "numfield",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1254,6 +1361,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/numfield",
             "allowEmpty" : true,
             "showCaption" : true
           }, {
@@ -1266,6 +1374,7 @@
             "ignoreInput" : 0,
             "labelPos" : "LEFT",
             "labelWidth" : 130,
+            "mOSFilePath" : "psdeformdetail_formitems/srfnextform",
             "name" : "srfnextform",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -1284,11 +1393,16 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "psdeformdetail_formitems/srfnextform",
             "allowEmpty" : true,
             "needCodeListConfig" : true,
             "showCaption" : true
           } ],
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -1296,13 +1410,19 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
           "infoGroupMode" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
         "infoGroupMode" : true
       } ],
       "getPSDEWizardForm" : {
@@ -1317,9 +1437,14 @@
         "firstForm" : false
       },
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExampleWizardView/psappviewctrls/wizardpanel_form_FinishForm",
       "tabHeaderPos" : "TOP",
       "getUpdatePSControlAction" : {
         "modelref" : true,
@@ -1338,6 +1463,7 @@
         "modelref" : true,
         "id" : "模式选择"
       },
+      "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdewizards/WizardTest",
       "name" : "向导测试",
       "getPSDEWizardForms" : [ {
         "formTag" : "WelcomeForm",
@@ -1406,9 +1532,11 @@
         "title" : "完成",
         "enableLink" : false
       } ],
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/psdewizards/WizardTest",
       "wizardStyle" : "DEFAULT",
       "stateWizard" : false
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExampleWizardView/psappviewctrls/wizardpanel",
     "wizardStyle" : "DEFAULT",
     "showActionBar" : true,
     "showStepBar" : true,
@@ -1422,16 +1550,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEWIZARDVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/WIZARDDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/WizardData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExampleWizardView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/WizardDataExampleWizardView",
   "title" : "向导数据向导视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEWIZARDVIEW",

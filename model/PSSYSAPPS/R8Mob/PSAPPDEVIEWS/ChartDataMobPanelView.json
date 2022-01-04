@@ -3,10 +3,15 @@
   "caption" : "图表",
   "codeName" : "ChartDataMobPanelView",
   "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ChartDataMobPanelView.json",
+  "mOSFilePath" : "pssysapps/R8Mob/psappdeviews/ChartDataMobPanelView",
   "name" : "ChartDataMobPanelView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+  },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPMODULES/Sample.json"
   },
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
@@ -31,6 +36,7 @@
     "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData/PSPANELS/TestMobPanel.json",
     "layoutMode" : "TABLE_24COL",
     "logicName" : "移动端面板视图测试",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysviewpanels/TestMobPanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
@@ -61,15 +67,25 @@
       "id" : "PANEL"
     },
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ChartDataMobPanelView/psappviewctrls/panel",
     "getRootPSPanelItems" : [ {
       "caption" : "外层容器",
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container1",
       "name" : "container1",
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -82,6 +98,7 @@
         "height" : 500.0,
         "itemStyle" : "DEFAULT",
         "itemType" : "TABPANEL",
+        "mOSFilePath" : "pssysviewpanelitem_tabpanels/tabpanel1",
         "name" : "tabpanel1",
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -92,8 +109,13 @@
           "caption" : "测试分页1",
           "itemStyle" : "DEFAULT",
           "itemType" : "TABPAGE",
+          "mOSFilePath" : "pssysviewpanelitem_tabpages/tabpage1",
           "name" : "tabpage1",
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -108,6 +130,7 @@
             "height" : 100.0,
             "itemStyle" : "DEFAULT",
             "itemType" : "RAWITEM",
+            "mOSFilePath" : "pssysviewpanelitem_rawitems/rawitem1",
             "name" : "rawitem1",
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -118,18 +141,26 @@
             "getPSSysCss" : {
               "cssName" : "mob-raw-warning"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_rawitems/rawitem1",
             "rawContent" : "直接内容， 100x100",
             "rawItemHeight" : 100.0,
             "rawItemWidth" : 100.0,
-            "width" : 100.0
+            "width" : 100.0,
+            "showCaption" : true
           } ],
+          "rTMOSFilePath" : "pssysviewpanelitem_tabpages/tabpage1",
           "showCaption" : true
         }, {
           "caption" : "部件",
           "itemStyle" : "DEFAULT",
           "itemType" : "TABPAGE",
+          "mOSFilePath" : "pssysviewpanelitem_tabpages/tabpage2",
           "name" : "tabpage2",
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -145,6 +176,7 @@
             "height" : 50.0,
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button1",
             "name" : "button1",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -167,30 +199,37 @@
               },
               "frontProcessType" : "WIZARD",
               "fullCodeName" : "ChartData_MobEdit",
+              "mOSFilePath" : "psappdeuiactions/MobEdit",
               "name" : "移动端编辑",
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/MobEdit",
               "timeout" : 60000,
               "uIActionMode" : "FRONT",
               "uIActionTag" : "MobEdit",
               "uIActionType" : "DEUIACTION",
               "id" : "MobEdit@ChartData"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button1",
             "tooltip" : "打开",
             "width" : 50.0,
             "showCaption" : true
           } ],
+          "rTMOSFilePath" : "pssysviewpanelitem_tabpages/tabpage2",
           "showCaption" : true
-        } ]
+        } ],
+        "rTMOSFilePath" : "pssysviewpanelitem_tabpanels/tabpanel1"
       } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
       "showCaption" : true
     }, {
       "contentHeight" : 400.0,
       "height" : 400.0,
       "itemStyle" : "DEFAULT",
       "itemType" : "TABPANEL",
+      "mOSFilePath" : "pssysviewpanelitem_tabpanels/tabpanel2",
       "name" : "tabpanel2",
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -201,8 +240,13 @@
         "caption" : "测试嵌入多容器",
         "itemStyle" : "DEFAULT",
         "itemType" : "TABPAGE",
+        "mOSFilePath" : "pssysviewpanelitem_tabpages/tabpage3",
         "name" : "tabpage3",
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -213,8 +257,13 @@
         "getPSPanelItems" : [ {
           "itemStyle" : "DEFAULT",
           "itemType" : "CONTAINER",
+          "mOSFilePath" : "pssysviewpanelitem_containers/container2",
           "name" : "container2",
           "getPSLayout" : {
+            "childColLG" : -1,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -225,8 +274,13 @@
           "getPSPanelItems" : [ {
             "itemStyle" : "DEFAULT",
             "itemType" : "CONTAINER",
+            "mOSFilePath" : "pssysviewpanelitem_containers/container3",
             "name" : "container3",
             "getPSLayout" : {
+              "childColLG" : -1,
+              "childColMD" : 24,
+              "childColSM" : -1,
+              "childColXS" : -1,
               "columnCount" : 24,
               "layout" : "TABLE_24COL"
             },
@@ -239,21 +293,34 @@
               "htmlContent" : "<p><span style=\"color: yellow; font-size: 14px;\">无外层容器</span></p>",
               "itemStyle" : "DEFAULT",
               "itemType" : "RAWITEM",
+              "mOSFilePath" : "pssysviewpanelitem_rawitems/rawitem2",
               "name" : "rawitem2",
               "getPSLayoutPos" : {
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
-              }
-            } ]
-          } ]
+              },
+              "rTMOSFilePath" : "pssysviewpanelitem_rawitems/rawitem2",
+              "showCaption" : true
+            } ],
+            "rTMOSFilePath" : "pssysviewpanelitem_containers/container3",
+            "showCaption" : true
+          } ],
+          "rTMOSFilePath" : "pssysviewpanelitem_containers/container2",
+          "showCaption" : true
         } ],
+        "rTMOSFilePath" : "pssysviewpanelitem_tabpages/tabpage3",
         "showCaption" : true
       }, {
         "caption" : "测试布局",
         "itemStyle" : "DEFAULT",
         "itemType" : "TABPAGE",
+        "mOSFilePath" : "pssysviewpanelitem_tabpages/tabpage4",
         "name" : "tabpage4",
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -261,8 +328,10 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_tabpages/tabpage4",
         "showCaption" : true
-      } ]
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_tabpanels/tabpanel2"
     } ],
     "mobilePanel" : true,
     "name" : "panel",
@@ -275,16 +344,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBPANELVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ChartDataMobPanelView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ChartDataMobPanelView",
   "title" : "图表移动端面板视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEMOBPANELVIEW",

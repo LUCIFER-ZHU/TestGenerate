@@ -3,10 +3,15 @@
   "caption" : "多表单示例",
   "codeName" : "ExampleMEditView9",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleMEditView9.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleMEditView9",
   "name" : "ExampleMEditView9",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
+  },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
   },
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -49,6 +54,7 @@
     },
     "groupMode" : "NONE",
     "logicName" : "主表格",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdegrids/Main",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -152,12 +158,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "examplename",
       "excelCaption" : "名称",
+      "mOSFilePath" : "psdegridcols/examplename",
       "name" : "examplename",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "EXAMPLENAME",
         "codeName" : "ExampleName"
       },
+      "rTMOSFilePath" : "psdegridcols/examplename",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -169,6 +177,7 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "updateman",
       "excelCaption" : "更新人",
+      "mOSFilePath" : "psdegridcols/updateman",
       "name" : "updateman",
       "noPrivDisplayMode" : 1,
       "getPSAppCodeList" : {
@@ -179,6 +188,7 @@
         "name" : "UPDATEMAN",
         "codeName" : "UpdateMan"
       },
+      "rTMOSFilePath" : "psdegridcols/updateman",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -190,12 +200,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "updatedate",
       "excelCaption" : "更新时间",
+      "mOSFilePath" : "psdegridcols/updatedate",
       "name" : "updatedate",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "UPDATEDATE",
         "codeName" : "UpdateDate"
       },
+      "rTMOSFilePath" : "psdegridcols/updatedate",
       "valueFormat" : "YYYY-MM-DD HH:mm:ss",
       "width" : 150,
       "widthUnit" : "PX",
@@ -272,6 +284,7 @@
       "codeName" : "srfkey",
       "enableCond" : 3,
       "ignoreInput" : 0,
+      "mOSFilePath" : "psdegridcols/srfkey",
       "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "EXAMPLEID",
@@ -281,10 +294,12 @@
         "editorType" : "HIDDEN",
         "name" : "srfkey"
       },
+      "rTMOSFilePath" : "psdegridcols/srfkey",
       "allowEmpty" : true
     } ],
     "pagingSize" : 20,
     "panelStyle" : "ROW",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleMEditView9/psappviewctrls/meditviewpanel",
     "getRemovePSControlAction" : {
       "actionName" : "Remove",
       "actionType" : "DEACTION",
@@ -322,16 +337,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMEDITVIEW9",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleMEditView9/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleMEditView9",
   "title" : "示例多表单编辑视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEMEDITVIEW9",

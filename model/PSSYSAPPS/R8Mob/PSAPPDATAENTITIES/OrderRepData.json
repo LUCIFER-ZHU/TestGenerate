@@ -2,6 +2,7 @@
   "getAllPSAppDEACModes" : [ {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdeacmodes/DEFAULT",
     "name" : "DEFAULT",
     "getPSDEACModeDataItems" : [ {
       "dataType" : 25,
@@ -19,6 +20,7 @@
       }
     } ],
     "pagingSize" : 50,
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdeacmodes/DEFAULT",
     "getTextPSAppDEField" : {
       "name" : "ORDERREPDATANAME",
       "codeName" : "OrderRepDataName"
@@ -34,59 +36,183 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/Update",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchGroup",
     "methodType" : "FETCH",
+    "name" : "FetchGroup",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Group"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchGroup"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/FetchGroup",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "CreateMan",
     "logicName" : "建立人",
     "name" : "CREATEMAN",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/CreateMan",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "OrderRepDataId",
     "logicName" : "订单报表数据标识",
     "name" : "ORDERREPDATAID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/OrderRepDataId",
     "stdDataType" : 25,
     "stringLength" : 100,
     "keyField" : true
@@ -94,12 +220,14 @@
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "name" : "CREATEDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/CreateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "OrderRepDataName",
     "logicName" : "订单报表数据名称",
     "name" : "ORDERREPDATANAME",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/OrderRepDataName",
     "stdDataType" : 25,
     "stringLength" : 200,
     "enableQuickSearch" : true,
@@ -108,82 +236,97 @@
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "name" : "UPDATEMAN",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/UpdateMan",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "name" : "UPDATEDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/UpdateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "DeptId",
     "logicName" : "组织部门标识",
     "name" : "DEPTID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/DeptId",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "OrgId",
     "logicName" : "组织机构标识",
     "name" : "ORGID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/OrgId",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "Quarterval",
     "logicName" : "季度",
     "name" : "QUARTERVAL",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/Quarterval",
     "stdDataType" : 9
   }, {
     "codeName" : "Yearval",
     "logicName" : "年份",
     "name" : "YEARVAL",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/Yearval",
     "stdDataType" : 9
   }, {
     "codeName" : "Monthval",
     "logicName" : "月份",
     "name" : "MONTHVAL",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/Monthval",
     "stdDataType" : 9
   }, {
     "codeName" : "Totalval",
     "logicName" : "合计",
     "name" : "TOTALVAL",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/Totalval",
     "stdDataType" : 6
   }, {
     "codeName" : "CustomerId",
     "logicName" : "客户标识",
     "name" : "CUSTOMERID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/CustomerId",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "CustomerName",
     "logicName" : "客户名称",
     "name" : "CUSTOMERNAME",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/CustomerName",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Finishedval",
     "logicName" : "已完成金额",
     "name" : "FINISHEDVAL",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/Finishedval",
     "stdDataType" : 6
   }, {
     "codeName" : "ProcessingVal",
     "logicName" : "处理中金额",
     "name" : "PROCESSINGVAL",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/ProcessingVal",
     "stdDataType" : 6
   }, {
     "codeName" : "PayingVal",
     "logicName" : "待支付金额",
     "name" : "PAYINGVAL",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/PayingVal",
     "stdDataType" : 6
   }, {
     "codeName" : "Amount",
     "logicName" : "订单金额",
     "name" : "AMOUNT",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/Amount",
     "stdDataType" : 7
   }, {
     "codeName" : "State",
     "logicName" : "订单状态",
     "name" : "STATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdefields/State",
     "stdDataType" : 25,
     "stringLength" : 60
   } ],
@@ -191,99 +334,246 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/Update",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchGroup",
     "methodType" : "FETCH",
+    "name" : "FetchGroup",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Group"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchGroup"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/FetchGroup",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/FilterCreate",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/FilterFetch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGET",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/FilterGet",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGetDraft",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/FilterGetDraft",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterRemove",
     "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/FilterRemove",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/FilterSearch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/FilterUpdate",
     "builtinMethod" : true
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData/psappdemethods/Select",
     "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
-    "name" : "CREATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeopprivs/CREATE",
+    "name" : "CREATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeopprivs/CREATE"
   }, {
     "logicName" : "删除",
-    "name" : "DELETE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeopprivs/DELETE",
+    "name" : "DELETE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeopprivs/DELETE"
   }, {
     "logicName" : "读取",
-    "name" : "READ"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeopprivs/READ",
+    "name" : "READ",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeopprivs/READ"
   }, {
     "logicName" : "更新",
-    "name" : "UPDATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeopprivs/UPDATE",
+    "name" : "UPDATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeopprivs/UPDATE"
   } ],
   "codeName" : "OrderRepData",
   "dataAccCtrlArch" : 1,
@@ -291,12 +581,26 @@
   "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/OrderRepData.json",
   "enableUIActions" : 15,
   "logicName" : "订单报表数据",
+  "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData",
   "name" : "ORDERREPDATA",
   "getPSDEName" : "ORDERREPDATA",
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "id" : "OrderRepData"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample/PSDATAENTITIES/OrderRepData.json"
+  },
+  "getPSSysServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSSYSSERVICEAPIS/SampleApi.json"
+  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "ORDERREPDATANAME",
     "codeName" : "OrderRepDataName"
   } ],
+  "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/OrderRepData",
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,

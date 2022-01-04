@@ -1,8 +1,10 @@
 {
   "codeName" : "TimeRange",
   "controlType" : "SEARCHFORM",
+  "defaultLabelWidth" : 130,
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order/PSSEARCHFORMS/TimeRange.json",
   "logicName" : "时间范围",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdeform_searchforms/TimeRange",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -27,6 +29,7 @@
     "codeName" : "formpage1",
     "detailStyle" : "DEFAULT",
     "detailType" : "FORMPAGE",
+    "mOSFilePath" : "psdeformdetail_formpages/formpage1",
     "name" : "formpage1",
     "getPSDEFormDetails" : [ {
       "caption" : "订单时间(大于等于(>=))",
@@ -38,6 +41,7 @@
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
+      "mOSFilePath" : "psdeformdetail_formitems/n_orderdate_gtandeq",
       "name" : "n_orderdate_gtandeq",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
@@ -58,6 +62,7 @@
         "colSM" : 12,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formitems/n_orderdate_gtandeq",
       "valueFormat" : "YYYY-MM-DD",
       "allowEmpty" : true,
       "showCaption" : true
@@ -71,6 +76,7 @@
       "ignoreInput" : 0,
       "labelPos" : "LEFT",
       "labelWidth" : 130,
+      "mOSFilePath" : "psdeformdetail_formitems/n_orderdate_ltandeq",
       "name" : "n_orderdate_ltandeq",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
@@ -91,20 +97,31 @@
         "colSM" : 12,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formitems/n_orderdate_ltandeq",
       "valueFormat" : "YYYY-MM-DD",
       "allowEmpty" : true,
       "showCaption" : true
     } ],
     "getPSLayout" : {
+      "childColLG" : 8,
+      "childColMD" : 8,
+      "childColSM" : 12,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
     "infoGroupMode" : false
   } ],
   "getPSLayout" : {
+    "childColLG" : -1,
+    "childColMD" : 24,
+    "childColSM" : -1,
+    "childColXS" : -1,
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CustomerCountCustomView/psappviewctrls/searchform",
   "searchButtonPos" : "RIGHT",
   "searchButtonStyle" : "SEARCHONLY",
   "tabHeaderPos" : "TOP",

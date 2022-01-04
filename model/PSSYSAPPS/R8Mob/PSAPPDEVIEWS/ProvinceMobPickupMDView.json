@@ -3,20 +3,27 @@
   "caption" : "省份",
   "codeName" : "ProvinceMobPickupMDView",
   "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ProvinceMobPickupMDView.json",
+  "mOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobPickupMDView",
   "name" : "ProvinceMobPickupMDView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "MobPickupMDView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "mdctrl",
       "name" : "MDCTRL",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "Mob",
@@ -39,6 +46,7 @@
     "groupMode" : "NONE",
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
     "logicName" : "MOB",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/psdelists/Mob",
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -144,6 +152,7 @@
       }
     } ],
     "pagingSize" : 30,
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobPickupMDView/psappviewctrls/mdctrl",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -170,16 +179,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBPICKUPMDVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PROVINCE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Province.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobPickupMDView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ProvinceMobPickupMDView",
   "title" : "省份移动端选择多数据视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEMOBPICKUPMDVIEW",

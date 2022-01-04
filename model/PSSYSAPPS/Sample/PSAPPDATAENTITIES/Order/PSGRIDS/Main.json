@@ -11,6 +11,7 @@
   "groupMode" : "NONE",
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "logicName" : "主表格",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdegrids/Main",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Order.json"
@@ -33,12 +34,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "customername",
     "excelCaption" : "客户",
+    "mOSFilePath" : "psdegridcols/customername",
     "name" : "customername",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "CUSTOMERNAME",
       "codeName" : "CustomerName"
     },
+    "rTMOSFilePath" : "psdegridcols/customername",
     "width" : 100,
     "widthUnit" : "PX",
     "enableSort" : true
@@ -50,12 +53,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "ordername",
     "excelCaption" : "订单号",
+    "mOSFilePath" : "psdegridcols/ordername",
     "name" : "ordername",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "ORDERNAME",
       "codeName" : "OrderName"
     },
+    "rTMOSFilePath" : "psdegridcols/ordername",
     "width" : 150,
     "widthUnit" : "PX",
     "enableSort" : true
@@ -67,12 +72,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "orderdate",
     "excelCaption" : "订单时间",
+    "mOSFilePath" : "psdegridcols/orderdate",
     "name" : "orderdate",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "ORDERDATE",
       "codeName" : "OrderDate"
     },
+    "rTMOSFilePath" : "psdegridcols/orderdate",
     "valueFormat" : "YYYY-MM-DD",
     "width" : 100,
     "widthUnit" : "PX",
@@ -85,6 +92,7 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "state",
     "excelCaption" : "订单状态",
+    "mOSFilePath" : "psdegridcols/state",
     "name" : "state",
     "noPrivDisplayMode" : 1,
     "getPSAppCodeList" : {
@@ -95,6 +103,7 @@
       "name" : "STATE",
       "codeName" : "State"
     },
+    "rTMOSFilePath" : "psdegridcols/state",
     "width" : 100,
     "widthUnit" : "PX",
     "enableSort" : true
@@ -106,12 +115,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "amount",
     "excelCaption" : "金额",
+    "mOSFilePath" : "psdegridcols/amount",
     "name" : "amount",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "AMOUNT",
       "codeName" : "Amount"
     },
+    "rTMOSFilePath" : "psdegridcols/amount",
     "getPSSysPFPlugin" : {
       "pluginType" : "GRID_COLRENDER",
       "pluginCode" : "gridcol"
@@ -191,6 +202,7 @@
     "codeName" : "srfkey",
     "enableCond" : 3,
     "ignoreInput" : 0,
+    "mOSFilePath" : "psdegridcols/srfkey",
     "name" : "srfkey",
     "getPSAppDEField" : {
       "name" : "ORDERID",
@@ -200,9 +212,11 @@
       "editorType" : "HIDDEN",
       "name" : "srfkey"
     },
+    "rTMOSFilePath" : "psdegridcols/srfkey",
     "allowEmpty" : true
   } ],
   "pagingSize" : 20,
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrderGridView/psappviewctrls/grid",
   "getRemovePSControlAction" : {
     "actionName" : "Remove",
     "actionType" : "DEACTION",

@@ -4,20 +4,27 @@
   "codeName" : "CategoryPickupTreeView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CategoryPickupTreeView.json",
   "mDCtrlActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryPickupTreeView",
   "name" : "CategoryPickupTreeView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Category.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "PickupTreeView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "tree",
       "name" : "TREE",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "Category",
@@ -37,6 +44,7 @@
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
     "logicName" : "Category",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CATEGORY/psdetreeviews/Category",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Category.json"
@@ -282,6 +290,7 @@
       "selected" : false,
       "id" : "ChildCategory"
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryPickupTreeView/psappviewctrls/tree",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -304,16 +313,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPICKUPTREEVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CATEGORY/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Category.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryPickupTreeView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryPickupTreeView",
   "title" : "类别选择树视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPICKUPTREEVIEW",

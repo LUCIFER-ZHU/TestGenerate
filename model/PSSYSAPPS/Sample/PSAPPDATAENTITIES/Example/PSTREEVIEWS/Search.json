@@ -16,6 +16,7 @@
   },
   "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "logicName" : "搜索树",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdetreeviews/Search",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -49,11 +50,29 @@
       "dERType" : "DER1N",
       "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/City/PSDERS/DER1N_CITY_PROVINCE_PROVINCEID.json",
       "logicName" : "省",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/CITY/minorpsders/DER1N_CITY_PROVINCE_PROVINCEID",
+      "getMajorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Province.json"
+      },
       "masterOrder" : -1,
       "masterRS" : 0,
+      "getMinorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/City.json"
+      },
       "name" : "DER1N_CITY_PROVINCE_PROVINCEID",
       "orderValue" : 100,
+      "getPSPickupDEField" : {
+        "name" : "PROVINCEID",
+        "codeName" : "ProvinceId"
+      },
+      "getPSPickupTextDEField" : {
+        "name" : "PROVINCENAME",
+        "codeName" : "ProvinceName"
+      },
       "pickupDEFName" : "PROVINCEID",
+      "rTMOSFilePath" : "psmodules/Sample/psdataentities/CITY/minorpsders/DER1N_CITY_PROVINCE_PROVINCEID",
       "removeActionType" : -1,
       "removeOrder" : 0
     },
@@ -332,6 +351,7 @@
     "selected" : false,
     "id" : "NoSearchModelNode"
   } ],
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleSearchTreeView/psappviewctrls/tree",
   "getRemovePSControlAction" : {
     "modelref" : true,
     "id" : "remove"

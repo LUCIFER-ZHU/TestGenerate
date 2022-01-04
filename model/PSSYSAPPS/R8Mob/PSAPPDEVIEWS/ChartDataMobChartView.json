@@ -3,20 +3,27 @@
   "caption" : "图表",
   "codeName" : "ChartDataMobChartView",
   "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDEVIEWS/ChartDataMobChartView.json",
+  "mOSFilePath" : "pssysapps/R8Mob/psappdeviews/ChartDataMobChartView",
   "name" : "ChartDataMobChartView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/R8Mob/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "MobChartView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "chart",
       "name" : "CHART",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "PieChart",
@@ -28,6 +35,7 @@
     },
     "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
     "logicName" : "PieChart",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdecharts/PieChart",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
@@ -42,6 +50,14 @@
     "getPSChartDataSetGroups" : [ {
       "index" : 0,
       "name" : "DEFAULT",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
+      },
       "id" : "0"
     } ],
     "getPSChartDataSets" : [ {
@@ -193,6 +209,7 @@
       "showTitle" : true,
       "id" : "0"
     },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ChartDataMobChartView/psappviewctrls/chart",
     "readOnly" : true,
     "name" : "chart",
     "modelid" : "A13D1C2B-1F2C-478A-A857-97078D999843",
@@ -204,16 +221,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBCHARTVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ChartDataMobChartView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ChartDataMobChartView",
   "title" : "图表实体图表视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEMOBCHARTVIEW",

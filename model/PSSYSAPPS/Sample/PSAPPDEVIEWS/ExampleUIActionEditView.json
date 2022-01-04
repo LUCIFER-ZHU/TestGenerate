@@ -3,14 +3,20 @@
   "caption" : "界面行为",
   "codeName" : "ExampleUIActionEditView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleUIActionEditView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleUIActionEditView",
   "name" : "ExampleUIActionEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "EditView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "form",
@@ -20,7 +26,8 @@
       "name" : "P2K",
       "paramType" : "VALUE",
       "value" : 0
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "UIAction",
@@ -29,6 +36,7 @@
       "modelref" : true,
       "id" : "create"
     },
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/UIAction.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
@@ -44,6 +52,7 @@
     },
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "logicName" : "界面行为",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeform_editforms/UIAction",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -286,12 +295,14 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "codeName" : "rawitem1",
         "contentType" : "RAW",
         "detailStyle" : "DEFAULT",
         "detailType" : "RAWITEM",
+        "mOSFilePath" : "psdeformdetail_rawitems/rawitem1",
         "name" : "rawitem1",
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -300,6 +311,7 @@
         "getPSSysCss" : {
           "cssName" : "el-alert el-alert--info is-light"
         },
+        "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem1",
         "rawContent" : "打开一个模态框（小视图）",
         "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
@@ -310,6 +322,7 @@
         "codeName" : "group1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group1",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "actionType" : "UIACTION",
@@ -317,6 +330,7 @@
           "codeName" : "button1",
           "detailStyle" : "DEFAULT",
           "detailType" : "BUTTON",
+          "mOSFilePath" : "psdeformdetail_buttons/button1",
           "name" : "button1",
           "getPSAppViewUIAction" : {
             "modelref" : true,
@@ -337,21 +351,28 @@
             },
             "frontProcessType" : "WIZARD",
             "fullCodeName" : "Example_openModel",
+            "mOSFilePath" : "psappdeuiactions/openModel",
             "name" : "前台界面行为（打开模态）",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
             },
+            "rTMOSFilePath" : "psappdeuiactions/openModel",
             "timeout" : 60000,
             "uIActionMode" : "FRONT",
             "uIActionTag" : "openModel",
             "uIActionType" : "DEUIACTION",
             "id" : "openModel@Example"
           },
+          "rTMOSFilePath" : "psdeformdetail_buttons/button1",
           "tooltip" : "前台界面行为（打开模态）",
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -359,6 +380,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
         "infoGroupMode" : false,
         "showCaption" : false
       }, {
@@ -366,6 +388,7 @@
         "contentType" : "RAW",
         "detailStyle" : "DEFAULT",
         "detailType" : "RAWITEM",
+        "mOSFilePath" : "psdeformdetail_rawitems/rawitem2",
         "name" : "rawitem2",
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -374,6 +397,7 @@
         "getPSSysCss" : {
           "cssName" : "el-alert el-alert--info is-light"
         },
+        "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem2",
         "rawContent" : "打开一个顶级视图",
         "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
@@ -384,6 +408,7 @@
         "codeName" : "grouppanel1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
         "name" : "grouppanel1",
         "getPSDEFormDetails" : [ {
           "actionType" : "UIACTION",
@@ -391,6 +416,7 @@
           "codeName" : "button2",
           "detailStyle" : "DEFAULT",
           "detailType" : "BUTTON",
+          "mOSFilePath" : "psdeformdetail_buttons/button2",
           "name" : "button2",
           "getPSAppViewUIAction" : {
             "modelref" : true,
@@ -412,21 +438,28 @@
             "frontProcessType" : "TOP",
             "fullCodeName" : "Example_openWindow",
             "htmlPageUrl" : "https://www.ibizsys.cn/ungroup/portal",
+            "mOSFilePath" : "psappdeuiactions/openWindow",
             "name" : "前台界面行为（打开顶级视图）",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
             },
+            "rTMOSFilePath" : "psappdeuiactions/openWindow",
             "timeout" : 60000,
             "uIActionMode" : "FRONT",
             "uIActionTag" : "openWindow",
             "uIActionType" : "DEUIACTION",
             "id" : "openWindow@Example"
           },
+          "rTMOSFilePath" : "psdeformdetail_buttons/button2",
           "tooltip" : "前台界面行为（打开顶级视图）",
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -434,6 +467,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
         "infoGroupMode" : false,
         "showCaption" : false
       }, {
@@ -441,6 +475,7 @@
         "contentType" : "RAW",
         "detailStyle" : "DEFAULT",
         "detailType" : "RAWITEM",
+        "mOSFilePath" : "psdeformdetail_rawitems/rawitem3",
         "name" : "rawitem3",
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -449,6 +484,7 @@
         "getPSSysCss" : {
           "cssName" : "el-alert el-alert--info is-light"
         },
+        "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem3",
         "rawContent" : "打开一个指定的html页面，并将搜索框中的参数传过去",
         "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
@@ -459,6 +495,7 @@
         "codeName" : "grouppanel2",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
         "name" : "grouppanel2",
         "getPSDEFormDetails" : [ {
           "caption" : "搜索",
@@ -472,6 +509,7 @@
           "itemWidth" : 480.0,
           "labelPos" : "LEFT",
           "labelWidth" : 80,
+          "mOSFilePath" : "psdeformdetail_formitems/wd",
           "name" : "wd",
           "noPrivDisplayMode" : 1,
           "getPSEditor" : {
@@ -484,6 +522,7 @@
             "grow" : -1,
             "layout" : "FLEX"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/wd",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -492,6 +531,7 @@
           "codeName" : "button3",
           "detailStyle" : "DEFAULT",
           "detailType" : "BUTTON",
+          "mOSFilePath" : "psdeformdetail_buttons/button3",
           "name" : "button3",
           "getPSAppViewUIAction" : {
             "modelref" : true,
@@ -508,6 +548,7 @@
             "frontProcessType" : "OPENHTMLPAGE",
             "fullCodeName" : "Example_openHtml",
             "htmlPageUrl" : "https://www.baidu.com/s?wd=${data.wd}&rsv_spt=1",
+            "mOSFilePath" : "psappdeuiactions/openHtml",
             "name" : "前台界面行为（打开HTML页面）",
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -519,12 +560,14 @@
               "value" : "wd",
               "rawValue" : false
             } ],
+            "rTMOSFilePath" : "psappdeuiactions/openHtml",
             "timeout" : 60000,
             "uIActionMode" : "FRONT",
             "uIActionTag" : "openHtml",
             "uIActionType" : "DEUIACTION",
             "id" : "openHtml@Example"
           },
+          "rTMOSFilePath" : "psdeformdetail_buttons/button3",
           "tooltip" : "前台界面行为（打开HTML页面）（百度一下）",
           "showCaption" : true
         } ],
@@ -535,6 +578,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel2",
         "infoGroupMode" : false,
         "showCaption" : false
       }, {
@@ -543,12 +587,14 @@
         "codeName" : "grouppanel3",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel3",
         "name" : "grouppanel3",
         "getPSDEFormDetails" : [ {
           "codeName" : "rawitem4",
           "contentType" : "RAW",
           "detailStyle" : "DEFAULT",
           "detailType" : "RAWITEM",
+          "mOSFilePath" : "psdeformdetail_rawitems/rawitem4",
           "name" : "rawitem4",
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -557,6 +603,7 @@
           "getPSSysCss" : {
             "cssName" : "el-alert el-alert--info is-light"
           },
+          "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem4",
           "rawContent" : "数据快速新建通常使用界面行为（后续界面行为，后台处理后打开新界面进行确认或后续操作）",
           "rawItemHeight" : -1.0,
           "rawItemWidth" : -1.0,
@@ -567,6 +614,7 @@
           "codeName" : "button4",
           "detailStyle" : "DEFAULT",
           "detailType" : "BUTTON",
+          "mOSFilePath" : "psdeformdetail_buttons/button4",
           "name" : "button4",
           "getPSAppViewUIAction" : {
             "modelref" : true,
@@ -587,6 +635,7 @@
             },
             "frontProcessType" : "WIZARD",
             "fullCodeName" : "Customer_Quick",
+            "mOSFilePath" : "psappdeuiactions/Quick",
             "name" : "快速新建",
             "getNextPSUIAction" : {
               "getPSAppDataEntity" : {
@@ -600,6 +649,7 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Customer.json"
             },
+            "rTMOSFilePath" : "psappdeuiactions/Quick",
             "timeout" : 60000,
             "uIActionMode" : "FRONT",
             "uIActionTag" : "Quick",
@@ -607,10 +657,15 @@
             "globalUIAction" : true,
             "id" : "Quick@Customer"
           },
+          "rTMOSFilePath" : "psdeformdetail_buttons/button4",
           "tooltip" : "界面行为（后续界面行为）",
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : -1,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -618,19 +673,30 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel3",
         "infoGroupMode" : false,
         "showCaption" : false
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleUIActionEditView/psappviewctrls/form",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -651,16 +717,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleUIActionEditView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleUIActionEditView",
   "title" : "示例编辑视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEEDITVIEW",

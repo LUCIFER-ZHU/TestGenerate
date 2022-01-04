@@ -3,20 +3,27 @@
   "caption" : "示例",
   "codeName" : "ExampleProvinceCityDistictMPickupView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleProvinceCityDistictMPickupView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleProvinceCityDistictMPickupView",
   "name" : "ExampleProvinceCityDistictMPickupView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "MPickupView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "pickupviewpanel",
       "name" : "PICKUPVIEWPANEL",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "ProvinceCityDistictMPickupViewpickupviewpanel",
@@ -27,20 +34,27 @@
       "codeName" : "ExampleProvinceCityDistictPickupTreeView",
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleProvinceCityDistictPickupTreeView.json",
       "mDCtrlActiveMode" : 2,
+      "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleProvinceCityDistictPickupTreeView",
       "name" : "ExampleProvinceCityDistictPickupTreeView",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
       },
+      "getPSAppModule" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+      },
       "getPSAppViewEngines" : [ {
         "engineCat" : "VIEW",
         "engineType" : "PickupTreeView",
+        "mOSFilePath" : "psappviewengines/engine",
         "name" : "engine",
         "getPSUIEngineParams" : [ {
           "ctrlName" : "tree",
           "name" : "TREE",
           "paramType" : "CTRL"
-        } ]
+        } ],
+        "rTMOSFilePath" : "psappviewengines/engine"
       } ],
       "getPSControls" : [ {
         "codeName" : "ProvinceCityDistict_EnableCheck",
@@ -60,6 +74,7 @@
         },
         "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
         "logicName" : "省市区/县树（启用选中）",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdetreeviews/ProvinceCityDistict_EnableCheck",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -175,11 +190,29 @@
             "dERType" : "DER1N",
             "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/District/PSDERS/DER1N_DISTRICT_CITY_CITYID.json",
             "logicName" : "市",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/DISTRICT/minorpsders/DER1N_DISTRICT_CITY_CITYID",
+            "getMajorPSDataEntity" : {
+              "modelref" : true,
+              "path" : "PSMODULES/Sample/PSDATAENTITIES/City.json"
+            },
             "masterOrder" : -1,
             "masterRS" : 0,
+            "getMinorPSDataEntity" : {
+              "modelref" : true,
+              "path" : "PSMODULES/Sample/PSDATAENTITIES/District.json"
+            },
             "name" : "DER1N_DISTRICT_CITY_CITYID",
             "orderValue" : 100,
+            "getPSPickupDEField" : {
+              "name" : "CITYID",
+              "codeName" : "CityId"
+            },
+            "getPSPickupTextDEField" : {
+              "name" : "CITYNAME",
+              "codeName" : "CityName"
+            },
             "pickupDEFName" : "CITYID",
+            "rTMOSFilePath" : "psmodules/Sample/psdataentities/DISTRICT/minorpsders/DER1N_DISTRICT_CITY_CITYID",
             "removeActionType" : -1,
             "removeOrder" : 0
           },
@@ -204,11 +237,29 @@
             "dERType" : "DER1N",
             "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/City/PSDERS/DER1N_CITY_PROVINCE_PROVINCEID.json",
             "logicName" : "省",
+            "mOSFilePath" : "psmodules/Sample/psdataentities/CITY/minorpsders/DER1N_CITY_PROVINCE_PROVINCEID",
+            "getMajorPSDataEntity" : {
+              "modelref" : true,
+              "path" : "PSMODULES/Sample/PSDATAENTITIES/Province.json"
+            },
             "masterOrder" : -1,
             "masterRS" : 0,
+            "getMinorPSDataEntity" : {
+              "modelref" : true,
+              "path" : "PSMODULES/Sample/PSDATAENTITIES/City.json"
+            },
             "name" : "DER1N_CITY_PROVINCE_PROVINCEID",
             "orderValue" : 100,
+            "getPSPickupDEField" : {
+              "name" : "PROVINCEID",
+              "codeName" : "ProvinceId"
+            },
+            "getPSPickupTextDEField" : {
+              "name" : "PROVINCENAME",
+              "codeName" : "ProvinceName"
+            },
             "pickupDEFName" : "PROVINCEID",
+            "rTMOSFilePath" : "psmodules/Sample/psdataentities/CITY/minorpsders/DER1N_CITY_PROVINCE_PROVINCEID",
             "removeActionType" : -1,
             "removeOrder" : 0
           },
@@ -357,6 +408,7 @@
           "selected" : false,
           "id" : "CITY"
         } ],
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleProvinceCityDistictPickupTreeView/psappviewctrls/tree",
         "getRemovePSControlAction" : {
           "modelref" : true,
           "id" : "remove"
@@ -379,16 +431,19 @@
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPDEPICKUPTREEVIEW",
         "controlType" : "VIEWLAYOUTPANEL",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
         "name" : "layoutpanel",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
         },
         "getPSControlParam" : { },
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleProvinceCityDistictPickupTreeView/psappviewctrls/layoutpanel",
         "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleProvinceCityDistictPickupTreeView",
       "title" : "示例选择树视图",
       "viewStyle" : "DEFAULT",
       "viewType" : "DEPICKUPTREEVIEW",
@@ -401,6 +456,7 @@
       "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psviewpanels/ProvinceCityDistictMPickupViewpickupviewpanel",
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -418,7 +474,8 @@
     } ],
     "getPSControlParam" : {
       "id" : "PICKUPVIEWPANEL"
-    }
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleProvinceCityDistictMPickupView/psappviewctrls/pickupviewpanel"
   } ],
   "getPSDEViewCodeName" : "ProvinceCityDistictMPickupView",
   "getPSDEViewId" : "A6C561AD-6986-4777-958B-6C2DF76348F6",
@@ -426,16 +483,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMPICKUPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleProvinceCityDistictMPickupView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleProvinceCityDistictMPickupView",
   "title" : "示例数据多项选择视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEMPICKUPVIEW",

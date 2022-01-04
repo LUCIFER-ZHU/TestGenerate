@@ -4,22 +4,28 @@
   "codeName" : "GetOrderCNT",
   "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Customer/PSDEACTIONS/GetOrderCNT.json",
   "logicName" : "获取订单计数",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/psdeactions/getOrderCNT",
   "name" : "getOrderCNT",
   "getPSDEActionInput" : {
     "getKeyPSDEField" : {
       "name" : "CUSTOMERID",
       "codeName" : "CustomerId"
     },
+    "mOSFilePath" : "psdeactioninputs/GetOrderCNTInput",
     "name" : "GetOrderCNTInput",
+    "rTMOSFilePath" : "psdeactioninputs/GetOrderCNTInput",
     "type" : "KEYFIELD"
   },
   "getPSDEActionReturn" : {
+    "mOSFilePath" : "psdeactionreturns/GetOrderCNTResult",
     "name" : "GetOrderCNTResult",
     "getPSDEMethodDTO" : {
       "modelref" : true,
       "id" : "CustomerDTO"
     },
+    "rTMOSFilePath" : "psdeactionreturns/GetOrderCNTResult",
     "type" : "DTO"
   },
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/psdeactions/getOrderCNT",
   "scriptCode" : "data.ordercnt=Math.floor(Math.random()*100+1);\nconsole.log(\"获取订单计数\");\nconsole.log(data.ordercnt);"
 }

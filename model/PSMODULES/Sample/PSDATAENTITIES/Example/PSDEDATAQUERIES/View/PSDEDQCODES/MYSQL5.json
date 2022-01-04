@@ -1,5 +1,6 @@
 {
   "dBType" : "MYSQL5",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdedataqueries/VIEW/psdedqcodes/MYSQL5",
   "name" : "MySQL5",
   "getPSDEDataQueryCodeExps" : [ {
     "expression" : "t1.`ACFIELD`",
@@ -75,5 +76,6 @@
     "name" : "UPDATEMAN"
   } ],
   "queryCode" : "SELECT\nt1.`ACFIELD`,\nt1.`BEGINTIME`,\nt1.`CITYID`,\nt11.`CITYNAME`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`DATATYPE`,\nt1.`DECIMALFIELD`,\nt1.`DECIMALFIELD2`,\nt1.`DISTRICTID`,\nt31.`DISTRICTNAME`,\nt1.`ENDTIME`,\nt1.`EXAMPLEID`,\nt1.`EXAMPLENAME`,\nt1.`FIELD`,\nt1.`FIELDUPDATE`,\nt1.`FIELDVALUE`,\nt1.`FIELDX`,\nt1.`FIELDY`,\nt1.`FIELDZ`,\nt1.`PROVINCEID`,\nt21.`PROVINCENAME`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_EXAMPLE` t1 \nLEFT JOIN `T_CITY` t11 ON t1.`CITYID` = t11.`CITYID` \nLEFT JOIN `T_PROVINCE` t21 ON t1.`PROVINCEID` = t21.`PROVINCEID` \nLEFT JOIN `T_DISTRICT` t31 ON t1.`DISTRICTID` = t31.`DISTRICTID` \n",
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdedataqueries/VIEW/psdedqcodes/MYSQL5",
   "id" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEDATAQUERIES/View/PSDEDQCODES/MYSQL5.json"
 }

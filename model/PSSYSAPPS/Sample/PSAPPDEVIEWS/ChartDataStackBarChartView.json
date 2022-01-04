@@ -3,20 +3,27 @@
   "caption" : "堆叠柱状图",
   "codeName" : "ChartDataStackBarChartView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataStackBarChartView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataStackBarChartView",
   "name" : "ChartDataStackBarChartView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "ChartView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "chart",
       "name" : "CHART",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "StackBarChart",
@@ -28,6 +35,7 @@
     },
     "hookEventNames" : [ "BEFORELOAD", "LOAD" ],
     "logicName" : "StackBarChart",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdecharts/StackBarChart",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
@@ -60,6 +68,14 @@
     "getPSChartDataSetGroups" : [ {
       "index" : 0,
       "name" : "DEFAULT",
+      "getPSAppDEDataSet" : {
+        "modelref" : true,
+        "id" : "FetchDefault"
+      },
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
+      },
       "id" : "0"
     } ],
     "getPSChartDataSets" : [ {
@@ -97,14 +113,7 @@
       "index" : 0,
       "name" : "[bar]直角坐标系[0]",
       "getPSChartCoordinateSystem" : {
-        "eChartsType" : "cartesian2d",
-        "index" : 0,
-        "name" : "[bar]直角坐标系[0]",
-        "getPSChartGrid" : {
-          "modelref" : true,
-          "id" : "0"
-        },
-        "type" : "XY",
+        "modelref" : true,
         "id" : "0"
       },
       "getPSChartGridXAxis0" : {
@@ -312,6 +321,7 @@
       "showTitle" : true,
       "id" : "0"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataStackBarChartView/psappviewctrls/chart",
     "readOnly" : true,
     "name" : "chart",
     "modelid" : "A7B0492C-9A38-446F-B737-C82A88F66708",
@@ -323,16 +333,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDECHARTVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataStackBarChartView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataStackBarChartView",
   "title" : "图表视图（分组柱状图）",
   "viewStyle" : "DEFAULT",
   "viewType" : "DECHARTVIEW",

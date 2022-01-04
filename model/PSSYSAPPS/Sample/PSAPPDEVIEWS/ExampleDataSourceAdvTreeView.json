@@ -4,20 +4,27 @@
   "codeName" : "ExampleDataSourceAdvTreeView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleDataSourceAdvTreeView.json",
   "mDCtrlActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleDataSourceAdvTreeView",
   "name" : "ExampleDataSourceAdvTreeView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "TreeView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "tree",
       "name" : "TREE",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "DataSourceAdv",
@@ -37,6 +44,7 @@
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
     "logicName" : " 数据源高级树",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdetreeviews/DataSourceAdv",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -491,6 +499,7 @@
       "selected" : false,
       "id" : "MarkField"
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleDataSourceAdvTreeView/psappviewctrls/tree",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -513,16 +522,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleDataSourceAdvTreeView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleDataSourceAdvTreeView",
   "title" : "示例树视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DETREEVIEW",

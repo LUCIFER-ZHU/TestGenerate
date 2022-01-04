@@ -3,20 +3,27 @@
   "caption" : "类别",
   "codeName" : "CategoryTreeMPickupView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CategoryTreeMPickupView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryTreeMPickupView",
   "name" : "CategoryTreeMPickupView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Category.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "MPickupView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "pickupviewpanel",
       "name" : "PICKUPVIEWPANEL",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "TreeMPickupViewpickupviewpanel",
@@ -27,20 +34,27 @@
       "codeName" : "CategoryPickupTreeView",
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CategoryPickupTreeView.json",
       "mDCtrlActiveMode" : 2,
+      "mOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryPickupTreeView",
       "name" : "CategoryPickupTreeView",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Category.json"
       },
+      "getPSAppModule" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+      },
       "getPSAppViewEngines" : [ {
         "engineCat" : "VIEW",
         "engineType" : "PickupTreeView",
+        "mOSFilePath" : "psappviewengines/engine",
         "name" : "engine",
         "getPSUIEngineParams" : [ {
           "ctrlName" : "tree",
           "name" : "TREE",
           "paramType" : "CTRL"
-        } ]
+        } ],
+        "rTMOSFilePath" : "psappviewengines/engine"
       } ],
       "getPSControls" : [ {
         "codeName" : "Category",
@@ -60,6 +74,7 @@
         },
         "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
         "logicName" : "Category",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/CATEGORY/psdetreeviews/Category",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Category.json"
@@ -305,6 +320,7 @@
           "selected" : false,
           "id" : "ChildCategory"
         } ],
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryPickupTreeView/psappviewctrls/tree",
         "getRemovePSControlAction" : {
           "modelref" : true,
           "id" : "remove"
@@ -327,16 +343,19 @@
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPDEPICKUPTREEVIEW",
         "controlType" : "VIEWLAYOUTPANEL",
+        "mOSFilePath" : "psmodules/Sample/psdataentities/CATEGORY/pssysviewlayoutpanels/Layoutpanel",
         "name" : "layoutpanel",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Category.json"
         },
         "getPSControlParam" : { },
+        "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryPickupTreeView/psappviewctrls/layoutpanel",
         "layoutBodyOnly" : true,
         "layoutPanel" : true,
         "useDefaultLayout" : true
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryPickupTreeView",
       "title" : "类别选择树视图",
       "viewStyle" : "DEFAULT",
       "viewType" : "DEPICKUPTREEVIEW",
@@ -349,6 +368,7 @@
       "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CATEGORY/psviewpanels/TreeMPickupViewpickupviewpanel",
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -366,7 +386,8 @@
     } ],
     "getPSControlParam" : {
       "id" : "PICKUPVIEWPANEL"
-    }
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryTreeMPickupView/psappviewctrls/pickupviewpanel"
   } ],
   "getPSDEViewCodeName" : "TreeMPickupView",
   "getPSDEViewId" : "CF8D813D-8F31-448D-AA9F-C6F33F761ACC",
@@ -374,16 +395,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMPICKUPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CATEGORY/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Category.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryTreeMPickupView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CategoryTreeMPickupView",
   "title" : "类别数据多项选择视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEMPICKUPVIEW",

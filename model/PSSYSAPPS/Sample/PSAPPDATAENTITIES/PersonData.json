@@ -2,6 +2,7 @@
   "getAllPSAppDEACModes" : [ {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "mOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdeacmodes/DEFAULT",
     "name" : "DEFAULT",
     "getPSDEACModeDataItems" : [ {
       "dataType" : 25,
@@ -19,6 +20,7 @@
       }
     } ],
     "pagingSize" : 50,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdeacmodes/DEFAULT",
     "getTextPSAppDEField" : {
       "name" : "PERSONDATANAME",
       "codeName" : "PersonDataName"
@@ -34,49 +36,158 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/Update",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/FetchDefault",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "PersonDataId",
     "logicName" : "人员数据标识",
     "name" : "PERSONDATAID",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/PersonDataId",
     "stdDataType" : 25,
     "stringLength" : 100,
     "keyField" : true
@@ -84,12 +195,14 @@
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "name" : "CREATEDATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/CreateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "PersonDataName",
     "logicName" : "姓名",
     "name" : "PERSONDATANAME",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/PersonDataName",
     "stdDataType" : 25,
     "stringLength" : 200,
     "enableQuickSearch" : true,
@@ -98,77 +211,90 @@
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "name" : "UPDATEMAN",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/UpdateMan",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "CreateMan",
     "logicName" : "建立人",
     "name" : "CREATEMAN",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/CreateMan",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "name" : "UPDATEDATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/UpdateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "DeptId",
     "logicName" : "组织部门标识",
     "name" : "DEPTID",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/DeptId",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "OrgId",
     "logicName" : "组织机构标识",
     "name" : "ORGID",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/OrgId",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "OrgDataId",
     "logicName" : "组织数据标识",
     "name" : "ORGDATAID",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/OrgDataId",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "OrgDataName",
     "logicName" : "组织名称",
     "name" : "ORGDATANAME",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/OrgDataName",
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
     "codeName" : "DeptDataId",
     "logicName" : "部门数据标识",
     "name" : "DEPTDATAID",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/DeptDataId",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "DeptDataName",
     "logicName" : "部门名称",
     "name" : "DEPTDATANAME",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/DeptDataName",
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
     "codeName" : "Idcard",
     "logicName" : "身份证",
     "name" : "IDCARD",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/Idcard",
     "stdDataType" : 25,
     "stringLength" : 18
   }, {
     "codeName" : "Gender",
     "logicName" : "性别",
     "name" : "GENDER",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/Gender",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "Age",
     "logicName" : "年龄",
     "name" : "AGE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/Age",
     "stdDataType" : 9
   }, {
     "codeName" : "Avatar",
     "logicName" : "头像",
     "name" : "AVATAR",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdefields/Avatar",
     "stdDataType" : 25,
     "stringLength" : 500
   } ],
@@ -176,95 +302,245 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/Update",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/FilterCreate",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/FilterFetch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGET",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/FilterGet",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGetDraft",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/FilterGetDraft",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterRemove",
     "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/FilterRemove",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/FilterSearch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE",
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/FilterUpdate",
     "builtinMethod" : true
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData/psappdemethods/Select",
     "builtinMethod" : false
+  } ],
+  "getAllPSAppViews" : [ {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/PersonDataGridView.json",
+    "viewType" : "DEGRIDVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/PersonDataPickupView.json",
+    "viewType" : "DEPICKUPVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/PersonDataEditView.json",
+    "viewType" : "DEEDITVIEW"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/PersonDataPickupGridView.json",
+    "viewType" : "DEPICKUPGRIDVIEW"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
-    "name" : "CREATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/psdeopprivs/CREATE",
+    "name" : "CREATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/psdeopprivs/CREATE"
   }, {
     "logicName" : "删除",
-    "name" : "DELETE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/psdeopprivs/DELETE",
+    "name" : "DELETE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/psdeopprivs/DELETE"
   }, {
     "logicName" : "读取",
-    "name" : "READ"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/psdeopprivs/READ",
+    "name" : "READ",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/psdeopprivs/READ"
   }, {
     "logicName" : "更新",
-    "name" : "UPDATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/psdeopprivs/UPDATE",
+    "name" : "UPDATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/psdeopprivs/UPDATE"
   } ],
   "codeName" : "PersonData",
   "dataAccCtrlArch" : 1,
@@ -272,10 +548,12 @@
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/PersonData.json",
   "enableUIActions" : 15,
   "logicName" : "人员数据",
+  "mOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData",
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
     "codeName" : "PersonData",
     "dataRSMode" : 0,
+    "mOSFilePath" : "pssysapps/Sample/psappders/PersonData",
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
@@ -289,14 +567,28 @@
       "name" : "ORGDATAID",
       "codeName" : "OrgDataId"
     },
-    "rSMode" : 2
+    "rSMode" : 2,
+    "rTMOSFilePath" : "pssysapps/Sample/psappders/PersonData"
   } ],
   "name" : "PERSONDATA",
   "getPSDEName" : "PERSONDATA",
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "id" : "PersonData"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData.json"
+  },
+  "getPSSysServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSSYSSERVICEAPIS/SampleApi.json"
+  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "PERSONDATANAME",
     "codeName" : "PersonDataName"
   } ],
+  "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/PersonData",
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,

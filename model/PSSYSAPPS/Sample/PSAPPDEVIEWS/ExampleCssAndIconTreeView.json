@@ -4,20 +4,27 @@
   "codeName" : "ExampleCssAndIconTreeView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleCssAndIconTreeView.json",
   "mDCtrlActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleCssAndIconTreeView",
   "name" : "ExampleCssAndIconTreeView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "TreeView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "tree",
       "name" : "TREE",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "CssAndIcon",
@@ -37,6 +44,7 @@
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
     "logicName" : "界面样式及图标树",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdetreeviews/CssAndIcon",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -243,6 +251,7 @@
     "getPSSysCss" : {
       "cssName" : "gird-red-border"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleCssAndIconTreeView/psappviewctrls/tree",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -265,16 +274,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleCssAndIconTreeView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleCssAndIconTreeView",
   "title" : "示例树视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DETREEVIEW",

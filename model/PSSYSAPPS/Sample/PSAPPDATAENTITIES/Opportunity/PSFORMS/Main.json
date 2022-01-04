@@ -5,6 +5,7 @@
     "modelref" : true,
     "id" : "create"
   },
+  "defaultLabelWidth" : 130,
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity/PSFORMS/Main.json",
   "getGetDraftFromPSControlAction" : {
     "modelref" : true,
@@ -20,6 +21,7 @@
   },
   "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "logicName" : "主编辑表单",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/OPPORTUNITY/psdeform_editforms/Main",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Opportunity.json"
@@ -220,6 +222,7 @@
     "codeName" : "formpage1",
     "detailStyle" : "DEFAULT",
     "detailType" : "FORMPAGE",
+    "mOSFilePath" : "psdeformdetail_formpages/formpage1",
     "name" : "formpage1",
     "getPSDEFormDetails" : [ {
       "actionGroupExtractMode" : "ITEM",
@@ -227,6 +230,7 @@
       "codeName" : "group1",
       "detailStyle" : "DEFAULT",
       "detailType" : "GROUPPANEL",
+      "mOSFilePath" : "psdeformdetail_grouppanels/group1",
       "name" : "group1",
       "getPSDEFormDetails" : [ {
         "caption" : "商机名称",
@@ -238,6 +242,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/opportunityname",
         "name" : "opportunityname",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -255,6 +260,7 @@
           "colSM" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/opportunityname",
         "allowEmpty" : true,
         "showCaption" : true
       }, {
@@ -267,6 +273,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/customername",
         "name" : "customername",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -295,6 +302,7 @@
           },
           "getPSUIActionGroup" : {
             "codeName" : "Auto1",
+            "mOSFilePath" : "pssysapps/Sample/psappdataentities/Customer/psappdeuagroups/Auto1",
             "name" : "自动填充",
             "getPSUIActionGroupDetails" : [ {
               "detailType" : "DEUIACTION",
@@ -310,6 +318,7 @@
                 },
                 "frontProcessType" : "WIZARD",
                 "fullCodeName" : "Customer_ACCreate",
+                "mOSFilePath" : "psappdeuiactions/ACCreate",
                 "name" : "自动填充-新建",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -319,6 +328,7 @@
                   "glyph" : "xf044@FontAwesome",
                   "cssClass" : "fa fa-edit"
                 },
+                "rTMOSFilePath" : "psappdeuiactions/ACCreate",
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",
                 "uIActionTag" : "ACCreate",
@@ -328,7 +338,8 @@
               "addSeparator" : false,
               "showCaption" : true,
               "showIcon" : true
-            } ]
+            } ],
+            "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/Customer/psappdeuagroups/Auto1"
           },
           "getPickupPSAppView" : {
             "modelref" : true,
@@ -348,6 +359,7 @@
           "colSM" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/customername",
         "valueItemName" : "customerid",
         "allowEmpty" : true,
         "showCaption" : true
@@ -361,6 +373,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/exprevenue",
         "name" : "exprevenue",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -377,6 +390,7 @@
           "colSM" : 8,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/exprevenue",
         "allowEmpty" : true,
         "showCaption" : true
       }, {
@@ -390,6 +404,7 @@
         "itemWidth" : 290.0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/expendtime",
         "name" : "expendtime",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -411,6 +426,7 @@
           "colSM" : 8,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/expendtime",
         "valueFormat" : "YYYY-MM-DD HH:mm:ss",
         "allowEmpty" : true,
         "showCaption" : true
@@ -424,6 +440,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/priority",
         "name" : "priority",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -445,6 +462,7 @@
           "colSM" : 8,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/priority",
         "allowEmpty" : true,
         "needCodeListConfig" : true,
         "showCaption" : true
@@ -458,6 +476,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/state",
         "name" : "state",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -479,6 +498,7 @@
           "colSM" : 8,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/state",
         "allowEmpty" : true,
         "needCodeListConfig" : true,
         "showCaption" : true
@@ -492,6 +512,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/persondataname",
         "name" : "persondataname",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -536,6 +557,7 @@
           "colSM" : 8,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/persondataname",
         "valueItemName" : "persondataid",
         "allowEmpty" : true,
         "showCaption" : true
@@ -549,6 +571,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/phone",
         "name" : "phone",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -566,6 +589,7 @@
           "colSM" : 8,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/phone",
         "allowEmpty" : true,
         "showCaption" : true
       }, {
@@ -578,6 +602,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/email",
         "name" : "email",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -595,10 +620,15 @@
           "colSM" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/email",
         "allowEmpty" : true,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : 8,
+        "childColMD" : 8,
+        "childColSM" : 8,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -606,19 +636,26 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
       "infoGroupMode" : false,
       "showCaption" : true
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
     "infoGroupMode" : false
   }, {
     "caption" : "其它",
     "codeName" : "formpage2",
     "detailStyle" : "DEFAULT",
     "detailType" : "FORMPAGE",
+    "mOSFilePath" : "psdeformdetail_formpages/formpage2",
     "name" : "formpage2",
     "getPSDEFormDetails" : [ {
       "actionGroupExtractMode" : "ITEM",
@@ -626,6 +663,7 @@
       "codeName" : "group2",
       "detailStyle" : "DEFAULT",
       "detailType" : "GROUPPANEL",
+      "mOSFilePath" : "psdeformdetail_grouppanels/group2",
       "name" : "group2",
       "getPSDEFormDetails" : [ {
         "caption" : "建立人",
@@ -637,6 +675,7 @@
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/createman",
         "name" : "createman",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -656,6 +695,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/createman",
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
         "showCaption" : true
@@ -669,6 +709,7 @@
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/createdate",
         "name" : "createdate",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -684,6 +725,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/createdate",
         "valueFormat" : "YYYY-MM-DD HH:mm:ss",
         "allowEmpty" : true,
         "showCaption" : true
@@ -697,6 +739,7 @@
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/updateman",
         "name" : "updateman",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -716,6 +759,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/updateman",
         "allowEmpty" : true,
         "convertToCodeItemText" : true,
         "showCaption" : true
@@ -729,6 +773,7 @@
         "ignoreInput" : 3,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/updatedate",
         "name" : "updatedate",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -744,11 +789,16 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/updatedate",
         "valueFormat" : "YYYY-MM-DD HH:mm:ss",
         "allowEmpty" : true,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -756,19 +806,30 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_grouppanels/group2",
       "infoGroupMode" : false,
       "showCaption" : true
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "psdeformdetail_formpages/formpage2",
     "infoGroupMode" : false
   } ],
   "getPSLayout" : {
+    "childColLG" : -1,
+    "childColMD" : 24,
+    "childColSM" : -1,
+    "childColXS" : -1,
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OPPORTUNITYEditView/psappviewctrls/form",
   "getRemovePSControlAction" : {
     "modelref" : true,
     "id" : "remove"

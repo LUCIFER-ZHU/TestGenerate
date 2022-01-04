@@ -4,14 +4,20 @@
   "codeName" : "ExampleToolbarGridView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleToolbarGridView.json",
   "gridRowActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleToolbarGridView",
   "name" : "ExampleToolbarGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "GridView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "appViewLogicName" : "opendata",
@@ -25,7 +31,8 @@
       "ctrlName" : "grid",
       "name" : "GRID",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -36,6 +43,8 @@
       "logicType" : "PREDEFINED",
       "name" : "新建数据",
       "getNewDataPSAppView" : {
+        "mOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleEditView.json",
@@ -43,6 +52,8 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "mOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleEditView.json",
@@ -62,6 +73,8 @@
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
       "getOpenDataPSAppView" : {
+        "mOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleEditView.json",
@@ -69,6 +82,8 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "mOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/ExampleEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleEditView.json",
@@ -109,6 +124,7 @@
     "groupMode" : "NONE",
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "logicName" : "内置工具栏",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdegrids/Toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -274,6 +290,7 @@
       "controlType" : "TOOLBAR",
       "hookEventNames" : [ "CLICK" ],
       "logicName" : "表格批操作",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdetoolbars/ToolbarGridViewgrid_batchtoolbar",
       "name" : "grid_batchtoolbar",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -295,7 +312,9 @@
       },
       "getPSDEToolbarItems" : [ {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.REMOVE"
+          "lanResTag" : "TBB.TEXT.*.REMOVE",
+          "mOSFilePath" : "pslanguageres/Auto159",
+          "rTMOSFilePath" : "pslanguageres/Auto159"
         },
         "caption" : "删除",
         "groupExtractMode" : "ITEM",
@@ -313,19 +332,25 @@
         "getPSUIAction" : {
           "actionTarget" : "MULTIKEY",
           "getCapPSLanguageRes" : {
-            "lanResTag" : "TBB.TEXT.*.REMOVE"
+            "lanResTag" : "TBB.TEXT.*.REMOVE",
+            "mOSFilePath" : "pslanguageres/Auto159",
+            "rTMOSFilePath" : "pslanguageres/Auto159"
           },
           "caption" : "删除",
           "codeName" : "Remove",
           "fullCodeName" : "Remove",
+          "mOSFilePath" : "pssysappdeuiactions/Remove",
           "name" : "表格界面_删除操作",
           "getPSSysImage" : {
             "glyph" : "xf00d@FontAwesome",
             "cssClass" : "fa fa-remove"
           },
+          "rTMOSFilePath" : "pssysappdeuiactions/Remove",
           "timeout" : 60000,
           "getTooltipPSLanguageRes" : {
-            "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+            "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+            "mOSFilePath" : "pslanguageres/Auto286",
+            "rTMOSFilePath" : "pslanguageres/Auto286"
           },
           "uIActionMode" : "SYS",
           "uIActionTag" : "Remove",
@@ -333,11 +358,14 @@
         },
         "tooltip" : "删除",
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
+          "lanResTag" : "TBB.TOOLTIP.*.REMOVE",
+          "mOSFilePath" : "pslanguageres/Auto286",
+          "rTMOSFilePath" : "pslanguageres/Auto286"
         },
         "showCaption" : true,
         "showIcon" : true
       } ],
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleToolbarGridView/psappviewctrls/grid_batchtoolbar",
       "modelid" : "BAAF0E6C-96B9-48B4-AD55-D9F270D20097",
       "modeltype" : "PSDETOOLBAR"
     }, {
@@ -345,6 +373,7 @@
       "controlType" : "TOOLBAR",
       "hookEventNames" : [ "CLICK" ],
       "logicName" : "表格快速新建",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdetoolbars/ToolbarGridViewgrid_quicktoolbar",
       "name" : "grid_quicktoolbar",
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -366,7 +395,9 @@
       },
       "getPSDEToolbarItems" : [ {
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.NEW"
+          "lanResTag" : "TBB.TEXT.*.NEW",
+          "mOSFilePath" : "pslanguageres/Auto275",
+          "rTMOSFilePath" : "pslanguageres/Auto275"
         },
         "caption" : "新建",
         "groupExtractMode" : "ITEM",
@@ -383,19 +414,25 @@
         },
         "getPSUIAction" : {
           "getCapPSLanguageRes" : {
-            "lanResTag" : "TBB.TEXT.*.NEW"
+            "lanResTag" : "TBB.TEXT.*.NEW",
+            "mOSFilePath" : "pslanguageres/Auto275",
+            "rTMOSFilePath" : "pslanguageres/Auto275"
           },
           "caption" : "新建",
           "codeName" : "New",
           "fullCodeName" : "New",
+          "mOSFilePath" : "pssysappdeuiactions/New",
           "name" : "表格界面_新建操作",
           "getPSSysImage" : {
             "glyph" : "xf0f6@FontAwesome",
             "cssClass" : "fa fa-file-text-o"
           },
+          "rTMOSFilePath" : "pssysappdeuiactions/New",
           "timeout" : 60000,
           "getTooltipPSLanguageRes" : {
-            "lanResTag" : "TBB.TOOLTIP.*.NEW"
+            "lanResTag" : "TBB.TOOLTIP.*.NEW",
+            "mOSFilePath" : "pslanguageres/Auto44",
+            "rTMOSFilePath" : "pslanguageres/Auto44"
           },
           "uIActionMode" : "SYS",
           "uIActionTag" : "New",
@@ -403,11 +440,14 @@
         },
         "tooltip" : "新建",
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.NEW"
+          "lanResTag" : "TBB.TOOLTIP.*.NEW",
+          "mOSFilePath" : "pslanguageres/Auto44",
+          "rTMOSFilePath" : "pslanguageres/Auto44"
         },
         "showCaption" : true,
         "showIcon" : true
       } ],
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleToolbarGridView/psappviewctrls/grid_quicktoolbar",
       "modelid" : "D9328D39-7D25-4E0C-8AD8-359710EA4675",
       "modeltype" : "PSDETOOLBAR"
     } ],
@@ -423,12 +463,14 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "examplename",
       "excelCaption" : "名称",
+      "mOSFilePath" : "psdegridcols/examplename",
       "name" : "examplename",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "EXAMPLENAME",
         "codeName" : "ExampleName"
       },
+      "rTMOSFilePath" : "psdegridcols/examplename",
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
@@ -436,6 +478,7 @@
       "caption" : "分组列",
       "codeName" : "groupgridcolumn1",
       "columnType" : "GROUPGRIDCOLUMN",
+      "mOSFilePath" : "psdegridcols/groupgridcolumn1",
       "name" : "groupgridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEGridColumns" : [ {
@@ -448,12 +491,14 @@
         "enableCond" : 3,
         "excelCaption" : "X值",
         "ignoreInput" : 0,
+        "mOSFilePath" : "psdegridcols/fieldx",
         "name" : "fieldx",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "FIELDX",
           "codeName" : "Fieldx"
         },
+        "rTMOSFilePath" : "psdegridcols/fieldx",
         "width" : 100,
         "widthUnit" : "PX",
         "allowEmpty" : true,
@@ -468,12 +513,14 @@
         "enableCond" : 3,
         "excelCaption" : "Y值",
         "ignoreInput" : 0,
+        "mOSFilePath" : "psdegridcols/fieldy",
         "name" : "fieldy",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "FIELDY",
           "codeName" : "Fieldy"
         },
+        "rTMOSFilePath" : "psdegridcols/fieldy",
         "width" : 100,
         "widthUnit" : "PX",
         "allowEmpty" : true,
@@ -488,17 +535,20 @@
         "enableCond" : 3,
         "excelCaption" : "Z值",
         "ignoreInput" : 0,
+        "mOSFilePath" : "psdegridcols/fieldz",
         "name" : "fieldz",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
           "name" : "FIELDZ",
           "codeName" : "Fieldz"
         },
+        "rTMOSFilePath" : "psdegridcols/fieldz",
         "width" : 100,
         "widthUnit" : "PX",
         "allowEmpty" : true,
         "enableSort" : true
       } ],
+      "rTMOSFilePath" : "psdegridcols/groupgridcolumn1",
       "width" : 200,
       "widthUnit" : "STAR",
       "enableSort" : false
@@ -507,10 +557,12 @@
       "caption" : "操作列",
       "codeName" : "uagridcolumn1",
       "columnType" : "UAGRIDCOLUMN",
+      "mOSFilePath" : "psdegridcols/uagridcolumn1",
       "name" : "uagridcolumn1",
       "noPrivDisplayMode" : 1,
       "getPSDEUIActionGroup" : {
         "codeName" : "Auto4",
+        "mOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto4",
         "name" : "表格操作列",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
@@ -520,6 +572,7 @@
             "caption" : "表单项更新前台计算",
             "codeName" : "CalcPF",
             "fullCodeName" : "Example_CalcPF",
+            "mOSFilePath" : "psappdeuiactions/CalcPF",
             "name" : "表单项更新前台计算",
             "getPSAppDEMethod" : {
               "modelref" : true,
@@ -529,6 +582,7 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
             },
+            "rTMOSFilePath" : "psappdeuiactions/CalcPF",
             "timeout" : 60000,
             "uIActionMode" : "BACKEND",
             "uIActionTag" : "CalcPF",
@@ -539,8 +593,10 @@
           "addSeparator" : false,
           "showCaption" : true,
           "showIcon" : true
-        } ]
+        } ],
+        "rTMOSFilePath" : "pssysapps/Sample/psappdataentities/Example/psappdeuagroups/Auto4"
       },
+      "rTMOSFilePath" : "psdegridcols/uagridcolumn1",
       "width" : 200,
       "widthUnit" : "PX",
       "enableSort" : false
@@ -622,6 +678,7 @@
       "codeName" : "srfkey",
       "enableCond" : 3,
       "ignoreInput" : 0,
+      "mOSFilePath" : "psdegridcols/srfkey",
       "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "EXAMPLEID",
@@ -631,9 +688,11 @@
         "editorType" : "HIDDEN",
         "name" : "srfkey"
       },
+      "rTMOSFilePath" : "psdegridcols/srfkey",
       "allowEmpty" : true
     } ],
     "pagingSize" : 20,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleToolbarGridView/psappviewctrls/grid",
     "getRemovePSControlAction" : {
       "actionName" : "Remove",
       "actionType" : "DEACTION",
@@ -671,16 +730,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleToolbarGridView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleToolbarGridView",
   "title" : "示例表格视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEGRIDVIEW",

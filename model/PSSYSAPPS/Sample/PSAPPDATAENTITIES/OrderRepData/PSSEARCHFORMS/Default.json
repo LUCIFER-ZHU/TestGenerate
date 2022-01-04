@@ -1,9 +1,11 @@
 {
   "codeName" : "Default",
   "controlType" : "SEARCHFORM",
+  "defaultLabelWidth" : 130,
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData/PSSEARCHFORMS/Default.json",
   "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
   "logicName" : "默认搜索表单",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/ORDERREPDATA/psdeform_searchforms/Default",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrderRepData.json"
@@ -59,6 +61,7 @@
     "codeName" : "formpage1",
     "detailStyle" : "DEFAULT",
     "detailType" : "FORMPAGE",
+    "mOSFilePath" : "psdeformdetail_formpages/formpage1",
     "name" : "formpage1",
     "getPSDEFormDetails" : [ {
       "actionGroupExtractMode" : "ITEM",
@@ -66,6 +69,7 @@
       "codeName" : "grouppanel1",
       "detailStyle" : "DEFAULT",
       "detailType" : "GROUPPANEL",
+      "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
       "name" : "grouppanel1",
       "getPSDEFormDetails" : [ {
         "caption" : "客户名称(%)",
@@ -77,6 +81,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/n_customername_like",
         "name" : "n_customername_like",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -93,6 +98,7 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/n_customername_like",
         "allowEmpty" : true,
         "showCaption" : true
       }, {
@@ -105,6 +111,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/n_monthval_eq",
         "name" : "n_monthval_eq",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -121,6 +128,7 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/n_monthval_eq",
         "allowEmpty" : true,
         "showCaption" : true
       }, {
@@ -133,6 +141,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/n_quarterval_eq",
         "name" : "n_quarterval_eq",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -149,6 +158,7 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/n_quarterval_eq",
         "allowEmpty" : true,
         "showCaption" : true
       }, {
@@ -161,6 +171,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/n_yearval_eq",
         "name" : "n_yearval_eq",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -177,6 +188,7 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/n_yearval_eq",
         "allowEmpty" : true,
         "showCaption" : true
       }, {
@@ -189,6 +201,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/n_totalval_gtandeq",
         "name" : "n_totalval_gtandeq",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -205,10 +218,15 @@
           "colSM" : 12,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/n_totalval_gtandeq",
         "allowEmpty" : true,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : 6,
+        "childColMD" : 8,
+        "childColSM" : 12,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -216,19 +234,30 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
       "infoGroupMode" : false,
       "showCaption" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
     "infoGroupMode" : false
   } ],
   "getPSLayout" : {
+    "childColLG" : -1,
+    "childColMD" : 24,
+    "childColSM" : -1,
+    "childColXS" : -1,
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrderRepDataGroupGridView/psappviewctrls/searchform",
   "searchButtonStyle" : "DEFAULT",
   "tabHeaderPos" : "TOP",
   "enableAdvanceSearch" : false,

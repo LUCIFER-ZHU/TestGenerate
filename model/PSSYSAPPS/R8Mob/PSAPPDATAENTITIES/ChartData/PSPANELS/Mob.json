@@ -11,6 +11,7 @@
   "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData/PSPANELS/Mob.json",
   "layoutMode" : "TABLE_24COL",
   "logicName" : "移动端列表项布局面板",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysviewpanels/Mob",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
@@ -54,14 +55,24 @@
     "xDataControlName" : "mdctrl_itempanel"
   } ],
   "getPSLayout" : {
+    "childColLG" : -1,
+    "childColMD" : 24,
+    "childColSM" : -1,
+    "childColXS" : -1,
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
   },
+  "rTMOSFilePath" : "pssysapps/R8Mob/psappdeviews/ChartDataTestLayoutPanelMDView/psappviewctrls/mdctrl_itempanel",
   "getRootPSPanelItems" : [ {
     "itemStyle" : "DEFAULT",
     "itemType" : "CONTAINER",
+    "mOSFilePath" : "pssysviewpanelitem_containers/container1",
     "name" : "container1",
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
@@ -73,6 +84,7 @@
       "contentType" : "RAW",
       "itemStyle" : "DEFAULT",
       "itemType" : "RAWITEM",
+      "mOSFilePath" : "pssysviewpanelitem_rawitems/rawitem1",
       "name" : "rawitem1",
       "getPSLayoutPos" : {
         "colLG" : 8,
@@ -81,11 +93,14 @@
         "colXS" : 8,
         "layout" : "TABLE_24COL"
       },
-      "rawContent" : "名称"
+      "rTMOSFilePath" : "pssysviewpanelitem_rawitems/rawitem1",
+      "rawContent" : "名称",
+      "showCaption" : true
     }, {
       "caption" : "图表实体名称",
       "itemStyle" : "DEFAULT",
       "itemType" : "FIELD",
+      "mOSFilePath" : "pssysviewpanelitem_fields/field1",
       "name" : "field1",
       "getPSEditor" : {
         "editorType" : "MOBTEXT",
@@ -98,6 +113,7 @@
         "colXS" : 16,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "pssysviewpanelitem_fields/field1",
       "viewFieldName" : "chartdataname",
       "hidden" : false,
       "showCaption" : false
@@ -106,6 +122,7 @@
       "htmlContent" : "<p><span style=\"color: red; font-size: 12px;\">数据</span></p>",
       "itemStyle" : "DEFAULT",
       "itemType" : "RAWITEM",
+      "mOSFilePath" : "pssysviewpanelitem_rawitems/rawitem2",
       "name" : "rawitem2",
       "getPSLayoutPos" : {
         "colLG" : 8,
@@ -113,11 +130,14 @@
         "colSM" : 8,
         "colXS" : 8,
         "layout" : "TABLE_24COL"
-      }
+      },
+      "rTMOSFilePath" : "pssysviewpanelitem_rawitems/rawitem2",
+      "showCaption" : true
     }, {
       "caption" : "数据",
       "itemStyle" : "DEFAULT",
       "itemType" : "FIELD",
+      "mOSFilePath" : "pssysviewpanelitem_fields/field2",
       "name" : "field2",
       "getPSEditor" : {
         "editorType" : "SPAN",
@@ -131,17 +151,21 @@
         "colXS" : 16,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "pssysviewpanelitem_fields/field2",
       "viewFieldName" : "data",
       "hidden" : false,
       "showCaption" : false
     }, {
       "actionType" : "UIACTION",
       "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.*.EDIT"
+        "lanResTag" : "TBB.TEXT.*.EDIT",
+        "mOSFilePath" : "pslanguageres/Auto253",
+        "rTMOSFilePath" : "pslanguageres/Auto253"
       },
       "caption" : "编辑",
       "itemStyle" : "DEFAULT",
       "itemType" : "BUTTON",
+      "mOSFilePath" : "pssysviewpanelitem_buttons/button1",
       "name" : "button1",
       "getPSAppViewUIAction" : {
         "modelref" : true,
@@ -161,24 +185,31 @@
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
         "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.*.EDIT"
+          "lanResTag" : "TBB.TEXT.*.EDIT",
+          "mOSFilePath" : "pslanguageres/Auto253",
+          "rTMOSFilePath" : "pslanguageres/Auto253"
         },
         "caption" : "编辑",
         "codeName" : "Edit",
         "fullCodeName" : "Edit",
+        "mOSFilePath" : "pssysappdeuiactions/Edit",
         "name" : "表格界面_编辑操作",
         "getPSSysImage" : {
           "glyph" : "xf044@FontAwesome",
           "cssClass" : "fa fa-edit"
         },
+        "rTMOSFilePath" : "pssysappdeuiactions/Edit",
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.*.EDIT"
+          "lanResTag" : "TBB.TOOLTIP.*.EDIT",
+          "mOSFilePath" : "pslanguageres/Auto130",
+          "rTMOSFilePath" : "pslanguageres/Auto130"
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "Edit",
         "uIActionType" : "DEUIACTION"
       },
+      "rTMOSFilePath" : "pssysviewpanelitem_buttons/button1",
       "tooltip" : "编辑",
       "showCaption" : true
     }, {
@@ -186,6 +217,7 @@
       "caption" : "多数据",
       "itemStyle" : "DEFAULT",
       "itemType" : "BUTTON",
+      "mOSFilePath" : "pssysviewpanelitem_buttons/button2",
       "name" : "button2",
       "getPSAppViewUIAction" : {
         "modelref" : true,
@@ -209,24 +241,29 @@
         },
         "frontProcessType" : "WIZARD",
         "fullCodeName" : "ChartData_TestOpenMDView",
+        "mOSFilePath" : "psappdeuiactions/TestOpenMDView",
         "name" : "测试图表实体打开多数据视图",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/ChartData.json"
         },
+        "rTMOSFilePath" : "psappdeuiactions/TestOpenMDView",
         "timeout" : 60000,
         "uIActionMode" : "FRONT",
         "uIActionTag" : "TestOpenMDView",
         "uIActionType" : "DEUIACTION",
         "id" : "TestOpenMDView@ChartData"
       },
+      "rTMOSFilePath" : "pssysviewpanelitem_buttons/button2",
       "tooltip" : "多数据",
       "showCaption" : true
     } ],
     "getPSSysPFPlugin" : {
       "pluginType" : "LIST_ITEMRENDER",
       "pluginCode" : "mobCtrlItemPlugin"
-    }
+    },
+    "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
+    "showCaption" : true
   } ],
   "mobilePanel" : true,
   "modelid" : "8EBFF5BE-68B6-4AAF-AB88-677478D4D3AF",

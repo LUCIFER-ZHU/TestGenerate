@@ -19,6 +19,7 @@
   },
   "layoutMode" : "TABLE_24COL",
   "logicName" : "选择示例面板",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/pssysviewpanels/PickPanel",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
@@ -46,14 +47,24 @@
     "xDataControlName" : "panel"
   } ],
   "getPSLayout" : {
+    "childColLG" : -1,
+    "childColMD" : 24,
+    "childColSM" : -1,
+    "childColXS" : -1,
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CalculatorPickPanelView/psappviewctrls/panel",
   "getRootPSPanelItems" : [ {
     "itemStyle" : "DEFAULT",
     "itemType" : "CONTAINER",
+    "mOSFilePath" : "pssysviewpanelitem_containers/container1",
     "name" : "container1",
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
@@ -66,6 +77,7 @@
       "htmlContent" : "<p>1.页面初始化时，分区1、分区2、分区3显示<br />&lt;/br&gt;<br />2.点击【选择显示分区】按钮打开视图，选择【显示/隐藏分区1】、【显示/隐藏分区2】、【显示/隐藏分区3】触发显示当前面板的隐藏分区</p>",
       "itemStyle" : "DEFAULT",
       "itemType" : "RAWITEM",
+      "mOSFilePath" : "pssysviewpanelitem_rawitems/rawitem1",
       "name" : "rawitem1",
       "getPSLayoutPos" : {
         "colMD" : 24,
@@ -73,13 +85,16 @@
       },
       "getPSSysCss" : {
         "cssName" : "el-alert el-alert--info is-light"
-      }
+      },
+      "rTMOSFilePath" : "pssysviewpanelitem_rawitems/rawitem1",
+      "showCaption" : true
     }, {
       "actionType" : "UIACTION",
       "caption" : "选择显示分区",
       "contentWidth" : 200.0,
       "itemStyle" : "DEFAULT",
       "itemType" : "BUTTON",
+      "mOSFilePath" : "pssysviewpanelitem_buttons/button1",
       "name" : "button1",
       "getPSAppViewUIAction" : {
         "modelref" : true,
@@ -101,17 +116,20 @@
         },
         "frontProcessType" : "WIZARD",
         "fullCodeName" : "Calculator_OpenPickPart",
+        "mOSFilePath" : "psappdeuiactions/OpenPickPart",
         "name" : "显示选择分区",
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
         },
+        "rTMOSFilePath" : "psappdeuiactions/OpenPickPart",
         "timeout" : 60000,
         "uIActionMode" : "FRONT",
         "uIActionTag" : "OpenPickPart",
         "uIActionType" : "DEUIACTION",
         "id" : "OpenPickPart@Calculator"
       },
+      "rTMOSFilePath" : "pssysviewpanelitem_buttons/button1",
       "tooltip" : "选择显示分区",
       "width" : 200.0,
       "showCaption" : true
@@ -121,8 +139,13 @@
       "height" : 100.0,
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/showpart1",
       "name" : "showpart1",
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -149,6 +172,7 @@
       "getPSPanelItems" : [ {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/part1",
         "name" : "part1",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -159,6 +183,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/part1",
         "viewFieldName" : "part1",
         "hidden" : false,
         "showCaption" : false
@@ -166,6 +191,7 @@
       "getPSSysCss" : {
         "cssName" : "pick-background1-css"
       },
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/showpart1",
       "showCaption" : true
     }, {
       "caption" : "分区2",
@@ -173,8 +199,13 @@
       "height" : 100.0,
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/showpart2",
       "name" : "showpart2",
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -201,6 +232,7 @@
       "getPSPanelItems" : [ {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/part2",
         "name" : "part2",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -211,6 +243,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/part2",
         "viewFieldName" : "part2",
         "hidden" : false,
         "showCaption" : false
@@ -218,6 +251,7 @@
       "getPSSysCss" : {
         "cssName" : "pick-background2-css"
       },
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/showpart2",
       "showCaption" : true
     }, {
       "caption" : "分区3",
@@ -225,8 +259,13 @@
       "height" : 100.0,
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/showpart3",
       "name" : "showpart3",
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -253,6 +292,7 @@
       "getPSPanelItems" : [ {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/part3",
         "name" : "part3",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -263,6 +303,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/part3",
         "viewFieldName" : "part3",
         "hidden" : false,
         "showCaption" : false
@@ -270,8 +311,11 @@
       "getPSSysCss" : {
         "cssName" : "pick-background3-css"
       },
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/showpart3",
       "showCaption" : true
-    } ]
+    } ],
+    "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
+    "showCaption" : true
   } ],
   "modelid" : "2798839C-0CD7-40FC-8FE4-82FBEE9E7562",
   "modeltype" : "PSSYSVIEWPANEL"

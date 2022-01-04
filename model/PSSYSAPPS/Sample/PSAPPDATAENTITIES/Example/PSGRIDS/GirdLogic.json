@@ -53,6 +53,7 @@
   "groupMode" : "NONE",
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "logicName" : "表格逻辑",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdegrids/GirdLogic",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -80,12 +81,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "fieldx",
     "excelCaption" : "X值",
+    "mOSFilePath" : "psdegridcols/fieldx",
     "name" : "fieldx",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "FIELDX",
       "codeName" : "Fieldx"
     },
+    "rTMOSFilePath" : "psdegridcols/fieldx",
     "width" : 150,
     "widthUnit" : "PX",
     "enableRowEdit" : true,
@@ -99,12 +102,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "fieldy",
     "excelCaption" : "Y值",
+    "mOSFilePath" : "psdegridcols/fieldy",
     "name" : "fieldy",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "FIELDY",
       "codeName" : "Fieldy"
     },
+    "rTMOSFilePath" : "psdegridcols/fieldy",
     "width" : 150,
     "widthUnit" : "PX",
     "enableRowEdit" : true,
@@ -118,12 +123,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "fieldz",
     "excelCaption" : "Z值",
+    "mOSFilePath" : "psdegridcols/fieldz",
     "name" : "fieldz",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "FIELDZ",
       "codeName" : "Fieldz"
     },
+    "rTMOSFilePath" : "psdegridcols/fieldz",
     "width" : 150,
     "widthUnit" : "PX",
     "enableSort" : true
@@ -195,6 +202,7 @@
   } ],
   "getPSDEGridEditItemUpdates" : [ {
     "codeName" : "CalcPF2",
+    "mOSFilePath" : "psdegeiupdates/CalcPF2",
     "name" : "前台计算（脚本代码）",
     "getPSAppDEMethod" : {
       "modelref" : true,
@@ -202,13 +210,15 @@
     },
     "getPSDEGEIUpdateDetails" : [ {
       "name" : "fieldz"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psdegeiupdates/CalcPF2"
   } ],
   "getPSDEGridEditItems" : [ {
     "caption" : "X值",
     "codeName" : "fieldx",
     "enableCond" : 3,
     "ignoreInput" : 0,
+    "mOSFilePath" : "psdegridcols/fieldx",
     "name" : "fieldx",
     "getPSAppDEField" : {
       "name" : "FIELDX",
@@ -222,12 +232,14 @@
       "editorType" : "TEXTBOX",
       "name" : "fieldx"
     },
+    "rTMOSFilePath" : "psdegridcols/fieldx",
     "allowEmpty" : true
   }, {
     "caption" : "Y值",
     "codeName" : "fieldy",
     "enableCond" : 3,
     "ignoreInput" : 0,
+    "mOSFilePath" : "psdegridcols/fieldy",
     "name" : "fieldy",
     "getPSAppDEField" : {
       "name" : "FIELDY",
@@ -241,12 +253,14 @@
       "editorType" : "TEXTBOX",
       "name" : "fieldy"
     },
+    "rTMOSFilePath" : "psdegridcols/fieldy",
     "allowEmpty" : true
   }, {
     "caption" : "示例标识",
     "codeName" : "srfkey",
     "enableCond" : 3,
     "ignoreInput" : 0,
+    "mOSFilePath" : "psdegridcols/srfkey",
     "name" : "srfkey",
     "getPSAppDEField" : {
       "name" : "EXAMPLEID",
@@ -256,9 +270,11 @@
       "editorType" : "HIDDEN",
       "name" : "srfkey"
     },
+    "rTMOSFilePath" : "psdegridcols/srfkey",
     "allowEmpty" : true
   } ],
   "pagingSize" : 20,
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleGirdLogicGridView/psappviewctrls/grid",
   "getRemovePSControlAction" : {
     "actionName" : "Remove",
     "actionType" : "DEACTION",

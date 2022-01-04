@@ -1,5 +1,6 @@
 {
   "dBType" : "MYSQL5",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/psdedataqueries/DEFAULT/psdedqcodes/MYSQL5",
   "name" : "MySQL5",
   "getPSDEDataQueryCodeExps" : [ {
     "expression" : "t1.`CITYID`",
@@ -81,5 +82,6 @@
     "name" : "WEBSITE"
   } ],
   "queryCode" : "SELECT\nt1.`CITYID`,\nt31.`CITYNAME`,\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`CUSTOMERID`,\nt1.`CUSTOMERNAME`,\nt1.`DISTRICTID`,\nt41.`DISTRICTNAME`,\nt1.`EMAIL`,\nt1.`IMAGE`,\nt1.`MEMO`,\nt1.`MOBILE`,\nt1.`ORDERAMOUNT`,\nt1.`PCUSTOMERID`,\nt11.`CUSTOMERNAME` AS `PCUSTOMERNAME`,\nt1.`PHONE`,\nt1.`PROVINCEID`,\nt21.`PROVINCENAME`,\nt1.`RETURNAMOUNT`,\nt1.`RETURNAMOUNT`/t1.`ORDERAMOUNT` AS `RETURNRATE`,\nt1.`STREET`,\nt1.`TAXNO`,\nt1.`TYPE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`,\nt1.`WEBSITE`\nFROM `T_CUSTOMER` t1 \nLEFT JOIN `T_CUSTOMER` t11 ON t1.`PCUSTOMERID` = t11.`CUSTOMERID` \nLEFT JOIN `T_PROVINCE` t21 ON t1.`PROVINCEID` = t21.`PROVINCEID` \nLEFT JOIN `T_CITY` t31 ON t1.`CITYID` = t31.`CITYID` \nLEFT JOIN `T_DISTRICT` t41 ON t1.`DISTRICTID` = t41.`DISTRICTID` \n",
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/CUSTOMER/psdedataqueries/DEFAULT/psdedqcodes/MYSQL5",
   "id" : "PSMODULES/Sample/PSDATAENTITIES/Customer/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
 }

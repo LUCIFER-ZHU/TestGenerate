@@ -3,14 +3,20 @@
   "caption" : "前端实体属性",
   "codeName" : "ExampleAppDEFLogicEditView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ExampleAppDEFLogicEditView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleAppDEFLogicEditView",
   "name" : "ExampleAppDEFLogicEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "EditView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "form",
@@ -20,7 +26,8 @@
       "name" : "P2K",
       "paramType" : "VALUE",
       "value" : 0
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSControls" : [ {
     "codeName" : "AppDEFLogic",
@@ -29,6 +36,7 @@
       "modelref" : true,
       "id" : "create"
     },
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example/PSFORMS/AppDEFLogic.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
@@ -44,6 +52,7 @@
     },
     "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
     "logicName" : "前端实体属性",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeform_editforms/AppDEFLogic",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -259,6 +268,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "actionGroupExtractMode" : "ITEM",
@@ -266,6 +276,7 @@
         "codeName" : "group1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/group1",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "caption" : "X值",
@@ -277,6 +288,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/fieldx",
           "name" : "fieldx",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -293,6 +305,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/fieldx",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -305,6 +318,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/fieldy",
           "name" : "fieldy",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -321,6 +335,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/fieldy",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -333,6 +348,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/appfield",
           "name" : "appfield",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -349,6 +365,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/appfield",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -361,6 +378,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/appfield2",
           "name" : "appfield2",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -377,6 +395,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/appfield2",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
@@ -389,6 +408,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/appfield4",
           "name" : "appfield4",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -405,10 +425,15 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/appfield4",
           "allowEmpty" : true,
           "showCaption" : true
         } ],
         "getPSLayout" : {
+          "childColLG" : 6,
+          "childColMD" : 24,
+          "childColSM" : -1,
+          "childColXS" : -1,
           "columnCount" : 24,
           "layout" : "TABLE_24COL"
         },
@@ -416,6 +441,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
         "infoGroupMode" : false,
         "showCaption" : true
       }, {
@@ -424,6 +450,7 @@
         "detailStyle" : "DEFAULT",
         "detailType" : "RAWITEM",
         "htmlContent" : "<p>1.XY前端计算值：由前台处理逻辑（计算式）取值计算式：${fieldx} + ${fieldy} <br />2.XY前端计算值2：由前台处理逻辑（脚本代码）取值脚本代码：data.appfield2=data.fieldx+data.fieldy <br />3.XY前端计算值4：由前端处理逻辑（脚本代码）取值脚本代码： if(data.fieldx &amp;&amp; data.fieldz) { data.appfield4=data.fieldx + '(' +Number((data.fieldx/data.fieldz)*100).toFixed(2) + '%)'; } <br />注：表单加载后即计算完成进行显示</p>",
+        "mOSFilePath" : "psdeformdetail_rawitems/rawitem1",
         "name" : "rawitem1",
         "getPSLayoutPos" : {
           "colLG" : 24,
@@ -433,6 +460,7 @@
         "getPSSysCss" : {
           "cssName" : "el-alert el-alert--info is-light"
         },
+        "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem1",
         "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
         "showCaption" : true
@@ -442,6 +470,7 @@
         "codeName" : "grouppanel1",
         "detailStyle" : "DEFAULT",
         "detailType" : "GROUPPANEL",
+        "mOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
         "name" : "grouppanel1",
         "getPSDEFormDetails" : [ {
           "caption" : "XY前端计算值3",
@@ -453,6 +482,7 @@
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 130,
+          "mOSFilePath" : "psdeformdetail_formitems/appfield3",
           "name" : "appfield3",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -467,17 +497,21 @@
             "grow" : -1,
             "layout" : "FLEX"
           },
+          "rTMOSFilePath" : "psdeformdetail_formitems/appfield3",
           "allowEmpty" : true,
           "showCaption" : true
         }, {
           "actionType" : "UIACTION",
           "getCapPSLanguageRes" : {
-            "lanResTag" : "TBB.TEXT.*.SAVE"
+            "lanResTag" : "TBB.TEXT.*.SAVE",
+            "mOSFilePath" : "pslanguageres/Auto8",
+            "rTMOSFilePath" : "pslanguageres/Auto8"
           },
           "caption" : "保存",
           "codeName" : "button1",
           "detailStyle" : "DEFAULT",
           "detailType" : "BUTTON",
+          "mOSFilePath" : "psdeformdetail_buttons/button1",
           "name" : "button1",
           "getPSAppViewUIAction" : {
             "modelref" : true,
@@ -489,24 +523,31 @@
           },
           "getPSUIAction" : {
             "getCapPSLanguageRes" : {
-              "lanResTag" : "TBB.TEXT.*.SAVE"
+              "lanResTag" : "TBB.TEXT.*.SAVE",
+              "mOSFilePath" : "pslanguageres/Auto8",
+              "rTMOSFilePath" : "pslanguageres/Auto8"
             },
             "caption" : "保存",
             "codeName" : "Save",
             "fullCodeName" : "Save",
+            "mOSFilePath" : "pssysappdeuiactions/Save",
             "name" : "编辑界面_保存操作",
             "getPSSysImage" : {
               "glyph" : "xf0c7@FontAwesome",
               "cssClass" : "fa fa-save"
             },
+            "rTMOSFilePath" : "pssysappdeuiactions/Save",
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
-              "lanResTag" : "TBB.TOOLTIP.*.SAVE"
+              "lanResTag" : "TBB.TOOLTIP.*.SAVE",
+              "mOSFilePath" : "pslanguageres/Auto261",
+              "rTMOSFilePath" : "pslanguageres/Auto261"
             },
             "uIActionMode" : "SYS",
             "uIActionTag" : "Save",
             "uIActionType" : "DEUIACTION"
           },
+          "rTMOSFilePath" : "psdeformdetail_buttons/button1",
           "tooltip" : "保存",
           "showCaption" : true
         } ],
@@ -517,6 +558,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_grouppanels/grouppanel1",
         "infoGroupMode" : false,
         "showCaption" : true
       }, {
@@ -525,6 +567,7 @@
         "detailStyle" : "DEFAULT",
         "detailType" : "RAWITEM",
         "htmlContent" : "<p>XY前端计算值3输入值后点击保存按钮，触发前台处理逻辑（脚本代码），重新给X值和Y值赋值 <br />脚本代码： <br />data.filedx=Math.random()*data.appfield3; <br />data.filedy=Math.random()*data.appfield3;</p>",
+        "mOSFilePath" : "psdeformdetail_rawitems/rawitem2",
         "name" : "rawitem2",
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -533,20 +576,31 @@
         "getPSSysCss" : {
           "cssName" : "el-alert el-alert--info is-light"
         },
+        "rTMOSFilePath" : "psdeformdetail_rawitems/rawitem2",
         "rawItemHeight" : -1.0,
         "rawItemWidth" : -1.0,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleAppDEFLogicEditView/psappviewctrls/form",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -567,16 +621,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEEDITVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleAppDEFLogicEditView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleAppDEFLogicEditView",
   "title" : "示例编辑视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEEDITVIEW",

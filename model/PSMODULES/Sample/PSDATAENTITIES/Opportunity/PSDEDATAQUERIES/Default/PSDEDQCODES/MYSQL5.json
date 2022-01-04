@@ -1,5 +1,6 @@
 {
   "dBType" : "MYSQL5",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/OPPORTUNITY/psdedataqueries/DEFAULT/psdedqcodes/MYSQL5",
   "name" : "MySQL5",
   "getPSDEDataQueryCodeExps" : [ {
     "expression" : "t1.`CREATEDATE`",
@@ -57,5 +58,6 @@
     "name" : "UPDATEMAN"
   } ],
   "queryCode" : "SELECT\nt1.`CREATEDATE`,\nt1.`CREATEMAN`,\nt1.`CUSTOMERID`,\nt11.`CUSTOMERNAME`,\nt1.`DEPTID`,\nt1.`EMAIL`,\nt1.`EXPENDTIME`,\nt1.`EXPREVENUE`,\nt1.`OPPORTUNITYID`,\nt1.`OPPORTUNITYNAME`,\nt1.`ORGID`,\nt1.`PERSONDATAID`,\nt21.`PERSONDATANAME`,\nt1.`PHONE`,\nt1.`PRIORITY`,\nt1.`STATE`,\nt1.`UPDATEDATE`,\nt1.`UPDATEMAN`\nFROM `T_OPPORTUNITY` t1 \nLEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID` \nLEFT JOIN `T_PERSONDATA` t21 ON t1.`PERSONDATAID` = t21.`PERSONDATAID` \n",
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/OPPORTUNITY/psdedataqueries/DEFAULT/psdedqcodes/MYSQL5",
   "id" : "PSMODULES/Sample/PSDATAENTITIES/Opportunity/PSDEDATAQUERIES/Default/PSDEDQCODES/MYSQL5.json"
 }

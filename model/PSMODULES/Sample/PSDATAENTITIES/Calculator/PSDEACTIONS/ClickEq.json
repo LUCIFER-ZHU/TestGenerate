@@ -4,18 +4,24 @@
   "codeName" : "ClickEq",
   "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickEq.json",
   "logicName" : "ClickEq",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/psdeactions/ClickEq",
   "name" : "ClickEq",
   "getPSDEActionInput" : {
+    "mOSFilePath" : "psdeactioninputs/ClickEqInput",
     "name" : "ClickEqInput",
     "getPSDEMethodDTO" : {
       "modelref" : true,
       "id" : "CalculatorDTO"
     },
+    "rTMOSFilePath" : "psdeactioninputs/ClickEqInput",
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "mOSFilePath" : "psdeactionreturns/ClickEqResult",
     "name" : "ClickEqResult",
+    "rTMOSFilePath" : "psdeactionreturns/ClickEqResult",
     "type" : "VOID"
   },
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/psdeactions/ClickEq",
   "scriptCode" : "if(data.input) {\n  data.expression=data.input+'=';\n  data.input=eval(data.input);\n}\n"
 }

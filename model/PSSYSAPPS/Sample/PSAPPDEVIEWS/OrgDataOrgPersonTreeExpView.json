@@ -3,20 +3,27 @@
   "caption" : "组织人员导航",
   "codeName" : "OrgDataOrgPersonTreeExpView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/OrgDataOrgPersonTreeExpView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/OrgDataOrgPersonTreeExpView",
   "name" : "OrgDataOrgPersonTreeExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "TreeExpView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "treeexpbar",
       "name" : "TREEEXPBAR",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -46,6 +53,7 @@
     "codeName" : "OrgPersonTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/psexpbars/OrgPersonTreeExpViewtreeexpbar",
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -128,6 +136,7 @@
       },
       "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
       "logicName" : "组织人员导航树",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/psdetreeviews/OrgPersonTree",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
@@ -228,11 +237,29 @@
           "dERType" : "DER1N",
           "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/OrgData/PSDERS/DER1N_ORGDATA_ORGDATA_PORGDATAID.json",
           "logicName" : "父级组织",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/minorpsders/DER1N_ORGDATA_ORGDATA_PORGDATAID",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/OrgData.json"
+          },
           "masterOrder" : -1,
           "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/OrgData.json"
+          },
           "name" : "DER1N_ORGDATA_ORGDATA_PORGDATAID",
           "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "PORGDATAID",
+            "codeName" : "Porgdataid"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "PORGDATANAME",
+            "codeName" : "Porgdataname"
+          },
           "pickupDEFName" : "PORGDATAID",
+          "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/minorpsders/DER1N_ORGDATA_ORGDATA_PORGDATAID",
           "removeActionType" : -1,
           "removeOrder" : 0
         },
@@ -257,11 +284,29 @@
           "dERType" : "DER1N",
           "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/OrgData/PSDERS/DER1N_ORGDATA_ORGDATA_PORGDATAID.json",
           "logicName" : "父级组织",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/minorpsders/DER1N_ORGDATA_ORGDATA_PORGDATAID",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/OrgData.json"
+          },
           "masterOrder" : -1,
           "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/OrgData.json"
+          },
           "name" : "DER1N_ORGDATA_ORGDATA_PORGDATAID",
           "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "PORGDATAID",
+            "codeName" : "Porgdataid"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "PORGDATANAME",
+            "codeName" : "Porgdataname"
+          },
           "pickupDEFName" : "PORGDATAID",
+          "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/minorpsders/DER1N_ORGDATA_ORGDATA_PORGDATAID",
           "removeActionType" : -1,
           "removeOrder" : 0
         },
@@ -298,11 +343,29 @@
           "dERType" : "DER1N",
           "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/DeptData/PSDERS/DER1N_DEPTDATA_ORGDATA_ORGDATAID.json",
           "logicName" : "组织-部门",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/DEPTDATA/minorpsders/DER1N_DEPTDATA_ORGDATA_ORGDATAID",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/OrgData.json"
+          },
           "masterOrder" : -1,
           "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/DeptData.json"
+          },
           "name" : "DER1N_DEPTDATA_ORGDATA_ORGDATAID",
           "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "ORGDATAID",
+            "codeName" : "OrgDataId"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "ORGDATANAME",
+            "codeName" : "OrgDataName"
+          },
           "pickupDEFName" : "ORGDATAID",
+          "rTMOSFilePath" : "psmodules/Sample/psdataentities/DEPTDATA/minorpsders/DER1N_DEPTDATA_ORGDATA_ORGDATAID",
           "removeActionType" : -1,
           "removeOrder" : 0
         },
@@ -327,11 +390,29 @@
           "dERType" : "DER1N",
           "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/DeptData/PSDERS/DER1N_DEPTDATA_ORGDATA_ORGDATAID.json",
           "logicName" : "组织-部门",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/DEPTDATA/minorpsders/DER1N_DEPTDATA_ORGDATA_ORGDATAID",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/OrgData.json"
+          },
           "masterOrder" : -1,
           "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/DeptData.json"
+          },
           "name" : "DER1N_DEPTDATA_ORGDATA_ORGDATAID",
           "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "ORGDATAID",
+            "codeName" : "OrgDataId"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "ORGDATANAME",
+            "codeName" : "OrgDataName"
+          },
           "pickupDEFName" : "ORGDATAID",
+          "rTMOSFilePath" : "psmodules/Sample/psdataentities/DEPTDATA/minorpsders/DER1N_DEPTDATA_ORGDATA_ORGDATAID",
           "removeActionType" : -1,
           "removeOrder" : 0
         },
@@ -384,11 +465,29 @@
           "dERType" : "DER1N",
           "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDERS/DER1N_PERSONDATA_DEPTDATA_DEPTDATAID.json",
           "logicName" : "部门-人员",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/minorpsders/DER1N_PERSONDATA_DEPTDATA_DEPTDATAID",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/DeptData.json"
+          },
           "masterOrder" : -1,
           "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData.json"
+          },
           "name" : "DER1N_PERSONDATA_DEPTDATA_DEPTDATAID",
           "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "DEPTDATAID",
+            "codeName" : "DeptDataId"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "DEPTDATANAME",
+            "codeName" : "DeptDataName"
+          },
           "pickupDEFName" : "DEPTDATAID",
+          "rTMOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/minorpsders/DER1N_PERSONDATA_DEPTDATA_DEPTDATAID",
           "removeActionType" : -1,
           "removeOrder" : 0
         },
@@ -445,11 +544,29 @@
           "dERType" : "DER1N",
           "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDERS/DER1N_PERSONDATA_ORGDATA_ORGDATAID.json",
           "logicName" : "组织-人员",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/minorpsders/DER1N_PERSONDATA_ORGDATA_ORGDATAID",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/OrgData.json"
+          },
           "masterOrder" : -1,
           "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData.json"
+          },
           "name" : "DER1N_PERSONDATA_ORGDATA_ORGDATAID",
           "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "ORGDATAID",
+            "codeName" : "OrgDataId"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "ORGDATANAME",
+            "codeName" : "OrgDataName"
+          },
           "pickupDEFName" : "ORGDATAID",
+          "rTMOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/minorpsders/DER1N_PERSONDATA_ORGDATA_ORGDATAID",
           "removeActionType" : -1,
           "removeOrder" : 0
         },
@@ -506,11 +623,29 @@
           "dERType" : "DER1N",
           "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/PersonData/PSDERS/DER1N_PERSONDATA_ORGDATA_ORGDATAID.json",
           "logicName" : "组织-人员",
+          "mOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/minorpsders/DER1N_PERSONDATA_ORGDATA_ORGDATAID",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/OrgData.json"
+          },
           "masterOrder" : -1,
           "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/Sample/PSDATAENTITIES/PersonData.json"
+          },
           "name" : "DER1N_PERSONDATA_ORGDATA_ORGDATAID",
           "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "ORGDATAID",
+            "codeName" : "OrgDataId"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "ORGDATANAME",
+            "codeName" : "OrgDataName"
+          },
           "pickupDEFName" : "ORGDATAID",
+          "rTMOSFilePath" : "psmodules/Sample/psdataentities/PERSONDATA/minorpsders/DER1N_PERSONDATA_ORGDATA_ORGDATAID",
           "removeActionType" : -1,
           "removeOrder" : 0
         },
@@ -549,6 +684,7 @@
         "selected" : false,
         "id" : "Sorg"
       } ],
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrgDataOrgPersonTreeExpView/psappviewctrls/treeexpbar_tree",
       "getRemovePSControlAction" : {
         "modelref" : true,
         "id" : "remove"
@@ -565,6 +701,7 @@
       "modelid" : "62D68E5A-0E4F-455F-BADC-6DE2D30A252A",
       "modeltype" : "PSDETREEVIEW"
     } ],
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrgDataOrgPersonTreeExpView/psappviewctrls/treeexpbar",
     "xDataControlName" : "treeexpbar_tree",
     "enableCounter" : true,
     "enableSearch" : true,
@@ -578,16 +715,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDETREEEXPVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/ORGDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/OrgData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrgDataOrgPersonTreeExpView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/OrgDataOrgPersonTreeExpView",
   "title" : "组织数据树导航视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DETREEEXPVIEW",

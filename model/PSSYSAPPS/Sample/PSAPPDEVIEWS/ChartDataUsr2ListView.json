@@ -4,14 +4,20 @@
   "codeName" : "ChartDataUsr2ListView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataUsr2ListView.json",
   "mDCtrlActiveMode" : 2,
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2ListView",
   "name" : "ChartDataUsr2ListView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
   },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
+  },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
     "engineType" : "ListView",
+    "mOSFilePath" : "psappviewengines/engine",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "ctrlName" : "list",
@@ -29,7 +35,8 @@
       "ctrlName" : "searchform",
       "name" : "SEARCHFORM",
       "paramType" : "CTRL"
-    } ]
+    } ],
+    "rTMOSFilePath" : "psappviewengines/engine"
   } ],
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -40,6 +47,8 @@
       "logicType" : "PREDEFINED",
       "name" : "新建数据",
       "getNewDataPSAppView" : {
+        "mOSFilePath" : "psappviewlogicrefviews/ChartDataEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/ChartDataEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
@@ -47,6 +56,8 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "mOSFilePath" : "psappviewlogicrefviews/ChartDataEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/ChartDataEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
@@ -66,6 +77,8 @@
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
       "getOpenDataPSAppView" : {
+        "mOSFilePath" : "psappviewlogicrefviews/ChartDataEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/ChartDataEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
@@ -73,6 +86,8 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "mOSFilePath" : "psappviewlogicrefviews/ChartDataEditView",
+        "rTMOSFilePath" : "psappviewlogicrefviews/ChartDataEditView",
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/ChartDataEditView.json",
@@ -103,6 +118,7 @@
   "getPSControls" : [ {
     "codeName" : "Usr2ListViewtoolbar",
     "controlType" : "TOOLBAR",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdetoolbars/Usr2ListViewtoolbar",
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -111,6 +127,7 @@
     "getPSControlParam" : {
       "id" : "TOOLBAR"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2ListView/psappviewctrls/toolbar",
     "modelid" : "16ca37fd56f10a65c1b7f11e06b18fe3_toolbar",
     "modeltype" : "PSDETOOLBAR"
   }, {
@@ -147,19 +164,26 @@
       "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSPANELS/PanelTest.json",
       "layoutMode" : "TABLE_24COL",
       "logicName" : "List项布局面板",
+      "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysviewpanels/PanelTest",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
       },
       "getPSControlParam" : { },
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2ListView/psappviewctrls/list_itempanel",
       "getRootPSPanelItems" : [ {
         "caption" : "面板测试",
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTAINER",
+        "mOSFilePath" : "pssysviewpanelitem_containers/container1",
         "name" : "container1",
         "getPSLayout" : {
           "layout" : "FLEX"
@@ -172,6 +196,7 @@
           "caption" : "建立人",
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
+          "mOSFilePath" : "pssysviewpanelitem_fields/createman",
           "name" : "createman",
           "getPSEditor" : {
             "editorType" : "TEXTBOX",
@@ -196,6 +221,7 @@
             "relatedItemNames" : [ "field1" ],
             "notMode" : false
           } ],
+          "rTMOSFilePath" : "pssysviewpanelitem_fields/createman",
           "viewFieldName" : "CREATEMAN",
           "hidden" : false,
           "showCaption" : false
@@ -203,6 +229,7 @@
           "caption" : "图表",
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
+          "mOSFilePath" : "pssysviewpanelitem_fields/chartdataname",
           "name" : "chartdataname",
           "getPSEditor" : {
             "editorType" : "TEXTBOX",
@@ -227,6 +254,7 @@
             "relatedItemNames" : [ "field2" ],
             "notMode" : false
           } ],
+          "rTMOSFilePath" : "pssysviewpanelitem_fields/chartdataname",
           "viewFieldName" : "CHARTDATANAME",
           "hidden" : false,
           "showCaption" : false
@@ -234,6 +262,7 @@
           "caption" : "组织",
           "itemStyle" : "DEFAULT",
           "itemType" : "FIELD",
+          "mOSFilePath" : "pssysviewpanelitem_fields/orgid",
           "name" : "orgid",
           "getPSEditor" : {
             "editorType" : "TEXTBOX",
@@ -258,10 +287,12 @@
             "relatedItemNames" : [ "field3" ],
             "notMode" : false
           } ],
+          "rTMOSFilePath" : "pssysviewpanelitem_fields/orgid",
           "viewFieldName" : "ORGID",
           "hidden" : false,
           "showCaption" : false
         } ],
+        "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
         "showCaption" : true
       } ],
       "name" : "list_itempanel",
@@ -269,6 +300,7 @@
       "modeltype" : "PSSYSVIEWPANEL"
     },
     "logicName" : "List",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdelists/PanelTest",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
@@ -398,6 +430,7 @@
       }
     } ],
     "pagingSize" : 1000,
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2ListView/psappviewctrls/list",
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"
@@ -420,9 +453,11 @@
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
+    "defaultLabelWidth" : 130,
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData/PSSEARCHFORMS/Default.json",
     "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "logicName" : "默认搜索表单",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/psdeform_searchforms/Default",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
@@ -500,6 +535,7 @@
       "codeName" : "formpage1",
       "detailStyle" : "DEFAULT",
       "detailType" : "FORMPAGE",
+      "mOSFilePath" : "psdeformdetail_formpages/formpage1",
       "name" : "formpage1",
       "getPSDEFormDetails" : [ {
         "caption" : "图表名称(%)",
@@ -511,6 +547,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/n_chartdataname_like",
         "name" : "n_chartdataname_like",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -526,6 +563,7 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/n_chartdataname_like",
         "allowEmpty" : true,
         "showCaption" : true
       }, {
@@ -538,6 +576,7 @@
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 130,
+        "mOSFilePath" : "psdeformdetail_formitems/n_datatype_eq",
         "name" : "n_datatype_eq",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -558,20 +597,31 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/n_datatype_eq",
         "allowEmpty" : true,
         "needCodeListConfig" : true,
         "showCaption" : true
       } ],
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
       "infoGroupMode" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2ListView/psappviewctrls/searchform",
     "searchButtonStyle" : "DEFAULT",
     "tabHeaderPos" : "TOP",
     "enableAdvanceSearch" : false,
@@ -588,16 +638,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDELISTVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CHARTDATA/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/ChartData.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2ListView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ChartDataUsr2ListView",
   "title" : "图表列表视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DELISTVIEW",

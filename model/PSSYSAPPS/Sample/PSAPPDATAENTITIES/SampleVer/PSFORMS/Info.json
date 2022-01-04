@@ -5,6 +5,7 @@
     "modelref" : true,
     "id" : "create"
   },
+  "defaultLabelWidth" : 130,
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/SampleVer/PSFORMS/Info.json",
   "getGetDraftFromPSControlAction" : {
     "modelref" : true,
@@ -20,6 +21,7 @@
   },
   "hookEventNames" : [ "SAVE", "REMOVE", "LOAD" ],
   "logicName" : "信息",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/SAMPLEVER/psdeform_editforms/Info",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/SampleVer.json"
@@ -106,6 +108,7 @@
     "codeName" : "formpage1",
     "detailStyle" : "DEFAULT",
     "detailType" : "FORMPAGE",
+    "mOSFilePath" : "psdeformdetail_formpages/formpage1",
     "name" : "formpage1",
     "getPSDEFormDetails" : [ {
       "actionGroupExtractMode" : "ITEM",
@@ -113,6 +116,7 @@
       "codeName" : "group1",
       "detailStyle" : "DEFAULT",
       "detailType" : "GROUPPANEL",
+      "mOSFilePath" : "psdeformdetail_grouppanels/group1",
       "name" : "group1",
       "getPSDEFormDetails" : [ {
         "caption" : "标题",
@@ -124,6 +128,7 @@
         "ignoreInput" : 0,
         "labelPos" : "NONE",
         "labelWidth" : 0,
+        "mOSFilePath" : "psdeformdetail_formitems/samplevername",
         "name" : "samplevername",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -142,6 +147,7 @@
         "getPSSysCss" : {
           "cssName" : "h2-title"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/samplevername",
         "allowEmpty" : true
       }, {
         "caption" : "内容",
@@ -153,6 +159,7 @@
         "ignoreInput" : 0,
         "labelPos" : "NONE",
         "labelWidth" : 0,
+        "mOSFilePath" : "psdeformdetail_formitems/content",
         "name" : "content",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
@@ -171,6 +178,7 @@
           "grow" : 1,
           "layout" : "FLEX"
         },
+        "rTMOSFilePath" : "psdeformdetail_formitems/content",
         "allowEmpty" : true
       } ],
       "getPSLayout" : {
@@ -181,22 +189,33 @@
         "colMD" : 24,
         "layout" : "TABLE_24COL"
       },
+      "rTMOSFilePath" : "psdeformdetail_grouppanels/group1",
       "infoGroupMode" : false,
       "showCaption" : false
     } ],
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "psdeformdetail_formpages/formpage1",
     "infoGroupMode" : false
   } ],
   "getPSLayout" : {
+    "childColLG" : -1,
+    "childColMD" : 24,
+    "childColSM" : -1,
+    "childColXS" : -1,
     "columnCount" : 24,
     "layout" : "TABLE_24COL"
   },
   "getPSSysCss" : {
     "cssName" : "formitem-full-height"
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/SampleVerInfoEditView/psappviewctrls/form",
   "getRemovePSControlAction" : {
     "modelref" : true,
     "id" : "remove"

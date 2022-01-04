@@ -5,11 +5,13 @@
   "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Order/PSDEFLOGICS/CheckAmount.json",
   "logicName" : "检查金额",
   "logicSubType" : "DEFIELD",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdeflogics/CheckAmount",
   "name" : "检查金额",
   "getPSDEField" : {
     "name" : "AMOUNT",
     "codeName" : "Amount"
   },
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/ORDER/psdeflogics/CheckAmount",
   "scriptCode" : "if(actionmode == 'CREATE' || actionmode == 'UPDATE'){\n  if(entity.get(\"AMOUNT\")  == null || entity.get(\"AMOUNT\") <= 0){\n    return \"金额必须大于0\";\n  }\n}",
   "customCode" : true,
   "enableBackend" : true,

@@ -11,6 +11,7 @@
   "groupMode" : "NONE",
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
   "logicName" : "表格排序",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdegrids/Sort",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Example.json"
@@ -37,12 +38,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "examplename",
     "excelCaption" : "名称（启用）",
+    "mOSFilePath" : "psdegridcols/examplename",
     "name" : "examplename",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "EXAMPLENAME",
       "codeName" : "ExampleName"
     },
+    "rTMOSFilePath" : "psdegridcols/examplename",
     "width" : 200,
     "widthUnit" : "PX",
     "enableSort" : true
@@ -54,12 +57,14 @@
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "fieldx",
     "excelCaption" : "X值（禁用）",
+    "mOSFilePath" : "psdegridcols/fieldx",
     "name" : "fieldx",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
       "name" : "FIELDX",
       "codeName" : "Fieldx"
     },
+    "rTMOSFilePath" : "psdegridcols/fieldx",
     "width" : 200,
     "widthUnit" : "PX",
     "enableSort" : false
@@ -127,6 +132,7 @@
     "codeName" : "srfkey",
     "enableCond" : 3,
     "ignoreInput" : 0,
+    "mOSFilePath" : "psdegridcols/srfkey",
     "name" : "srfkey",
     "getPSAppDEField" : {
       "name" : "EXAMPLEID",
@@ -136,9 +142,11 @@
       "editorType" : "HIDDEN",
       "name" : "srfkey"
     },
+    "rTMOSFilePath" : "psdegridcols/srfkey",
     "allowEmpty" : true
   } ],
   "pagingSize" : 20,
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/ExampleGridSortGridView/psappviewctrls/grid",
   "getRemovePSControlAction" : {
     "actionName" : "Remove",
     "actionType" : "DEACTION",

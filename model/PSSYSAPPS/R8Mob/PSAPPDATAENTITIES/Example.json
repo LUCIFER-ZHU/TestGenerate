@@ -2,6 +2,7 @@
   "getAllPSAppDEACModes" : [ {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeacmodes/DEFAULT",
     "name" : "DEFAULT",
     "getPSDEACModeDataItems" : [ {
       "dataType" : 25,
@@ -19,6 +20,7 @@
       }
     } ],
     "pagingSize" : 50,
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeacmodes/DEFAULT",
     "getTextPSAppDEField" : {
       "name" : "EXAMPLENAME",
       "codeName" : "ExampleName"
@@ -40,6 +42,11 @@
       "modelref" : true,
       "id" : "CalcPF"
     },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/CalcPF.json"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/CalcPF",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -47,6 +54,11 @@
     "codeName" : "CalcPF2",
     "methodType" : "DEACTION",
     "name" : "CalcPF2",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/CalcPF2.json"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/CalcPF2",
     "scriptCode" : "if((data.fieldx || data.fieldx == 0) && (data.fieldy || data.fieldy == 0)) {\n    data.fieldz = (data.fieldx + data.fieldy)*2;\n    data.formitem17 = 'X值'+data.fieldx +'加Y值'+data.fieldy+'再乘以2等于Z值'+data.fieldz;\n}",
     "builtinMethod" : false,
     "customCode" : true
@@ -54,6 +66,20 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -61,6 +87,11 @@
     "codeName" : "ClearContent",
     "methodType" : "DEACTION",
     "name" : "ClearContent",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/ClearContent.json"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/ClearContent",
     "scriptCode" : "data.content='';",
     "builtinMethod" : false,
     "customCode" : true
@@ -68,16 +99,58 @@
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -89,23 +162,66 @@
       "modelref" : true,
       "id" : "PrepareCtx"
     },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/PrepareCtx.json"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/PrepareCtx",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/Update",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataImports" : [ {
@@ -116,12 +232,21 @@
       "modelref" : true,
       "id" : "Create"
     },
+    "getCreatePSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Create.json"
+    },
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdedataimps/DataImport",
     "name" : "数据导入",
     "getPSDEDataImportItems" : [ {
       "caption" : "X值",
       "name" : "FIELDX",
       "orderValue" : 10,
       "getPSAppDEField" : {
+        "name" : "FIELDX",
+        "codeName" : "Fieldx"
+      },
+      "getPSDEField" : {
         "name" : "FIELDX",
         "codeName" : "Fieldx"
       },
@@ -134,6 +259,10 @@
         "name" : "FIELDY",
         "codeName" : "Fieldy"
       },
+      "getPSDEField" : {
+        "name" : "FIELDY",
+        "codeName" : "Fieldy"
+      },
       "uniqueItem" : false
     }, {
       "caption" : "Z值",
@@ -143,12 +272,21 @@
         "name" : "FIELDZ",
         "codeName" : "Fieldz"
       },
+      "getPSDEField" : {
+        "name" : "FIELDZ",
+        "codeName" : "Fieldz"
+      },
       "uniqueItem" : false
     } ],
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdedataimps/DataImport",
     "updateDataAccessAction" : "UPDATE",
     "getUpdatePSAppDEAction" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "getUpdatePSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Update.json"
     },
     "defaultMode" : true,
     "ignoreError" : false
@@ -156,16 +294,45 @@
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchEmpty",
     "methodType" : "FETCH",
+    "name" : "FetchEmpty",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Empty"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchEmpty"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/FetchEmpty",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "ExampleId",
     "logicName" : "示例标识",
     "name" : "EXAMPLEID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/ExampleId",
     "stdDataType" : 25,
     "stringLength" : 100,
     "keyField" : true
@@ -173,30 +340,35 @@
     "codeName" : "CreateMan",
     "logicName" : "建立人",
     "name" : "CREATEMAN",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/CreateMan",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
     "name" : "UPDATEDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/UpdateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "name" : "UPDATEMAN",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/UpdateMan",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "CreateDate",
     "logicName" : "建立时间",
     "name" : "CREATEDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/CreateDate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "ExampleName",
     "logicName" : "名称",
     "name" : "EXAMPLENAME",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/ExampleName",
     "stdDataType" : 25,
     "stringLength" : 200,
     "enableQuickSearch" : true,
@@ -205,81 +377,95 @@
     "codeName" : "Field",
     "logicName" : "数据选择",
     "name" : "FIELD",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Field",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "FieldValue",
     "logicName" : "选择数据（值）",
     "name" : "FIELDVALUE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/FieldValue",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Fieldx",
     "logicName" : "X值",
     "name" : "FIELDX",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Fieldx",
     "stdDataType" : 6
   }, {
     "codeName" : "Fieldy",
     "logicName" : "Y值",
     "name" : "FIELDY",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Fieldy",
     "stdDataType" : 6
   }, {
     "codeName" : "Fieldz",
     "logicName" : "Z值",
     "name" : "FIELDZ",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Fieldz",
     "stdDataType" : 6
   }, {
     "codeName" : "BeginTime",
     "logicName" : "开始时间",
     "name" : "BEGINTIME",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/BeginTime",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "EndTime",
     "logicName" : "结束时间",
     "name" : "ENDTIME",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/EndTime",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "DataType",
     "logicName" : "数据分类",
     "name" : "DATATYPE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/DataType",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
     "codeName" : "CityId",
     "logicName" : "市标识",
     "name" : "CITYID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/CityId",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "CityName",
     "logicName" : "市",
     "name" : "CITYNAME",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/CityName",
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
     "codeName" : "ProvinceId",
     "logicName" : "省份标识",
     "name" : "PROVINCEID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/ProvinceId",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "ProvinceName",
     "logicName" : "省份",
     "name" : "PROVINCENAME",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/ProvinceName",
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
     "codeName" : "DistrictId",
     "logicName" : "区标识",
     "name" : "DISTRICTID",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/DistrictId",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "DistrictName",
     "logicName" : "区/县",
     "name" : "DISTRICTNAME",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/DistrictName",
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
@@ -287,80 +473,94 @@
     "logicName" : "数字占位符（#）",
     "name" : "FORMAT1",
     "precision" : 4,
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format1",
     "stdDataType" : 6
   }, {
     "codeName" : "Format2",
     "logicName" : "数字占位符（0）",
     "name" : "FORMAT2",
     "precision" : 4,
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format2",
     "stdDataType" : 6
   }, {
     "codeName" : "Format3",
     "logicName" : "数字占位符（?）",
     "name" : "FORMAT3",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format3",
     "stdDataType" : 6
   }, {
     "codeName" : "Format4",
     "logicName" : "百分比（%）",
     "name" : "FORMAT4",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format4",
     "stdDataType" : 6
   }, {
     "codeName" : "Format5",
     "logicName" : "千位分隔符（,）",
     "name" : "FORMAT5",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format5",
     "stdDataType" : 6
   }, {
     "codeName" : "Format6",
     "logicName" : "正负零区分显示",
     "name" : "FORMAT6",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format6",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Format7",
     "logicName" : "科学计数法",
     "name" : "FORMAT7",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format7",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Format8",
     "logicName" : "文本占位符（@）",
     "name" : "FORMAT8",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format8",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Format9",
     "logicName" : "星号占位符（*）",
     "name" : "FORMAT9",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format9",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Format10",
     "logicName" : "显示下一个字符",
     "name" : "FORMAT10",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format10",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Format11",
     "logicName" : "属性颜色（[]）",
     "name" : "FORMAT11",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format11",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Format12",
     "logicName" : "条件",
     "name" : "FORMAT12",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format12",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Format13",
     "logicName" : "时间和日期代码",
     "name" : "FORMAT13",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format13",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "Format14",
     "logicName" : "占位符（_）",
     "name" : "FORMAT14",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Format14",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
@@ -371,6 +571,7 @@
     },
     "logicName" : "XY前端计算值",
     "name" : "APPFIELD",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Appfield",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
@@ -381,6 +582,7 @@
     },
     "logicName" : "XY前端计算值2",
     "name" : "APPFIELD2",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Appfield2",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
@@ -395,22 +597,26 @@
       "modelref" : true,
       "id" : "AppDEFieldChange"
     },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Appfield3",
     "stdDataType" : 9
   }, {
     "codeName" : "Fieldupdate",
     "logicName" : "更新值",
     "name" : "FIELDUPDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Fieldupdate",
     "stdDataType" : 6
   }, {
     "codeName" : "Acfield",
     "logicName" : "自动填充属性",
     "name" : "ACFIELD",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Acfield",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "Currentdate",
     "logicName" : "当前日期",
     "name" : "CURRENTDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Currentdate",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD"
   }, {
@@ -421,6 +627,7 @@
     },
     "logicName" : "XY前端计算值4",
     "name" : "APPFIELD4",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Appfield4",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
@@ -428,12 +635,14 @@
     "logicName" : "数值字段",
     "name" : "DECIMALFIELD",
     "precision" : 6,
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Decimalfield",
     "stdDataType" : 6
   }, {
     "codeName" : "Decimalfield2",
     "logicName" : "数值字段2",
     "name" : "DECIMALFIELD2",
     "precision" : 6,
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdefields/Decimalfield2",
     "stdDataType" : 6
   } ],
   "getAllPSAppDELogics" : [ {
@@ -442,11 +651,17 @@
     "defaultParamName" : "DEFAULT",
     "logicName" : "XY属性计算逻辑2",
     "logicSubType" : "DEFIELD",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEField2Compute",
     "name" : "XY属性计算逻辑2",
     "getPSAppDEField" : {
       "name" : "APPFIELD2",
       "codeName" : "Appfield2"
     },
+    "getPSDEField" : {
+      "name" : "APPFIELD2",
+      "codeName" : "Appfield2"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEField2Compute",
     "scriptCode" : "data.appfield2=data.fieldx+data.fieldy",
     "customCode" : true,
     "enableBackend" : false,
@@ -457,11 +672,17 @@
     "defaultParamName" : "DEFAULT",
     "logicName" : "XY值属性计算逻辑3",
     "logicSubType" : "DEFIELD",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEField3Compute",
     "name" : "XY值属性计算逻辑3",
     "getPSAppDEField" : {
       "name" : "APPFIELD3",
       "codeName" : "Appfield3"
     },
+    "getPSDEField" : {
+      "name" : "APPFIELD3",
+      "codeName" : "Appfield3"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEField3Compute",
     "scriptCode" : "Math.random()*10",
     "customCode" : true,
     "enableBackend" : false,
@@ -472,11 +693,17 @@
     "defaultParamName" : "DEFAULT",
     "logicName" : "XY值属性计算逻辑4",
     "logicSubType" : "DEFIELD",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEField4Compute",
     "name" : "XY值属性计算逻辑4",
     "getPSAppDEField" : {
       "name" : "APPFIELD4",
       "codeName" : "Appfield4"
     },
+    "getPSDEField" : {
+      "name" : "APPFIELD4",
+      "codeName" : "Appfield4"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEField4Compute",
     "scriptCode" : "if(data.fieldx && data.fieldz) {\n  data.appfield4=data.fieldx + '(' +Number((data.fieldx/data.fieldz)*100).toFixed(2)  + '%)';\n}",
     "customCode" : true,
     "enableBackend" : false,
@@ -487,11 +714,17 @@
     "defaultParamName" : "DEFAULT",
     "logicName" : "XY值change逻辑",
     "logicSubType" : "DEFIELD",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEFieldChange",
     "name" : "XY值change逻辑",
     "getPSAppDEField" : {
       "name" : "APPFIELD3",
       "codeName" : "Appfield3"
     },
+    "getPSDEField" : {
+      "name" : "APPFIELD3",
+      "codeName" : "Appfield3"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEFieldChange",
     "scriptCode" : "if(data.appfield3 != null && data.appfield3 != undefined){\n   data.fieldx=Math.random() * data.appfield3;\n   data.fieldy=Math.random() * data.appfield3;\n}\n",
     "customCode" : true,
     "enableBackend" : false,
@@ -502,14 +735,20 @@
     "defaultParamName" : "Default",
     "logicName" : "XY属性计算逻辑",
     "logicSubType" : "DEFIELD",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEFieldCompute",
     "name" : "XY属性计算逻辑",
     "getPSAppDEField" : {
+      "name" : "APPFIELD",
+      "codeName" : "Appfield"
+    },
+    "getPSDEField" : {
       "name" : "APPFIELD",
       "codeName" : "Appfield"
     },
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam1",
       "logicNodeType" : "PREPAREPARAM",
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEFieldCompute/psappdelogicnodes/Prepareparam1",
       "name" : "计算",
       "getPSDELogicNodeParams" : [ {
         "dstFieldName" : "APPFIELD",
@@ -522,10 +761,12 @@
         "paramAction" : "SETPARAMVALUE",
         "srcValueType" : "EXPRESSION"
       } ],
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEFieldCompute/psappdelogicnodes/Prepareparam1",
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEFieldCompute/psappdelogicnodes/Begin",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
         "getDstPSDELogicNode" : {
@@ -538,17 +779,25 @@
           "id" : "Begin"
         }
       } ],
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEFieldCompute/psappdelogicnodes/Begin",
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEFieldCompute/psappdelogicparams/Default",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
       },
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
+      },
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEFieldCompute/psappdelogicparams/Default",
       "default" : true
     } ],
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeflogics/AppDEFieldCompute",
     "getStartPSDELogicNode" : {
       "modelref" : true,
       "id" : "Begin"
@@ -559,27 +808,39 @@
     "codeName" : "CalcPF",
     "defaultParamName" : "Default",
     "logicName" : "表单项更新前台计算",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/CalcPF",
     "name" : "表单项更新前台计算",
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam1",
       "logicNodeType" : "PREPAREPARAM",
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/CalcPF/psappdelogicnodes/Prepareparam1",
       "name" : "计算",
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/CalcPF/psappdelogicnodes/Prepareparam1",
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/CalcPF/psappdelogicnodes/Begin",
       "name" : "开始",
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/CalcPF/psappdelogicnodes/Begin",
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/CalcPF/psappdelogicparams/Default",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
       },
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
+      },
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/CalcPF/psappdelogicparams/Default",
       "default" : true
     } ],
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/CalcPF",
     "getStartPSDELogicNode" : {
       "modelref" : true,
       "id" : "Begin"
@@ -590,10 +851,12 @@
     "codeName" : "PrepareCtx",
     "defaultParamName" : "Default",
     "logicName" : "动态准备应用上下文",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx",
     "name" : "动态准备应用上下文",
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam2",
       "logicNodeType" : "PREPAREPARAM",
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicnodes/Prepareparam2",
       "name" : "回显",
       "getPSDELogicNodeParams" : [ {
         "dstFieldName" : "FIELDZ",
@@ -620,10 +883,12 @@
         "paramAction" : "SETPARAMVALUE",
         "srcValueType" : "EXPRESSION"
       } ],
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicnodes/Prepareparam2",
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicnodes/Begin",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
         "getDstPSDELogicNode" : {
@@ -636,10 +901,12 @@
           "id" : "Begin"
         }
       } ],
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicnodes/Begin",
       "parallelOutput" : true
     }, {
       "codeName" : "Prepareparam1",
       "logicNodeType" : "PREPAREPARAM",
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicnodes/Prepareparam1",
       "name" : "准备键值",
       "getPSDELogicLinks" : [ {
         "getDstPSDELogicNode" : {
@@ -667,6 +934,7 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicnodes/Prepareparam1",
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction1",
@@ -678,11 +946,20 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
       },
+      "getDstPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Get.json"
+      },
       "getDstPSDELogicParam" : {
         "modelref" : true,
         "id" : "Temp"
       },
+      "getDstPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
+      },
       "logicNodeType" : "DEACTION",
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicnodes/Deaction1",
       "name" : "获取数据",
       "getPSDELogicLinks" : [ {
         "getDstPSDELogicNode" : {
@@ -695,27 +972,43 @@
           "id" : "Deaction1"
         }
       } ],
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicnodes/Deaction1",
       "parallelOutput" : true
     } ],
     "getPSDELogicParams" : [ {
       "codeName" : "Temp",
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicparams/Temp",
       "name" : "临时",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
-      }
+      },
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
+      },
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicparams/Temp"
     }, {
       "codeName" : "Default",
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicparams/Default",
       "name" : "传入变量",
       "getParamPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
       },
+      "getParamPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
+      },
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicparams/Default",
       "default" : true
     }, {
       "codeName" : "context",
-      "name" : "应用上下文"
+      "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicparams/context",
+      "name" : "应用上下文",
+      "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx/psappdelogicparams/context"
     } ],
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdelogics/PrepareCtx",
     "getStartPSDELogicNode" : {
       "modelref" : true,
       "id" : "Begin"
@@ -733,6 +1026,11 @@
       "modelref" : true,
       "id" : "CalcPF"
     },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/CalcPF.json"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/CalcPF",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -740,6 +1038,11 @@
     "codeName" : "CalcPF2",
     "methodType" : "DEACTION",
     "name" : "CalcPF2",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/CalcPF2.json"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/CalcPF2",
     "scriptCode" : "if((data.fieldx || data.fieldx == 0) && (data.fieldy || data.fieldy == 0)) {\n    data.fieldz = (data.fieldx + data.fieldy)*2;\n    data.formitem17 = 'X值'+data.fieldx +'加Y值'+data.fieldy+'再乘以2等于Z值'+data.fieldz;\n}",
     "builtinMethod" : false,
     "customCode" : true
@@ -747,6 +1050,20 @@
     "actionMode" : "CHECKKEY",
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/CheckKey",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -754,6 +1071,11 @@
     "codeName" : "ClearContent",
     "methodType" : "DEACTION",
     "name" : "ClearContent",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/ClearContent.json"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/ClearContent",
     "scriptCode" : "data.content='';",
     "builtinMethod" : false,
     "customCode" : true
@@ -761,16 +1083,58 @@
     "actionMode" : "CREATE",
     "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/Create",
     "builtinMethod" : false
   }, {
     "actionMode" : "READ",
     "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/Get",
     "builtinMethod" : false
   }, {
     "actionMode" : "GETDRAFT",
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/GetDraft",
     "builtinMethod" : false
   }, {
     "actionMode" : "CUSTOM",
@@ -782,70 +1146,158 @@
       "modelref" : true,
       "id" : "PrepareCtx"
     },
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/PrepareCtx.json"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/PrepareCtx",
     "builtinMethod" : false
   }, {
     "actionMode" : "DELETE",
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/Remove",
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
     "actionMode" : "UNKNOWN",
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/Save",
     "builtinMethod" : false
   }, {
     "actionMode" : "UPDATE",
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/Sample/PSDATAENTITIES/Example/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/Update",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/FetchDefault",
     "builtinMethod" : false
   }, {
     "codeName" : "FetchEmpty",
     "methodType" : "FETCH",
+    "name" : "FetchEmpty",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Empty"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchEmpty"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/FetchEmpty",
     "builtinMethod" : false
   }, {
     "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERCREATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/FilterCreate",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/FilterFetch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGET",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/FilterGet",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGetDraft",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGETDRAFT",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/FilterGetDraft",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterRemove",
     "methodType" : "FILTERACTION",
     "name" : "FILTERREMOVE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/FilterRemove",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
     "name" : "FILTERSEARCH",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/FilterSearch",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
     "name" : "FILTERUPDATE",
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/FilterUpdate",
     "builtinMethod" : true
   }, {
     "codeName" : "Select",
     "methodType" : "SELECT",
+    "name" : "Select",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdemethods/Select",
     "builtinMethod" : false
   } ],
   "getAllPSAppDEUIActions" : [ {
@@ -855,11 +1307,13 @@
     "frontPSAppView" : "无法获取指定应用视图，标识为[9348cd04230e8a88f76b776a61f2b815]，请确认实体视图[EXAMPLE][示例实体选项操作视图（界面逻辑-界面行为调用）]已经添加到应用[移动端应用示例]中",
     "frontProcessType" : "WIZARD",
     "fullCodeName" : "Example_OpenView_UIActionTest",
+    "mOSFilePath" : "psappdeuiactions/OpenView_UIActionTest",
     "name" : "打开视图（界面逻辑-界面行为调用）",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json"
     },
+    "rTMOSFilePath" : "psappdeuiactions/OpenView_UIActionTest",
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
     "uIActionTag" : "OpenView_UIActionTest",
@@ -870,10 +1324,12 @@
     "codeName" : "UIActionTest",
     "defaultParamName" : "Default",
     "logicName" : "界面行为调用",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeuilogics/UIActionTest",
     "name" : "界面行为调用",
     "getPSDEUILogicNodes" : [ {
       "codeName" : "Preparejsparam1",
       "logicNodeType" : "PREPAREJSPARAM",
+      "mOSFilePath" : "psappdeuilogicnodes/Preparejsparam1",
       "name" : "获取表单项参数",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -902,6 +1358,7 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Preparejsparam1",
       "parallelOutput" : true
     }, {
       "codeName" : "Deuiaction1",
@@ -922,6 +1379,7 @@
         "id" : "Temp"
       },
       "logicNodeType" : "DEUIACTION",
+      "mOSFilePath" : "psappdeuilogicnodes/Deuiaction1",
       "name" : "打开视图",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -936,10 +1394,12 @@
         },
         "fulfilledLink" : true
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Deuiaction1",
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
+      "mOSFilePath" : "psappdeuilogicnodes/Begin",
       "name" : "开始",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -953,10 +1413,12 @@
           "id" : "Begin"
         }
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Begin",
       "parallelOutput" : true
     }, {
       "codeName" : "Preparejsparam2",
       "logicNodeType" : "PREPAREJSPARAM",
+      "mOSFilePath" : "psappdeuilogicnodes/Preparejsparam2",
       "name" : "设置回显",
       "getPSDEUILogicNodeParams" : [ {
         "dstFieldName" : "fieldx",
@@ -973,20 +1435,28 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Preparejsparam2",
       "parallelOutput" : true
     } ],
     "getPSDEUILogicParams" : [ {
       "codeName" : "Temp",
-      "name" : "临时"
+      "mOSFilePath" : "psappdeuilogicparams/Temp",
+      "name" : "临时",
+      "rTMOSFilePath" : "psappdeuilogicparams/Temp"
     }, {
       "codeName" : "Default",
+      "mOSFilePath" : "psappdeuilogicparams/Default",
       "name" : "传入变量",
+      "rTMOSFilePath" : "psappdeuilogicparams/Default",
       "default" : true
     }, {
       "codeName" : "Context",
+      "mOSFilePath" : "psappdeuilogicparams/Context",
       "name" : "应用上下文",
+      "rTMOSFilePath" : "psappdeuilogicparams/Context",
       "navContextParam" : true
     } ],
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeuilogics/UIActionTest",
     "getStartPSDEUILogicNode" : {
       "modelref" : true,
       "id" : "Begin"
@@ -995,11 +1465,13 @@
     "codeName" : "UISimple",
     "defaultParamName" : "Default",
     "logicName" : "显示对话框",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeuilogics/UISimple",
     "name" : "显示对话框",
     "getPSDEUILogicNodes" : [ {
       "buttonsType" : "YESNO",
       "codeName" : "Msgbox1",
       "logicNodeType" : "MSGBOX",
+      "mOSFilePath" : "psappdeuilogicnodes/Msgbox1",
       "message" : "是否进行此操作？",
       "getMsgBoxParam" : {
         "modelref" : true,
@@ -1062,20 +1534,24 @@
           "id" : "Msgbox1"
         }
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Msgbox1",
       "showMode" : "CENTER",
       "title" : "询问"
     }, {
       "buttonsType" : "OK",
       "codeName" : "Msgbox2",
       "logicNodeType" : "MSGBOX",
+      "mOSFilePath" : "psappdeuilogicnodes/Msgbox2",
       "message" : "您选择了【是】",
       "msgBoxType" : "INFO",
       "name" : "选择了【是】",
+      "rTMOSFilePath" : "psappdeuilogicnodes/Msgbox2",
       "showMode" : "CENTER",
       "title" : "选择结果"
     }, {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
+      "mOSFilePath" : "psappdeuilogicnodes/Begin",
       "name" : "开始",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -1089,10 +1565,12 @@
           "id" : "Begin"
         }
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Begin",
       "parallelOutput" : true
     }, {
       "codeName" : "Preparejsparam1",
       "logicNodeType" : "PREPAREJSPARAM",
+      "mOSFilePath" : "psappdeuilogicnodes/Preparejsparam1",
       "name" : "准备提示参数",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -1130,25 +1608,33 @@
         "name" : "表达式['您是否输入【'+${inputtext...] ==> Temp[message]",
         "paramAction" : "SETPARAMVALUE",
         "srcValueType" : "EXPRESSION"
-      } ]
+      } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Preparejsparam1"
     }, {
       "buttonsType" : "OK",
       "codeName" : "Msgbox3",
       "logicNodeType" : "MSGBOX",
+      "mOSFilePath" : "psappdeuilogicnodes/Msgbox3",
       "message" : "您选择了【否】",
       "msgBoxType" : "INFO",
       "name" : "选择了【否】",
+      "rTMOSFilePath" : "psappdeuilogicnodes/Msgbox3",
       "showMode" : "CENTER",
       "title" : "选择结果"
     } ],
     "getPSDEUILogicParams" : [ {
       "codeName" : "Temp",
-      "name" : "临时"
+      "mOSFilePath" : "psappdeuilogicparams/Temp",
+      "name" : "临时",
+      "rTMOSFilePath" : "psappdeuilogicparams/Temp"
     }, {
       "codeName" : "Default",
+      "mOSFilePath" : "psappdeuilogicparams/Default",
       "name" : "传入变量",
+      "rTMOSFilePath" : "psappdeuilogicparams/Default",
       "default" : true
     } ],
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeuilogics/UISimple",
     "getStartPSDEUILogicNode" : {
       "modelref" : true,
       "id" : "Begin"
@@ -1157,10 +1643,12 @@
     "codeName" : "UpdateFieldUpdate",
     "defaultParamName" : "Default",
     "logicName" : "更新值",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeuilogics/UpdateFieldUpdate",
     "name" : "更新值",
     "getPSDEUILogicNodes" : [ {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
+      "mOSFilePath" : "psappdeuilogicnodes/Begin",
       "name" : "开始",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -1174,6 +1662,7 @@
           "id" : "Begin"
         }
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Begin",
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction2",
@@ -1190,6 +1679,7 @@
         "id" : "ExampleTemp"
       },
       "logicNodeType" : "DEACTION",
+      "mOSFilePath" : "psappdeuilogicnodes/Deaction2",
       "name" : "更新值",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -1204,10 +1694,12 @@
         },
         "fulfilledLink" : true
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Deaction2",
       "parallelOutput" : true
     }, {
       "codeName" : "Preparejsparam3",
       "logicNodeType" : "PREPAREJSPARAM",
+      "mOSFilePath" : "psappdeuilogicnodes/Preparejsparam3",
       "name" : "回显值",
       "getPSDEUILogicNodeParams" : [ {
         "dstFieldName" : "fieldupdate",
@@ -1224,10 +1716,12 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Preparejsparam3",
       "parallelOutput" : true
     }, {
       "codeName" : "Preparejsparam2",
       "logicNodeType" : "PREPAREJSPARAM",
+      "mOSFilePath" : "psappdeuilogicnodes/Preparejsparam2",
       "name" : "设置更新值",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -1256,6 +1750,7 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Preparejsparam2",
       "parallelOutput" : true
     }, {
       "codeName" : "Deaction1",
@@ -1272,6 +1767,7 @@
         "id" : "ExampleTemp"
       },
       "logicNodeType" : "DEACTION",
+      "mOSFilePath" : "psappdeuilogicnodes/Deaction1",
       "name" : "获取示例数据",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -1286,12 +1782,15 @@
         },
         "fulfilledLink" : true
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Deaction1",
       "parallelOutput" : true
     }, {
       "code" : "if (ExampleTemp.fieldy) {\n  Default.fieldy=ExampleTemp.fieldy;\n}\n",
       "codeName" : "Rawjscode1",
       "logicNodeType" : "RAWJSCODE",
+      "mOSFilePath" : "psappdeuilogicnodes/Rawjscode1",
       "name" : "直接代码回显值",
+      "rTMOSFilePath" : "psappdeuilogicnodes/Rawjscode1",
       "parallelOutput" : true
     }, {
       "codeName" : "Deuiaction1",
@@ -1312,6 +1811,7 @@
         "id" : "ExampleTemp"
       },
       "logicNodeType" : "DEUIACTION",
+      "mOSFilePath" : "psappdeuilogicnodes/Deuiaction1",
       "name" : "打开视图",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -1325,10 +1825,12 @@
           "id" : "Deuiaction1"
         }
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Deuiaction1",
       "parallelOutput" : true
     }, {
       "codeName" : "Preparejsparam1",
       "logicNodeType" : "PREPAREJSPARAM",
+      "mOSFilePath" : "psappdeuilogicnodes/Preparejsparam1",
       "name" : "获取表单项参数",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -1371,20 +1873,28 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Preparejsparam1",
       "parallelOutput" : true
     } ],
     "getPSDEUILogicParams" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "psappdeuilogicparams/Default",
       "name" : "传入变量",
+      "rTMOSFilePath" : "psappdeuilogicparams/Default",
       "default" : true
     }, {
       "codeName" : "ExampleTemp",
-      "name" : "示例临时"
+      "mOSFilePath" : "psappdeuilogicparams/ExampleTemp",
+      "name" : "示例临时",
+      "rTMOSFilePath" : "psappdeuilogicparams/ExampleTemp"
     }, {
       "codeName" : "Context",
+      "mOSFilePath" : "psappdeuilogicparams/Context",
       "name" : "应用上下文",
+      "rTMOSFilePath" : "psappdeuilogicparams/Context",
       "navContextParam" : true
     } ],
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeuilogics/UpdateFieldUpdate",
     "getStartPSDEUILogicNode" : {
       "modelref" : true,
       "id" : "Begin"
@@ -1393,10 +1903,12 @@
     "codeName" : "allowDrag",
     "defaultParamName" : "Default",
     "logicName" : "是否允许树节点拖拽",
+    "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeuilogics/allowDrag",
     "name" : "是否允许树节点拖拽",
     "getPSDEUILogicNodes" : [ {
       "codeName" : "Preparejsparam1",
       "logicNodeType" : "PREPAREJSPARAM",
+      "mOSFilePath" : "psappdeuilogicnodes/Preparejsparam1",
       "name" : "准备消息参数",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -1422,10 +1934,12 @@
         "srcFieldName" : "cityname",
         "srcValueType" : "EXPRESSION"
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Preparejsparam1",
       "parallelOutput" : true
     }, {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
+      "mOSFilePath" : "psappdeuilogicnodes/Begin",
       "name" : "开始",
       "getPSDEUILogicLinks" : [ {
         "getDstPSDEUILogicNode" : {
@@ -1439,11 +1953,13 @@
           "id" : "Begin"
         }
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Begin",
       "parallelOutput" : true
     }, {
       "buttonsType" : "YESNO",
       "codeName" : "Msgbox1",
       "logicNodeType" : "MSGBOX",
+      "mOSFilePath" : "psappdeuilogicnodes/Msgbox1",
       "getMsgBoxParam" : {
         "modelref" : true,
         "id" : "temp"
@@ -1462,10 +1978,12 @@
           "id" : "Msgbox1"
         }
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Msgbox1",
       "title" : "提示信息"
     }, {
       "codeName" : "Preparejsparam2",
       "logicNodeType" : "PREPAREJSPARAM",
+      "mOSFilePath" : "psappdeuilogicnodes/Preparejsparam2",
       "name" : "回填参数",
       "getPSDEUILogicNodeParams" : [ {
         "dstFieldName" : "result",
@@ -1482,16 +2000,22 @@
         },
         "srcValueType" : "SRCDLPARAM"
       } ],
+      "rTMOSFilePath" : "psappdeuilogicnodes/Preparejsparam2",
       "parallelOutput" : true
     } ],
     "getPSDEUILogicParams" : [ {
       "codeName" : "Default",
+      "mOSFilePath" : "psappdeuilogicparams/Default",
       "name" : "传入变量",
+      "rTMOSFilePath" : "psappdeuilogicparams/Default",
       "default" : true
     }, {
       "codeName" : "temp",
-      "name" : "临时存储变量"
+      "mOSFilePath" : "psappdeuilogicparams/temp",
+      "name" : "临时存储变量",
+      "rTMOSFilePath" : "psappdeuilogicparams/temp"
     } ],
+    "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example/psappdeuilogics/allowDrag",
     "getStartPSDEUILogicNode" : {
       "modelref" : true,
       "id" : "Begin"
@@ -1499,16 +2023,24 @@
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
-    "name" : "CREATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeopprivs/CREATE",
+    "name" : "CREATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeopprivs/CREATE"
   }, {
     "logicName" : "删除",
-    "name" : "DELETE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeopprivs/DELETE",
+    "name" : "DELETE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeopprivs/DELETE"
   }, {
     "logicName" : "读取",
-    "name" : "READ"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeopprivs/READ",
+    "name" : "READ",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeopprivs/READ"
   }, {
     "logicName" : "更新",
-    "name" : "UPDATE"
+    "mOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeopprivs/UPDATE",
+    "name" : "UPDATE",
+    "rTMOSFilePath" : "psmodules/Sample/psdataentities/EXAMPLE/psdeopprivs/UPDATE"
   } ],
   "codeName" : "Example",
   "dataAccCtrlArch" : 1,
@@ -1516,12 +2048,26 @@
   "dynaModelFilePath" : "PSSYSAPPS/R8Mob/PSAPPDATAENTITIES/Example.json",
   "enableUIActions" : 15,
   "logicName" : "示例",
+  "mOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example",
   "name" : "EXAMPLE",
   "getPSDEName" : "EXAMPLE",
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "id" : "Example"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/Sample/PSDATAENTITIES/Example.json"
+  },
+  "getPSSysServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSSYSSERVICEAPIS/SampleApi.json"
+  },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "EXAMPLENAME",
     "codeName" : "ExampleName"
   } ],
+  "rTMOSFilePath" : "pssysapps/R8Mob/psappdataentities/Example",
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,

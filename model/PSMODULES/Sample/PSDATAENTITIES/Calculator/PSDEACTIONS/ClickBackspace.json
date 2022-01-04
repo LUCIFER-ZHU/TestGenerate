@@ -4,18 +4,24 @@
   "codeName" : "ClickBackspace",
   "dynaModelFilePath" : "PSMODULES/Sample/PSDATAENTITIES/Calculator/PSDEACTIONS/ClickBackspace.json",
   "logicName" : "ClickBackspace",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/psdeactions/ClickBackspace",
   "name" : "ClickBackspace",
   "getPSDEActionInput" : {
+    "mOSFilePath" : "psdeactioninputs/ClickBackspaceInput",
     "name" : "ClickBackspaceInput",
     "getPSDEMethodDTO" : {
       "modelref" : true,
       "id" : "CalculatorDTO"
     },
+    "rTMOSFilePath" : "psdeactioninputs/ClickBackspaceInput",
     "type" : "DTO"
   },
   "getPSDEActionReturn" : {
+    "mOSFilePath" : "psdeactionreturns/ClickBackspaceResult",
     "name" : "ClickBackspaceResult",
+    "rTMOSFilePath" : "psdeactionreturns/ClickBackspaceResult",
     "type" : "VOID"
   },
+  "rTMOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/psdeactions/ClickBackspace",
   "scriptCode" : "if(data.input){\n  data.input=data.input.substring(0,data.input.length-1);\n}\nif(data.expression){\n  data.expression=data.expression.substring(0,data.expression.length-1);\n}\n"
 }

@@ -3,10 +3,15 @@
   "caption" : "计算器示例",
   "codeName" : "CalculatorCalcPanelView",
   "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDEVIEWS/CalculatorCalcPanelView.json",
+  "mOSFilePath" : "pssysapps/Sample/psappdeviews/CalculatorCalcPanelView",
   "name" : "CalculatorCalcPanelView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
+  },
+  "getPSAppModule" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Sample/PSAPPMODULES/Sample.json"
   },
   "getPSControls" : [ {
     "getAllPSPanelFields" : [ {
@@ -21,6 +26,7 @@
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator/PSPANELS/CalcPanel.json",
     "layoutMode" : "TABLE_24COL",
     "logicName" : "计算器示例面板",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/pssysviewpanels/CalcPanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
@@ -391,12 +397,18 @@
       "id" : "PANEL"
     },
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CalculatorCalcPanelView/psappviewctrls/panel",
     "getRootPSPanelItems" : [ {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container1",
       "name" : "container1",
       "getPSLayout" : {
         "align" : "center",
@@ -411,6 +423,7 @@
       "getPSPanelItems" : [ {
         "itemStyle" : "DEFAULT",
         "itemType" : "CONTAINER",
+        "mOSFilePath" : "pssysviewpanelitem_containers/container4",
         "name" : "container4",
         "getPSLayout" : {
           "align" : "center",
@@ -426,8 +439,13 @@
           "contentWidth" : 600.0,
           "itemStyle" : "DEFAULT",
           "itemType" : "CONTAINER",
+          "mOSFilePath" : "pssysviewpanelitem_containers/container2",
           "name" : "container2",
           "getPSLayout" : {
+            "childColLG" : 24,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -439,6 +457,7 @@
           "getPSPanelItems" : [ {
             "itemStyle" : "DEFAULT",
             "itemType" : "FIELD",
+            "mOSFilePath" : "pssysviewpanelitem_fields/expression",
             "name" : "expression",
             "getPSEditor" : {
               "editorType" : "SPAN",
@@ -450,12 +469,14 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_fields/expression",
             "viewFieldName" : "expression",
             "hidden" : false,
             "showCaption" : false
           }, {
             "itemStyle" : "DEFAULT",
             "itemType" : "FIELD",
+            "mOSFilePath" : "pssysviewpanelitem_fields/input",
             "name" : "input",
             "getPSEditor" : {
               "editorType" : "SPAN",
@@ -467,6 +488,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_fields/input",
             "viewFieldName" : "input",
             "hidden" : false,
             "showCaption" : false
@@ -474,13 +496,20 @@
           "getPSSysCss" : {
             "cssName" : "calc-screen-css"
           },
-          "width" : 600.0
+          "rTMOSFilePath" : "pssysviewpanelitem_containers/container2",
+          "width" : 600.0,
+          "showCaption" : true
         }, {
           "contentWidth" : 600.0,
           "itemStyle" : "DEFAULT",
           "itemType" : "CONTAINER",
+          "mOSFilePath" : "pssysviewpanelitem_containers/container3",
           "name" : "container3",
           "getPSLayout" : {
+            "childColLG" : 6,
+            "childColMD" : 24,
+            "childColSM" : -1,
+            "childColXS" : -1,
             "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
@@ -494,6 +523,7 @@
             "caption" : "Clear",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button17",
             "name" : "button17",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -512,6 +542,7 @@
               "caption" : "Clear",
               "codeName" : "ClickClear",
               "fullCodeName" : "Calculator_ClickClear",
+              "mOSFilePath" : "psappdeuiactions/ClickClear",
               "name" : "ClickClear",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -521,6 +552,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/ClickClear",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "ClickClear",
@@ -528,6 +560,7 @@
               "enableConfirm" : true,
               "id" : "ClickClear@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button17",
             "tooltip" : "Clear",
             "showCaption" : true
           }, {
@@ -535,6 +568,7 @@
             "caption" : "Backspace",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button18",
             "name" : "button18",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -553,6 +587,7 @@
               "caption" : "Backspace",
               "codeName" : "ClickBackspace",
               "fullCodeName" : "Calculator_ClickBackspace",
+              "mOSFilePath" : "psappdeuiactions/ClickBackspace",
               "name" : "ClickBackspace",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -562,6 +597,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/ClickBackspace",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "ClickBackspace",
@@ -569,6 +605,7 @@
               "enableConfirm" : true,
               "id" : "ClickBackspace@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button18",
             "tooltip" : "Backspace",
             "showCaption" : true
           }, {
@@ -576,6 +613,7 @@
             "caption" : "7",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button1",
             "name" : "button1",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -594,6 +632,7 @@
               "caption" : "7",
               "codeName" : "Click7",
               "fullCodeName" : "Calculator_Click7",
+              "mOSFilePath" : "psappdeuiactions/Click7",
               "name" : "Click7",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -603,6 +642,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/Click7",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "Click7",
@@ -610,6 +650,7 @@
               "enableConfirm" : true,
               "id" : "Click7@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button1",
             "tooltip" : "7",
             "showCaption" : true
           }, {
@@ -617,6 +658,7 @@
             "caption" : "8",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button2",
             "name" : "button2",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -635,6 +677,7 @@
               "caption" : "8",
               "codeName" : "Click8",
               "fullCodeName" : "Calculator_Click8",
+              "mOSFilePath" : "psappdeuiactions/Click8",
               "name" : "Click8",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -644,6 +687,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/Click8",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "Click8",
@@ -651,6 +695,7 @@
               "enableConfirm" : true,
               "id" : "Click8@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button2",
             "tooltip" : "8",
             "showCaption" : true
           }, {
@@ -658,6 +703,7 @@
             "caption" : "9",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button3",
             "name" : "button3",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -676,6 +722,7 @@
               "caption" : "9",
               "codeName" : "Click9",
               "fullCodeName" : "Calculator_Click9",
+              "mOSFilePath" : "psappdeuiactions/Click9",
               "name" : "Click9",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -685,6 +732,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/Click9",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "Click9",
@@ -692,6 +740,7 @@
               "enableConfirm" : true,
               "id" : "Click9@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button3",
             "tooltip" : "9",
             "showCaption" : true
           }, {
@@ -699,6 +748,7 @@
             "caption" : "/",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button4",
             "name" : "button4",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -717,6 +767,7 @@
               "caption" : "/",
               "codeName" : "ClickExcept",
               "fullCodeName" : "Calculator_ClickExcept",
+              "mOSFilePath" : "psappdeuiactions/ClickExcept",
               "name" : "ClickExcept",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -726,6 +777,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/ClickExcept",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "ClickExcept",
@@ -733,6 +785,7 @@
               "enableConfirm" : true,
               "id" : "ClickExcept@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button4",
             "tooltip" : "/",
             "showCaption" : true
           }, {
@@ -740,6 +793,7 @@
             "caption" : "4",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button5",
             "name" : "button5",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -758,6 +812,7 @@
               "caption" : "4",
               "codeName" : "Click4",
               "fullCodeName" : "Calculator_Click4",
+              "mOSFilePath" : "psappdeuiactions/Click4",
               "name" : "Click4",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -767,6 +822,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/Click4",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "Click4",
@@ -774,6 +830,7 @@
               "enableConfirm" : true,
               "id" : "Click4@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button5",
             "tooltip" : "4",
             "showCaption" : true
           }, {
@@ -781,6 +838,7 @@
             "caption" : "5",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button6",
             "name" : "button6",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -799,6 +857,7 @@
               "caption" : "5",
               "codeName" : "Click5",
               "fullCodeName" : "Calculator_Click5",
+              "mOSFilePath" : "psappdeuiactions/Click5",
               "name" : "Click5",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -808,6 +867,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/Click5",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "Click5",
@@ -815,6 +875,7 @@
               "enableConfirm" : true,
               "id" : "Click5@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button6",
             "tooltip" : "5",
             "showCaption" : true
           }, {
@@ -822,6 +883,7 @@
             "caption" : "6",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button7",
             "name" : "button7",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -840,6 +902,7 @@
               "caption" : "6",
               "codeName" : "Click6",
               "fullCodeName" : "Calculator_Click6",
+              "mOSFilePath" : "psappdeuiactions/Click6",
               "name" : "Click6",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -849,6 +912,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/Click6",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "Click6",
@@ -856,6 +920,7 @@
               "enableConfirm" : true,
               "id" : "Click6@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button7",
             "tooltip" : "6",
             "showCaption" : true
           }, {
@@ -863,6 +928,7 @@
             "caption" : "*",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button8",
             "name" : "button8",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -881,6 +947,7 @@
               "caption" : "*",
               "codeName" : "ClickMultiply",
               "fullCodeName" : "Calculator_ClickMultiply",
+              "mOSFilePath" : "psappdeuiactions/ClickMultiply",
               "name" : "ClickMultiply",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -890,6 +957,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/ClickMultiply",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "ClickMultiply",
@@ -897,6 +965,7 @@
               "enableConfirm" : true,
               "id" : "ClickMultiply@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button8",
             "tooltip" : "*",
             "showCaption" : true
           }, {
@@ -904,6 +973,7 @@
             "caption" : "1",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button9",
             "name" : "button9",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -922,6 +992,7 @@
               "caption" : "1",
               "codeName" : "Click1",
               "fullCodeName" : "Calculator_Click1",
+              "mOSFilePath" : "psappdeuiactions/Click1",
               "name" : "Click1",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -931,6 +1002,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/Click1",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "Click1",
@@ -938,6 +1010,7 @@
               "enableConfirm" : true,
               "id" : "Click1@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button9",
             "tooltip" : "1",
             "showCaption" : true
           }, {
@@ -945,6 +1018,7 @@
             "caption" : "2",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button10",
             "name" : "button10",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -963,6 +1037,7 @@
               "caption" : "2",
               "codeName" : "Click2",
               "fullCodeName" : "Calculator_Click2",
+              "mOSFilePath" : "psappdeuiactions/Click2",
               "name" : "Click2",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -972,6 +1047,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/Click2",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "Click2",
@@ -979,6 +1055,7 @@
               "enableConfirm" : true,
               "id" : "Click2@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button10",
             "tooltip" : "2",
             "showCaption" : true
           }, {
@@ -986,6 +1063,7 @@
             "caption" : "3",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button11",
             "name" : "button11",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -1004,6 +1082,7 @@
               "caption" : "3",
               "codeName" : "Click3",
               "fullCodeName" : "Calculator_Click3",
+              "mOSFilePath" : "psappdeuiactions/Click3",
               "name" : "Click3",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -1013,6 +1092,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/Click3",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "Click3",
@@ -1020,6 +1100,7 @@
               "enableConfirm" : true,
               "id" : "Click3@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button11",
             "tooltip" : "3",
             "showCaption" : true
           }, {
@@ -1027,6 +1108,7 @@
             "caption" : "+",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button12",
             "name" : "button12",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -1045,6 +1127,7 @@
               "caption" : "+",
               "codeName" : "ClickPlus",
               "fullCodeName" : "Calculator_ClickPlus",
+              "mOSFilePath" : "psappdeuiactions/ClickPlus",
               "name" : "ClickPlus",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -1054,6 +1137,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/ClickPlus",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "ClickPlus",
@@ -1061,6 +1145,7 @@
               "enableConfirm" : true,
               "id" : "ClickPlus@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button12",
             "tooltip" : "+",
             "showCaption" : true
           }, {
@@ -1068,6 +1153,7 @@
             "caption" : ".",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button13",
             "name" : "button13",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -1086,6 +1172,7 @@
               "caption" : ".",
               "codeName" : "ClickPoint",
               "fullCodeName" : "Calculator_ClickPoint",
+              "mOSFilePath" : "psappdeuiactions/ClickPoint",
               "name" : "ClickPoint",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -1095,6 +1182,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/ClickPoint",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "ClickPoint",
@@ -1102,6 +1190,7 @@
               "enableConfirm" : true,
               "id" : "ClickPoint@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button13",
             "tooltip" : ".",
             "showCaption" : true
           }, {
@@ -1109,6 +1198,7 @@
             "caption" : "0",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button14",
             "name" : "button14",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -1127,6 +1217,7 @@
               "caption" : "0",
               "codeName" : "Click0",
               "fullCodeName" : "Calculator_Click0",
+              "mOSFilePath" : "psappdeuiactions/Click0",
               "name" : "Click0",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -1136,6 +1227,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/Click0",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "Click0",
@@ -1143,6 +1235,7 @@
               "enableConfirm" : true,
               "id" : "Click0@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button14",
             "tooltip" : "0",
             "showCaption" : true
           }, {
@@ -1150,6 +1243,7 @@
             "caption" : "=",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button15",
             "name" : "button15",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -1168,6 +1262,7 @@
               "caption" : "=",
               "codeName" : "ClickEq",
               "fullCodeName" : "Calculator_ClickEq",
+              "mOSFilePath" : "psappdeuiactions/ClickEq",
               "name" : "ClickEq",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -1177,6 +1272,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/ClickEq",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "ClickEq",
@@ -1184,6 +1280,7 @@
               "enableConfirm" : true,
               "id" : "ClickEq@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button15",
             "tooltip" : "=",
             "showCaption" : true
           }, {
@@ -1191,6 +1288,7 @@
             "caption" : "-",
             "itemStyle" : "DEFAULT",
             "itemType" : "BUTTON",
+            "mOSFilePath" : "pssysviewpanelitem_buttons/button16",
             "name" : "button16",
             "getPSAppViewUIAction" : {
               "modelref" : true,
@@ -1209,6 +1307,7 @@
               "caption" : "-",
               "codeName" : "ClickMinus",
               "fullCodeName" : "Calculator_ClickMinus",
+              "mOSFilePath" : "psappdeuiactions/ClickMinus",
               "name" : "ClickMinus",
               "getPSAppDEMethod" : {
                 "modelref" : true,
@@ -1218,6 +1317,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
               },
+              "rTMOSFilePath" : "psappdeuiactions/ClickMinus",
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "ClickMinus",
@@ -1225,15 +1325,22 @@
               "enableConfirm" : true,
               "id" : "ClickMinus@Calculator"
             },
+            "rTMOSFilePath" : "pssysviewpanelitem_buttons/button16",
             "tooltip" : "-",
             "showCaption" : true
           } ],
-          "width" : 600.0
+          "rTMOSFilePath" : "pssysviewpanelitem_containers/container3",
+          "width" : 600.0,
+          "showCaption" : true
         } ],
         "getPSSysCss" : {
           "cssName" : "calc-border-css"
-        }
-      } ]
+        },
+        "rTMOSFilePath" : "pssysviewpanelitem_containers/container4",
+        "showCaption" : true
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
+      "showCaption" : true
     } ],
     "name" : "panel",
     "modelid" : "94E83FE5-E87B-41D0-A661-7D0970A03461",
@@ -1245,16 +1352,19 @@
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEPANELVIEW",
     "controlType" : "VIEWLAYOUTPANEL",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CALCULATOR/pssysviewlayoutpanels/Layoutpanel",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Calculator.json"
     },
     "getPSControlParam" : { },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CalculatorCalcPanelView/psappviewctrls/layoutpanel",
     "layoutBodyOnly" : true,
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CalculatorCalcPanelView",
   "title" : "计算器面板视图",
   "viewStyle" : "DEFAULT",
   "viewType" : "DEPANELVIEW",

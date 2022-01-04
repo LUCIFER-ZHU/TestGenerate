@@ -1,6 +1,7 @@
 {
   "codeName" : "LeaveApplicationv2",
   "dynaModelFilePath" : "PSMODULES/Sample/PSWORKFLOWS/LeaveApplication/PSWFVERSIONS/LeaveApplicationv2.json",
+  "mOSFilePath" : "psmodules/Sample/psworkflows/LeaveApplication/pswfversions/LeaveApplicationv2",
   "name" : "请假申请流程 v2",
   "getPSWFLinks" : [ {
     "getFromPSWFProcess" : {
@@ -45,6 +46,7 @@
     "height" : 80,
     "leftPos" : 388,
     "logicName" : "领导审批2",
+    "mOSFilePath" : "pswfprocesses/Interactive002",
     "msgType" : 0,
     "multiInstMode" : "NONE",
     "name" : "领导审批2",
@@ -52,6 +54,7 @@
       "modelref" : true,
       "id" : "C6920"
     } ],
+    "rTMOSFilePath" : "pswfprocesses/Interactive002",
     "timeout" : -1,
     "topPos" : 74,
     "wFProcessType" : "INTERACTIVE",
@@ -65,11 +68,13 @@
     "height" : 30,
     "leftPos" : 168,
     "logicName" : "提交流程",
+    "mOSFilePath" : "pswfprocesses/Start001",
     "name" : "提交流程",
     "getPSWFLinks" : [ {
       "modelref" : true,
       "id" : "连接34"
     } ],
+    "rTMOSFilePath" : "pswfprocesses/Start001",
     "timeout" : -1,
     "topPos" : 99,
     "wFProcessType" : "START",
@@ -82,7 +87,9 @@
     "height" : 30,
     "leftPos" : 533,
     "logicName" : "处理",
+    "mOSFilePath" : "pswfprocesses/End001",
     "name" : "处理",
+    "rTMOSFilePath" : "pswfprocesses/End001",
     "timeout" : -1,
     "topPos" : 100,
     "wFProcessType" : "END",
@@ -95,6 +102,7 @@
     "height" : 80,
     "leftPos" : 243,
     "logicName" : "组长审批2",
+    "mOSFilePath" : "pswfprocesses/Interactive001",
     "msgType" : 0,
     "multiInstMode" : "NONE",
     "name" : "组长审批2",
@@ -102,6 +110,7 @@
       "modelref" : true,
       "id" : "C9196"
     } ],
+    "rTMOSFilePath" : "pswfprocesses/Interactive001",
     "timeout" : -1,
     "topPos" : 74,
     "wFProcessType" : "INTERACTIVE",
@@ -111,6 +120,7 @@
     "enableTimeout" : false,
     "sendInform" : false
   } ],
+  "rTMOSFilePath" : "psmodules/Sample/psworkflows/LeaveApplication/pswfversions/LeaveApplicationv2",
   "getStartPSWFProcess" : {
     "modelref" : true,
     "id" : "Start001"

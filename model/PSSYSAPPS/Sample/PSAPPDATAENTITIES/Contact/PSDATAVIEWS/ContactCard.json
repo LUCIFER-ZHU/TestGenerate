@@ -38,20 +38,31 @@
     "dynaModelFilePath" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact/PSPANELS/ContactCard.json",
     "layoutMode" : "TABLE_24COL",
     "logicName" : "联系人卡片项布局面板",
+    "mOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/pssysviewpanels/ContactCard",
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact.json"
     },
     "getPSControlParam" : { },
     "getPSLayout" : {
+      "childColLG" : -1,
+      "childColMD" : 24,
+      "childColSM" : -1,
+      "childColXS" : -1,
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CONTACTDataView/psappviewctrls/itemlayoutpanel",
     "getRootPSPanelItems" : [ {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container1",
       "name" : "container1",
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -64,6 +75,7 @@
       "getPSPanelItems" : [ {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/image",
         "name" : "image",
         "getPSEditor" : {
           "editorParams" : {
@@ -79,15 +91,23 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/image",
         "viewFieldName" : "IMAGE",
         "hidden" : false,
         "showCaption" : false
-      } ]
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container1",
+      "showCaption" : true
     }, {
       "itemStyle" : "DEFAULT",
       "itemType" : "CONTAINER",
+      "mOSFilePath" : "pssysviewpanelitem_containers/container4",
       "name" : "container4",
       "getPSLayout" : {
+        "childColLG" : -1,
+        "childColMD" : 24,
+        "childColSM" : -1,
+        "childColXS" : -1,
         "columnCount" : 24,
         "layout" : "TABLE_24COL"
       },
@@ -100,6 +120,7 @@
       "getPSPanelItems" : [ {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/contactname",
         "name" : "contactname",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -110,12 +131,14 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/contactname",
         "viewFieldName" : "CONTACTNAME",
         "hidden" : false,
         "showCaption" : false
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/post",
         "name" : "post",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -126,12 +149,14 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/post",
         "viewFieldName" : "POST",
         "hidden" : false,
         "showCaption" : false
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/mobile",
         "name" : "mobile",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -142,12 +167,14 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/mobile",
         "viewFieldName" : "MOBILE",
         "hidden" : false,
         "showCaption" : false
       }, {
         "itemStyle" : "DEFAULT",
         "itemType" : "FIELD",
+        "mOSFilePath" : "pssysviewpanelitem_fields/email",
         "name" : "email",
         "getPSEditor" : {
           "editorType" : "SPAN",
@@ -158,16 +185,20 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "rTMOSFilePath" : "pssysviewpanelitem_fields/email",
         "viewFieldName" : "EMAIL",
         "hidden" : false,
         "showCaption" : false
-      } ]
+      } ],
+      "rTMOSFilePath" : "pssysviewpanelitem_containers/container4",
+      "showCaption" : true
     } ],
     "name" : "itemlayoutpanel",
     "modelid" : "CB039FFF-B12E-4269-9387-106DDD734007",
     "modeltype" : "PSSYSVIEWPANEL"
   },
   "logicName" : "联系人卡片",
+  "mOSFilePath" : "psmodules/Sample/psdataentities/CONTACT/psdedataviews/ContactCard",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Sample/PSAPPDATAENTITIES/Contact.json"
@@ -290,6 +321,7 @@
     "enableSort" : true
   } ],
   "pagingSize" : 20,
+  "rTMOSFilePath" : "pssysapps/Sample/psappdeviews/CONTACTDataView/psappviewctrls/dataview",
   "getRemovePSControlAction" : {
     "modelref" : true,
     "id" : "remove"
