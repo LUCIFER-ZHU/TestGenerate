@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="cn.ibizlab.sample.core.sample.mapper.ActivityMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="ActivityResultMap" type="cn.ibizlab.sample.core.sample.domain.Activity" autoMapping="true">
+		<id property="activityId" column="activityid" /><!--主键字段映射-->
+		<result property="customerId" column="customerid" />
+        <association property="customer" javaType="cn.ibizlab.sample.core.sample.domain.Customer" column="customerid" select="cn.ibizlab.sample.core.sample.mapper.CustomerMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+    <select id="selectById"  resultMap="ActivityResultMap">
+        <include refid="view" /> 
+         where 
+         t1.activityid=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="cn.ibizlab.sample.core.sample.domain.Activity" resultMap="ActivityResultMap">
+        <include refid="view" /> 
+         where 
+         (activityid = #{ activityId })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="ActivityResultMap">
+        <include refid="view" /> 
+         where 
+         (activityid)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.activityId }) </foreach>)
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`ACTIVITYID`, t1.`ACTIVITYNAME`, t1.`ACTIVITYTYPE`, t1.`BEGINTIME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`DEPTID`, t1.`DESCRIPTION`, t1.`ENDTIME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ACTIVITY` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`  
+        ]]>    
+    </sql>
+
+    <sql id="email" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`ACTIVITYID`, t1.`ACTIVITYNAME`, t1.`ACTIVITYTYPE`, t1.`BEGINTIME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`DEPTID`, t1.`DESCRIPTION`, t1.`ENDTIME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ACTIVITY` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`   where ( t1.`ACTIVITYTYPE` = 'Email' )
+        ]]>    
+    </sql>
+
+    <sql id="meeting" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`ACTIVITYID`, t1.`ACTIVITYNAME`, t1.`ACTIVITYTYPE`, t1.`BEGINTIME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`DEPTID`, t1.`DESCRIPTION`, t1.`ENDTIME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ACTIVITY` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`   where ( t1.`ACTIVITYTYPE` = 'Meeting' )
+        ]]>    
+    </sql>
+
+    <sql id="other" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`ACTIVITYID`, t1.`ACTIVITYNAME`, t1.`ACTIVITYTYPE`, t1.`BEGINTIME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`DEPTID`, t1.`DESCRIPTION`, t1.`ENDTIME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ACTIVITY` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`   where ( t1.`ACTIVITYTYPE` = 'Other' )
+        ]]>    
+    </sql>
+
+    <sql id="phone" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`ACTIVITYID`, t1.`ACTIVITYNAME`, t1.`ACTIVITYTYPE`, t1.`BEGINTIME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`DEPTID`, t1.`DESCRIPTION`, t1.`ENDTIME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ACTIVITY` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`   where ( t1.`ACTIVITYTYPE` = 'Phone' )
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`ACTIVITYID`, t1.`ACTIVITYNAME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ACTIVITY` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`ACTIVITYID`, t1.`ACTIVITYNAME`, t1.`ACTIVITYTYPE`, t1.`BEGINTIME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`DEPTID`, t1.`DESCRIPTION`, t1.`ENDTIME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ACTIVITY` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.ActivitySearchContext"  resultType="ActivityResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="searchEmail"  parameterType="cn.ibizlab.sample.core.sample.filter.ActivitySearchContext"  resultType="ActivityResultMap">
+        select t1.* 
+        from (
+            <include refid="email"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="searchMeeting"  parameterType="cn.ibizlab.sample.core.sample.filter.ActivitySearchContext"  resultType="ActivityResultMap">
+        select t1.* 
+        from (
+            <include refid="meeting"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="searchOther"  parameterType="cn.ibizlab.sample.core.sample.filter.ActivitySearchContext"  resultType="ActivityResultMap">
+        select t1.* 
+        from (
+            <include refid="other"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="searchPhone"  parameterType="cn.ibizlab.sample.core.sample.filter.ActivitySearchContext"  resultType="ActivityResultMap">
+        select t1.* 
+        from (
+            <include refid="phone"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="selectByCustomerId" resultMap="ActivityResultMap">
+        <include refid="default" />
+         where 
+        customerid = #{ customerId }
+    </select>
+
+
+</mapper>

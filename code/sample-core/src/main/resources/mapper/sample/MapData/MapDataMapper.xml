@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="cn.ibizlab.sample.core.sample.mapper.MapDataMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="MapDataResultMap" type="cn.ibizlab.sample.core.sample.domain.MapData" autoMapping="true">
+		<id property="mapDataId" column="mapdataid" /><!--主键字段映射-->
+    </resultMap>
+
+    <select id="selectById"  resultMap="MapDataResultMap">
+        <include refid="view" /> 
+         where 
+         t1.mapdataid=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="cn.ibizlab.sample.core.sample.domain.MapData" resultMap="MapDataResultMap">
+        <include refid="view" /> 
+         where 
+         (mapdataid = #{ mapDataId })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="MapDataResultMap">
+        <include refid="view" /> 
+         where 
+         (mapdataid)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.mapDataId }) </foreach>)
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`GROUPING`, t1.`LATITUDE`, t1.`LONGITUDE`, t1.`MAPDATACODE`, t1.`MAPDATAID`, t1.`MAPDATANAME`, t1.`ORGID`, t1.`SORTVALUE`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_MAPDATA` t1  
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`MAPDATAID`, t1.`MAPDATANAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_MAPDATA` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`GROUPING`, t1.`LATITUDE`, t1.`LONGITUDE`, t1.`MAPDATACODE`, t1.`MAPDATAID`, t1.`MAPDATANAME`, t1.`ORGID`, t1.`SORTVALUE`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_MAPDATA` t1  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.MapDataSearchContext"  resultType="MapDataResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+
+</mapper>

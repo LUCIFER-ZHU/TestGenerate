@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="cn.ibizlab.sample.core.sample.mapper.OrgDataMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="OrgDataResultMap" type="cn.ibizlab.sample.core.sample.domain.OrgData" autoMapping="true">
+		<id property="orgDataId" column="orgdataid" /><!--主键字段映射-->
+		<result property="porgdataid" column="porgdataid" />
+        <association property="pOrgData" javaType="cn.ibizlab.sample.core.sample.domain.OrgData" column="porgdataid" select="cn.ibizlab.sample.core.sample.mapper.OrgDataMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+    <select id="selectById"  resultMap="OrgDataResultMap">
+        <include refid="view" /> 
+         where 
+         t1.orgdataid=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="cn.ibizlab.sample.core.sample.domain.OrgData" resultMap="OrgDataResultMap">
+        <include refid="view" /> 
+         where 
+         (orgdataid = #{ orgDataId })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="OrgDataResultMap">
+        <include refid="view" /> 
+         where 
+         (orgdataid)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.orgDataId }) </foreach>)
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ORGDATACODE`, t1.`ORGDATAID`, t1.`ORGDATANAME`, t1.`ORGID`, t1.`PORGDATAID`, t11.`ORGDATANAME` AS `PORGDATANAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORGDATA` t1  LEFT JOIN `T_ORGDATA` t11 ON t1.`PORGDATAID` = t11.`ORGDATAID`  
+        ]]>    
+    </sql>
+
+    <sql id="porgdata" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ORGDATACODE`, t1.`ORGDATAID`, t1.`ORGDATANAME`, t1.`ORGID`, t1.`PORGDATAID`, t11.`ORGDATANAME` AS `PORGDATANAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORGDATA` t1  LEFT JOIN `T_ORGDATA` t11 ON t1.`PORGDATAID` = t11.`ORGDATAID`   where ( t1.`PORGDATAID` IS NULL )
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ORGDATAID`, t1.`ORGDATANAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORGDATA` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ORGDATACODE`, t1.`ORGDATAID`, t1.`ORGDATANAME`, t1.`ORGID`, t1.`PORGDATAID`, t11.`ORGDATANAME` AS `PORGDATANAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORGDATA` t1  LEFT JOIN `T_ORGDATA` t11 ON t1.`PORGDATAID` = t11.`ORGDATAID`  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.OrgDataSearchContext"  resultType="OrgDataResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="searchPorgdata"  parameterType="cn.ibizlab.sample.core.sample.filter.OrgDataSearchContext"  resultType="OrgDataResultMap">
+        select t1.* 
+        from (
+            <include refid="porgdata"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="selectByPorgdataid" resultMap="OrgDataResultMap">
+        <include refid="default" />
+         where 
+        porgdataid = #{ porgdataid }
+    </select>
+
+
+</mapper>

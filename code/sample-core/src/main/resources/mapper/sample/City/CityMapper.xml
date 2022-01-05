@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="cn.ibizlab.sample.core.sample.mapper.CityMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="CityResultMap" type="cn.ibizlab.sample.core.sample.domain.City" autoMapping="true">
+		<id property="cityId" column="cityid" /><!--主键字段映射-->
+		<result property="provinceId" column="provinceid" />
+        <association property="province" javaType="cn.ibizlab.sample.core.sample.domain.Province" column="provinceid" select="cn.ibizlab.sample.core.sample.mapper.ProvinceMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+    <select id="selectById"  resultMap="CityResultMap">
+        <include refid="view" /> 
+         where 
+         t1.cityid=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="cn.ibizlab.sample.core.sample.domain.City" resultMap="CityResultMap">
+        <include refid="view" /> 
+         where 
+         (cityid = #{ cityId })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="CityResultMap">
+        <include refid="view" /> 
+         where 
+         (cityid)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.cityId }) </foreach>)
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CITYID`, t1.`CITYNAME`, t1.`CODE`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`MEMO`, t1.`PROVINCEID`, t11.`PROVINCENAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_CITY` t1  LEFT JOIN `T_PROVINCE` t11 ON t1.`PROVINCEID` = t11.`PROVINCEID`  
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CITYID`, t1.`CITYNAME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_CITY` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CITYID`, t1.`CITYNAME`, t1.`CODE`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`MEMO`, t1.`PROVINCEID`, t11.`PROVINCENAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_CITY` t1  LEFT JOIN `T_PROVINCE` t11 ON t1.`PROVINCEID` = t11.`PROVINCEID`  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.CitySearchContext"  resultType="CityResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="selectByProvinceId" resultMap="CityResultMap">
+        <include refid="default" />
+         where 
+        provinceid = #{ provinceId }
+    </select>
+
+
+</mapper>

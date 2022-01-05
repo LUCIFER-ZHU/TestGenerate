@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="cn.ibizlab.sample.core.sample.mapper.ChartDataMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="ChartDataResultMap" type="cn.ibizlab.sample.core.sample.domain.ChartData" autoMapping="true">
+		<id property="chartDataId" column="chartdataid" /><!--主键字段映射-->
+    </resultMap>
+
+    <select id="selectById"  resultMap="ChartDataResultMap">
+        <include refid="view" /> 
+         where 
+         t1.chartdataid=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="cn.ibizlab.sample.core.sample.domain.ChartData" resultMap="ChartDataResultMap">
+        <include refid="view" /> 
+         where 
+         (chartdataid = #{ chartDataId })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="ChartDataResultMap">
+        <include refid="view" /> 
+         where 
+         (chartdataid)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.chartDataId }) </foreach>)
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`BEGINTIME`, t1.`CHARTDATAID`, t1.`CHARTDATANAME`, t1.`CHARTDATANO`, t1.`CHARTDATE`, t1.`CLOSE`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATA`, t1.`DATATYPE`, t1.`DATETIME`, t1.`DEPTID`, t1.`ENDTIME`, t1.`HIGHEST`, t1.`IMAGEPATH`, t1.`LATITUDE`, t1.`LONGITUDE`, t1.`LOWEST`, t1.`MONTH`, t1.`OPEN`, t1.`ORGID`, t1.`PLANINCOME`, t1.`REALINCOME`, t1.`SEASON`, t1.`TOTALPRICE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`YEAR` FROM `T_CHARTDATA` t1  
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CHARTDATAID`, t1.`CHARTDATANAME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_CHARTDATA` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`BEGINTIME`, t1.`CHARTDATAID`, t1.`CHARTDATANAME`, t1.`CHARTDATANO`, t1.`CHARTDATE`, t1.`CLOSE`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATA`, t1.`DATATYPE`, t1.`DATETIME`, t1.`DEPTID`, t1.`ENDTIME`, t1.`HIGHEST`, t1.`IMAGEPATH`, t1.`INFOMESSAGE`, t1.`LATITUDE`, t1.`LONGITUDE`, t1.`LOWEST`, t1.`MONTH`, t1.`OPEN`, t1.`ORGID`, t1.`PLANINCOME`, t1.`REALINCOME`, t1.`SEASON`, t1.`TOTALPRICE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`YEAR` FROM `T_CHARTDATA` t1  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.ChartDataSearchContext"  resultType="ChartDataResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+
+</mapper>

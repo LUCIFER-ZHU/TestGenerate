@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="cn.ibizlab.sample.core.sample.mapper.EditorValueMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="EditorValueResultMap" type="cn.ibizlab.sample.core.sample.domain.EditorValue" autoMapping="true">
+		<id property="editorValueId" column="editorvalueid" /><!--主键字段映射-->
+		<result property="datepickerexNoday" column="datepickerex_noday" />
+		<result property="datepickerexNodayNosecond" column="datepickerex_noday_nosecond" />
+		<result property="datepickerexSecond" column="datepickerex_second" />
+		<result property="datepickerexMinute" column="datepickerex_minute" />
+		<result property="datepickerexHour" column="datepickerex_hour" />
+		<result property="datepickerexNotime" column="datepickerex_notime" />
+		<result property="customerId" column="customerid" />
+		<result property="customerid2" column="customerid2" />
+		<result property="customerid3" column="customerid3" />
+		<result property="customerid4" column="customerid4" />
+		<result property="customerid5" column="customerid5" />
+        <association property="customer" javaType="cn.ibizlab.sample.core.sample.domain.Customer" column="customerid" select="cn.ibizlab.sample.core.sample.mapper.CustomerMapper.selectById" fetchType="lazy"></association>
+        <association property="no2Customer" javaType="cn.ibizlab.sample.core.sample.domain.Customer" column="customerid2" select="cn.ibizlab.sample.core.sample.mapper.CustomerMapper.selectById" fetchType="lazy"></association>
+        <association property="no3Customer" javaType="cn.ibizlab.sample.core.sample.domain.Customer" column="customerid3" select="cn.ibizlab.sample.core.sample.mapper.CustomerMapper.selectById" fetchType="lazy"></association>
+        <association property="no4Customer" javaType="cn.ibizlab.sample.core.sample.domain.Customer" column="customerid4" select="cn.ibizlab.sample.core.sample.mapper.CustomerMapper.selectById" fetchType="lazy"></association>
+        <association property="no5Customer" javaType="cn.ibizlab.sample.core.sample.domain.Customer" column="customerid5" select="cn.ibizlab.sample.core.sample.mapper.CustomerMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+    <select id="selectById"  resultMap="EditorValueResultMap">
+        <include refid="view" /> 
+         where 
+         t1.editorvalueid=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="cn.ibizlab.sample.core.sample.domain.EditorValue" resultMap="EditorValueResultMap">
+        <include refid="view" /> 
+         where 
+         (editorvalueid = #{ editorValueId })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="EditorValueResultMap">
+        <include refid="view" /> 
+         where 
+         (editorvalueid)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.editorValueId }) </foreach>)
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`AC`, t1.`CHECKBOX`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t1.`CUSTOMERID2`, t1.`CUSTOMERID3`, t1.`CUSTOMERID4`, t1.`CUSTOMERID5`, t11.`CUSTOMERNAME`, t21.`CUSTOMERNAME` AS `CUSTOMERNAME2`, t31.`CUSTOMERNAME` AS `CUSTOMERNAME3`, t41.`CUSTOMERNAME` AS `CUSTOMERNAME4`, t51.`CUSTOMERNAME` AS `CUSTOMERNAME5`, t1.`DATEPICKER`, t1.`DATEPICKEREX_HOUR`, t1.`DATEPICKEREX_MINUTE`, t1.`DATEPICKEREX_NODAY`, t1.`DATEPICKEREX_NODAY_NOSECOND`, t1.`DATEPICKEREX_NOTIME`, t1.`DATEPICKEREX_SECOND`, t1.`DEPTID`, t1.`DROPDOWNLIST`, t1.`EDITORVALUEID`, t1.`EDITORVALUENAME`, t1.`MDROPDOWNLIST`, t1.`NUMBERVAL`, t1.`ORGID`, t1.`RATING`, t1.`SLIDER`, t1.`STEPPER`, t1.`SWITCHVAL`, t1.`TEXTBOX`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_EDITORVALUE` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`  LEFT JOIN `T_CUSTOMER` t21 ON t1.`CUSTOMERID2` = t21.`CUSTOMERID`  LEFT JOIN `T_CUSTOMER` t31 ON t1.`CUSTOMERID3` = t31.`CUSTOMERID`  LEFT JOIN `T_CUSTOMER` t41 ON t1.`CUSTOMERID4` = t41.`CUSTOMERID`  LEFT JOIN `T_CUSTOMER` t51 ON t1.`CUSTOMERID5` = t51.`CUSTOMERID`  
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`EDITORVALUEID`, t1.`EDITORVALUENAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_EDITORVALUE` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`AC`, t1.`CHECKBOX`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t1.`CUSTOMERID2`, t1.`CUSTOMERID3`, t1.`CUSTOMERID4`, t1.`CUSTOMERID5`, t11.`CUSTOMERNAME`, t21.`CUSTOMERNAME` AS `CUSTOMERNAME2`, t31.`CUSTOMERNAME` AS `CUSTOMERNAME3`, t41.`CUSTOMERNAME` AS `CUSTOMERNAME4`, t51.`CUSTOMERNAME` AS `CUSTOMERNAME5`, t1.`DATEPICKER`, t1.`DATEPICKEREX_HOUR`, t1.`DATEPICKEREX_MINUTE`, t1.`DATEPICKEREX_NODAY`, t1.`DATEPICKEREX_NODAY_NOSECOND`, t1.`DATEPICKEREX_NOTIME`, t1.`DATEPICKEREX_SECOND`, t1.`DEPTID`, t1.`DROPDOWNLIST`, t1.`EDITORVALUEID`, t1.`EDITORVALUENAME`, t1.`MDROPDOWNLIST`, t1.`NUMBERVAL`, t1.`ORGID`, t1.`RATING`, t1.`SLIDER`, t1.`STEPPER`, t1.`SWITCHVAL`, t1.`TEXTBOX`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_EDITORVALUE` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`  LEFT JOIN `T_CUSTOMER` t21 ON t1.`CUSTOMERID2` = t21.`CUSTOMERID`  LEFT JOIN `T_CUSTOMER` t31 ON t1.`CUSTOMERID3` = t31.`CUSTOMERID`  LEFT JOIN `T_CUSTOMER` t41 ON t1.`CUSTOMERID4` = t41.`CUSTOMERID`  LEFT JOIN `T_CUSTOMER` t51 ON t1.`CUSTOMERID5` = t51.`CUSTOMERID`  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.EditorValueSearchContext"  resultType="EditorValueResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="selectByCustomerId" resultMap="EditorValueResultMap">
+        <include refid="default" />
+         where 
+        customerid = #{ customerId }
+    </select>
+
+    <select id="selectByCustomerid2" resultMap="EditorValueResultMap">
+        <include refid="default" />
+         where 
+        customerid2 = #{ customerid2 }
+    </select>
+
+    <select id="selectByCustomerid3" resultMap="EditorValueResultMap">
+        <include refid="default" />
+         where 
+        customerid3 = #{ customerid3 }
+    </select>
+
+    <select id="selectByCustomerid4" resultMap="EditorValueResultMap">
+        <include refid="default" />
+         where 
+        customerid4 = #{ customerid4 }
+    </select>
+
+    <select id="selectByCustomerid5" resultMap="EditorValueResultMap">
+        <include refid="default" />
+         where 
+        customerid5 = #{ customerid5 }
+    </select>
+
+
+</mapper>

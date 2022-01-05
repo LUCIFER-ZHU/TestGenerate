@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="cn.ibizlab.sample.core.sample.mapper.OrderMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="OrderResultMap" type="cn.ibizlab.sample.core.sample.domain.Order" autoMapping="true">
+		<id property="orderId" column="orderid" /><!--主键字段映射-->
+		<result property="customerId" column="customerid" />
+        <association property="customer" javaType="cn.ibizlab.sample.core.sample.domain.Customer" column="customerid" select="cn.ibizlab.sample.core.sample.mapper.CustomerMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+    <select id="selectById"  resultMap="OrderResultMap">
+        <include refid="view" /> 
+         where 
+         t1.orderid=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="cn.ibizlab.sample.core.sample.domain.Order" resultMap="OrderResultMap">
+        <include refid="view" /> 
+         where 
+         (orderid = #{ orderId })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="OrderResultMap">
+        <include refid="view" /> 
+         where 
+         (orderid)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.orderId }) </foreach>)
+    </select>
+
+    <sql id="admin" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`AMOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`ORDERDATE`, t1.`ORDERID`, t1.`ORDERNAME`, t1.`STATE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORDER` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`   where ( t1.`CREATEMAN` = #{ctx.sessioncontext.srfpersonid} )
+        ]]>    
+    </sql>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`AMOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`ORDERDATE`, t1.`ORDERID`, t1.`ORDERNAME`, t1.`STATE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORDER` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`  
+        ]]>    
+    </sql>
+
+    <sql id="finished" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`AMOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`ORDERDATE`, t1.`ORDERID`, t1.`ORDERNAME`, t1.`STATE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORDER` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`   where ( t1.`STATE` = '30' )
+        ]]>    
+    </sql>
+
+    <sql id="paying" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`AMOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`ORDERDATE`, t1.`ORDERID`, t1.`ORDERNAME`, t1.`STATE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORDER` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`   where ( t1.`STATE` = '20' )
+        ]]>    
+    </sql>
+
+    <sql id="processing" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`AMOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`ORDERDATE`, t1.`ORDERID`, t1.`ORDERNAME`, t1.`STATE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORDER` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`   where ( t1.`STATE` = '10' )
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`ORDERID`, t1.`ORDERNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORDER` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`AMOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`ORDERDATE`, t1.`ORDERID`, t1.`ORDERNAME`, t1.`STATE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_ORDER` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.OrderSearchContext"  resultType="OrderResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="searchGroup"  parameterType="cn.ibizlab.sample.core.sample.filter.OrderSearchContext"  resultType="OrderResultMap">
+        select t1.* 
+        from (
+            <include refid="finished"/>
+                 union all 
+            <include refid="paying"/>
+                 union all 
+            <include refid="processing"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="searchPaying"  parameterType="cn.ibizlab.sample.core.sample.filter.OrderSearchContext"  resultType="OrderResultMap">
+        select t1.* 
+        from (
+            <include refid="paying"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="searchProcessing"  parameterType="cn.ibizlab.sample.core.sample.filter.OrderSearchContext"  resultType="OrderResultMap">
+        select t1.* 
+        from (
+            <include refid="processing"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="selectByCustomerId" resultMap="OrderResultMap">
+        <include refid="default" />
+         where 
+        customerid = #{ customerId }
+    </select>
+
+
+</mapper>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="cn.ibizlab.sample.core.sample.mapper.ContactMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="ContactResultMap" type="cn.ibizlab.sample.core.sample.domain.Contact" autoMapping="true">
+		<id property="contactId" column="contactid" /><!--主键字段映射-->
+		<result property="customerId" column="customerid" />
+        <association property="customer" javaType="cn.ibizlab.sample.core.sample.domain.Customer" column="customerid" select="cn.ibizlab.sample.core.sample.mapper.CustomerMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+    <select id="selectById"  resultMap="ContactResultMap">
+        <include refid="view" /> 
+         where 
+         t1.contactid=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="cn.ibizlab.sample.core.sample.domain.Contact" resultMap="ContactResultMap">
+        <include refid="view" /> 
+         where 
+         (contactid = #{ contactId })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="ContactResultMap">
+        <include refid="view" /> 
+         where 
+         (contactid)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.contactId }) </foreach>)
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CONTACTID`, t1.`CONTACTNAME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`DEPTID`, t1.`EMAIL`, t1.`IMAGE`, t1.`MOBILE`, t1.`ORGID`, t1.`PHONE`, t1.`POST`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_CONTACT` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`  
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CONTACTID`, t1.`CONTACTNAME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_CONTACT` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CONTACTID`, t1.`CONTACTNAME`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`DEPTID`, t1.`EMAIL`, t1.`IMAGE`, t1.`MOBILE`, t1.`ORGID`, t1.`PHONE`, t1.`POST`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_CONTACT` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.ContactSearchContext"  resultType="ContactResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="selectByCustomerId" resultMap="ContactResultMap">
+        <include refid="default" />
+         where 
+        customerid = #{ customerId }
+    </select>
+
+
+</mapper>
