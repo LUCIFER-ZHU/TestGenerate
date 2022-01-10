@@ -1,18 +1,38 @@
+import { IParam } from '@core';
 import { ProductCategoryServiceBase } from './product-category-service-base';
 
 /**
- * ${appEntity.getLogicName()}服务
+ * 产品类别服务
  *
  * @export
  * @class ProductCategoryService
  * @extends ProductCategoryServiceBase
  */
 export class ProductCategoryService extends ProductCategoryServiceBase {
+
+    /**
+     * 基础数据服务实例
+     * 
+     * @private
+     * @type { ProductCategoryService }
+     * @memberof ProductCategoryService
+     */
+    private static basicDataServiceInstance: ProductCategoryService;
+
+    /**
+     * 数据服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof ProductCategoryService
+     */
+    private static dataServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of ProductCategoryService.
      * @memberof ProductCategoryService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class ProductCategoryService extends ProductCategoryServiceBase {
      * @return {*}  { ProductCategoryService }
      * @memberof ProductCategoryService
      */
-    static getInstance(context?: any): ProductCategoryService {
-        return new ProductCategoryService({ context: context });
+    static getInstance(opts?: IParam): ProductCategoryService {
+        if (!this.basicDataServiceInstance) {
+            this.basicDataServiceInstance = new ProductCategoryService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicDataServiceInstance;
+        } else {
+            if (!ProductCategoryService.dataServiceMap.get(opts.srfdynainstid)) {
+                ProductCategoryService.dataServiceMap.set(opts.srfdynainstid, new ProductCategoryService(opts));
+            }
+            return ProductCategoryService.dataServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default ProductCategoryService;

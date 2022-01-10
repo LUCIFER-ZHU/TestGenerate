@@ -40,11 +40,11 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="示例版本基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="示例版本基本信息">
     <div class="app-form-layout-flex" style="flex-direction: column;">
 <a-col
  >
-  <IbizFormItem name="samplevername" label="标题">
+  <IbizFormItem v-show="state.detailsModel.samplevername.visible" name="samplevername" label="标题">
 <IbizSpan
   name="samplevername"
   dataType="25"
@@ -55,7 +55,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
 </a-col>
 <a-col
  >
-  <IbizFormItem name="content" label="内容">
+  <IbizFormItem v-show="state.detailsModel.content.visible" name="content" label="内容">
 <IbizRaw
   name="content"
   :date="state.data"

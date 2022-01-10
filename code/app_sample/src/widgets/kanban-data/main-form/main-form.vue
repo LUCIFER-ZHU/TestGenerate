@@ -35,7 +35,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     :model="state.data" 
     :rules="state.rules">
     <a-tabs class="ibiz-form-page">
-<a-tab-pane key="formpage1" tab="基本信息">
+<a-tab-pane v-show="state.detailsModel.formpage1.visible" key="formpage1" tab="基本信息">
   <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -43,7 +43,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="看板数据基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="看板数据基本信息">
     <a-row>
 <a-col
   :lg="{span: 12, offset: 0 }"
@@ -51,7 +51,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="kanbandataname" label="任务名称">
+  <IbizFormItem v-show="state.detailsModel.kanbandataname.visible" name="kanbandataname" label="任务名称">
 <IbizInput
   name="kanbandataname"
   :maxLength="200"
@@ -68,7 +68,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="taskstatus" label="任务状态">
+  <IbizFormItem v-show="state.detailsModel.taskstatus.visible" name="taskstatus" label="任务状态">
 <IbizDropdownList
   name="taskstatus"
   :data="state.data"
@@ -85,7 +85,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="begintime" label="开始时间">
+  <IbizFormItem v-show="state.detailsModel.begintime.visible" name="begintime" label="开始时间">
 <IbizDatePicker
   name="begintime"
   dateFormat="YYYY-MM-DD HH:mm:ss"
@@ -101,7 +101,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="endtime" label="结束时间">
+  <IbizFormItem v-show="state.detailsModel.endtime.visible" name="endtime" label="结束时间">
 <IbizDatePicker
   name="endtime"
   dateFormat="YYYY-MM-DD HH:mm:ss"
@@ -117,7 +117,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="memo" label="备注">
+  <IbizFormItem v-show="state.detailsModel.memo.visible" name="memo" label="备注">
 <IbizInput
   name="memo"
   :maxLength="1000"
@@ -133,7 +133,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
 </a-col>
   </a-row>
 </a-tab-pane>
-<a-tab-pane key="formpage2" tab="其它">
+<a-tab-pane v-show="state.detailsModel.formpage2.visible" key="formpage2" tab="其它">
   <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -141,7 +141,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group2" title="操作信息">
+  <IbizFormGroup v-show="state.detailsModel.group2.visible" name="group2" title="操作信息">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -149,7 +149,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="createman" label="建立人">
+  <IbizFormItem v-show="state.detailsModel.createman.visible" name="createman" label="建立人">
 <IbizSpan
   name="createman"
   dataType="25"
@@ -164,7 +164,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="createdate" label="建立时间">
+  <IbizFormItem v-show="state.detailsModel.createdate.visible" name="createdate" label="建立时间">
 <IbizSpan
   name="createdate"
   dataType="5"
@@ -179,7 +179,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="updateman" label="更新人">
+  <IbizFormItem v-show="state.detailsModel.updateman.visible" name="updateman" label="更新人">
 <IbizSpan
   name="updateman"
   dataType="25"
@@ -194,7 +194,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="updatedate" label="更新时间">
+  <IbizFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" label="更新时间">
 <IbizSpan
   name="updatedate"
   dataType="5"

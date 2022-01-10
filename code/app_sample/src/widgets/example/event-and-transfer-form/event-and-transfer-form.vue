@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="示例基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="示例基本信息">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -48,7 +48,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="examplename" label="名称">
+  <IbizFormItem v-show="state.detailsModel.examplename.visible" name="examplename" label="名称">
 <IbizInput
   name="examplename"
   :maxLength="200"
@@ -65,7 +65,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="fieldx" label="X值">
+  <IbizFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" label="X值">
 <IbizInput
   name="fieldx"
   type="text"
@@ -81,7 +81,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="fieldy" label="Y值">
+  <IbizFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" label="Y值">
 <IbizInput
   name="fieldy"
   type="text"
@@ -97,7 +97,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="fieldz" label="Z值">
+  <IbizFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" label="Z值">
 <IbizInput
   name="fieldz"
   type="text"

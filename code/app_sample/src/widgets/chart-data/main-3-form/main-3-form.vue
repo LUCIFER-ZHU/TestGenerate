@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="grouppanel1" title="单项选择">
+  <IbizFormGroup v-show="state.detailsModel.grouppanel1.visible" name="grouppanel1" title="单项选择">
     <a-row>
 <a-col
   :lg="{span: 12, offset: 0 }"
@@ -48,13 +48,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 12, offset: 0 }"
  >
-  <IbizFormItem name="formitem" label="单项选择表格">
+  <IbizFormItem v-show="state.detailsModel.formitem.visible" name="formitem" label="单项选择表格">
 <IbizDataPicker
   name="formitem"
   :data="state.data"
   valueItem="formitem1"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :noAC="true"
   :value="state.data.formitem"
   @editorEvent="handleEditorEvent"
@@ -66,7 +67,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem1" label="值项">
+  <IbizFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" label="值项">
 <IbizSpan
   name="formitem1"
   dataType="25"
@@ -81,13 +82,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 12, offset: 0 }"
  >
-  <IbizFormItem name="formitem2" label="单选选择树">
+  <IbizFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" label="单选选择树">
 <IbizDataPicker
   name="formitem2"
   :data="state.data"
   valueItem="formitem3"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :noAC="true"
   :value="state.data.formitem2"
   @editorEvent="handleEditorEvent"
@@ -99,7 +101,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 12, offset: 0 }"
  >
-  <IbizFormItem name="formitem3" label="值项">
+  <IbizFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" label="值项">
 <IbizSpan
   name="formitem3"
   dataType="25"
@@ -114,13 +116,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem4" label="树导航（列表）">
+  <IbizFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" label="树导航（列表）">
 <IbizDataPicker
   name="formitem4"
   :data="state.data"
   valueItem="formitem5"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :noAC="true"
   :value="state.data.formitem4"
   @editorEvent="handleEditorEvent"
@@ -132,7 +135,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem5" label="值项">
+  <IbizFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" label="值项">
 <IbizSpan
   name="formitem5"
   dataType="25"
@@ -147,13 +150,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem6" label="单项选择列表">
+  <IbizFormItem v-show="state.detailsModel.formitem6.visible" name="formitem6" label="单项选择列表">
 <IbizDataPicker
   name="formitem6"
   :data="state.data"
   valueItem="formitem7"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :noAC="true"
   :value="state.data.formitem6"
   @editorEvent="handleEditorEvent"
@@ -165,7 +169,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem7" label="值项">
+  <IbizFormItem v-show="state.detailsModel.formitem7.visible" name="formitem7" label="值项">
 <IbizSpan
   name="formitem7"
   dataType="25"
@@ -180,13 +184,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem8" label="单选卡片">
+  <IbizFormItem v-show="state.detailsModel.formitem8.visible" name="formitem8" label="单选卡片">
 <IbizDataPicker
   name="formitem8"
   :data="state.data"
   valueItem="formitem9"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :noAC="true"
   :value="state.data.formitem8"
   @editorEvent="handleEditorEvent"
@@ -198,7 +203,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem9" label="值项">
+  <IbizFormItem v-show="state.detailsModel.formitem9.visible" name="formitem9" label="值项">
 <IbizSpan
   name="formitem9"
   dataType="25"
@@ -213,13 +218,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem10" label="树导航（卡片）">
+  <IbizFormItem v-show="state.detailsModel.formitem10.visible" name="formitem10" label="树导航（卡片）">
 <IbizDataPicker
   name="formitem10"
   :data="state.data"
   valueItem="formitem11"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :noAC="true"
   :value="state.data.formitem10"
   @editorEvent="handleEditorEvent"
@@ -231,7 +237,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem11" label="值项">
+  <IbizFormItem v-show="state.detailsModel.formitem11.visible" name="formitem11" label="值项">
 <IbizSpan
   name="formitem11"
   dataType="25"
@@ -246,13 +252,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem12" label="树导航（表格）">
+  <IbizFormItem v-show="state.detailsModel.formitem12.visible" name="formitem12" label="树导航（表格）">
 <IbizDataPicker
   name="formitem12"
   :data="state.data"
   valueItem="formitem13"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :noAC="true"
   :value="state.data.formitem12"
   @editorEvent="handleEditorEvent"
@@ -264,7 +271,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem13" label="值项">
+  <IbizFormItem v-show="state.detailsModel.formitem13.visible" name="formitem13" label="值项">
 <IbizSpan
   name="formitem13"
   dataType="25"
@@ -279,7 +286,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem14" label="表单项a">
+  <IbizFormItem v-show="state.detailsModel.formitem14.visible" name="formitem14" label="表单项a">
 <IbizInput
   name="formitem14"
   type="text"
@@ -295,7 +302,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem15" label="表单项b">
+  <IbizFormItem v-show="state.detailsModel.formitem15.visible" name="formitem15" label="表单项b">
 <IbizInput
   name="formitem15"
   type="text"

@@ -1,18 +1,38 @@
+import { IParam } from '@core';
 import { LeaveApplicationServiceBase } from './leave-application-service-base';
 
 /**
- * ${appEntity.getLogicName()}服务
+ * 请假申请服务
  *
  * @export
  * @class LeaveApplicationService
  * @extends LeaveApplicationServiceBase
  */
 export class LeaveApplicationService extends LeaveApplicationServiceBase {
+
+    /**
+     * 基础数据服务实例
+     * 
+     * @private
+     * @type { LeaveApplicationService }
+     * @memberof LeaveApplicationService
+     */
+    private static basicDataServiceInstance: LeaveApplicationService;
+
+    /**
+     * 数据服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof LeaveApplicationService
+     */
+    private static dataServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of LeaveApplicationService.
      * @memberof LeaveApplicationService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class LeaveApplicationService extends LeaveApplicationServiceBase {
      * @return {*}  { LeaveApplicationService }
      * @memberof LeaveApplicationService
      */
-    static getInstance(context?: any): LeaveApplicationService {
-        return new LeaveApplicationService({ context: context });
+    static getInstance(opts?: IParam): LeaveApplicationService {
+        if (!this.basicDataServiceInstance) {
+            this.basicDataServiceInstance = new LeaveApplicationService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicDataServiceInstance;
+        } else {
+            if (!LeaveApplicationService.dataServiceMap.get(opts.srfdynainstid)) {
+                LeaveApplicationService.dataServiceMap.set(opts.srfdynainstid, new LeaveApplicationService(opts));
+            }
+            return LeaveApplicationService.dataServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default LeaveApplicationService;

@@ -1,4 +1,4 @@
-import { deepCopy, FormControlProps, FormControlState, IActionParam, MainControl } from '@core';
+import { deepCopy, FormControlProps, FormControlState, IActionParam, IParam, MainControl, UIUtil, verifyValue } from '@core';
 
 /**
  * @description 表单部件
@@ -16,21 +16,49 @@ export class FormControl extends MainControl {
   public declare controlState: FormControlState;
 
   /**
-   * 在表单数据改变（单一属性变化）时被调用。会依次执行以下逻辑：
+   * @description 检验表单动态逻辑
+   * @param {IParam} data 表单数据
+   * @param {IParam} logic 动态逻辑
+   * @return {*} 
+   * @memberof FormControl
+   */
+  public verifyGroupLogic(data: IParam, logic: IParam) {
+    if (logic.logicType == 'GROUP' && logic.logics?.length > 0) {
+      let result: boolean = true;
+      if (logic.groupOP == 'AND') {
+        const falseItem = logic.logics.find((childLogic: IParam)=> {
+          return !this.verifyGroupLogic(data, childLogic);
+        })
+        result = falseItem ? false : true;
+      } else if (logic.groupOP == 'OR') {
+        const trueItem = logic.logics.find((childLogic: IParam)=> {
+          return this.verifyGroupLogic(data, childLogic);
+        })
+        result = trueItem ? true : false;
+      }
+      // 是否取反
+      return logic.notMode ? !result : result;
+    } else if (logic.logicType == 'SINGLE') {
+      return verifyValue(data[logic.name], logic.condOP, logic.value);
+    }
+    return false;
+  }
+
+  /**
+   * @description 在表单数据改变（单一属性变化）时被调用。会依次执行以下逻辑：
    * 1. 重置项逻辑
    * 2. 表单项更新
    * 3. 动态控制逻辑
    * 4. 自动保存逻辑
-   *
-   * @param {string} name 属性名称
-   * @param {*} value 属性值
+   * @param {string} name 表单项名称
+   * @param {*} value 表单项值
    * @memberof FormControl
    */
   public formDataChange(name: string, value: any) {
     this.controlState.data[name] = value;
     this.resetFormData(name);
     // TODO 表单项更新
-    // TODO 动态控制逻辑
+    this.formDynamicLogic(name);
     // TODO 自动保存（可以单独做一个逻辑块，监听data的变化）
   }
 
@@ -40,62 +68,149 @@ export class FormControl extends MainControl {
    * @memberof FormControl
    */
   public resetFormData(name: string) {
-    const formItems: any[] = this.controlState.formDetails;
-    if (formItems && formItems.length > 0) {
-      for (const item of formItems) {
-          if (item.resetItemName && item.resetItemName == name) {
-              this.formDataChange( item.name, null);
-              if (item.valueItemName) {
-                  this.formDataChange(item.valueItemName, null);
-              }
-          }
+    const { detailsModel } = this.controlState;
+    Object.values(detailsModel).forEach((item: IParam) => {
+      if (item.resetItemName && Object.is(name, item.resetItemName)) {
+        this.formDataChange(item.name, null);
+        if (item.valueItemName) {
+          this.formDataChange(item.valueItemName, null);
+        }
       }
-    }
+    })
   }
 
   /**
-   * @description 动态显示逻辑
+   * @description 表单动态逻辑
+   * @param {string} name 表单项名称
    * @memberof FormControl
    */
-  public displayLogic(name: string) {
-    const formItems: any[] = this.controlState.formDetails;
-    // 表单动态逻辑
-  //   allFormDetails?.forEach((detail: IPSDEFormDetail) => {
-  //     detail.getPSDEFDGroupLogics()?.forEach((logic: IPSDEFDCatGroupLogic) => {
-  //         // todo lxm 缺少getRelatedDetailNames
-  //         let relatedNames = logic.getRelatedDetailNames() || [];
-  //         if (Object.is(name, '') || relatedNames.indexOf(name) != -1) {
-  //             let ret = this.verifyGroupLogic(this.data, logic);
-  //             switch (logic.logicCat) {
-  //                 // 动态空输入，不满足则必填
-  //                 case 'ITEMBLANK':
-  //                     this.detailsModel[detail.name].required = !ret;
-  //                     break;
-  //                 // 动态启用，满足则启用
-  //                 case 'ITEMENABLE':
-  //                     this.detailsModel[detail.name].setDisabled(!ret);
-  //                     break;
-  //                 // 动态显示，满足则显示
-  //                 case 'PANELVISIBLE':
-  //                     this.detailsModel[detail.name].setVisible(ret);
-  //                     break;
-  //             }
-  //         }
-  //     })
-  // })
+  public formDynamicLogic(name: string) {
+    const { data } = this.controlState;
+    const { detailsModel } = toRefs(this.controlState);
+    Object.values(detailsModel.value).forEach((item: IParam) => {
+      if (item.groupLogics?.length > 0) {
+        item.groupLogics.forEach((logic: IParam) => {
+          let relatedNames = logic.relatedDetailNames || [];
+          if (Object.is(name, '') || relatedNames.indexOf(name) != -1) {
+            let ret = this.verifyGroupLogic(data, logic);
+            switch (logic.logicCat) {
+              // 动态空输入，不满足则必填
+              case 'ITEMBLANK':
+                item.required = !ret;
+                break;
+              // 动态启用，满足则启用
+              case 'ITEMENABLE':
+                item.disabled = !ret;
+                break;
+              // 动态显示，满足则显示
+              case 'PANELVISIBLE':
+                item.visible = ret;
+                break;
+            }
+          }
+        });
+      }
+    });
   }
 
   /**
-   * 在表单执行某些行为能力后，表单整体数据发生改变后被调用。会依次执行以下逻辑：
-   * 1.
-   *
-   * @param {string} action 调用的表单行为方法
+   * @description 表单执行某些整体数据发生变化行为之后，依次执行以下逻辑
+   * 1.根据行为类型将主键合并到context中
+   * 2.设置新建默认值和更新默认值
+   * 4.计算行为权限状态
+   * 5.设置表单项启用
+   * 6.表单动态逻辑
+   * @param {string} action
+   * @memberof FormControl
    */
-  public afterFormLoad(action: string) {
-    // 改变context当前实体主键，并抛出抽屉脏值的事件
-    // TODO 设置表单项启用（如果可以响应式变化则不用处理）
-    // 新建默认值和更新默认值
-    // TODO 动态控制逻辑
+  public afterFormAction(action: string) {
+    const { appDeCodeName, data } = this.controlState;
+    const { context } = toRefs(this.controlState);
+    if (appDeCodeName) {
+      if (Object.is(action, 'save') || Object.is(action, 'autoSave') || Object.is(action, 'submit')) {
+        if (data[appDeCodeName]) {
+          Object.assign(context.value, { [appDeCodeName]: data[appDeCodeName] });
+        }
+      }
+    }
+    this.setDefaultValue(action);
+    this.calcActionAuthState();
+    this.setFormEnableCond();
+    this.formDynamicLogic('');
+  }
+
+  /**
+   * @description 设置表单启用项
+   * @memberof FormControl
+   */
+  public setFormEnableCond() {
+    const { data } = this.controlState;
+    const { detailsModel } = toRefs(this.controlState);
+    Object.values(detailsModel.value).forEach((item: IParam) => {
+      if (Object.is(item.detailType, 'FORMITEM')) {
+        switch (item.enableCond) {
+          case 0:
+            // 不启用 
+            item.disabled = false;
+            break;
+          case 1:
+            // 新建 
+            if (Object.is(data.srfuf, '0')) {
+              item.disabled = true;
+            } else {
+              item.disabled = false;
+            }
+            break;
+          case 2:
+            // 更新
+            if (Object.is(data.srfuf, '1')) {
+              item.disabled = true;
+            } else {
+              item.disabled = false;
+            }
+            break;
+          case 3:
+            // 启用
+            item.disabled = true;
+            break;
+          default:
+            break;
+        }
+      }
+    });
+  }
+
+  /**
+   * @description 计算行为权限状态
+   * @memberof FormControl
+   */
+  public calcActionAuthState() {
+    const { data, UIService, actionModel } = this.controlState;
+    const { detailsModel } = toRefs(this.controlState);
+    const tempModel = deepCopy(actionModel);
+    UIUtil.calcActionItemAuthState(data, tempModel, UIService);
+    Object.values(detailsModel.value).forEach((item: IParam) => {
+      if (Object.is(item.detailType, 'BUTTON') && item.uIActionTag) {
+        // 更新按钮的权限状态值
+        item.visible = tempModel[item.uIActionTag].visible;
+        item.disabled = tempModel[item.uIActionTag].disabled;
+        item.isPower = tempModel[item.uIActionTag].dataActionResult === 1 ? true : false;
+      } else if (Object.is(item.detailType, 'GROUPPANEL') && item.uIActionGroup?.details?.length > 0) {
+        // 更新分组面板界面行为组的权限状态值
+        item.uiActionGroup.details.forEach((actionDetail: any) => {
+          actionDetail.visible = tempModel[actionDetail.uIActionTag].visible;
+          actionDetail.disabled = tempModel[actionDetail.uIActionTag].disabled;
+        });
+      }
+    });
+  }
+  /**
+   * @description 设置默认值
+   * @param {string} action 表单行为
+   * @memberof FormControl
+   */
+  public setDefaultValue(action: string) {
+    // TODO 新建默认值和更新默认值
   }
 
   /**
@@ -115,15 +230,11 @@ export class FormControl extends MainControl {
      */
     const load = async (opt: any = {}) => {
       try {
-        // 获取需要的状态变量
-        const { controlService, context, viewParams, showBusyIndicator } = this.controlState;
-
-        // 判断实体行为
-        const loadAction = this.controlState.controlAction.loadAction;
-        if (!loadAction) {
+        const { controlService, context, viewParams, showBusyIndicator, controlAction } = this.controlState;
+        const { data } = toRefs(this.controlState);
+        if (!controlAction.loadAction) {
           return;
         }
-
         // 处理请求参数
         let _context = deepCopy(context);
         let _viewParams = deepCopy(viewParams);
@@ -132,17 +243,12 @@ export class FormControl extends MainControl {
         const response = await controlService.get(
           _context,
           { viewParams: _viewParams },
-          {
-            action: loadAction,
-            isLoading: showBusyIndicator,
-          },
+          { action: controlAction.loadAction, isLoading: showBusyIndicator },
         );
-        if (!response.status || response.status !== 200) {
-          return;
+        if (response.status && response.status == 200) {
+          data.value = response.data;
+          this.afterFormAction('load');
         }
-
-        // 请求后处理
-        this.controlState.data = response.data;
       } catch (error) {
         // TODO 错误异常处理
         console.log(error);

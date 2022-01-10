@@ -1,3 +1,4 @@
+import { IParam } from '@core';
 import { CounterDataUIServiceBase } from './counter-data-ui-service-base';
 
 /**
@@ -8,11 +9,30 @@ import { CounterDataUIServiceBase } from './counter-data-ui-service-base';
  * @extends CounterDataUIServiceBase
  */
 export class CounterDataUIService extends CounterDataUIServiceBase {
+
+    /**
+     * 基础UI服务实例
+     * 
+     * @private
+     * @type { CounterDataUIService }
+     * @memberof CounterDataUIService
+     */
+    private static basicUIServiceInstance: CounterDataUIService;
+
+    /**
+     * UI服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof CounterDataUIService
+     */
+    private static UIServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of CounterDataUIService.
      * @memberof CounterDataUIService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class CounterDataUIService extends CounterDataUIServiceBase {
      * @return {*}  { CounterDataUIService }
      * @memberof CounterDataUIService
      */
-    static getInstance(context?: any): CounterDataUIService {
-        return new CounterDataUIService({ context: context });
+    static getInstance(opts?: IParam): CounterDataUIService {
+         if (!this.basicUIServiceInstance) {
+            this.basicUIServiceInstance = new CounterDataUIService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicUIServiceInstance;
+        } else {
+            if (!CounterDataUIService.UIServiceMap.get(opts.srfdynainstid)) {
+                CounterDataUIService.UIServiceMap.set(opts.srfdynainstid, new CounterDataUIService(opts));
+            }
+            return CounterDataUIService.UIServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default CounterDataUIService;

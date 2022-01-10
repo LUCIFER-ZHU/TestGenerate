@@ -1,6 +1,7 @@
 import { IContext, IOpenViewService, IParam, RouteUtil, ViewDetail } from '@core';
 import router from '@/router';
 import { AppModal } from '@/utils';
+import { Subject } from 'rxjs';
 
 
 interface Params extends IParam {
@@ -13,7 +14,7 @@ interface Params extends IParam {
  * @export
  * @class OpenViewService
  */
-export class OpenViewService implements IOpenViewService{
+export class OpenViewService implements IOpenViewService {
   /**
    * 唯一实例
    *
@@ -40,7 +41,7 @@ export class OpenViewService implements IOpenViewService{
    * @param view 视图信息
    * @param params 相关参数
    */
-  public openView(view: ViewDetail, params: Params) {
+  public openView(view: ViewDetail, params: Params): Subject<any> | undefined {
     // 获取详细视图信息
     let _view: ViewDetail | undefined = App.getViewInfo(view.codeName);
     if (!_view) {
@@ -51,12 +52,11 @@ export class OpenViewService implements IOpenViewService{
     if (view.openMode) {
       _view.openMode = view.openMode;
     }
-
     // 重定向视图走重定向逻辑，其他根据openMode打开
     if (_view.redirectView) {
       this.openRedirectView(_view, params);
     } else {
-      this.openByOpenMode(_view, params);
+      return this.openByOpenMode(_view, params);
     }
   }
 
@@ -66,7 +66,7 @@ export class OpenViewService implements IOpenViewService{
    * @param view 视图信息
    * @param params 相关参数
    */
-  public openByOpenMode(view: ViewDetail, params: Params) {
+  public openByOpenMode(view: ViewDetail, params: Params): Subject<any> | undefined {
     const { openMode } = view;
     const { viewParams, context } = params;
     // 路由打开视图
@@ -78,8 +78,9 @@ export class OpenViewService implements IOpenViewService{
       } else {
         window.open('./#' + routePath, '_blank');
       }
+      return;
     } else if (openMode == 'POPUPMODAL') {
-      AppModal.getInstance().openModal(view, params);
+      return AppModal.getInstance().openModal(view, params);
     } else if (openMode?.indexOf('DRAWER') !== -1) {
       // TODO PMS上面抽屉DRAWER_TOP
     } else if (openMode == 'POPOVER') {

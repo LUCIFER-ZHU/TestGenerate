@@ -1,3 +1,4 @@
+import { IParam } from '@core';
 import { PersonDataUIServiceBase } from './person-data-ui-service-base';
 
 /**
@@ -8,11 +9,30 @@ import { PersonDataUIServiceBase } from './person-data-ui-service-base';
  * @extends PersonDataUIServiceBase
  */
 export class PersonDataUIService extends PersonDataUIServiceBase {
+
+    /**
+     * 基础UI服务实例
+     * 
+     * @private
+     * @type { PersonDataUIService }
+     * @memberof PersonDataUIService
+     */
+    private static basicUIServiceInstance: PersonDataUIService;
+
+    /**
+     * UI服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof PersonDataUIService
+     */
+    private static UIServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of PersonDataUIService.
      * @memberof PersonDataUIService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class PersonDataUIService extends PersonDataUIServiceBase {
      * @return {*}  { PersonDataUIService }
      * @memberof PersonDataUIService
      */
-    static getInstance(context?: any): PersonDataUIService {
-        return new PersonDataUIService({ context: context });
+    static getInstance(opts?: IParam): PersonDataUIService {
+         if (!this.basicUIServiceInstance) {
+            this.basicUIServiceInstance = new PersonDataUIService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicUIServiceInstance;
+        } else {
+            if (!PersonDataUIService.UIServiceMap.get(opts.srfdynainstid)) {
+                PersonDataUIService.UIServiceMap.set(opts.srfdynainstid, new PersonDataUIService(opts));
+            }
+            return PersonDataUIService.UIServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default PersonDataUIService;

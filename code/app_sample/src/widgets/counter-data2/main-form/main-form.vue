@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="计算器数据2基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="计算器数据2基本信息">
     <a-row>
 <a-col
   :lg="{span: 8, offset: 0 }"
@@ -48,7 +48,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="countertag" label="计数1">
+  <IbizFormItem v-show="state.detailsModel.countertag.visible" name="countertag" label="计数1">
 <IbizInput
   name="countertag"
   type="text"
@@ -64,7 +64,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="countertag2" label="计数2">
+  <IbizFormItem v-show="state.detailsModel.countertag2.visible" name="countertag2" label="计数2">
 <IbizInput
   name="countertag2"
   type="text"
@@ -80,7 +80,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="countertag3" label="计数3">
+  <IbizFormItem v-show="state.detailsModel.countertag3.visible" name="countertag3" label="计数3">
 <IbizInput
   name="countertag3"
   type="text"
@@ -96,7 +96,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="countertag4" label="计数4">
+  <IbizFormItem v-show="state.detailsModel.countertag4.visible" name="countertag4" label="计数4">
 <IbizInput
   name="countertag4"
   type="text"
@@ -112,7 +112,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="countertag5" label="计数5">
+  <IbizFormItem v-show="state.detailsModel.countertag5.visible" name="countertag5" label="计数5">
 <IbizInput
   name="countertag5"
   type="text"
@@ -128,7 +128,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="countertag6" label="计数6">
+  <IbizFormItem v-show="state.detailsModel.countertag6.visible" name="countertag6" label="计数6">
 <IbizInput
   name="countertag6"
   type="text"
@@ -144,7 +144,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="countertag7" label="计数7">
+  <IbizFormItem v-show="state.detailsModel.countertag7.visible" name="countertag7" label="计数7">
 <IbizInput
   name="countertag7"
   type="text"
@@ -160,7 +160,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="countertag8" label="计数8">
+  <IbizFormItem v-show="state.detailsModel.countertag8.visible" name="countertag8" label="计数8">
 <IbizInput
   name="countertag8"
   type="text"
@@ -176,7 +176,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="countertag9" label="计数9">
+  <IbizFormItem v-show="state.detailsModel.countertag9.visible" name="countertag9" label="计数9">
 <IbizInput
   name="countertag9"
   type="text"

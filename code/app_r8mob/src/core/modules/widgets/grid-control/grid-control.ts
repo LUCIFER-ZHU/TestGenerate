@@ -83,22 +83,21 @@ export class GridControl extends MainControl {
      */
     public autoGroup() {
         const { gridGroup } = this.controlState;
+        const { data, columnsModel } = toRefs(this.controlState);
         const { groupField } = gridGroup;
-        const dataRef = toRef(this.controlState, "data");
         let autoGroup: string[] = [];
-        dataRef.value.forEach((item: IParam) => {
+        data.value.forEach((item: IParam) => {
             if (item.hasOwnProperty(groupField)) {
                 autoGroup.push(item[groupField]);
             }
         })
         autoGroup = [...new Set(autoGroup)];
         if (autoGroup.length > 0) {
-            const columnsModelRef = toRef(this.controlState, "columnsModel");
-            const groupColumn = this.getGridColumn(columnsModelRef.value, "GROUP");
+            const groupColumn = this.getGridColumn(columnsModel.value, "GROUP");
             const gridData: IParam[] = [];
             autoGroup.forEach((group: string, index: number) => {
                 const children: IParam[] = [];
-                dataRef.value.forEach((item: IParam) => {
+                data.value.forEach((item: IParam) => {
                     if (Object.is(group, item[groupField])) {
                         children.push(item);
                     }
@@ -109,7 +108,7 @@ export class GridControl extends MainControl {
                     children: deepCopy(children),
                 })
             });
-            dataRef.value = gridData;
+            data.value = gridData;
         }
     }
 
@@ -119,18 +118,17 @@ export class GridControl extends MainControl {
      */
     public async codeListGroup() {
         const { gridGroup } = this.controlState;
+        const { data, columnsModel } = toRefs(this.controlState);
         const { groupField } = gridGroup;
-        const dataRef = toRef(this.controlState, "data");
         // TODO 代码表数据
         let codeListGroup: IParam[] = [];
         if (codeListGroup.length > 0) {
-            const columnsModelRef = toRef(this.controlState, "columnsModel");
-            const groupColumn = this.getGridColumn(columnsModelRef.value, "GROUP");
+            const groupColumn = this.getGridColumn(columnsModel.value, "GROUP");
             const gridData: IParam[] = [];
             const otherGroup: IParam[] = [];
             codeListGroup.forEach((group: IParam) => {
                 const children: IParam[] = [];
-                dataRef.value.forEach((item: IParam) => {
+                data.value.forEach((item: IParam) => {
                     if (Object.is(group.value, item[groupField])) {
                         children.push(item);
                     }
@@ -141,7 +139,7 @@ export class GridControl extends MainControl {
                     children: deepCopy(children),
                 })
             });
-            dataRef.value.forEach((item: IParam) => {
+            data.value.forEach((item: IParam) => {
                 const index: number = codeListGroup.findIndex((_item: IParam) => Object.is(item[groupField], _item.value));
                 if (index < 0) {
                     otherGroup.push(item);
@@ -154,7 +152,7 @@ export class GridControl extends MainControl {
                     children: deepCopy(otherGroup),
                 })
             }
-            dataRef.value = gridData;
+            data.value = gridData;
         }
     }
 
@@ -163,11 +161,10 @@ export class GridControl extends MainControl {
      * @memberof GridControl
      */
     public calcGridAuthState() {
-        const dataRef = toRef(this.controlState, "data");
-        const columnsModelRef = toRef(this.controlState, "columnsModel");
-        let columnModel = this.getGridColumn(columnsModelRef.value, "UAGRIDCOLUMN");
+        const { data, columnsModel } = toRefs(this.controlState);
+        let columnModel = this.getGridColumn(columnsModel.value, "UAGRIDCOLUMN");
         if (columnModel) {
-            dataRef.value.forEach((item: IParam) => {
+            data.value.forEach((item: IParam) => {
                 Object.assign(item, {
                     [columnModel.dataIndex]: this.getActionAuthState(item),
                 })
@@ -180,8 +177,8 @@ export class GridControl extends MainControl {
      * @memberof GridControl
      */
     public setGridColSpan() {
-        const columnsModelRef = toRef(this.controlState, "columnsModel");
-        columnsModelRef.value.forEach((columnModel: IParam) => {
+        const { columnsModel } = toRefs(this.controlState);
+        columnsModel.value.forEach((columnModel: IParam) => {
             const customRender = ({text, record, index, column}: IParam) => {
                 const option = {
                     props: {} as IParam,
@@ -189,7 +186,7 @@ export class GridControl extends MainControl {
                 if (record.children) {
                     if (Object.is(column.columnType, "GROUP")) {
                         Object.assign(option.props,{
-                            colSpan: columnsModelRef.value.length,
+                            colSpan: columnsModel.value.length,
                         });
                     } else {
                         Object.assign(option.props,{
@@ -283,12 +280,12 @@ export class GridControl extends MainControl {
      * @memberof GridControl
      */
     public async handleDataAgg() {
-        const { gridPaging, gridGroup } = this.controlState;
-        const gridAggRef = toRef(this.controlState, "gridAgg");
-        let { aggMode, aggData } = gridAggRef.value;
+        const { gridPaging, gridGroup, columnsModel } = this.controlState;
+        const { gridAgg } = toRefs(this.controlState);
+        let { aggMode, aggData } = gridAgg.value;
         const { enableGroup } = gridGroup;
         if (!Object.is(aggMode, "NONE")) {
-            const { enablePagingBar, current, pageSize} = gridPaging;
+            const { enablePagingBar, current, pageSize } = gridPaging;
             let dataAgg: IParam[] = [];
             if (Object.is(aggMode, "PAGE")) {
                 const dataRef = toRef(this.controlState, "data");
@@ -310,16 +307,16 @@ export class GridControl extends MainControl {
                 })
                 dataAgg = _dataAgg;
             }
-            const columnsModelRef = toRef(this.controlState, "columnsModel");
-            const columnsModel: IParam[] = [];
-            columnsModelRef.value.forEach((column: IParam) => {
+            const _columnsModel: IParam[] = [];
+            columnsModel.forEach((column: IParam) => {
                 if (!Object.is(column.columnType, "GROUPGRIDCOLUMN")) {
-                    columnsModel.push(column);
+                  _columnsModel.push(column);
                 }
             });
-            columnsModel.forEach((column: IParam) => {
+            _columnsModel.forEach((column: IParam) => {
+                console.log(this.getAggValue(dataAgg, column));
                 aggData.push(this.getAggValue(dataAgg, column))
-            })
+            });
         }
     }
 
@@ -328,23 +325,22 @@ export class GridControl extends MainControl {
      * @memberof GridControl
      */
     public handleDefaultSelect() {
-        const { selectedData, selectFirstDefault, controlName } = this.controlState;
+        const { selectedData, selectFirstDefault, controlName, data } = this.controlState;
+        const { selectedRowKeys } = toRefs(this.controlState);
         if (selectedData?.length > 0) {
-            const selectedRowKeys: string[] = [];
-            const selectedRowKeysRef = toRef(this.controlState, "selectedRowKeys");
+            const _selectedRowKeys: string[] = [];
             selectedData.forEach((selected: IParam) => {
                 if (selected.srfkey) {
-                    selectedRowKeys.push(selected.srfkey);
+                    _selectedRowKeys.push(selected.srfkey);
                 }
             });
-            selectedRowKeysRef.value = selectedRowKeys;
+            selectedRowKeys.value = _selectedRowKeys;
         } else if (selectFirstDefault) {
-            const dataRef = toRef(this.controlState, "data");
-            if (dataRef.value[0]) {
+            if (data[0]) {
                 this.emit("ctrlEvent", {
                     tag: controlName,
                     action: "selectionChange",
-                    data: [deepCopy(dataRef.value[0])],
+                    data: [deepCopy(data[0])],
                 });
             }
         }
@@ -356,37 +352,36 @@ export class GridControl extends MainControl {
      * @return {*}
      * @memberof GridControl
      */
-    public useLoad(props: GridControlProps){
+    public useLoad(props: GridControlProps) {
         const { viewSubject, controlName } = this.controlState;
-        const load = async (opt: any = {})=>{
+        const load = async (opt: any = {}) => {
             try {
                 const {
                     controlService, context, viewParams, showBusyIndicator, controlAction, gridSort
                 } = this.controlState;
-                const dataRef = toRef(this.controlState, "data");
-                const gridPagingRef = toRef(this.controlState, "gridPaging");
-                if(!controlAction.loadAction){
+                const { gridPaging, data } = toRefs(this.controlState);
+                if (!controlAction.fetchAction) {
                     return;
                 }
-                const { noSort, minorSortDir, minorSortPSDEF} = gridSort;
-                let { enablePagingBar, pagination, current, pageSize} = gridPagingRef.value;
+                const { noSort, minorSortDir, minorSortPSDEF } = gridSort;
+                let { enablePagingBar, pagination, current, pageSize } = gridPaging.value;
                 const arg: any = { ...opt };
                 let _context = deepCopy(context ? context : {});
-                let _viewParams = deepCopy(viewParams ? context : {});
+                let _viewParams = deepCopy(viewParams ? viewParams : {});
                 if (noSort && minorSortDir && minorSortPSDEF) {
-                    Object.assign(_viewParams, { sort: `${minorSortPSDEF},${minorSortDir}`});
+                    Object.assign(_viewParams, { sort: `${minorSortPSDEF},${minorSortDir}` });
                 }
                 if (enablePagingBar) {
-                    Object.assign(_viewParams, { page: current - 1, size: pageSize});
+                    Object.assign(_viewParams, { page: current - 1, size: pageSize });
                 }
-                Object.assign(arg, { viewParams: _viewParams });
+                Object.assign(arg, _viewParams);
                 const response = await controlService.get(
                     _context,
                     arg,
-                    { action: controlAction.loadAction, isLoading: showBusyIndicator}
+                    { action: controlAction.fetchAction, isLoading: showBusyIndicator }
                 );
                 if (response.status || response.status == 200) {
-                    dataRef.value = response.data;
+                    data.value = response.data;
                     if (enablePagingBar) {
                         pagination['total'] = response.total;
                     }
@@ -400,20 +395,18 @@ export class GridControl extends MainControl {
                 console.log(error);
             }
         }
-
         // 订阅viewSubject,监听load行为
-        if(viewSubject){
-            let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam)=>{
-                if(Object.is(controlName, tag) && Object.is("load", action) ){
+        if (viewSubject) {
+            let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam) => {
+                if (Object.is(controlName, tag) && Object.is("load", action)) {
                     load(data)
                 }
             })
             // 部件卸载时退订viewSubject
-            onUnmounted(()=>{
+            onUnmounted(() => {
                 subscription.unsubscribe();
             })
         }
-
         return {
             load: load
         }
@@ -487,26 +480,26 @@ export class GridControl extends MainControl {
         const remove = async (opt: IParam[] = []) => {
             try {
                 const { controlService, context, viewParams, showBusyIndicator, controlAction, appDeCodeName } = this.controlState;
+                const { data } = toRefs(this.controlState);
                 if (!controlAction.removeAction) {
                     return;
                 }
-                const dataRef = toRef(this.controlState, "data");
-                const data: IParam[] = [];
+                const _data: IParam[] = [];
                 opt.forEach((item: IParam, index: number) => {
                     if (Object.is(item.srfuf, "0")) {
-                        dataRef.value.some((val: any, num: number) => {
+                        data.value.some((val: any, num: number) => {
                             if (JSON.stringify(val) == JSON.stringify(item)) {
-                                dataRef.value.splice(num, 1);
+                                data.value.splice(num, 1);
                                 return true;
                             }
                         });
                     } else {
-                        data.push(opt[index]);
+                        _data.push(opt[index]);
                     }
                 });
-                if (data.length > 0) {
+                if (_data.length > 0) {
                     const keys: string[] = [];
-                    data.forEach((item: IParam) => {
+                    _data.forEach((item: IParam) => {
                         keys.push(item.srfkey);
                     });
                     const _removeAction = keys.length > 1 ? "removeBatch" : controlAction.removeAction;
@@ -561,10 +554,10 @@ export class GridControl extends MainControl {
         const newRow = async (opt: any = {}) => {
             try {
                 const { controlService, context, viewParams, showBusyIndicator, controlAction } = this.controlState;
+                const { data } = toRefs(this.controlState);
                 if (!controlAction.loadDraftAction) {
                     return;
                 }
-                const dataRef = toRef(this.controlState, "data");
                 let _context = deepCopy(context);
                 let _viewParams = deepCopy(viewParams);
                 const arg: any = {...opt};
@@ -575,7 +568,7 @@ export class GridControl extends MainControl {
                     { action: controlAction.loadDraftAction, isLoading: showBusyIndicator },
                 );
                 if (response.status || response.status == 200) {
-                    dataRef.value = [...dataRef.value,[response.data]];
+                  data.value = [...data.value,[response.data]];
                 }
             } catch (error) {
                 // TODO 错误异常处理
@@ -608,9 +601,8 @@ export class GridControl extends MainControl {
      */
     public useCustom(props: GridControlProps) {
         const { controlName, selectFirstDefault, rowEditState, rowActiveMode } = this.controlState;
-        const selectedRowKeysRef = toRef(this.controlState, "selectedRowKeys");
-        const gridPagingRef = toRef(this.controlState, "gridPaging");
-        let { current, pageSize } = gridPagingRef.value;
+        const { selectedRowKeys, gridPaging } = toRefs(this.controlState);
+        let { current, pageSize } = gridPaging.value;
         // 滚动条配置
         const scrollOption = computed(() => {
             return {
@@ -632,7 +624,7 @@ export class GridControl extends MainControl {
             return {
                 onClick: () => {
                     if (!rowEditState) {
-                        selectedRowKeysRef.value = [record.srfkey];
+                        selectedRowKeys.value = [record.srfkey];
                         if (!record.children) {
                             this.emit("ctrlEvent",{ tag: controlName, action: "selectionChange", data: [deepCopy(record)] })
                             if (Object.is(rowActiveMode, 1)) {
@@ -655,10 +647,10 @@ export class GridControl extends MainControl {
             }
             return {
                 columnWidth: 90,
-                selectedRowKeys: selectedRowKeysRef.value,
+                selectedRowKeys: selectedRowKeys.value,
                 checkStrictly: props.multiple ? false : true,
-                onChange: (selectedRowKeys: string[], selectedRows: IParam[]) => {
-                    selectedRowKeysRef.value = selectedRowKeys;
+                onChange: (_selectedRowKeys: string[], selectedRows: IParam[]) => {
+                    selectedRowKeys.value = _selectedRowKeys;
                     const selection: IParam[] = [];
                     selectedRows.forEach((select: IParam) => {
                         if (!select.children) {

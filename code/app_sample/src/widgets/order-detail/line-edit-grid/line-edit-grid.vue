@@ -68,6 +68,7 @@ const { scrollOption, rowKey, rowClassName, customRow, rowSelectionOption, resiz
   valueItem="productid"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :value="record.productname"
   @editorEvent="($event) => handleEditorEvent(index,$event)"
 />   </div>

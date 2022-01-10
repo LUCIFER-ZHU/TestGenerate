@@ -1,3 +1,4 @@
+import { IParam } from '@core';
 import { MapDataUIServiceBase } from './map-data-ui-service-base';
 
 /**
@@ -8,11 +9,30 @@ import { MapDataUIServiceBase } from './map-data-ui-service-base';
  * @extends MapDataUIServiceBase
  */
 export class MapDataUIService extends MapDataUIServiceBase {
+
+    /**
+     * 基础UI服务实例
+     * 
+     * @private
+     * @type { MapDataUIService }
+     * @memberof MapDataUIService
+     */
+    private static basicUIServiceInstance: MapDataUIService;
+
+    /**
+     * UI服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof MapDataUIService
+     */
+    private static UIServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of MapDataUIService.
      * @memberof MapDataUIService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class MapDataUIService extends MapDataUIServiceBase {
      * @return {*}  { MapDataUIService }
      * @memberof MapDataUIService
      */
-    static getInstance(context?: any): MapDataUIService {
-        return new MapDataUIService({ context: context });
+    static getInstance(opts?: IParam): MapDataUIService {
+         if (!this.basicUIServiceInstance) {
+            this.basicUIServiceInstance = new MapDataUIService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicUIServiceInstance;
+        } else {
+            if (!MapDataUIService.UIServiceMap.get(opts.srfdynainstid)) {
+                MapDataUIService.UIServiceMap.set(opts.srfdynainstid, new MapDataUIService(opts));
+            }
+            return MapDataUIService.UIServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default MapDataUIService;

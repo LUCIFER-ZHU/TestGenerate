@@ -1,3 +1,4 @@
+import { IParam } from '@core';
 import { EventUIServiceBase } from './event-ui-service-base';
 
 /**
@@ -8,11 +9,30 @@ import { EventUIServiceBase } from './event-ui-service-base';
  * @extends EventUIServiceBase
  */
 export class EventUIService extends EventUIServiceBase {
+
+    /**
+     * 基础UI服务实例
+     * 
+     * @private
+     * @type { EventUIService }
+     * @memberof EventUIService
+     */
+    private static basicUIServiceInstance: EventUIService;
+
+    /**
+     * UI服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof EventUIService
+     */
+    private static UIServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of EventUIService.
      * @memberof EventUIService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class EventUIService extends EventUIServiceBase {
      * @return {*}  { EventUIService }
      * @memberof EventUIService
      */
-    static getInstance(context?: any): EventUIService {
-        return new EventUIService({ context: context });
+    static getInstance(opts?: IParam): EventUIService {
+         if (!this.basicUIServiceInstance) {
+            this.basicUIServiceInstance = new EventUIService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicUIServiceInstance;
+        } else {
+            if (!EventUIService.UIServiceMap.get(opts.srfdynainstid)) {
+                EventUIService.UIServiceMap.set(opts.srfdynainstid, new EventUIService(opts));
+            }
+            return EventUIService.UIServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default EventUIService;

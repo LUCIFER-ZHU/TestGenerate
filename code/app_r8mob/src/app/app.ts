@@ -1,7 +1,9 @@
+import { Environment } from "@/environments/environment";
 import { OpenViewService } from "@/utils";
-import { AppBase, IParam, ViewDetail, IApp, IOpenViewService, deepCopy } from "@core";
-import { AppFuncConfig } from './app-func-config';
-import { AppViewConfig } from './app-view-config';
+import { AppBase, IParam, ViewDetail, IApp, IOpenViewService, deepCopy, getSessionStorage, Http, AppUtil } from "@core";
+import { SyncSeriesHook } from "qx-util";
+import { AppFuncConfig, AppViewConfig } from './config';
+import { DataServiceRegister, UIServiceRegister } from "./register";
 
 export class App extends AppBase implements IApp {
 
@@ -15,6 +17,27 @@ export class App extends AppBase implements IApp {
     private static readonly instance = new App();
 
     /**
+     *  HTTP服务类
+     *
+     * @protected
+     * @memberof App
+     */
+    protected http = Http.getInstance();
+
+    /**
+     * 执行钩子(包含获取租户前、获取租户后、获取应用数据前、获取应用数据后)
+     *
+     * @static
+     * @memberof App
+     */
+    public static hooks = {
+        dcSystemBefore: new SyncSeriesHook<[], { dcsystem: string }>(),
+        dcSystemAfter: new SyncSeriesHook<[], { dcsystem: string, data: any }>(),
+        appBefore: new SyncSeriesHook<[], { url: string, param: any }>(),
+        appAfter: new SyncSeriesHook<[], { data: any }>()
+    };
+
+    /**
      * 获取唯一实例
      *
      * @static
@@ -23,6 +46,34 @@ export class App extends AppBase implements IApp {
      */
     public static getInstance(): App {
         return App.instance;
+    }
+
+    /**
+     * 初始化应用权限
+     *
+     * @param {IParam} params 应用预置参数
+     * @return {*}  {Promise<any>}
+     * @memberof App
+     */
+    public async initAppAuth(params: IParam): Promise<any> {
+        let result = true;
+        if (Environment && Environment.SaaSMode) {
+            if (getSessionStorage('activeOrgData')) {
+                result = await AppUtil.getAppData(App.hooks, params);
+            } else {
+                result = await AppUtil.getOrgsByDcsystem(App.hooks);
+                if (result) {
+                    result = await AppUtil.getAppData(App.hooks, params);
+                }
+            }
+        } else {
+            result = await AppUtil.getAppData(App.hooks, params);
+        }
+        if (!result) {
+            // 登录
+        }
+        // TODO
+        return true;
     }
 
     /**
@@ -43,6 +94,30 @@ export class App extends AppBase implements IApp {
      */
     public getOpenViewService(): IOpenViewService {
         return OpenViewService.getInstance();
+    }
+
+    /**
+     * 获取UI服务
+     *
+     * @param {string} entityKey 应用实体名小写
+     * @param {*} context 应用上下文
+     * @return {Promise<any>}
+     * @memberof App
+     */
+    public getUIService(entityKey: string, context?: IParam): Promise<any> {
+        return UIServiceRegister.getInstance().getService(entityKey, context);
+    }
+
+    /**
+     * 获取数据服务
+     *
+     * @param {string} entityKey 应用实体名小写
+     * @param {*} context 应用上下文
+     * @return {Promise<any>}
+     * @memberof App
+     */
+    public getDataService(entityKey: string, context?: IParam): Promise<any> {
+        return DataServiceRegister.getInstance().getService(entityKey, context);
     }
 
     /**

@@ -1,4 +1,4 @@
-import { Http, EntityService } from '@core';
+import { IContext, IParam, EntityService } from '@core';
 
 /**
  * 活动服务对象基类
@@ -9,249 +9,212 @@ import { Http, EntityService } from '@core';
  */
 export class ActivityServiceBase extends EntityService {
   
-  constructor(opts?: any) {
-      super(opts);
-      // 初始化关系实体路径集合
-      this.deResPaths = [
-          [{"pathName":"customers","parameterName":"customer"},{"pathName":"activities","parameterName":"activity"}]
-      ]
-  }
-
-  protected SYSTEMNAME = '';
-  protected APPNAME = '';
-  protected APPDENAME = 'Activity';
-  protected APPDENAMEPLURAL = "Activity";
-
-
   /**
-    * CheckKey
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async CheckKey(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    return res;
-    //
-    //
+  * Creates an instance of ActivityServiceBase.
+  *
+  * @param {*} [opts={}]
+  * @memberof ActivityServiceBase
+  */
+  constructor(opts: IParam = {}) {
+      super(opts,'Activity');
   }
 
   /**
-    * Create
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async Create(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Get
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async Get(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.get(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * GetDraft
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async GetDraft(context: any = {}, viewParams: any = {}): Promise<any> {
-    viewParams[this.APPDENAME?.toLowerCase()] = undefined;
-    viewParams[this.APPDEKEY] = undefined;
-    let deResPath = this.buildDeResPath(context, false);
-    const res = await this.http.get(deResPath+'/', viewParams);
-    // TODO appentityexecuteafteractionlogic
-    // TODO @appentityexecuteafteractionlogic
-    // TODO 设置本地缓存 @setStore
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Remove
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async Remove(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.delete(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Save
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async Save(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Update
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async Update(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.put(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * FetchDefault
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async FetchDefault(context: any = {}, viewParams: any = {}): Promise<any> {
-    let deResPath = this.buildDeResPath(context, false);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    // TODO @executeafterbatchaction
-    return res;
-    //
-    //
-  }
-
-  /**
-    * FetchEmail
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async FetchEmail(context: any = {}, viewParams: any = {}): Promise<any> {
-    let deResPath = this.buildDeResPath(context, false);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    // TODO @executeafterbatchaction
-    return res;
-    //
-    //
-  }
-
-  /**
-    * FetchMeeting
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async FetchMeeting(context: any = {}, viewParams: any = {}): Promise<any> {
-    let deResPath = this.buildDeResPath(context, false);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    // TODO @executeafterbatchaction
-    return res;
-    //
-    //
-  }
-
-  /**
-    * FetchOther
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async FetchOther(context: any = {}, viewParams: any = {}): Promise<any> {
-    let deResPath = this.buildDeResPath(context, false);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    // TODO @executeafterbatchaction
-    return res;
-    //
-    //
-  }
-
-  /**
-    * FetchPhone
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async FetchPhone(context: any = {}, viewParams: any = {}): Promise<any> {
-    let deResPath = this.buildDeResPath(context, false);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    // TODO @executeafterbatchaction
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Select
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ActivityServiceBase
-    */
-  async Select(context: any = {}, viewParams: any = {}): Promise<any> {
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    return res;
-    //
-    //
+   * 初始化基础数据
+   *
+   * @protected
+   * @memberof ChartDataServiceBase
+   */
+  protected initBasicData() {
+    this.appEntityCodeName = 'activity';
+    this.appEntityCodeNames = 'activities';
+    // 初始化关系实体路径集合
+    this.deResPaths = [
+        [{"pathName":"customers","parameterName":"customer"},{"pathName":"activities","parameterName":"activity"}]
+    ]
   }
 
 
-}
+    /**
+      * CheckKey
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async CheckKey(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      this.beforeExecuteAction(context,data,'CheckKey');
+      const res = await this.http.post(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'CheckKey');
+      return res;
+    }
+    /**
+      * Create
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async Create(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      this.beforeExecuteAction(context,data,'Create');
+      const res = await this.http.post(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Create');
+      return res;
+    }
+    /**
+      * Get
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async Get(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'Get');
+      const res = await this.http.get(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Get');
+      return res;
+    }
+    /**
+      * GetDraft
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async GetDraft(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      this.beforeExecuteAction(context,data,'GetDraft');
+      const res = await this.http.get(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'GetDraft');
+      return res;
+    }
+    /**
+      * Remove
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async Remove(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'Remove');
+      const res = await this.http.delete(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Remove');
+      return res;
+    }
+    /**
+      * Save
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async Save(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'Save');
+      const res = await this.http.post(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Save');
+      return res;
+    }
+    /**
+      * Update
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async Update(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'Update');
+      const res = await this.http.put(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Update');
+      return res;
+    }
+    /**
+      * FetchDefault
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async FetchDefault(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      const res = await this.http.post(`${deResPath}`);
+      return res;
+    }
+    /**
+      * FetchEmail
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async FetchEmail(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      const res = await this.http.post(`${deResPath}`);
+      return res;
+    }
+    /**
+      * FetchMeeting
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async FetchMeeting(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      const res = await this.http.post(`${deResPath}`);
+      return res;
+    }
+    /**
+      * FetchOther
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async FetchOther(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      const res = await this.http.post(`${deResPath}`);
+      return res;
+    }
+    /**
+      * FetchPhone
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async FetchPhone(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      const res = await this.http.post(`${deResPath}`);
+      return res;
+    }
+    /**
+      * Select
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ActivityServiceBase
+      */
+    public async Select(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      const res = await this.http.post(`${deResPath}`,data);
+      return res;
+    }}

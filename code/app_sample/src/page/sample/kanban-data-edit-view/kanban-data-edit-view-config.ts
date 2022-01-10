@@ -4,16 +4,17 @@ export const ViewConfig = {
   viewCaption: '看板数据',
   height: '0',
   width: '0',
-  viewMsgGroup: '',
-  viewUIActions: '[net.ibizsys.model.app.view.PSAppViewUIActionImpl@2b8d084, net.ibizsys.model.app.view.PSAppViewUIActionImpl@6daf2337, net.ibizsys.model.app.view.PSAppViewUIActionImpl@24fabd0f, net.ibizsys.model.app.view.PSAppViewUIActionImpl@250b236d, net.ibizsys.model.app.view.PSAppViewUIActionImpl@61f3fbb8, net.ibizsys.model.app.view.PSAppViewUIActionImpl@7551da2a, net.ibizsys.model.app.view.PSAppViewUIActionImpl@432034a, net.ibizsys.model.app.view.PSAppViewUIActionImpl@78de58ea, net.ibizsys.model.app.view.PSAppViewUIActionImpl@60e5272, net.ibizsys.model.app.view.PSAppViewUIActionImpl@7d755813, net.ibizsys.model.app.view.PSAppViewUIActionImpl@69c93ca4, net.ibizsys.model.app.view.PSAppViewUIActionImpl@63da207f, net.ibizsys.model.app.view.PSAppViewUIActionImpl@173373b4, net.ibizsys.model.app.view.PSAppViewUIActionImpl@40d10481]',
+  appEntityName:'KanbanData',
   viewSysCss: '',
-  viewSysImage: '',
   subCaption: '',
   viewType: 'DEEDITVIEW',
   viewStyle: 'DEFAULT',
   showCaptionBar: 'DEFAULT',
   xDataControlName:'form',
-  viewToolbarModel: [
+  openDataViewName:'ExampleEditorEditView',
+  appViewNavContexts:{  },
+  appViewNavParams:{  },
+  toolbar: [
     { id:'toolbar_tbitem3',name:'tbitem3',caption:'保存',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'保存',disabled: false, visible: true, imgPath: '',iconClass: 'fa fa-save',xDataControlName:'form',uIAction:{codeName:'Save',fullCodeName:'Save',uIActionMode:'SYS',uIActionTag:'Save',uIActionType:'DEUIACTION'} },
     { id:'toolbar_tbitem4',name:'tbitem4',caption:'保存并新建',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'保存并新建',disabled: false, visible: true, imgPath: '',iconClass: 'sx-tb-saveandnew',xDataControlName:'form',uIAction:{codeName:'SaveAndNew',fullCodeName:'SaveAndNew',uIActionMode:'SYS',uIActionTag:'SaveAndNew',uIActionType:'DEUIACTION'} },
     { id:'toolbar_tbitem5',name:'tbitem5',caption:'保存并关闭',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'保存并关闭',disabled: false, visible: true, imgPath: '',iconClass: 'sx-tb-saveandclose',xDataControlName:'form',uIAction:{codeName:'SaveAndExit',fullCodeName:'SaveAndExit',uIActionMode:'SYS',uIActionTag:'SaveAndExit',uIActionType:'DEUIACTION'} },
@@ -37,6 +38,7 @@ export const ViewConfig = {
       removeAction: 'Remove',
       updateAction: 'Update',
       loadDraftAction: 'GetDraft',
-      createAction: 'GetDraft',
+      createAction: 'Create',
+      fetchAction:''
     },
   }};

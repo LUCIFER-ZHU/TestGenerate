@@ -133,9 +133,9 @@ export const CtrlConfig = {
     },
   },
   uAColumnModel:[
-    { name: "uc7c82c1", caption: "编辑", showIcon: true, showCaption: false, separator: false, uIActionTag: "Edit", noPrivDisplayMode: 6, disabled: false, visible: true, iconClass: "fa fa-edit", },
-    { name: "ue9dd53b", caption: "拷贝", showIcon: true, showCaption: false, separator: false, uIActionTag: "Copy", noPrivDisplayMode: 6, disabled: false, visible: true, iconClass: "fa fa-copy", },
-    { name: "u46863bf", caption: "删除", showIcon: true, showCaption: false, separator: false, uIActionTag: "Remove", noPrivDisplayMode: 6, disabled: false, visible: true, iconClass: "fa fa-remove", },
+    { name: "uc7c82c1", caption: "编辑", showIcon: true, showCaption: false, separator: false, uIActionTag: "Edit", noPrivDisplayMode: , dataAccessAction: '', actionTarget: 'SINGLEKEY', disabled: false, visible: true, iconClass: "fa fa-edit", },
+    { name: "ue9dd53b", caption: "拷贝", showIcon: true, showCaption: false, separator: false, uIActionTag: "Copy", noPrivDisplayMode: , dataAccessAction: '', actionTarget: 'SINGLEKEY', disabled: false, visible: true, iconClass: "fa fa-copy", },
+    { name: "u46863bf", caption: "删除", showIcon: true, showCaption: false, separator: false, uIActionTag: "Remove", noPrivDisplayMode: , dataAccessAction: '', actionTarget: 'MULTIKEY', disabled: false, visible: true, iconClass: "fa fa-remove", },
   ],
   columnsModel: [
     {

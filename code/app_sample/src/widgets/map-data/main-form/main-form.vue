@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="地图示例数据基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="地图示例数据基本信息">
     <a-row>
 <a-col
   :lg="{span: 12, offset: 0 }"
@@ -48,7 +48,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="mapdataname" label="名称">
+  <IbizFormItem v-show="state.detailsModel.mapdataname.visible" name="mapdataname" label="名称">
 <IbizInput
   name="mapdataname"
   :maxLength="200"
@@ -65,7 +65,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="mapdatacode" label="编码">
+  <IbizFormItem v-show="state.detailsModel.mapdatacode.visible" name="mapdatacode" label="编码">
 <IbizInput
   name="mapdatacode"
   type="text"
@@ -81,7 +81,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="longitude" label="经度">
+  <IbizFormItem v-show="state.detailsModel.longitude.visible" name="longitude" label="经度">
 <IbizInput
   name="longitude"
   type="text"
@@ -97,7 +97,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="latitude" label="纬度">
+  <IbizFormItem v-show="state.detailsModel.latitude.visible" name="latitude" label="纬度">
 <IbizInput
   name="latitude"
   type="text"
@@ -113,7 +113,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="sortvalue" label="排序值">
+  <IbizFormItem v-show="state.detailsModel.sortvalue.visible" name="sortvalue" label="排序值">
 <IbizInput
   name="sortvalue"
   type="text"
@@ -129,7 +129,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="grouping" label="分组">
+  <IbizFormItem v-show="state.detailsModel.grouping.visible" name="grouping" label="分组">
 <IbizInput
   name="grouping"
   :maxLength="100"
@@ -146,7 +146,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="type" label="类型">
+  <IbizFormItem v-show="state.detailsModel.type.visible" name="type" label="类型">
 <IbizDropdownList
   name="type"
   :data="state.data"

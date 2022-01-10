@@ -1,3 +1,4 @@
+import { IParam } from '@core';
 import { OrgDataUIServiceBase } from './org-data-ui-service-base';
 
 /**
@@ -8,11 +9,30 @@ import { OrgDataUIServiceBase } from './org-data-ui-service-base';
  * @extends OrgDataUIServiceBase
  */
 export class OrgDataUIService extends OrgDataUIServiceBase {
+
+    /**
+     * 基础UI服务实例
+     * 
+     * @private
+     * @type { OrgDataUIService }
+     * @memberof OrgDataUIService
+     */
+    private static basicUIServiceInstance: OrgDataUIService;
+
+    /**
+     * UI服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof OrgDataUIService
+     */
+    private static UIServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of OrgDataUIService.
      * @memberof OrgDataUIService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class OrgDataUIService extends OrgDataUIServiceBase {
      * @return {*}  { OrgDataUIService }
      * @memberof OrgDataUIService
      */
-    static getInstance(context?: any): OrgDataUIService {
-        return new OrgDataUIService({ context: context });
+    static getInstance(opts?: IParam): OrgDataUIService {
+         if (!this.basicUIServiceInstance) {
+            this.basicUIServiceInstance = new OrgDataUIService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicUIServiceInstance;
+        } else {
+            if (!OrgDataUIService.UIServiceMap.get(opts.srfdynainstid)) {
+                OrgDataUIService.UIServiceMap.set(opts.srfdynainstid, new OrgDataUIService(opts));
+            }
+            return OrgDataUIService.UIServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default OrgDataUIService;

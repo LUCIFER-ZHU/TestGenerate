@@ -1,5 +1,5 @@
-import { AppUIAction, IUIAction, UIServiceBase } from '@core';
-
+import { IParam, UIServiceBase } from '@core';
+import { AppFrontAction, AppBackendAction } from '@core';
 /**
  * 产品UI服务对象基类
  *
@@ -15,11 +15,12 @@ export class ProductUIServiceBase extends UIServiceBase {
     * @param {*} [opts={}]
     * @memberof ProductUIServiceBase
     */
-  constructor(opts: any = {}) {
+  constructor(opts: IParam = {}) {
       super(opts);
   }
 
 
 
+   public uiActionModes = {     };
 
 }

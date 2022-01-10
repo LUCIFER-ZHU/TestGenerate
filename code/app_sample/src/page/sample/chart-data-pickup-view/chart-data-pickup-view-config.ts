@@ -4,16 +4,17 @@ export const ViewConfig = {
   viewCaption: '图表',
   height: '0',
   width: '0',
-  viewMsgGroup: '',
-  viewUIActions: '',
+  appEntityName:'ChartData',
   viewSysCss: '',
-  viewSysImage: '',
   subCaption: '',
   viewType: 'DEPICKUPVIEW',
   viewStyle: 'DEFAULT',
   showCaptionBar: 'DEFAULT',
   xDataControlName:'',
-  viewToolbarModel: [
+  openDataViewName:'ExampleEditorEditView',
+  appViewNavContexts:{  },
+  appViewNavParams:{  },
+  toolbar: [
   ],
   controlsAction:{
     pickupviewpanel:{
@@ -22,5 +23,6 @@ export const ViewConfig = {
       updateAction: '',
       loadDraftAction: '',
       createAction: '',
+      fetchAction:''
     },
   }};

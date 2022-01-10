@@ -60,73 +60,127 @@ export const CtrlConfig = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ChartDataService() ),
   data: new ControlVO({}),
-  formDetails: [
-    {
+  detailsModel: {
+    grouppanel2: {
       caption: '看板',
-      codeName: 'grouppanel2',
       name: 'grouppanel2',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: true,
     },
-    {
+    druipart5: {
       caption: '看板视图',
-      codeName: 'druipart5',
       name: 'druipart5',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'DRUIPART',
+      showCaption: true,
     },
-    {
+    grouppanel1: {
       caption: '树',
-      codeName: 'grouppanel1',
       name: 'grouppanel1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: true,
     },
-    {
+    druipart3: {
       caption: '树视图',
-      codeName: 'druipart3',
       name: 'druipart3',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'DRUIPART',
+      showCaption: true,
     },
-    {
+    druipart4: {
       caption: '树导航视图',
-      codeName: 'druipart4',
       name: 'druipart4',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'DRUIPART',
+      showCaption: true,
     },
-    {
+    group1: {
       caption: '列表',
-      codeName: 'group1',
       name: 'group1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: true,
     },
-    {
+    druipart1: {
       caption: '列表视图',
-      codeName: 'druipart1',
       name: 'druipart1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'DRUIPART',
+      showCaption: true,
     },
-    {
+    druipart2: {
       caption: '列表导航视图',
-      codeName: 'druipart2',
       name: 'druipart2',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'DRUIPART',
+      showCaption: true,
     },
-    {
+    grouppanel3: {
       caption: '数据视图',
-      codeName: 'grouppanel3',
       name: 'grouppanel3',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: true,
     },
-    {
+    druipart6: {
       caption: '数据视图',
-      codeName: 'druipart6',
       name: 'druipart6',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'DRUIPART',
+      showCaption: true,
     },
-    {
+    druipart7: {
       caption: '卡片导航',
-      codeName: 'druipart7',
       name: 'druipart7',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'DRUIPART',
+      showCaption: true,
     },
-    {
+    grouppanel4: {
       caption: '树表格',
-      codeName: 'grouppanel4',
       name: 'grouppanel4',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: true,
     },
-    {
+    druipart8: {
       caption: '树表格',
-      codeName: 'druipart8',
       name: 'druipart8',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'DRUIPART',
+      showCaption: true,
     },
-  ],
+  },
+  actionModel: {
+  },
   rules: {
   },
 };

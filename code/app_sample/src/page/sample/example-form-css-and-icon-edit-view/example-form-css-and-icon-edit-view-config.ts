@@ -4,16 +4,17 @@ export const ViewConfig = {
   viewCaption: '界面样式及图标',
   height: '0',
   width: '0',
-  viewMsgGroup: '',
-  viewUIActions: '',
+  appEntityName:'Example',
   viewSysCss: '',
-  viewSysImage: '',
   subCaption: '',
   viewType: 'DEEDITVIEW',
   viewStyle: 'DEFAULT',
   showCaptionBar: 'DEFAULT',
   xDataControlName:'form',
-  viewToolbarModel: [
+  openDataViewName:'ExampleEditorEditView',
+  appViewNavContexts:{  },
+  appViewNavParams:{  },
+  toolbar: [
   ],
   controlsAction:{
   }};

@@ -1,4 +1,4 @@
-import { Http, EntityService } from '@core';
+import { IContext, IParam, EntityService } from '@core';
 
 /**
  * 产品服务对象基类
@@ -9,198 +9,173 @@ import { Http, EntityService } from '@core';
  */
 export class ProductServiceBase extends EntityService {
   
-  constructor(opts?: any) {
-      super(opts);
-      // 初始化关系实体路径集合
-      this.deResPaths = [
-          [{"pathName":"products","parameterName":"product"}]
-      ]
-  }
-
-  protected SYSTEMNAME = '';
-  protected APPNAME = '';
-  protected APPDENAME = 'Product';
-  protected APPDENAMEPLURAL = "Product";
-
-
   /**
-    * CheckKey
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ProductServiceBase
-    */
-  async CheckKey(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    return res;
-    //
-    //
+  * Creates an instance of ProductServiceBase.
+  *
+  * @param {*} [opts={}]
+  * @memberof ProductServiceBase
+  */
+  constructor(opts: IParam = {}) {
+      super(opts,'Product');
   }
 
   /**
-    * Create
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ProductServiceBase
-    */
-  async Create(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Get
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ProductServiceBase
-    */
-  async Get(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.get(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * GetDraft
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ProductServiceBase
-    */
-  async GetDraft(context: any = {}, viewParams: any = {}): Promise<any> {
-    viewParams[this.APPDENAME?.toLowerCase()] = undefined;
-    viewParams[this.APPDEKEY] = undefined;
-    let deResPath = this.buildDeResPath(context, false);
-    const res = await this.http.get(deResPath+'/', viewParams);
-    // TODO appentityexecuteafteractionlogic
-    // TODO @appentityexecuteafteractionlogic
-    // TODO 设置本地缓存 @setStore
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Remove
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ProductServiceBase
-    */
-  async Remove(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.delete(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Save
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ProductServiceBase
-    */
-  async Save(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Update
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ProductServiceBase
-    */
-  async Update(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.put(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * FetchByCategory
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ProductServiceBase
-    */
-  async FetchByCategory(context: any = {}, viewParams: any = {}): Promise<any> {
-    let deResPath = this.buildDeResPath(context, false);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    // TODO @executeafterbatchaction
-    return res;
-    //
-    //
-  }
-
-  /**
-    * FetchDefault
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ProductServiceBase
-    */
-  async FetchDefault(context: any = {}, viewParams: any = {}): Promise<any> {
-    let deResPath = this.buildDeResPath(context, false);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    // TODO @executeafterbatchaction
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Select
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof ProductServiceBase
-    */
-  async Select(context: any = {}, viewParams: any = {}): Promise<any> {
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    return res;
-    //
-    //
+   * 初始化基础数据
+   *
+   * @protected
+   * @memberof ChartDataServiceBase
+   */
+  protected initBasicData() {
+    this.appEntityCodeName = 'product';
+    this.appEntityCodeNames = 'products';
+    // 初始化关系实体路径集合
+    this.deResPaths = [
+        [{"pathName":"products","parameterName":"product"}]
+    ]
   }
 
 
-}
+    /**
+      * CheckKey
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ProductServiceBase
+      */
+    public async CheckKey(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      this.beforeExecuteAction(context,data,'CheckKey');
+      const res = await this.http.post(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'CheckKey');
+      return res;
+    }
+    /**
+      * Create
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ProductServiceBase
+      */
+    public async Create(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      this.beforeExecuteAction(context,data,'Create');
+      const res = await this.http.post(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Create');
+      return res;
+    }
+    /**
+      * Get
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ProductServiceBase
+      */
+    public async Get(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'Get');
+      const res = await this.http.get(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Get');
+      return res;
+    }
+    /**
+      * GetDraft
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ProductServiceBase
+      */
+    public async GetDraft(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      this.beforeExecuteAction(context,data,'GetDraft');
+      const res = await this.http.get(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'GetDraft');
+      return res;
+    }
+    /**
+      * Remove
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ProductServiceBase
+      */
+    public async Remove(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'Remove');
+      const res = await this.http.delete(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Remove');
+      return res;
+    }
+    /**
+      * Save
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ProductServiceBase
+      */
+    public async Save(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'Save');
+      const res = await this.http.post(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Save');
+      return res;
+    }
+    /**
+      * Update
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ProductServiceBase
+      */
+    public async Update(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'Update');
+      const res = await this.http.put(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Update');
+      return res;
+    }
+    /**
+      * FetchByCategory
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ProductServiceBase
+      */
+    public async FetchByCategory(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      const res = await this.http.post(`${deResPath}`);
+      return res;
+    }
+    /**
+      * FetchDefault
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ProductServiceBase
+      */
+    public async FetchDefault(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      const res = await this.http.post(`${deResPath}`);
+      return res;
+    }
+    /**
+      * Select
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ProductServiceBase
+      */
+    public async Select(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      const res = await this.http.post(`${deResPath}`,data);
+      return res;
+    }}

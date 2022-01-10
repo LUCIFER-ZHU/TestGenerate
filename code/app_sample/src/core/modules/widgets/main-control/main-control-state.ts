@@ -35,4 +35,11 @@ export interface MainControlState extends ControlStateBase {
    * @memberof MainControlState
    */
   UIService: IParam;
+
+  /**
+   * @description 应用实体名称
+   * @type {string}
+   * @memberof MainControlState
+   */
+  appDeCodeName: string;
 }

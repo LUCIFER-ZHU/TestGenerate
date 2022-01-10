@@ -6,16 +6,17 @@ export const ViewConfig = {
   viewCaption: '表格逻辑',
   height: '0',
   width: '0',
-  viewMsgGroup: '',
-  viewUIActions: '',
+  appEntityName:'Example',
   viewSysCss: '',
-  viewSysImage: '',
   subCaption: '',
   viewType: 'DEGRIDVIEW',
   viewStyle: 'DEFAULT',
   showCaptionBar: 'DEFAULT',
   xDataControlName:'grid',
-  viewToolbarModel: [
+  openDataViewName:'ExampleEditorEditView',
+  appViewNavContexts:{  },
+  appViewNavParams:{  },
+  toolbar: [
   ],
   controlsAction:{
     grid:{
@@ -23,6 +24,7 @@ export const ViewConfig = {
       removeAction: 'Remove',
       updateAction: 'Update',
       loadDraftAction: 'GetDraft',
-      createAction: 'GetDraft',
+      createAction: 'Create',
+      fetchAction:'FetchDefault'
     },
   }};

@@ -1,3 +1,4 @@
+import { IParam } from '@core';
 import { DynaDashboardUIServiceBase } from './dyna-dashboard-ui-service-base';
 
 /**
@@ -8,11 +9,30 @@ import { DynaDashboardUIServiceBase } from './dyna-dashboard-ui-service-base';
  * @extends DynaDashboardUIServiceBase
  */
 export class DynaDashboardUIService extends DynaDashboardUIServiceBase {
+
+    /**
+     * 基础UI服务实例
+     * 
+     * @private
+     * @type { DynaDashboardUIService }
+     * @memberof DynaDashboardUIService
+     */
+    private static basicUIServiceInstance: DynaDashboardUIService;
+
+    /**
+     * UI服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof DynaDashboardUIService
+     */
+    private static UIServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of DynaDashboardUIService.
      * @memberof DynaDashboardUIService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class DynaDashboardUIService extends DynaDashboardUIServiceBase {
      * @return {*}  { DynaDashboardUIService }
      * @memberof DynaDashboardUIService
      */
-    static getInstance(context?: any): DynaDashboardUIService {
-        return new DynaDashboardUIService({ context: context });
+    static getInstance(opts?: IParam): DynaDashboardUIService {
+         if (!this.basicUIServiceInstance) {
+            this.basicUIServiceInstance = new DynaDashboardUIService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicUIServiceInstance;
+        } else {
+            if (!DynaDashboardUIService.UIServiceMap.get(opts.srfdynainstid)) {
+                DynaDashboardUIService.UIServiceMap.set(opts.srfdynainstid, new DynaDashboardUIService(opts));
+            }
+            return DynaDashboardUIService.UIServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default DynaDashboardUIService;

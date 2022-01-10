@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="订单明细基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="订单明细基本信息">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -48,13 +48,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="productname" label="产品">
+  <IbizFormItem v-show="state.detailsModel.productname.visible" name="productname" label="产品">
 <IbizDataPicker
   name="productname"
   :data="state.data"
   valueItem="productid"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :value="state.data.productname"
   @editorEvent="handleEditorEvent"
 />   </IbizFormItem>
@@ -65,7 +66,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="price" label="单价">
+  <IbizFormItem v-show="state.detailsModel.price.visible" name="price" label="单价">
 <IbizInput
   name="price"
   type="text"
@@ -81,7 +82,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="qty" label="数量">
+  <IbizFormItem v-show="state.detailsModel.qty.visible" name="qty" label="数量">
 <IbizInput
   name="qty"
   type="text"
@@ -97,7 +98,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="amount" label="小计">
+  <IbizFormItem v-show="state.detailsModel.amount.visible" name="amount" label="小计">
 <IbizInput
   name="amount"
   type="text"

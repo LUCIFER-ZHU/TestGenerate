@@ -81,28 +81,44 @@ export const CtrlConfig = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new DeptDataService() ),
   data: new ControlVO({}),
-  formDetails: [
-    {
+  detailsModel: {
+    group1: {
       caption: '部门数据基本信息',
-      codeName: 'group1',
       name: 'group1',
-    },
-    {
-      caption: '组织名称',
-      codeName: 'orgdataname',
-      name: 'orgdataname',
-      dataType: '25',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: false,
+    },
+    orgdataname: {
+      caption: '组织名称',
+      name: 'orgdataname',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '25',
+      required: true,
+      enableCond: 3,
       valueItemName: 'orgdataid',
     },
-    {
+    deptdataname: {
       caption: '部门名称',
-      codeName: 'deptdataname',
       name: 'deptdataname',
-      dataType: '25',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '25',
+      required: true,
+      enableCond: 3,
     },
-  ],
+  },
+  actionModel: {
+  },
   rules: {
   },
 };

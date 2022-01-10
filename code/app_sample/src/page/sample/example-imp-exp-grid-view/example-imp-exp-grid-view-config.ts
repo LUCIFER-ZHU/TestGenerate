@@ -6,16 +6,17 @@ export const ViewConfig = {
   viewCaption: '数据导入导出',
   height: '0',
   width: '0',
-  viewMsgGroup: '',
-  viewUIActions: '[net.ibizsys.model.app.view.PSAppViewUIActionImpl@3fdecce, net.ibizsys.model.app.view.PSAppViewUIActionImpl@344426bf]',
+  appEntityName:'Example',
   viewSysCss: '',
-  viewSysImage: '',
   subCaption: '',
   viewType: 'DEGRIDVIEW',
   viewStyle: 'DEFAULT',
   showCaptionBar: 'DEFAULT',
   xDataControlName:'grid',
-  viewToolbarModel: [
+  openDataViewName:'ExampleEditorEditView',
+  appViewNavContexts:{  },
+  appViewNavParams:{  },
+  toolbar: [
     { id:'toolbar_deuiaction1',name:'deuiaction1',caption:'导入',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'导入',disabled: false, visible: true, imgPath: '',iconClass: 'fa fa-upload',xDataControlName:'grid',uIAction:{codeName:'Import',fullCodeName:'Import',uIActionMode:'SYS',uIActionTag:'Import',uIActionType:'DEUIACTION'} },
     { id:'toolbar_deuiaction2',name:'deuiaction2',caption:'导出',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'导出',disabled: false, visible: true, imgPath: '',iconClass: 'fa fa-file-excel-o',xDataControlName:'grid',uIAction:{codeName:'ExportExcel',fullCodeName:'ExportExcel',uIActionMode:'SYS',uIActionTag:'ExportExcel',uIActionType:'DEUIACTION'} },
   ],
@@ -26,5 +27,6 @@ export const ViewConfig = {
       updateAction: '',
       loadDraftAction: '',
       createAction: '',
+      fetchAction:'FetchDefault'
     },
   }};

@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="部门数据基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="部门数据基本信息">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -48,13 +48,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="orgdataname" label="组织名称">
+  <IbizFormItem v-show="state.detailsModel.orgdataname.visible" name="orgdataname" label="组织名称">
 <IbizDataPicker
   name="orgdataname"
   :data="state.data"
   valueItem="orgdataid"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :value="state.data.orgdataname"
   @editorEvent="handleEditorEvent"
 />   </IbizFormItem>
@@ -65,7 +66,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="deptdataname" label="部门名称">
+  <IbizFormItem v-show="state.detailsModel.deptdataname.visible" name="deptdataname" label="部门名称">
 <IbizInput
   name="deptdataname"
   :maxLength="200"

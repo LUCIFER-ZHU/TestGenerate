@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="示例基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="示例基本信息">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -48,20 +48,21 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-<IbizRaw 
-  class="el-alert el-alert--info is-light"
-  
-  contentType="RAW"
-  style="height: -1.0px;width: -1.0px"
-  value="自动填充文本格式为：产品名称+产品编号"/>
-</a-col>
+  <IbizRaw 
+    v-show="state.detailsModel.rawitem1.visible"
+    class="el-alert el-alert--info is-light"
+    
+    contentType="RAW"
+    style="height: -1.0px;width: -1.0px"
+    value="自动填充文本格式为：产品名称+产品编号"/>
+  </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="acfield" label="自动填充属性">
+  <IbizFormItem v-show="state.detailsModel.acfield.visible" name="acfield" label="自动填充属性">
 <IbizAutoComplete
   name="acfield"
   :data="state.data"

@@ -1,3 +1,4 @@
+import { IActionParam } from "@core";
 import { MainView } from "../main-view";
 import { PickupViewProps } from "./pickup-view-prop";
 import { PickupViewState } from "./pickup-view-state";
@@ -16,6 +17,9 @@ export class PickupView extends MainView {
    * @memberof PickupView
    */
   public declare viewState: PickupViewState;
+
+
+  public selectData: any[] = [];
 
   /**
    * @description 使用加载功能模块
@@ -42,8 +46,24 @@ export class PickupView extends MainView {
    * @memberof PickupView
    */
   public confirm() {
-    //todo
+    this.emit('viewEvent', { data: this.selectData, tag: '', action: 'close' })
   }
+  
+  public handleCtrlEvent(actionParam: IActionParam) {
+    debugger
+    const { tag, action, data } = actionParam;
+    // TODO
+    
+    if (action === 'selectionChange') {
+      this.selectData = data;
+      this.emit('viewEvent', { data: this.selectData, tag: '', action: 'viewDataChange' })
+    }
+    if (action === 'close') {
+      this.emit('viewEvent', { data: this.selectData, tag: '', action: 'viewDataChange' })
+    }
+  }
+
+
 
   /**
    * @description 安装视图所有功能模块的方法
@@ -58,6 +78,7 @@ export class PickupView extends MainView {
     return {
       ...superParams,
       state: this.viewState,
+      selectData: this.selectData,
       cancel: this.cancel.bind(this),
       confirm: this.confirm.bind(this)
     };

@@ -88,41 +88,67 @@ export const CtrlConfig = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new CalendarDataService() ),
   data: new ControlVO({}),
-  formDetails: [
-    {
+  detailsModel: {
+    group1: {
       caption: '日历示例数据基本信息',
-      codeName: 'group1',
       name: 'group1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: false,
     },
-    {
+    calendardataname: {
       caption: '事项',
-      codeName: 'calendardataname',
       name: 'calendardataname',
-      dataType: '25',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '25',
+      required: true,
+      enableCond: 3,
     },
-    {
+    begintime: {
       caption: '开始时间',
-      codeName: 'begintime',
       name: 'begintime',
-      dataType: '5',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '5',
+      required: true,
+      enableCond: 3,
     },
-    {
+    endtime: {
       caption: '结束时间',
-      codeName: 'endtime',
       name: 'endtime',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
       dataType: '5',
-      detailStyle: 'DEFAULT',
+      required: false,
+      enableCond: 3,
     },
-    {
+    memo: {
       caption: '备注',
-      codeName: 'memo',
       name: 'memo',
-      dataType: '25',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '25',
+      required: false,
+      enableCond: 3,
     },
-  ],
+  },
+  actionModel: {
+  },
   rules: {
   },
 };

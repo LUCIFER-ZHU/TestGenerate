@@ -7,7 +7,7 @@ import { IActionParam, IParam } from '@core';
  * @interface ViewStateBase
  */
 export interface ViewStateBase {
-  
+
   /**
    * @description 视图名称
    * @type {string}
@@ -49,6 +49,22 @@ export interface ViewStateBase {
    * @memberof ViewStateBase
    */
   viewToolbarModel: IParam[];
+
+  /**
+   * 自定义视图导航上下文
+   *
+   * @type {IParam}
+   * @memberof ViewStateBase
+   */
+  appViewNavContexts: IParam;
+
+  /**
+   * 自定义视图参数
+   *
+   * @type {IParam}
+   * @memberof ViewStateBase
+   */
+  appViewNavParams: IParam;
 
   // 声明任意属性
   [propName: string]: any;

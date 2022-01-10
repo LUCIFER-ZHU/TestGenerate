@@ -129,6 +129,7 @@ const { scrollOption, rowKey, rowClassName, customRow, rowSelectionOption, resiz
   valueItem="customerid"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :value="record.customername"
   @editorEvent="($event) => handleEditorEvent(index,$event)"
 />   </div>
@@ -161,6 +162,7 @@ const { scrollOption, rowKey, rowClassName, customRow, rowSelectionOption, resiz
   valueItem="customerid3"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :isDropdown="true"
   :value="record.customername3"
   @editorEvent="($event) => handleEditorEvent(index,$event)"
@@ -178,6 +180,7 @@ const { scrollOption, rowKey, rowClassName, customRow, rowSelectionOption, resiz
   valueItem="customerid4"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :noAC="true"
   :value="record.customername4"
   @editorEvent="($event) => handleEditorEvent(index,$event)"
@@ -195,6 +198,7 @@ const { scrollOption, rowKey, rowClassName, customRow, rowSelectionOption, resiz
   valueItem="customerid5"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :value="record.customername5"
   @editorEvent="($event) => handleEditorEvent(index,$event)"
 />   </div>

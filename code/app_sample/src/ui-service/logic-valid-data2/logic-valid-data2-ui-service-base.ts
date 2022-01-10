@@ -1,5 +1,5 @@
-import { AppUIAction, IUIAction, UIServiceBase } from '@core';
-
+import { IParam, UIServiceBase } from '@core';
+import { AppFrontAction, AppBackendAction } from '@core';
 /**
  * 示例数据（启用逻辑删除）（主键数值）UI服务对象基类
  *
@@ -15,11 +15,12 @@ export class LogicValidData2UIServiceBase extends UIServiceBase {
     * @param {*} [opts={}]
     * @memberof LogicValidData2UIServiceBase
     */
-  constructor(opts: any = {}) {
+  constructor(opts: IParam = {}) {
       super(opts);
   }
 
 
 
+   public uiActionModes = {     };
 
 }

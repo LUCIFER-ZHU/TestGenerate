@@ -6,16 +6,17 @@ export const ViewConfig = {
   viewCaption: '图表',
   height: '0',
   width: '0',
-  viewMsgGroup: '',
-  viewUIActions: '[net.ibizsys.model.app.view.PSAppViewUIActionImpl@aac3f4e, net.ibizsys.model.app.view.PSAppViewUIActionImpl@1f38957, net.ibizsys.model.app.view.PSAppViewUIActionImpl@2df3c564, net.ibizsys.model.app.view.PSAppViewUIActionImpl@2715644a, net.ibizsys.model.app.view.PSAppViewUIActionImpl@4c2869a9, net.ibizsys.model.app.view.PSAppViewUIActionImpl@518cf84a, net.ibizsys.model.app.view.PSAppViewUIActionImpl@62e7dffa, net.ibizsys.model.app.view.PSAppViewUIActionImpl@6edcd0d8, net.ibizsys.model.app.view.PSAppViewUIActionImpl@6136998b, net.ibizsys.model.app.view.PSAppViewUIActionImpl@57ce634f, net.ibizsys.model.app.view.PSAppViewUIActionImpl@b8a7e43, net.ibizsys.model.app.view.PSAppViewUIActionImpl@35835fa, net.ibizsys.model.app.view.PSAppViewUIActionImpl@56f71edb, net.ibizsys.model.app.view.PSAppViewUIActionImpl@7207cb51]',
+  appEntityName:'ChartData',
   viewSysCss: '',
-  viewSysImage: '',
   subCaption: '',
   viewType: 'DEGRIDVIEW',
   viewStyle: 'DEFAULT',
   showCaptionBar: 'DEFAULT',
   xDataControlName:'grid',
-  viewToolbarModel: [
+  openDataViewName:'ExampleEditorEditView',
+  appViewNavContexts:{  },
+  appViewNavParams:{  },
+  toolbar: [
     { id:'toolbar_tbitem3',name:'tbitem3',caption:'新建',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'新建',disabled: false, visible: true, imgPath: '',iconClass: 'fa fa-file-text-o',xDataControlName:'grid',uIAction:{codeName:'New',fullCodeName:'New',uIActionMode:'SYS',uIActionTag:'New',uIActionType:'DEUIACTION'} },
     { id:'toolbar_tbitem4',name:'tbitem4',caption:'编辑',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'编辑',disabled: false, visible: true, imgPath: '',iconClass: 'fa fa-edit',xDataControlName:'grid',uIAction:{codeName:'Edit',fullCodeName:'Edit',uIActionMode:'SYS',uIActionTag:'Edit',uIActionType:'DEUIACTION'} },
     { id:'toolbar_tbitem6',name:'tbitem6',caption:'拷贝',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'拷贝',disabled: false, visible: true, imgPath: '',iconClass: 'fa fa-copy',xDataControlName:'grid',uIAction:{codeName:'Copy',fullCodeName:'Copy',uIActionMode:'SYS',uIActionTag:'Copy',uIActionType:'DEUIACTION'} },
@@ -36,5 +37,6 @@ export const ViewConfig = {
       updateAction: '',
       loadDraftAction: '',
       createAction: '',
+      fetchAction:'FetchDefault'
     },
   }};

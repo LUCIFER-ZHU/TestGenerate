@@ -40,20 +40,21 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-<IbizRaw 
-  class="el-alert el-alert--info is-light"
-  
-  contentType="RAW"
-  style="height: -1.0px;width: -1.0px"
-  value="打开一个模态框（小视图）"/>
-</a-col>
+  <IbizRaw 
+    v-show="state.detailsModel.rawitem1.visible"
+    class="el-alert el-alert--info is-light"
+    
+    contentType="RAW"
+    style="height: -1.0px;width: -1.0px"
+    value="打开一个模态框（小视图）"/>
+  </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="打开模态">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="打开模态">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -63,6 +64,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
  >
   <a-button 
     type="primary"
+    v-show="state.detailsModel.button1.visible"
     class="ibiz-form-button"
     style="">
     前台界面行为（打开模态）
@@ -77,20 +79,21 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-<IbizRaw 
-  class="el-alert el-alert--info is-light"
-  
-  contentType="RAW"
-  style="height: -1.0px;width: -1.0px"
-  value="打开一个顶级视图"/>
-</a-col>
+  <IbizRaw 
+    v-show="state.detailsModel.rawitem2.visible"
+    class="el-alert el-alert--info is-light"
+    
+    contentType="RAW"
+    style="height: -1.0px;width: -1.0px"
+    value="打开一个顶级视图"/>
+  </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="grouppanel1" title="打开顶级视图">
+  <IbizFormGroup v-show="state.detailsModel.grouppanel1.visible" name="grouppanel1" title="打开顶级视图">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -100,6 +103,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
  >
   <a-button 
     type="primary"
+    v-show="state.detailsModel.button2.visible"
     class="ibiz-form-button"
     style="">
     前台界面行为（打开顶级视图）
@@ -114,24 +118,25 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-<IbizRaw 
-  class="el-alert el-alert--info is-light"
-  
-  contentType="RAW"
-  style="height: -1.0px;width: -1.0px"
-  value="打开一个指定的html页面，并将搜索框中的参数传过去"/>
-</a-col>
+  <IbizRaw 
+    v-show="state.detailsModel.rawitem3.visible"
+    class="el-alert el-alert--info is-light"
+    
+    contentType="RAW"
+    style="height: -1.0px;width: -1.0px"
+    value="打开一个指定的html页面，并将搜索框中的参数传过去"/>
+  </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="grouppanel2" title="打开HTML页面">
+  <IbizFormGroup v-show="state.detailsModel.grouppanel2.visible" name="grouppanel2" title="打开HTML页面">
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <IbizFormItem name="wd" label="搜索">
+  <IbizFormItem v-show="state.detailsModel.wd.visible" name="wd" label="搜索">
 <IbizInput
   name="wd"
   placeholder="输入关键字后点击【前台界面行为（打开HTML页面）】"
@@ -146,6 +151,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
  >
   <a-button 
     type="primary"
+    v-show="state.detailsModel.button3.visible"
     class="ibiz-form-button"
     style="">
     前台界面行为（打开HTML页面）（百度一下）
@@ -160,7 +166,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="grouppanel3" title="界面行为（后续界面行为）">
+  <IbizFormGroup v-show="state.detailsModel.grouppanel3.visible" name="grouppanel3" title="界面行为（后续界面行为）">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -168,13 +174,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-<IbizRaw 
-  class="el-alert el-alert--info is-light"
-  
-  contentType="RAW"
-  style="height: -1.0px;width: -1.0px"
-  value="数据快速新建通常使用界面行为（后续界面行为，后台处理后打开新界面进行确认或后续操作）"/>
-</a-col>
+  <IbizRaw 
+    v-show="state.detailsModel.rawitem4.visible"
+    class="el-alert el-alert--info is-light"
+    
+    contentType="RAW"
+    style="height: -1.0px;width: -1.0px"
+    value="数据快速新建通常使用界面行为（后续界面行为，后台处理后打开新界面进行确认或后续操作）"/>
+  </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -183,6 +190,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
  >
   <a-button 
     type="primary"
+    v-show="state.detailsModel.button4.visible"
     class="ibiz-form-button"
     style="">
     界面行为（后续界面行为）

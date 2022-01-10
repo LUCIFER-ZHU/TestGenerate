@@ -2,7 +2,7 @@
 import { Subject } from 'rxjs';
 import { PickupView, IActionParam, IParam, IContext } from '@core';
 import { ViewConfig } from './chart-data-usr4-pickup-view-config';
-
+import { Usr4PickupViewpickupviewpanelPickUpViewPanel } from '@widgets/chart-data/usr4-pickup-viewpickupviewpanel-pickup-view-panel';
 // props声明和默认值处理
 interface Props {
   context: IContext;
@@ -24,13 +24,40 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state } = new PickupView(ViewConfig).moduleInstall(props, emit);
+const { state, cancel, confirm,handleCtrlEvent } = new PickupView(ViewConfig).moduleInstall(props, emit);
 </script>
 
 <template>
-  <IbizDefaultViewLayout class="ibiz-pickup-view">
-    <template v-slot:header-left>
-      <IbizIconText class="ibiz-view__caption" size="large" :text="state.viewCaption" />
+    <IbizPickerUpViewLayout class="ibiz-pickup-view">
+        <template v-slot:header-left>
+          <IbizIconText class="ibiz-view__caption" size="large" :text="state.viewCaption" />
+        </template>
+
+            <Usr4PickupViewpickupviewpanelPickUpViewPanel
+              :context="state.context"
+              :rowEditState="state.rowEditState"
+              :rowActiveMode="state.gridRowActiveMode"
+              :showBusyIndicator="true"
+              :viewParams="state.viewParams"
+              :controlAction="state.controlsAction.pickupviewpanel"
+              :viewSubject="state.viewSubject"
+              @ctrlEvent="handleCtrlEvent"
+            ></Usr4PickupViewpickupviewpanelPickUpViewPanel>
+              <template v-slot:footer>
+      <a-space class="ibiz-pickup-view--footer">
+        <a-button @click="cancel">取消</a-button>
+        <a-button @click="confirm">确认</a-button>
+      </a-space>
     </template>
-  </IbizDefaultViewLayout>
+    </IbizPickerUpViewLayout>
 </template>
+<style lang="scss">
+.ibiz-pickup-view {
+  position: relative;
+  .ibiz-pickup-view--footer {
+    position: absolute;
+    bottom: 20px;
+    right: 35px;
+  }
+}
+</style>

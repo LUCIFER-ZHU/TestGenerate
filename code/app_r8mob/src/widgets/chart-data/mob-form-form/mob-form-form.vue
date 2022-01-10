@@ -35,7 +35,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
     :model="state.data" 
     :rules="state.rules">
     <a-tabs class="ibiz-form-page">
-<a-tab-pane key="formpage1" tab="基本信息">
+<a-tab-pane v-show="state.detailsModel.formpage1.visible" key="formpage1" tab="基本信息">
   <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -43,7 +43,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="图表基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="图表基本信息">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -51,7 +51,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="chartdataname" label="图表名称">
+  <IbizFormItem v-show="state.detailsModel.chartdataname.visible" name="chartdataname" label="图表名称">
     /*未找到模板[MOBTEXT]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -60,7 +60,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="data" label="数据">
+  <IbizFormItem v-show="state.detailsModel.data.visible" name="data" label="数据">
     /*未找到模板[MOBTEXT]*/  </IbizFormItem>
 </a-col>
     </a-row>
@@ -72,7 +72,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="season" label="季度">
+  <IbizFormItem v-show="state.detailsModel.season.visible" name="season" label="季度">
     /*未找到模板[MOBTEXTAREA]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -81,7 +81,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="totalprice" label="总计价格">
+  <IbizFormItem v-show="state.detailsModel.totalprice.visible" name="totalprice" label="总计价格">
     /*未找到模板[MOBTEXT]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -90,7 +90,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="datatype" label="数据分类">
+  <IbizFormItem v-show="state.detailsModel.datatype.visible" name="datatype" label="数据分类">
     /*未找到模板[MOBRADIOLIST]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -99,7 +99,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem1" label="评分器">
+  <IbizFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" label="评分器">
     /*未找到模板[MOBRATING]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -108,7 +108,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="data1" label="步进器">
+  <IbizFormItem v-show="state.detailsModel.data1.visible" name="data1" label="步进器">
     /*未找到模板[MOBSTEPPER]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -117,7 +117,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem" label="数据选择">
+  <IbizFormItem v-show="state.detailsModel.formitem.visible" name="formitem" label="数据选择">
     /*未找到模板[MOBPICKER]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -126,7 +126,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem2" label="值项">
+  <IbizFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" label="值项">
     /*未找到模板[HIDDEN]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -135,7 +135,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem3" label="标签">
+  <IbizFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" label="标签">
 <IbizSpan
   name="formitem3"
   dataType="25"
@@ -150,7 +150,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem4" label="滑动输入条">
+  <IbizFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" label="滑动输入条">
     /*未找到模板[MOBSLIDER]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -159,7 +159,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem5" label="开关">
+  <IbizFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" label="开关">
     /*未找到模板[MOBSWITCH]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -168,7 +168,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem6" label="下拉列表框">
+  <IbizFormItem v-show="state.detailsModel.formitem6.visible" name="formitem6" label="下拉列表框">
     /*未找到模板[MOBDROPDOWNLIST]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -177,7 +177,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem7" label="时间选择">
+  <IbizFormItem v-show="state.detailsModel.formitem7.visible" name="formitem7" label="时间选择">
     /*未找到模板[MOBDATE]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -188,6 +188,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
  >
   <a-button 
     type="primary"
+    v-show="state.detailsModel.button1.visible"
     class="ibiz-form-button"
     style="">
     保存
@@ -199,7 +200,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="grouppanel1" title="数据选择测试">
+  <IbizFormGroup v-show="state.detailsModel.grouppanel1.visible" name="grouppanel1" title="数据选择测试">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -207,7 +208,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem8" label="多数据单选">
+  <IbizFormItem v-show="state.detailsModel.formitem8.visible" name="formitem8" label="多数据单选">
     /*未找到模板[MOBPICKER]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -216,7 +217,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem9" label="值项">
+  <IbizFormItem v-show="state.detailsModel.formitem9.visible" name="formitem9" label="值项">
     /*未找到模板[MOBTEXT]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -225,7 +226,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem10" label="多数据多选">
+  <IbizFormItem v-show="state.detailsModel.formitem10.visible" name="formitem10" label="多数据多选">
     /*未找到模板[MOBMPICKER]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -234,7 +235,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem11" label="值项">
+  <IbizFormItem v-show="state.detailsModel.formitem11.visible" name="formitem11" label="值项">
     /*未找到模板[MOBTEXT]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -243,7 +244,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem12" label="树单选">
+  <IbizFormItem v-show="state.detailsModel.formitem12.visible" name="formitem12" label="树单选">
     /*未找到模板[MOBPICKER]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -252,7 +253,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem13" label="值项">
+  <IbizFormItem v-show="state.detailsModel.formitem13.visible" name="formitem13" label="值项">
     /*未找到模板[MOBTEXT]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -261,7 +262,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem14" label="树多选">
+  <IbizFormItem v-show="state.detailsModel.formitem14.visible" name="formitem14" label="树多选">
     /*未找到模板[MOBMPICKER]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -270,7 +271,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem15" label="值项">
+  <IbizFormItem v-show="state.detailsModel.formitem15.visible" name="formitem15" label="值项">
     /*未找到模板[MOBTEXT]*/  </IbizFormItem>
 </a-col>
     </a-row>
@@ -278,7 +279,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
 </a-col>
   </a-row>
 </a-tab-pane>
-<a-tab-pane key="formpage2" tab="表单分页">
+<a-tab-pane v-show="state.detailsModel.formpage2.visible" key="formpage2" tab="表单分页">
   <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -286,7 +287,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="year" label="年份">
+  <IbizFormItem v-show="state.detailsModel.year.visible" name="year" label="年份">
     /*未找到模板[MOBTEXT]*/  </IbizFormItem>
 </a-col>
   </a-row>

@@ -2,6 +2,9 @@
 import { Subject } from 'rxjs';
 import { PickupGridView, IActionParam, IParam, IContext } from '@core';
 import { ViewConfig } from './person-data-pickup-grid-view-config';
+//  todo 表格部件拿不到目前导入固定表格
+import { MainGrid } from '@widgets/chart-data/main-grid';
+
 
 // props声明和默认值处理
 interface Props {
@@ -24,29 +27,23 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state } = new PickupGridView(ViewConfig).moduleInstall(props, emit);
+const { state, confirm, handleCtrlEvent } = new PickupGridView(ViewConfig).moduleInstall(props, emit);
 </script>
 
 <template>
-  <IbizDefaultViewLayout class="ibiz-pickup-grid-view">
+  <IbizPickerUpGridViewLayout class="ibiz-pickup-grid-view">
     <template v-slot:header-left>
       <IbizIconText class="ibiz-view__caption" size="large" :text="state.viewCaption" />
     </template>
-    <template v-slot:footer>
-      <a-space class="ibiz-pickup-grid-view--footer">
-        <a-button @click="cancel">取消</a-button>
-        <a-button @click="confirm">确认</a-button>
-      </a-space>
-    </template>
-  </IbizDefaultViewLayout>
+        <MainGrid
+          :context="state.context"
+          :rowEditState="state.rowEditState"
+          :rowActiveMode="state.gridRowActiveMode"
+          :showBusyIndicator="true"
+          :viewParams="state.viewParams"
+          :controlAction="state.controlsAction.grid"
+          :viewSubject="state.viewSubject"
+          @ctrlEvent="handleCtrlEvent"
+        ></MainGrid>
+  </IbizPickerUpGridViewLayout>
 </template>
-<style lang="scss">
-.ibiz-pickup-grid-view {
-  position: relative;
-  .ibiz-pickup-grid-view--footer {
-    position: absolute;
-    bottom: 20px;
-    right: 35px;
-  }
-}
-</style>

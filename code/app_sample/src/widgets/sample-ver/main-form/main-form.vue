@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="示例版本基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="示例版本基本信息">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -48,7 +48,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="samplevername" label="标题">
+  <IbizFormItem v-show="state.detailsModel.samplevername.visible" name="samplevername" label="标题">
 <IbizInput
   name="samplevername"
   :maxLength="200"
@@ -65,7 +65,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="verstr" label="版本号">
+  <IbizFormItem v-show="state.detailsModel.verstr.visible" name="verstr" label="版本号">
 <IbizInput
   name="verstr"
   :maxLength="100"
@@ -82,7 +82,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="type" label="分类">
+  <IbizFormItem v-show="state.detailsModel.type.visible" name="type" label="分类">
 <IbizDropdownList
   name="type"
   :data="state.data"
@@ -99,7 +99,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="content" label="内容">
+  <IbizFormItem v-show="state.detailsModel.content.visible" name="content" label="内容">
     /*未找到模板[MARKDOWN]*/  </IbizFormItem>
 </a-col>
 <a-col
@@ -108,7 +108,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="memo" label="备注">
+  <IbizFormItem v-show="state.detailsModel.memo.visible" name="memo" label="备注">
 <IbizInput
   name="memo"
   :maxLength="1000"

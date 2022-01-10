@@ -43,7 +43,7 @@ const { state, handleToolbarEvent } = new EditView(ViewConfig).moduleInstall(pro
       <IbizToolbar
         mode="button"
         name="modelopeneditviewtoolbar"
-        :actionModel="state.viewToolbarModel"
+        :actionModel="state.toolbar"
         @toolbarEvent="handleToolbarEvent"/>
     </template>
   </IbizEditViewLayout>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onBeforeMount, Ref, ref } from 'vue';
 import { SearchOutlined, ExportOutlined } from '@ant-design/icons-vue';
-import { deepCopy, IParam, IActionParam, EditorBase, IContext } from '@core';
+import { deepCopy, IParam, IActionParam, EditorBase, IContext, PickupView } from '@core';
 interface DataPickerProps {
   /**
    * @description 编辑器名称
@@ -66,7 +66,7 @@ interface DataPickerProps {
   /**
    * @description 选择视图
    */
-  pickUpView?: IParam;
+  pickUpView?: string;
 
   /**
    * @description 链接视图
@@ -195,13 +195,35 @@ const onSelect = (value: any) => {
   fillPickUpData(selectItem);
 };
 
+const initValue = (data: any) => {
+  // todo
+};
+
+// 打开视图
+const openView = () => {
+  if (!props.pickUpView) {
+    return;
+  }
+  const view = App.getViewInfo(props.pickUpView);
+  if (!view) {
+    return;
+  }
+  const subject = App.getOpenViewService().openView(view, {});
+  const subjectEvent = subject?.subscribe((data: any) => {
+    if (data?.ret == 'OK' && data.resultData) {
+      const value = initValue(data.resultData);
+      emit('editorEvent', { tag: props.valueItem, action: 'valueChange', data: value });
+    }
+    subjectEvent?.unsubscribe();
+  });
+};
 </script>
 
 <template>
   <template v-if="linkOnly" :class="['app-data-picker', `app-data-picker-${name}`]">
-    <a @click="openLinkView">{{ value }}</a>
+    <a @click="openLinkView"></a>
   </template>
-  <template v-else-if="!noAc && !isDropdown">
+  <template v-else-if="!isAC && !isDropdown">
     <a-auto-complete
       :class="['app-data-picker', `app-data-picker-${name}`]"
       :allowClear="true"
@@ -214,11 +236,11 @@ const onSelect = (value: any) => {
       :defaultOpen="true"
     >
       <template #option="option">
-        <div @click="onSelect(option[deKeyField])">{{ option[deMajorField] }}</div>
+        <div @click="onSelect(option[deKeyField])"></div>
       </template>
       <a-input :placeholder="placeholder">
         <template #suffix>
-          <search-outlined v-if="pickUpView && showButton" class="certain-category-icon" @click="openView" />
+          <search-outlined v-if="pickUpView" class="certain-category-icon" @click="openView" />
           <export-outlined v-if="linkView" @click="openLinkView" />
         </template>
       </a-input>
@@ -245,11 +267,11 @@ const onSelect = (value: any) => {
       :placeholder="placeholder"
     >
       <template #suffixIcon>
-        <search-outlined v-if="pickUpView" @click="openPickUpView" />
+        <search-outlined  v-if="pickUpView" @click="openPickUpView" />
         <select-outlined v-if="linkView" @click="openLinkView" />
       </template>
       <a-select-option v-for="(item, index) in items" :key="index" :value="item[deKeyField]">
-        {{ item[deMajorField] }}
+        
       </a-select-option>
     </a-select>
   </template>

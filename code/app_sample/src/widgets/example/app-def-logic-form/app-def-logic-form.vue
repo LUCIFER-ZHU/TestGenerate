@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="属性计算逻辑">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="属性计算逻辑">
     <a-row>
 <a-col
   :lg="{span: 6, offset: 0 }"
@@ -48,7 +48,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="fieldx" label="X值">
+  <IbizFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" label="X值">
 <IbizSpan
   name="fieldx"
   dataType="6"
@@ -63,7 +63,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="fieldy" label="Y值">
+  <IbizFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" label="Y值">
 <IbizSpan
   name="fieldy"
   dataType="6"
@@ -78,7 +78,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="appfield" label="XY前端计算值">
+  <IbizFormItem v-show="state.detailsModel.appfield.visible" name="appfield" label="XY前端计算值">
 <IbizSpan
   name="appfield"
   dataType="25"
@@ -93,7 +93,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="appfield2" label="XY前端计算值2">
+  <IbizFormItem v-show="state.detailsModel.appfield2.visible" name="appfield2" label="XY前端计算值2">
 <IbizSpan
   name="appfield2"
   dataType="25"
@@ -108,7 +108,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="appfield4" label="XY前端计算值4">
+  <IbizFormItem v-show="state.detailsModel.appfield4.visible" name="appfield4" label="XY前端计算值4">
 <IbizSpan
   name="appfield4"
   dataType="25"
@@ -126,24 +126,25 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-<IbizRaw 
-  class="el-alert el-alert--info is-light"
-  
-  contentType="HTML"
-  style="height: -1.0px;width: -1.0px"
-  :value="`<p>1.XY前端计算值：由前台处理逻辑（计算式）取值计算式：${fieldx} + ${fieldy} <br />2.XY前端计算值2：由前台处理逻辑（脚本代码）取值脚本代码：data.appfield2=data.fieldx+data.fieldy <br />3.XY前端计算值4：由前端处理逻辑（脚本代码）取值脚本代码： if(data.fieldx &amp;&amp; data.fieldz) { data.appfield4=data.fieldx + '(' +Number((data.fieldx/data.fieldz)*100).toFixed(2) + '%)'; } <br />注：表单加载后即计算完成进行显示</p>`"/>
-</a-col>
+  <IbizRaw 
+    v-show="state.detailsModel.rawitem1.visible"
+    class="el-alert el-alert--info is-light"
+    
+    contentType="HTML"
+    style="height: -1.0px;width: -1.0px"
+    :value="`<p>1.XY前端计算值：由前台处理逻辑（计算式）取值计算式：${fieldx} + ${fieldy} <br />2.XY前端计算值2：由前台处理逻辑（脚本代码）取值脚本代码：data.appfield2=data.fieldx+data.fieldy <br />3.XY前端计算值4：由前端处理逻辑（脚本代码）取值脚本代码： if(data.fieldx &amp;&amp; data.fieldz) { data.appfield4=data.fieldx + '(' +Number((data.fieldx/data.fieldz)*100).toFixed(2) + '%)'; } <br />注：表单加载后即计算完成进行显示</p>`"/>
+  </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="grouppanel1" title="属性变更逻辑">
+  <IbizFormGroup v-show="state.detailsModel.grouppanel1.visible" name="grouppanel1" title="属性变更逻辑">
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <IbizFormItem name="appfield3" label="XY前端计算值3">
+  <IbizFormItem v-show="state.detailsModel.appfield3.visible" name="appfield3" label="XY前端计算值3">
 <IbizInput
   name="appfield3"
   type="text"
@@ -157,6 +158,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
  >
   <a-button 
     type="primary"
+    v-show="state.detailsModel.button1.visible"
     class="ibiz-form-button"
     style="">
     保存
@@ -171,13 +173,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-<IbizRaw 
-  class="el-alert el-alert--info is-light"
-  
-  contentType="HTML"
-  style="height: -1.0px;width: -1.0px"
-  :value="`<p>XY前端计算值3输入值后点击保存按钮，触发前台处理逻辑（脚本代码），重新给X值和Y值赋值 <br />脚本代码： <br />data.filedx=Math.random()*data.appfield3; <br />data.filedy=Math.random()*data.appfield3;</p>`"/>
-</a-col>
+  <IbizRaw 
+    v-show="state.detailsModel.rawitem2.visible"
+    class="el-alert el-alert--info is-light"
+    
+    contentType="HTML"
+    style="height: -1.0px;width: -1.0px"
+    :value="`<p>XY前端计算值3输入值后点击保存按钮，触发前台处理逻辑（脚本代码），重新给X值和Y值赋值 <br />脚本代码： <br />data.filedx=Math.random()*data.appfield3; <br />data.filedy=Math.random()*data.appfield3;</p>`"/>
+  </a-col>
   </a-form>
 </template>
 <style lang="scss">

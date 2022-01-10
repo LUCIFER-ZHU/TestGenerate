@@ -6,16 +6,17 @@ export const ViewConfig = {
   viewCaption: '表格常规',
   height: '0',
   width: '0',
-  viewMsgGroup: '',
-  viewUIActions: '',
+  appEntityName:'Example',
   viewSysCss: '',
-  viewSysImage: '',
   subCaption: '',
   viewType: 'DEGRIDVIEW',
   viewStyle: 'DEFAULT',
   showCaptionBar: 'DEFAULT',
   xDataControlName:'grid',
-  viewToolbarModel: [
+  openDataViewName:'ExampleEditorEditView',
+  appViewNavContexts:{  },
+  appViewNavParams:{  },
+  toolbar: [
   ],
   controlsAction:{
   }};

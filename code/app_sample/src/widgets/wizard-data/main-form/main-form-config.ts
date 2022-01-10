@@ -81,34 +81,55 @@ export const CtrlConfig = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new WizardDataService() ),
   data: new ControlVO({}),
-  formDetails: [
-    {
+  detailsModel: {
+    group1: {
       caption: '向导数据基本信息',
-      codeName: 'group1',
       name: 'group1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: false,
     },
-    {
+    textfield: {
       caption: '文本属性',
-      codeName: 'textfield',
       name: 'textfield',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
       dataType: '25',
-      detailStyle: 'DEFAULT',
+      required: false,
+      enableCond: 3,
     },
-    {
+    timefield: {
       caption: '时间属性',
-      codeName: 'timefield',
       name: 'timefield',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
       dataType: '5',
-      detailStyle: 'DEFAULT',
+      required: false,
+      enableCond: 3,
     },
-    {
+    numfield: {
       caption: '数值属性',
-      codeName: 'numfield',
       name: 'numfield',
-      dataType: '6',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '6',
+      required: false,
+      enableCond: 3,
     },
-  ],
+  },
+  actionModel: {
+  },
   rules: {
   },
 };

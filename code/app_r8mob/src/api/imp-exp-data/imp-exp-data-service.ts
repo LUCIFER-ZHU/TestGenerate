@@ -1,18 +1,38 @@
+import { IParam } from '@core';
 import { ImpExpDataServiceBase } from './imp-exp-data-service-base';
 
 /**
- * ${appEntity.getLogicName()}服务
+ * 导入导出数据服务
  *
  * @export
  * @class ImpExpDataService
  * @extends ImpExpDataServiceBase
  */
 export class ImpExpDataService extends ImpExpDataServiceBase {
+
+    /**
+     * 基础数据服务实例
+     * 
+     * @private
+     * @type { ImpExpDataService }
+     * @memberof ImpExpDataService
+     */
+    private static basicDataServiceInstance: ImpExpDataService;
+
+    /**
+     * 数据服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof ImpExpDataService
+     */
+    private static dataServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of ImpExpDataService.
      * @memberof ImpExpDataService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class ImpExpDataService extends ImpExpDataServiceBase {
      * @return {*}  { ImpExpDataService }
      * @memberof ImpExpDataService
      */
-    static getInstance(context?: any): ImpExpDataService {
-        return new ImpExpDataService({ context: context });
+    static getInstance(opts?: IParam): ImpExpDataService {
+        if (!this.basicDataServiceInstance) {
+            this.basicDataServiceInstance = new ImpExpDataService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicDataServiceInstance;
+        } else {
+            if (!ImpExpDataService.dataServiceMap.get(opts.srfdynainstid)) {
+                ImpExpDataService.dataServiceMap.set(opts.srfdynainstid, new ImpExpDataService(opts));
+            }
+            return ImpExpDataService.dataServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default ImpExpDataService;

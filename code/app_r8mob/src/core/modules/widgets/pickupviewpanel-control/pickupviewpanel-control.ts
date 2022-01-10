@@ -18,16 +18,6 @@ export class PickupViewPanelControl extends MainControl {
    */
   public declare controlState: PickupViewPanelControlState;
 
-  /**
-   * @description 是否初始化完成
-   * @type {Ref<boolean>}
-   * @memberof PickupViewPanelControl
-   */
-  public inited: Ref<boolean> = ref(false);
-
-  public viewdata: string = '';
-
-  public viewparam: string = '';
 
   /**
    * @description 根据props设置部件state
@@ -36,9 +26,6 @@ export class PickupViewPanelControl extends MainControl {
    */
   public setState(props: PickupViewPanelControlProps) {
     super.setState(props);
-    this.controlState.isSingleSelect = toRef(props, 'isSingleSelect');
-    this.controlState.isShowButton = toRef(props, 'isShowButton');
-    this.controlState.selectedData = toRef(props, 'selectedData');
   }
 
   /**
@@ -49,18 +36,31 @@ export class PickupViewPanelControl extends MainControl {
   public useLoad(props: PickupViewPanelControlProps) {
     const { viewSubject, controlName, context, viewParams } = this.controlState;
     // 订阅viewSubject,监听load行为
-    if(viewSubject){
-      let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam)=>{
-        if(Object.is(controlName, tag) && Object.is("load", action) ){
-          this.viewdata = JSON.stringify(context);
-          this.viewparam = JSON.stringify(viewParams);
-          this.inited.value = true;
+    if (viewSubject) {
+      let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam) => {
+        if (Object.is(controlName, tag) && Object.is("load", action)) {
+
         }
       })
       // 部件卸载时退订viewSubject
-      onUnmounted(()=>{
+      onUnmounted(() => {
         subscription.unsubscribe();
       })
+    }
+  }
+
+
+  /**
+   * 部件事件
+   *
+   * @param {IActionParam} actionParam
+   * @memberof PickupViewPanelControl
+   */
+  public handleViewEvent(actionParam: IActionParam) {
+    const { tag, action, data } = actionParam;
+    const { controlName } = this.controlState;
+    if (Object.is("selectionChange", action)) {
+      this.emit('ctrlEvent', { tag: controlName, action: action, data: data });
     }
   }
 
@@ -75,9 +75,7 @@ export class PickupViewPanelControl extends MainControl {
     const superParams = super.moduleInstall(props, emit);
     return {
       ...superParams,
-      inited: this.inited,
-      viewdata: this.viewdata,
-      viewparam: this.viewparam,
+      handleViewEvent: this.handleViewEvent.bind(this),
       state: this.controlState
     };
   }

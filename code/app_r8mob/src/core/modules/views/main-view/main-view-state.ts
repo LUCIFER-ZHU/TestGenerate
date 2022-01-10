@@ -14,4 +14,12 @@ export interface MainViewState extends ViewStateBase {
    * @memberof MainViewState
    */
   controlsAction: Record<string,ControlAction>;
+
+  /**
+   * 视图实体名称
+   *
+   * @type {string}
+   * @memberof MainViewState
+   */
+  appEntityName: string;
 }

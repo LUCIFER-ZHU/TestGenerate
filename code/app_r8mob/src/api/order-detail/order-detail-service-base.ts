@@ -1,4 +1,4 @@
-import { Http, EntityService } from '@core';
+import { IContext, IParam, EntityService } from '@core';
 
 /**
  * 订单明细服务对象基类
@@ -9,19 +9,29 @@ import { Http, EntityService } from '@core';
  */
 export class OrderDetailServiceBase extends EntityService {
   
-  constructor(opts?: any) {
-      super(opts);
-      // 初始化关系实体路径集合
-      this.deResPaths = [
-          [{"pathName":"orders","parameterName":"order"},{"pathName":"orderdetails","parameterName":"orderdetail"}]
-      ]
+  /**
+  * Creates an instance of OrderDetailServiceBase.
+  *
+  * @param {*} [opts={}]
+  * @memberof OrderDetailServiceBase
+  */
+  constructor(opts: IParam = {}) {
+      super(opts,'OrderDetail');
   }
 
-  protected SYSTEMNAME = '';
-  protected APPNAME = '';
-  protected APPDENAME = 'OrderDetail';
-  protected APPDENAMEPLURAL = "OrderDetail";
-
-
+  /**
+   * 初始化基础数据
+   *
+   * @protected
+   * @memberof ChartDataServiceBase
+   */
+  protected initBasicData() {
+    this.appEntityCodeName = 'orderdetail';
+    this.appEntityCodeNames = 'orderdetails';
+    // 初始化关系实体路径集合
+    this.deResPaths = [
+        [{"pathName":"orders","parameterName":"order"},{"pathName":"orderdetails","parameterName":"orderdetail"}]
+    ]
+  }
 
 }

@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="grouppanel2" title="看板">
+  <IbizFormGroup v-show="state.detailsModel.grouppanel2.visible" name="grouppanel2" title="看板">
     <a-row>
 关系界面未实现    </a-row>
   </IbizFormGroup>
@@ -51,7 +51,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="grouppanel1" title="树">
+  <IbizFormGroup v-show="state.detailsModel.grouppanel1.visible" name="grouppanel1" title="树">
     <a-row>
 关系界面未实现关系界面未实现    </a-row>
   </IbizFormGroup>
@@ -62,7 +62,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="列表">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="列表">
     <a-row>
 关系界面未实现关系界面未实现    </a-row>
   </IbizFormGroup>
@@ -73,7 +73,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="grouppanel3" title="数据视图">
+  <IbizFormGroup v-show="state.detailsModel.grouppanel3.visible" name="grouppanel3" title="数据视图">
     <a-row>
 关系界面未实现关系界面未实现    </a-row>
   </IbizFormGroup>
@@ -84,7 +84,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="grouppanel4" title="树表格">
+  <IbizFormGroup v-show="state.detailsModel.grouppanel4.visible" name="grouppanel4" title="树表格">
     <a-row>
 关系界面未实现    </a-row>
   </IbizFormGroup>

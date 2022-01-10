@@ -4,16 +4,17 @@ export const ViewConfig = {
   viewCaption: '选择视图示例',
   height: '0',
   width: '0',
-  viewMsgGroup: '',
-  viewUIActions: '',
+  appEntityName:'Example',
   viewSysCss: '',
-  viewSysImage: '',
   subCaption: '',
   viewType: 'DEEDITVIEW',
   viewStyle: 'DEFAULT',
   showCaptionBar: 'DEFAULT',
   xDataControlName:'form',
-  viewToolbarModel: [
+  openDataViewName:'ExampleEditorEditView',
+  appViewNavContexts:{  },
+  appViewNavParams:{  },
+  toolbar: [
   ],
   controlsAction:{
     form:{
@@ -21,6 +22,7 @@ export const ViewConfig = {
       removeAction: 'Remove',
       updateAction: 'Update',
       loadDraftAction: 'GetDraft',
-      createAction: 'GetDraft',
+      createAction: 'Create',
+      fetchAction:''
     },
   }};

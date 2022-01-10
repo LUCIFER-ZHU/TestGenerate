@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="快速新建">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="快速新建">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -48,7 +48,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="customername" label="客户名称">
+  <IbizFormItem v-show="state.detailsModel.customername.visible" name="customername" label="客户名称">
 <IbizInput
   name="customername"
   :maxLength="200"
@@ -65,13 +65,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="pcustomername" label="上级客户">
+  <IbizFormItem v-show="state.detailsModel.pcustomername.visible" name="pcustomername" label="上级客户">
 <IbizDataPicker
   name="pcustomername"
   :data="state.data"
   valueItem="pcustomerid"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :value="state.data.pcustomername"
   @editorEvent="handleEditorEvent"
 />   </IbizFormItem>
@@ -82,7 +83,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="type" label="类型">
+  <IbizFormItem v-show="state.detailsModel.type.visible" name="type" label="类型">
 <IbizRadioGroup
   name="type"
   :data="state.data"
@@ -98,7 +99,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="memo" label="备注">
+  <IbizFormItem v-show="state.detailsModel.memo.visible" name="memo" label="备注">
 <IbizInput
   name="memo"
   :maxLength="1000"

@@ -38,7 +38,7 @@ const { state, handleCtrlEvent, handleToolbarEvent } = new GridView(ViewConfig).
       <IbizToolbar
         mode="button"
         name="gridviewtoolbar"
-        :actionModel="state.viewToolbarModel"
+        :actionModel="state.toolbar"
         @toolbarEvent="handleToolbarEvent"/>
     </template>
     <MainGrid

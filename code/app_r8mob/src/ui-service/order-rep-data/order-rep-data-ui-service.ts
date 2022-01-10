@@ -1,3 +1,4 @@
+import { IParam } from '@core';
 import { OrderRepDataUIServiceBase } from './order-rep-data-ui-service-base';
 
 /**
@@ -8,11 +9,30 @@ import { OrderRepDataUIServiceBase } from './order-rep-data-ui-service-base';
  * @extends OrderRepDataUIServiceBase
  */
 export class OrderRepDataUIService extends OrderRepDataUIServiceBase {
+
+    /**
+     * 基础UI服务实例
+     * 
+     * @private
+     * @type { OrderRepDataUIService }
+     * @memberof OrderRepDataUIService
+     */
+    private static basicUIServiceInstance: OrderRepDataUIService;
+
+    /**
+     * UI服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof OrderRepDataUIService
+     */
+    private static UIServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of OrderRepDataUIService.
      * @memberof OrderRepDataUIService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class OrderRepDataUIService extends OrderRepDataUIServiceBase {
      * @return {*}  { OrderRepDataUIService }
      * @memberof OrderRepDataUIService
      */
-    static getInstance(context?: any): OrderRepDataUIService {
-        return new OrderRepDataUIService({ context: context });
+    static getInstance(opts?: IParam): OrderRepDataUIService {
+         if (!this.basicUIServiceInstance) {
+            this.basicUIServiceInstance = new OrderRepDataUIService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicUIServiceInstance;
+        } else {
+            if (!OrderRepDataUIService.UIServiceMap.get(opts.srfdynainstid)) {
+                OrderRepDataUIService.UIServiceMap.set(opts.srfdynainstid, new OrderRepDataUIService(opts));
+            }
+            return OrderRepDataUIService.UIServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default OrderRepDataUIService;

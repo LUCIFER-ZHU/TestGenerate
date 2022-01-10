@@ -91,7 +91,7 @@ export const CtrlConfig = {
     },
   },
   uAColumnModel:[
-    { name: "uef574fa", caption: "表单项更新前台计算", showIcon: true, showCaption: true, separator: false, uIActionTag: "CalcPF", noPrivDisplayMode: 6, disabled: false, visible: true, },
+    { name: "uef574fa", caption: "表单项更新前台计算", showIcon: true, showCaption: true, separator: false, uIActionTag: "CalcPF", noPrivDisplayMode: , dataAccessAction: '', actionTarget: 'SINGLEKEY', disabled: false, visible: true, },
   ],
   columnsModel: [
     {

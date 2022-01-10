@@ -13,7 +13,7 @@ export interface GridControlState extends MainControlState {
    * @type {IParam[]}
    * @memberof GridControlState
    */
-  items: IParam[];
+  data: IParam[];
 
   /**
    * @description 表格列模型
@@ -79,93 +79,30 @@ export interface GridControlState extends MainControlState {
   selectFirstDefault: boolean;
 
   /**
-   * @description 当前页
-   * @type {number}
-   * @memberof GridControlState
-   */
-  current: number;
-
-  /**
-   * @description 分页大小
-   * @type {number}
-   * @memberof GridControlState
-   */
-  pageSize: number;
-
-  /**
-   * @description 是否启用分页
-   * @type {boolean}
-   * @memberof GridControlState
-   */
-  enablePagingBar: boolean;
-
-  /**
-   * @description 数据聚合
+   * @description 表格聚合
    * @type {IParam}
    * @memberof GridControlState
    */
-  dataAgg: string[];
+  gridAgg: IParam;
 
   /**
-   * @description 聚合模式
-   * @type {string}
+   * @description 表格分组
+   * @type {IParam}
    * @memberof GridControlState
    */
-  aggMode: string;
+  gridGroup: IParam;
 
   /**
-   * @description 聚合实体
-   * @type {string}
+   * @description 表格排序
+   * @type {IParam}
    * @memberof GridControlState
    */
-  aggEntity: string,
+  gridSort: IParam;
 
   /**
-   * @description 聚合数据集
-   * @type {string}
+   * @description 表格分页
+   * @type {IParam}
    * @memberof GridControlState
    */
-  aggDataSet: string,
-
-  /**
-   * @description 分组模式
-   * @type {string}
-   * @memberof GridControlState
-   */
-  groupMode: string;
-
-  /**
-   * @description 分组属性
-   * @type {string}
-   * @memberof GridControlState
-   */
-  groupField: string;
-
-  /**
-   * @description 分组代码表
-   * @type {*}
-   * @memberof GridControlState
-   */
-  groupCodeList: any;
-
-  /**
-   * @description 禁用排序
-   * @type {boolean}
-   * @memberof GridControlState
-   */
-  noSort: boolean;
-
-  /**
-   * @description 排序方向
-   * @type {string}
-   * @memberof GridControlState
-   */
-  minorSortDir: string;
-
-  /**
-   * @description 排序属性
-   * @type {string}
-   * @memberof GridControlState
-   */
-  minorSortPSDEF: string;
+  gridPaging: IParam;
 }

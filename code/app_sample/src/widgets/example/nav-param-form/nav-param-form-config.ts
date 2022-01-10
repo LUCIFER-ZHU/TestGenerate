@@ -63,34 +63,55 @@ export const CtrlConfig = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
   data: new ControlVO({}),
-  formDetails: [
-    {
+  detailsModel: {
+    group1: {
       caption: '树导航传参',
-      codeName: 'group1',
       name: 'group1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: true,
     },
-    {
+    formitem: {
       caption: '静态参数',
-      codeName: 'formitem',
       name: 'formitem',
-      dataType: '25',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '25',
+      required: false,
+      enableCond: 3,
     },
-    {
+    formitem1: {
       caption: '当前树节点id',
-      codeName: 'formitem1',
       name: 'formitem1',
-      dataType: '25',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '25',
+      required: false,
+      enableCond: 3,
     },
-    {
+    formitem2: {
       caption: '当前树节点父id',
-      codeName: 'formitem2',
       name: 'formitem2',
-      dataType: '25',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '25',
+      required: false,
+      enableCond: 3,
     },
-  ],
+  },
+  actionModel: {
+  },
   rules: {
   },
 };

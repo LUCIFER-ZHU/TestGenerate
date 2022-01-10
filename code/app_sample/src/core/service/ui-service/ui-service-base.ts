@@ -1,3 +1,5 @@
+import { IParam } from "@core";
+
 /**
  * 界面服务基类
  *
@@ -5,30 +7,44 @@
  * @class UIServiceBase
  */
 export class UIServiceBase {
+
   /**
-   * 执行界面行为统一入口
+   * 应用上下文
    *
-   * @param {string} uIActionTag 界面行为tag
-   * @param {any[]} args 当前数据
-   * @param {any} context 行为附加上下文
-   * @param {*} [params] 附加参数
-   * @param {*} [$event] 事件源
-   * @param {*} [xData]  执行行为所需当前部件
-   * @param {*} [actionContext]  执行行为上下文
-   * @param {*} [srfParentDeName] 父实体名称
-   *
+   * @protected
+   * @type {IParam}
    * @memberof UIServiceBase
    */
-  protected async excuteAction(
-    uIActionTag: string,
-    args: any[],
-    context: any = {},
-    params: any = {},
-    $event?: any,
-    xData?: any,
-    actionContext?: any,
-    srfParentDeName?: string,
-  ) {
-     // TODO 执行UI服务
+  protected context: IParam;
+
+  /**
+   *
+   * @param {*} [opts={}]
+   * @memberof UIServiceBase
+   */
+  constructor(context: IParam = {}) {
+    this.context = context;
+  }
+
+  /**
+   * 界面行为模型对象
+   *
+   * @type {*}
+   * @memberof UIServiceBase
+   */
+  public uiActionModes: any = {};
+
+  /**
+   *
+   * 获取界面行为模型对象
+   *
+   * @param {string} actionName
+   * @memberof UIServiceBase
+   */
+  public getUIActionModel(actionName: string) {
+    if (!actionName) {
+      return;
+    }
+    return this.uiActionModes[actionName] ? this.uiActionModes[actionName] : null;
   }
 }

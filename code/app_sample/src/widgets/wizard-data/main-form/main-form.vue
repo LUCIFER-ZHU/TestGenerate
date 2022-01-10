@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="向导数据基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="向导数据基本信息">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -48,7 +48,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="textfield" label="文本属性">
+  <IbizFormItem v-show="state.detailsModel.textfield.visible" name="textfield" label="文本属性">
 <IbizInput
   name="textfield"
   :maxLength="100"
@@ -65,7 +65,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="timefield" label="时间属性">
+  <IbizFormItem v-show="state.detailsModel.timefield.visible" name="timefield" label="时间属性">
 <IbizDatePicker
   name="timefield"
   dateFormat="YYYY-MM-DD HH:mm:ss"
@@ -81,7 +81,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="numfield" label="数值属性">
+  <IbizFormItem v-show="state.detailsModel.numfield.visible" name="numfield" label="数值属性">
 <IbizInput
   name="numfield"
   type="text"

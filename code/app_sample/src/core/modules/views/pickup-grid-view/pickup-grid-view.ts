@@ -1,3 +1,4 @@
+import { IActionParam } from "@core";
 import { PickupView } from "../pickup-view";
 import { PickupGridViewProps } from "./pickup-grid-view-prop";
 import { PickupGridViewState } from "./pickup-grid-view-state";
@@ -17,6 +18,7 @@ export class PickupGridView extends PickupView {
    */
   public declare viewState: PickupGridViewState;
 
+
   /**
    * @description 使用加载功能模块
    * @param {PickupGridViewProps} props 传入的props
@@ -29,6 +31,25 @@ export class PickupGridView extends PickupView {
     })
   }
 
+
+  /**
+   * 部件事件
+   *
+   * @param {IActionParam} actionParam
+   * @memberof PickupGridView
+   */
+  public handleCtrlEvent(actionParam: IActionParam) {
+    const { tag, action, data } = actionParam;
+    if (tag !== 'grid') {
+      return;
+    }
+    if (action === 'selectionChange') {
+      this.selectData = data;
+      this.emit('viewEvent', actionParam)
+    }
+  }
+
+
   /**
    * @description 安装视图所有功能模块的方法
    * @param {PickupGridViewProps} props 传入的Props
@@ -37,10 +58,12 @@ export class PickupGridView extends PickupView {
    * @memberof PickupGridView
    */
   public moduleInstall(props: PickupGridViewProps, emit?: Function) {
+    this.emit = emit;
     const superParams = super.moduleInstall(props, emit);
     this.useLoad(props);
     return {
       ...superParams,
+      handleCtrlEvent: this.handleCtrlEvent.bind(this),
       state: this.viewState,
     };
   }

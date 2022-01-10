@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="区基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="区基本信息">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -48,7 +48,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="districtname" label="区名称">
+  <IbizFormItem v-show="state.detailsModel.districtname.visible" name="districtname" label="区名称">
 <IbizSpan
   name="districtname"
   dataType="25"

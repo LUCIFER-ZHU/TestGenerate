@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="日历示例数据基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="日历示例数据基本信息">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -48,7 +48,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="calendardataname" label="事项">
+  <IbizFormItem v-show="state.detailsModel.calendardataname.visible" name="calendardataname" label="事项">
 <IbizInput
   name="calendardataname"
   :maxLength="200"
@@ -65,7 +65,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="begintime" label="开始时间">
+  <IbizFormItem v-show="state.detailsModel.begintime.visible" name="begintime" label="开始时间">
 <IbizDatePicker
   name="begintime"
   dateFormat="YYYY-MM-DD HH:mm:ss"
@@ -81,7 +81,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="endtime" label="结束时间">
+  <IbizFormItem v-show="state.detailsModel.endtime.visible" name="endtime" label="结束时间">
 <IbizDatePicker
   name="endtime"
   dateFormat="YYYY-MM-DD HH:mm:ss"
@@ -97,7 +97,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="memo" label="备注">
+  <IbizFormItem v-show="state.detailsModel.memo.visible" name="memo" label="备注">
 <IbizInput
   name="memo"
   :maxLength="1000"

@@ -1,3 +1,4 @@
+import { IParam } from '@core';
 import { Example2UIServiceBase } from './example2-ui-service-base';
 
 /**
@@ -8,11 +9,30 @@ import { Example2UIServiceBase } from './example2-ui-service-base';
  * @extends Example2UIServiceBase
  */
 export class Example2UIService extends Example2UIServiceBase {
+
+    /**
+     * 基础UI服务实例
+     * 
+     * @private
+     * @type { Example2UIService }
+     * @memberof Example2UIService
+     */
+    private static basicUIServiceInstance: Example2UIService;
+
+    /**
+     * UI服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof Example2UIService
+     */
+    private static UIServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of Example2UIService.
      * @memberof Example2UIService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class Example2UIService extends Example2UIServiceBase {
      * @return {*}  { Example2UIService }
      * @memberof Example2UIService
      */
-    static getInstance(context?: any): Example2UIService {
-        return new Example2UIService({ context: context });
+    static getInstance(opts?: IParam): Example2UIService {
+         if (!this.basicUIServiceInstance) {
+            this.basicUIServiceInstance = new Example2UIService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicUIServiceInstance;
+        } else {
+            if (!Example2UIService.UIServiceMap.get(opts.srfdynainstid)) {
+                Example2UIService.UIServiceMap.set(opts.srfdynainstid, new Example2UIService(opts));
+            }
+            return Example2UIService.UIServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default Example2UIService;

@@ -67,20 +67,31 @@ export const CtrlConfig = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ProvinceService() ),
   data: new ControlVO({}),
-  formDetails: [
-    {
+  detailsModel: {
+    group1: {
       caption: '省份基本信息',
-      codeName: 'group1',
       name: 'group1',
-    },
-    {
-      caption: '省份名称',
-      codeName: 'provincename',
-      name: 'provincename',
-      dataType: '25',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: false,
     },
-  ],
+    provincename: {
+      caption: '省份名称',
+      name: 'provincename',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '25',
+      required: false,
+      enableCond: 3,
+    },
+  },
+  actionModel: {
+  },
   rules: {
   },
 };

@@ -88,41 +88,67 @@ export const CtrlConfig = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
   data: new ControlVO({}),
-  formDetails: [
-    {
+  detailsModel: {
+    group1: {
       caption: '示例基本信息',
-      codeName: 'group1',
       name: 'group1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: false,
     },
-    {
+    fieldx: {
       caption: 'X值',
-      codeName: 'fieldx',
       name: 'fieldx',
-      dataType: '6',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '6',
+      required: false,
+      enableCond: 3,
     },
-    {
+    fieldy: {
       caption: 'Y值',
-      codeName: 'fieldy',
       name: 'fieldy',
-      dataType: '6',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '6',
+      required: false,
+      enableCond: 3,
     },
-    {
+    fieldz: {
       caption: 'Z值',
-      codeName: 'fieldz',
       name: 'fieldz',
-      dataType: '6',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '6',
+      required: false,
+      enableCond: 3,
     },
-    {
+    fieldupdate: {
       caption: '更新值',
-      codeName: 'fieldupdate',
       name: 'fieldupdate',
-      dataType: '6',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '6',
+      required: false,
+      enableCond: 3,
     },
-  ],
+  },
+  actionModel: {
+  },
   rules: {
   },
 };

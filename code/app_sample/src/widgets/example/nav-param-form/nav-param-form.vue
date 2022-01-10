@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="树导航传参">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="树导航传参">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -48,7 +48,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem" label="静态参数">
+  <IbizFormItem v-show="state.detailsModel.formitem.visible" name="formitem" label="静态参数">
 <IbizInput
   name="formitem"
   type="text"
@@ -64,7 +64,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem1" label="当前树节点id">
+  <IbizFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" label="当前树节点id">
 <IbizInput
   name="formitem1"
   type="text"
@@ -80,7 +80,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="formitem2" label="当前树节点父id">
+  <IbizFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" label="当前树节点父id">
 <IbizInput
   name="formitem2"
   type="text"

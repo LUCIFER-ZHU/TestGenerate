@@ -1,18 +1,38 @@
+import { IParam } from '@core';
 import { CalendarDataServiceBase } from './calendar-data-service-base';
 
 /**
- * ${appEntity.getLogicName()}服务
+ * 日历示例数据服务
  *
  * @export
  * @class CalendarDataService
  * @extends CalendarDataServiceBase
  */
 export class CalendarDataService extends CalendarDataServiceBase {
+
+    /**
+     * 基础数据服务实例
+     * 
+     * @private
+     * @type { CalendarDataService }
+     * @memberof CalendarDataService
+     */
+    private static basicDataServiceInstance: CalendarDataService;
+
+    /**
+     * 数据服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof CalendarDataService
+     */
+    private static dataServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of CalendarDataService.
      * @memberof CalendarDataService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class CalendarDataService extends CalendarDataServiceBase {
      * @return {*}  { CalendarDataService }
      * @memberof CalendarDataService
      */
-    static getInstance(context?: any): CalendarDataService {
-        return new CalendarDataService({ context: context });
+    static getInstance(opts?: IParam): CalendarDataService {
+        if (!this.basicDataServiceInstance) {
+            this.basicDataServiceInstance = new CalendarDataService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicDataServiceInstance;
+        } else {
+            if (!CalendarDataService.dataServiceMap.get(opts.srfdynainstid)) {
+                CalendarDataService.dataServiceMap.set(opts.srfdynainstid, new CalendarDataService(opts));
+            }
+            return CalendarDataService.dataServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default CalendarDataService;

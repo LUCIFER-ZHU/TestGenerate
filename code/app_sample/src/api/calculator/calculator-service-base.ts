@@ -1,4 +1,4 @@
-import { Http, EntityService } from '@core';
+import { IContext, IParam, EntityService } from '@core';
 
 /**
  * 计算器服务对象基类
@@ -9,19 +9,29 @@ import { Http, EntityService } from '@core';
  */
 export class CalculatorServiceBase extends EntityService {
   
-  constructor(opts?: any) {
-      super(opts);
-      // 初始化关系实体路径集合
-      this.deResPaths = [
-          [{"pathName":"calculators","parameterName":"calculator"}]
-      ]
+  /**
+  * Creates an instance of CalculatorServiceBase.
+  *
+  * @param {*} [opts={}]
+  * @memberof CalculatorServiceBase
+  */
+  constructor(opts: IParam = {}) {
+      super(opts,'Calculator');
   }
 
-  protected SYSTEMNAME = '';
-  protected APPNAME = '';
-  protected APPDENAME = 'Calculator';
-  protected APPDENAMEPLURAL = "Calculator";
-
-
+  /**
+   * 初始化基础数据
+   *
+   * @protected
+   * @memberof ChartDataServiceBase
+   */
+  protected initBasicData() {
+    this.appEntityCodeName = 'calculator';
+    this.appEntityCodeNames = 'calculators';
+    // 初始化关系实体路径集合
+    this.deResPaths = [
+        [{"pathName":"calculators","parameterName":"calculator"}]
+    ]
+  }
 
 }

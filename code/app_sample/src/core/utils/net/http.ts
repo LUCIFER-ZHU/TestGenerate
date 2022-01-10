@@ -2,6 +2,7 @@ import { isExist } from '@core';
 import axios from 'axios';
 import qs from 'qs';
 import { Subject } from 'rxjs';
+import { Interceptors } from './interceptor';
 
 /**
  * Http net 对象
@@ -40,7 +41,7 @@ export class Http {
      *
      * @memberof Http
      */
-    private constructor() { }
+    private constructor() {}
 
     /**
      * 网络请求对象

@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="订单基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="订单基本信息">
     <a-row>
 <a-col
   :lg="{span: 6, offset: 0 }"
@@ -48,7 +48,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="ordername" label="订单号">
+  <IbizFormItem v-show="state.detailsModel.ordername.visible" name="ordername" label="订单号">
 <IbizInput
   name="ordername"
   :maxLength="200"
@@ -65,13 +65,14 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 18, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="customername" label="客户">
+  <IbizFormItem v-show="state.detailsModel.customername.visible" name="customername" label="客户">
 <IbizDataPicker
   name="customername"
   :data="state.data"
   valueItem="customerid"
   :context="state.context"
   :viewParams="state.viewParams"
+   pickUpView="ChartDataPickupView"
   :value="state.data.customername"
   @editorEvent="handleEditorEvent"
 />   </IbizFormItem>
@@ -82,7 +83,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="orderdate" label="订单时间">
+  <IbizFormItem v-show="state.detailsModel.orderdate.visible" name="orderdate" label="订单时间">
 <IbizDatePicker
   name="orderdate"
   dateFormat="YYYY-MM-DD"
@@ -98,7 +99,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="amount" label="金额">
+  <IbizFormItem v-show="state.detailsModel.amount.visible" name="amount" label="金额">
 <IbizInput
   name="amount"
   type="text"
@@ -114,7 +115,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="state" label="订单状态">
+  <IbizFormItem v-show="state.detailsModel.state.visible" name="state" label="订单状态">
 <IbizDropdownList
   name="state"
   :data="state.data"
@@ -134,7 +135,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="grouppanel1" title="订单明细">
+  <IbizFormGroup v-show="state.detailsModel.grouppanel1.visible" name="grouppanel1" title="订单明细">
     <a-row>
 关系界面未实现    </a-row>
   </IbizFormGroup>

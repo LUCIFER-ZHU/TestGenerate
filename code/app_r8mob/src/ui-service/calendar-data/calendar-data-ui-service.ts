@@ -1,3 +1,4 @@
+import { IParam } from '@core';
 import { CalendarDataUIServiceBase } from './calendar-data-ui-service-base';
 
 /**
@@ -8,11 +9,30 @@ import { CalendarDataUIServiceBase } from './calendar-data-ui-service-base';
  * @extends CalendarDataUIServiceBase
  */
 export class CalendarDataUIService extends CalendarDataUIServiceBase {
+
+    /**
+     * 基础UI服务实例
+     * 
+     * @private
+     * @type { CalendarDataUIService }
+     * @memberof CalendarDataUIService
+     */
+    private static basicUIServiceInstance: CalendarDataUIService;
+
+    /**
+     * UI服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof CalendarDataUIService
+     */
+    private static UIServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of CalendarDataUIService.
      * @memberof CalendarDataUIService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class CalendarDataUIService extends CalendarDataUIServiceBase {
      * @return {*}  { CalendarDataUIService }
      * @memberof CalendarDataUIService
      */
-    static getInstance(context?: any): CalendarDataUIService {
-        return new CalendarDataUIService({ context: context });
+    static getInstance(opts?: IParam): CalendarDataUIService {
+         if (!this.basicUIServiceInstance) {
+            this.basicUIServiceInstance = new CalendarDataUIService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicUIServiceInstance;
+        } else {
+            if (!CalendarDataUIService.UIServiceMap.get(opts.srfdynainstid)) {
+                CalendarDataUIService.UIServiceMap.set(opts.srfdynainstid, new CalendarDataUIService(opts));
+            }
+            return CalendarDataUIService.UIServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default CalendarDataUIService;

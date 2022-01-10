@@ -67,25 +67,40 @@ export const CtrlConfig = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
   data: new ControlVO({}),
-  formDetails: [
-    {
+  detailsModel: {
+    group1: {
       caption: '示例基本信息',
-      codeName: 'group1',
       name: 'group1',
-    },
-    {
-      caption: '',
-      codeName: 'rawitem1',
-      name: 'rawitem1',
-    },
-    {
-      caption: '自动填充属性',
-      codeName: 'acfield',
-      name: 'acfield',
-      dataType: '25',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: false,
     },
-  ],
+    rawitem1: {
+      caption: '',
+      name: 'rawitem1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'RAWITEM',
+      showCaption: true,
+    },
+    acfield: {
+      caption: '自动填充属性',
+      name: 'acfield',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '25',
+      required: false,
+      enableCond: 3,
+    },
+  },
+  actionModel: {
+  },
   rules: {
   },
 };

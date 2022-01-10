@@ -266,3 +266,43 @@ function contains(value: any, value2: any): boolean {
   }
   return false;
 }
+
+/**
+ * 设置sessionStorage数据
+ *
+ */
+ export const setSessionStorage: Function = (key: string, value: any) => {
+  if (!value) {
+      return;
+  }
+  sessionStorage.setItem(key, JSON.stringify(value));
+}
+
+/**
+* 获取sessionStorage数据
+*
+*/
+export const getSessionStorage: Function = (key: string) => {
+  if (!key) {
+      return null;
+  }
+  let value = sessionStorage.getItem(key);
+  if (value) {
+      return JSON.parse(value);
+  } else {
+      return value;
+  }
+}
+
+/**
+* 删除sessionStorage数据
+*
+*/
+export const removeSessionStorage: Function = (key: string) => {
+  if (!key) {
+      return;
+  }
+  if (sessionStorage.getItem(key)) {
+      sessionStorage.removeItem(key);
+  }
+}

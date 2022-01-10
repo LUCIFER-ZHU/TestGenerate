@@ -40,7 +40,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup name="group1" title="订单基本信息">
+  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="订单基本信息">
     <a-row>
 <a-col
   :lg="{span: 12, offset: 0 }"
@@ -48,7 +48,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="customername" label="客户">
+  <IbizFormItem v-show="state.detailsModel.customername.visible" name="customername" label="客户">
 <IbizSpan
   name="customername"
   dataType="25"
@@ -63,7 +63,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="ordername" label="订单号">
+  <IbizFormItem v-show="state.detailsModel.ordername.visible" name="ordername" label="订单号">
 <IbizSpan
   name="ordername"
   dataType="25"
@@ -78,7 +78,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="orderdate" label="订单时间">
+  <IbizFormItem v-show="state.detailsModel.orderdate.visible" name="orderdate" label="订单时间">
 <IbizSpan
   name="orderdate"
   dataType="5"
@@ -93,7 +93,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="state" label="订单状态">
+  <IbizFormItem v-show="state.detailsModel.state.visible" name="state" label="订单状态">
 <IbizSpan
   name="state"
   dataType="25"
@@ -108,7 +108,7 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem name="amount" label="金额">
+  <IbizFormItem v-show="state.detailsModel.amount.visible" name="amount" label="金额">
 <IbizSpan
   name="amount"
   dataType="7"

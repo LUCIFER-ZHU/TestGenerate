@@ -1,3 +1,4 @@
+import { IParam } from '@core';
 import { ExampleUIServiceBase } from './example-ui-service-base';
 
 /**
@@ -8,11 +9,30 @@ import { ExampleUIServiceBase } from './example-ui-service-base';
  * @extends ExampleUIServiceBase
  */
 export class ExampleUIService extends ExampleUIServiceBase {
+
+    /**
+     * 基础UI服务实例
+     * 
+     * @private
+     * @type { ExampleUIService }
+     * @memberof ExampleUIService
+     */
+    private static basicUIServiceInstance: ExampleUIService;
+
+    /**
+     * UI服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof ExampleUIService
+     */
+    private static UIServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of ExampleUIService.
      * @memberof ExampleUIService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class ExampleUIService extends ExampleUIServiceBase {
      * @return {*}  { ExampleUIService }
      * @memberof ExampleUIService
      */
-    static getInstance(context?: any): ExampleUIService {
-        return new ExampleUIService({ context: context });
+    static getInstance(opts?: IParam): ExampleUIService {
+         if (!this.basicUIServiceInstance) {
+            this.basicUIServiceInstance = new ExampleUIService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicUIServiceInstance;
+        } else {
+            if (!ExampleUIService.UIServiceMap.get(opts.srfdynainstid)) {
+                ExampleUIService.UIServiceMap.set(opts.srfdynainstid, new ExampleUIService(opts));
+            }
+            return ExampleUIService.UIServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default ExampleUIService;

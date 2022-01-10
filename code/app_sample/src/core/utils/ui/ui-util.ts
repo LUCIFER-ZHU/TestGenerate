@@ -38,17 +38,17 @@ export class UIUtil {
       // 无权限:0;有权限:1
       if (dataActionResult === 0) {
         // 禁用:1;隐藏:2;隐藏且默认隐藏:6
-        if (item.getNoPrivDisplayMode === 1) {
+        if (item.noPrivDisplayMode === 1) {
           item.disabled = true;
         }
-        if (item.getNoPrivDisplayMode === 2 || item.getNoPrivDisplayMode === 6) {
-          item.visabled = false;
+        if (item.noPrivDisplayMode === 2 || item.noPrivDisplayMode === 6) {
+          item.visible = false;
         } else {
-          item.visabled = true;
+          item.visible = true;
         }
       }
       if (dataActionResult === 1) {
-        item.visabled = true;
+        item.visible = true;
         item.disabled = false;
       }
       // 返回权限验证的结果
@@ -60,15 +60,15 @@ export class UIUtil {
 
   /**
    * @description 计算导航数据
-   * 先从当前数据目标计算，然后再从当前上下文计算，最后从当前视图参数计算，没有则为null
+   * 先从当前激活数据计算，然后再从当前上下文计算，最后从当前视图参数计算，没有则为null
    * @export
-   * @param {*} data 当前数据目标
-   * @param {*} parentContext 当前上下文
-   * @param {*} parentParam 当前视图参数
+   * @param {*} activedata 当前激活数据
+   * @param {*} context 当前上下文
+   * @param {*} viewParam 当前视图参数
    * @param {*} params 导航参数
    * @return {*} 
    */
-  public static computedNavData(data: any, parentContext: any, parentParam: any, params: any): any {
+  public static computedNavData(activedata: any, context: any, viewParam: any, params: any): any {
     const _data: any = {};
     if (params && Object.keys(params).length > 0) {
       Object.keys(params).forEach((name: string) => {
@@ -78,12 +78,12 @@ export class UIUtil {
         let value: string | null = params[name];
         if (value && value.toString().startsWith('%') && value.toString().endsWith('%')) {
           const key = value.substring(1, value.length - 1).toLowerCase();
-          if (data && data.hasOwnProperty(key)) {
-            value = data[key];
-          } else if (parentContext && parentContext[key]) {
-            value = parentContext[key];
-          } else if (parentParam && parentParam[key]) {
-            value = parentParam[key];
+          if (activedata && activedata.hasOwnProperty(key)) {
+            value = activedata[key];
+          } else if (context && context[key]) {
+            value = context[key];
+          } else if (viewParam && viewParam[key]) {
+            value = viewParam[key];
           } else {
             value = null;
           }

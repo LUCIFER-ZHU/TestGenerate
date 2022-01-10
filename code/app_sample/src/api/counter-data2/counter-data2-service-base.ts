@@ -1,4 +1,4 @@
-import { Http, EntityService } from '@core';
+import { IContext, IParam, EntityService } from '@core';
 
 /**
  * 计数器数据2服务对象基类
@@ -9,181 +9,160 @@ import { Http, EntityService } from '@core';
  */
 export class CounterData2ServiceBase extends EntityService {
   
-  constructor(opts?: any) {
-      super(opts);
-      // 初始化关系实体路径集合
-      this.deResPaths = [
-          [{"pathName":"counterdata2s","parameterName":"counterdata2"}]
-      ]
-  }
-
-  protected SYSTEMNAME = '';
-  protected APPNAME = '';
-  protected APPDENAME = 'CounterData2';
-  protected APPDENAMEPLURAL = "CounterData2";
-
-
   /**
-    * CheckKey
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof CounterData2ServiceBase
-    */
-  async CheckKey(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    return res;
-    //
-    //
+  * Creates an instance of CounterData2ServiceBase.
+  *
+  * @param {*} [opts={}]
+  * @memberof CounterData2ServiceBase
+  */
+  constructor(opts: IParam = {}) {
+      super(opts,'CounterData2');
   }
 
   /**
-    * Create
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof CounterData2ServiceBase
-    */
-  async Create(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Get
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof CounterData2ServiceBase
-    */
-  async Get(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.get(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * GetDraft
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof CounterData2ServiceBase
-    */
-  async GetDraft(context: any = {}, viewParams: any = {}): Promise<any> {
-    viewParams[this.APPDENAME?.toLowerCase()] = undefined;
-    viewParams[this.APPDEKEY] = undefined;
-    let deResPath = this.buildDeResPath(context, false);
-    const res = await this.http.get(deResPath+'/', viewParams);
-    // TODO appentityexecuteafteractionlogic
-    // TODO @appentityexecuteafteractionlogic
-    // TODO 设置本地缓存 @setStore
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Remove
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof CounterData2ServiceBase
-    */
-  async Remove(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.delete(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Save
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof CounterData2ServiceBase
-    */
-  async Save(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Update
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof CounterData2ServiceBase
-    */
-  async Update(context: any = {}, viewParams: any = {}): Promise<any> {
-    // TODO 设置本地缓存 @setStore
-    // @executebeforeaction
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.put(deResPath+'/', viewParams);
-    return res;
-    //
-    //
-  }
-
-  /**
-    * FetchDefault
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof CounterData2ServiceBase
-    */
-  async FetchDefault(context: any = {}, viewParams: any = {}): Promise<any> {
-    let deResPath = this.buildDeResPath(context, false);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    // TODO @executeafterbatchaction
-    return res;
-    //
-    //
-  }
-
-  /**
-    * Select
-    *
-    * @param {*} [context={}]
-    * @param {*} [viewParams = {}]
-    * @returns {Promise<any>}
-    * @memberof CounterData2ServiceBase
-    */
-  async Select(context: any = {}, viewParams: any = {}): Promise<any> {
-    let deResPath = this.buildDeResPath(context, true);
-    const res = await this.http.post(deResPath+'/', viewParams);
-    return res;
-    //
-    //
+   * 初始化基础数据
+   *
+   * @protected
+   * @memberof ChartDataServiceBase
+   */
+  protected initBasicData() {
+    this.appEntityCodeName = 'counterdata2';
+    this.appEntityCodeNames = 'counterdata2s';
+    // 初始化关系实体路径集合
+    this.deResPaths = [
+        [{"pathName":"counterdata2s","parameterName":"counterdata2"}]
+    ]
   }
 
 
-}
+    /**
+      * CheckKey
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof CounterData2ServiceBase
+      */
+    public async CheckKey(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      this.beforeExecuteAction(context,data,'CheckKey');
+      const res = await this.http.post(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'CheckKey');
+      return res;
+    }
+    /**
+      * Create
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof CounterData2ServiceBase
+      */
+    public async Create(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      this.beforeExecuteAction(context,data,'Create');
+      const res = await this.http.post(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Create');
+      return res;
+    }
+    /**
+      * Get
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof CounterData2ServiceBase
+      */
+    public async Get(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'Get');
+      const res = await this.http.get(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Get');
+      return res;
+    }
+    /**
+      * GetDraft
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof CounterData2ServiceBase
+      */
+    public async GetDraft(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      this.beforeExecuteAction(context,data,'GetDraft');
+      const res = await this.http.get(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'GetDraft');
+      return res;
+    }
+    /**
+      * Remove
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof CounterData2ServiceBase
+      */
+    public async Remove(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'Remove');
+      const res = await this.http.delete(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Remove');
+      return res;
+    }
+    /**
+      * Save
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof CounterData2ServiceBase
+      */
+    public async Save(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'Save');
+      const res = await this.http.post(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Save');
+      return res;
+    }
+    /**
+      * Update
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof CounterData2ServiceBase
+      */
+    public async Update(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'Update');
+      const res = await this.http.put(`${deResPath}`,data);
+      this.afterExecuteAction(context,data,'Update');
+      return res;
+    }
+    /**
+      * FetchDefault
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof CounterData2ServiceBase
+      */
+    public async FetchDefault(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      const res = await this.http.post(`${deResPath}`);
+      return res;
+    }
+    /**
+      * Select
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof CounterData2ServiceBase
+      */
+    public async Select(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, false);
+      const res = await this.http.post(`${deResPath}`,data);
+      return res;
+    }}

@@ -19,7 +19,7 @@ const emit = defineEmits<FormGroupEmit>();
     :title="title" 
     :bordered="false">
     <template #extra>
-      <a href="#">行为</a>
+      <!-- <a href="#">行为</a> -->
     </template>
     <slot></slot>
   </a-card>

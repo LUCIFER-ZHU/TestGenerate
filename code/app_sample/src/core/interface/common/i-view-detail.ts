@@ -93,4 +93,13 @@ export interface ViewDetail {
      * @memberof ViewDetail
      */
     fileDir?: string;
+
+    /**
+     * 打开视图的方向
+     *
+     * @type {string}
+     * @memberof ViewDetail
+     */
+     placement?: string;
+
 }

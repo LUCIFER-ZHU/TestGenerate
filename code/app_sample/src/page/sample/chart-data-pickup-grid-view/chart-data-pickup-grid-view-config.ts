@@ -4,16 +4,17 @@ export const ViewConfig = {
   viewCaption: '图表',
   height: '0',
   width: '0',
-  viewMsgGroup: '',
-  viewUIActions: '',
+  appEntityName:'ChartData',
   viewSysCss: '',
-  viewSysImage: '',
   subCaption: '',
   viewType: 'DEPICKUPGRIDVIEW',
   viewStyle: 'DEFAULT',
   showCaptionBar: 'DEFAULT',
   xDataControlName:'grid',
-  viewToolbarModel: [
+  openDataViewName:'ExampleEditorEditView',
+  appViewNavContexts:{  },
+  appViewNavParams:{  },
+  toolbar: [
   ],
   controlsAction:{
   }};

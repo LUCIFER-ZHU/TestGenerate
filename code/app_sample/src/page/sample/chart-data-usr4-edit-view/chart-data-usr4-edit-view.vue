@@ -44,7 +44,7 @@ const { state, handleToolbarEvent } = new EditView(ViewConfig).moduleInstall(pro
       <IbizToolbar
         mode="button"
         name="usr4editviewtoolbar"
-        :actionModel="state.viewToolbarModel"
+        :actionModel="state.toolbar"
         @toolbarEvent="handleToolbarEvent"/>
     </template>
     <Main_3Form

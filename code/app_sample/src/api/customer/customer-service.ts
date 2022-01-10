@@ -1,18 +1,38 @@
+import { IParam } from '@core';
 import { CustomerServiceBase } from './customer-service-base';
 
 /**
- * ${appEntity.getLogicName()}服务
+ * 客户服务
  *
  * @export
  * @class CustomerService
  * @extends CustomerServiceBase
  */
 export class CustomerService extends CustomerServiceBase {
+
+    /**
+     * 基础数据服务实例
+     * 
+     * @private
+     * @type { CustomerService }
+     * @memberof CustomerService
+     */
+    private static basicDataServiceInstance: CustomerService;
+
+    /**
+     * 数据服务存储Map对象
+     *
+     * @private
+     * @type {Map<string, any>}
+     * @memberof CustomerService
+     */
+    private static dataServiceMap: Map<string, any> = new Map();
+
     /**
      * Creates an instance of CustomerService.
      * @memberof CustomerService
      */
-    constructor(opts?: any) {
+    constructor(opts?: IParam) {
         super(opts);
     }
 
@@ -24,8 +44,18 @@ export class CustomerService extends CustomerServiceBase {
      * @return {*}  { CustomerService }
      * @memberof CustomerService
      */
-    static getInstance(context?: any): CustomerService {
-        return new CustomerService({ context: context });
+    static getInstance(opts?: IParam): CustomerService {
+        if (!this.basicDataServiceInstance) {
+            this.basicDataServiceInstance = new CustomerService(opts);
+        }
+        if (!opts || !opts.srfdynainstid) {
+            return this.basicDataServiceInstance;
+        } else {
+            if (!CustomerService.dataServiceMap.get(opts.srfdynainstid)) {
+                CustomerService.dataServiceMap.set(opts.srfdynainstid, new CustomerService(opts));
+            }
+            return CustomerService.dataServiceMap.get(opts.srfdynainstid);
+        }
     }
 }
 export default CustomerService;

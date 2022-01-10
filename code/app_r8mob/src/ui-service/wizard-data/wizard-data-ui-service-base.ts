@@ -1,5 +1,5 @@
-import { AppUIAction, IUIAction, UIServiceBase } from '@core';
-
+import { IParam, UIServiceBase } from '@core';
+import { AppFrontAction, AppBackendAction } from '@core';
 /**
  * 向导数据UI服务对象基类
  *
@@ -15,27 +15,38 @@ export class WizardDataUIServiceBase extends UIServiceBase {
     * @param {*} [opts={}]
     * @memberof WizardDataUIServiceBase
     */
-  constructor(opts: any = {}) {
+  constructor(opts: IParam = {}) {
       super(opts);
   }
 
 
-/**
+
+   public uiActionModes = {       "OpenWizardExample":{
+             codeName:'OpenWizardExample',
+             uIActionMode:'FRONT',
+             actionTarget:'SINGLEDATA',
+             uIActionTag:'OPENWIZARDEXAMPLE',
+             frontPSAppView:'',
+             caption:'打开向导示例页面',
+             entityCodeName:'',
+             methodCodeName:'',
+             frontProcessType:'WIZARD',
+             refreshMode:'0',
+             htmlPageUrl:'',
+             uILogicAttachMode:'',
+             nextActionCodeName:'',
+         },
+     };    /**
      * 打开向导示例页面
      *
      * @param {*} params
      * @memberof WizardDataUIServiceBase
      */
     public async OpenWizardExample(params:any){
-        const actionModel = {
-            codeName:'OpenWizardExample',
-            uIActionMode:'FRONT',
-            actionTarget:'SINGLEDATA',
-            uIActionTag:'OPENWIZARDEXAMPLE',
-            frontPSAppView:''
-        };
-        AppUIAction.execute(actionModel, params);
+        const actionModel =  this.getUIActionModel('OpenWizardExample');
+        AppFrontAction.doAction(actionModel, params);
     }
+
 
 
 }

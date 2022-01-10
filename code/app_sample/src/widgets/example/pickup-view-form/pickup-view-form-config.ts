@@ -62,28 +62,44 @@ export const CtrlConfig = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
   data: new ControlVO({}),
-  formDetails: [
-    {
+  detailsModel: {
+    group1: {
       caption: '单项选择',
-      codeName: 'group1',
       name: 'group1',
-    },
-    {
-      caption: '单项选择表格视图',
-      codeName: 'formitem',
-      name: 'formitem',
-      dataType: '25',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: true,
+    },
+    formitem: {
+      caption: '单项选择表格视图',
+      name: 'formitem',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '25',
+      required: false,
+      enableCond: 3,
       valueItemName: 'formitem1',
     },
-    {
+    formitem1: {
       caption: '值项',
-      codeName: 'formitem1',
       name: 'formitem1',
-      dataType: '25',
+      disabled: false, 
+      visible: true,
       detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      dataType: '25',
+      required: false,
+      enableCond: 3,
     },
-  ],
+  },
+  actionModel: {
+  },
   rules: {
   },
 };
