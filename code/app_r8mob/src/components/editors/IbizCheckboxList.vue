@@ -1,17 +1,12 @@
 <script setup lang="ts">
-import {
-  EditorBase,
-  IActionParam, 
-  IParam,
-  IContext
-} from "@core";
-import { computed, onBeforeMount, ref, Ref } from "vue";
+import { EditorBase, IActionParam, IParam, IContext, typeOf } from '@core';
+import { computed, onBeforeMount, ref, Ref } from 'vue';
 interface CheckboxListProps {
   /**
    * 值
    *
    * @type {*}
-   * @memberof AppCheckBox
+   * @memberof CheckboxListProps
    */
   value: any;
 
@@ -19,7 +14,7 @@ interface CheckboxListProps {
    * 属性名称
    *
    * @type {*}
-   * @memberof AppCheckBox
+   * @memberof CheckboxListProps
    */
   name: string;
 
@@ -27,39 +22,39 @@ interface CheckboxListProps {
    * 传入表单数据
    *
    * @type {*}
-   * @memberof AppCheckBox
+   * @memberof CheckboxListProps
    */
   data: IParam;
-
-  /**
-   * 模式（数字或者字符串）
-   *
-   * @type {*}
-   * @memberof AppCheckBox
-   */
-  mode: "string" | "number";
 
   /**
    * 代码表值分隔符
    *
    * @type {string}
-   * @memberof AppCheckBox
+   * @memberof CheckboxListProps
    */
   valueSeparator: string;
+
+  /**
+   * 模式（数字或者字符串）
+   *
+   * @type {'string' | 'number'}
+   * @memberof CheckboxListProps
+   */
+  mode: 'string' | 'number';
 
   /**
    * 属性类型
    *
    * @type {'string' | 'number'}
-   * @memberof AppCheckBox
+   * @memberof CheckboxListProps
    */
-  valueType: "string" | "number";
+  valueType: 'string' | 'number';
 
   /**
    * 代码表标识
    *
    * @type {string}
-   * @memberof AppCheckBox
+   * @memberof CheckboxListProps
    */
   codeListTag: string;
 
@@ -67,7 +62,7 @@ interface CheckboxListProps {
    * 代码表类型
    *
    * @type {string}
-   * @memberof AppCheckBox
+   * @memberof CheckboxListProps
    */
   codeListType: string;
 
@@ -75,7 +70,7 @@ interface CheckboxListProps {
    * 视图上下文
    *
    * @type {*}
-   * @memberof AppCheckBox
+   * @memberof CheckboxListProps
    */
   context: IContext;
 
@@ -83,7 +78,7 @@ interface CheckboxListProps {
    * 视图参数
    *
    * @type {*}
-   * @memberof AppCheckBox
+   * @memberof CheckboxListProps
    */
   viewParams: IParam;
 
@@ -91,7 +86,7 @@ interface CheckboxListProps {
    * 局部上下文导航参数
    *
    * @type {any}
-   * @memberof AppCheckBox
+   * @memberof CheckboxListProps
    */
   localContext: IParam;
 
@@ -99,7 +94,7 @@ interface CheckboxListProps {
    * 局部导航参数
    *
    * @type {any}
-   * @memberof AppCheckBox
+   * @memberof CheckboxListProps
    */
   localParam: IParam;
 
@@ -107,7 +102,7 @@ interface CheckboxListProps {
    * 是否禁用
    *
    * @type {boolean}
-   * @memberof AppCheckBox
+   * @memberof CheckboxListProps
    */
   disabled?: boolean;
 
@@ -120,15 +115,15 @@ interface CheckboxListProps {
 }
 
 interface EditorEmit {
-  (name: "editorEvent", value: IActionParam): void;
+  (name: 'editorEvent', value: IActionParam): void;
 }
 
 const props = withDefaults(defineProps<CheckboxListProps>(), {
   disabled: false,
   readonly: false,
-  valueType: "string",
-  valueSeparator: ",",
-  mode: "string",
+  valueType: 'string',
+  valueSeparator: ',',
+  mode: 'string',
 });
 const emit = defineEmits<EditorEmit>();
 const { handleEditorNavParams, handleLevelCodeList, loadCodeListData } = new EditorBase();
@@ -136,8 +131,18 @@ const { navContext, navViewParam } = handleEditorNavParams(props);
 let items: Ref<IParam[]> = ref([]);
 const selectArray: Ref<boolean> = computed(() => {
   if (props.value) {
-    let selects = props.value.split(props.valueSeparator);
-    return selects;
+    if (Object.is(props.mode, 'string')) {
+      return props.value.split(props.valueSeparator);
+    } else {
+      let selectsArray: Array<any> = [];
+      let num: number = parseInt(props.value, 10);
+      items.value.forEach((item: any) => {
+        if ((num & item.value) == item.value) {
+          selectsArray.push(item.value);
+        }
+      });
+      return selectsArray;
+    }
   } else {
     return [];
   }
@@ -145,29 +150,63 @@ const selectArray: Ref<boolean> = computed(() => {
 
 const onChange = ($event: any[]) => {
   let value: null | string | number = null;
-  let _datas: string[] = [];
-  items.value.forEach((item: any) => {
+  if (Object.is(props.mode,'string')) {
+    let _datas: string[] = [];
+    items.value.forEach((item: any) => {
       const index = $event.findIndex((_key: any) => Object.is(item.value, _key));
       if (index === -1) {
-          return;
+        return;
       }
       _datas.push(item.value);
-  });
-  value = _datas.join(props.valueSeparator);
-  emit("editorEvent", {
+    });
+    value = _datas.join(props.valueSeparator);
+  } else {
+    let temp: number = 0;
+    $event.forEach((item: any) => {
+        temp = temp | parseInt(item, 10);
+    });
+    value = temp;
+  }
+  emit('editorEvent', {
     tag: props.name,
-    action: "valueChange",
+    action: 'valueChange',
     data: value,
   });
 };
+const formatCodeList = (items: Array<any>) => {
+  let matching: boolean = false;
+  let result: Array<any> = [];
+  try {
+    items.forEach((item: any) => {
+      const type = typeOf(item.value);
+      if (type != props.valueType) {
+        matching = true;
+        if (type === 'number') {
+          item.value = item.value.toString();
+        } else {
+          if (type == 'null') {
+            props.valueType == 'number' ? (item.value = 0) : (item.value = '');
+          } else if (item.value.indexOf('.') == -1) {
+            item.value = parseInt(item.value);
+          } else {
+            item.value = parseFloat(item.value);
+          }
+        }
+      }
+      result.push(item);
+    });
+    if (matching) {
+      console.warn('代码表值类型和属性类型不匹配，自动强制转换');
+    }
+    return result;
+  } catch (error) {
+    console.warn('代码表值类型和属性类型不匹配，自动强制转换异常，请修正代码表值类型和属性类型匹配');
+    return [];
+  }
+};
 onBeforeMount(() => {
-  loadCodeListData(
-    props.codeListTag,
-    props.codeListType,
-    navContext,
-    navViewParam
-  ).then((codeListData: IParam[]) => {
-    items.value = handleLevelCodeList(codeListData);
+  loadCodeListData(props.codeListTag, props.codeListType, navContext, navViewParam).then((codeListData: IParam[]) => {
+    items.value = formatCodeList(handleLevelCodeList(codeListData));
   });
 });
 </script>

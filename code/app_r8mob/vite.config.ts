@@ -7,6 +7,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
+// 代码编辑器 代码提示插件
+import monacoEditorPlugin from "vite-plugin-monaco-editor";
+
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -16,7 +19,6 @@ export default defineConfig({
       '@api': path.resolve(__dirname, 'src/api'),
       '@components': path.resolve(__dirname, 'src/components'),
       '@views': path.resolve(__dirname, 'src/views'),
-      '@page': path.resolve(__dirname, 'src/page'),
       '@widgets': path.resolve(__dirname, 'src/widgets'),
       '@static': path.resolve(__dirname, 'public'),
       '@': path.resolve(__dirname, 'src'),
@@ -33,5 +35,6 @@ export default defineConfig({
       dts: true,
       resolvers: [ElementPlusResolver()],
     }),
+    monacoEditorPlugin(),    
   ],
 });

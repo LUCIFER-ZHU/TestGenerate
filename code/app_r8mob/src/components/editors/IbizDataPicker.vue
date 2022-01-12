@@ -84,6 +84,11 @@ interface DataPickerProps {
   sort?: string;
 
   /**
+   * @description 分割符
+   */
+  separator?: string;
+
+  /**
    * @description 外键值附加数据
    */
   pickUpData?: string;
@@ -103,6 +108,7 @@ const props = withDefaults(defineProps<DataPickerProps>(), {
   linkOnly: false,
   isAC: false,
   isDropdown: false,
+  separator: ';',
 });
 const emit = defineEmits<EditorEmit>();
 const { handleEditorNavParams, openLinkView, openPickUpView } = new EditorBase();
@@ -195,8 +201,19 @@ const onSelect = (value: any) => {
   fillPickUpData(selectItem);
 };
 
-const initValue = (data: any) => {
-  // todo
+// 编辑器抛值
+const doEditorEmit = (data: any[]): any => {
+  let majorValue: any = '';
+  let keyValue: any = '';
+  data.forEach((item: any) => {
+    majorValue = majorValue + (majorValue ? props.separator : '') + item[props.deMajorField];
+    keyValue = keyValue + (keyValue ? props.separator : '') + item[props.deKeyField];
+  });
+  if (props.valueItem) {
+    emit('editorEvent', { tag: props.valueItem, action: 'valueChange', data: keyValue });
+  }
+  emit('editorEvent', { tag: props.name, action: 'valueChange', data: majorValue });
+  return;
 };
 
 // 打开视图
@@ -211,8 +228,7 @@ const openView = () => {
   const subject = App.getOpenViewService().openView(view, {});
   const subjectEvent = subject?.subscribe((data: any) => {
     if (data?.ret == 'OK' && data.resultData) {
-      const value = initValue(data.resultData);
-      emit('editorEvent', { tag: props.valueItem, action: 'valueChange', data: value });
+      doEditorEmit(data.resultData);
     }
     subjectEvent?.unsubscribe();
   });

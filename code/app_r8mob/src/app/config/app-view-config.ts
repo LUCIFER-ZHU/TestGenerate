@@ -15,7 +15,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "省份",
     "viewType": "DEMOBPICKUPMDVIEW",
-    "fileDir": "@page/r8mob/province-mob-pickup-md-view"
+    "fileDir": "@views/r8mob/province-mob-pickup-md-view"
   },
   "ProvinceUsr2MobEditView":{
     "name": "ProvinceUsr2MobEditView",
@@ -31,7 +31,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "省份实体移动端编辑视图2",
     "viewType": "DEMOBEDITVIEW",
-    "fileDir": "@page/r8mob/province-usr2-mob-edit-view"
+    "fileDir": "@views/r8mob/province-usr2-mob-edit-view"
   },
   "ProvinceMobPickupTreeView":{
     "name": "ProvinceMobPickupTreeView",
@@ -47,7 +47,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "省份",
     "viewType": "DEMOBPICKUPTREEVIEW",
-    "fileDir": "@page/r8mob/province-mob-pickup-tree-view"
+    "fileDir": "@views/r8mob/province-mob-pickup-tree-view"
   },
   "AppIndexView":{
     "name": "AppIndexView",
@@ -64,7 +64,7 @@ export const AppViewConfig:IParam = {
     "imgPath": "",
     "iconCls": "ribbon",
     "viewType": "APPINDEXVIEW",
-    "fileDir": "@page/r8mob/app-index-view"
+    "fileDir": "@views/r8mob/app-index-view"
   },
   "ProvinceForTreeMobMPickupView":{
     "name": "ProvinceForTreeMobMPickupView",
@@ -80,7 +80,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "省份",
     "viewType": "DEMOBMPICKUPVIEW",
-    "fileDir": "@page/r8mob/province-for-tree-mob-m-pickup-view"
+    "fileDir": "@views/r8mob/province-for-tree-mob-m-pickup-view"
   },
   "ChartDataMobEditView":{
     "name": "ChartDataMobEditView",
@@ -98,7 +98,7 @@ export const AppViewConfig:IParam = {
     "imgPath": "",
     "iconCls": "home",
     "viewType": "DEMOBEDITVIEW",
-    "fileDir": "@page/r8mob/chart-data-mob-edit-view"
+    "fileDir": "@views/r8mob/chart-data-mob-edit-view"
   },
   "ChartDataMobPickupView":{
     "name": "ChartDataMobPickupView",
@@ -114,7 +114,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "图表",
     "viewType": "DEMOBPICKUPVIEW",
-    "fileDir": "@page/r8mob/chart-data-mob-pickup-view"
+    "fileDir": "@views/r8mob/chart-data-mob-pickup-view"
   },
   "ChartDataMobTabExpView":{
     "name": "ChartDataMobTabExpView",
@@ -130,7 +130,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "图表实体移动端分页导航视图",
     "viewType": "DEMOBTABEXPVIEW",
-    "fileDir": "@page/r8mob/chart-data-mob-tab-exp-view"
+    "fileDir": "@views/r8mob/chart-data-mob-tab-exp-view"
   },
   "QuickMenuAppPortalView":{
     "name": "QuickMenuAppPortalView",
@@ -145,7 +145,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "快捷菜单",
     "viewType": "APPPORTALVIEW",
-    "fileDir": "@page/r8mob/quick-menu-app-portal-view"
+    "fileDir": "@views/r8mob/quick-menu-app-portal-view"
   },
   "AppPortalView":{
     "name": "AppPortalView",
@@ -160,7 +160,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "移动端应用看板视图",
     "viewType": "APPPORTALVIEW",
-    "fileDir": "@page/r8mob/app-portal-view"
+    "fileDir": "@views/r8mob/app-portal-view"
   },
   "ChartDataMobTreeView":{
     "name": "ChartDataMobTreeView",
@@ -176,7 +176,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "图表",
     "viewType": "DEMOBTREEVIEW",
-    "fileDir": "@page/r8mob/chart-data-mob-tree-view"
+    "fileDir": "@views/r8mob/chart-data-mob-tree-view"
   },
   "ChartDataMobPickupTreeView":{
     "name": "ChartDataMobPickupTreeView",
@@ -192,7 +192,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "图表",
     "viewType": "DEMOBPICKUPTREEVIEW",
-    "fileDir": "@page/r8mob/chart-data-mob-pickup-tree-view"
+    "fileDir": "@views/r8mob/chart-data-mob-pickup-tree-view"
   },
   "ProvinceMobMPickupView":{
     "name": "ProvinceMobMPickupView",
@@ -208,7 +208,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "省份",
     "viewType": "DEMOBMPICKUPVIEW",
-    "fileDir": "@page/r8mob/province-mob-m-pickup-view"
+    "fileDir": "@views/r8mob/province-mob-m-pickup-view"
   },
   "ProvinceMobEditView":{
     "name": "ProvinceMobEditView",
@@ -224,7 +224,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "省份",
     "viewType": "DEMOBEDITVIEW",
-    "fileDir": "@page/r8mob/province-mob-edit-view"
+    "fileDir": "@views/r8mob/province-mob-edit-view"
   },
   "ProvinceMobMEditView9":{
     "name": "ProvinceMobMEditView9",
@@ -240,7 +240,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "省份",
     "viewType": "DEMOBMEDITVIEW9",
-    "fileDir": "@page/r8mob/province-mob-m-edit-view9"
+    "fileDir": "@views/r8mob/province-mob-m-edit-view9"
   },
   "ChartDataMobPanelView":{
     "name": "ChartDataMobPanelView",
@@ -256,7 +256,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "图表",
     "viewType": "DEMOBPANELVIEW",
-    "fileDir": "@page/r8mob/chart-data-mob-panel-view"
+    "fileDir": "@views/r8mob/chart-data-mob-panel-view"
   },
   "ProvinceMobHtmlView":{
     "name": "ProvinceMobHtmlView",
@@ -272,7 +272,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "省份",
     "viewType": "DEMOBHTMLVIEW",
-    "fileDir": "@page/r8mob/province-mob-html-view"
+    "fileDir": "@views/r8mob/province-mob-html-view"
   },
   "ProvinceMobCalendarView":{
     "name": "ProvinceMobCalendarView",
@@ -288,7 +288,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "省份",
     "viewType": "DEMOBCALENDARVIEW",
-    "fileDir": "@page/r8mob/province-mob-calendar-view"
+    "fileDir": "@views/r8mob/province-mob-calendar-view"
   },
   "ProvinceMobPickupForTreeView":{
     "name": "ProvinceMobPickupForTreeView",
@@ -304,7 +304,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "省份",
     "viewType": "DEMOBPICKUPVIEW",
-    "fileDir": "@page/r8mob/province-mob-pickup-for-tree-view"
+    "fileDir": "@views/r8mob/province-mob-pickup-for-tree-view"
   },
   "ProvinceMobPickupView":{
     "name": "ProvinceMobPickupView",
@@ -320,7 +320,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "省份",
     "viewType": "DEMOBPICKUPVIEW",
-    "fileDir": "@page/r8mob/province-mob-pickup-view"
+    "fileDir": "@views/r8mob/province-mob-pickup-view"
   },
   "ProvinceMobMDView":{
     "name": "ProvinceMobMDView",
@@ -336,7 +336,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "省份",
     "viewType": "DEMOBMDVIEW",
-    "fileDir": "@page/r8mob/province-mob-md-view"
+    "fileDir": "@views/r8mob/province-mob-md-view"
   },
   "ChartDataTestLayoutPanelMDView":{
     "name": "ChartDataTestLayoutPanelMDView",
@@ -352,7 +352,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "图表",
     "viewType": "DEMOBMDVIEW",
-    "fileDir": "@page/r8mob/chart-data-test-layout-panel-md-view"
+    "fileDir": "@views/r8mob/chart-data-test-layout-panel-md-view"
   },
   "MapDataMobMapView":{
     "name": "MapDataMobMapView",
@@ -368,7 +368,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "地图示例数据",
     "viewType": "DEMOBMAPVIEW",
-    "fileDir": "@page/r8mob/map-data-mob-map-view"
+    "fileDir": "@views/r8mob/map-data-mob-map-view"
   },
   "ChartDataMobDashboardView":{
     "name": "ChartDataMobDashboardView",
@@ -384,7 +384,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "图表",
     "viewType": "DEMOBPORTALVIEW",
-    "fileDir": "@page/r8mob/chart-data-mob-dashboard-view"
+    "fileDir": "@views/r8mob/chart-data-mob-dashboard-view"
   },
   "ChartDataMobMDView":{
     "name": "ChartDataMobMDView",
@@ -400,7 +400,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "图表",
     "viewType": "DEMOBMDVIEW",
-    "fileDir": "@page/r8mob/chart-data-mob-md-view"
+    "fileDir": "@views/r8mob/chart-data-mob-md-view"
   },
   "ChartDataMobChartView":{
     "name": "ChartDataMobChartView",
@@ -416,7 +416,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "图表",
     "viewType": "DEMOBCHARTVIEW",
-    "fileDir": "@page/r8mob/chart-data-mob-chart-view"
+    "fileDir": "@views/r8mob/chart-data-mob-chart-view"
   },
   "ChartDataUsr2MobPickupView":{
     "name": "ChartDataUsr2MobPickupView",
@@ -432,6 +432,6 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "图表",
     "viewType": "DEMOBPICKUPVIEW",
-    "fileDir": "@page/r8mob/chart-data-usr2-mob-pickup-view"
+    "fileDir": "@views/r8mob/chart-data-usr2-mob-pickup-view"
   }
 }

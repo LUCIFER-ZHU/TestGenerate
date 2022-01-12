@@ -1,4 +1,4 @@
-import { deepCopy, FormControlProps, FormControlState, IActionParam, IParam, MainControl, UIUtil, verifyValue } from '@core';
+import { DataTypes, dateFormat, deepCopy, FormControlProps, FormControlState, IActionParam, IParam, MainControl, UIUtil, verifyValue } from '@core';
 
 /**
  * @description 表单部件
@@ -55,11 +55,15 @@ export class FormControl extends MainControl {
    * @memberof FormControl
    */
   public formDataChange(name: string, value: any) {
-    this.controlState.data[name] = value;
+    const { enableAutoSave } = this.controlState;
+    const { data } = toRefs(this.controlState);
+    data.value[name] = value;
     this.resetFormData(name);
-    // TODO 表单项更新
+    this.formItemUpdate(name);
     this.formDynamicLogic(name);
-    // TODO 自动保存（可以单独做一个逻辑块，监听data的变化）
+    if (enableAutoSave) {
+      this.useSave().save();
+    }
   }
 
   /**
@@ -77,6 +81,40 @@ export class FormControl extends MainControl {
         }
       }
     })
+  }
+
+  /**
+   * @description 表单项更新
+   * @param {string} name 表单项名称
+   * @memberof FormControl
+   */
+  public async formItemUpdate(name: string) {
+    const { detailsModel, context, viewParams, controlService } = this.controlState;
+    const { data } = toRefs(this.controlState);
+    if (detailsModel[name] && detailsModel[name].formItemUpdate) {
+      const formItemUpdate = detailsModel[name].formItemUpdate;
+      if (formItemUpdate.customCode) {
+        if (formItemUpdate.scriptCode) {
+          eval(formItemUpdate.scriptCode);
+        }
+      } else {
+        const arg = Object.assign(deepCopy(viewParams), data.value);
+        const tempContext = deepCopy(context);
+        const response =  await controlService.frontLogic(
+          tempContext, 
+          { viewParams: arg },
+          { action: formItemUpdate.appDEMethod, isLoading: formItemUpdate.showBusyIndicator },
+        );
+        if (response.status && response.status == 200) {
+          formItemUpdate.updateDetails?.forEach((detailsName: string) => {
+            if (data.value.hasOwnProperty(detailsName)) {
+              data.value[detailsName] = response.data[detailsName];
+            }
+          })
+          this.afterFormAction('formItemUpdate');
+        }
+      }
+    }
   }
 
   /**
@@ -155,19 +193,11 @@ export class FormControl extends MainControl {
             break;
           case 1:
             // 新建 
-            if (Object.is(data.srfuf, '0')) {
-              item.disabled = true;
-            } else {
-              item.disabled = false;
-            }
+            item.disabled = data.srfuf != 0;
             break;
           case 2:
             // 更新
-            if (Object.is(data.srfuf, '1')) {
-              item.disabled = true;
-            } else {
-              item.disabled = false;
-            }
+            item.disabled = data.srfuf != 1;
             break;
           case 3:
             // 启用
@@ -204,13 +234,167 @@ export class FormControl extends MainControl {
       }
     });
   }
+  
   /**
    * @description 设置默认值
    * @param {string} action 表单行为
    * @memberof FormControl
    */
   public setDefaultValue(action: string) {
-    // TODO 新建默认值和更新默认值
+    switch (action) {
+      case 'loadDraft':
+        this.setCreateDefault();
+        break;
+      case 'load':
+        this.setUpdateDefault();
+        break;
+    }
+  }
+
+  /**
+   * @description 设置新建默认值
+   * @memberof FormControl
+   */
+  public setCreateDefault() {
+    const { detailsModel, context, viewParams, controlService } = this.controlState;
+    const { data } = toRefs(this.controlState);
+    Object.values(detailsModel).forEach((detail: IParam) => {
+      if (Object.is(detail.detailType, 'FORMITEM')) {
+        if ((detail.createDV || detail.createDVT) && data.value.hasOwnProperty(detail.codeName)) {
+          switch (detail.createDVT) {
+              case 'CONTEXT':
+                data.value[detail.codeName] = viewParams[detail.createDV];
+                break;
+              case 'SESSION':
+                data.value[detail.codeName] = context[detail.createDV];
+                break;
+              case 'APPDATA':
+                data.value[detail.codeName] = context[detail.createDV];
+                break;
+              case 'OPERATORNAME':
+                data.value[detail.codeName] = context['srfusername'];
+                break;
+              case 'OPERATOR':
+                data.value[detail.codeName] = context['srfuserid'];
+                break;
+              case 'CURTIME':
+                data.value[detail.codeName] = dateFormat(new Date(), detail.valueFormat);
+                break;
+              case 'PARAM':
+                data.value[detail.codeName] = controlService.getRemoteCopyData()?.[detail.codeName] || null;
+                break;
+              default:
+                data.value[detail.codeName] = DataTypes.isNumber(detail.dataType) ? Number(detail?.createDV) : detail?.createDV;
+                break;
+          }
+        }
+      }
+    })
+  }
+
+  /**
+   * @description 设置更新默认值
+   * @memberof FormControl
+   */
+  public setUpdateDefault() {
+    const { detailsModel, context, viewParams, controlService } = this.controlState;
+    const { data } = toRefs(this.controlState);
+    Object.values(detailsModel).forEach((detail: IParam) => {
+      if (Object.is(detail.detailType, 'FORMITEM')) {
+        if ((detail.updateDV || detail.updateDVT) && data.value.hasOwnProperty(detail.codeName)) {
+          switch (detail.updateDVT) {
+              case 'CONTEXT':
+                data.value[detail.codeName] = viewParams[detail.updateDV];
+                break;
+              case 'SESSION':
+                data.value[detail.codeName] = context[detail.updateDV];
+                break;
+              case 'APPDATA':
+                data.value[detail.codeName] = context[detail.updateDV];
+                break;
+              case 'OPERATORNAME':
+                data.value[detail.codeName] = context['srfusername'];
+                break;
+              case 'OPERATOR':
+                data.value[detail.codeName] = context['srfuserid'];
+                break;
+              case 'CURTIME':
+                data.value[detail.codeName] = dateFormat(new Date(), detail.valueFormat);
+                break;
+              case 'PARAM':
+                data.value[detail.codeName] = controlService.getRemoteCopyData()?.[detail.codeName] || null;
+                break;
+              default:
+                data.value[detail.codeName] = DataTypes.isNumber(detail.dataType) ? Number(detail.updateDV) : detail.updateDV;
+                break;
+          }
+        }
+      }
+    })
+  }
+
+  /**
+   * @description 使用加载草稿功能模块
+   * @param {FormControlProps} props 传入的props
+   * @return {*} 
+   * @memberof FormControl
+   */
+  public useLoadDraft(props: FormControlProps) {
+    const { viewSubject, controlName } = this.controlState;
+
+    /**
+     * 加载行为
+     *
+     * @param [opt={}]
+     * @return {*}
+     */
+    const loadDraft = async (opt: any = {}) => {
+      try {
+        const { controlService, context, viewParams, showBusyIndicator, controlAction, appDeKeyFieldName } = this.controlState;
+        const { data } = toRefs(this.controlState);
+        if (!controlAction.loadDraftAction) {
+          return;
+        }
+        // 处理请求参数
+        let _context = deepCopy(context);
+        let _viewParams = deepCopy(viewParams);
+
+        // 发起请求处理与解析请求
+        const response = await controlService.loadDraft(
+          _context,
+          { viewParams: _viewParams },
+          { action: controlAction.loadDraftAction, isLoading: showBusyIndicator },
+        );
+        if (response.status && response.status == 200) {
+          if (appDeKeyFieldName && response.data[appDeKeyFieldName]) {
+            response.data[appDeKeyFieldName] = null;
+          }
+          data.value = response.data;
+          this.afterFormAction('loadDraft');
+        }
+      } catch (error) {
+        // TODO 错误异常处理
+        console.log(error);
+      }
+    };
+
+    // 订阅viewSubject,监听load行为
+    if (viewSubject) {
+      let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam) => {
+        if (Object.is(controlName, tag) && Object.is('loadDraft', action)) {
+          loadDraft(data);
+        }
+      });
+
+      // 部件卸载时退订viewSubject
+      onUnmounted(() => {
+        subscription.unsubscribe();
+      });
+    }
+
+    return {
+      load: loadDraft,
+    };
   }
 
   /**
@@ -280,7 +464,7 @@ export class FormControl extends MainControl {
    * @return {*}
    * @memberof FormControl
    */
-  public useSave(props: FormControlProps) {
+  public useSave(props?: FormControlProps) {
     const { viewSubject, controlName } = this.controlState;
 
     /**
@@ -446,6 +630,32 @@ export class FormControl extends MainControl {
   }
 
   /**
+   * @description 处理组件事件
+   * @param {IActionParam} actionParam 行为参数
+   * @memberof FormControl
+   */
+  public handleComponentEvent(actionParam: IActionParam) {
+    const { tag, action, data } = actionParam;
+    switch (action) {
+      case 'formGroupAction':
+        this.handleFormGroupAction(tag, data);
+        break;
+      default:
+        break;
+    }
+  }
+
+  /**
+   * @description 处理表单分组行为
+   * @param {string} tag
+   * @param {*} data
+   * @memberof FormControl
+   */
+  public handleFormGroupAction(tag: string, data: any) {
+    console.log(tag, data)
+  }
+
+  /**
    * @description 安装部件所有功能模块的方法
    * @param {FormControlProps} props 传入的Props
    * @param {Function} [emit]
@@ -464,6 +674,7 @@ export class FormControl extends MainControl {
       load,
       save,
       handleEditorEvent: this.handleEditorEvent.bind(this),
+      handleComponentEvent: this.handleComponentEvent.bind(this),
     };
   }
 }

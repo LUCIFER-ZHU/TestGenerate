@@ -1,12 +1,12 @@
-import { MainViewState } from "@core";
+import { MDViewState } from "@core";
 
 /**
  * @description 表格视图状态
  * @export
  * @interface GridViewState
- * @extends {MainViewState}
+ * @extends {MDViewState}
  */
-export interface GridViewState extends MainViewState {
+export interface GridViewState extends MDViewState {
 
   /**
    * @description 表格行激活模式

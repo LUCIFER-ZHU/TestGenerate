@@ -24,7 +24,7 @@ interface CtrlEmit {
 const emit = defineEmits<CtrlEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(props, emit);
+const { state, handleEditorEvent, handleComponentEvent } = new FormControl(CtrlConfig).moduleInstall(props, emit);
 
 </script>
 <template>
@@ -43,7 +43,17 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup v-show="state.detailsModel.group1.visible" name="group1" title="图表基本信息">
+  <IbizFormGroup 
+    v-show="state.detailsModel.group1.visible" 
+    name="group1" 
+    title="图表基本信息"
+    iconClass="browsers"
+    titleStyle="h1-title"
+    :infoGroupMode="false"
+    :titleBarCloseMode="1"
+    :showCaption="true"
+    :uIActionGroup="state.detailsModel.group1.uIActionGroup"
+    @componentEvent="handleComponentEvent">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -200,7 +210,16 @@ const { state, handleEditorEvent } = new FormControl(CtrlConfig).moduleInstall(p
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup v-show="state.detailsModel.grouppanel1.visible" name="grouppanel1" title="数据选择测试">
+  <IbizFormGroup 
+    v-show="state.detailsModel.grouppanel1.visible" 
+    name="grouppanel1" 
+    title="数据选择测试"
+    titleStyle=""
+    :infoGroupMode="false"
+    :titleBarCloseMode="0"
+    :showCaption="true"
+    :uIActionGroup="state.detailsModel.grouppanel1.uIActionGroup"
+    @componentEvent="handleComponentEvent">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"

@@ -12,7 +12,7 @@ const routes = [
     meta: {  
       tag: 'AppIndexView'
     },
-    component: () => import("@page/ungroup/app-index-view"),
+    component: () => import("@views/ungroup/app-index-view"),
     children: [
     ]
   },

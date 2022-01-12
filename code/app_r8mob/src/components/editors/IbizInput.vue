@@ -70,16 +70,25 @@ const onChange = ($event: any) => {
 </script>
 
 <template>
-  <div :class="['app-editor-container',`app-input-${name}`]">
+  <div :class="['ibiz-editor-container','ibiz-input',`ibiz-input-${name}`]">
     <a-input 
       allowClear
-      v-if="Object.is('text', type) || Object.is('number', type)"
+      v-if="Object.is('text', type)"
       v-model:value="value"
       :disabled="disabled"
       :maxlength="maxLength"
       :type="type"
       @blur="onChange"
       :placeholder="showMaxLength ? `最大内容长度为${maxLength}` : placeholder" />
+    <a-input-number
+      v-if="Object.is('number', type)"
+      :value="value"
+      :disabled="disabled"
+      :max="max"
+      :min="min"
+      :precision="precision"
+      @change="onChange"
+      :placeholder="placeholder" />
     <a-input-password 
       v-if="Object.is('password', type)"
       v-model:value="value"
@@ -96,7 +105,3 @@ const onChange = ($event: any) => {
       :placeholder="placeholder"/>
   </div>
 </template>
-
-<style scoped>
-
-</style>

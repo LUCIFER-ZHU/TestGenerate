@@ -5,7 +5,7 @@ export const ViewConfig = {
   height: '0',
   width: '0',
   appEntityName:'',
-  viewSysCss: 'net.ibizsys.model.res.PSSysCssImpl@73877e19',
+  viewSysCss: 'net.ibizsys.model.res.PSSysCssImpl@231baf51',
   subCaption: '',
   viewType: 'APPINDEXVIEW',
   viewStyle: 'DEFAULT',

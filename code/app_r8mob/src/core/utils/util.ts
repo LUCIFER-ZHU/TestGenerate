@@ -11,6 +11,53 @@ export function deepCopy(data: Record<any, any>): Record<any, any>{
 }
 
 /**
+ * @description 深度合并对象
+ * @export
+ * @param {*} FirstOBJ 目标对象
+ * @param {*} SecondOBJ 源对象
+ * @return {*} 
+ */
+ export function deepObjectMerge(FirstOBJ: any, SecondOBJ: any) {
+  for (var key in SecondOBJ) {
+    FirstOBJ[key] =
+      FirstOBJ[key] && FirstOBJ[key].toString() === '[object Object]'
+        ? deepObjectMerge(FirstOBJ[key], SecondOBJ[key])
+        : (FirstOBJ[key] = SecondOBJ[key]);
+  }
+  return FirstOBJ;
+}
+
+/**
+ * @description 日期格式化
+ * @export
+ * @param {*} date 日期对象
+ * @param {string} [fmt='YYYY-MM-DD HH:mm:ss'] 格式化
+ * @return {*}  {string}
+ */
+export function dateFormat(date: any, fmt: string = 'YYYY-MM-DD HH:mm:ss'): string {
+  let ret;
+  const opt: any = {
+      'Y+': date.getFullYear().toString(), // 年
+      'M+': (date.getMonth() + 1).toString(), // 月
+      'd+': date.getDate().toString(), // 日
+      'D+': date.getDate().toString(), // 日
+      'H+': date.getHours().toString(), // 时
+      'h+': date.getHours().toString(), // 时
+      'm+': date.getMinutes().toString(), // 分
+      's+': date.getSeconds().toString(), // 秒
+      'S+': date.getSeconds().toString()
+      // 有其他格式化字符需求可以继续添加，必须转化成字符串
+  };
+  for (let k in opt) {
+      ret = new RegExp('(' + k + ')').exec(fmt);
+      if (ret) {
+          fmt = fmt.replace(ret[1], ret[1].length == 1 ? opt[k] : opt[k].padStart(ret[1].length, '0'));
+      }
+  }
+  return fmt;
+}
+
+/**
  * @description 除undefined，null,NaN以外都为true
  * @export
  * @param {*} arg

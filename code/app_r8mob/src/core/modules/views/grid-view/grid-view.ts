@@ -1,12 +1,12 @@
-import { GridViewProps, GridViewState, MainView } from '@core';
+import { GridViewProps, GridViewState, MDView } from '@core';
 
 /**
  * @description 表格视图
  * @export
  * @class GridView
- * @extends {MainView}
+ * @extends {MDView}
  */
-export class GridView extends MainView {
+export class GridView extends MDView {
 
   /**
    * @description 视图状态

@@ -63,7 +63,7 @@ export class AppModal {
     try {
       let subject: null | Subject<any> = new Subject<any>();
       let props = { view: view, context: params.context, viewParams: params.viewParams, isFullscreen: params.isFullscreen, subject: subject, options: options };
-      let dir = view.fileDir?.replace(/@page/, '');
+      let dir = view.fileDir?.replace(/@views/, '');
       //Vite 支持使用特殊的 import.meta.glob 函数从文件系统导入多个模块
       const modules = import.meta.glob('../../page/*/*/index.ts');
       const AsyncComp = defineAsyncComponent({

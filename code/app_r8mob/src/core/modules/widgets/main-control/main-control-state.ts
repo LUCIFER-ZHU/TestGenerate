@@ -42,4 +42,18 @@ export interface MainControlState extends ControlStateBase {
    * @memberof MainControlState
    */
   appDeCodeName: string;
+
+  /**
+   * @description 应用实体主键属性codeName
+   * @type {string}
+   * @memberof MainControlState
+   */
+  appDeKeyFieldName: string;
+
+  /**
+   * @description 应用实体主信息属性codeName
+   * @type {string}
+   * @memberof MainControlState
+   */
+  appDeMajorFieldName: string;
 }

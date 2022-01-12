@@ -35,4 +35,11 @@ export interface FormControlState extends MainControlState {
    * @memberof FormControlState
    */
   rules: IParam;
+
+  /**
+   * @description 支持自动保存
+   * @type {boolean}
+   * @memberof FormControlState
+   */
+  enableAutoSave: boolean;
 }

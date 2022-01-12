@@ -38,12 +38,11 @@ export class GridControl extends MainControl {
      * @memberof GridControl
      */
     public gridDataChange(rowIndex: number, name: string, value: any){
-        if (this.controlState.data[rowIndex][name] !== value) {
-            this.controlState.data[rowIndex][name] = value;
-            if (!this.controlState.data[rowIndex]["rowDataState"]) {
-                this.controlState.data[rowIndex]["rowDataState"] = "update";
-            }
-        }
+      const { data } = toRefs(this.controlState);
+      if (data.value[rowIndex][name] !== value) {
+        data.value[rowIndex][name] = value;
+        data.value[rowIndex]["rowDataState"] = "update";
+      }
     }
 
     /**
@@ -314,7 +313,6 @@ export class GridControl extends MainControl {
                 }
             });
             _columnsModel.forEach((column: IParam) => {
-                console.log(this.getAggValue(dataAgg, column));
                 aggData.push(this.getAggValue(dataAgg, column))
             });
         }
