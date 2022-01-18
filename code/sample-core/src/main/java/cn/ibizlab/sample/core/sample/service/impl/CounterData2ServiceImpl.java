@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +34,7 @@ import cn.ibizlab.sample.core.sample.service.ICounterData2Service;
 import cn.ibizlab.sample.core.sample.mapper.CounterData2Mapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -45,10 +47,12 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
  * 实体[计数器数据2] 服务对象接口实现
  */
 @Slf4j
-@Service("CounterData2ServiceImpl")
+@Service("CounterData2Service")
 public class CounterData2ServiceImpl extends ServiceImpl<CounterData2Mapper,CounterData2> implements ICounterData2Service {
 
-    protected ICounterData2Service counterData2Service = SpringContextHolder.getBean(this.getClass());
+    protected ICounterData2Service getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
 
     protected int batchSize = 500;
@@ -56,7 +60,7 @@ public class CounterData2ServiceImpl extends ServiceImpl<CounterData2Mapper,Coun
     public CounterData2 get(CounterData2 et) {
         CounterData2 rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,计数器数据2:"+et.getCounterData2Id());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -107,9 +111,9 @@ public class CounterData2ServiceImpl extends ServiceImpl<CounterData2Mapper,Coun
     @Transactional
     public boolean save(CounterData2 et) {
         if(checkKey(et))
-            return counterData2Service.update(et);
+            return getProxyService().update(et);
         else
-            return counterData2Service.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -131,9 +135,9 @@ public class CounterData2ServiceImpl extends ServiceImpl<CounterData2Mapper,Coun
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!counterData2Service.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!counterData2Service.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -173,6 +177,8 @@ public class CounterData2ServiceImpl extends ServiceImpl<CounterData2Mapper,Coun
     public List<CounterData2> listDefault(CounterData2SearchContext context) {
         return baseMapper.listDefault(context,context.getSelectCond());
     }
+
+
 
 
 }

@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,30 +34,37 @@ import cn.ibizlab.sample.core.sample.service.IOrderDetailService;
 import cn.ibizlab.sample.core.sample.mapper.OrderDetailMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.Order;
+import cn.ibizlab.sample.core.sample.service.IOrderService;   
+import cn.ibizlab.sample.core.sample.domain.Product;
+import cn.ibizlab.sample.core.sample.service.IProductService;   
 
 
 /**
  * 实体[订单明细] 服务对象接口实现
  */
 @Slf4j
-@Service("OrderDetailServiceImpl")
+@Service("OrderDetailService")
 public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper,OrderDetail> implements IOrderDetailService {
 
-    protected IOrderDetailService orderDetailService = SpringContextHolder.getBean(this.getClass());
+    protected IOrderDetailService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.IOrderService orderService;
+    protected IOrderService orderService;
    
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.IProductService productService;
+    protected IProductService productService;
    
 
     protected int batchSize = 500;
@@ -64,7 +72,7 @@ public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper,OrderD
     public OrderDetail get(OrderDetail et) {
         OrderDetail rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,订单明细:"+et.getOrderDetailId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -73,7 +81,12 @@ public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper,OrderD
     }
 
     public void fillParentData(OrderDetail et) {
-        
+        if(!ObjectUtils.isEmpty(et.getProductId())) {
+            Product product = et.getProduct();
+            if(!ObjectUtils.isEmpty(product)) {
+                et.setProductName(product.getProductName());   
+            }
+        }    
     }
 
     public OrderDetail getDraft(OrderDetail et) {
@@ -123,9 +136,9 @@ public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper,OrderD
     @Transactional
     public boolean save(OrderDetail et) {
         if(checkKey(et))
-            return orderDetailService.update(et);
+            return getProxyService().update(et);
         else
-            return orderDetailService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -147,9 +160,9 @@ public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper,OrderD
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!orderDetailService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!orderDetailService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -193,17 +206,18 @@ public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper,OrderD
         return this.update(new UpdateWrapper<OrderDetail>().set("orderid",null).eq("orderid",orderId));
     }
 
-    public boolean saveByOrderId(String orderId,List<OrderDetail> list) {
+    public boolean saveByOrderId(Order order,List<OrderDetail> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<OrderDetail> _update=new ArrayList<OrderDetail>();
         List<OrderDetail> _create=new ArrayList<OrderDetail>();
-        for(OrderDetail before:selectByOrderId(orderId)){
+        for(OrderDetail before:selectByOrderId(order.getOrderId())){
             delIds.add(before.getOrderDetailId());
         }
         for(OrderDetail sub:list) {
-            sub.setOrderId(orderId);
+            sub.setOrderId(order.getOrderId());
+            sub.setOrder(order);
             if(ObjectUtils.isEmpty(sub.getOrderDetailId()))
                 sub.setOrderDetailId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getOrderDetailId())) {
@@ -213,11 +227,11 @@ public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper,OrderD
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!orderDetailService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!orderDetailService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!orderDetailService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -234,17 +248,18 @@ public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper,OrderD
         return this.update(new UpdateWrapper<OrderDetail>().set("productid",null).eq("productid",productId));
     }
 
-    public boolean saveByProductId(String productId,List<OrderDetail> list) {
+    public boolean saveByProductId(Product product,List<OrderDetail> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<OrderDetail> _update=new ArrayList<OrderDetail>();
         List<OrderDetail> _create=new ArrayList<OrderDetail>();
-        for(OrderDetail before:selectByProductId(productId)){
+        for(OrderDetail before:selectByProductId(product.getProductId())){
             delIds.add(before.getOrderDetailId());
         }
         for(OrderDetail sub:list) {
-            sub.setProductId(productId);
+            sub.setProductId(product.getProductId());
+            sub.setProduct(product);
             if(ObjectUtils.isEmpty(sub.getOrderDetailId()))
                 sub.setOrderDetailId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getOrderDetailId())) {
@@ -254,14 +269,16 @@ public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper,OrderD
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!orderDetailService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!orderDetailService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!orderDetailService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

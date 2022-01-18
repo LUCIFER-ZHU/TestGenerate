@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,26 +34,31 @@ import cn.ibizlab.sample.core.sample.service.IDistrictService;
 import cn.ibizlab.sample.core.sample.mapper.DistrictMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.City;
+import cn.ibizlab.sample.core.sample.service.ICityService;   
 
 
 /**
  * 实体[区] 服务对象接口实现
  */
 @Slf4j
-@Service("DistrictServiceImpl")
+@Service("DistrictService")
 public class DistrictServiceImpl extends ServiceImpl<DistrictMapper,District> implements IDistrictService {
 
-    protected IDistrictService districtService = SpringContextHolder.getBean(this.getClass());
+    protected IDistrictService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.ICityService cityService;
+    protected ICityService cityService;
    
 
     protected int batchSize = 500;
@@ -60,7 +66,7 @@ public class DistrictServiceImpl extends ServiceImpl<DistrictMapper,District> im
     public District get(District et) {
         District rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,区:"+et.getDistrictId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -69,7 +75,12 @@ public class DistrictServiceImpl extends ServiceImpl<DistrictMapper,District> im
     }
 
     public void fillParentData(District et) {
-        
+        if(!ObjectUtils.isEmpty(et.getCityId())) {
+            City city = et.getCity();
+            if(!ObjectUtils.isEmpty(city)) {
+                et.setCityName(city.getCityName());   
+            }
+        }    
     }
 
     public District getDraft(District et) {
@@ -119,9 +130,9 @@ public class DistrictServiceImpl extends ServiceImpl<DistrictMapper,District> im
     @Transactional
     public boolean save(District et) {
         if(checkKey(et))
-            return districtService.update(et);
+            return getProxyService().update(et);
         else
-            return districtService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -143,9 +154,9 @@ public class DistrictServiceImpl extends ServiceImpl<DistrictMapper,District> im
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!districtService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!districtService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -189,17 +200,18 @@ public class DistrictServiceImpl extends ServiceImpl<DistrictMapper,District> im
         return this.update(new UpdateWrapper<District>().set("cityid",null).eq("cityid",cityId));
     }
 
-    public boolean saveByCityId(String cityId,List<District> list) {
+    public boolean saveByCityId(City city,List<District> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<District> _update=new ArrayList<District>();
         List<District> _create=new ArrayList<District>();
-        for(District before:selectByCityId(cityId)){
+        for(District before:selectByCityId(city.getCityId())){
             delIds.add(before.getDistrictId());
         }
         for(District sub:list) {
-            sub.setCityId(cityId);
+            sub.setCityId(city.getCityId());
+            sub.setCity(city);
             if(ObjectUtils.isEmpty(sub.getDistrictId()))
                 sub.setDistrictId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getDistrictId())) {
@@ -209,14 +221,16 @@ public class DistrictServiceImpl extends ServiceImpl<DistrictMapper,District> im
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!districtService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!districtService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!districtService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

@@ -59,17 +59,17 @@ public class OrgDataResource {
 
     @ApiOperation(value = "组织数据", tags = {"组织数据" },  notes = "组织数据")
     @RequestMapping(method = RequestMethod.GET, value = "/orgdatas/{orgDataId}")
-    public ResponseEntity get(@PathVariable("orgDataId") String orgDataId) {
+    public ResponseEntity getByOrgDataId(@PathVariable("orgDataId") String orgDataId) {
     }
 
     @ApiOperation(value = "组织数据", tags = {"组织数据" },  notes = "组织数据")
     @RequestMapping(method = RequestMethod.DELETE, value = "/orgdatas/{orgDataId}")
-    public ResponseEntity remove(@PathVariable("orgDataId") String orgDataId) {
+    public ResponseEntity removeByOrgDataId(@PathVariable("orgDataId") String orgDataId) {
     }
 
     @ApiOperation(value = "组织数据", tags = {"组织数据" },  notes = "组织数据")
     @RequestMapping(method = RequestMethod.PUT, value = "/orgdatas/{orgDataId}")
-    public ResponseEntity update(@PathVariable("orgDataId") String orgDataId) {
+    public ResponseEntity updateByOrgDataId(@PathVariable("orgDataId") String orgDataId) {
     }
 
     @ApiOperation(value = "组织数据", tags = {"组织数据" },  notes = "组织数据")
@@ -84,7 +84,7 @@ public class OrgDataResource {
 
     @ApiOperation(value = "组织数据", tags = {"组织数据" },  notes = "组织数据")
     @RequestMapping(method = RequestMethod.POST, value = "/orgdatas/{orgDataId}/save")
-    public ResponseEntity save(@PathVariable("orgDataId") String orgDataId) {
+    public ResponseEntity saveByOrgDataId(@PathVariable("orgDataId") String orgDataId) {
     }
 
     @ApiOperation(value = "组织数据", tags = {"组织数据" },  notes = "组织数据")
@@ -102,7 +102,7 @@ public class OrgDataResource {
     @ApiOperation(value = "组织数据", tags = {"组织数据" },  notes = "组织数据")
     @RequestMapping(method = RequestMethod.POST, value = "/orgdatas/fetchporgdata")
     public ResponseEntity fetchPorgdata() {
-        Page<OrgData> domains = orgDataService.searchPORGDATA() ;
+        Page<OrgData> domains = orgDataService.searchPorgdata() ;
             List<> list = Mapping.toDto(domains.getContent());
             return ResponseEntity.status(HttpStatus.OK)
             .header("x-page", String.valueOf(.getPageable().getPageNumber()))

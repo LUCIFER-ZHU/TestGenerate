@@ -60,11 +60,17 @@ public interface IPersonDataService extends IService<PersonData> {
     List<PersonData> selectByDeptDataId(String deptDataId);
     boolean removeByDeptDataId(String deptDataId);
     boolean resetByDeptDataId(String deptDataId);
-    boolean saveByDeptDataId(String deptDataId,List<PersonData> list);
+    boolean saveByDeptDataId(cn.ibizlab.sample.core.sample.domain.DeptData deptData,List<PersonData> list);
+    default boolean saveByDeptDataId(String deptDataId,List<PersonData> list) {
+        return saveByDeptDataId(new cn.ibizlab.sample.core.sample.domain.DeptData().setDeptDataId(deptDataId),list);
+    }
 
     List<PersonData> selectByOrgDataId(String orgDataId);
     boolean removeByOrgDataId(String orgDataId);
     boolean resetByOrgDataId(String orgDataId);
-    boolean saveByOrgDataId(String orgDataId,List<PersonData> list);
+    boolean saveByOrgDataId(cn.ibizlab.sample.core.sample.domain.OrgData orgData,List<PersonData> list);
+    default boolean saveByOrgDataId(String orgDataId,List<PersonData> list) {
+        return saveByOrgDataId(new cn.ibizlab.sample.core.sample.domain.OrgData().setOrgDataId(orgDataId),list);
+    }
 
 }

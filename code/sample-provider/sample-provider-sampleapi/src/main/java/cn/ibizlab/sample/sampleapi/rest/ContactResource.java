@@ -59,17 +59,17 @@ public class ContactResource {
 
     @ApiOperation(value = "联系人", tags = {"联系人" },  notes = "联系人")
     @RequestMapping(method = RequestMethod.GET, value = "/contacts/{contactId}")
-    public ResponseEntity get(@PathVariable("contactId") String contactId) {
+    public ResponseEntity getByContactId(@PathVariable("contactId") String contactId) {
     }
 
     @ApiOperation(value = "联系人", tags = {"联系人" },  notes = "联系人")
     @RequestMapping(method = RequestMethod.DELETE, value = "/contacts/{contactId}")
-    public ResponseEntity remove(@PathVariable("contactId") String contactId) {
+    public ResponseEntity removeByContactId(@PathVariable("contactId") String contactId) {
     }
 
     @ApiOperation(value = "联系人", tags = {"联系人" },  notes = "联系人")
     @RequestMapping(method = RequestMethod.PUT, value = "/contacts/{contactId}")
-    public ResponseEntity update(@PathVariable("contactId") String contactId) {
+    public ResponseEntity updateByContactId(@PathVariable("contactId") String contactId) {
     }
 
     @ApiOperation(value = "联系人", tags = {"联系人" },  notes = "联系人")
@@ -84,7 +84,7 @@ public class ContactResource {
 
     @ApiOperation(value = "联系人", tags = {"联系人" },  notes = "联系人")
     @RequestMapping(method = RequestMethod.POST, value = "/contacts/{contactId}/save")
-    public ResponseEntity save(@PathVariable("contactId") String contactId) {
+    public ResponseEntity saveByContactId(@PathVariable("contactId") String contactId) {
     }
 
     @ApiOperation(value = "联系人", tags = {"联系人" },  notes = "联系人")

@@ -59,17 +59,17 @@ public class Example2Resource {
 
     @ApiOperation(value = "示例明细", tags = {"示例明细" },  notes = "示例明细")
     @RequestMapping(method = RequestMethod.GET, value = "/example2s/{example2Id}")
-    public ResponseEntity get(@PathVariable("example2Id") String example2Id) {
+    public ResponseEntity getByExample2Id(@PathVariable("example2Id") String example2Id) {
     }
 
     @ApiOperation(value = "示例明细", tags = {"示例明细" },  notes = "示例明细")
     @RequestMapping(method = RequestMethod.DELETE, value = "/example2s/{example2Id}")
-    public ResponseEntity remove(@PathVariable("example2Id") String example2Id) {
+    public ResponseEntity removeByExample2Id(@PathVariable("example2Id") String example2Id) {
     }
 
     @ApiOperation(value = "示例明细", tags = {"示例明细" },  notes = "示例明细")
     @RequestMapping(method = RequestMethod.PUT, value = "/example2s/{example2Id}")
-    public ResponseEntity update(@PathVariable("example2Id") String example2Id) {
+    public ResponseEntity updateByExample2Id(@PathVariable("example2Id") String example2Id) {
     }
 
     @ApiOperation(value = "示例明细", tags = {"示例明细" },  notes = "示例明细")
@@ -84,7 +84,7 @@ public class Example2Resource {
 
     @ApiOperation(value = "示例明细", tags = {"示例明细" },  notes = "示例明细")
     @RequestMapping(method = RequestMethod.POST, value = "/example2s/{example2Id}/save")
-    public ResponseEntity save(@PathVariable("example2Id") String example2Id) {
+    public ResponseEntity saveByExample2Id(@PathVariable("example2Id") String example2Id) {
     }
 
     @ApiOperation(value = "示例明细", tags = {"示例明细" },  notes = "示例明细")

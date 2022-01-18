@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,26 +34,31 @@ import cn.ibizlab.sample.core.sample.service.IExample2Service;
 import cn.ibizlab.sample.core.sample.mapper.Example2Mapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.Example;
+import cn.ibizlab.sample.core.sample.service.IExampleService;   
 
 
 /**
  * 实体[示例明细] 服务对象接口实现
  */
 @Slf4j
-@Service("Example2ServiceImpl")
+@Service("Example2Service")
 public class Example2ServiceImpl extends ServiceImpl<Example2Mapper,Example2> implements IExample2Service {
 
-    protected IExample2Service example2Service = SpringContextHolder.getBean(this.getClass());
+    protected IExample2Service getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.IExampleService exampleService;
+    protected IExampleService exampleService;
    
 
     protected int batchSize = 500;
@@ -60,7 +66,7 @@ public class Example2ServiceImpl extends ServiceImpl<Example2Mapper,Example2> im
     public Example2 get(Example2 et) {
         Example2 rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,示例明细:"+et.getExample2Id());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -69,7 +75,12 @@ public class Example2ServiceImpl extends ServiceImpl<Example2Mapper,Example2> im
     }
 
     public void fillParentData(Example2 et) {
-        
+        if(!ObjectUtils.isEmpty(et.getExampleId())) {
+            Example example = et.getExample();
+            if(!ObjectUtils.isEmpty(example)) {
+                et.setExampleName(example.getExampleName());   
+            }
+        }    
     }
 
     public Example2 getDraft(Example2 et) {
@@ -119,9 +130,9 @@ public class Example2ServiceImpl extends ServiceImpl<Example2Mapper,Example2> im
     @Transactional
     public boolean save(Example2 et) {
         if(checkKey(et))
-            return example2Service.update(et);
+            return getProxyService().update(et);
         else
-            return example2Service.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -143,9 +154,9 @@ public class Example2ServiceImpl extends ServiceImpl<Example2Mapper,Example2> im
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!example2Service.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!example2Service.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -189,17 +200,18 @@ public class Example2ServiceImpl extends ServiceImpl<Example2Mapper,Example2> im
         return this.update(new UpdateWrapper<Example2>().set("exampleid",null).eq("exampleid",exampleId));
     }
 
-    public boolean saveByExampleId(String exampleId,List<Example2> list) {
+    public boolean saveByExampleId(Example example,List<Example2> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Example2> _update=new ArrayList<Example2>();
         List<Example2> _create=new ArrayList<Example2>();
-        for(Example2 before:selectByExampleId(exampleId)){
+        for(Example2 before:selectByExampleId(example.getExampleId())){
             delIds.add(before.getExample2Id());
         }
         for(Example2 sub:list) {
-            sub.setExampleId(exampleId);
+            sub.setExampleId(example.getExampleId());
+            sub.setExample(example);
             if(ObjectUtils.isEmpty(sub.getExample2Id()))
                 sub.setExample2Id((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getExample2Id())) {
@@ -209,14 +221,16 @@ public class Example2ServiceImpl extends ServiceImpl<Example2Mapper,Example2> im
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!example2Service.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!example2Service.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!example2Service.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

@@ -14,10 +14,21 @@
     <description>后台体系 Core</description>
 
     <dependencies>
+
         <dependency>
-		    <groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-commons</artifactId>
-		</dependency>
+            <groupId>cn.ibizlab</groupId>
+            <artifactId>ibizlab-util</artifactId>
+            <version>${ibizlab-util.version}</version>
+        </dependency>
+
+        <!--  MySQL驱动包 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+
+         
         
         <!--  JBPM  -->
         <dependency>
@@ -29,27 +40,8 @@
             <artifactId>jbpm-bpmn2</artifactId>
         </dependency>
 
-        <!--  Drools  -->
-        <dependency>
-            <groupId>org.drools</groupId>
-            <artifactId>drools-compiler</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.drools</groupId>
-            <artifactId>drools-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.kie</groupId>
-            <artifactId>kie-spring</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.kie</groupId>
-            <artifactId>kie-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-        </dependency>
+        
+       
 
         <!--  MySQL数据库  -->
         <dependency>
@@ -73,11 +65,7 @@
             <artifactId>mapstruct-processor</artifactId>
         </dependency>
 
-        <!--MongoDB-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
-        </dependency>
+         
 
         <!--Liquibase数据库版本更新工具-->
         <dependency>

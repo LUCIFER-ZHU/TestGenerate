@@ -56,7 +56,7 @@
         ]]>    
     </sql>
 
-    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.ExampleSearchContext"  resultType="ExampleResultMap">
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.ExampleSearchContext"  resultMap="ExampleResultMap">
         select t1.* 
         from (
             <include refid="default"/>
@@ -67,7 +67,7 @@
             
     </select>
     
-    <select id="searchEmpty"  parameterType="cn.ibizlab.sample.core.sample.filter.ExampleSearchContext"  resultType="ExampleResultMap">
+    <select id="searchEmpty"  parameterType="cn.ibizlab.sample.core.sample.filter.ExampleSearchContext"  resultMap="ExampleResultMap">
         select t1.* 
         from (
             <include refid="empty"/>

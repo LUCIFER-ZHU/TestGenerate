@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Subject } from 'rxjs';
-import { CtrlConfig } from './mob-main-form-config';
+import { ctrlState } from './mob-main-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
 
 interface Props {
@@ -21,19 +21,19 @@ interface CtrlEmit {
   (name: "ctrlEvent", value: IActionParam): void;
 }
 
-const emit = defineEmits < CtrlEmit > ();
+const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { state, handleEditorEvent, handleComponentEvent } = new FormControl(CtrlConfig).moduleInstall(props, emit);
+const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ state, name: 'form' });
 </script>
 <template>
   <a-form name="Mob_main"
-    class="ibiz-form"
+    class="app-form"
     style="" :model="state.data" :rules="state.rules">
-    <a-tabs class="ibiz-form-page">
+    <a-tabs class="app-form-page">
 <a-tab-pane v-show="state.detailsModel.formpage1.visible" key="formpage1" tab="基本信息">
   <a-row>
 <a-col
@@ -51,7 +51,7 @@ defineExpose({ state, name: 'form' });
     :titleBarCloseMode="0"
     :showCaption="true"
     :uIActionGroup="state.detailsModel.group1.uIActionGroup"
-    @componentEvent="handleComponentEvent">
+    @componentEvent="onComponentEvent">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -84,7 +84,7 @@ defineExpose({ state, name: 'form' });
     :titleBarCloseMode="0"
     :showCaption="true"
     :uIActionGroup="state.detailsModel.group2.uIActionGroup"
-    @componentEvent="handleComponentEvent">
+    @componentEvent="onComponentEvent">
     <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -155,7 +155,7 @@ defineExpose({ state, name: 'form' });
   </a-form>
 </template>
 <style lang="scss">
-  .ibiz-form {
+  .app-form {
     .ant-card-head {
       padding: 0;
       margin: 0 10px;

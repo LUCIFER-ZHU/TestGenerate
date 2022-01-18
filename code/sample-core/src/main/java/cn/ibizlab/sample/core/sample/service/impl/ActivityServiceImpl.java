@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,26 +34,31 @@ import cn.ibizlab.sample.core.sample.service.IActivityService;
 import cn.ibizlab.sample.core.sample.mapper.ActivityMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.Customer;
+import cn.ibizlab.sample.core.sample.service.ICustomerService;   
 
 
 /**
  * 实体[活动] 服务对象接口实现
  */
 @Slf4j
-@Service("ActivityServiceImpl")
+@Service("ActivityService")
 public class ActivityServiceImpl extends ServiceImpl<ActivityMapper,Activity> implements IActivityService {
 
-    protected IActivityService activityService = SpringContextHolder.getBean(this.getClass());
+    protected IActivityService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.ICustomerService customerService;
+    protected ICustomerService customerService;
    
 
     protected int batchSize = 500;
@@ -60,7 +66,7 @@ public class ActivityServiceImpl extends ServiceImpl<ActivityMapper,Activity> im
     public Activity get(Activity et) {
         Activity rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,活动:"+et.getActivityId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -69,7 +75,12 @@ public class ActivityServiceImpl extends ServiceImpl<ActivityMapper,Activity> im
     }
 
     public void fillParentData(Activity et) {
-        
+        if(!ObjectUtils.isEmpty(et.getCustomerId())) {
+            Customer customer = et.getCustomer();
+            if(!ObjectUtils.isEmpty(customer)) {
+                et.setCustomerName(customer.getCustomerName());   
+            }
+        }    
     }
 
     public Activity getDraft(Activity et) {
@@ -119,9 +130,9 @@ public class ActivityServiceImpl extends ServiceImpl<ActivityMapper,Activity> im
     @Transactional
     public boolean save(Activity et) {
         if(checkKey(et))
-            return activityService.update(et);
+            return getProxyService().update(et);
         else
-            return activityService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -143,9 +154,9 @@ public class ActivityServiceImpl extends ServiceImpl<ActivityMapper,Activity> im
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!activityService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!activityService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -221,17 +232,18 @@ public class ActivityServiceImpl extends ServiceImpl<ActivityMapper,Activity> im
         return this.update(new UpdateWrapper<Activity>().set("customerid",null).eq("customerid",customerId));
     }
 
-    public boolean saveByCustomerId(String customerId,List<Activity> list) {
+    public boolean saveByCustomerId(Customer customer,List<Activity> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Activity> _update=new ArrayList<Activity>();
         List<Activity> _create=new ArrayList<Activity>();
-        for(Activity before:selectByCustomerId(customerId)){
+        for(Activity before:selectByCustomerId(customer.getCustomerId())){
             delIds.add(before.getActivityId());
         }
         for(Activity sub:list) {
-            sub.setCustomerId(customerId);
+            sub.setCustomerId(customer.getCustomerId());
+            sub.setCustomer(customer);
             if(ObjectUtils.isEmpty(sub.getActivityId()))
                 sub.setActivityId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getActivityId())) {
@@ -241,14 +253,16 @@ public class ActivityServiceImpl extends ServiceImpl<ActivityMapper,Activity> im
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!activityService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!activityService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!activityService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

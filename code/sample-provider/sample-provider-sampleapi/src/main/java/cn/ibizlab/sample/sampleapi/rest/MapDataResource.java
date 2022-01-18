@@ -59,17 +59,17 @@ public class MapDataResource {
 
     @ApiOperation(value = "地图示例数据", tags = {"地图示例数据" },  notes = "地图示例数据")
     @RequestMapping(method = RequestMethod.GET, value = "/mapdatas/{mapDataId}")
-    public ResponseEntity get(@PathVariable("mapDataId") String mapDataId) {
+    public ResponseEntity getByMapDataId(@PathVariable("mapDataId") String mapDataId) {
     }
 
     @ApiOperation(value = "地图示例数据", tags = {"地图示例数据" },  notes = "地图示例数据")
     @RequestMapping(method = RequestMethod.DELETE, value = "/mapdatas/{mapDataId}")
-    public ResponseEntity remove(@PathVariable("mapDataId") String mapDataId) {
+    public ResponseEntity removeByMapDataId(@PathVariable("mapDataId") String mapDataId) {
     }
 
     @ApiOperation(value = "地图示例数据", tags = {"地图示例数据" },  notes = "地图示例数据")
     @RequestMapping(method = RequestMethod.PUT, value = "/mapdatas/{mapDataId}")
-    public ResponseEntity update(@PathVariable("mapDataId") String mapDataId) {
+    public ResponseEntity updateByMapDataId(@PathVariable("mapDataId") String mapDataId) {
     }
 
     @ApiOperation(value = "地图示例数据", tags = {"地图示例数据" },  notes = "地图示例数据")
@@ -84,7 +84,7 @@ public class MapDataResource {
 
     @ApiOperation(value = "地图示例数据", tags = {"地图示例数据" },  notes = "地图示例数据")
     @RequestMapping(method = RequestMethod.POST, value = "/mapdatas/{mapDataId}/save")
-    public ResponseEntity save(@PathVariable("mapDataId") String mapDataId) {
+    public ResponseEntity saveByMapDataId(@PathVariable("mapDataId") String mapDataId) {
     }
 
     @ApiOperation(value = "地图示例数据", tags = {"地图示例数据" },  notes = "地图示例数据")

@@ -60,6 +60,9 @@ public interface IExample2Service extends IService<Example2> {
     List<Example2> selectByExampleId(String exampleId);
     boolean removeByExampleId(String exampleId);
     boolean resetByExampleId(String exampleId);
-    boolean saveByExampleId(String exampleId,List<Example2> list);
+    boolean saveByExampleId(cn.ibizlab.sample.core.sample.domain.Example example,List<Example2> list);
+    default boolean saveByExampleId(String exampleId,List<Example2> list) {
+        return saveByExampleId(new cn.ibizlab.sample.core.sample.domain.Example().setExampleId(exampleId),list);
+    }
 
 }

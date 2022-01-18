@@ -59,17 +59,17 @@ public class ChartDataResource {
 
     @ApiOperation(value = "图表", tags = {"图表" },  notes = "图表")
     @RequestMapping(method = RequestMethod.GET, value = "/chartdatas/{chartDataId}")
-    public ResponseEntity get(@PathVariable("chartDataId") String chartDataId) {
+    public ResponseEntity getByChartDataId(@PathVariable("chartDataId") String chartDataId) {
     }
 
     @ApiOperation(value = "图表", tags = {"图表" },  notes = "图表")
     @RequestMapping(method = RequestMethod.DELETE, value = "/chartdatas/{chartDataId}")
-    public ResponseEntity remove(@PathVariable("chartDataId") String chartDataId) {
+    public ResponseEntity removeByChartDataId(@PathVariable("chartDataId") String chartDataId) {
     }
 
     @ApiOperation(value = "图表", tags = {"图表" },  notes = "图表")
     @RequestMapping(method = RequestMethod.PUT, value = "/chartdatas/{chartDataId}")
-    public ResponseEntity update(@PathVariable("chartDataId") String chartDataId) {
+    public ResponseEntity updateByChartDataId(@PathVariable("chartDataId") String chartDataId) {
     }
 
     @ApiOperation(value = "图表", tags = {"图表" },  notes = "图表")
@@ -84,17 +84,17 @@ public class ChartDataResource {
 
     @ApiOperation(value = "图表", tags = {"图表" },  notes = "图表")
     @RequestMapping(method = RequestMethod.GET, value = "/chartdatas/{chartDataId}/getrandom")
-    public ResponseEntity getRandom(@PathVariable("chartDataId") String chartDataId) {
+    public ResponseEntity getRandomByChartDataId(@PathVariable("chartDataId") String chartDataId) {
     }
 
     @ApiOperation(value = "图表", tags = {"图表" },  notes = "图表")
     @RequestMapping(method = RequestMethod.POST, value = "/chartdatas/{chartDataId}/save")
-    public ResponseEntity save(@PathVariable("chartDataId") String chartDataId) {
+    public ResponseEntity saveByChartDataId(@PathVariable("chartDataId") String chartDataId) {
     }
 
     @ApiOperation(value = "图表", tags = {"图表" },  notes = "图表")
     @RequestMapping(method = RequestMethod.POST, value = "/chartdatas/{chartDataId}/testbackendaction")
-    public ResponseEntity testBackEndAction(@PathVariable("chartDataId") String chartDataId) {
+    public ResponseEntity testBackEndActionByChartDataId(@PathVariable("chartDataId") String chartDataId) {
     }
 
     @ApiOperation(value = "图表", tags = {"图表" },  notes = "图表")

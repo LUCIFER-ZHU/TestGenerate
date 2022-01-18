@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,34 +34,43 @@ import cn.ibizlab.sample.core.sample.service.IExampleService;
 import cn.ibizlab.sample.core.sample.mapper.ExampleMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.City;
+import cn.ibizlab.sample.core.sample.service.ICityService;   
+import cn.ibizlab.sample.core.sample.domain.District;
+import cn.ibizlab.sample.core.sample.service.IDistrictService;   
+import cn.ibizlab.sample.core.sample.domain.Province;
+import cn.ibizlab.sample.core.sample.service.IProvinceService;   
 
 
 /**
  * 实体[示例] 服务对象接口实现
  */
 @Slf4j
-@Service("ExampleServiceImpl")
+@Service("ExampleService")
 public class ExampleServiceImpl extends ServiceImpl<ExampleMapper,Example> implements IExampleService {
 
-    protected IExampleService exampleService = SpringContextHolder.getBean(this.getClass());
+    protected IExampleService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.ICityService cityService;
+    protected ICityService cityService;
    
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.IDistrictService districtService;
+    protected IDistrictService districtService;
    
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.IProvinceService provinceService;
+    protected IProvinceService provinceService;
    
 
     protected int batchSize = 500;
@@ -68,7 +78,7 @@ public class ExampleServiceImpl extends ServiceImpl<ExampleMapper,Example> imple
     public Example get(Example et) {
         Example rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,示例:"+et.getExampleId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -77,7 +87,24 @@ public class ExampleServiceImpl extends ServiceImpl<ExampleMapper,Example> imple
     }
 
     public void fillParentData(Example et) {
-        
+        if(!ObjectUtils.isEmpty(et.getCityId())) {
+            City city = et.getCity();
+            if(!ObjectUtils.isEmpty(city)) {
+                et.setCityName(city.getCityName());   
+            }
+        }    
+        if(!ObjectUtils.isEmpty(et.getDistrictId())) {
+            District district = et.getDistrict();
+            if(!ObjectUtils.isEmpty(district)) {
+                et.setDistrictName(district.getDistrictName());   
+            }
+        }    
+        if(!ObjectUtils.isEmpty(et.getProvinceId())) {
+            Province province = et.getProvince();
+            if(!ObjectUtils.isEmpty(province)) {
+                et.setProvinceName(province.getProvinceName());   
+            }
+        }    
     }
 
     public Example getDraft(Example et) {
@@ -127,9 +154,9 @@ public class ExampleServiceImpl extends ServiceImpl<ExampleMapper,Example> imple
     @Transactional
     public boolean save(Example et) {
         if(checkKey(et))
-            return exampleService.update(et);
+            return getProxyService().update(et);
         else
-            return exampleService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -151,9 +178,9 @@ public class ExampleServiceImpl extends ServiceImpl<ExampleMapper,Example> imple
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!exampleService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!exampleService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -241,17 +268,18 @@ public class ExampleServiceImpl extends ServiceImpl<ExampleMapper,Example> imple
         return this.update(new UpdateWrapper<Example>().set("cityid",null).eq("cityid",cityId));
     }
 
-    public boolean saveByCityId(String cityId,List<Example> list) {
+    public boolean saveByCityId(City city,List<Example> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Example> _update=new ArrayList<Example>();
         List<Example> _create=new ArrayList<Example>();
-        for(Example before:selectByCityId(cityId)){
+        for(Example before:selectByCityId(city.getCityId())){
             delIds.add(before.getExampleId());
         }
         for(Example sub:list) {
-            sub.setCityId(cityId);
+            sub.setCityId(city.getCityId());
+            sub.setCity(city);
             if(ObjectUtils.isEmpty(sub.getExampleId()))
                 sub.setExampleId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getExampleId())) {
@@ -261,11 +289,11 @@ public class ExampleServiceImpl extends ServiceImpl<ExampleMapper,Example> imple
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!exampleService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!exampleService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!exampleService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -282,17 +310,18 @@ public class ExampleServiceImpl extends ServiceImpl<ExampleMapper,Example> imple
         return this.update(new UpdateWrapper<Example>().set("districtid",null).eq("districtid",districtId));
     }
 
-    public boolean saveByDistrictId(String districtId,List<Example> list) {
+    public boolean saveByDistrictId(District district,List<Example> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Example> _update=new ArrayList<Example>();
         List<Example> _create=new ArrayList<Example>();
-        for(Example before:selectByDistrictId(districtId)){
+        for(Example before:selectByDistrictId(district.getDistrictId())){
             delIds.add(before.getExampleId());
         }
         for(Example sub:list) {
-            sub.setDistrictId(districtId);
+            sub.setDistrictId(district.getDistrictId());
+            sub.setDistrict(district);
             if(ObjectUtils.isEmpty(sub.getExampleId()))
                 sub.setExampleId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getExampleId())) {
@@ -302,11 +331,11 @@ public class ExampleServiceImpl extends ServiceImpl<ExampleMapper,Example> imple
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!exampleService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!exampleService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!exampleService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -323,17 +352,18 @@ public class ExampleServiceImpl extends ServiceImpl<ExampleMapper,Example> imple
         return this.update(new UpdateWrapper<Example>().set("provinceid",null).eq("provinceid",provinceId));
     }
 
-    public boolean saveByProvinceId(String provinceId,List<Example> list) {
+    public boolean saveByProvinceId(Province province,List<Example> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Example> _update=new ArrayList<Example>();
         List<Example> _create=new ArrayList<Example>();
-        for(Example before:selectByProvinceId(provinceId)){
+        for(Example before:selectByProvinceId(province.getProvinceId())){
             delIds.add(before.getExampleId());
         }
         for(Example sub:list) {
-            sub.setProvinceId(provinceId);
+            sub.setProvinceId(province.getProvinceId());
+            sub.setProvince(province);
             if(ObjectUtils.isEmpty(sub.getExampleId()))
                 sub.setExampleId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getExampleId())) {
@@ -343,14 +373,16 @@ public class ExampleServiceImpl extends ServiceImpl<ExampleMapper,Example> imple
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!exampleService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!exampleService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!exampleService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

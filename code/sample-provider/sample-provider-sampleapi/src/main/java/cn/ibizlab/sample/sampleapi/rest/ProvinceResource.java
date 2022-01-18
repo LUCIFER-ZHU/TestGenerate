@@ -59,17 +59,17 @@ public class ProvinceResource {
 
     @ApiOperation(value = "省份", tags = {"省份" },  notes = "省份")
     @RequestMapping(method = RequestMethod.GET, value = "/provinces/{provinceId}")
-    public ResponseEntity get(@PathVariable("provinceId") String provinceId) {
+    public ResponseEntity getByProvinceId(@PathVariable("provinceId") String provinceId) {
     }
 
     @ApiOperation(value = "省份", tags = {"省份" },  notes = "省份")
     @RequestMapping(method = RequestMethod.DELETE, value = "/provinces/{provinceId}")
-    public ResponseEntity remove(@PathVariable("provinceId") String provinceId) {
+    public ResponseEntity removeByProvinceId(@PathVariable("provinceId") String provinceId) {
     }
 
     @ApiOperation(value = "省份", tags = {"省份" },  notes = "省份")
     @RequestMapping(method = RequestMethod.PUT, value = "/provinces/{provinceId}")
-    public ResponseEntity update(@PathVariable("provinceId") String provinceId) {
+    public ResponseEntity updateByProvinceId(@PathVariable("provinceId") String provinceId) {
     }
 
     @ApiOperation(value = "省份", tags = {"省份" },  notes = "省份")
@@ -84,7 +84,7 @@ public class ProvinceResource {
 
     @ApiOperation(value = "省份", tags = {"省份" },  notes = "省份")
     @RequestMapping(method = RequestMethod.POST, value = "/provinces/{provinceId}/save")
-    public ResponseEntity save(@PathVariable("provinceId") String provinceId) {
+    public ResponseEntity saveByProvinceId(@PathVariable("provinceId") String provinceId) {
     }
 
     @ApiOperation(value = "省份", tags = {"省份" },  notes = "省份")

@@ -5,7 +5,7 @@ import cn.ibizlab.sample.core.sample.domain.LogicValidData;
 import cn.ibizlab.sample.sampleapi.dto.LogicValidDataDTO;
 import cn.ibizlab.util.domain.MappingBase;
 
-@Mapper(componentModel = "spring", uses = {}, implementationName = "LogicValidDataDTOMapping",
+@Mapper(componentModel = "spring", uses = {}, implementationName = "SampleApiLogicValidDataDTOMapping",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface LogicValidDataDTOMapping extends MappingBase<LogicValidDataDTO, LogicValidData> {

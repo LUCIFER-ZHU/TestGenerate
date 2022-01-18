@@ -60,11 +60,17 @@ public interface IOrderDetailService extends IService<OrderDetail> {
     List<OrderDetail> selectByOrderId(String orderId);
     boolean removeByOrderId(String orderId);
     boolean resetByOrderId(String orderId);
-    boolean saveByOrderId(String orderId,List<OrderDetail> list);
+    boolean saveByOrderId(cn.ibizlab.sample.core.sample.domain.Order order,List<OrderDetail> list);
+    default boolean saveByOrderId(String orderId,List<OrderDetail> list) {
+        return saveByOrderId(new cn.ibizlab.sample.core.sample.domain.Order().setOrderId(orderId),list);
+    }
 
     List<OrderDetail> selectByProductId(String productId);
     boolean removeByProductId(String productId);
     boolean resetByProductId(String productId);
-    boolean saveByProductId(String productId,List<OrderDetail> list);
+    boolean saveByProductId(cn.ibizlab.sample.core.sample.domain.Product product,List<OrderDetail> list);
+    default boolean saveByProductId(String productId,List<OrderDetail> list) {
+        return saveByProductId(new cn.ibizlab.sample.core.sample.domain.Product().setProductId(productId),list);
+    }
 
 }

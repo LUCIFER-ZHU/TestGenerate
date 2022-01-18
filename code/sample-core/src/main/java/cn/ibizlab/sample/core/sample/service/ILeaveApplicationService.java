@@ -78,6 +78,9 @@ public interface ILeaveApplicationService extends IService<LeaveApplication> {
     List<LeaveApplication> selectByCustomerId(String customerId);
     boolean removeByCustomerId(String customerId);
     boolean resetByCustomerId(String customerId);
-    boolean saveByCustomerId(String customerId,List<LeaveApplication> list);
+    boolean saveByCustomerId(cn.ibizlab.sample.core.sample.domain.Customer customer,List<LeaveApplication> list);
+    default boolean saveByCustomerId(String customerId,List<LeaveApplication> list) {
+        return saveByCustomerId(new cn.ibizlab.sample.core.sample.domain.Customer().setCustomerId(customerId),list);
+    }
 
 }

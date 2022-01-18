@@ -59,17 +59,17 @@ public class OrderRepDataResource {
 
     @ApiOperation(value = "订单报表数据", tags = {"订单报表数据" },  notes = "订单报表数据")
     @RequestMapping(method = RequestMethod.GET, value = "/orderrepdatas/{orderRepDataId}")
-    public ResponseEntity get(@PathVariable("orderRepDataId") String orderRepDataId) {
+    public ResponseEntity getByOrderRepDataId(@PathVariable("orderRepDataId") String orderRepDataId) {
     }
 
     @ApiOperation(value = "订单报表数据", tags = {"订单报表数据" },  notes = "订单报表数据")
     @RequestMapping(method = RequestMethod.DELETE, value = "/orderrepdatas/{orderRepDataId}")
-    public ResponseEntity remove(@PathVariable("orderRepDataId") String orderRepDataId) {
+    public ResponseEntity removeByOrderRepDataId(@PathVariable("orderRepDataId") String orderRepDataId) {
     }
 
     @ApiOperation(value = "订单报表数据", tags = {"订单报表数据" },  notes = "订单报表数据")
     @RequestMapping(method = RequestMethod.PUT, value = "/orderrepdatas/{orderRepDataId}")
-    public ResponseEntity update(@PathVariable("orderRepDataId") String orderRepDataId) {
+    public ResponseEntity updateByOrderRepDataId(@PathVariable("orderRepDataId") String orderRepDataId) {
     }
 
     @ApiOperation(value = "订单报表数据", tags = {"订单报表数据" },  notes = "订单报表数据")
@@ -84,7 +84,7 @@ public class OrderRepDataResource {
 
     @ApiOperation(value = "订单报表数据", tags = {"订单报表数据" },  notes = "订单报表数据")
     @RequestMapping(method = RequestMethod.POST, value = "/orderrepdatas/{orderRepDataId}/save")
-    public ResponseEntity save(@PathVariable("orderRepDataId") String orderRepDataId) {
+    public ResponseEntity saveByOrderRepDataId(@PathVariable("orderRepDataId") String orderRepDataId) {
     }
 
     @ApiOperation(value = "订单报表数据", tags = {"订单报表数据" },  notes = "订单报表数据")

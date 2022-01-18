@@ -59,17 +59,17 @@ public class OpportunityResource {
 
     @ApiOperation(value = "商机", tags = {"商机" },  notes = "商机")
     @RequestMapping(method = RequestMethod.GET, value = "/opportunities/{opportunityId}")
-    public ResponseEntity get(@PathVariable("opportunityId") String opportunityId) {
+    public ResponseEntity getByOpportunityId(@PathVariable("opportunityId") String opportunityId) {
     }
 
     @ApiOperation(value = "商机", tags = {"商机" },  notes = "商机")
     @RequestMapping(method = RequestMethod.DELETE, value = "/opportunities/{opportunityId}")
-    public ResponseEntity remove(@PathVariable("opportunityId") String opportunityId) {
+    public ResponseEntity removeByOpportunityId(@PathVariable("opportunityId") String opportunityId) {
     }
 
     @ApiOperation(value = "商机", tags = {"商机" },  notes = "商机")
     @RequestMapping(method = RequestMethod.PUT, value = "/opportunities/{opportunityId}")
-    public ResponseEntity update(@PathVariable("opportunityId") String opportunityId) {
+    public ResponseEntity updateByOpportunityId(@PathVariable("opportunityId") String opportunityId) {
     }
 
     @ApiOperation(value = "商机", tags = {"商机" },  notes = "商机")
@@ -84,7 +84,7 @@ public class OpportunityResource {
 
     @ApiOperation(value = "商机", tags = {"商机" },  notes = "商机")
     @RequestMapping(method = RequestMethod.POST, value = "/opportunities/{opportunityId}/save")
-    public ResponseEntity save(@PathVariable("opportunityId") String opportunityId) {
+    public ResponseEntity saveByOpportunityId(@PathVariable("opportunityId") String opportunityId) {
     }
 
     @ApiOperation(value = "商机", tags = {"商机" },  notes = "商机")

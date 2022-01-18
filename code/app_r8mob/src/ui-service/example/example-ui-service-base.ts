@@ -28,13 +28,15 @@ export class ExampleUIServiceBase extends UIServiceBase {
              uIActionTag:'OPENVIEW_UIACTIONTEST',
              frontPSAppView:'',
              caption:'打开视图（界面逻辑-界面行为调用）',
-             entityCodeName:'',
+             entityCodeName:'Example',
              methodCodeName:'',
              frontProcessType:'WIZARD',
              refreshMode:'0',
              htmlPageUrl:'',
              uILogicAttachMode:'',
              nextActionCodeName:'',
+             navContexts:{},
+             navParams:{}
          },
      };    /**
      * 打开视图（界面逻辑-界面行为调用）
@@ -42,7 +44,7 @@ export class ExampleUIServiceBase extends UIServiceBase {
      * @param {*} params
      * @memberof ExampleUIServiceBase
      */
-    public async OpenView_UIActionTest(params:any){
+    public async OpenView_UIActionTest(uiAction:any, params:any){
         const actionModel =  this.getUIActionModel('OpenView_UIActionTest');
         AppFrontAction.doAction(actionModel, params);
     }

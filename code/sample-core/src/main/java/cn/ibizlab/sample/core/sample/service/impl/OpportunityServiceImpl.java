@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,30 +34,37 @@ import cn.ibizlab.sample.core.sample.service.IOpportunityService;
 import cn.ibizlab.sample.core.sample.mapper.OpportunityMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.Customer;
+import cn.ibizlab.sample.core.sample.service.ICustomerService;   
+import cn.ibizlab.sample.core.sample.domain.PersonData;
+import cn.ibizlab.sample.core.sample.service.IPersonDataService;   
 
 
 /**
  * 实体[商机] 服务对象接口实现
  */
 @Slf4j
-@Service("OpportunityServiceImpl")
+@Service("OpportunityService")
 public class OpportunityServiceImpl extends ServiceImpl<OpportunityMapper,Opportunity> implements IOpportunityService {
 
-    protected IOpportunityService opportunityService = SpringContextHolder.getBean(this.getClass());
+    protected IOpportunityService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.ICustomerService customerService;
+    protected ICustomerService customerService;
    
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.IPersonDataService personDataService;
+    protected IPersonDataService personDataService;
    
 
     protected int batchSize = 500;
@@ -64,7 +72,7 @@ public class OpportunityServiceImpl extends ServiceImpl<OpportunityMapper,Opport
     public Opportunity get(Opportunity et) {
         Opportunity rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,商机:"+et.getOpportunityId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -73,7 +81,18 @@ public class OpportunityServiceImpl extends ServiceImpl<OpportunityMapper,Opport
     }
 
     public void fillParentData(Opportunity et) {
-        
+        if(!ObjectUtils.isEmpty(et.getCustomerId())) {
+            Customer customer = et.getCustomer();
+            if(!ObjectUtils.isEmpty(customer)) {
+                et.setCustomerName(customer.getCustomerName());   
+            }
+        }    
+        if(!ObjectUtils.isEmpty(et.getPersonDataId())) {
+            PersonData personData = et.getPersonData();
+            if(!ObjectUtils.isEmpty(personData)) {
+                et.setPersonDataName(personData.getPersonDataName());   
+            }
+        }    
     }
 
     public Opportunity getDraft(Opportunity et) {
@@ -123,9 +142,9 @@ public class OpportunityServiceImpl extends ServiceImpl<OpportunityMapper,Opport
     @Transactional
     public boolean save(Opportunity et) {
         if(checkKey(et))
-            return opportunityService.update(et);
+            return getProxyService().update(et);
         else
-            return opportunityService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -147,9 +166,9 @@ public class OpportunityServiceImpl extends ServiceImpl<OpportunityMapper,Opport
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!opportunityService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!opportunityService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -193,17 +212,18 @@ public class OpportunityServiceImpl extends ServiceImpl<OpportunityMapper,Opport
         return this.update(new UpdateWrapper<Opportunity>().set("customerid",null).eq("customerid",customerId));
     }
 
-    public boolean saveByCustomerId(String customerId,List<Opportunity> list) {
+    public boolean saveByCustomerId(Customer customer,List<Opportunity> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Opportunity> _update=new ArrayList<Opportunity>();
         List<Opportunity> _create=new ArrayList<Opportunity>();
-        for(Opportunity before:selectByCustomerId(customerId)){
+        for(Opportunity before:selectByCustomerId(customer.getCustomerId())){
             delIds.add(before.getOpportunityId());
         }
         for(Opportunity sub:list) {
-            sub.setCustomerId(customerId);
+            sub.setCustomerId(customer.getCustomerId());
+            sub.setCustomer(customer);
             if(ObjectUtils.isEmpty(sub.getOpportunityId()))
                 sub.setOpportunityId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getOpportunityId())) {
@@ -213,11 +233,11 @@ public class OpportunityServiceImpl extends ServiceImpl<OpportunityMapper,Opport
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!opportunityService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!opportunityService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!opportunityService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -234,17 +254,18 @@ public class OpportunityServiceImpl extends ServiceImpl<OpportunityMapper,Opport
         return this.update(new UpdateWrapper<Opportunity>().set("persondataid",null).eq("persondataid",personDataId));
     }
 
-    public boolean saveByPersonDataId(String personDataId,List<Opportunity> list) {
+    public boolean saveByPersonDataId(PersonData personData,List<Opportunity> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Opportunity> _update=new ArrayList<Opportunity>();
         List<Opportunity> _create=new ArrayList<Opportunity>();
-        for(Opportunity before:selectByPersonDataId(personDataId)){
+        for(Opportunity before:selectByPersonDataId(personData.getPersonDataId())){
             delIds.add(before.getOpportunityId());
         }
         for(Opportunity sub:list) {
-            sub.setPersonDataId(personDataId);
+            sub.setPersonDataId(personData.getPersonDataId());
+            sub.setPersonData(personData);
             if(ObjectUtils.isEmpty(sub.getOpportunityId()))
                 sub.setOpportunityId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getOpportunityId())) {
@@ -254,14 +275,16 @@ public class OpportunityServiceImpl extends ServiceImpl<OpportunityMapper,Opport
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!opportunityService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!opportunityService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!opportunityService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

@@ -59,17 +59,17 @@ public class ActivityResource {
 
     @ApiOperation(value = "活动", tags = {"活动" },  notes = "活动")
     @RequestMapping(method = RequestMethod.GET, value = "/activities/{activityId}")
-    public ResponseEntity get(@PathVariable("activityId") String activityId) {
+    public ResponseEntity getByActivityId(@PathVariable("activityId") String activityId) {
     }
 
     @ApiOperation(value = "活动", tags = {"活动" },  notes = "活动")
     @RequestMapping(method = RequestMethod.DELETE, value = "/activities/{activityId}")
-    public ResponseEntity remove(@PathVariable("activityId") String activityId) {
+    public ResponseEntity removeByActivityId(@PathVariable("activityId") String activityId) {
     }
 
     @ApiOperation(value = "活动", tags = {"活动" },  notes = "活动")
     @RequestMapping(method = RequestMethod.PUT, value = "/activities/{activityId}")
-    public ResponseEntity update(@PathVariable("activityId") String activityId) {
+    public ResponseEntity updateByActivityId(@PathVariable("activityId") String activityId) {
     }
 
     @ApiOperation(value = "活动", tags = {"活动" },  notes = "活动")
@@ -84,7 +84,7 @@ public class ActivityResource {
 
     @ApiOperation(value = "活动", tags = {"活动" },  notes = "活动")
     @RequestMapping(method = RequestMethod.POST, value = "/activities/{activityId}/save")
-    public ResponseEntity save(@PathVariable("activityId") String activityId) {
+    public ResponseEntity saveByActivityId(@PathVariable("activityId") String activityId) {
     }
 
     @ApiOperation(value = "活动", tags = {"活动" },  notes = "活动")

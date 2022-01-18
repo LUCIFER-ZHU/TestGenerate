@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +34,7 @@ import cn.ibizlab.sample.core.sample.service.IOrgDataService;
 import cn.ibizlab.sample.core.sample.mapper.OrgDataMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -45,10 +47,12 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
  * 实体[组织数据] 服务对象接口实现
  */
 @Slf4j
-@Service("OrgDataServiceImpl")
+@Service("OrgDataService")
 public class OrgDataServiceImpl extends ServiceImpl<OrgDataMapper,OrgData> implements IOrgDataService {
 
-    protected IOrgDataService orgDataService = SpringContextHolder.getBean(this.getClass());
+    protected IOrgDataService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
 
     protected int batchSize = 500;
@@ -56,7 +60,7 @@ public class OrgDataServiceImpl extends ServiceImpl<OrgDataMapper,OrgData> imple
     public OrgData get(OrgData et) {
         OrgData rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,组织数据:"+et.getOrgDataId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -65,7 +69,12 @@ public class OrgDataServiceImpl extends ServiceImpl<OrgDataMapper,OrgData> imple
     }
 
     public void fillParentData(OrgData et) {
-        
+        if(!ObjectUtils.isEmpty(et.getPorgdataid())) {
+            OrgData orgData = et.getPOrgData();
+            if(!ObjectUtils.isEmpty(orgData)) {
+                et.setPorgdataname(orgData.getOrgDataName());   
+            }
+        }    
     }
 
     public OrgData getDraft(OrgData et) {
@@ -115,9 +124,9 @@ public class OrgDataServiceImpl extends ServiceImpl<OrgDataMapper,OrgData> imple
     @Transactional
     public boolean save(OrgData et) {
         if(checkKey(et))
-            return orgDataService.update(et);
+            return getProxyService().update(et);
         else
-            return orgDataService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -139,9 +148,9 @@ public class OrgDataServiceImpl extends ServiceImpl<OrgDataMapper,OrgData> imple
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!orgDataService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!orgDataService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -193,17 +202,18 @@ public class OrgDataServiceImpl extends ServiceImpl<OrgDataMapper,OrgData> imple
         return this.update(new UpdateWrapper<OrgData>().set("porgdataid",null).eq("porgdataid",porgdataid));
     }
 
-    public boolean saveByPorgdataid(String porgdataid,List<OrgData> list) {
+    public boolean saveByPorgdataid(OrgData orgData,List<OrgData> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<OrgData> _update=new ArrayList<OrgData>();
         List<OrgData> _create=new ArrayList<OrgData>();
-        for(OrgData before:selectByPorgdataid(porgdataid)){
+        for(OrgData before:selectByPorgdataid(orgData.getOrgDataId())){
             delIds.add(before.getOrgDataId());
         }
         for(OrgData sub:list) {
-            sub.setPorgdataid(porgdataid);
+            sub.setPorgdataid(orgData.getOrgDataId());
+            sub.setPOrgData(orgData);
             if(ObjectUtils.isEmpty(sub.getOrgDataId()))
                 sub.setOrgDataId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getOrgDataId())) {
@@ -213,14 +223,16 @@ public class OrgDataServiceImpl extends ServiceImpl<OrgDataMapper,OrgData> imple
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!orgDataService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!orgDataService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!orgDataService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

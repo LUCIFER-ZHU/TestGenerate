@@ -59,17 +59,17 @@ public class DistrictResource {
 
     @ApiOperation(value = "区", tags = {"区" },  notes = "区")
     @RequestMapping(method = RequestMethod.GET, value = "/districts/{districtId}")
-    public ResponseEntity get(@PathVariable("districtId") String districtId) {
+    public ResponseEntity getByDistrictId(@PathVariable("districtId") String districtId) {
     }
 
     @ApiOperation(value = "区", tags = {"区" },  notes = "区")
     @RequestMapping(method = RequestMethod.DELETE, value = "/districts/{districtId}")
-    public ResponseEntity remove(@PathVariable("districtId") String districtId) {
+    public ResponseEntity removeByDistrictId(@PathVariable("districtId") String districtId) {
     }
 
     @ApiOperation(value = "区", tags = {"区" },  notes = "区")
     @RequestMapping(method = RequestMethod.PUT, value = "/districts/{districtId}")
-    public ResponseEntity update(@PathVariable("districtId") String districtId) {
+    public ResponseEntity updateByDistrictId(@PathVariable("districtId") String districtId) {
     }
 
     @ApiOperation(value = "区", tags = {"区" },  notes = "区")
@@ -84,7 +84,7 @@ public class DistrictResource {
 
     @ApiOperation(value = "区", tags = {"区" },  notes = "区")
     @RequestMapping(method = RequestMethod.POST, value = "/districts/{districtId}/save")
-    public ResponseEntity save(@PathVariable("districtId") String districtId) {
+    public ResponseEntity saveByDistrictId(@PathVariable("districtId") String districtId) {
     }
 
     @ApiOperation(value = "区", tags = {"区" },  notes = "区")

@@ -63,6 +63,9 @@ public interface ICategoryService extends IService<Category> {
     List<Category> selectByPcategoryid(String pcategoryid);
     boolean removeByPcategoryid(String pcategoryid);
     boolean resetByPcategoryid(String pcategoryid);
-    boolean saveByPcategoryid(String pcategoryid,List<Category> list);
+    boolean saveByPcategoryid(cn.ibizlab.sample.core.sample.domain.Category category,List<Category> list);
+    default boolean saveByPcategoryid(String pcategoryid,List<Category> list) {
+        return saveByPcategoryid(new cn.ibizlab.sample.core.sample.domain.Category().setCategoryId(pcategoryid),list);
+    }
 
 }

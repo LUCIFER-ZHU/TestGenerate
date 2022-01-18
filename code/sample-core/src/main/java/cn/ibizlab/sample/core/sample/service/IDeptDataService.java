@@ -60,6 +60,9 @@ public interface IDeptDataService extends IService<DeptData> {
     List<DeptData> selectByOrgDataId(String orgDataId);
     boolean removeByOrgDataId(String orgDataId);
     boolean resetByOrgDataId(String orgDataId);
-    boolean saveByOrgDataId(String orgDataId,List<DeptData> list);
+    boolean saveByOrgDataId(cn.ibizlab.sample.core.sample.domain.OrgData orgData,List<DeptData> list);
+    default boolean saveByOrgDataId(String orgDataId,List<DeptData> list) {
+        return saveByOrgDataId(new cn.ibizlab.sample.core.sample.domain.OrgData().setOrgDataId(orgDataId),list);
+    }
 
 }

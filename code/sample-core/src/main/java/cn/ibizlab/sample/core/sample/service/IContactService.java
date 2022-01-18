@@ -60,6 +60,9 @@ public interface IContactService extends IService<Contact> {
     List<Contact> selectByCustomerId(String customerId);
     boolean removeByCustomerId(String customerId);
     boolean resetByCustomerId(String customerId);
-    boolean saveByCustomerId(String customerId,List<Contact> list);
+    boolean saveByCustomerId(cn.ibizlab.sample.core.sample.domain.Customer customer,List<Contact> list);
+    default boolean saveByCustomerId(String customerId,List<Contact> list) {
+        return saveByCustomerId(new cn.ibizlab.sample.core.sample.domain.Customer().setCustomerId(customerId),list);
+    }
 
 }

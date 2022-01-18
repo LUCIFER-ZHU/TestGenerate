@@ -59,17 +59,17 @@ public class ProductCategoryResource {
 
     @ApiOperation(value = "产品类别", tags = {"产品类别" },  notes = "产品类别")
     @RequestMapping(method = RequestMethod.GET, value = "/productcategories/{productCategoryId}")
-    public ResponseEntity get(@PathVariable("productCategoryId") String productCategoryId) {
+    public ResponseEntity getByProductCategoryId(@PathVariable("productCategoryId") String productCategoryId) {
     }
 
     @ApiOperation(value = "产品类别", tags = {"产品类别" },  notes = "产品类别")
     @RequestMapping(method = RequestMethod.DELETE, value = "/productcategories/{productCategoryId}")
-    public ResponseEntity remove(@PathVariable("productCategoryId") String productCategoryId) {
+    public ResponseEntity removeByProductCategoryId(@PathVariable("productCategoryId") String productCategoryId) {
     }
 
     @ApiOperation(value = "产品类别", tags = {"产品类别" },  notes = "产品类别")
     @RequestMapping(method = RequestMethod.PUT, value = "/productcategories/{productCategoryId}")
-    public ResponseEntity update(@PathVariable("productCategoryId") String productCategoryId) {
+    public ResponseEntity updateByProductCategoryId(@PathVariable("productCategoryId") String productCategoryId) {
     }
 
     @ApiOperation(value = "产品类别", tags = {"产品类别" },  notes = "产品类别")
@@ -84,7 +84,7 @@ public class ProductCategoryResource {
 
     @ApiOperation(value = "产品类别", tags = {"产品类别" },  notes = "产品类别")
     @RequestMapping(method = RequestMethod.POST, value = "/productcategories/{productCategoryId}/save")
-    public ResponseEntity save(@PathVariable("productCategoryId") String productCategoryId) {
+    public ResponseEntity saveByProductCategoryId(@PathVariable("productCategoryId") String productCategoryId) {
     }
 
     @ApiOperation(value = "产品类别", tags = {"产品类别" },  notes = "产品类别")

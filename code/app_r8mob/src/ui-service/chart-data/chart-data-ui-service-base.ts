@@ -28,13 +28,15 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              uIActionTag:'MOBEDIT',
              frontPSAppView:'ChartDataMobEditView',
              caption:'移动端编辑',
-             entityCodeName:'',
+             entityCodeName:'ChartData',
              methodCodeName:'',
              frontProcessType:'WIZARD',
              refreshMode:'0',
              htmlPageUrl:'',
              uILogicAttachMode:'',
              nextActionCodeName:'',
+             navContexts:{},
+             navParams:{}
          },
        "TestBackUIAction":{
              codeName:'TestBackUIAction',
@@ -43,13 +45,15 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              uIActionTag:'TESTBACKUIACTION',
              frontPSAppView:'',
              caption:'测试后台界面行为',
-             entityCodeName:'',
+             entityCodeName:'ChartData',
              methodCodeName:'TestBackEndAction',
              frontProcessType:'',
              refreshMode:'0',
              htmlPageUrl:'',
              uILogicAttachMode:'',
              nextActionCodeName:'',
+             navContexts:{},
+             navParams:{}
          },
        "custom1":{
              codeName:'custom1',
@@ -58,13 +62,15 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              uIActionTag:'CUSTOM1',
              frontPSAppView:'ProvinceMobMDView',
              caption:'界面行为测试1',
-             entityCodeName:'',
+             entityCodeName:'ChartData',
              methodCodeName:'',
              frontProcessType:'WIZARD',
              refreshMode:'1',
              htmlPageUrl:'https://www.baidu.com/',
              uILogicAttachMode:'',
              nextActionCodeName:'',
+             navContexts:{},
+             navParams:{}
          },
        "Count":{
              codeName:'Count',
@@ -73,13 +79,15 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              uIActionTag:'COUNT',
              frontPSAppView:'',
              caption:'计数器',
-             entityCodeName:'',
+             entityCodeName:'ChartData',
              methodCodeName:'',
              frontProcessType:'OTHER',
              refreshMode:'0',
              htmlPageUrl:'',
              uILogicAttachMode:'',
              nextActionCodeName:'',
+             navContexts:{},
+             navParams:{}
          },
        "TestOpenMDView":{
              codeName:'TestOpenMDView',
@@ -88,13 +96,15 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              uIActionTag:'TESTOPENMDVIEW',
              frontPSAppView:'ChartDataMobMDView',
              caption:'测试图表实体打开多数据视图',
-             entityCodeName:'',
+             entityCodeName:'ChartData',
              methodCodeName:'',
              frontProcessType:'WIZARD',
              refreshMode:'0',
              htmlPageUrl:'',
              uILogicAttachMode:'',
              nextActionCodeName:'',
+             navContexts:{},
+             navParams:{}
          },
        "custom2":{
              codeName:'custom2',
@@ -103,13 +113,15 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              uIActionTag:'CUSTOM2',
              frontPSAppView:'ProvinceMobMDView',
              caption:'界面行为测试2',
-             entityCodeName:'',
+             entityCodeName:'ChartData',
              methodCodeName:'GetRandom',
              frontProcessType:'',
              refreshMode:'0',
              htmlPageUrl:'',
              uILogicAttachMode:'',
              nextActionCodeName:'',
+             navContexts:{},
+             navParams:{}
          },
      };    /**
      * 移动端编辑
@@ -117,7 +129,7 @@ export class ChartDataUIServiceBase extends UIServiceBase {
      * @param {*} params
      * @memberof ChartDataUIServiceBase
      */
-    public async MobEdit(params:any){
+    public async MobEdit(uiAction:any, params:any){
         const actionModel =  this.getUIActionModel('MobEdit');
         AppFrontAction.doAction(actionModel, params);
     }
@@ -128,7 +140,7 @@ export class ChartDataUIServiceBase extends UIServiceBase {
      * @param {*} params
      * @memberof ChartDataUIServiceBase
      */
-    public async TestBackUIAction(params:any){
+    public async TestBackUIAction(uiAction:any, params:any){
         const actionModel =  this.getUIActionModel('TestBackUIAction');
         AppBackendAction.doAction(actionModel, params);
     }
@@ -139,7 +151,7 @@ export class ChartDataUIServiceBase extends UIServiceBase {
      * @param {*} params
      * @memberof ChartDataUIServiceBase
      */
-    public async custom1(params:any){
+    public async custom1(uiAction:any, params:any){
         const actionModel =  this.getUIActionModel('custom1');
         AppFrontAction.doAction(actionModel, params);
     }
@@ -150,7 +162,7 @@ export class ChartDataUIServiceBase extends UIServiceBase {
      * @param {*} params
      * @memberof ChartDataUIServiceBase
      */
-    public async Count(params:any){
+    public async Count(uiAction:any, params:any){
         const actionModel =  this.getUIActionModel('Count');
         AppFrontAction.doAction(actionModel, params);
     }
@@ -161,7 +173,7 @@ export class ChartDataUIServiceBase extends UIServiceBase {
      * @param {*} params
      * @memberof ChartDataUIServiceBase
      */
-    public async TestOpenMDView(params:any){
+    public async TestOpenMDView(uiAction:any, params:any){
         const actionModel =  this.getUIActionModel('TestOpenMDView');
         AppFrontAction.doAction(actionModel, params);
     }
@@ -172,7 +184,7 @@ export class ChartDataUIServiceBase extends UIServiceBase {
      * @param {*} params
      * @memberof ChartDataUIServiceBase
      */
-    public async custom2(params:any){
+    public async custom2(uiAction:any, params:any){
         const actionModel =  this.getUIActionModel('custom2');
         AppBackendAction.doAction(actionModel, params);
     }

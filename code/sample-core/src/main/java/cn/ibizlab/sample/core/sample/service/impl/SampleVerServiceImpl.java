@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +34,7 @@ import cn.ibizlab.sample.core.sample.service.ISampleVerService;
 import cn.ibizlab.sample.core.sample.mapper.SampleVerMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -45,10 +47,12 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
  * 实体[示例版本] 服务对象接口实现
  */
 @Slf4j
-@Service("SampleVerServiceImpl")
+@Service("SampleVerService")
 public class SampleVerServiceImpl extends ServiceImpl<SampleVerMapper,SampleVer> implements ISampleVerService {
 
-    protected ISampleVerService sampleVerService = SpringContextHolder.getBean(this.getClass());
+    protected ISampleVerService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
 
     protected int batchSize = 500;
@@ -56,7 +60,7 @@ public class SampleVerServiceImpl extends ServiceImpl<SampleVerMapper,SampleVer>
     public SampleVer get(SampleVer et) {
         SampleVer rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,示例版本:"+et.getSampleVerId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -107,9 +111,9 @@ public class SampleVerServiceImpl extends ServiceImpl<SampleVerMapper,SampleVer>
     @Transactional
     public boolean save(SampleVer et) {
         if(checkKey(et))
-            return sampleVerService.update(et);
+            return getProxyService().update(et);
         else
-            return sampleVerService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -131,9 +135,9 @@ public class SampleVerServiceImpl extends ServiceImpl<SampleVerMapper,SampleVer>
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!sampleVerService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!sampleVerService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -188,6 +192,8 @@ public class SampleVerServiceImpl extends ServiceImpl<SampleVerMapper,SampleVer>
     public List<SampleVer> listWebr7D(SampleVerSearchContext context) {
         return baseMapper.listWebr7D(context,context.getSelectCond());
     }
+
+
 
 
 }

@@ -50,7 +50,7 @@
         ]]>    
     </sql>
 
-    <select id="searchByCategory"  parameterType="cn.ibizlab.sample.core.sample.filter.ProductSearchContext"  resultType="ProductResultMap">
+    <select id="searchByCategory"  parameterType="cn.ibizlab.sample.core.sample.filter.ProductSearchContext"  resultMap="ProductResultMap">
         select t1.* 
         from (
             <include refid="byCategory"/>
@@ -61,7 +61,7 @@
             
     </select>
     
-    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.ProductSearchContext"  resultType="ProductResultMap">
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.ProductSearchContext"  resultMap="ProductResultMap">
         select t1.* 
         from (
             <include refid="default"/>

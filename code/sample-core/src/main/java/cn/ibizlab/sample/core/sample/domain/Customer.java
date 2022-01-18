@@ -12,6 +12,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.DigestUtils;
@@ -33,6 +34,9 @@ import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
+import cn.ibizlab.sample.core.sample.domain.City;
+import cn.ibizlab.sample.core.sample.domain.District;
+import cn.ibizlab.sample.core.sample.domain.Province;
 
 @Getter
 @Setter
@@ -313,28 +317,28 @@ public class Customer extends EntityMP implements Serializable
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.sample.core.sample.domain.City city;
+    private City city;
     /**
      * 客户
      */
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.sample.core.sample.domain.Customer parentCustomer;
+    private Customer parentCustomer;
     /**
      * 区
      */
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.sample.core.sample.domain.District district;
+    private District district;
     /**
      * 省份
      */
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.sample.core.sample.domain.Province province;
+    private Province province;
 
 
 

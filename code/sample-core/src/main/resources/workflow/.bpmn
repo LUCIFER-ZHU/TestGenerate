@@ -1,0 +1,378 @@
+<#ibiztemplate>
+TARGET=PSWFVERSION
+</#ibiztemplate>
+<#assign sid = sys.getId()/>
+<#assign sname = sys.getCodeName()/>
+<#assign slogicname = sys.getName() />
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:flowable="http://flowable.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.flowable.org/processdef">
+    <process id="${sys.getCodeName()?lower_case}-${item.codeName?lower_case}" isClosed="false" isExecutable="true" name="${item.getName()}" processType="None">
+
+        <extensionElements>
+            <flowable:eventListener delegateExpression="${processInstanceListener}"  />
+            <#if item.getPSWFProcesses?? && item.getPSWFProcesses()??>
+                <#assign rolesList="">
+                <#list item.getPSWFProcesses() as WFProcess>
+                    <#if WFProcess.getPSWFProcessRoles?? && WFProcess.getPSWFProcessRoles()??>
+                        <#list WFProcess.getPSWFProcessRoles() as processRole>
+                            <#assign processRoleType=processRole.getWFProcessRoleType()>
+                            <#if processRoleType=='WFROLE'>
+                               <#if processRole.getPSWFRole()?? && processRole.getPSWFRole().getCodeName()??>
+                                    <#if !P.exists("refgroups",processRole.getPSWFRole().getCodeName())>
+                                        <#if rolesList!=""><#assign rolesList=rolesList+","></#if>
+                                        <#assign rolesList=rolesList+processRole.getPSWFRole().getCodeName()+"|"+processRole.getPSWFRole().getName()+"|"+processRole.getPSWFRole().getWFRoleType()>
+                                        <#if processRole.getPSWFRole().getWFRoleType()=="DEDATASET">
+                                            <#assign rolesList=rolesList+"/"+srfpluralize(processRole.getPSWFRole().getPSDataEntity().getCodeName()?lower_case)+"/fetch"+processRole.getPSWFRole().getPSDEDataSet().getCodeName()?lower_case+"."+processRole.getPSWFRole().getWFUserIdPSDEF().getCodeName()?lower_case>
+                                        </#if>
+                                    </#if>
+                               </#if>
+                            </#if>
+                        </#list>
+                    </#if>
+                </#list>
+                <#if rolesList!="">
+            <flowable:field name="refgroups">
+                <flowable:string>${rolesList}</flowable:string>
+            </flowable:field>
+                </#if>
+            </#if>
+            <#if item.getPSWorkflow()?? && item.getPSWorkflow().getPSWFDEs()??>
+            <#assign des="">
+            <#list item.getPSWorkflow().getPSWFDEs() as wfde>
+            <#if des!=""><#assign des=des+","></#if>
+            <#assign des=des+srfpluralize(wfde.getPSDataEntity().getCodeName()?lower_case)>
+            </#list>
+            <#if des!="">
+            <flowable:field name="bookings">
+                <flowable:string>${des}</flowable:string>
+            </flowable:field>
+            </#if>
+            <#list item.getPSWorkflow().getPSWFDEs() as wfde>
+            <#assign mobApp="">
+            <#assign pcApp="">
+            <#if wfde.getPSDataEntity()??>
+            <#assign refDE=wfde.getPSDataEntity()>
+                <#if refDE.getAllPSAppDataEntities()??>
+                    <#list refDE.getAllPSAppDataEntities() as refAppDE>
+                        <#assign app=refAppDE.getPSApplication()>
+                        <#if app.isMobileApp()>
+                            <#if !P.exists("mob",app.codeName)>
+                                <#if mobApp=="">
+                                    <#assign mobApp=app.codeName>
+                                <#else>
+                                    <#assign mobApp=mobApp+","+app.codeName>
+                                </#if>
+                            </#if>
+                        <#else>
+                            <#if !P.exists("pc",app.codeName)>
+                                <#if pcApp=="">
+                                    <#assign pcApp=app.codeName>
+                                <#else>
+                                    <#assign pcApp=pcApp+","+app.codeName>
+                                </#if>
+                            </#if>
+                        </#if>
+                    </#list>
+                </#if>
+                <#if pcApp!="">
+            <flowable:field name="bookingapps_${srfpluralize(refDE.getCodeName()?lower_case)}">
+                <flowable:string>${pcApp}</flowable:string>
+            </flowable:field>
+                </#if>
+                <#if mobApp!="">
+            <flowable:field name="bookingmobs_${srfpluralize(refDE.getCodeName()?lower_case)}">
+                <flowable:string>${mobApp}</flowable:string>
+            </flowable:field>
+                </#if>
+            </#if>
+            </#list>
+            <#list item.getPSWorkflow().getPSWFDEs() as wfde>
+            <#if wfde.getWFStepPSDEField()??>
+            <flowable:field name="wfstepfield_${srfpluralize(wfde.getPSDataEntity().getCodeName()?lower_case)}">
+                <flowable:string>${(wfde.getWFStepPSDEField().getCodeName()?lower_case)}</flowable:string>
+            </flowable:field>
+            </#if>
+            <#if wfde.getWFInstPSDEField()??>
+            <flowable:field name="wfinstfield_${srfpluralize(wfde.getPSDataEntity().getCodeName()?lower_case)}">
+                <flowable:string>${(wfde.getWFInstPSDEField().getCodeName()?lower_case)}</flowable:string>
+            </flowable:field>
+            </#if>
+            <#if wfde.getUDStatePSDEField()??>
+            <flowable:field name="udstatefield_${srfpluralize(wfde.getPSDataEntity().getCodeName()?lower_case)}">
+                <flowable:string>${(wfde.getUDStatePSDEField().getCodeName()?lower_case)}</flowable:string>
+            </flowable:field>
+            </#if>
+            <#if item.getPSWorkflow().getEntityWFStates?? && item.getPSWorkflow().getEntityWFStates()??>
+                <#list item.getPSWorkflow().getEntityWFStates() as wfStatus>
+            <flowable:field name="udstateingval_${srfpluralize(wfde.getPSDataEntity().getCodeName()?lower_case)}">
+                <flowable:string>${wfStatus}</flowable:string>
+            </flowable:field>
+                <#break>
+                </#list>
+            </#if>
+            <#if wfde.getWFStatePSDEField()??>
+            <flowable:field name="wfstatefield_${srfpluralize(wfde.getPSDataEntity().getCodeName()?lower_case)}">
+                <flowable:string>${(wfde.getWFStatePSDEField().getCodeName()?lower_case)}</flowable:string>
+            </flowable:field>
+            </#if>
+            <#if wfde.getWFVerPSDEField()??>
+            <flowable:field name="wfverfield_${srfpluralize(wfde.getPSDataEntity().getCodeName()?lower_case)}">
+                <flowable:string>${(wfde.getWFVerPSDEField().getCodeName()?lower_case)}</flowable:string>
+            </flowable:field>
+            </#if>
+            <#if wfde.getPSDataEntity().getMajorPSDEField()??&&wfde.getPSDataEntity().getMajorPSDEField().getCodeName()??>
+            <flowable:field name="majortext_${srfpluralize(wfde.getPSDataEntity().getCodeName()?lower_case)}">
+                <flowable:string>${(wfde.getPSDataEntity().getMajorPSDEField().getCodeName()?lower_case)}</flowable:string>
+            </flowable:field>
+            </#if>
+            </#list>
+            </#if>
+        </extensionElements>
+
+            <#comment>绘制处理节点</#comment>
+            <#if item.getPSWFProcesses?? && item.getPSWFProcesses()??>
+                <#list item.getPSWFProcesses() as WFProcess>
+                    <#if WFProcess.getWFProcessType()=='START'>
+     <startEvent id="sid-${WFProcess.getDeployId()}" name="${WFProcess.getName()}"/>
+                    <#elseif WFProcess.getWFProcessType()=='END'>
+     <endEvent id="sid-${WFProcess.getDeployId()}" name="${WFProcess.getName()}"/>
+                    <#elseif WFProcess.getWFProcessType()=='PARALLELGATEWAY'>
+     <parallelGateway id="sid-${WFProcess.getDeployId()}"></parallelGateway>
+                    <#elseif WFProcess.getWFProcessType()=='INCLUSIVEGATEWAY'>
+     <inclusiveGateway id="sid-${WFProcess.getDeployId()}"></inclusiveGateway>
+                    <#elseif WFProcess.getWFProcessType()=='EXCLUSIVEGATEWAY'>
+     <exclusiveGateway id="sid-${WFProcess.getDeployId()}"></exclusiveGateway>
+                    <#elseif WFProcess.getWFProcessType()=='PROCESS'>
+     <serviceTask id="sid-${WFProcess.getDeployId()}" name="${WFProcess.getName()}" flowable:expression="${wfCoreService.execute(execution, activedata)}" >
+        <#if WFProcess.getPSDataEntity()??>
+         <extensionElements>
+         <flowable:field name="service-entity"><flowable:string>${srfpluralize(WFProcess.getPSDataEntity().getCodeName()?lower_case)}</flowable:string></flowable:field>
+         <flowable:field name="service-deaction"><flowable:string>${WFProcess.getPSDEAction().getCodeName()?lower_case}</flowable:string></flowable:field>
+         <#if WFProcess.getPSWFProcessParams()??>
+         <#list WFProcess.getPSWFProcessParams() as processparams>
+         <#if processparams.getSrcValueType()?? && processparams.getSrcValueType()!="" && processparams.getDstField()?? && processparams.getDstField()!="">
+             <#if processparams.getSrcValueType()=="CURTIME">
+         <flowable:field name="params-${(processparams.getDstField()?lower_case)}"><flowable:expression><![CDATA[${wfCoreService.getnow()}]]></flowable:expression></flowable:field>
+             <#elseif processparams.getSrcValueType()=="OPERATOR">
+         <flowable:field name="params-${(processparams.getDstField()?lower_case)}"><flowable:expression><![CDATA[${curuser.userid}]]></flowable:expression></flowable:field>
+             <#elseif processparams.getSrcValueType()=="OPERATORNAME">
+         <flowable:field name="params-${(processparams.getDstField()?lower_case)}"><flowable:expression><![CDATA[${curuser.personname}]]></flowable:expression></flowable:field>
+             <#elseif processparams.getSrcValueType()=="CONTEXT">
+         <flowable:field name="params-${(processparams.getDstField()?lower_case)}"><flowable:expression><![CDATA[${activedata.'}${(processparams.getSrcValue()?lower_case)}}]]></flowable:expression></flowable:field>
+             <#elseif processparams.getSrcValueType()=="SESSION">
+         <flowable:field name="params-${(processparams.getDstField()?lower_case)}"><flowable:expression><![CDATA[${curuser.sessionParams.'}${processparams.getSrcValue()?lower_case}}]]></flowable:expression></flowable:field>
+             </#if>
+         <#elseif processparams.getSrcValue()?? && processparams.getDstField()?? && processparams.getDstField()!="">
+         <flowable:field name="params-${(processparams.getDstField()?lower_case)}"><flowable:string>${processparams.getSrcValue()}</flowable:string></flowable:field>
+         </#if>
+         </#list>
+         </#if>
+         </extensionElements>
+        </#if>
+     </serviceTask>
+                    <#else>
+                        <#assign assignCond="">
+                        <#assign isSequential="">
+                        <#if WFProcess.getMultiInstMode?? && WFProcess.getMultiInstMode()?? && ( WFProcess.getMultiInstMode()=='PARALLEL' || WFProcess.getMultiInstMode()=='SEQUENTIAL')>
+                            <#assign assignCond="flowable:assignee=\""+"$"+"{assignee}\"">
+                            <#if WFProcess.getMultiInstMode()=='SEQUENTIAL'>
+                                <#assign isSequential="isSequential=\"true\"">
+                            <#else>
+                                <#assign isSequential="isSequential=\"false\"">
+                            </#if>
+                        </#if>
+                        <#assign assignCond="">
+                        <#assign assignGroupCond="">
+                        <#if WFProcess.getPSWFProcessRoles?? && WFProcess.getPSWFProcessRoles()??>
+                            <#list WFProcess.getPSWFProcessRoles() as processRole>
+                                <#assign processRoleType=processRole.getWFProcessRoleType()>
+                                <#assign roleId="">
+                                <#if processRoleType=='WFROLE'>
+                                   <#if processRole.getPSWFRole()?? && processRole.getPSWFRole().getCodeName()??>
+                                       <#if assignGroupCond!="">
+                                           <#assign assignGroupCond=assignGroupCond+",">
+                                       </#if>
+                                       <#assign assignGroupCond=assignGroupCond+processRole.getPSWFRole().getCodeName()>
+                                       <#if processRole.getUserData()?? && processRole.getUserData2()?? && processRole.getUserData()!="" && processRole.getUserData()!="">
+                                       <#assign assignGroupCond=assignGroupCond+"|"+processRole.getUserData()+"|"+processRole.getUserData2()>
+                                       </#if>
+                                   </#if>
+                                <#else>
+                                   <#if processRole.getUDField()?? && processRole.getUDField()!="">
+                                       <#if assignCond!="">
+                                           <#assign assignCond=assignCond+",">
+                                       </#if>
+                                    <#assign assignCond=assignCond+"$"+"{activedata."+(processRole.getUDField()?lower_case)+"}">
+                                   </#if>
+                                </#if>
+                            </#list>
+                         </#if>
+                         <#if assignGroupCond!="">
+                         <#if assignCond!="">
+                                           <#assign assignCond=assignCond+",">
+                         </#if>
+                         <#assign assignCond=assignCond+"$"+"{wfCoreService.getGroupUsers('"+assignGroupCond+"',execution)}">
+                         </#if>
+     <userTask flowable:category="${businessKey}"  flowable:candidateUsers="${assignCond}" flowable:exclusive="true" id="tid-${WFProcess.getWFStepValue()}-${WFProcess.getDeployId()}" name="${WFProcess.getName()}" <#if WFProcess.getWFProcessType()?? && (WFProcess.getWFProcessType()=="CALLORGACTIVITY" || WFProcess.getWFProcessType()=="EMBED")>flowable:formKey="${WFProcess.getWFProcessType()}"</#if>><#comment>标记子流程节点</#comment>
+        <documentation>${majortext}</documentation>
+         <#if (  ((WFProcess.getPSSysMsgTempl())!'')!='' ) ||  ((WFProcess.getFormCodeName())!'')!='' || ((WFProcess.getMobFormCodeName())!'')!=''  >
+         <extensionElements>
+         <#if ( ((WFProcess.getPSSysMsgTempl())!'')!='' ) >
+             <#assign msgTempl=WFProcess.getPSSysMsgTempl()>
+         <flowable:formProperty id="${msgTempl.getCodeName()?lower_case}"  name="${msgTempl.getName()}" variable="${assignGroupCond}" type="${WFProcess.getMsgType()}" />
+         </#if>
+         <#if ((WFProcess.getFormCodeName())!'')!='' || ((WFProcess.getMobFormCodeName())!'')!='' >
+         <flowable:form <#if ((WFProcess.getFormCodeName())!'')!=''>process-form="${WFProcess.getFormCodeName()}"</#if><#if ((WFProcess.getMobFormCodeName())!'')!=''> process-mobform="${WFProcess.getMobFormCodeName()}"</#if>/>
+         </#if>
+         </extensionElements>
+         </#if>
+        <#comment>多实例节点</#comment>
+        <#if WFProcess.getMultiInstMode?? && WFProcess.getMultiInstMode()?? && ( WFProcess.getMultiInstMode()=='PARALLEL' || WFProcess.getMultiInstMode()=='SEQUENTIAL')>
+         <multiInstanceLoopCharacteristics flowable:collection="candidateUsersList" flowable:elementVariable="candidateUsers" ${isSequential}>
+             <completionCondition><![CDATA[${nrOfCompletedInstances/nrOfInstances == 1}]]></completionCondition>
+         </multiInstanceLoopCharacteristics>
+        </#if>
+     </userTask>
+                    </#if>
+                </#list>
+            </#if>
+          <#comment>绘制节点连线</#comment>
+          <#if item.getPSWFLinks?? && item.getPSWFLinks()??>
+              <#list item.getPSWFLinks() as WFLink>
+                  <#assign sourceProcessId="">
+                  <#assign targetProcessId="">
+                  <#assign sourceProcess=WFLink.getFromPSWFProcess()>
+                  <#assign targetProcess=WFLink.getToPSWFProcess()>
+                  <#assign sourceProcessId="sid-"+sourceProcess.getDeployId()>
+                  <#if sourceProcess.getWFProcessType()=='INTERACTIVE'>
+                    <#assign sourceProcessId="tid-"+sourceProcess.getWFStepValue()+"-"+sourceProcess.getDeployId()>
+                  </#if>
+                  <#assign targetProcessId="sid-"+targetProcess.getDeployId()>
+                  <#if targetProcess.getWFProcessType()=='INTERACTIVE'>
+                    <#assign targetProcessId="tid-"+targetProcess.getWFStepValue()+"-"+targetProcess.getDeployId()>
+                  </#if>
+                  <#assign sourceProcessCodeName=WFLink.getFromPSWFProcess().getCodeName()>
+                  <#assign flowId="rid-"+WFLink.getDeployId()>
+                  <#if WFLink.getWFLinkType()!='ROUTE'>
+                    <#assign flowId="lid-"+WFLink.getName()+"-"+WFLink.getDeployId()>
+                  </#if>
+                  <#assign flowTag=WFLink.getName()>
+     <sequenceFlow id="${flowId}" sourceRef="${sourceProcessId}" targetRef="${targetProcessId}" name="${WFLink.getLogicName()}">
+        <#if sourceProcessCodeName!="Start001"><#comment>连接线含有条件</#comment>
+            <#assign LinkCond="">
+            <#assign strGroupCond="">
+            <#if WFLink.getWFLinkType()=='ROUTE'>
+                <#if WFLink.getCustomCond?? && WFLink.getCustomCond()??>
+                    <#assign LinkCond=WFLink.getCustomCond()>
+                <#elseif WFLink.getPSWFLinkGroupCond?? && WFLink.getPSWFLinkGroupCond()??>
+                    <#assign WFLinkCond=WFLink.getPSWFLinkGroupCond()>
+                    <#assign strGroupCond=getGroupCond(WFLinkCond)>
+                    <#assign strGroupCond="$\{"+strGroupCond+"} ">
+                    <#assign LinkCond="<![CDATA["+strGroupCond+"]]>">
+                </#if>
+            <#else>
+                <#assign LinkCond="<![CDATA[$\{sequenceFlowId==\""+flowId+"\"}]]>">
+            </#if>
+            <#if LinkCond!="">
+        <conditionExpression  xsi:type="tFormalExpression" >${LinkCond}</conditionExpression>
+            </#if>
+        </#if>
+         <#if ((WFLink.getFormCodeName())!'')!='' || ((WFLink.getMobFormCodeName())!'')!=''  || ((WFLink.getViewCodeName())!'')!=''  ||  ((WFLink.getMobViewCodeName())!'')!='' >
+         <extensionElements>
+             <flowable:form <#if ((WFLink.getFormCodeName())!'')!=''>sequenceFlowForm="${WFLink.getFormCodeName()}"</#if><#if ((WFLink.getMobFormCodeName())!'')!=''> sequenceFlowMobForm="${WFLink.getMobFormCodeName()}"</#if><#if ((WFLink.getViewCodeName())!'')!=''> sequenceFlowView="${WFLink.getViewCodeName()}"</#if><#if ((WFLink.getMobViewCodeName())!'')!=''> sequenceFlowMobView="${WFLink.getMobViewCodeName()}"</#if>/>
+         </extensionElements>
+         </#if>
+     </sequenceFlow>
+              </#list>
+          </#if>
+    </process>
+    <#comment>下面定义图形位置</#comment>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_${sys.getCodeName()?lower_case}-${item.codeName?lower_case}">
+        <bpmndi:BPMNPlane id="BPMNPlane_${sys.getCodeName()?lower_case}-${item.codeName?lower_case}" bpmnElement="${sys.getCodeName()?lower_case}-${item.codeName?lower_case}">
+           <#comment>绘制处理节点</#comment>
+            <#if item.getPSWFProcesses?? && item.getPSWFProcesses()??>
+                <#list item.getPSWFProcesses() as WFProcess>
+                 <#assign sourceProcessId="sid-"+WFProcess.getDeployId()>
+                  <#if WFProcess.getWFProcessType()=='INTERACTIVE'>
+                    <#assign sourceProcessId="tid-"+WFProcess.getWFStepValue()+"-"+WFProcess.getDeployId()>
+                  </#if>
+                 <bpmndi:BPMNShape id="BPMNShape-${WFProcess.getDeployId()}" bpmnElement="${sourceProcessId}">
+                     <omgdi:Bounds x="${WFProcess.getLeftPos()?c}" y="${WFProcess.getTopPos()?c}" width="${WFProcess.getWidth()?c}" height="${WFProcess.getHeight()?c}" />
+                 </bpmndi:BPMNShape>
+                </#list>
+            </#if>
+          <#comment>绘制节点连线</#comment>
+          <#if item.getPSWFLinks?? && item.getPSWFLinks()??>
+              <#list item.getPSWFLinks() as WFLink>
+                  <#assign flowId="rid-"+WFLink.getDeployId()>
+                  <#if WFLink.getWFLinkType()!='ROUTE'>
+                    <#assign flowId="lid-"+WFLink.getName()+"-"+WFLink.getDeployId()>
+                  </#if>
+               <bpmndi:BPMNEdge id="BPMNEdge-${flowId}" bpmnElement="${flowId}">
+                   <omgdi:waypoint x="0" y="0" />
+                   <omgdi:waypoint x="0" y="0" />
+               </bpmndi:BPMNEdge>
+              </#list>
+          </#if>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</definitions>
+
+
+
+<#comment>获取组合条件表达式</#comment>
+<#function getGroupCond WFLinkCond>
+    <#assign strRuleCond="(">
+    <#if WFLinkCond.getPSWFLinkConds()?? && WFLinkCond.getPSWFLinkConds()??><#comment>判断是否有组条件</#comment>
+        <#assign conn=WFLinkCond.getGroupOP()?replace("AND","&&")?replace("OR","||")>
+        <#list WFLinkCond.getPSWFLinkConds() as childWFLinkCond><#comment>组条件，递归</#comment>
+            <#assign childLinkType = childWFLinkCond.getCondType()>
+            <#if (childWFLinkCond.getPSWFLinkConds?? && childWFLinkCond.getPSWFLinkConds()?? ) || childLinkType=='GROUP'>
+                <#assign strRuleCond=strRuleCond+getGroupCond(childWFLinkCond)>//getGroupCond
+            <#else>
+                <#assign strRuleCond=strRuleCond+getFieldCond(childWFLinkCond)>//getFieldCond
+            </#if>
+            <#if childWFLinkCond_has_next>
+                <#assign strRuleCond=strRuleCond+conn>//拼接连接符
+            </#if>
+        </#list>
+    <#else>
+
+    </#if>
+    <#assign strRuleCond=strRuleCond+")">
+    <#return strRuleCond/>
+</#function>
+
+<#comment>获取单项条件表达式</#comment>
+<#function getFieldCond WFLinkCond>
+    <#assign fieldCond="(" >
+    <#assign condBody="">
+    <#assign paramType=((WFLinkCond.getParamType())!'')><#comment>参数类型</#comment>
+    <#assign targetField=WFLinkCond.getFieldName()><#comment>目标属性</#comment>
+    <#assign targetDBValueOP=WFLinkCond.getCondOP()><#comment>表达式</#comment>
+    <#assign targetValue=WFLinkCond.getParamValue()><#comment>值项</#comment>
+    <#if targetField??>
+            <#assign targetField=targetField?lower_case>
+            <#--<#assign strTargetDBValueOP=targetDBValueOP?replace("ISNOTNULL","!= null")?replace("ISNULL","== null")?replace("AND","&&")?replace("OR","||")?replace("GT&&EQ",">=")?replace("LT&&EQ","<=")?replace("NOTEQ","!=")?replace("EQ","==")?replace("GT",">")?replace("LT","<") >-->
+            <#if targetDBValueOP=="ISNULL" || targetDBValueOP=="ISNOTNULL">
+                <#assign condBody="wfCoreService.test(activedata."+targetField+", '"+targetDBValueOP+"', null)" >
+            <#elseif paramType??&&paramType=='ENTITYFIELD'>
+                <#if targetValue??&&targetValue!="">
+                <#assign condBody="wfCoreService.test(activedata."+targetField+", '"+targetDBValueOP+"', activedata."+targetValue?lower_case+")" >
+                <#else>
+                <#assign condBody="wfCoreService.test(activedata."+targetField+", '"+targetDBValueOP+"', null)" >
+                </#if>
+            <#elseif paramType??&&paramType=='CURTIME'>
+                <#assign condBody="wfCoreService.test(activedata."+targetField+", '"+targetDBValueOP+"', wfCoreService.getnow())" >
+            <#else>
+                <#if targetValue??&&targetValue!="">
+                <#assign condBody="wfCoreService.test(activedata."+targetField+", '"+targetDBValueOP+"', '"+targetValue?replace("\"","")?replace("‘","")?replace("“","")?replace("”","")+"')" >
+                <#else>
+                <#assign condBody="wfCoreService.test(activedata."+targetField+", '"+targetDBValueOP+"', null)" >
+                </#if>
+            </#if>
+    </#if>
+    <#assign fieldCond=fieldCond+condBody >
+    <#assign fieldCond=fieldCond+")" >
+    <#return fieldCond/>
+</#function>

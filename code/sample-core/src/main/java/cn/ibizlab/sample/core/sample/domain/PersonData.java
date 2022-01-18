@@ -12,6 +12,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.DigestUtils;
@@ -33,6 +34,8 @@ import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
+import cn.ibizlab.sample.core.sample.domain.DeptData;
+import cn.ibizlab.sample.core.sample.domain.OrgData;
 
 @Getter
 @Setter
@@ -213,14 +216,14 @@ public class PersonData extends EntityMP implements Serializable
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.sample.core.sample.domain.DeptData deptdata;
+    private DeptData deptdata;
     /**
      * 组织数据
      */
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.sample.core.sample.domain.OrgData orgdata;
+    private OrgData orgdata;
 
 
 

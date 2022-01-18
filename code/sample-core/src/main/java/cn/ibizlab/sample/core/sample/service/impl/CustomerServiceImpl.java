@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,34 +34,43 @@ import cn.ibizlab.sample.core.sample.service.ICustomerService;
 import cn.ibizlab.sample.core.sample.mapper.CustomerMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.City;
+import cn.ibizlab.sample.core.sample.service.ICityService;   
+import cn.ibizlab.sample.core.sample.domain.District;
+import cn.ibizlab.sample.core.sample.service.IDistrictService;   
+import cn.ibizlab.sample.core.sample.domain.Province;
+import cn.ibizlab.sample.core.sample.service.IProvinceService;   
 
 
 /**
  * 实体[客户] 服务对象接口实现
  */
 @Slf4j
-@Service("CustomerServiceImpl")
+@Service("CustomerService")
 public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> implements ICustomerService {
 
-    protected ICustomerService customerService = SpringContextHolder.getBean(this.getClass());
+    protected ICustomerService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.ICityService cityService;
+    protected ICityService cityService;
    
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.IDistrictService districtService;
+    protected IDistrictService districtService;
    
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.IProvinceService provinceService;
+    protected IProvinceService provinceService;
    
 
     protected int batchSize = 500;
@@ -68,7 +78,7 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
     public Customer get(Customer et) {
         Customer rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,客户:"+et.getCustomerId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -77,7 +87,30 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
     }
 
     public void fillParentData(Customer et) {
-        
+        if(!ObjectUtils.isEmpty(et.getCityId())) {
+            City city = et.getCity();
+            if(!ObjectUtils.isEmpty(city)) {
+                et.setCityName(city.getCityName());   
+            }
+        }    
+        if(!ObjectUtils.isEmpty(et.getPcustomerid())) {
+            Customer customer = et.getParentCustomer();
+            if(!ObjectUtils.isEmpty(customer)) {
+                et.setPcustomername(customer.getCustomerName());   
+            }
+        }    
+        if(!ObjectUtils.isEmpty(et.getDistrictId())) {
+            District district = et.getDistrict();
+            if(!ObjectUtils.isEmpty(district)) {
+                et.setDistrictName(district.getDistrictName());   
+            }
+        }    
+        if(!ObjectUtils.isEmpty(et.getProvinceId())) {
+            Province province = et.getProvince();
+            if(!ObjectUtils.isEmpty(province)) {
+                et.setProvinceName(province.getProvinceName());   
+            }
+        }    
     }
 
     public Customer getDraft(Customer et) {
@@ -127,9 +160,9 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
     @Transactional
     public boolean save(Customer et) {
         if(checkKey(et))
-            return customerService.update(et);
+            return getProxyService().update(et);
         else
-            return customerService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -151,9 +184,9 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!customerService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!customerService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -206,17 +239,18 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
         return this.update(new UpdateWrapper<Customer>().set("cityid",null).eq("cityid",cityId));
     }
 
-    public boolean saveByCityId(String cityId,List<Customer> list) {
+    public boolean saveByCityId(City city,List<Customer> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Customer> _update=new ArrayList<Customer>();
         List<Customer> _create=new ArrayList<Customer>();
-        for(Customer before:selectByCityId(cityId)){
+        for(Customer before:selectByCityId(city.getCityId())){
             delIds.add(before.getCustomerId());
         }
         for(Customer sub:list) {
-            sub.setCityId(cityId);
+            sub.setCityId(city.getCityId());
+            sub.setCity(city);
             if(ObjectUtils.isEmpty(sub.getCustomerId()))
                 sub.setCustomerId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getCustomerId())) {
@@ -226,11 +260,11 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!customerService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!customerService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!customerService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -247,17 +281,18 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
         return this.update(new UpdateWrapper<Customer>().set("pcustomerid",null).eq("pcustomerid",pcustomerid));
     }
 
-    public boolean saveByPcustomerid(String pcustomerid,List<Customer> list) {
+    public boolean saveByPcustomerid(Customer customer,List<Customer> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Customer> _update=new ArrayList<Customer>();
         List<Customer> _create=new ArrayList<Customer>();
-        for(Customer before:selectByPcustomerid(pcustomerid)){
+        for(Customer before:selectByPcustomerid(customer.getCustomerId())){
             delIds.add(before.getCustomerId());
         }
         for(Customer sub:list) {
-            sub.setPcustomerid(pcustomerid);
+            sub.setPcustomerid(customer.getCustomerId());
+            sub.setParentCustomer(customer);
             if(ObjectUtils.isEmpty(sub.getCustomerId()))
                 sub.setCustomerId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getCustomerId())) {
@@ -267,11 +302,11 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!customerService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!customerService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!customerService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -288,17 +323,18 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
         return this.update(new UpdateWrapper<Customer>().set("districtid",null).eq("districtid",districtId));
     }
 
-    public boolean saveByDistrictId(String districtId,List<Customer> list) {
+    public boolean saveByDistrictId(District district,List<Customer> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Customer> _update=new ArrayList<Customer>();
         List<Customer> _create=new ArrayList<Customer>();
-        for(Customer before:selectByDistrictId(districtId)){
+        for(Customer before:selectByDistrictId(district.getDistrictId())){
             delIds.add(before.getCustomerId());
         }
         for(Customer sub:list) {
-            sub.setDistrictId(districtId);
+            sub.setDistrictId(district.getDistrictId());
+            sub.setDistrict(district);
             if(ObjectUtils.isEmpty(sub.getCustomerId()))
                 sub.setCustomerId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getCustomerId())) {
@@ -308,11 +344,11 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!customerService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!customerService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!customerService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -329,17 +365,18 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
         return this.update(new UpdateWrapper<Customer>().set("provinceid",null).eq("provinceid",provinceId));
     }
 
-    public boolean saveByProvinceId(String provinceId,List<Customer> list) {
+    public boolean saveByProvinceId(Province province,List<Customer> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Customer> _update=new ArrayList<Customer>();
         List<Customer> _create=new ArrayList<Customer>();
-        for(Customer before:selectByProvinceId(provinceId)){
+        for(Customer before:selectByProvinceId(province.getProvinceId())){
             delIds.add(before.getCustomerId());
         }
         for(Customer sub:list) {
-            sub.setProvinceId(provinceId);
+            sub.setProvinceId(province.getProvinceId());
+            sub.setProvince(province);
             if(ObjectUtils.isEmpty(sub.getCustomerId()))
                 sub.setCustomerId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getCustomerId())) {
@@ -349,14 +386,16 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!customerService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!customerService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!customerService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

@@ -5,7 +5,7 @@ import cn.ibizlab.sample.core.sample.domain.Order;
 import cn.ibizlab.sample.sampleapi.dto.OrderDTO;
 import cn.ibizlab.util.domain.MappingBase;
 
-@Mapper(componentModel = "spring", uses = {}, implementationName = "OrderDTOMapping",
+@Mapper(componentModel = "spring", uses = {}, implementationName = "SampleApiOrderDTOMapping",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface OrderDTOMapping extends MappingBase<OrderDTO, Order> {

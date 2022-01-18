@@ -12,6 +12,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.DigestUtils;
@@ -33,6 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
+import cn.ibizlab.sample.core.sample.domain.Customer;
 
 @Getter
 @Setter
@@ -410,35 +412,35 @@ public class EditorValue extends EntityMP implements Serializable
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.sample.core.sample.domain.Customer customer;
+    private Customer customer;
     /**
      * 客户
      */
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.sample.core.sample.domain.Customer no2Customer;
+    private Customer no2Customer;
     /**
      * 客户
      */
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.sample.core.sample.domain.Customer no3Customer;
+    private Customer no3Customer;
     /**
      * 客户
      */
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.sample.core.sample.domain.Customer no4Customer;
+    private Customer no4Customer;
     /**
      * 客户
      */
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.sample.core.sample.domain.Customer no5Customer;
+    private Customer no5Customer;
 
 
     /**

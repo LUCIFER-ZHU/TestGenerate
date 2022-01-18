@@ -59,17 +59,17 @@ public class DeptDataResource {
 
     @ApiOperation(value = "部门数据", tags = {"部门数据" },  notes = "部门数据")
     @RequestMapping(method = RequestMethod.GET, value = "/deptdatas/{deptDataId}")
-    public ResponseEntity get(@PathVariable("deptDataId") String deptDataId) {
+    public ResponseEntity getByDeptDataId(@PathVariable("deptDataId") String deptDataId) {
     }
 
     @ApiOperation(value = "部门数据", tags = {"部门数据" },  notes = "部门数据")
     @RequestMapping(method = RequestMethod.DELETE, value = "/deptdatas/{deptDataId}")
-    public ResponseEntity remove(@PathVariable("deptDataId") String deptDataId) {
+    public ResponseEntity removeByDeptDataId(@PathVariable("deptDataId") String deptDataId) {
     }
 
     @ApiOperation(value = "部门数据", tags = {"部门数据" },  notes = "部门数据")
     @RequestMapping(method = RequestMethod.PUT, value = "/deptdatas/{deptDataId}")
-    public ResponseEntity update(@PathVariable("deptDataId") String deptDataId) {
+    public ResponseEntity updateByDeptDataId(@PathVariable("deptDataId") String deptDataId) {
     }
 
     @ApiOperation(value = "部门数据", tags = {"部门数据" },  notes = "部门数据")
@@ -84,7 +84,7 @@ public class DeptDataResource {
 
     @ApiOperation(value = "部门数据", tags = {"部门数据" },  notes = "部门数据")
     @RequestMapping(method = RequestMethod.POST, value = "/deptdatas/{deptDataId}/save")
-    public ResponseEntity save(@PathVariable("deptDataId") String deptDataId) {
+    public ResponseEntity saveByDeptDataId(@PathVariable("deptDataId") String deptDataId) {
     }
 
     @ApiOperation(value = "部门数据", tags = {"部门数据" },  notes = "部门数据")

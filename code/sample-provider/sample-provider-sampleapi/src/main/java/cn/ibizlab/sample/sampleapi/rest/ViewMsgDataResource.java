@@ -59,17 +59,17 @@ public class ViewMsgDataResource {
 
     @ApiOperation(value = "视图消息数据", tags = {"视图消息数据" },  notes = "视图消息数据")
     @RequestMapping(method = RequestMethod.GET, value = "/viewmsgdatas/{viewMsgDataId}")
-    public ResponseEntity get(@PathVariable("viewMsgDataId") String viewMsgDataId) {
+    public ResponseEntity getByViewMsgDataId(@PathVariable("viewMsgDataId") String viewMsgDataId) {
     }
 
     @ApiOperation(value = "视图消息数据", tags = {"视图消息数据" },  notes = "视图消息数据")
     @RequestMapping(method = RequestMethod.DELETE, value = "/viewmsgdatas/{viewMsgDataId}")
-    public ResponseEntity remove(@PathVariable("viewMsgDataId") String viewMsgDataId) {
+    public ResponseEntity removeByViewMsgDataId(@PathVariable("viewMsgDataId") String viewMsgDataId) {
     }
 
     @ApiOperation(value = "视图消息数据", tags = {"视图消息数据" },  notes = "视图消息数据")
     @RequestMapping(method = RequestMethod.PUT, value = "/viewmsgdatas/{viewMsgDataId}")
-    public ResponseEntity update(@PathVariable("viewMsgDataId") String viewMsgDataId) {
+    public ResponseEntity updateByViewMsgDataId(@PathVariable("viewMsgDataId") String viewMsgDataId) {
     }
 
     @ApiOperation(value = "视图消息数据", tags = {"视图消息数据" },  notes = "视图消息数据")
@@ -84,7 +84,7 @@ public class ViewMsgDataResource {
 
     @ApiOperation(value = "视图消息数据", tags = {"视图消息数据" },  notes = "视图消息数据")
     @RequestMapping(method = RequestMethod.POST, value = "/viewmsgdatas/{viewMsgDataId}/save")
-    public ResponseEntity save(@PathVariable("viewMsgDataId") String viewMsgDataId) {
+    public ResponseEntity saveByViewMsgDataId(@PathVariable("viewMsgDataId") String viewMsgDataId) {
     }
 
     @ApiOperation(value = "视图消息数据", tags = {"视图消息数据" },  notes = "视图消息数据")

@@ -50,7 +50,7 @@
         ]]>    
     </sql>
 
-    <select id="searchConditions"  parameterType="cn.ibizlab.sample.core.sample.filter.ProvinceSearchContext"  resultType="ProvinceResultMap">
+    <select id="searchConditions"  parameterType="cn.ibizlab.sample.core.sample.filter.ProvinceSearchContext"  resultMap="ProvinceResultMap">
         select t1.* 
         from (
             <include refid="conditions"/>
@@ -61,7 +61,7 @@
             
     </select>
     
-    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.ProvinceSearchContext"  resultType="ProvinceResultMap">
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.ProvinceSearchContext"  resultMap="ProvinceResultMap">
         select t1.* 
         from (
             <include refid="default"/>

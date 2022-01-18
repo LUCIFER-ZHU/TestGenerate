@@ -28,13 +28,15 @@ export class CustomerUIServiceBase extends UIServiceBase {
              uIActionTag:'ACCREATE',
              frontPSAppView:'',
              caption:'新建',
-             entityCodeName:'',
+             entityCodeName:'Customer',
              methodCodeName:'',
              frontProcessType:'WIZARD',
              refreshMode:'0',
              htmlPageUrl:'',
              uILogicAttachMode:'',
              nextActionCodeName:'',
+             navContexts:{},
+             navParams:{}
          },
        "Quick":{
              codeName:'Quick',
@@ -43,13 +45,15 @@ export class CustomerUIServiceBase extends UIServiceBase {
              uIActionTag:'QUICK',
              frontPSAppView:'',
              caption:'快速新建',
-             entityCodeName:'',
+             entityCodeName:'Customer',
              methodCodeName:'',
              frontProcessType:'WIZARD',
              refreshMode:'0',
              htmlPageUrl:'',
              uILogicAttachMode:'',
              nextActionCodeName:'',
+             navContexts:{},
+             navParams:{}
          },
      };    /**
      * 新建
@@ -57,7 +61,7 @@ export class CustomerUIServiceBase extends UIServiceBase {
      * @param {*} params
      * @memberof CustomerUIServiceBase
      */
-    public async ACCreate(params:any){
+    public async ACCreate(uiAction:any, params:any){
         const actionModel =  this.getUIActionModel('ACCreate');
         AppFrontAction.doAction(actionModel, params);
     }
@@ -68,7 +72,7 @@ export class CustomerUIServiceBase extends UIServiceBase {
      * @param {*} params
      * @memberof CustomerUIServiceBase
      */
-    public async Quick(params:any){
+    public async Quick(uiAction:any, params:any){
         const actionModel =  this.getUIActionModel('Quick');
         AppFrontAction.doAction(actionModel, params);
     }

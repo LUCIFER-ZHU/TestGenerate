@@ -59,22 +59,22 @@ public class LeaveApplicationResource {
 
     @ApiOperation(value = "请假申请", tags = {"请假申请" },  notes = "请假申请")
     @RequestMapping(method = RequestMethod.GET, value = "/leaveapplications/{leaveApplicationId}")
-    public ResponseEntity get(@PathVariable("leaveApplicationId") String leaveApplicationId) {
+    public ResponseEntity getByLeaveApplicationId(@PathVariable("leaveApplicationId") String leaveApplicationId) {
     }
 
     @ApiOperation(value = "请假申请", tags = {"请假申请" },  notes = "请假申请")
     @RequestMapping(method = RequestMethod.DELETE, value = "/leaveapplications/{leaveApplicationId}")
-    public ResponseEntity remove(@PathVariable("leaveApplicationId") String leaveApplicationId) {
+    public ResponseEntity removeByLeaveApplicationId(@PathVariable("leaveApplicationId") String leaveApplicationId) {
     }
 
     @ApiOperation(value = "请假申请", tags = {"请假申请" },  notes = "请假申请")
     @RequestMapping(method = RequestMethod.PUT, value = "/leaveapplications/{leaveApplicationId}")
-    public ResponseEntity update(@PathVariable("leaveApplicationId") String leaveApplicationId) {
+    public ResponseEntity updateByLeaveApplicationId(@PathVariable("leaveApplicationId") String leaveApplicationId) {
     }
 
     @ApiOperation(value = "请假申请", tags = {"请假申请" },  notes = "请假申请")
     @RequestMapping(method = RequestMethod.POST, value = "/leaveapplications/{leaveApplicationId}/a")
-    public ResponseEntity a(@PathVariable("leaveApplicationId") String leaveApplicationId) {
+    public ResponseEntity aByLeaveApplicationId(@PathVariable("leaveApplicationId") String leaveApplicationId) {
     }
 
     @ApiOperation(value = "请假申请", tags = {"请假申请" },  notes = "请假申请")
@@ -89,7 +89,7 @@ public class LeaveApplicationResource {
 
     @ApiOperation(value = "请假申请", tags = {"请假申请" },  notes = "请假申请")
     @RequestMapping(method = RequestMethod.POST, value = "/leaveapplications/{leaveApplicationId}/save")
-    public ResponseEntity save(@PathVariable("leaveApplicationId") String leaveApplicationId) {
+    public ResponseEntity saveByLeaveApplicationId(@PathVariable("leaveApplicationId") String leaveApplicationId) {
     }
 
     @ApiOperation(value = "请假申请", tags = {"请假申请" },  notes = "请假申请")

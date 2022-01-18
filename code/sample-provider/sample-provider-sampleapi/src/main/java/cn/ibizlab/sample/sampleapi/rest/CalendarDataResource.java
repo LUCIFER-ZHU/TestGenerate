@@ -59,17 +59,17 @@ public class CalendarDataResource {
 
     @ApiOperation(value = "日历示例数据", tags = {"日历示例数据" },  notes = "日历示例数据")
     @RequestMapping(method = RequestMethod.GET, value = "/calendardatas/{calendarDataId}")
-    public ResponseEntity get(@PathVariable("calendarDataId") String calendarDataId) {
+    public ResponseEntity getByCalendarDataId(@PathVariable("calendarDataId") String calendarDataId) {
     }
 
     @ApiOperation(value = "日历示例数据", tags = {"日历示例数据" },  notes = "日历示例数据")
     @RequestMapping(method = RequestMethod.DELETE, value = "/calendardatas/{calendarDataId}")
-    public ResponseEntity remove(@PathVariable("calendarDataId") String calendarDataId) {
+    public ResponseEntity removeByCalendarDataId(@PathVariable("calendarDataId") String calendarDataId) {
     }
 
     @ApiOperation(value = "日历示例数据", tags = {"日历示例数据" },  notes = "日历示例数据")
     @RequestMapping(method = RequestMethod.PUT, value = "/calendardatas/{calendarDataId}")
-    public ResponseEntity update(@PathVariable("calendarDataId") String calendarDataId) {
+    public ResponseEntity updateByCalendarDataId(@PathVariable("calendarDataId") String calendarDataId) {
     }
 
     @ApiOperation(value = "日历示例数据", tags = {"日历示例数据" },  notes = "日历示例数据")
@@ -84,7 +84,7 @@ public class CalendarDataResource {
 
     @ApiOperation(value = "日历示例数据", tags = {"日历示例数据" },  notes = "日历示例数据")
     @RequestMapping(method = RequestMethod.POST, value = "/calendardatas/{calendarDataId}/save")
-    public ResponseEntity save(@PathVariable("calendarDataId") String calendarDataId) {
+    public ResponseEntity saveByCalendarDataId(@PathVariable("calendarDataId") String calendarDataId) {
     }
 
     @ApiOperation(value = "日历示例数据", tags = {"日历示例数据" },  notes = "日历示例数据")

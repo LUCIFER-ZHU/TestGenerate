@@ -59,17 +59,17 @@ public class CityResource {
 
     @ApiOperation(value = "市", tags = {"市" },  notes = "市")
     @RequestMapping(method = RequestMethod.GET, value = "/cities/{cityId}")
-    public ResponseEntity get(@PathVariable("cityId") String cityId) {
+    public ResponseEntity getByCityId(@PathVariable("cityId") String cityId) {
     }
 
     @ApiOperation(value = "市", tags = {"市" },  notes = "市")
     @RequestMapping(method = RequestMethod.DELETE, value = "/cities/{cityId}")
-    public ResponseEntity remove(@PathVariable("cityId") String cityId) {
+    public ResponseEntity removeByCityId(@PathVariable("cityId") String cityId) {
     }
 
     @ApiOperation(value = "市", tags = {"市" },  notes = "市")
     @RequestMapping(method = RequestMethod.PUT, value = "/cities/{cityId}")
-    public ResponseEntity update(@PathVariable("cityId") String cityId) {
+    public ResponseEntity updateByCityId(@PathVariable("cityId") String cityId) {
     }
 
     @ApiOperation(value = "市", tags = {"市" },  notes = "市")
@@ -84,7 +84,7 @@ public class CityResource {
 
     @ApiOperation(value = "市", tags = {"市" },  notes = "市")
     @RequestMapping(method = RequestMethod.POST, value = "/cities/{cityId}/save")
-    public ResponseEntity save(@PathVariable("cityId") String cityId) {
+    public ResponseEntity saveByCityId(@PathVariable("cityId") String cityId) {
     }
 
     @ApiOperation(value = "市", tags = {"市" },  notes = "市")

@@ -59,17 +59,17 @@ public class CounterDataResource {
 
     @ApiOperation(value = "计数器数据", tags = {"计数器数据" },  notes = "计数器数据")
     @RequestMapping(method = RequestMethod.GET, value = "/counterdatas/{counterDataId}")
-    public ResponseEntity get(@PathVariable("counterDataId") String counterDataId) {
+    public ResponseEntity getByCounterDataId(@PathVariable("counterDataId") String counterDataId) {
     }
 
     @ApiOperation(value = "计数器数据", tags = {"计数器数据" },  notes = "计数器数据")
     @RequestMapping(method = RequestMethod.DELETE, value = "/counterdatas/{counterDataId}")
-    public ResponseEntity remove(@PathVariable("counterDataId") String counterDataId) {
+    public ResponseEntity removeByCounterDataId(@PathVariable("counterDataId") String counterDataId) {
     }
 
     @ApiOperation(value = "计数器数据", tags = {"计数器数据" },  notes = "计数器数据")
     @RequestMapping(method = RequestMethod.PUT, value = "/counterdatas/{counterDataId}")
-    public ResponseEntity update(@PathVariable("counterDataId") String counterDataId) {
+    public ResponseEntity updateByCounterDataId(@PathVariable("counterDataId") String counterDataId) {
     }
 
     @ApiOperation(value = "计数器数据", tags = {"计数器数据" },  notes = "计数器数据")
@@ -84,7 +84,7 @@ public class CounterDataResource {
 
     @ApiOperation(value = "计数器数据", tags = {"计数器数据" },  notes = "计数器数据")
     @RequestMapping(method = RequestMethod.POST, value = "/counterdatas/{counterDataId}/save")
-    public ResponseEntity save(@PathVariable("counterDataId") String counterDataId) {
+    public ResponseEntity saveByCounterDataId(@PathVariable("counterDataId") String counterDataId) {
     }
 
     @ApiOperation(value = "计数器数据", tags = {"计数器数据" },  notes = "计数器数据")

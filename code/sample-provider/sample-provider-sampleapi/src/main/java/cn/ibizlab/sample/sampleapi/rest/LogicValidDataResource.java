@@ -59,17 +59,17 @@ public class LogicValidDataResource {
 
     @ApiOperation(value = "示例数据（启用逻辑删除）", tags = {"示例数据（启用逻辑删除）" },  notes = "示例数据（启用逻辑删除）")
     @RequestMapping(method = RequestMethod.GET, value = "/logicvaliddatas/{logicValidDataId}")
-    public ResponseEntity get(@PathVariable("logicValidDataId") String logicValidDataId) {
+    public ResponseEntity getByLogicValidDataId(@PathVariable("logicValidDataId") String logicValidDataId) {
     }
 
     @ApiOperation(value = "示例数据（启用逻辑删除）", tags = {"示例数据（启用逻辑删除）" },  notes = "示例数据（启用逻辑删除）")
     @RequestMapping(method = RequestMethod.DELETE, value = "/logicvaliddatas/{logicValidDataId}")
-    public ResponseEntity remove(@PathVariable("logicValidDataId") String logicValidDataId) {
+    public ResponseEntity removeByLogicValidDataId(@PathVariable("logicValidDataId") String logicValidDataId) {
     }
 
     @ApiOperation(value = "示例数据（启用逻辑删除）", tags = {"示例数据（启用逻辑删除）" },  notes = "示例数据（启用逻辑删除）")
     @RequestMapping(method = RequestMethod.PUT, value = "/logicvaliddatas/{logicValidDataId}")
-    public ResponseEntity update(@PathVariable("logicValidDataId") String logicValidDataId) {
+    public ResponseEntity updateByLogicValidDataId(@PathVariable("logicValidDataId") String logicValidDataId) {
     }
 
     @ApiOperation(value = "示例数据（启用逻辑删除）", tags = {"示例数据（启用逻辑删除）" },  notes = "示例数据（启用逻辑删除）")
@@ -84,7 +84,7 @@ public class LogicValidDataResource {
 
     @ApiOperation(value = "示例数据（启用逻辑删除）", tags = {"示例数据（启用逻辑删除）" },  notes = "示例数据（启用逻辑删除）")
     @RequestMapping(method = RequestMethod.POST, value = "/logicvaliddatas/{logicValidDataId}/save")
-    public ResponseEntity save(@PathVariable("logicValidDataId") String logicValidDataId) {
+    public ResponseEntity saveByLogicValidDataId(@PathVariable("logicValidDataId") String logicValidDataId) {
     }
 
     @ApiOperation(value = "示例数据（启用逻辑删除）", tags = {"示例数据（启用逻辑删除）" },  notes = "示例数据（启用逻辑删除）")

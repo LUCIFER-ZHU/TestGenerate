@@ -59,17 +59,17 @@ public class ImpExpDataResource {
 
     @ApiOperation(value = "导入导出数据", tags = {"导入导出数据" },  notes = "导入导出数据")
     @RequestMapping(method = RequestMethod.GET, value = "/impexpdatas/{impExpDataId}")
-    public ResponseEntity get(@PathVariable("impExpDataId") String impExpDataId) {
+    public ResponseEntity getByImpExpDataId(@PathVariable("impExpDataId") String impExpDataId) {
     }
 
     @ApiOperation(value = "导入导出数据", tags = {"导入导出数据" },  notes = "导入导出数据")
     @RequestMapping(method = RequestMethod.DELETE, value = "/impexpdatas/{impExpDataId}")
-    public ResponseEntity remove(@PathVariable("impExpDataId") String impExpDataId) {
+    public ResponseEntity removeByImpExpDataId(@PathVariable("impExpDataId") String impExpDataId) {
     }
 
     @ApiOperation(value = "导入导出数据", tags = {"导入导出数据" },  notes = "导入导出数据")
     @RequestMapping(method = RequestMethod.PUT, value = "/impexpdatas/{impExpDataId}")
-    public ResponseEntity update(@PathVariable("impExpDataId") String impExpDataId) {
+    public ResponseEntity updateByImpExpDataId(@PathVariable("impExpDataId") String impExpDataId) {
     }
 
     @ApiOperation(value = "导入导出数据", tags = {"导入导出数据" },  notes = "导入导出数据")
@@ -84,7 +84,7 @@ public class ImpExpDataResource {
 
     @ApiOperation(value = "导入导出数据", tags = {"导入导出数据" },  notes = "导入导出数据")
     @RequestMapping(method = RequestMethod.POST, value = "/impexpdatas/{impExpDataId}/save")
-    public ResponseEntity save(@PathVariable("impExpDataId") String impExpDataId) {
+    public ResponseEntity saveByImpExpDataId(@PathVariable("impExpDataId") String impExpDataId) {
     }
 
     @ApiOperation(value = "导入导出数据", tags = {"导入导出数据" },  notes = "导入导出数据")

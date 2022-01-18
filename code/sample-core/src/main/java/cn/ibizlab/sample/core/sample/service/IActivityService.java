@@ -72,6 +72,9 @@ public interface IActivityService extends IService<Activity> {
     List<Activity> selectByCustomerId(String customerId);
     boolean removeByCustomerId(String customerId);
     boolean resetByCustomerId(String customerId);
-    boolean saveByCustomerId(String customerId,List<Activity> list);
+    boolean saveByCustomerId(cn.ibizlab.sample.core.sample.domain.Customer customer,List<Activity> list);
+    default boolean saveByCustomerId(String customerId,List<Activity> list) {
+        return saveByCustomerId(new cn.ibizlab.sample.core.sample.domain.Customer().setCustomerId(customerId),list);
+    }
 
 }

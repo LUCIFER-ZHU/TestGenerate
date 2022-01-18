@@ -1,3 +1,3 @@
-import MobPickupViewpickupviewpanelPickUpViewPanel from "./mob-pickup-viewpickupviewpanel-pickup-view-panel.vue";
+import MobPickupViewpickupviewpanelPickupViewPanel from "./-pickupviewpanel.vue";
 
-export { MobPickupViewpickupviewpanelPickUpViewPanel };
+export { MobPickupViewpickupviewpanelPickupViewPanel };

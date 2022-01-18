@@ -59,17 +59,17 @@ public class EventResource {
 
     @ApiOperation(value = "事件", tags = {"事件" },  notes = "事件")
     @RequestMapping(method = RequestMethod.GET, value = "/events/{eventId}")
-    public ResponseEntity get(@PathVariable("eventId") String eventId) {
+    public ResponseEntity getByEventId(@PathVariable("eventId") String eventId) {
     }
 
     @ApiOperation(value = "事件", tags = {"事件" },  notes = "事件")
     @RequestMapping(method = RequestMethod.DELETE, value = "/events/{eventId}")
-    public ResponseEntity remove(@PathVariable("eventId") String eventId) {
+    public ResponseEntity removeByEventId(@PathVariable("eventId") String eventId) {
     }
 
     @ApiOperation(value = "事件", tags = {"事件" },  notes = "事件")
     @RequestMapping(method = RequestMethod.PUT, value = "/events/{eventId}")
-    public ResponseEntity update(@PathVariable("eventId") String eventId) {
+    public ResponseEntity updateByEventId(@PathVariable("eventId") String eventId) {
     }
 
     @ApiOperation(value = "事件", tags = {"事件" },  notes = "事件")
@@ -84,7 +84,7 @@ public class EventResource {
 
     @ApiOperation(value = "事件", tags = {"事件" },  notes = "事件")
     @RequestMapping(method = RequestMethod.POST, value = "/events/{eventId}/save")
-    public ResponseEntity save(@PathVariable("eventId") String eventId) {
+    public ResponseEntity saveByEventId(@PathVariable("eventId") String eventId) {
     }
 
     @ApiOperation(value = "事件", tags = {"事件" },  notes = "事件")

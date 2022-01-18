@@ -12,6 +12,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.DigestUtils;
@@ -33,6 +34,8 @@ import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
+import cn.ibizlab.sample.core.sample.domain.Customer;
+import cn.ibizlab.sample.core.sample.domain.OrderDetail;
 
 @Getter
 @Setter
@@ -164,7 +167,7 @@ public class Order extends EntityMP implements Serializable
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.sample.core.sample.domain.Customer customer;
+    private Customer customer;
 
     /**
      * 订单明细
@@ -172,7 +175,7 @@ public class Order extends EntityMP implements Serializable
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    protected List<cn.ibizlab.sample.core.sample.domain.OrderDetail> orderDetails;
+    protected List<OrderDetail> orderDetails;
 
 
     /**

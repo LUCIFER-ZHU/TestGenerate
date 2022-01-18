@@ -59,17 +59,17 @@ public class LogicValidData2Resource {
 
     @ApiOperation(value = "示例数据（启用逻辑删除）（主键数值）", tags = {"示例数据（启用逻辑删除）（主键数值）" },  notes = "示例数据（启用逻辑删除）（主键数值）")
     @RequestMapping(method = RequestMethod.GET, value = "/logicvaliddata2s/{logicValidData2Id}")
-    public ResponseEntity get(@PathVariable("logicValidData2Id") Long logicValidData2Id) {
+    public ResponseEntity getByLogicValidData2Id(@PathVariable("logicValidData2Id") Long logicValidData2Id) {
     }
 
     @ApiOperation(value = "示例数据（启用逻辑删除）（主键数值）", tags = {"示例数据（启用逻辑删除）（主键数值）" },  notes = "示例数据（启用逻辑删除）（主键数值）")
     @RequestMapping(method = RequestMethod.DELETE, value = "/logicvaliddata2s/{logicValidData2Id}")
-    public ResponseEntity remove(@PathVariable("logicValidData2Id") Long logicValidData2Id) {
+    public ResponseEntity removeByLogicValidData2Id(@PathVariable("logicValidData2Id") Long logicValidData2Id) {
     }
 
     @ApiOperation(value = "示例数据（启用逻辑删除）（主键数值）", tags = {"示例数据（启用逻辑删除）（主键数值）" },  notes = "示例数据（启用逻辑删除）（主键数值）")
     @RequestMapping(method = RequestMethod.PUT, value = "/logicvaliddata2s/{logicValidData2Id}")
-    public ResponseEntity update(@PathVariable("logicValidData2Id") Long logicValidData2Id) {
+    public ResponseEntity updateByLogicValidData2Id(@PathVariable("logicValidData2Id") Long logicValidData2Id) {
     }
 
     @ApiOperation(value = "示例数据（启用逻辑删除）（主键数值）", tags = {"示例数据（启用逻辑删除）（主键数值）" },  notes = "示例数据（启用逻辑删除）（主键数值）")
@@ -84,7 +84,7 @@ public class LogicValidData2Resource {
 
     @ApiOperation(value = "示例数据（启用逻辑删除）（主键数值）", tags = {"示例数据（启用逻辑删除）（主键数值）" },  notes = "示例数据（启用逻辑删除）（主键数值）")
     @RequestMapping(method = RequestMethod.POST, value = "/logicvaliddata2s/{logicValidData2Id}/save")
-    public ResponseEntity save(@PathVariable("logicValidData2Id") Long logicValidData2Id) {
+    public ResponseEntity saveByLogicValidData2Id(@PathVariable("logicValidData2Id") Long logicValidData2Id) {
     }
 
     @ApiOperation(value = "示例数据（启用逻辑删除）（主键数值）", tags = {"示例数据（启用逻辑删除）（主键数值）" },  notes = "示例数据（启用逻辑删除）（主键数值）")

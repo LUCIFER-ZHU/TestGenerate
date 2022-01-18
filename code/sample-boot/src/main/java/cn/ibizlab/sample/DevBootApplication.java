@@ -21,12 +21,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 @EnableDiscoveryClient
 @Configuration
 @EnableTransactionManagement
-@EnableFeignClients(basePackages = {"cn.ibizlab.sample" })
+@EnableFeignClients(basePackages = {"cn.ibizlab.sample","cn.ibizlab.util"})
 @SpringBootApplication(exclude = {
             org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration.class,
-            com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure.class
 })
-@ComponentScan(basePackages = {"cn.ibizlab.sample"}
+@ComponentScan(basePackages = {"cn.ibizlab.sample","cn.ibizlab.util"}
 //        ,excludeFilters = {
 //                @ComponentScan.Filter(type= org.springframework.context.annotation.FilterType.REGEX, pattern="cn.ibizlab.sample.xxx.rest.xxx"),
 //        }

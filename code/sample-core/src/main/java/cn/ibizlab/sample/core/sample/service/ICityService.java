@@ -60,6 +60,9 @@ public interface ICityService extends IService<City> {
     List<City> selectByProvinceId(String provinceId);
     boolean removeByProvinceId(String provinceId);
     boolean resetByProvinceId(String provinceId);
-    boolean saveByProvinceId(String provinceId,List<City> list);
+    boolean saveByProvinceId(cn.ibizlab.sample.core.sample.domain.Province province,List<City> list);
+    default boolean saveByProvinceId(String provinceId,List<City> list) {
+        return saveByProvinceId(new cn.ibizlab.sample.core.sample.domain.Province().setProvinceId(provinceId),list);
+    }
 
 }

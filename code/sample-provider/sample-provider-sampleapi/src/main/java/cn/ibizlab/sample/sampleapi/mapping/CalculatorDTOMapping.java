@@ -5,7 +5,7 @@ import cn.ibizlab.sample.core.sample.domain.Calculator;
 import cn.ibizlab.sample.sampleapi.dto.CalculatorDTO;
 import cn.ibizlab.util.domain.MappingBase;
 
-@Mapper(componentModel = "spring", uses = {}, implementationName = "CalculatorDTOMapping",
+@Mapper(componentModel = "spring", uses = {}, implementationName = "SampleApiCalculatorDTOMapping",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface CalculatorDTOMapping extends MappingBase<CalculatorDTO, Calculator> {

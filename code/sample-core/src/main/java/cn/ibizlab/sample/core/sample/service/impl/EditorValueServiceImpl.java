@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,26 +34,31 @@ import cn.ibizlab.sample.core.sample.service.IEditorValueService;
 import cn.ibizlab.sample.core.sample.mapper.EditorValueMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.Customer;
+import cn.ibizlab.sample.core.sample.service.ICustomerService;   
 
 
 /**
  * 实体[编辑器值] 服务对象接口实现
  */
 @Slf4j
-@Service("EditorValueServiceImpl")
+@Service("EditorValueService")
 public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,EditorValue> implements IEditorValueService {
 
-    protected IEditorValueService editorValueService = SpringContextHolder.getBean(this.getClass());
+    protected IEditorValueService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.ICustomerService customerService;
+    protected ICustomerService customerService;
    
 
     protected int batchSize = 500;
@@ -60,7 +66,7 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
     public EditorValue get(EditorValue et) {
         EditorValue rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,编辑器值:"+et.getEditorValueId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -69,7 +75,36 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
     }
 
     public void fillParentData(EditorValue et) {
-        
+        if(!ObjectUtils.isEmpty(et.getCustomerId())) {
+            Customer customer = et.getCustomer();
+            if(!ObjectUtils.isEmpty(customer)) {
+                et.setCustomerName(customer.getCustomerName());   
+            }
+        }    
+        if(!ObjectUtils.isEmpty(et.getCustomerid2())) {
+            Customer customer = et.getNo2Customer();
+            if(!ObjectUtils.isEmpty(customer)) {
+                et.setCustomername2(customer.getCustomerName());   
+            }
+        }    
+        if(!ObjectUtils.isEmpty(et.getCustomerid3())) {
+            Customer customer = et.getNo3Customer();
+            if(!ObjectUtils.isEmpty(customer)) {
+                et.setCustomername3(customer.getCustomerName());   
+            }
+        }    
+        if(!ObjectUtils.isEmpty(et.getCustomerid4())) {
+            Customer customer = et.getNo4Customer();
+            if(!ObjectUtils.isEmpty(customer)) {
+                et.setCustomername4(customer.getCustomerName());   
+            }
+        }    
+        if(!ObjectUtils.isEmpty(et.getCustomerid5())) {
+            Customer customer = et.getNo5Customer();
+            if(!ObjectUtils.isEmpty(customer)) {
+                et.setCustomername5(customer.getCustomerName());   
+            }
+        }    
     }
 
     public EditorValue getDraft(EditorValue et) {
@@ -119,9 +154,9 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
     @Transactional
     public boolean save(EditorValue et) {
         if(checkKey(et))
-            return editorValueService.update(et);
+            return getProxyService().update(et);
         else
-            return editorValueService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -143,9 +178,9 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!editorValueService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!editorValueService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -189,17 +224,18 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
         return this.update(new UpdateWrapper<EditorValue>().set("customerid",null).eq("customerid",customerId));
     }
 
-    public boolean saveByCustomerId(String customerId,List<EditorValue> list) {
+    public boolean saveByCustomerId(Customer customer,List<EditorValue> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<EditorValue> _update=new ArrayList<EditorValue>();
         List<EditorValue> _create=new ArrayList<EditorValue>();
-        for(EditorValue before:selectByCustomerId(customerId)){
+        for(EditorValue before:selectByCustomerId(customer.getCustomerId())){
             delIds.add(before.getEditorValueId());
         }
         for(EditorValue sub:list) {
-            sub.setCustomerId(customerId);
+            sub.setCustomerId(customer.getCustomerId());
+            sub.setCustomer(customer);
             if(ObjectUtils.isEmpty(sub.getEditorValueId()))
                 sub.setEditorValueId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getEditorValueId())) {
@@ -209,11 +245,11 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!editorValueService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!editorValueService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!editorValueService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -230,17 +266,18 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
         return this.update(new UpdateWrapper<EditorValue>().set("customerid2",null).eq("customerid2",customerid2));
     }
 
-    public boolean saveByCustomerid2(String customerid2,List<EditorValue> list) {
+    public boolean saveByCustomerid2(Customer customer,List<EditorValue> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<EditorValue> _update=new ArrayList<EditorValue>();
         List<EditorValue> _create=new ArrayList<EditorValue>();
-        for(EditorValue before:selectByCustomerid2(customerid2)){
+        for(EditorValue before:selectByCustomerid2(customer.getCustomerId())){
             delIds.add(before.getEditorValueId());
         }
         for(EditorValue sub:list) {
-            sub.setCustomerid2(customerid2);
+            sub.setCustomerid2(customer.getCustomerId());
+            sub.setNo2Customer(customer);
             if(ObjectUtils.isEmpty(sub.getEditorValueId()))
                 sub.setEditorValueId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getEditorValueId())) {
@@ -250,11 +287,11 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!editorValueService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!editorValueService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!editorValueService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -271,17 +308,18 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
         return this.update(new UpdateWrapper<EditorValue>().set("customerid3",null).eq("customerid3",customerid3));
     }
 
-    public boolean saveByCustomerid3(String customerid3,List<EditorValue> list) {
+    public boolean saveByCustomerid3(Customer customer,List<EditorValue> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<EditorValue> _update=new ArrayList<EditorValue>();
         List<EditorValue> _create=new ArrayList<EditorValue>();
-        for(EditorValue before:selectByCustomerid3(customerid3)){
+        for(EditorValue before:selectByCustomerid3(customer.getCustomerId())){
             delIds.add(before.getEditorValueId());
         }
         for(EditorValue sub:list) {
-            sub.setCustomerid3(customerid3);
+            sub.setCustomerid3(customer.getCustomerId());
+            sub.setNo3Customer(customer);
             if(ObjectUtils.isEmpty(sub.getEditorValueId()))
                 sub.setEditorValueId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getEditorValueId())) {
@@ -291,11 +329,11 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!editorValueService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!editorValueService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!editorValueService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -312,17 +350,18 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
         return this.update(new UpdateWrapper<EditorValue>().set("customerid4",null).eq("customerid4",customerid4));
     }
 
-    public boolean saveByCustomerid4(String customerid4,List<EditorValue> list) {
+    public boolean saveByCustomerid4(Customer customer,List<EditorValue> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<EditorValue> _update=new ArrayList<EditorValue>();
         List<EditorValue> _create=new ArrayList<EditorValue>();
-        for(EditorValue before:selectByCustomerid4(customerid4)){
+        for(EditorValue before:selectByCustomerid4(customer.getCustomerId())){
             delIds.add(before.getEditorValueId());
         }
         for(EditorValue sub:list) {
-            sub.setCustomerid4(customerid4);
+            sub.setCustomerid4(customer.getCustomerId());
+            sub.setNo4Customer(customer);
             if(ObjectUtils.isEmpty(sub.getEditorValueId()))
                 sub.setEditorValueId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getEditorValueId())) {
@@ -332,11 +371,11 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!editorValueService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!editorValueService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!editorValueService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -353,17 +392,18 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
         return this.update(new UpdateWrapper<EditorValue>().set("customerid5",null).eq("customerid5",customerid5));
     }
 
-    public boolean saveByCustomerid5(String customerid5,List<EditorValue> list) {
+    public boolean saveByCustomerid5(Customer customer,List<EditorValue> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<EditorValue> _update=new ArrayList<EditorValue>();
         List<EditorValue> _create=new ArrayList<EditorValue>();
-        for(EditorValue before:selectByCustomerid5(customerid5)){
+        for(EditorValue before:selectByCustomerid5(customer.getCustomerId())){
             delIds.add(before.getEditorValueId());
         }
         for(EditorValue sub:list) {
-            sub.setCustomerid5(customerid5);
+            sub.setCustomerid5(customer.getCustomerId());
+            sub.setNo5Customer(customer);
             if(ObjectUtils.isEmpty(sub.getEditorValueId()))
                 sub.setEditorValueId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getEditorValueId())) {
@@ -373,14 +413,16 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!editorValueService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!editorValueService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!editorValueService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

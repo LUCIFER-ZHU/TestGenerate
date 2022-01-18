@@ -1,9 +1,71 @@
-server:
-  port: 8080
+spring:
+  cache:
+    redis:
+      time-to-live: 3600
+    caffeine:
+      spec: initialCapacity=5,maximumSize=500,expireAfterWrite=3600s
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    database: 0
+    lettuce:
+      pool:
+        max-active: 32
+        max-wait: 300ms
+        max-idle: 16
+        min-idle: 8
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+
+#阿里sentinel熔断器
+feign:
+  httpclient:
+    enabled: true
+  sentinel:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: application/javascript,text/css,application/json,application/xml,text/html,text/xml,text/plain
+      min-response-size: 10240
+    response:
+      enabled: true
+
+
 #Log配置
 logging:
   level:
-    cn.ibizlab.sample: info
+    cn.ibizlab: debug
+    cn.ibizlab.sample: debug
+    org.springframework.boot.autoconfigure: ERROR
+
+#zuul网关超时设置
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+
+#系统是否开启权限验证、是否开启缓存
+#缓存级别：无缓存(无配置项)、一级缓存(L1)、二级缓存(L2)
+ibiz:
+  systemid: Sample
+  systemname: 示例系统
+  enablePermissionValid: true
+  cacheLevel: L1 #(L1)一级本地caffeine缓存;(L2)caffeine缓存+Redis缓存
+
+
+### 启用Gzip压缩
+server:
+  port: 8080
+  compression:
+    enabled: true
+    mime-types: application/javascript,text/css,application/json,application/xml,text/html,text/xml,text/plain
+    min-response-size: 10240
+
+
 #zuul网关路由设置
 zuul:
   routes:
@@ -69,123 +131,123 @@ zuul:
       stripPrefix: false
     sample-editorvalue:
       path: /editorvalues/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-orgdata:
       path: /orgdatas/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-province:
       path: /provinces/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-viewmsgdata:
       path: /viewmsgdatas/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-contact:
       path: /contacts/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-logicvaliddata:
       path: /logicvaliddatas/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-city:
       path: /cities/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-orderdetail:
       path: /orderdetails/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-district:
       path: /districts/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-product:
       path: /products/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-counterdata2:
       path: /counterdata2s/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-opportunity:
       path: /opportunities/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-example2:
       path: /example2s/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-persondata:
       path: /peopledata/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-impexpdata:
       path: /impexpdatas/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-example:
       path: /examples/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-category:
       path: /categories/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-mapdata:
       path: /mapdatas/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-calendardata:
       path: /calendardatas/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-order:
       path: /orders/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-customer:
       path: /customers/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-samplever:
       path: /samplevers/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-leaveapplication:
       path: /leaveapplications/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-logicvaliddata2:
       path: /logicvaliddata2s/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-kanbandata:
       path: /kanbandatas/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-productcategory:
       path: /productcategories/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-orderrepdata:
       path: /orderrepdatas/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-deptdata:
       path: /deptdatas/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-chartdata:
       path: /chartdatas/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
     sample-activity:
       path: /activities/**
-      serviceId: ${ ibiz.ref.service.sample-sampleapi:sample-sampleapi }
+      serviceId: ${ibiz.ref.service.sample-sampleapi:sample-sampleapi}
       stripPrefix: false
   sensitive-headers:
     - Cookie,Set-Cookie,Authorization

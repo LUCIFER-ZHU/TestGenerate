@@ -59,17 +59,17 @@ public class PersonDataResource {
 
     @ApiOperation(value = "人员数据", tags = {"人员数据" },  notes = "人员数据")
     @RequestMapping(method = RequestMethod.GET, value = "/peopledata/{personDataId}")
-    public ResponseEntity get(@PathVariable("personDataId") String personDataId) {
+    public ResponseEntity getByPersonDataId(@PathVariable("personDataId") String personDataId) {
     }
 
     @ApiOperation(value = "人员数据", tags = {"人员数据" },  notes = "人员数据")
     @RequestMapping(method = RequestMethod.DELETE, value = "/peopledata/{personDataId}")
-    public ResponseEntity remove(@PathVariable("personDataId") String personDataId) {
+    public ResponseEntity removeByPersonDataId(@PathVariable("personDataId") String personDataId) {
     }
 
     @ApiOperation(value = "人员数据", tags = {"人员数据" },  notes = "人员数据")
     @RequestMapping(method = RequestMethod.PUT, value = "/peopledata/{personDataId}")
-    public ResponseEntity update(@PathVariable("personDataId") String personDataId) {
+    public ResponseEntity updateByPersonDataId(@PathVariable("personDataId") String personDataId) {
     }
 
     @ApiOperation(value = "人员数据", tags = {"人员数据" },  notes = "人员数据")
@@ -84,7 +84,7 @@ public class PersonDataResource {
 
     @ApiOperation(value = "人员数据", tags = {"人员数据" },  notes = "人员数据")
     @RequestMapping(method = RequestMethod.POST, value = "/peopledata/{personDataId}/save")
-    public ResponseEntity save(@PathVariable("personDataId") String personDataId) {
+    public ResponseEntity saveByPersonDataId(@PathVariable("personDataId") String personDataId) {
     }
 
     @ApiOperation(value = "人员数据", tags = {"人员数据" },  notes = "人员数据")

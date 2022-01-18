@@ -48,7 +48,8 @@ public class ImpExpDataDTO extends DTOBase implements Serializable {
      * 建立时间
      */
     @JsonProperty("createdate")
-    @JSONField(name = "createdate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("建立时间")
     private Timestamp createDate;
 
@@ -128,7 +129,8 @@ public class ImpExpDataDTO extends DTOBase implements Serializable {
      * 时间属性
      */
     @JsonProperty("timefield")
-    @JSONField(name = "timefield")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "timefield" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("时间属性")
     private Timestamp timefield;
 
@@ -136,7 +138,8 @@ public class ImpExpDataDTO extends DTOBase implements Serializable {
      * 更新时间
      */
     @JsonProperty("updatedate")
-    @JSONField(name = "updatedate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("更新时间")
     private Timestamp updateDate;
 

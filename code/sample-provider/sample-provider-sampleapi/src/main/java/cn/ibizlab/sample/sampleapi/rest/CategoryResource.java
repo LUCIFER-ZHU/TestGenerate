@@ -59,17 +59,17 @@ public class CategoryResource {
 
     @ApiOperation(value = "类别", tags = {"类别" },  notes = "类别")
     @RequestMapping(method = RequestMethod.GET, value = "/categories/{categoryId}")
-    public ResponseEntity get(@PathVariable("categoryId") String categoryId) {
+    public ResponseEntity getByCategoryId(@PathVariable("categoryId") String categoryId) {
     }
 
     @ApiOperation(value = "类别", tags = {"类别" },  notes = "类别")
     @RequestMapping(method = RequestMethod.DELETE, value = "/categories/{categoryId}")
-    public ResponseEntity remove(@PathVariable("categoryId") String categoryId) {
+    public ResponseEntity removeByCategoryId(@PathVariable("categoryId") String categoryId) {
     }
 
     @ApiOperation(value = "类别", tags = {"类别" },  notes = "类别")
     @RequestMapping(method = RequestMethod.PUT, value = "/categories/{categoryId}")
-    public ResponseEntity update(@PathVariable("categoryId") String categoryId) {
+    public ResponseEntity updateByCategoryId(@PathVariable("categoryId") String categoryId) {
     }
 
     @ApiOperation(value = "类别", tags = {"类别" },  notes = "类别")
@@ -84,7 +84,7 @@ public class CategoryResource {
 
     @ApiOperation(value = "类别", tags = {"类别" },  notes = "类别")
     @RequestMapping(method = RequestMethod.POST, value = "/categories/{categoryId}/save")
-    public ResponseEntity save(@PathVariable("categoryId") String categoryId) {
+    public ResponseEntity saveByCategoryId(@PathVariable("categoryId") String categoryId) {
     }
 
     @ApiOperation(value = "类别", tags = {"类别" },  notes = "类别")

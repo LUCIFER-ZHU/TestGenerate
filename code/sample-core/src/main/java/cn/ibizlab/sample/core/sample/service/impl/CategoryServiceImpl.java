@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +34,7 @@ import cn.ibizlab.sample.core.sample.service.ICategoryService;
 import cn.ibizlab.sample.core.sample.mapper.CategoryMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -45,10 +47,12 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
  * 实体[类别] 服务对象接口实现
  */
 @Slf4j
-@Service("CategoryServiceImpl")
+@Service("CategoryService")
 public class CategoryServiceImpl extends ServiceImpl<CategoryMapper,Category> implements ICategoryService {
 
-    protected ICategoryService categoryService = SpringContextHolder.getBean(this.getClass());
+    protected ICategoryService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
 
     protected int batchSize = 500;
@@ -56,7 +60,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper,Category> im
     public Category get(Category et) {
         Category rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,类别:"+et.getCategoryId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -65,7 +69,12 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper,Category> im
     }
 
     public void fillParentData(Category et) {
-        
+        if(!ObjectUtils.isEmpty(et.getPcategoryid())) {
+            Category category = et.getParentCategory();
+            if(!ObjectUtils.isEmpty(category)) {
+                et.setPcategoryname(category.getCategoryName());   
+            }
+        }    
     }
 
     public Category getDraft(Category et) {
@@ -115,9 +124,9 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper,Category> im
     @Transactional
     public boolean save(Category et) {
         if(checkKey(et))
-            return categoryService.update(et);
+            return getProxyService().update(et);
         else
-            return categoryService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -139,9 +148,9 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper,Category> im
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!categoryService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!categoryService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -193,17 +202,18 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper,Category> im
         return this.update(new UpdateWrapper<Category>().set("pcategoryid",null).eq("pcategoryid",pcategoryid));
     }
 
-    public boolean saveByPcategoryid(String pcategoryid,List<Category> list) {
+    public boolean saveByPcategoryid(Category category,List<Category> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Category> _update=new ArrayList<Category>();
         List<Category> _create=new ArrayList<Category>();
-        for(Category before:selectByPcategoryid(pcategoryid)){
+        for(Category before:selectByPcategoryid(category.getCategoryId())){
             delIds.add(before.getCategoryId());
         }
         for(Category sub:list) {
-            sub.setPcategoryid(pcategoryid);
+            sub.setPcategoryid(category.getCategoryId());
+            sub.setParentCategory(category);
             if(ObjectUtils.isEmpty(sub.getCategoryId()))
                 sub.setCategoryId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getCategoryId())) {
@@ -213,14 +223,16 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper,Category> im
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!categoryService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!categoryService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!categoryService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

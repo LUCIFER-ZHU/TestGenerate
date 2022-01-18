@@ -59,17 +59,17 @@ public class EditorValueResource {
 
     @ApiOperation(value = "编辑器值", tags = {"编辑器值" },  notes = "编辑器值")
     @RequestMapping(method = RequestMethod.GET, value = "/editorvalues/{editorValueId}")
-    public ResponseEntity get(@PathVariable("editorValueId") String editorValueId) {
+    public ResponseEntity getByEditorValueId(@PathVariable("editorValueId") String editorValueId) {
     }
 
     @ApiOperation(value = "编辑器值", tags = {"编辑器值" },  notes = "编辑器值")
     @RequestMapping(method = RequestMethod.DELETE, value = "/editorvalues/{editorValueId}")
-    public ResponseEntity remove(@PathVariable("editorValueId") String editorValueId) {
+    public ResponseEntity removeByEditorValueId(@PathVariable("editorValueId") String editorValueId) {
     }
 
     @ApiOperation(value = "编辑器值", tags = {"编辑器值" },  notes = "编辑器值")
     @RequestMapping(method = RequestMethod.PUT, value = "/editorvalues/{editorValueId}")
-    public ResponseEntity update(@PathVariable("editorValueId") String editorValueId) {
+    public ResponseEntity updateByEditorValueId(@PathVariable("editorValueId") String editorValueId) {
     }
 
     @ApiOperation(value = "编辑器值", tags = {"编辑器值" },  notes = "编辑器值")
@@ -84,7 +84,7 @@ public class EditorValueResource {
 
     @ApiOperation(value = "编辑器值", tags = {"编辑器值" },  notes = "编辑器值")
     @RequestMapping(method = RequestMethod.POST, value = "/editorvalues/{editorValueId}/save")
-    public ResponseEntity save(@PathVariable("editorValueId") String editorValueId) {
+    public ResponseEntity saveByEditorValueId(@PathVariable("editorValueId") String editorValueId) {
     }
 
     @ApiOperation(value = "编辑器值", tags = {"编辑器值" },  notes = "编辑器值")

@@ -59,7 +59,7 @@ public class SwaggerConfiguration {
 						.build()
                     )
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("cn.ibizlab.sample.SampleApi"))
+				.apis(RequestHandlerSelectors.basePackage("cn.ibizlab.sample.sampleapi"))
 				.paths(PathSelectors.any())
 				.build();
 	}

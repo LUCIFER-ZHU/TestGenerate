@@ -40,7 +40,8 @@ public class LeaveApplicationDTO extends DTOBase implements Serializable {
      * 建立时间
      */
     @JsonProperty("createdate")
-    @JSONField(name = "createdate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("建立时间")
     private Timestamp createDate;
 
@@ -152,7 +153,8 @@ public class LeaveApplicationDTO extends DTOBase implements Serializable {
      * 更新时间
      */
     @JsonProperty("updatedate")
-    @JSONField(name = "updatedate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("更新时间")
     private Timestamp updateDate;
 
@@ -188,7 +190,7 @@ public class LeaveApplicationDTO extends DTOBase implements Serializable {
      */
     public LeaveApplicationDTO setExtParam(String extParam) {
         this.extParam = extParam;
-        this.modify("extparam", extParam);
+        this.modify("ext_param", extParam);
         return this;
     }
 
@@ -206,7 +208,7 @@ public class LeaveApplicationDTO extends DTOBase implements Serializable {
      */
     public LeaveApplicationDTO setExtData2(String extData2) {
         this.extData2 = extData2;
-        this.modify("ext_data2", extData2);
+        this.modify("extdata2", extData2);
         return this;
     }
 

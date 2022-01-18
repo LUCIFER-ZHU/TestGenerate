@@ -5,7 +5,7 @@ import cn.ibizlab.sample.core.sample.domain.Category;
 import cn.ibizlab.sample.sampleapi.dto.CategoryDTO;
 import cn.ibizlab.util.domain.MappingBase;
 
-@Mapper(componentModel = "spring", uses = {}, implementationName = "CategoryDTOMapping",
+@Mapper(componentModel = "spring", uses = {}, implementationName = "SampleApiCategoryDTOMapping",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface CategoryDTOMapping extends MappingBase<CategoryDTO, Category> {

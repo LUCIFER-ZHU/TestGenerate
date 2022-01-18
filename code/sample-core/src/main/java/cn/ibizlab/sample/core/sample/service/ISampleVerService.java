@@ -57,13 +57,13 @@ public interface ISampleVerService extends IService<SampleVer> {
     Page<SampleVer> searchDefault(SampleVerSearchContext context);
     List<SampleVer> listDefault(SampleVerSearchContext context);
 
-    Page<SampleVer> searchJAVAR7D(SampleVerSearchContext context);
-    List<SampleVer> listJAVAR7D(SampleVerSearchContext context);
+    Page<SampleVer> searchJavar7D(SampleVerSearchContext context);
+    List<SampleVer> listJavar7D(SampleVerSearchContext context);
 
-    Page<SampleVer> searchMOBR7D(SampleVerSearchContext context);
-    List<SampleVer> listMOBR7D(SampleVerSearchContext context);
+    Page<SampleVer> searchMobr7D(SampleVerSearchContext context);
+    List<SampleVer> listMobr7D(SampleVerSearchContext context);
 
-    Page<SampleVer> searchWEBR7D(SampleVerSearchContext context);
-    List<SampleVer> listWEBR7D(SampleVerSearchContext context);
+    Page<SampleVer> searchWebr7D(SampleVerSearchContext context);
+    List<SampleVer> listWebr7D(SampleVerSearchContext context);
 
 }

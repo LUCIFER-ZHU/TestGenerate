@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +34,7 @@ import cn.ibizlab.sample.core.sample.service.ILogicValidData2Service;
 import cn.ibizlab.sample.core.sample.mapper.LogicValidData2Mapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -45,10 +47,12 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
  * 实体[示例数据（启用逻辑删除）（主键数值）] 服务对象接口实现
  */
 @Slf4j
-@Service("LogicValidData2ServiceImpl")
+@Service("LogicValidData2Service")
 public class LogicValidData2ServiceImpl extends ServiceImpl<LogicValidData2Mapper,LogicValidData2> implements ILogicValidData2Service {
 
-    protected ILogicValidData2Service logicValidData2Service = SpringContextHolder.getBean(this.getClass());
+    protected ILogicValidData2Service getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
 
     protected int batchSize = 500;
@@ -56,7 +60,7 @@ public class LogicValidData2ServiceImpl extends ServiceImpl<LogicValidData2Mappe
     public LogicValidData2 get(LogicValidData2 et) {
         LogicValidData2 rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,示例数据（启用逻辑删除）（主键数值）:"+et.getLogicValidData2Id());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -107,9 +111,9 @@ public class LogicValidData2ServiceImpl extends ServiceImpl<LogicValidData2Mappe
     @Transactional
     public boolean save(LogicValidData2 et) {
         if(checkKey(et))
-            return logicValidData2Service.update(et);
+            return getProxyService().update(et);
         else
-            return logicValidData2Service.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -131,9 +135,9 @@ public class LogicValidData2ServiceImpl extends ServiceImpl<LogicValidData2Mappe
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!logicValidData2Service.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!logicValidData2Service.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -164,6 +168,8 @@ public class LogicValidData2ServiceImpl extends ServiceImpl<LogicValidData2Mappe
     public List<LogicValidData2> listDefault(LogicValidData2SearchContext context) {
         return baseMapper.listDefault(context,context.getSelectCond());
     }
+
+
 
 
 }

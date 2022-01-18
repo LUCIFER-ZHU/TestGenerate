@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,30 +34,37 @@ import cn.ibizlab.sample.core.sample.service.IPersonDataService;
 import cn.ibizlab.sample.core.sample.mapper.PersonDataMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.DeptData;
+import cn.ibizlab.sample.core.sample.service.IDeptDataService;   
+import cn.ibizlab.sample.core.sample.domain.OrgData;
+import cn.ibizlab.sample.core.sample.service.IOrgDataService;   
 
 
 /**
  * 实体[人员数据] 服务对象接口实现
  */
 @Slf4j
-@Service("PersonDataServiceImpl")
+@Service("PersonDataService")
 public class PersonDataServiceImpl extends ServiceImpl<PersonDataMapper,PersonData> implements IPersonDataService {
 
-    protected IPersonDataService personDataService = SpringContextHolder.getBean(this.getClass());
+    protected IPersonDataService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.IDeptDataService deptDataService;
+    protected IDeptDataService deptDataService;
    
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.IOrgDataService orgDataService;
+    protected IOrgDataService orgDataService;
    
 
     protected int batchSize = 500;
@@ -64,7 +72,7 @@ public class PersonDataServiceImpl extends ServiceImpl<PersonDataMapper,PersonDa
     public PersonData get(PersonData et) {
         PersonData rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,人员数据:"+et.getPersonDataId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -73,7 +81,18 @@ public class PersonDataServiceImpl extends ServiceImpl<PersonDataMapper,PersonDa
     }
 
     public void fillParentData(PersonData et) {
-        
+        if(!ObjectUtils.isEmpty(et.getDeptDataId())) {
+            DeptData deptData = et.getDeptdata();
+            if(!ObjectUtils.isEmpty(deptData)) {
+                et.setDeptDataName(deptData.getDeptDataName());   
+            }
+        }    
+        if(!ObjectUtils.isEmpty(et.getOrgDataId())) {
+            OrgData orgData = et.getOrgdata();
+            if(!ObjectUtils.isEmpty(orgData)) {
+                et.setOrgDataName(orgData.getOrgDataName());   
+            }
+        }    
     }
 
     public PersonData getDraft(PersonData et) {
@@ -123,9 +142,9 @@ public class PersonDataServiceImpl extends ServiceImpl<PersonDataMapper,PersonDa
     @Transactional
     public boolean save(PersonData et) {
         if(checkKey(et))
-            return personDataService.update(et);
+            return getProxyService().update(et);
         else
-            return personDataService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -147,9 +166,9 @@ public class PersonDataServiceImpl extends ServiceImpl<PersonDataMapper,PersonDa
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!personDataService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!personDataService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -193,17 +212,18 @@ public class PersonDataServiceImpl extends ServiceImpl<PersonDataMapper,PersonDa
         return this.update(new UpdateWrapper<PersonData>().set("deptdataid",null).eq("deptdataid",deptDataId));
     }
 
-    public boolean saveByDeptDataId(String deptDataId,List<PersonData> list) {
+    public boolean saveByDeptDataId(DeptData deptData,List<PersonData> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<PersonData> _update=new ArrayList<PersonData>();
         List<PersonData> _create=new ArrayList<PersonData>();
-        for(PersonData before:selectByDeptDataId(deptDataId)){
+        for(PersonData before:selectByDeptDataId(deptData.getDeptDataId())){
             delIds.add(before.getPersonDataId());
         }
         for(PersonData sub:list) {
-            sub.setDeptDataId(deptDataId);
+            sub.setDeptDataId(deptData.getDeptDataId());
+            sub.setDeptdata(deptData);
             if(ObjectUtils.isEmpty(sub.getPersonDataId()))
                 sub.setPersonDataId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getPersonDataId())) {
@@ -213,11 +233,11 @@ public class PersonDataServiceImpl extends ServiceImpl<PersonDataMapper,PersonDa
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!personDataService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!personDataService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!personDataService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -234,17 +254,18 @@ public class PersonDataServiceImpl extends ServiceImpl<PersonDataMapper,PersonDa
         return this.update(new UpdateWrapper<PersonData>().set("orgdataid",null).eq("orgdataid",orgDataId));
     }
 
-    public boolean saveByOrgDataId(String orgDataId,List<PersonData> list) {
+    public boolean saveByOrgDataId(OrgData orgData,List<PersonData> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<PersonData> _update=new ArrayList<PersonData>();
         List<PersonData> _create=new ArrayList<PersonData>();
-        for(PersonData before:selectByOrgDataId(orgDataId)){
+        for(PersonData before:selectByOrgDataId(orgData.getOrgDataId())){
             delIds.add(before.getPersonDataId());
         }
         for(PersonData sub:list) {
-            sub.setOrgDataId(orgDataId);
+            sub.setOrgDataId(orgData.getOrgDataId());
+            sub.setOrgdata(orgData);
             if(ObjectUtils.isEmpty(sub.getPersonDataId()))
                 sub.setPersonDataId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getPersonDataId())) {
@@ -254,14 +275,16 @@ public class PersonDataServiceImpl extends ServiceImpl<PersonDataMapper,PersonDa
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!personDataService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!personDataService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!personDataService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

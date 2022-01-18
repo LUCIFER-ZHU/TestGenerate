@@ -75,16 +75,25 @@ public interface IExampleService extends IService<Example> {
     List<Example> selectByCityId(String cityId);
     boolean removeByCityId(String cityId);
     boolean resetByCityId(String cityId);
-    boolean saveByCityId(String cityId,List<Example> list);
+    boolean saveByCityId(cn.ibizlab.sample.core.sample.domain.City city,List<Example> list);
+    default boolean saveByCityId(String cityId,List<Example> list) {
+        return saveByCityId(new cn.ibizlab.sample.core.sample.domain.City().setCityId(cityId),list);
+    }
 
     List<Example> selectByDistrictId(String districtId);
     boolean removeByDistrictId(String districtId);
     boolean resetByDistrictId(String districtId);
-    boolean saveByDistrictId(String districtId,List<Example> list);
+    boolean saveByDistrictId(cn.ibizlab.sample.core.sample.domain.District district,List<Example> list);
+    default boolean saveByDistrictId(String districtId,List<Example> list) {
+        return saveByDistrictId(new cn.ibizlab.sample.core.sample.domain.District().setDistrictId(districtId),list);
+    }
 
     List<Example> selectByProvinceId(String provinceId);
     boolean removeByProvinceId(String provinceId);
     boolean resetByProvinceId(String provinceId);
-    boolean saveByProvinceId(String provinceId,List<Example> list);
+    boolean saveByProvinceId(cn.ibizlab.sample.core.sample.domain.Province province,List<Example> list);
+    default boolean saveByProvinceId(String provinceId,List<Example> list) {
+        return saveByProvinceId(new cn.ibizlab.sample.core.sample.domain.Province().setProvinceId(provinceId),list);
+    }
 
 }

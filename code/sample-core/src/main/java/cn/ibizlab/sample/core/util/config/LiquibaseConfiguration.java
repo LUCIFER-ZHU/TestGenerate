@@ -1,6 +1,7 @@
 package cn.ibizlab.sample.core.util.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +22,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 @Configuration
+@ConditionalOnProperty( name = "spring.datasource.isSyncDBSchema", havingValue = "true")
 public class LiquibaseConfiguration {
 
    /**

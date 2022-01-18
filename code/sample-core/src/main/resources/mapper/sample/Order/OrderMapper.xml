@@ -70,7 +70,7 @@
         ]]>    
     </sql>
 
-    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.OrderSearchContext"  resultType="OrderResultMap">
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.OrderSearchContext"  resultMap="OrderResultMap">
         select t1.* 
         from (
             <include refid="default"/>
@@ -81,7 +81,7 @@
             
     </select>
     
-    <select id="searchGroup"  parameterType="cn.ibizlab.sample.core.sample.filter.OrderSearchContext"  resultType="OrderResultMap">
+    <select id="searchGroup"  parameterType="cn.ibizlab.sample.core.sample.filter.OrderSearchContext"  resultMap="OrderResultMap">
         select t1.* 
         from (
             <include refid="finished"/>
@@ -96,7 +96,7 @@
             
     </select>
     
-    <select id="searchPaying"  parameterType="cn.ibizlab.sample.core.sample.filter.OrderSearchContext"  resultType="OrderResultMap">
+    <select id="searchPaying"  parameterType="cn.ibizlab.sample.core.sample.filter.OrderSearchContext"  resultMap="OrderResultMap">
         select t1.* 
         from (
             <include refid="paying"/>
@@ -107,7 +107,7 @@
             
     </select>
     
-    <select id="searchProcessing"  parameterType="cn.ibizlab.sample.core.sample.filter.OrderSearchContext"  resultType="OrderResultMap">
+    <select id="searchProcessing"  parameterType="cn.ibizlab.sample.core.sample.filter.OrderSearchContext"  resultMap="OrderResultMap">
         select t1.* 
         from (
             <include refid="processing"/>

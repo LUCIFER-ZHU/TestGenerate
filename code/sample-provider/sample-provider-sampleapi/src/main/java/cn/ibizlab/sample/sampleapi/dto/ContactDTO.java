@@ -56,7 +56,8 @@ public class ContactDTO extends DTOBase implements Serializable {
      * 建立时间
      */
     @JsonProperty("createdate")
-    @JSONField(name = "createdate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("建立时间")
     private Timestamp createDate;
 
@@ -144,7 +145,8 @@ public class ContactDTO extends DTOBase implements Serializable {
      * 更新时间
      */
     @JsonProperty("updatedate")
-    @JSONField(name = "updatedate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("更新时间")
     private Timestamp updateDate;
 

@@ -2,7 +2,7 @@
 import { Subject } from 'rxjs'
 import { Ref } from 'vue';
 import { IndexView, IActionParam, IParam, IContext } from '@core';
-import { ViewConfig } from './app-index-view-config';
+import { viewState } from './app-index-view-state';
 import { AppIndexViewMenu } from '@widgets/app/app-index-view-menu';
 import {
   MenuUnfoldOutlined,
@@ -27,7 +27,7 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, menu } = new IndexView(ViewConfig, props, emit).moduleInstall();
+const { state, menu } = new IndexView(viewState, props, emit).moduleInstall();
 const collapsed: Ref<boolean> = ref(false);
 const collapsedChange = () => {
   collapsed.value = !collapsed.value;
@@ -35,7 +35,7 @@ const collapsedChange = () => {
 </script>
 
 <template>
-  <AppDefaultIndexViewLayout class="ibiz-index-view" :menuAlign="state.menuAlign" :collapsed="collapsed">
+  <AppDefaultIndexViewLayout :class="['app-index-view', state.viewSysCss]" :menuAlign="state.menuAlign" :collapsed="collapsed">
     <template #caption>
       <div class="index-view-header">
         {{state.viewCaption}}
@@ -68,7 +68,7 @@ const collapsedChange = () => {
 </template>
 
 <style lang="scss">
-.ibiz-index-view {
+.app-index-view {
   .index-view-header {
     font-size: 18px;
     >.trigger:hover {

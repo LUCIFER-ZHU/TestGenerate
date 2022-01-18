@@ -60,11 +60,17 @@ public interface IProductCategoryService extends IService<ProductCategory> {
     List<ProductCategory> selectByCategoryId(String categoryId);
     boolean removeByCategoryId(String categoryId);
     boolean resetByCategoryId(String categoryId);
-    boolean saveByCategoryId(String categoryId,List<ProductCategory> list);
+    boolean saveByCategoryId(cn.ibizlab.sample.core.sample.domain.Category category,List<ProductCategory> list);
+    default boolean saveByCategoryId(String categoryId,List<ProductCategory> list) {
+        return saveByCategoryId(new cn.ibizlab.sample.core.sample.domain.Category().setCategoryId(categoryId),list);
+    }
 
     List<ProductCategory> selectByProductId(String productId);
     boolean removeByProductId(String productId);
     boolean resetByProductId(String productId);
-    boolean saveByProductId(String productId,List<ProductCategory> list);
+    boolean saveByProductId(cn.ibizlab.sample.core.sample.domain.Product product,List<ProductCategory> list);
+    default boolean saveByProductId(String productId,List<ProductCategory> list) {
+        return saveByProductId(new cn.ibizlab.sample.core.sample.domain.Product().setProductId(productId),list);
+    }
 
 }

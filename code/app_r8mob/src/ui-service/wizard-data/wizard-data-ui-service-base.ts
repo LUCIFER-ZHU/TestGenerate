@@ -28,13 +28,15 @@ export class WizardDataUIServiceBase extends UIServiceBase {
              uIActionTag:'OPENWIZARDEXAMPLE',
              frontPSAppView:'',
              caption:'打开向导示例页面',
-             entityCodeName:'',
+             entityCodeName:'WizardData',
              methodCodeName:'',
              frontProcessType:'WIZARD',
              refreshMode:'0',
              htmlPageUrl:'',
              uILogicAttachMode:'',
              nextActionCodeName:'',
+             navContexts:{},
+             navParams:{}
          },
      };    /**
      * 打开向导示例页面
@@ -42,7 +44,7 @@ export class WizardDataUIServiceBase extends UIServiceBase {
      * @param {*} params
      * @memberof WizardDataUIServiceBase
      */
-    public async OpenWizardExample(params:any){
+    public async OpenWizardExample(uiAction:any, params:any){
         const actionModel =  this.getUIActionModel('OpenWizardExample');
         AppFrontAction.doAction(actionModel, params);
     }

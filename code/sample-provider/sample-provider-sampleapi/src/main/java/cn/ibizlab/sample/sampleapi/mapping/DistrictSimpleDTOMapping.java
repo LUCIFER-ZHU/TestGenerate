@@ -5,7 +5,7 @@ import cn.ibizlab.sample.core.sample.domain.District;
 import cn.ibizlab.sample.sampleapi.dto.DistrictSimpleDTO;
 import cn.ibizlab.util.domain.MappingBase;
 
-@Mapper(componentModel = "spring", uses = {}, implementationName = "DistrictSimpleDTOMapping",
+@Mapper(componentModel = "spring", uses = {}, implementationName = "SampleApiDistrictSimpleDTOMapping",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface DistrictSimpleDTOMapping extends MappingBase<DistrictSimpleDTO, District> {

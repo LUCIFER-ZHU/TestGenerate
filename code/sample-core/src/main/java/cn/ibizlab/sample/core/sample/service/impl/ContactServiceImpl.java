@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,26 +34,31 @@ import cn.ibizlab.sample.core.sample.service.IContactService;
 import cn.ibizlab.sample.core.sample.mapper.ContactMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.Customer;
+import cn.ibizlab.sample.core.sample.service.ICustomerService;   
 
 
 /**
  * 实体[联系人] 服务对象接口实现
  */
 @Slf4j
-@Service("ContactServiceImpl")
+@Service("ContactService")
 public class ContactServiceImpl extends ServiceImpl<ContactMapper,Contact> implements IContactService {
 
-    protected IContactService contactService = SpringContextHolder.getBean(this.getClass());
+    protected IContactService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.ICustomerService customerService;
+    protected ICustomerService customerService;
    
 
     protected int batchSize = 500;
@@ -60,7 +66,7 @@ public class ContactServiceImpl extends ServiceImpl<ContactMapper,Contact> imple
     public Contact get(Contact et) {
         Contact rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,联系人:"+et.getContactId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -69,7 +75,12 @@ public class ContactServiceImpl extends ServiceImpl<ContactMapper,Contact> imple
     }
 
     public void fillParentData(Contact et) {
-        
+        if(!ObjectUtils.isEmpty(et.getCustomerId())) {
+            Customer customer = et.getCustomer();
+            if(!ObjectUtils.isEmpty(customer)) {
+                et.setCustomerName(customer.getCustomerName());   
+            }
+        }    
     }
 
     public Contact getDraft(Contact et) {
@@ -119,9 +130,9 @@ public class ContactServiceImpl extends ServiceImpl<ContactMapper,Contact> imple
     @Transactional
     public boolean save(Contact et) {
         if(checkKey(et))
-            return contactService.update(et);
+            return getProxyService().update(et);
         else
-            return contactService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -143,9 +154,9 @@ public class ContactServiceImpl extends ServiceImpl<ContactMapper,Contact> imple
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!contactService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!contactService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -189,17 +200,18 @@ public class ContactServiceImpl extends ServiceImpl<ContactMapper,Contact> imple
         return this.update(new UpdateWrapper<Contact>().set("customerid",null).eq("customerid",customerId));
     }
 
-    public boolean saveByCustomerId(String customerId,List<Contact> list) {
+    public boolean saveByCustomerId(Customer customer,List<Contact> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<Contact> _update=new ArrayList<Contact>();
         List<Contact> _create=new ArrayList<Contact>();
-        for(Contact before:selectByCustomerId(customerId)){
+        for(Contact before:selectByCustomerId(customer.getCustomerId())){
             delIds.add(before.getContactId());
         }
         for(Contact sub:list) {
-            sub.setCustomerId(customerId);
+            sub.setCustomerId(customer.getCustomerId());
+            sub.setCustomer(customer);
             if(ObjectUtils.isEmpty(sub.getContactId()))
                 sub.setContactId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getContactId())) {
@@ -209,14 +221,16 @@ public class ContactServiceImpl extends ServiceImpl<ContactMapper,Contact> imple
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!contactService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!contactService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!contactService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

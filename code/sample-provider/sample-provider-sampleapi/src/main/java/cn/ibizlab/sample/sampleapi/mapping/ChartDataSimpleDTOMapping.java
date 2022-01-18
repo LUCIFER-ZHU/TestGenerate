@@ -5,7 +5,7 @@ import cn.ibizlab.sample.core.sample.domain.ChartData;
 import cn.ibizlab.sample.sampleapi.dto.ChartDataSimpleDTO;
 import cn.ibizlab.util.domain.MappingBase;
 
-@Mapper(componentModel = "spring", uses = {}, implementationName = "ChartDataSimpleDTOMapping",
+@Mapper(componentModel = "spring", uses = {}, implementationName = "SampleApiChartDataSimpleDTOMapping",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface ChartDataSimpleDTOMapping extends MappingBase<ChartDataSimpleDTO, ChartData> {

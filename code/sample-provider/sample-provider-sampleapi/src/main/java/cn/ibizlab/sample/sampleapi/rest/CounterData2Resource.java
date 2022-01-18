@@ -59,17 +59,17 @@ public class CounterData2Resource {
 
     @ApiOperation(value = "计数器数据2", tags = {"计数器数据2" },  notes = "计数器数据2")
     @RequestMapping(method = RequestMethod.GET, value = "/counterdata2s/{counterData2Id}")
-    public ResponseEntity get(@PathVariable("counterData2Id") String counterData2Id) {
+    public ResponseEntity getByCounterData2Id(@PathVariable("counterData2Id") String counterData2Id) {
     }
 
     @ApiOperation(value = "计数器数据2", tags = {"计数器数据2" },  notes = "计数器数据2")
     @RequestMapping(method = RequestMethod.DELETE, value = "/counterdata2s/{counterData2Id}")
-    public ResponseEntity remove(@PathVariable("counterData2Id") String counterData2Id) {
+    public ResponseEntity removeByCounterData2Id(@PathVariable("counterData2Id") String counterData2Id) {
     }
 
     @ApiOperation(value = "计数器数据2", tags = {"计数器数据2" },  notes = "计数器数据2")
     @RequestMapping(method = RequestMethod.PUT, value = "/counterdata2s/{counterData2Id}")
-    public ResponseEntity update(@PathVariable("counterData2Id") String counterData2Id) {
+    public ResponseEntity updateByCounterData2Id(@PathVariable("counterData2Id") String counterData2Id) {
     }
 
     @ApiOperation(value = "计数器数据2", tags = {"计数器数据2" },  notes = "计数器数据2")
@@ -84,7 +84,7 @@ public class CounterData2Resource {
 
     @ApiOperation(value = "计数器数据2", tags = {"计数器数据2" },  notes = "计数器数据2")
     @RequestMapping(method = RequestMethod.POST, value = "/counterdata2s/{counterData2Id}/save")
-    public ResponseEntity save(@PathVariable("counterData2Id") String counterData2Id) {
+    public ResponseEntity saveByCounterData2Id(@PathVariable("counterData2Id") String counterData2Id) {
     }
 
     @ApiOperation(value = "计数器数据2", tags = {"计数器数据2" },  notes = "计数器数据2")

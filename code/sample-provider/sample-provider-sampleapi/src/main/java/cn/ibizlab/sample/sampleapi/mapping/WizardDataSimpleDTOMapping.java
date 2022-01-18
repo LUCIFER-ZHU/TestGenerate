@@ -5,7 +5,7 @@ import cn.ibizlab.sample.core.sample.domain.WizardData;
 import cn.ibizlab.sample.sampleapi.dto.WizardDataSimpleDTO;
 import cn.ibizlab.util.domain.MappingBase;
 
-@Mapper(componentModel = "spring", uses = {}, implementationName = "WizardDataSimpleDTOMapping",
+@Mapper(componentModel = "spring", uses = {}, implementationName = "SampleApiWizardDataSimpleDTOMapping",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface WizardDataSimpleDTOMapping extends MappingBase<WizardDataSimpleDTO, WizardData> {

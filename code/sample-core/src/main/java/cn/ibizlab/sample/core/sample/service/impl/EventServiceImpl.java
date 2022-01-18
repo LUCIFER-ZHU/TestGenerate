@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +34,7 @@ import cn.ibizlab.sample.core.sample.service.IEventService;
 import cn.ibizlab.sample.core.sample.mapper.EventMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -45,10 +47,12 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
  * 实体[事件] 服务对象接口实现
  */
 @Slf4j
-@Service("EventServiceImpl")
+@Service("EventService")
 public class EventServiceImpl extends ServiceImpl<EventMapper,Event> implements IEventService {
 
-    protected IEventService eventService = SpringContextHolder.getBean(this.getClass());
+    protected IEventService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
 
     protected int batchSize = 500;
@@ -56,7 +60,7 @@ public class EventServiceImpl extends ServiceImpl<EventMapper,Event> implements 
     public Event get(Event et) {
         Event rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,事件:"+et.getEventId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -107,9 +111,9 @@ public class EventServiceImpl extends ServiceImpl<EventMapper,Event> implements 
     @Transactional
     public boolean save(Event et) {
         if(checkKey(et))
-            return eventService.update(et);
+            return getProxyService().update(et);
         else
-            return eventService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -131,9 +135,9 @@ public class EventServiceImpl extends ServiceImpl<EventMapper,Event> implements 
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!eventService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!eventService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -164,6 +168,8 @@ public class EventServiceImpl extends ServiceImpl<EventMapper,Event> implements 
     public List<Event> listDefault(EventSearchContext context) {
         return baseMapper.listDefault(context,context.getSelectCond());
     }
+
+
 
 
 }

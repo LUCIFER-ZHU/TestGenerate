@@ -40,7 +40,8 @@ public class ChartDataDTO extends DTOBase implements Serializable {
      * 开始时间
      */
     @JsonProperty("begintime")
-    @JSONField(name = "begintime")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "begintime" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("开始时间")
     private Timestamp beginTime;
 
@@ -72,7 +73,8 @@ public class ChartDataDTO extends DTOBase implements Serializable {
      * 图表时间
      */
     @JsonProperty("chartdate")
-    @JSONField(name = "chartdate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "chartdate" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("图表时间")
     private Timestamp chartdate;
 
@@ -88,7 +90,8 @@ public class ChartDataDTO extends DTOBase implements Serializable {
      * 建立时间
      */
     @JsonProperty("createdate")
-    @JSONField(name = "createdate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("建立时间")
     private Timestamp createDate;
 
@@ -120,7 +123,8 @@ public class ChartDataDTO extends DTOBase implements Serializable {
      * 数据时间
      */
     @JsonProperty("datetime")
-    @JSONField(name = "datetime")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "datetime" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("数据时间")
     private Timestamp dateTime;
 
@@ -136,7 +140,8 @@ public class ChartDataDTO extends DTOBase implements Serializable {
      * 结束时间
      */
     @JsonProperty("endtime")
-    @JSONField(name = "endtime")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "endtime" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("结束时间")
     private Timestamp endTime;
 
@@ -248,7 +253,8 @@ public class ChartDataDTO extends DTOBase implements Serializable {
      * 更新时间
      */
     @JsonProperty("updatedate")
-    @JSONField(name = "updatedate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("更新时间")
     private Timestamp updateDate;
 

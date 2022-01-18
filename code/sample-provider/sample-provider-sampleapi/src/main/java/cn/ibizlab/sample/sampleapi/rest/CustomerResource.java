@@ -59,17 +59,17 @@ public class CustomerResource {
 
     @ApiOperation(value = "客户", tags = {"客户" },  notes = "客户")
     @RequestMapping(method = RequestMethod.GET, value = "/customers/{customerId}")
-    public ResponseEntity get(@PathVariable("customerId") String customerId) {
+    public ResponseEntity getByCustomerId(@PathVariable("customerId") String customerId) {
     }
 
     @ApiOperation(value = "客户", tags = {"客户" },  notes = "客户")
     @RequestMapping(method = RequestMethod.DELETE, value = "/customers/{customerId}")
-    public ResponseEntity remove(@PathVariable("customerId") String customerId) {
+    public ResponseEntity removeByCustomerId(@PathVariable("customerId") String customerId) {
     }
 
     @ApiOperation(value = "客户", tags = {"客户" },  notes = "客户")
     @RequestMapping(method = RequestMethod.PUT, value = "/customers/{customerId}")
-    public ResponseEntity update(@PathVariable("customerId") String customerId) {
+    public ResponseEntity updateByCustomerId(@PathVariable("customerId") String customerId) {
     }
 
     @ApiOperation(value = "客户", tags = {"客户" },  notes = "客户")
@@ -84,7 +84,7 @@ public class CustomerResource {
 
     @ApiOperation(value = "客户", tags = {"客户" },  notes = "客户")
     @RequestMapping(method = RequestMethod.POST, value = "/customers/{customerId}/save")
-    public ResponseEntity save(@PathVariable("customerId") String customerId) {
+    public ResponseEntity saveByCustomerId(@PathVariable("customerId") String customerId) {
     }
 
     @ApiOperation(value = "客户", tags = {"客户" },  notes = "客户")

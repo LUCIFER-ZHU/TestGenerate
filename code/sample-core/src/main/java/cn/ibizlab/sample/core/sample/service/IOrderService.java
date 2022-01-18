@@ -69,6 +69,9 @@ public interface IOrderService extends IService<Order> {
     List<Order> selectByCustomerId(String customerId);
     boolean removeByCustomerId(String customerId);
     boolean resetByCustomerId(String customerId);
-    boolean saveByCustomerId(String customerId,List<Order> list);
+    boolean saveByCustomerId(cn.ibizlab.sample.core.sample.domain.Customer customer,List<Order> list);
+    default boolean saveByCustomerId(String customerId,List<Order> list) {
+        return saveByCustomerId(new cn.ibizlab.sample.core.sample.domain.Customer().setCustomerId(customerId),list);
+    }
 
 }

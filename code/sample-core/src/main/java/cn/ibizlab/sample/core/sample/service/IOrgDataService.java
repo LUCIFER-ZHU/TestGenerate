@@ -57,12 +57,15 @@ public interface IOrgDataService extends IService<OrgData> {
     Page<OrgData> searchDefault(OrgDataSearchContext context);
     List<OrgData> listDefault(OrgDataSearchContext context);
 
-    Page<OrgData> searchPORGDATA(OrgDataSearchContext context);
-    List<OrgData> listPORGDATA(OrgDataSearchContext context);
+    Page<OrgData> searchPorgdata(OrgDataSearchContext context);
+    List<OrgData> listPorgdata(OrgDataSearchContext context);
 
     List<OrgData> selectByPorgdataid(String porgdataid);
     boolean removeByPorgdataid(String porgdataid);
     boolean resetByPorgdataid(String porgdataid);
-    boolean saveByPorgdataid(String porgdataid,List<OrgData> list);
+    boolean saveByPorgdataid(cn.ibizlab.sample.core.sample.domain.OrgData orgData,List<OrgData> list);
+    default boolean saveByPorgdataid(String porgdataid,List<OrgData> list) {
+        return saveByPorgdataid(new cn.ibizlab.sample.core.sample.domain.OrgData().setOrgDataId(porgdataid),list);
+    }
 
 }

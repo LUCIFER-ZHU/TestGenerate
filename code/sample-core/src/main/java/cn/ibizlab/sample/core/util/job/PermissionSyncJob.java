@@ -14,6 +14,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
 import org.springframework.util.DigestUtils;
 import java.io.InputStream;
 import java.util.*;
@@ -26,10 +27,10 @@ import java.util.*;
 @ConditionalOnProperty( name = "ibiz.enablePermissionValid", havingValue = "true")
 public class PermissionSyncJob implements ApplicationRunner {
 
-    @Value("${ ibiz.systemid:Sample }")
+    @Value("${ibiz.systemid}")
     private String systemId;
     
-    @Value("${ ibiz.systemname:后台体系 }")
+    @Value("${ibiz.systemname}")
     private String systemName;
 
     @Autowired
@@ -57,8 +58,8 @@ public class PermissionSyncJob implements ApplicationRunner {
             if (!ObjectUtils.isEmpty(permission)) {
                 String strPermission = IOUtils.toString(permission, "UTF-8");
                 JSONObject system = new JSONObject();
-                system.put("pssystemid", systemId);
-                system.put("pssystemname", systemName);
+                system.put("pssystemid", StringUtils.isEmpty(systemId)?"Sample":systemId);
+                system.put("pssystemname", StringUtils.isEmpty(systemName)?"示例系统":systemName);
                 system.put("sysstructure", JSONObject.parseObject(strPermission));
                 system.put("md5check", DigestUtils.md5DigestAsHex(strPermission.getBytes()));
                 if (uaaClient.syncSysAuthority(system)) {
@@ -72,7 +73,7 @@ public class PermissionSyncJob implements ApplicationRunner {
         }
 
         try {
-            InputStream model = this.getClass().getResourceAsStream("/sysmodel/${sys.codeName}.json"); //系统模型
+            InputStream model = this.getClass().getResourceAsStream("/sysmodel/Sample.json"); //系统模型
             if (!ObjectUtils.isEmpty(model)) {
                 String strModel = IOUtils.toString(model, "UTF-8");
                 if (liteClient.syncSysModel(JSONObject.parseObject(strModel))) {

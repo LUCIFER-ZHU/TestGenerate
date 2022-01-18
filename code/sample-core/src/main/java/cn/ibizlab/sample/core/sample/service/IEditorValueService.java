@@ -60,26 +60,41 @@ public interface IEditorValueService extends IService<EditorValue> {
     List<EditorValue> selectByCustomerId(String customerId);
     boolean removeByCustomerId(String customerId);
     boolean resetByCustomerId(String customerId);
-    boolean saveByCustomerId(String customerId,List<EditorValue> list);
+    boolean saveByCustomerId(cn.ibizlab.sample.core.sample.domain.Customer customer,List<EditorValue> list);
+    default boolean saveByCustomerId(String customerId,List<EditorValue> list) {
+        return saveByCustomerId(new cn.ibizlab.sample.core.sample.domain.Customer().setCustomerId(customerId),list);
+    }
 
     List<EditorValue> selectByCustomerid2(String customerid2);
     boolean removeByCustomerid2(String customerid2);
     boolean resetByCustomerid2(String customerid2);
-    boolean saveByCustomerid2(String customerid2,List<EditorValue> list);
+    boolean saveByCustomerid2(cn.ibizlab.sample.core.sample.domain.Customer customer,List<EditorValue> list);
+    default boolean saveByCustomerid2(String customerid2,List<EditorValue> list) {
+        return saveByCustomerid2(new cn.ibizlab.sample.core.sample.domain.Customer().setCustomerId(customerid2),list);
+    }
 
     List<EditorValue> selectByCustomerid3(String customerid3);
     boolean removeByCustomerid3(String customerid3);
     boolean resetByCustomerid3(String customerid3);
-    boolean saveByCustomerid3(String customerid3,List<EditorValue> list);
+    boolean saveByCustomerid3(cn.ibizlab.sample.core.sample.domain.Customer customer,List<EditorValue> list);
+    default boolean saveByCustomerid3(String customerid3,List<EditorValue> list) {
+        return saveByCustomerid3(new cn.ibizlab.sample.core.sample.domain.Customer().setCustomerId(customerid3),list);
+    }
 
     List<EditorValue> selectByCustomerid4(String customerid4);
     boolean removeByCustomerid4(String customerid4);
     boolean resetByCustomerid4(String customerid4);
-    boolean saveByCustomerid4(String customerid4,List<EditorValue> list);
+    boolean saveByCustomerid4(cn.ibizlab.sample.core.sample.domain.Customer customer,List<EditorValue> list);
+    default boolean saveByCustomerid4(String customerid4,List<EditorValue> list) {
+        return saveByCustomerid4(new cn.ibizlab.sample.core.sample.domain.Customer().setCustomerId(customerid4),list);
+    }
 
     List<EditorValue> selectByCustomerid5(String customerid5);
     boolean removeByCustomerid5(String customerid5);
     boolean resetByCustomerid5(String customerid5);
-    boolean saveByCustomerid5(String customerid5,List<EditorValue> list);
+    boolean saveByCustomerid5(cn.ibizlab.sample.core.sample.domain.Customer customer,List<EditorValue> list);
+    default boolean saveByCustomerid5(String customerid5,List<EditorValue> list) {
+        return saveByCustomerid5(new cn.ibizlab.sample.core.sample.domain.Customer().setCustomerId(customerid5),list);
+    }
 
 }

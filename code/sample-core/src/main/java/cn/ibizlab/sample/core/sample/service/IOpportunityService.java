@@ -60,11 +60,17 @@ public interface IOpportunityService extends IService<Opportunity> {
     List<Opportunity> selectByCustomerId(String customerId);
     boolean removeByCustomerId(String customerId);
     boolean resetByCustomerId(String customerId);
-    boolean saveByCustomerId(String customerId,List<Opportunity> list);
+    boolean saveByCustomerId(cn.ibizlab.sample.core.sample.domain.Customer customer,List<Opportunity> list);
+    default boolean saveByCustomerId(String customerId,List<Opportunity> list) {
+        return saveByCustomerId(new cn.ibizlab.sample.core.sample.domain.Customer().setCustomerId(customerId),list);
+    }
 
     List<Opportunity> selectByPersonDataId(String personDataId);
     boolean removeByPersonDataId(String personDataId);
     boolean resetByPersonDataId(String personDataId);
-    boolean saveByPersonDataId(String personDataId,List<Opportunity> list);
+    boolean saveByPersonDataId(cn.ibizlab.sample.core.sample.domain.PersonData personData,List<Opportunity> list);
+    default boolean saveByPersonDataId(String personDataId,List<Opportunity> list) {
+        return saveByPersonDataId(new cn.ibizlab.sample.core.sample.domain.PersonData().setPersonDataId(personDataId),list);
+    }
 
 }

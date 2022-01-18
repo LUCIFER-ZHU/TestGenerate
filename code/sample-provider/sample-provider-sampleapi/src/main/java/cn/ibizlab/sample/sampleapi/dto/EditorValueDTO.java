@@ -56,7 +56,8 @@ public class EditorValueDTO extends DTOBase implements Serializable {
      * 建立时间
      */
     @JsonProperty("createdate")
-    @JSONField(name = "createdate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "createdate" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("建立时间")
     private Timestamp createDate;
 
@@ -152,7 +153,8 @@ public class EditorValueDTO extends DTOBase implements Serializable {
      * 时间选择器
      */
     @JsonProperty("datepicker")
-    @JSONField(name = "datepicker")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "datepicker" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("时间选择器")
     private Timestamp datepicker;
 
@@ -160,7 +162,8 @@ public class EditorValueDTO extends DTOBase implements Serializable {
      * 时间选择器（YYYY-MM-DD HH）
      */
     @JsonProperty("datepickerex_hour")
-    @JSONField(name = "datepickerex_hour")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "datepickerex_hour" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("时间选择器（YYYY-MM-DD HH）")
     private Timestamp datepickerexHour;
 
@@ -168,7 +171,8 @@ public class EditorValueDTO extends DTOBase implements Serializable {
      * 时间选择器（YYYY-MM-DD HH:mm）
      */
     @JsonProperty("datepickerex_minute")
-    @JSONField(name = "datepickerex_minute")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "datepickerex_minute" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("时间选择器（YYYY-MM-DD HH:mm）")
     private Timestamp datepickerexMinute;
 
@@ -176,7 +180,8 @@ public class EditorValueDTO extends DTOBase implements Serializable {
      * 时间选择器（HH:mm:ss）
      */
     @JsonProperty("datepickerex_noday")
-    @JSONField(name = "datepickerex_noday")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "datepickerex_noday" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("时间选择器（HH:mm:ss）")
     private Timestamp datepickerexNoday;
 
@@ -184,7 +189,8 @@ public class EditorValueDTO extends DTOBase implements Serializable {
      * 时间选择器（HH:mm）
      */
     @JsonProperty("datepickerex_noday_nosecond")
-    @JSONField(name = "datepickerex_noday_nosecond")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "datepickerex_noday_nosecond" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("时间选择器（HH:mm）")
     private Timestamp datepickerexNodayNosecond;
 
@@ -192,7 +198,8 @@ public class EditorValueDTO extends DTOBase implements Serializable {
      * 时间选择器（YYYY-MM-DD）
      */
     @JsonProperty("datepickerex_notime")
-    @JSONField(name = "datepickerex_notime")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "datepickerex_notime" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("时间选择器（YYYY-MM-DD）")
     private Timestamp datepickerexNotime;
 
@@ -200,7 +207,8 @@ public class EditorValueDTO extends DTOBase implements Serializable {
      * 时间选择器（YYYY-MM-DD HH:mm:ss）
      */
     @JsonProperty("datepickerex_second")
-    @JSONField(name = "datepickerex_second")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "datepickerex_second" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("时间选择器（YYYY-MM-DD HH:mm:ss）")
     private Timestamp datepickerexSecond;
 
@@ -304,7 +312,8 @@ public class EditorValueDTO extends DTOBase implements Serializable {
      * 更新时间
      */
     @JsonProperty("updatedate")
-    @JSONField(name = "updatedate")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "updatedate" , format = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("更新时间")
     private Timestamp updateDate;
 

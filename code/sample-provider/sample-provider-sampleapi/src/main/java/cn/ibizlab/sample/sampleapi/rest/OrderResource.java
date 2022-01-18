@@ -59,17 +59,17 @@ public class OrderResource {
 
     @ApiOperation(value = "订单", tags = {"订单" },  notes = "订单")
     @RequestMapping(method = RequestMethod.GET, value = "/orders/{orderId}")
-    public ResponseEntity get(@PathVariable("orderId") String orderId) {
+    public ResponseEntity getByOrderId(@PathVariable("orderId") String orderId) {
     }
 
     @ApiOperation(value = "订单", tags = {"订单" },  notes = "订单")
     @RequestMapping(method = RequestMethod.DELETE, value = "/orders/{orderId}")
-    public ResponseEntity remove(@PathVariable("orderId") String orderId) {
+    public ResponseEntity removeByOrderId(@PathVariable("orderId") String orderId) {
     }
 
     @ApiOperation(value = "订单", tags = {"订单" },  notes = "订单")
     @RequestMapping(method = RequestMethod.PUT, value = "/orders/{orderId}")
-    public ResponseEntity update(@PathVariable("orderId") String orderId) {
+    public ResponseEntity updateByOrderId(@PathVariable("orderId") String orderId) {
     }
 
     @ApiOperation(value = "订单", tags = {"订单" },  notes = "订单")

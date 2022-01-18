@@ -60,6 +60,9 @@ public interface IDistrictService extends IService<District> {
     List<District> selectByCityId(String cityId);
     boolean removeByCityId(String cityId);
     boolean resetByCityId(String cityId);
-    boolean saveByCityId(String cityId,List<District> list);
+    boolean saveByCityId(cn.ibizlab.sample.core.sample.domain.City city,List<District> list);
+    default boolean saveByCityId(String cityId,List<District> list) {
+        return saveByCityId(new cn.ibizlab.sample.core.sample.domain.City().setCityId(cityId),list);
+    }
 
 }

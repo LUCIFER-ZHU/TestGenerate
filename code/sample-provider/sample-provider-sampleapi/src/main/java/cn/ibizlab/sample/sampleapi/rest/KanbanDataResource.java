@@ -59,17 +59,17 @@ public class KanbanDataResource {
 
     @ApiOperation(value = "看板数据", tags = {"看板数据" },  notes = "看板数据")
     @RequestMapping(method = RequestMethod.GET, value = "/kanbandatas/{kanbanDataId}")
-    public ResponseEntity get(@PathVariable("kanbanDataId") String kanbanDataId) {
+    public ResponseEntity getByKanbanDataId(@PathVariable("kanbanDataId") String kanbanDataId) {
     }
 
     @ApiOperation(value = "看板数据", tags = {"看板数据" },  notes = "看板数据")
     @RequestMapping(method = RequestMethod.DELETE, value = "/kanbandatas/{kanbanDataId}")
-    public ResponseEntity remove(@PathVariable("kanbanDataId") String kanbanDataId) {
+    public ResponseEntity removeByKanbanDataId(@PathVariable("kanbanDataId") String kanbanDataId) {
     }
 
     @ApiOperation(value = "看板数据", tags = {"看板数据" },  notes = "看板数据")
     @RequestMapping(method = RequestMethod.PUT, value = "/kanbandatas/{kanbanDataId}")
-    public ResponseEntity update(@PathVariable("kanbanDataId") String kanbanDataId) {
+    public ResponseEntity updateByKanbanDataId(@PathVariable("kanbanDataId") String kanbanDataId) {
     }
 
     @ApiOperation(value = "看板数据", tags = {"看板数据" },  notes = "看板数据")
@@ -84,7 +84,7 @@ public class KanbanDataResource {
 
     @ApiOperation(value = "看板数据", tags = {"看板数据" },  notes = "看板数据")
     @RequestMapping(method = RequestMethod.POST, value = "/kanbandatas/{kanbanDataId}/save")
-    public ResponseEntity save(@PathVariable("kanbanDataId") String kanbanDataId) {
+    public ResponseEntity saveByKanbanDataId(@PathVariable("kanbanDataId") String kanbanDataId) {
     }
 
     @ApiOperation(value = "看板数据", tags = {"看板数据" },  notes = "看板数据")

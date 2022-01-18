@@ -59,17 +59,17 @@ public class SampleVerResource {
 
     @ApiOperation(value = "示例版本", tags = {"示例版本" },  notes = "示例版本")
     @RequestMapping(method = RequestMethod.GET, value = "/samplevers/{sampleVerId}")
-    public ResponseEntity get(@PathVariable("sampleVerId") String sampleVerId) {
+    public ResponseEntity getBySampleVerId(@PathVariable("sampleVerId") String sampleVerId) {
     }
 
     @ApiOperation(value = "示例版本", tags = {"示例版本" },  notes = "示例版本")
     @RequestMapping(method = RequestMethod.DELETE, value = "/samplevers/{sampleVerId}")
-    public ResponseEntity remove(@PathVariable("sampleVerId") String sampleVerId) {
+    public ResponseEntity removeBySampleVerId(@PathVariable("sampleVerId") String sampleVerId) {
     }
 
     @ApiOperation(value = "示例版本", tags = {"示例版本" },  notes = "示例版本")
     @RequestMapping(method = RequestMethod.PUT, value = "/samplevers/{sampleVerId}")
-    public ResponseEntity update(@PathVariable("sampleVerId") String sampleVerId) {
+    public ResponseEntity updateBySampleVerId(@PathVariable("sampleVerId") String sampleVerId) {
     }
 
     @ApiOperation(value = "示例版本", tags = {"示例版本" },  notes = "示例版本")
@@ -84,7 +84,7 @@ public class SampleVerResource {
 
     @ApiOperation(value = "示例版本", tags = {"示例版本" },  notes = "示例版本")
     @RequestMapping(method = RequestMethod.POST, value = "/samplevers/{sampleVerId}/save")
-    public ResponseEntity save(@PathVariable("sampleVerId") String sampleVerId) {
+    public ResponseEntity saveBySampleVerId(@PathVariable("sampleVerId") String sampleVerId) {
     }
 
     @ApiOperation(value = "示例版本", tags = {"示例版本" },  notes = "示例版本")
@@ -102,7 +102,7 @@ public class SampleVerResource {
     @ApiOperation(value = "示例版本", tags = {"示例版本" },  notes = "示例版本")
     @RequestMapping(method = RequestMethod.POST, value = "/samplevers/fetchjavar7d")
     public ResponseEntity fetchJavar7D() {
-        Page<SampleVer> domains = sampleVerService.searchJAVAR7D() ;
+        Page<SampleVer> domains = sampleVerService.searchJavar7D() ;
             List<> list = Mapping.toDto(domains.getContent());
             return ResponseEntity.status(HttpStatus.OK)
             .header("x-page", String.valueOf(.getPageable().getPageNumber()))
@@ -114,7 +114,7 @@ public class SampleVerResource {
     @ApiOperation(value = "示例版本", tags = {"示例版本" },  notes = "示例版本")
     @RequestMapping(method = RequestMethod.POST, value = "/samplevers/fetchmobr7d")
     public ResponseEntity fetchMobr7D() {
-        Page<SampleVer> domains = sampleVerService.searchMOBR7D() ;
+        Page<SampleVer> domains = sampleVerService.searchMobr7D() ;
             List<> list = Mapping.toDto(domains.getContent());
             return ResponseEntity.status(HttpStatus.OK)
             .header("x-page", String.valueOf(.getPageable().getPageNumber()))
@@ -126,7 +126,7 @@ public class SampleVerResource {
     @ApiOperation(value = "示例版本", tags = {"示例版本" },  notes = "示例版本")
     @RequestMapping(method = RequestMethod.POST, value = "/samplevers/fetchwebr7d")
     public ResponseEntity fetchWebr7D() {
-        Page<SampleVer> domains = sampleVerService.searchWEBR7D() ;
+        Page<SampleVer> domains = sampleVerService.searchWebr7D() ;
             List<> list = Mapping.toDto(domains.getContent());
             return ResponseEntity.status(HttpStatus.OK)
             .header("x-page", String.valueOf(.getPageable().getPageNumber()))

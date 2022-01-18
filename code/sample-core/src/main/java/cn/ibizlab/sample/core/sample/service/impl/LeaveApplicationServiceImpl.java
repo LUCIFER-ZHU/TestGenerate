@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,26 +34,31 @@ import cn.ibizlab.sample.core.sample.service.ILeaveApplicationService;
 import cn.ibizlab.sample.core.sample.mapper.LeaveApplicationMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.Customer;
+import cn.ibizlab.sample.core.sample.service.ICustomerService;   
 
 
 /**
  * 实体[请假申请] 服务对象接口实现
  */
 @Slf4j
-@Service("LeaveApplicationServiceImpl")
+@Service("LeaveApplicationService")
 public class LeaveApplicationServiceImpl extends ServiceImpl<LeaveApplicationMapper,LeaveApplication> implements ILeaveApplicationService {
 
-    protected ILeaveApplicationService leaveApplicationService = SpringContextHolder.getBean(this.getClass());
+    protected ILeaveApplicationService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.ICustomerService customerService;
+    protected ICustomerService customerService;
    
 
     protected int batchSize = 500;
@@ -60,7 +66,7 @@ public class LeaveApplicationServiceImpl extends ServiceImpl<LeaveApplicationMap
     public LeaveApplication get(LeaveApplication et) {
         LeaveApplication rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,请假申请:"+et.getLeaveApplicationId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -69,7 +75,12 @@ public class LeaveApplicationServiceImpl extends ServiceImpl<LeaveApplicationMap
     }
 
     public void fillParentData(LeaveApplication et) {
-        
+        if(!ObjectUtils.isEmpty(et.getCustomerId())) {
+            Customer customer = et.getCustomer();
+            if(!ObjectUtils.isEmpty(customer)) {
+                et.setCustomerName(customer.getCustomerName());   
+            }
+        }    
     }
 
     public LeaveApplication getDraft(LeaveApplication et) {
@@ -119,9 +130,9 @@ public class LeaveApplicationServiceImpl extends ServiceImpl<LeaveApplicationMap
     @Transactional
     public boolean save(LeaveApplication et) {
         if(checkKey(et))
-            return leaveApplicationService.update(et);
+            return getProxyService().update(et);
         else
-            return leaveApplicationService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -143,9 +154,9 @@ public class LeaveApplicationServiceImpl extends ServiceImpl<LeaveApplicationMap
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!leaveApplicationService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!leaveApplicationService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -243,17 +254,18 @@ public class LeaveApplicationServiceImpl extends ServiceImpl<LeaveApplicationMap
         return this.update(new UpdateWrapper<LeaveApplication>().set("customerid",null).eq("customerid",customerId));
     }
 
-    public boolean saveByCustomerId(String customerId,List<LeaveApplication> list) {
+    public boolean saveByCustomerId(Customer customer,List<LeaveApplication> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<LeaveApplication> _update=new ArrayList<LeaveApplication>();
         List<LeaveApplication> _create=new ArrayList<LeaveApplication>();
-        for(LeaveApplication before:selectByCustomerId(customerId)){
+        for(LeaveApplication before:selectByCustomerId(customer.getCustomerId())){
             delIds.add(before.getLeaveApplicationId());
         }
         for(LeaveApplication sub:list) {
-            sub.setCustomerId(customerId);
+            sub.setCustomerId(customer.getCustomerId());
+            sub.setCustomer(customer);
             if(ObjectUtils.isEmpty(sub.getLeaveApplicationId()))
                 sub.setLeaveApplicationId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getLeaveApplicationId())) {
@@ -263,14 +275,16 @@ public class LeaveApplicationServiceImpl extends ServiceImpl<LeaveApplicationMap
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!leaveApplicationService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!leaveApplicationService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!leaveApplicationService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

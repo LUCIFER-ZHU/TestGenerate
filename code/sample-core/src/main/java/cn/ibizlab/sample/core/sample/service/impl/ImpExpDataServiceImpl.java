@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,26 +34,31 @@ import cn.ibizlab.sample.core.sample.service.IImpExpDataService;
 import cn.ibizlab.sample.core.sample.mapper.ImpExpDataMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.Customer;
+import cn.ibizlab.sample.core.sample.service.ICustomerService;   
 
 
 /**
  * 实体[导入导出数据] 服务对象接口实现
  */
 @Slf4j
-@Service("ImpExpDataServiceImpl")
+@Service("ImpExpDataService")
 public class ImpExpDataServiceImpl extends ServiceImpl<ImpExpDataMapper,ImpExpData> implements IImpExpDataService {
 
-    protected IImpExpDataService impExpDataService = SpringContextHolder.getBean(this.getClass());
+    protected IImpExpDataService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.ICustomerService customerService;
+    protected ICustomerService customerService;
    
 
     protected int batchSize = 500;
@@ -60,7 +66,7 @@ public class ImpExpDataServiceImpl extends ServiceImpl<ImpExpDataMapper,ImpExpDa
     public ImpExpData get(ImpExpData et) {
         ImpExpData rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,导入导出数据:"+et.getImpExpDataId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -69,7 +75,12 @@ public class ImpExpDataServiceImpl extends ServiceImpl<ImpExpDataMapper,ImpExpDa
     }
 
     public void fillParentData(ImpExpData et) {
-        
+        if(!ObjectUtils.isEmpty(et.getCustomerId())) {
+            Customer customer = et.getCustomer();
+            if(!ObjectUtils.isEmpty(customer)) {
+                et.setCustomerName(customer.getCustomerName());   
+            }
+        }    
     }
 
     public ImpExpData getDraft(ImpExpData et) {
@@ -119,9 +130,9 @@ public class ImpExpDataServiceImpl extends ServiceImpl<ImpExpDataMapper,ImpExpDa
     @Transactional
     public boolean save(ImpExpData et) {
         if(checkKey(et))
-            return impExpDataService.update(et);
+            return getProxyService().update(et);
         else
-            return impExpDataService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -143,9 +154,9 @@ public class ImpExpDataServiceImpl extends ServiceImpl<ImpExpDataMapper,ImpExpDa
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!impExpDataService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!impExpDataService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -189,17 +200,18 @@ public class ImpExpDataServiceImpl extends ServiceImpl<ImpExpDataMapper,ImpExpDa
         return this.update(new UpdateWrapper<ImpExpData>().set("customerid",null).eq("customerid",customerId));
     }
 
-    public boolean saveByCustomerId(String customerId,List<ImpExpData> list) {
+    public boolean saveByCustomerId(Customer customer,List<ImpExpData> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<ImpExpData> _update=new ArrayList<ImpExpData>();
         List<ImpExpData> _create=new ArrayList<ImpExpData>();
-        for(ImpExpData before:selectByCustomerId(customerId)){
+        for(ImpExpData before:selectByCustomerId(customer.getCustomerId())){
             delIds.add(before.getImpExpDataId());
         }
         for(ImpExpData sub:list) {
-            sub.setCustomerId(customerId);
+            sub.setCustomerId(customer.getCustomerId());
+            sub.setCustomer(customer);
             if(ObjectUtils.isEmpty(sub.getImpExpDataId()))
                 sub.setImpExpDataId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getImpExpDataId())) {
@@ -209,14 +221,16 @@ public class ImpExpDataServiceImpl extends ServiceImpl<ImpExpDataMapper,ImpExpDa
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!impExpDataService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!impExpDataService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!impExpDataService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,26 +34,31 @@ import cn.ibizlab.sample.core.sample.service.ICityService;
 import cn.ibizlab.sample.core.sample.mapper.CityMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.Province;
+import cn.ibizlab.sample.core.sample.service.IProvinceService;   
 
 
 /**
  * 实体[市] 服务对象接口实现
  */
 @Slf4j
-@Service("CityServiceImpl")
+@Service("CityService")
 public class CityServiceImpl extends ServiceImpl<CityMapper,City> implements ICityService {
 
-    protected ICityService cityService = SpringContextHolder.getBean(this.getClass());
+    protected ICityService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.IProvinceService provinceService;
+    protected IProvinceService provinceService;
    
 
     protected int batchSize = 500;
@@ -60,7 +66,7 @@ public class CityServiceImpl extends ServiceImpl<CityMapper,City> implements ICi
     public City get(City et) {
         City rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,市:"+et.getCityId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -69,7 +75,12 @@ public class CityServiceImpl extends ServiceImpl<CityMapper,City> implements ICi
     }
 
     public void fillParentData(City et) {
-        
+        if(!ObjectUtils.isEmpty(et.getProvinceId())) {
+            Province province = et.getProvince();
+            if(!ObjectUtils.isEmpty(province)) {
+                et.setProvinceName(province.getProvinceName());   
+            }
+        }    
     }
 
     public City getDraft(City et) {
@@ -119,9 +130,9 @@ public class CityServiceImpl extends ServiceImpl<CityMapper,City> implements ICi
     @Transactional
     public boolean save(City et) {
         if(checkKey(et))
-            return cityService.update(et);
+            return getProxyService().update(et);
         else
-            return cityService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -143,9 +154,9 @@ public class CityServiceImpl extends ServiceImpl<CityMapper,City> implements ICi
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!cityService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!cityService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -189,17 +200,18 @@ public class CityServiceImpl extends ServiceImpl<CityMapper,City> implements ICi
         return this.update(new UpdateWrapper<City>().set("provinceid",null).eq("provinceid",provinceId));
     }
 
-    public boolean saveByProvinceId(String provinceId,List<City> list) {
+    public boolean saveByProvinceId(Province province,List<City> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<City> _update=new ArrayList<City>();
         List<City> _create=new ArrayList<City>();
-        for(City before:selectByProvinceId(provinceId)){
+        for(City before:selectByProvinceId(province.getProvinceId())){
             delIds.add(before.getCityId());
         }
         for(City sub:list) {
-            sub.setProvinceId(provinceId);
+            sub.setProvinceId(province.getProvinceId());
+            sub.setProvince(province);
             if(ObjectUtils.isEmpty(sub.getCityId()))
                 sub.setCityId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getCityId())) {
@@ -209,14 +221,16 @@ public class CityServiceImpl extends ServiceImpl<CityMapper,City> implements ICi
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!cityService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!cityService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!cityService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

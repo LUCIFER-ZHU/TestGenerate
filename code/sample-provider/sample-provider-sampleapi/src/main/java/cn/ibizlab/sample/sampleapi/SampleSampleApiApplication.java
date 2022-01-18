@@ -23,22 +23,21 @@ import java.util.List;
 @EnableDiscoveryClient
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = {"cn.ibizlab.sample"}
+@ComponentScan(basePackages = {"cn.ibizlab.sample","cn.ibizlab.util"}
 //        ,excludeFilters={
-//                @ComponentScan.Filter(type= org.springframework.context.annotation.FilterType.REGEX,pattern="cn.ibizlab.sample.${item.codeName?lower_case}.rest.xxx"),
+//                @ComponentScan.Filter(type= org.springframework.context.annotation.FilterType.REGEX,pattern="cn.ibizlab.sample.sampleapi.rest.xxx"),
 //        }
 )
 @EnableMongoRepositories(basePackages = {"cn.ibizlab.sample"})
-@MapperScan("cn.ibizlab.sample.*.mapper")
+@MapperScan({"cn.ibizlab.sample.*.mapper","cn.ibizlab.util.mapper" })
 @SpringBootApplication(exclude = {
         org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class,
             org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration.class,
-            com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure.class
 })
 @Import({
         org.springframework.cloud.openfeign.FeignClientsConfiguration.class
 })
-@EnableFeignClients(basePackages = {"cn.ibizlab.sample" })
+@EnableFeignClients(basePackages = {"cn.ibizlab.sample","cn.ibizlab.util" })
 @EnableAsync
 @EnableScheduling
 public class SampleSampleApiApplication extends WebMvcConfigurerAdapter{

@@ -52,7 +52,7 @@
         ]]>    
     </sql>
 
-    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.CategorySearchContext"  resultType="CategoryResultMap">
+    <select id="searchDefault"  parameterType="cn.ibizlab.sample.core.sample.filter.CategorySearchContext"  resultMap="CategoryResultMap">
         select t1.* 
         from (
             <include refid="default"/>
@@ -63,7 +63,7 @@
             
     </select>
     
-    <select id="searchRoot"  parameterType="cn.ibizlab.sample.core.sample.filter.CategorySearchContext"  resultType="CategoryResultMap">
+    <select id="searchRoot"  parameterType="cn.ibizlab.sample.core.sample.filter.CategorySearchContext"  resultMap="CategoryResultMap">
         select t1.* 
         from (
             <include refid="root"/>

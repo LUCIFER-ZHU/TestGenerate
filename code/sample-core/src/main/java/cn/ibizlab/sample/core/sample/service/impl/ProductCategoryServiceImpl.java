@@ -23,6 +23,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.util.Assert;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Value;
 import cn.ibizlab.util.errors.BadRequestAlertException;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,30 +34,37 @@ import cn.ibizlab.sample.core.sample.service.IProductCategoryService;
 import cn.ibizlab.sample.core.sample.mapper.ProductCategoryMapper;
 import cn.ibizlab.util.helper.CachedBeanCopier;
 import cn.ibizlab.util.helper.DEFieldCacheMap;
+import cn.ibizlab.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import cn.ibizlab.sample.core.sample.domain.Category;
+import cn.ibizlab.sample.core.sample.service.ICategoryService;   
+import cn.ibizlab.sample.core.sample.domain.Product;
+import cn.ibizlab.sample.core.sample.service.IProductService;   
 
 
 /**
  * 实体[产品类别] 服务对象接口实现
  */
 @Slf4j
-@Service("ProductCategoryServiceImpl")
+@Service("ProductCategoryService")
 public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMapper,ProductCategory> implements IProductCategoryService {
 
-    protected IProductCategoryService productCategoryService = SpringContextHolder.getBean(this.getClass());
+    protected IProductCategoryService getProxyService() {
+        return SpringContextHolder.getBean(this.getClass());
+    }
 
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.ICategoryService categoryService;
+    protected ICategoryService categoryService;
    
     @Autowired
     @Lazy
-    protected cn.ibizlab.sample.core.sample.service.IProductService productService;
+    protected IProductService productService;
    
 
     protected int batchSize = 500;
@@ -64,7 +72,7 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
     public ProductCategory get(ProductCategory et) {
         ProductCategory rt = this.baseMapper.selectEntity(et);
         Assert.notNull(rt,"数据不存在,产品类别:"+et.getProductCategoryId());
-        CachedBeanCopier.copy(rt, et);
+        BeanUtils.copyProperties(rt, et);
         return et;
     }
     
@@ -73,7 +81,18 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
     }
 
     public void fillParentData(ProductCategory et) {
-        
+        if(!ObjectUtils.isEmpty(et.getCategoryId())) {
+            Category category = et.getCategory();
+            if(!ObjectUtils.isEmpty(category)) {
+                et.setCategoryName(category.getCategoryName());   
+            }
+        }    
+        if(!ObjectUtils.isEmpty(et.getProductId())) {
+            Product product = et.getProduct();
+            if(!ObjectUtils.isEmpty(product)) {
+                et.setProductName(product.getProductName());   
+            }
+        }    
     }
 
     public ProductCategory getDraft(ProductCategory et) {
@@ -123,9 +142,9 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
     @Transactional
     public boolean save(ProductCategory et) {
         if(checkKey(et))
-            return productCategoryService.update(et);
+            return getProxyService().update(et);
         else
-            return productCategoryService.create(et);
+            return getProxyService().create(et);
     }
 
     @Transactional
@@ -147,9 +166,9 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
                 _create.add(et);
         });
         List rtList=new ArrayList<>();
-        if(_update.size()>0 && (!productCategoryService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!productCategoryService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
         return true;
     }
@@ -193,17 +212,18 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
         return this.update(new UpdateWrapper<ProductCategory>().set("categoryid",null).eq("categoryid",categoryId));
     }
 
-    public boolean saveByCategoryId(String categoryId,List<ProductCategory> list) {
+    public boolean saveByCategoryId(Category category,List<ProductCategory> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<ProductCategory> _update=new ArrayList<ProductCategory>();
         List<ProductCategory> _create=new ArrayList<ProductCategory>();
-        for(ProductCategory before:selectByCategoryId(categoryId)){
+        for(ProductCategory before:selectByCategoryId(category.getCategoryId())){
             delIds.add(before.getProductCategoryId());
         }
         for(ProductCategory sub:list) {
-            sub.setCategoryId(categoryId);
+            sub.setCategoryId(category.getCategoryId());
+            sub.setCategory(category);
             if(ObjectUtils.isEmpty(sub.getProductCategoryId()))
                 sub.setProductCategoryId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getProductCategoryId())) {
@@ -213,11 +233,11 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!productCategoryService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!productCategoryService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!productCategoryService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
@@ -234,17 +254,18 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
         return this.update(new UpdateWrapper<ProductCategory>().set("productid",null).eq("productid",productId));
     }
 
-    public boolean saveByProductId(String productId,List<ProductCategory> list) {
+    public boolean saveByProductId(Product product,List<ProductCategory> list) {
         if(list==null)
             return true;
         Set<String> delIds=new HashSet<String>();
         List<ProductCategory> _update=new ArrayList<ProductCategory>();
         List<ProductCategory> _create=new ArrayList<ProductCategory>();
-        for(ProductCategory before:selectByProductId(productId)){
+        for(ProductCategory before:selectByProductId(product.getProductId())){
             delIds.add(before.getProductCategoryId());
         }
         for(ProductCategory sub:list) {
-            sub.setProductId(productId);
+            sub.setProductId(product.getProductId());
+            sub.setProduct(product);
             if(ObjectUtils.isEmpty(sub.getProductCategoryId()))
                 sub.setProductCategoryId((String)sub.getDefaultKey(true));
             if(delIds.contains(sub.getProductCategoryId())) {
@@ -254,14 +275,16 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
             else
                 _create.add(sub);
         }
-        if(_update.size()>0 && (!productCategoryService.updateBatch(_update)))
+        if(_update.size()>0 && (!getProxyService().updateBatch(_update)))
             return false;
-        if(_create.size()>0 && (!productCategoryService.createBatch(_create)))
+        if(_create.size()>0 && (!getProxyService().createBatch(_create)))
             return false;
-        if(delIds.size()>0 && (!productCategoryService.removeBatch(delIds)))
+        if(delIds.size()>0 && (!getProxyService().removeBatch(delIds)))
             return false;
         return true;
     }
+
+
 
 
 }

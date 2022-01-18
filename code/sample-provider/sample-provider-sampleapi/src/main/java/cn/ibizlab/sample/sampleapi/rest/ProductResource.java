@@ -59,17 +59,17 @@ public class ProductResource {
 
     @ApiOperation(value = "产品", tags = {"产品" },  notes = "产品")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{productId}")
-    public ResponseEntity get(@PathVariable("productId") String productId) {
+    public ResponseEntity getByProductId(@PathVariable("productId") String productId) {
     }
 
     @ApiOperation(value = "产品", tags = {"产品" },  notes = "产品")
     @RequestMapping(method = RequestMethod.DELETE, value = "/products/{productId}")
-    public ResponseEntity remove(@PathVariable("productId") String productId) {
+    public ResponseEntity removeByProductId(@PathVariable("productId") String productId) {
     }
 
     @ApiOperation(value = "产品", tags = {"产品" },  notes = "产品")
     @RequestMapping(method = RequestMethod.PUT, value = "/products/{productId}")
-    public ResponseEntity update(@PathVariable("productId") String productId) {
+    public ResponseEntity updateByProductId(@PathVariable("productId") String productId) {
     }
 
     @ApiOperation(value = "产品", tags = {"产品" },  notes = "产品")
@@ -84,7 +84,7 @@ public class ProductResource {
 
     @ApiOperation(value = "产品", tags = {"产品" },  notes = "产品")
     @RequestMapping(method = RequestMethod.POST, value = "/products/{productId}/save")
-    public ResponseEntity save(@PathVariable("productId") String productId) {
+    public ResponseEntity saveByProductId(@PathVariable("productId") String productId) {
     }
 
     @ApiOperation(value = "产品", tags = {"产品" },  notes = "产品")

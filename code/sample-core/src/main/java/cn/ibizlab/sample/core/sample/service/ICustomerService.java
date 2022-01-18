@@ -63,21 +63,33 @@ public interface ICustomerService extends IService<Customer> {
     List<Customer> selectByCityId(String cityId);
     boolean removeByCityId(String cityId);
     boolean resetByCityId(String cityId);
-    boolean saveByCityId(String cityId,List<Customer> list);
+    boolean saveByCityId(cn.ibizlab.sample.core.sample.domain.City city,List<Customer> list);
+    default boolean saveByCityId(String cityId,List<Customer> list) {
+        return saveByCityId(new cn.ibizlab.sample.core.sample.domain.City().setCityId(cityId),list);
+    }
 
     List<Customer> selectByPcustomerid(String pcustomerid);
     boolean removeByPcustomerid(String pcustomerid);
     boolean resetByPcustomerid(String pcustomerid);
-    boolean saveByPcustomerid(String pcustomerid,List<Customer> list);
+    boolean saveByPcustomerid(cn.ibizlab.sample.core.sample.domain.Customer customer,List<Customer> list);
+    default boolean saveByPcustomerid(String pcustomerid,List<Customer> list) {
+        return saveByPcustomerid(new cn.ibizlab.sample.core.sample.domain.Customer().setCustomerId(pcustomerid),list);
+    }
 
     List<Customer> selectByDistrictId(String districtId);
     boolean removeByDistrictId(String districtId);
     boolean resetByDistrictId(String districtId);
-    boolean saveByDistrictId(String districtId,List<Customer> list);
+    boolean saveByDistrictId(cn.ibizlab.sample.core.sample.domain.District district,List<Customer> list);
+    default boolean saveByDistrictId(String districtId,List<Customer> list) {
+        return saveByDistrictId(new cn.ibizlab.sample.core.sample.domain.District().setDistrictId(districtId),list);
+    }
 
     List<Customer> selectByProvinceId(String provinceId);
     boolean removeByProvinceId(String provinceId);
     boolean resetByProvinceId(String provinceId);
-    boolean saveByProvinceId(String provinceId,List<Customer> list);
+    boolean saveByProvinceId(cn.ibizlab.sample.core.sample.domain.Province province,List<Customer> list);
+    default boolean saveByProvinceId(String provinceId,List<Customer> list) {
+        return saveByProvinceId(new cn.ibizlab.sample.core.sample.domain.Province().setProvinceId(provinceId),list);
+    }
 
 }
