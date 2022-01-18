@@ -393,7 +393,7 @@ export class FormControl extends MainControl {
     }
 
     return {
-      load: loadDraft,
+      loadDraft: loadDraft,
     };
   }
 

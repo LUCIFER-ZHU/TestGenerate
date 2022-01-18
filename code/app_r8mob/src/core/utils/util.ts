@@ -68,6 +68,16 @@ export function isExist(arg: any): boolean{
 }
 
 /**
+ * @description 是否为空
+ * @export
+ * @param {*} value
+ * @return {*}  {boolean}
+ */
+export function isEmpty(value: any): boolean {
+  return typeof value === 'undefined' || value === '' || value === null || value !== value;
+}
+
+/**
  * @description 除undefined，null,NaN,空字符串以外都为true
  * @export
  * @param {*} arg

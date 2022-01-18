@@ -1,4 +1,4 @@
-import { GridViewProps, GridViewState, MDView } from '@core';
+import { GridViewState, IActionParam, IParam, MDView } from '@core';
 
 /**
  * @description 表格视图
@@ -8,38 +8,71 @@ import { GridViewProps, GridViewState, MDView } from '@core';
  */
 export class GridView extends MDView {
 
-  /**
-   * @description 视图状态
-   * @type {EditViewState}
-   * @memberof GridView
-   */
-  public declare viewState: GridViewState;
+/**
+ * 视图状态数据
+ *
+ * @type {GridViewState}
+ * @memberof GridView
+ */
+public declare state: GridViewState;
 
   /**
-   * @description 使用加载功能模块
-   * @param {GridViewProps} props 传入的props
+   * 当前视图表格部件
+   *
+   * @type {IParam}
    * @memberof GridView
    */
-  public useLoad(props: GridViewProps){
-    const { viewSubject } = this.viewState;
-    onMounted(()=>{
-      viewSubject.next({tag: 'grid', action: "load", data: {}})
-    })
+  public declare grid: IParam;
+
+  /**
+   * @description 处理视图初始化
+   *
+   * @memberof GridView
+   */
+  public useViewInit() {
+    super.useViewInit();
+    // 初始化搜索表格引用
+    this.grid = ref(null);
+  }
+
+  /**
+   * 处理部件事件
+   *
+   * @param {IActionParam} actionParam
+   * @memberof MDView
+   */
+  public handleCtrlEvent(actionParam: IActionParam) {
+    const { tag, action, data } = actionParam;
+    if (Object.is(tag, 'grid')) {
+      this.MDCtrlEvent(action, data);
+    }
+    super.handleCtrlEvent(actionParam);
+  }
+
+  /**
+   *  获取多数据部件
+   *
+   * @return {*}  {*}
+   * @memberof GridView
+   */
+  public getMDCtrl(): any {
+    if (this.grid.value) {
+      return this.grid.value;
+    } else {
+      return null;
+    }
   }
 
   /**
    * @description 安装视图所有功能模块的方法
-   * @param {GridViewProps} props 传入的Props
-   * @param {Function} [emit] [emit] 事件
    * @return {*} 
    * @memberof GridView
    */
-  public moduleInstall(props: GridViewProps, emit?: Function) {
-    const superParams = super.moduleInstall(props, emit);
-    this.useLoad(props);
+  public moduleInstall() {
+    const superParams = super.moduleInstall();
     return {
       ...superParams,
-      state: this.viewState,
+      grid: this.grid
     };
   }
 }

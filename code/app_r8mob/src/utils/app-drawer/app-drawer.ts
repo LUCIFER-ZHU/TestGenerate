@@ -2,7 +2,7 @@ import { Subject } from 'rxjs';
 import Router from '@/router';
 import Antd from 'ant-design-vue';
 import AppDrawerComponent from "./app-drawer.vue";
-import IbizLoading from '@components/render/IbizLoading.vue';
+import AppLoading from '@components/render/app-loading.vue';
 import { IParam, ViewDetail } from '@core';
 
 export class AppDrawer {
@@ -62,7 +62,7 @@ export class AppDrawer {
         // 工厂函数
         loader: modules['../../page' + dir + '/index.ts'],
         // 加载异步组件时要使用的组件
-        loadingComponent: IbizLoading,
+        loadingComponent: AppLoading,
         // 在显示 loadingComponent 之前的延迟 | 默认值：200（单位 ms）
         delay: 0,
       });

@@ -1,4 +1,4 @@
-import { deepCopy, deepObjectMerge, ExpBarControl, IParam } from "@core";
+import { deepCopy, ExpBarControl, IActionParam, IParam, UIUtil } from "@core";
 import { TreeExpBarControlProps } from "./tree-exp-bar-control-prop";
 import { TreeExpBarControlState } from "./tree-exp-bar-control-state";
 
@@ -16,23 +16,90 @@ export class TreeExpBarControl extends ExpBarControl {
    */
   public declare controlState: TreeExpBarControlState;
 
-  /**
-   * @description 选中数据
-   * @private
-   * @type {IParam}
-   * @memberof TreeExpBarControl
-   */
-  private selection: IParam = {};
-
-  private computecurNodeContext(curNode: any) {
-    const { context } = this.controlState;
-    let tempContext: any = {};
-    if (curNode && curNode.data && curNode.data.srfappctx) {
-      tempContext = deepCopy(curNode.data.srfappctx);
-    } else {
-      tempContext = deepCopy(context);
+  protected onSelectionChange(args: any[]) {
+    if (args.length == 0) {
+      this.calcToolbarItemState(true);
+      return;
     }
-    return tempContext;
+    const arg: any = args[0];
+    if (!arg.id) {
+      this.calcToolbarItemState(true);
+      return;
+    }
+    const nodeType = arg.id.split(';')[0];
+    // const refView: any = this.get
+    const refView = this.getExpItemView({ nodeType: nodeType });
+    // TODO 选择视图面板支持
+    if (refView) {
+      const { selection } = this.controlState;
+      const { tempContext, tempViewParams } = this.computeNavParams(arg);
+      //  置空
+      Object.assign(selection, {});
+      Object.assign(selection, {
+        viewName: refView.viewName,
+        context: tempContext,
+        viewParams: tempViewParams
+      });
+      this.calcToolbarItemState(false);
+    } else {
+      this.calcToolbarItemState(true);
+    }
+  }
+
+  protected getExpItemView(arg: any = {}): IParam | null {
+    const expMode: string = `EXPITEM:${arg.nodeType}`;
+    const { viewRefs } = this.controlState;
+    if (viewRefs && viewRefs.length > 0) {
+      const viewRef = viewRefs.find((_viewRef: any) => _viewRef.name == expMode);
+      return viewRef ? deepCopy(viewRef) : null;
+    } else {
+      return null;
+    }
+  }
+
+  protected computeNavParams(arg: any): { tempContext: any, tempViewParams: any } {
+    const tempContext: any = {};
+    const tempViewParams: any = {};
+    let { counter, context } = this.controlState;
+    if (arg && arg.navfilter) {
+      Object.defineProperty(tempViewParams, arg.navfilter, {
+        value: arg.srfkey,
+        writable: true,
+        enumerable: true,
+        configurable: true
+      })
+      Object.assign(tempContext, { srfcounter: counter });
+    }
+    Object.assign(tempContext, deepCopy(context));
+    if (arg.srfappctx) {
+      Object.assign(tempContext, deepCopy(arg.srfappctx));
+    }
+    if (arg.srfparentdename) {
+      Object.assign(tempContext, { srfparentdename: arg.srfparentdename });
+    }
+    if (arg.srfparentdemapname) {
+      Object.assign(tempContext, { srfparentdemapname: arg.srfparentdemapname });
+    }
+    if (arg.srfparentkey) {
+      Object.assign(tempContext, { srfparentkey: arg.srfparentkey });
+    }
+    // 计算导航上下文
+    if (arg && arg.navigateContext && Object.keys(arg.navigateContext).length > 0) {
+      let tempData: any = arg.curData ? arg.curData : {};
+      Object.assign(tempData, arg);
+      let _context = UIUtil.computedNavData(tempData, tempContext, tempViewParams, arg.navigateContext);
+      Object.assign(tempContext, _context);
+    }
+    // 计算导航参数
+    if (arg && arg.navigateParams && Object.keys(arg.navigateParams).length > 0) {
+      let tempData: any = arg.curData ? arg.curData : {};
+      Object.assign(tempData, arg);
+      let _params = UIUtil.computedNavData(tempData, tempContext, tempViewParams, arg.navigateParams);
+      Object.assign(tempViewParams, _params);
+      counter += 1;
+      Object.assign(tempContext, { srfcounter: counter });
+    }
+    return { tempContext, tempViewParams };
   }
 
   /**
@@ -41,26 +108,17 @@ export class TreeExpBarControl extends ExpBarControl {
    * @memberof TreeExpBarControl
    */
   public useLoad(props: TreeExpBarControlProps) {
-    const load = async (node: IParam) => {
-      console.log(1111, node);
-      if (node.dataRef.children) {
-        return null;
-      }
-      const {
-        controlService, context, viewParams, srfnodefilter
-      } = this.controlState;
-      let tempViewParams: any = deepCopy(viewParams);
-      let curNode: any = {};
-      curNode = deepObjectMerge(curNode, node);
-      const params: any = {
-        srfnodeid: node.data && node.data.id ? node.data.id : '#',
-        srfnodefilter: srfnodefilter,
-        parentData: curNode.data?.curData
-      }
-      let tempContext: any = this.computecurNodeContext(curNode);
-    }
-    return {
-      load
+    const { viewSubject, controlName, xDataControlName } = this.controlState;
+    if (viewSubject) {
+      let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam) => {
+        if (Object.is(controlName, tag)) {
+          viewSubject.next({ tag: xDataControlName, action: action, data: data })
+        }
+      })
+      // 部件卸载时退订viewSubject
+      onUnmounted(() => {
+        subscription.unsubscribe();
+      })
     }
   }
 
@@ -73,11 +131,9 @@ export class TreeExpBarControl extends ExpBarControl {
   */
   public moduleInstall(props: TreeExpBarControlProps, emit?: Function) {
     const superParams = super.moduleInstall(props, emit);
-    const { load } = this.useLoad(props);
+    this.useLoad(props);
     return {
       ...superParams,
-      selection: this.selection,
-      load
     };
   }
 }

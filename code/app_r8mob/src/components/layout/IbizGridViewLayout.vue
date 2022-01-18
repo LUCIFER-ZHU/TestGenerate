@@ -13,6 +13,7 @@
     <template v-slot:header-bottom>
       <slot name="topMessage" />
       <slot name="searchForm" />
+      <slot name="searchBar" />
     </template>
     <template v-slot:body-top>
       <slot name="bodyMessage" />

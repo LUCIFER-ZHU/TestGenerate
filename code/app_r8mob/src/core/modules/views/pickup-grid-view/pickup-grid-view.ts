@@ -16,7 +16,7 @@ export class PickupGridView extends PickupView {
    * @type {PickupGridViewState}
    * @memberof PickupGridView
    */
-  public declare viewState: PickupGridViewState;
+  public declare state: PickupGridViewState;
 
 
   /**
@@ -25,7 +25,7 @@ export class PickupGridView extends PickupView {
    * @memberof PickupGridView
    */
   public useLoad(props: PickupGridViewProps) {
-    const { viewSubject } = this.viewState;
+    const { viewSubject } = this.state;
     onMounted(() => {
       viewSubject.next({ tag: 'grid', action: "load", data: {} })
     })
@@ -57,14 +57,10 @@ export class PickupGridView extends PickupView {
    * @return {*} 
    * @memberof PickupGridView
    */
-  public moduleInstall(props: PickupGridViewProps, emit?: Function) {
-    this.emit = emit;
-    const superParams = super.moduleInstall(props, emit);
-    this.useLoad(props);
+  public moduleInstall() {
+    const superParams = super.moduleInstall();
     return {
-      ...superParams,
-      handleCtrlEvent: this.handleCtrlEvent.bind(this),
-      state: this.viewState,
+      ...superParams
     };
   }
 }

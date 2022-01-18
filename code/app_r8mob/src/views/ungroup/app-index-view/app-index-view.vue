@@ -27,7 +27,7 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state } = new IndexView(ViewConfig).moduleInstall(props, emit);
+const { state, menu } = new IndexView(ViewConfig, props, emit).moduleInstall();
 const collapsed: Ref<boolean> = ref(false);
 const collapsedChange = () => {
   collapsed.value = !collapsed.value;
@@ -35,7 +35,7 @@ const collapsedChange = () => {
 </script>
 
 <template>
-  <IbizDefaultIndexViewLayout class="ibiz-index-view" :menuAlign="state.menuAlign" :collapsed="collapsed">
+  <AppDefaultIndexViewLayout class="ibiz-index-view" :menuAlign="state.menuAlign" :collapsed="collapsed">
     <template #caption>
       <div class="index-view-header">
         {{state.viewCaption}}
@@ -48,10 +48,11 @@ const collapsedChange = () => {
       </div>
     </template>
     <template #user>
-        <IbizUser/>
+        <AppUser/>
     </template>
     <template #menu>
-      <AppIndexViewMenu 
+      <AppIndexViewMenu
+        ref="menu" 
         :context="state.context"
         :collapsed="collapsed"
         :menuAlign="state.menuAlign"
@@ -63,7 +64,7 @@ const collapsedChange = () => {
     <template #router>
       <router-view />
     </template>
-  </IbizDefaultIndexViewLayout>
+  </AppDefaultIndexViewLayout>
 </template>
 
 <style lang="scss">

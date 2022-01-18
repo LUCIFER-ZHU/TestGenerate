@@ -31,17 +31,15 @@ interface CtrlEmit {
 const emit = defineEmits < CtrlEmit > ();
 
 // 安装功能模块，提供状态和能力方法
-const { state, handleViewEvent} = new PickupViewPanelControl(CtrlConfig).moduleInstall(props, emit);
+const { state, handleViewEvent } = new PickupViewPanelControl(CtrlConfig).moduleInstall(props, emit);
 
+// 暴露内部状态及能力
+defineExpose({ state, name: 'pickupviewpanel' });
 </script>
 
 <template>
   <div class="ibiz-pickupviewpanel">
-    <ChartDataPickUpGridView
-      :isSingleSelect="state.isSingleSelect"
-      :isShowButton="state.isShowButton"
-      :selectedData="state.selectedData"
-      @viewEvent="handleViewEvent"
-    ></ChartDataPickUpGridView>
+    <ChartDataPickUpGridView :isSingleSelect="state.isSingleSelect" :isShowButton="state.isShowButton"
+      :selectedData="state.selectedData" @viewEvent="handleViewEvent"></ChartDataPickUpGridView>
   </div>
 </template>

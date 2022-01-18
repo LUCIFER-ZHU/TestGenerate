@@ -15,7 +15,7 @@ export class TreeExpView extends ExpView {
    * @type {TreeExpViewState}
    * @memberof TreeExpView
    */
-  public declare viewState: TreeExpViewState;
+  public declare state: TreeExpViewState;
 
   /**
    * @description 使用加载功能模块
@@ -23,27 +23,21 @@ export class TreeExpView extends ExpView {
    * @memberof TreeExpView
    */
   public useLoad(props: TreeExpViewProps) {
-    const { viewSubject } = this.viewState;
+    const { viewSubject, treeExpBarName } = this.state;
     onMounted(() => {
-      viewSubject.next({ tag: 'grid', action: "load", data: {} })
+      viewSubject.next({ tag: treeExpBarName, action: "load", data: {} });
     })
   }
 
   /**
    * @description 安装视图所有功能模块的方法
-   * @param {TreeExpViewProps} props 传入的Props
-   * @param {Function} [emit] [emit] 事件
    * @return {*} 
    * @memberof TreeExpView
    */
-  public moduleInstall(props: TreeExpViewProps, emit?: Function) {
-    this.emit = emit;
-    const superParams = super.moduleInstall(props, emit);
-    this.useLoad(props);
+  public moduleInstall() {
+    const superParams = super.moduleInstall();
     return {
-      ...superParams,
-      handleCtrlEvent: this.handleCtrlEvent.bind(this),
-      state: this.viewState,
+      ...superParams
     };
   }
 }

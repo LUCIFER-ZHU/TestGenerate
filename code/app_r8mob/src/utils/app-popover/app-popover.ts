@@ -2,7 +2,7 @@ import { Subject } from 'rxjs';
 import Router from '@/router';
 import Antd from 'ant-design-vue';
 import AppPopoverComponent from "./app-popover.vue";
-import IbizLoading from '@components/render/IbizLoading.vue';
+import AppLoading from '@components/render/app-loading.vue';
 import { IParam, ViewDetail } from '@core';
 import './app-popover.scss';
 import { createPopper, Instance } from '@popperjs/core/lib/popper-lite.js';
@@ -117,7 +117,7 @@ export class AppPopover {
         // 工厂函数
         loader: modules['../../page' + dir + '/index.ts'],
         // 加载异步组件时要使用的组件
-        loadingComponent: IbizLoading,
+        loadingComponent: AppLoading,
         // 在显示 loadingComponent 之前的延迟 | 默认值：200（单位 ms）
         delay: 0,
       });

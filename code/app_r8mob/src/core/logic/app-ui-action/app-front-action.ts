@@ -9,8 +9,6 @@ import { ActionParams, AppActionBase, UIActionResult } from "./app-action-base";
  */
 export class AppFrontAction extends AppActionBase {
 
-
-
   /**
    * 打开视图
    *

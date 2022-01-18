@@ -1,4 +1,4 @@
-import { EditViewProps, EditViewState, MainView } from '@core';
+import { EditViewState, IParam, MainView } from '@core';
 
 /**
  * @description 编辑视图
@@ -13,33 +13,55 @@ export class EditView extends MainView {
    * @type {EditViewState}
    * @memberof EditView
    */
-  public declare viewState: EditViewState;
+  public declare state: EditViewState;
 
   /**
-   * @description 使用加载功能模块
-   * @param {EditViewProps} props 传入的props
+   * 当前视图表单部件
+   *
+   * @type {IParam}
    * @memberof EditView
    */
-  public useLoad(props: EditViewProps){
-    const { viewSubject } = this.viewState;
-    onMounted(()=>{
-      viewSubject.next({tag: 'form', action: "load", data: {}})
+  public declare form: IParam;
+
+  /**
+   * @description 处理视图初始化
+   *
+   * @memberof EditView
+   */
+  public useViewInit() {
+    super.useViewInit();
+    // 初始化表单引用
+    this.form = ref(null);
+    onMounted(() => {
+      const { viewSubject } = this.state;
+      viewSubject.next({ tag: this.getForm().name, action: "load", data: {} })
     })
   }
 
   /**
+   *  获取表单部件
+   *
+   * @return {*}  {*}
+   * @memberof IndexView
+   */
+  public getForm(): any {
+    if (this.form.value) {
+      return this.form.value;
+    } else {
+      return null;
+    }
+  }
+
+  /**
    * @description 安装视图所有功能模块的方法
-   * @param {EditViewProps} props 传入的Props
-   * @param {Function} [emit] [emit] 事件
    * @return {*} 
    * @memberof EditView
    */
-  public moduleInstall(props: EditViewProps, emit?: Function) {
-    const superParams = super.moduleInstall(props, emit);
-    this.useLoad(props);
+  public moduleInstall() {
+    const superParams = super.moduleInstall();
     return {
       ...superParams,
-      state: this.viewState,
+      form: this.form
     };
   }
 }

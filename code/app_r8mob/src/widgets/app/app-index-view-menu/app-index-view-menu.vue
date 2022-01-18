@@ -2,7 +2,7 @@
 import { Subject } from "rxjs";
 import { CtrlConfig } from "./app-index-view-menu-config";
 import { IParam, IActionParam, MenuControl, IContext } from "@core";
-interface Props{
+interface Props {
   context: IContext;
   defaultView: string;
   collapsed: boolean;
@@ -10,7 +10,7 @@ interface Props{
   viewParams?: IParam;
   viewSubject: Subject<IActionParam>;
 }
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps < Props > (), {
   menuAlign: "LEFT",
   collapsed: false,
 });
@@ -18,19 +18,18 @@ const props = withDefaults(defineProps<Props>(), {
 interface CtrlEmit {
   (name: "ctrlEvent", value: IActionParam): void;
 }
-const emit = defineEmits<CtrlEmit>();
+const emit = defineEmits < CtrlEmit > ();
 
 const { state, menuSelect } = new MenuControl(CtrlConfig).moduleInstall(props, emit);
+
+// 暴露内部状态及能力
+defineExpose({ state, name: 'appmenu' });
 </script>
 
 <template>
-  <a-menu
-    class="ibiz-menu"
-    v-model:openKeys="state.defaultOpens"
-    v-model:selectedKeys="state.defaultSelect"
-    :mode="Object.is('LEFT', state.menuAlign) ? 'inline' : 'horizontal'"
-    @select="menuSelect">
-    <IbizMenuItem :items="state.menus" :collapsed="collapsed"/>
+  <a-menu class="ibiz-menu" v-model:openKeys="state.defaultOpens" v-model:selectedKeys="state.defaultSelect"
+    :mode="Object.is('LEFT', state.menuAlign) ? 'inline' : 'horizontal'" @select="menuSelect">
+    <AppMenuItem :items="state.menus" :collapsed="collapsed" />
   </a-menu>
 </template>
 

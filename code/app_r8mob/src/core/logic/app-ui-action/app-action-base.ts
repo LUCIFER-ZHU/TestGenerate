@@ -1,5 +1,4 @@
-import { IContext, IParam } from "@core";
-import { AppUIAction } from ".";
+import { AppActionService, IContext, IParam } from "@core";
 export interface ActionParams {
 
     /**
@@ -147,7 +146,7 @@ export class AppActionBase {
             return;
         }
         //  参数合并 todo
-        AppUIAction.execute(actionModel, params);
+        AppActionService.getInstance().execute(actionModel, params);
     }
 
     /**

@@ -9,20 +9,6 @@ import { IActionParam, IParam } from '@core';
 export interface ViewStateBase {
 
   /**
-   * @description 视图名称
-   * @type {string}
-   * @memberof ViewStateBase
-   */
-  viewName: string;
-
-  /**
-   * @description 视图代码名称
-   * @type {string}
-   * @memberof ViewStateBase
-   */
-  viewCodeName: string;
-
-  /**
    * @description 上下文参数
    * @type {IParam}
    * @memberof ViewStateBase
@@ -42,29 +28,6 @@ export interface ViewStateBase {
    * @memberof ViewStateBase
    */
   viewSubject: Subject<IActionParam>;
-
-  /**
-   * @description 视图工具栏模型
-   * @type {IParam[]}
-   * @memberof ViewStateBase
-   */
-  viewToolbarModel: IParam[];
-
-  /**
-   * 自定义视图导航上下文
-   *
-   * @type {IParam}
-   * @memberof ViewStateBase
-   */
-  appViewNavContexts: IParam;
-
-  /**
-   * 自定义视图参数
-   *
-   * @type {IParam}
-   * @memberof ViewStateBase
-   */
-  appViewNavParams: IParam;
 
   // 声明任意属性
   [propName: string]: any;

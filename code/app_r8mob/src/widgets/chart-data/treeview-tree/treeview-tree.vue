@@ -8,6 +8,7 @@ interface Props {
   multiple: boolean;
   selectedData: IParam[];
   selectFirstDefault: boolean;
+  isBranchAvailable: boolean;
   viewParams?: IParam;
   controlAction: ControlAction;
   showBusyIndicator?: boolean;
@@ -18,6 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
   viewSubject: () => new Subject<IActionParam>(),
   showBusyIndicator: true,
   selectFirstDefault: false,
+  isBranchAvailable: false
 })
 
 // emit声明
@@ -25,12 +27,26 @@ interface CtrlEmit {
   (name: "ctrlEvent", value: IActionParam): void;
 }
 const emit = defineEmits<CtrlEmit>();
+  
 // 安装功能模块，提供状态和能力方法
-const { state, load } = new TreeControl(CtrlConfig).moduleInstall(props, emit);
+const { state, load, treeNodeSelect } = new TreeControl(CtrlConfig).moduleInstall(props, emit);
+
+// 暴露内部状态及能力
+defineExpose({ state, name: 'tree' });
 </script>
+
+// TODO 树节点待支持图标和自定义绘制
 <template>
   <a-tree
     class="ibiz-tree"
-    :tree-data="state.data">
-  </a-tree>
+    :tree-data="state.data"
+    :load-data="load"
+    :fieldNames="{ title: 'text', key: 'id' }"
+    @select="treeNodeSelect">
+      <template #title="{ text, id }">
+        <div class="ibiz-tree-node">
+          <span class="tree-node__title">{{ text }}</span>
+        </div>
+      </template>
+    </a-tree>
 </template>

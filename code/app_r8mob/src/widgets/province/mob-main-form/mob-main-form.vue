@@ -11,8 +11,8 @@ interface Props {
   viewSubject: Subject<IActionParam>;
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  viewSubject: () => new Subject<IActionParam>(),
+const props = withDefaults(defineProps < Props > (), {
+  viewSubject: () => new Subject < IActionParam > (),
   showBusyIndicator: true,
 })
 
@@ -21,19 +21,18 @@ interface CtrlEmit {
   (name: "ctrlEvent", value: IActionParam): void;
 }
 
-const emit = defineEmits<CtrlEmit>();
+const emit = defineEmits < CtrlEmit > ();
 
 // 安装功能模块，提供状态和能力方法
 const { state, handleEditorEvent, handleComponentEvent } = new FormControl(CtrlConfig).moduleInstall(props, emit);
 
+// 暴露内部状态及能力
+defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form 
-    name="Mob_main" 
+  <a-form name="Mob_main"
     class="ibiz-form"
-    style=""
-    :model="state.data" 
-    :rules="state.rules">
+    style="" :model="state.data" :rules="state.rules">
     <a-tabs class="ibiz-form-page">
 <a-tab-pane v-show="state.detailsModel.formpage1.visible" key="formpage1" tab="基本信息">
   <a-row>
@@ -43,7 +42,7 @@ const { state, handleEditorEvent, handleComponentEvent } = new FormControl(CtrlC
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup 
+  <AppFormGroup 
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="省份基本信息"
@@ -60,11 +59,11 @@ const { state, handleEditorEvent, handleComponentEvent } = new FormControl(CtrlC
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem v-show="state.detailsModel.provincename.visible" name="provincename" label="省份名称">
-    /*未找到模板[MOBTEXT]*/  </IbizFormItem>
+  <AppFormItem v-show="state.detailsModel.provincename.visible" name="provincename" label="省份名称">
+    /*未找到模板[MOBTEXT]*/  </AppFormItem>
 </a-col>
     </a-row>
-  </IbizFormGroup>
+  </AppFormGroup>
 </a-col>
   </a-row>
 </a-tab-pane>
@@ -76,7 +75,7 @@ const { state, handleEditorEvent, handleComponentEvent } = new FormControl(CtrlC
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormGroup 
+  <AppFormGroup 
     v-show="state.detailsModel.group2.visible" 
     name="group2" 
     title="操作信息"
@@ -93,14 +92,14 @@ const { state, handleEditorEvent, handleComponentEvent } = new FormControl(CtrlC
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem v-show="state.detailsModel.createman.visible" name="createman" label="建立人">
-<IbizSpan
+  <AppFormItem v-show="state.detailsModel.createman.visible" name="createman" label="建立人">
+<appSpan
   name="createman"
   dataType="25"
   :value="state.data.createman"
   :context="state.context"
   :viewParams="state.viewParams"/>
-  </IbizFormItem>
+  </AppFormItem>
 </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -108,14 +107,14 @@ const { state, handleEditorEvent, handleComponentEvent } = new FormControl(CtrlC
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem v-show="state.detailsModel.createdate.visible" name="createdate" label="建立时间">
-<IbizSpan
+  <AppFormItem v-show="state.detailsModel.createdate.visible" name="createdate" label="建立时间">
+<appSpan
   name="createdate"
   dataType="5"
   :value="state.data.createdate"
   :context="state.context"
   :viewParams="state.viewParams"/>
-  </IbizFormItem>
+  </AppFormItem>
 </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -123,14 +122,14 @@ const { state, handleEditorEvent, handleComponentEvent } = new FormControl(CtrlC
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem v-show="state.detailsModel.updateman.visible" name="updateman" label="更新人">
-<IbizSpan
+  <AppFormItem v-show="state.detailsModel.updateman.visible" name="updateman" label="更新人">
+<appSpan
   name="updateman"
   dataType="25"
   :value="state.data.updateman"
   :context="state.context"
   :viewParams="state.viewParams"/>
-  </IbizFormItem>
+  </AppFormItem>
 </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -138,17 +137,17 @@ const { state, handleEditorEvent, handleComponentEvent } = new FormControl(CtrlC
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <IbizFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" label="更新时间">
-<IbizSpan
+  <AppFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" label="更新时间">
+<appSpan
   name="updatedate"
   dataType="5"
   :value="state.data.updatedate"
   :context="state.context"
   :viewParams="state.viewParams"/>
-  </IbizFormItem>
+  </AppFormItem>
 </a-col>
     </a-row>
-  </IbizFormGroup>
+  </AppFormGroup>
 </a-col>
   </a-row>
 </a-tab-pane>

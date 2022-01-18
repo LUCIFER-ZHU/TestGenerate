@@ -16,7 +16,7 @@ export class PickupView extends MainView {
    * @type {PickupViewState}
    * @memberof PickupView
    */
-  public declare viewState: PickupViewState;
+  public declare state: PickupViewState;
 
 
   public selectData: any[] = [];
@@ -27,7 +27,7 @@ export class PickupView extends MainView {
    * @memberof PickupView
    */
   public useLoad(props: PickupViewProps) {
-    const { viewSubject } = this.viewState;
+    const { viewSubject } = this.state;
     onMounted(() => {
       viewSubject.next({ tag: 'grid', action: "load", data: {} })
     })
@@ -48,12 +48,12 @@ export class PickupView extends MainView {
   public confirm() {
     this.emit('viewEvent', { data: this.selectData, tag: '', action: 'close' })
   }
-  
+
   public handleCtrlEvent(actionParam: IActionParam) {
     debugger
     const { tag, action, data } = actionParam;
     // TODO
-    
+
     if (action === 'selectionChange') {
       this.selectData = data;
       this.emit('viewEvent', { data: this.selectData, tag: '', action: 'viewDataChange' })
@@ -67,17 +67,13 @@ export class PickupView extends MainView {
 
   /**
    * @description 安装视图所有功能模块的方法
-   * @param {PickupViewProps} props 传入的Props
-   * @param {Function} [emit] [emit] 事件
    * @return {*} 
    * @memberof PickupView
    */
-  public moduleInstall(props: PickupViewProps, emit?: Function) {
-    const superParams = super.moduleInstall(props, emit);
-    this.useLoad(props);
+  public moduleInstall() {
+    const superParams = super.moduleInstall();
     return {
       ...superParams,
-      state: this.viewState,
       selectData: this.selectData,
       cancel: this.cancel.bind(this),
       confirm: this.confirm.bind(this)
