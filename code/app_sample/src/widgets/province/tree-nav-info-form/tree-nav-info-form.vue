@@ -55,7 +55,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.provincename.visible" name="provincename" :required="state.detailsModel.provincename.required" label="省份名称">
+  <AppFormItem v-show="state.detailsModel.provincename.visible" name="provincename" :rules="state.rules.provincename" :required="state.detailsModel.provincename.required" label="省份名称">
 <appSpan
   name="provincename"
   :disabled="state.detailsModel.provincename.disabled"

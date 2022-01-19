@@ -55,7 +55,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.customername.visible" name="customername" :required="state.detailsModel.customername.required" label="客户">
+  <AppFormItem v-show="state.detailsModel.customername.visible" name="customername" :rules="state.rules.customername" :required="state.detailsModel.customername.required" label="客户">
 <appSpan
   name="customername"
   :disabled="state.detailsModel.customername.disabled"
@@ -71,7 +71,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.ordername.visible" name="ordername" :required="state.detailsModel.ordername.required" label="订单号">
+  <AppFormItem v-show="state.detailsModel.ordername.visible" name="ordername" :rules="state.rules.ordername" :required="state.detailsModel.ordername.required" label="订单号">
 <appSpan
   name="ordername"
   :disabled="state.detailsModel.ordername.disabled"
@@ -87,7 +87,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.orderdate.visible" name="orderdate" :required="state.detailsModel.orderdate.required" label="订单时间">
+  <AppFormItem v-show="state.detailsModel.orderdate.visible" name="orderdate" :rules="state.rules.orderdate" :required="state.detailsModel.orderdate.required" label="订单时间">
 <appSpan
   name="orderdate"
   :disabled="state.detailsModel.orderdate.disabled"
@@ -103,7 +103,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.state.visible" name="state" :required="state.detailsModel.state.required" label="订单状态">
+  <AppFormItem v-show="state.detailsModel.state.visible" name="state" :rules="state.rules.state" :required="state.detailsModel.state.required" label="订单状态">
 <appSpan
   name="state"
   :disabled="state.detailsModel.state.disabled"
@@ -119,7 +119,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.amount.visible" name="amount" :required="state.detailsModel.amount.required" label="金额">
+  <AppFormItem v-show="state.detailsModel.amount.visible" name="amount" :rules="state.rules.amount" :required="state.detailsModel.amount.required" label="金额">
 <appSpan
   name="amount"
   :disabled="state.detailsModel.amount.disabled"

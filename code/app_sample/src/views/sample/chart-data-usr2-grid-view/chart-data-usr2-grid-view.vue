@@ -70,6 +70,7 @@ const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSear
       <a-popover trigger="click" :overlayStyle="{width: '50%'}">
         <template #content>
           <DefaultSearchForm
+            v-if="state.expandSearchForm"
             :context="state.context"
             :viewParams="state.viewParams"
             :controlAction="state.searchform.action"

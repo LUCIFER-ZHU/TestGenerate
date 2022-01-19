@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 0,
   rowEditState: true,
   enableQuickSearch: false,
+  expandSearchForm: false,
   viewCodeName: 'OrderDetailLineEditGridView',
   viewName: 'OrderDetailLineEditGridView',
   viewCaption: '订单明细',

@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'CounterData2GridView',
   viewName: 'CounterData2GridView',
   viewCaption: '计数器数据2',

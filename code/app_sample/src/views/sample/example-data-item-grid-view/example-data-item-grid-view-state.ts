@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'ExampleDataItemGridView',
   viewName: 'ExampleDataItemGridView',
   viewCaption: '数据项',

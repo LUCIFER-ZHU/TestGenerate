@@ -55,7 +55,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="多项选择表格视图">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="多项选择表格视图">
 <appDataPicker
   name="formitem"
   :data="state.data"
@@ -94,7 +94,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :required="state.detailsModel.formitem2.required" label="多项选择树视图">
+  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :rules="state.rules.formitem2" :required="state.detailsModel.formitem2.required" label="多项选择树视图">
 <appDataPicker
   name="formitem2"
   :data="state.data"

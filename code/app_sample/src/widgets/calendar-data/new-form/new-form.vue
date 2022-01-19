@@ -55,7 +55,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.calendardataname.visible" name="calendardataname" :required="state.detailsModel.calendardataname.required" label="事项">
+  <AppFormItem v-show="state.detailsModel.calendardataname.visible" name="calendardataname" :rules="state.rules.calendardataname" :required="state.detailsModel.calendardataname.required" label="事项">
 <appInput
   name="calendardataname"
   :disabled="state.detailsModel.calendardataname.disabled"
@@ -72,7 +72,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.begintime.visible" name="begintime" :required="state.detailsModel.begintime.required" label="开始时间">
+  <AppFormItem v-show="state.detailsModel.begintime.visible" name="begintime" :rules="state.rules.begintime" :required="state.detailsModel.begintime.required" label="开始时间">
 <appDatePicker
   name="begintime"
   :disabled="state.detailsModel.begintime.disabled"
@@ -89,7 +89,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.endtime.visible" name="endtime" :required="state.detailsModel.endtime.required" label="结束时间">
+  <AppFormItem v-show="state.detailsModel.endtime.visible" name="endtime" :rules="state.rules.endtime" :required="state.detailsModel.endtime.required" label="结束时间">
 <appDatePicker
   name="endtime"
   :disabled="state.detailsModel.endtime.disabled"
@@ -106,7 +106,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" :required="state.detailsModel.memo.required" label="备注">
+  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" :rules="state.rules.memo" :required="state.detailsModel.memo.required" label="备注">
 <appInput
   name="memo"
   :disabled="state.detailsModel.memo.disabled"

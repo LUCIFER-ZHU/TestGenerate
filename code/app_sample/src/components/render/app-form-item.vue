@@ -1,26 +1,51 @@
 <script setup lang="ts">
-import { IActionParam } from "@core";
+import { IActionParam } from '@core';
 
-interface FormGroupProps{
+interface FormGroupProps {
   name: string;
   error?: string;
   label: string;
-  required:boolean;
+  required: boolean;
+  rules?: any;
 }
-interface FormGroupEmit{
-  (name: 'componentEvent', value: IActionParam): void
+interface FormGroupEmit {
+  (name: 'componentEvent', value: IActionParam): void;
 }
 const props = withDefaults(defineProps<FormGroupProps>(), {});
 const emit = defineEmits<FormGroupEmit>();
 
+onBeforeMount(() => {
+  initRules();
+});
+
+let itemRules: any = [];
+const initRules = () => {
+  if (props.rules) {
+    itemRules.push(...props.rules);
+  }
+  if (props.required) {
+    itemRules.push({
+      trigger: ['change', 'blur'],
+      required: props.required,
+      message: props.label + '必须填写',
+    });
+  }
+};
+//
 </script>
 
 <template>
-  <a-form-item :name="name" :label="label" :help="error" :required="required" :validateStatus="error ? 'error': 'validating'">
+  <a-form-item
+    :name="name"
+    :rules="itemRules"
+    :label="label"
+    :help="error"
+    :required="required"
+    :validateStatus="error ? 'error' : 'validating'"
+  >
     <slot></slot>
   </a-form-item>
 </template>
 
 <style lang="scss">
-
 </style>

@@ -59,7 +59,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.chartdataname.visible" name="chartdataname" :required="state.detailsModel.chartdataname.required" label="图表名称">
+  <AppFormItem v-show="state.detailsModel.chartdataname.visible" name="chartdataname" :rules="state.rules.chartdataname" :required="state.detailsModel.chartdataname.required" label="图表名称">
     /*未找到模板[MOBTEXT]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -68,7 +68,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.data.visible" name="data" :required="state.detailsModel.data.required" label="数据">
+  <AppFormItem v-show="state.detailsModel.data.visible" name="data" :rules="state.rules.data" :required="state.detailsModel.data.required" label="数据">
     /*未找到模板[MOBTEXT]*/  </AppFormItem>
 </a-col>
     </a-row>
@@ -80,7 +80,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.season.visible" name="season" :required="state.detailsModel.season.required" label="季度">
+  <AppFormItem v-show="state.detailsModel.season.visible" name="season" :rules="state.rules.season" :required="state.detailsModel.season.required" label="季度">
     /*未找到模板[MOBTEXTAREA]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -89,7 +89,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.totalprice.visible" name="totalprice" :required="state.detailsModel.totalprice.required" label="总计价格">
+  <AppFormItem v-show="state.detailsModel.totalprice.visible" name="totalprice" :rules="state.rules.totalprice" :required="state.detailsModel.totalprice.required" label="总计价格">
     /*未找到模板[MOBTEXT]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -98,7 +98,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.datatype.visible" name="datatype" :required="state.detailsModel.datatype.required" label="数据分类">
+  <AppFormItem v-show="state.detailsModel.datatype.visible" name="datatype" :rules="state.rules.datatype" :required="state.detailsModel.datatype.required" label="数据分类">
     /*未找到模板[MOBRADIOLIST]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -107,7 +107,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :required="state.detailsModel.formitem1.required" label="评分器">
+  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :rules="state.rules.formitem1" :required="state.detailsModel.formitem1.required" label="评分器">
     /*未找到模板[MOBRATING]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -116,7 +116,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.data1.visible" name="data1" :required="state.detailsModel.data1.required" label="步进器">
+  <AppFormItem v-show="state.detailsModel.data1.visible" name="data1" :rules="state.rules.data1" :required="state.detailsModel.data1.required" label="步进器">
     /*未找到模板[MOBSTEPPER]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -125,7 +125,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="数据选择">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="数据选择">
     /*未找到模板[MOBPICKER]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -134,7 +134,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :required="state.detailsModel.formitem2.required" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :rules="state.rules.formitem2" :required="state.detailsModel.formitem2.required" label="值项">
     /*未找到模板[HIDDEN]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -143,7 +143,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" :required="state.detailsModel.formitem3.required" label="标签">
+  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" :rules="state.rules.formitem3" :required="state.detailsModel.formitem3.required" label="标签">
 <appSpan
   name="formitem3"
   :disabled="state.detailsModel.formitem3.disabled"
@@ -159,7 +159,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" :required="state.detailsModel.formitem4.required" label="滑动输入条">
+  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" :rules="state.rules.formitem4" :required="state.detailsModel.formitem4.required" label="滑动输入条">
     /*未找到模板[MOBSLIDER]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -168,7 +168,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" :required="state.detailsModel.formitem5.required" label="开关">
+  <AppFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" :rules="state.rules.formitem5" :required="state.detailsModel.formitem5.required" label="开关">
     /*未找到模板[MOBSWITCH]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -177,7 +177,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem6.visible" name="formitem6" :required="state.detailsModel.formitem6.required" label="下拉列表框">
+  <AppFormItem v-show="state.detailsModel.formitem6.visible" name="formitem6" :rules="state.rules.formitem6" :required="state.detailsModel.formitem6.required" label="下拉列表框">
     /*未找到模板[MOBDROPDOWNLIST]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -186,7 +186,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem7.visible" name="formitem7" :required="state.detailsModel.formitem7.required" label="时间选择">
+  <AppFormItem v-show="state.detailsModel.formitem7.visible" name="formitem7" :rules="state.rules.formitem7" :required="state.detailsModel.formitem7.required" label="时间选择">
     /*未找到模板[MOBDATE]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -226,7 +226,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem8.visible" name="formitem8" :required="state.detailsModel.formitem8.required" label="多数据单选">
+  <AppFormItem v-show="state.detailsModel.formitem8.visible" name="formitem8" :rules="state.rules.formitem8" :required="state.detailsModel.formitem8.required" label="多数据单选">
     /*未找到模板[MOBPICKER]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -235,7 +235,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem9.visible" name="formitem9" :required="state.detailsModel.formitem9.required" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem9.visible" name="formitem9" :rules="state.rules.formitem9" :required="state.detailsModel.formitem9.required" label="值项">
     /*未找到模板[MOBTEXT]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -244,7 +244,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem10.visible" name="formitem10" :required="state.detailsModel.formitem10.required" label="多数据多选">
+  <AppFormItem v-show="state.detailsModel.formitem10.visible" name="formitem10" :rules="state.rules.formitem10" :required="state.detailsModel.formitem10.required" label="多数据多选">
     /*未找到模板[MOBMPICKER]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -253,7 +253,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem11.visible" name="formitem11" :required="state.detailsModel.formitem11.required" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem11.visible" name="formitem11" :rules="state.rules.formitem11" :required="state.detailsModel.formitem11.required" label="值项">
     /*未找到模板[MOBTEXT]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -262,7 +262,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem12.visible" name="formitem12" :required="state.detailsModel.formitem12.required" label="树单选">
+  <AppFormItem v-show="state.detailsModel.formitem12.visible" name="formitem12" :rules="state.rules.formitem12" :required="state.detailsModel.formitem12.required" label="树单选">
     /*未找到模板[MOBPICKER]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -271,7 +271,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem13.visible" name="formitem13" :required="state.detailsModel.formitem13.required" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem13.visible" name="formitem13" :rules="state.rules.formitem13" :required="state.detailsModel.formitem13.required" label="值项">
     /*未找到模板[MOBTEXT]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -280,7 +280,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem14.visible" name="formitem14" :required="state.detailsModel.formitem14.required" label="树多选">
+  <AppFormItem v-show="state.detailsModel.formitem14.visible" name="formitem14" :rules="state.rules.formitem14" :required="state.detailsModel.formitem14.required" label="树多选">
     /*未找到模板[MOBMPICKER]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -289,7 +289,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem15.visible" name="formitem15" :required="state.detailsModel.formitem15.required" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem15.visible" name="formitem15" :rules="state.rules.formitem15" :required="state.detailsModel.formitem15.required" label="值项">
     /*未找到模板[MOBTEXT]*/  </AppFormItem>
 </a-col>
     </a-row>
@@ -305,7 +305,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.year.visible" name="year" :required="state.detailsModel.year.required" label="年份">
+  <AppFormItem v-show="state.detailsModel.year.visible" name="year" :rules="state.rules.year" :required="state.detailsModel.year.required" label="年份">
     /*未找到模板[MOBTEXT]*/  </AppFormItem>
 </a-col>
   </a-row>

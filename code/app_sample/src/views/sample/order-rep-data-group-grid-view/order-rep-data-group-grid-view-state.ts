@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'OrderRepDataGroupGridView',
   viewName: 'OrderRepDataGroupGridView',
   viewCaption: '订单报表数据',

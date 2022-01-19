@@ -44,7 +44,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_provincename_like.visible" name="n_provincename_like" :required="state.detailsModel.n_provincename_like.required" label="省份名称(%)">
+  <AppFormItem v-show="state.detailsModel.n_provincename_like.visible" name="n_provincename_like" :rules="state.rules.n_provincename_like" :required="state.detailsModel.n_provincename_like.required" label="省份名称(%)">
     /*未找到模板[MOBTEXT]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -53,7 +53,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="">
     /*未找到模板[MOBTEXT]*/  </AppFormItem>
 </a-col>
       </a-row>

@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: true,
   viewCodeName: 'CustomerAdvSearchGridView',
   viewName: 'CustomerAdvSearchGridView',
   viewCaption: '客户表格视图',

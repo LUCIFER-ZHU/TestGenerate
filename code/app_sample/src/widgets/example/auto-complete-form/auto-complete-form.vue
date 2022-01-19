@@ -70,7 +70,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.acfield.visible" name="acfield" :required="state.detailsModel.acfield.required" label="自动填充属性">
+  <AppFormItem v-show="state.detailsModel.acfield.visible" name="acfield" :rules="state.rules.acfield" :required="state.detailsModel.acfield.required" label="自动填充属性">
 <appAutoComplete
   name="acfield"
   :data="state.data"

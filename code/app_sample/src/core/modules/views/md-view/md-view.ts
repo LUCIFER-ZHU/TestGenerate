@@ -111,7 +111,7 @@ export class MDView extends MainView {
    */
   public handleQuickGroupSearch(args: any = {}): void {
     const { viewParams } = this.state;
-    Object.assign(viewParams,{quickGroup: args})
+    Object.assign(viewParams,{quickGroup: args.data})
     const tag = this.getMDCtrl().name;
     this.next({ tag: tag, action: 'load', data: viewParams });
   }

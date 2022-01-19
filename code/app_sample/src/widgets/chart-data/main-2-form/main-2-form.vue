@@ -55,7 +55,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.infomessage.visible" name="infomessage" :required="state.detailsModel.infomessage.required" label="备注">
+  <AppFormItem v-show="state.detailsModel.infomessage.visible" name="infomessage" :rules="state.rules.infomessage" :required="state.detailsModel.infomessage.required" label="备注">
 <appInput
   name="infomessage"
   :disabled="state.detailsModel.infomessage.disabled"

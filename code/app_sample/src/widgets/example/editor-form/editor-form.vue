@@ -56,7 +56,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="文本框">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="文本框">
 <appInput
   name="formitem"
   :disabled="state.detailsModel.formitem.disabled"
@@ -74,7 +74,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" :required="state.detailsModel.formitem3.required" label="多行输入">
+  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" :rules="state.rules.formitem3" :required="state.detailsModel.formitem3.required" label="多行输入">
 <appInput
   name="formitem3"
   :disabled="state.detailsModel.formitem3.disabled"
@@ -91,7 +91,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :required="state.detailsModel.formitem1.required" label="数值框">
+  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :rules="state.rules.formitem1" :required="state.detailsModel.formitem1.required" label="数值框">
 <appInput
   name="formitem1"
   :disabled="state.detailsModel.formitem1.disabled"
@@ -107,7 +107,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :required="state.detailsModel.formitem2.required" label="密码框">
+  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :rules="state.rules.formitem2" :required="state.detailsModel.formitem2.required" label="密码框">
 <appInput
   name="formitem2"
   :disabled="state.detailsModel.formitem2.disabled"
@@ -123,7 +123,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" :required="state.detailsModel.formitem4.required" label="标签">
+  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" :rules="state.rules.formitem4" :required="state.detailsModel.formitem4.required" label="标签">
 <appSpan
   name="formitem4"
   :disabled="state.detailsModel.formitem4.disabled"
@@ -139,7 +139,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem22.visible" name="formitem22" :required="state.detailsModel.formitem22.required" label="步进器">
+  <AppFormItem v-show="state.detailsModel.formitem22.visible" name="formitem22" :rules="state.rules.formitem22" :required="state.detailsModel.formitem22.required" label="步进器">
 <appStepper
   name="formitem22"
   :disabled="state.detailsModel.formitem22.disabled"
@@ -155,7 +155,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem23.visible" name="formitem23" :required="state.detailsModel.formitem23.required" label="评分器">
+  <AppFormItem v-show="state.detailsModel.formitem23.visible" name="formitem23" :rules="state.rules.formitem23" :required="state.detailsModel.formitem23.required" label="评分器">
 <appRating
   name="formitem23"
   :disabled="state.detailsModel.formitem23.disabled"
@@ -170,7 +170,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem24.visible" name="formitem24" :required="state.detailsModel.formitem24.required" label="滑动输入条">
+  <AppFormItem v-show="state.detailsModel.formitem24.visible" name="formitem24" :rules="state.rules.formitem24" :required="state.detailsModel.formitem24.required" label="滑动输入条">
 <appSlider
   name="formitem24"
   :date="state.data"
@@ -187,7 +187,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem7.visible" name="formitem7" :required="state.detailsModel.formitem7.required" label="选项框">
+  <AppFormItem v-show="state.detailsModel.formitem7.visible" name="formitem7" :rules="state.rules.formitem7" :required="state.detailsModel.formitem7.required" label="选项框">
 <appCheckbox
   name="formitem7"
   :disabled="state.detailsModel.formitem7.disabled"
@@ -202,7 +202,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem9.visible" name="formitem9" :required="state.detailsModel.formitem9.required" label="控制开关">
+  <AppFormItem v-show="state.detailsModel.formitem9.visible" name="formitem9" :rules="state.rules.formitem9" :required="state.detailsModel.formitem9.required" label="控制开关">
 <appSwitch
   name="formitem9"
   :disabled="state.detailsModel.formitem9.disabled"
@@ -217,7 +217,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem20.visible" name="formitem20" :required="state.detailsModel.formitem20.required" label="图片">
+  <AppFormItem v-show="state.detailsModel.formitem20.visible" name="formitem20" :rules="state.rules.formitem20" :required="state.detailsModel.formitem20.required" label="图片">
 <appUpload
   name="formitem20"
   :disabled="state.detailsModel.formitem20.disabled"
@@ -235,7 +235,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem47.visible" name="formitem47" :required="state.detailsModel.formitem47.required" label="图片（单项）">
+  <AppFormItem v-show="state.detailsModel.formitem47.visible" name="formitem47" :rules="state.rules.formitem47" :required="state.detailsModel.formitem47.required" label="图片（单项）">
 <appUpload
   name="formitem47"
   :disabled="state.detailsModel.formitem47.disabled"
@@ -253,7 +253,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem21.visible" name="formitem21" :required="state.detailsModel.formitem21.required" label="文件上传">
+  <AppFormItem v-show="state.detailsModel.formitem21.visible" name="formitem21" :rules="state.rules.formitem21" :required="state.detailsModel.formitem21.required" label="文件上传">
 <appUpload
   name="formitem21"
   :disabled="state.detailsModel.formitem21.disabled"
@@ -269,7 +269,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem48.visible" name="formitem48" :required="state.detailsModel.formitem48.required" label="文件上传（单项）">
+  <AppFormItem v-show="state.detailsModel.formitem48.visible" name="formitem48" :rules="state.rules.formitem48" :required="state.detailsModel.formitem48.required" label="文件上传（单项）">
 <appUpload
   name="formitem48"
   :disabled="state.detailsModel.formitem48.disabled"
@@ -304,7 +304,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" :required="state.detailsModel.formitem5.required" label="下拉列表框">
+  <AppFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" :rules="state.rules.formitem5" :required="state.detailsModel.formitem5.required" label="下拉列表框">
 <appDropdownList
   name="formitem5"
   :disabled="state.detailsModel.formitem5.disabled"
@@ -322,7 +322,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem6.visible" name="formitem6" :required="state.detailsModel.formitem6.required" label="下拉列表框（多选）">
+  <AppFormItem v-show="state.detailsModel.formitem6.visible" name="formitem6" :rules="state.rules.formitem6" :required="state.detailsModel.formitem6.required" label="下拉列表框（多选）">
 <appDropdownList
   name="formitem6"
   :disabled="state.detailsModel.formitem6.disabled"
@@ -341,7 +341,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem10.visible" name="formitem10" :required="state.detailsModel.formitem10.required" label="单选项列表">
+  <AppFormItem v-show="state.detailsModel.formitem10.visible" name="formitem10" :rules="state.rules.formitem10" :required="state.detailsModel.formitem10.required" label="单选项列表">
 <appRadioGroup
   name="formitem10"
   :data="state.data"
@@ -358,7 +358,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem8.visible" name="formitem8" :required="state.detailsModel.formitem8.required" label="选项框列表">
+  <AppFormItem v-show="state.detailsModel.formitem8.visible" name="formitem8" :rules="state.rules.formitem8" :required="state.detailsModel.formitem8.required" label="选项框列表">
 <appCheckboxList
   name="formitem8"
   :data="state.data"
@@ -376,7 +376,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem11.visible" name="formitem11" :required="state.detailsModel.formitem11.required" label="列表框">
+  <AppFormItem v-show="state.detailsModel.formitem11.visible" name="formitem11" :rules="state.rules.formitem11" :required="state.detailsModel.formitem11.required" label="列表框">
 <appListBox
   name="formitem11"
   :data="state.data"
@@ -398,7 +398,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem12.visible" name="formitem12" :required="state.detailsModel.formitem12.required" label="列表框（选择）">
+  <AppFormItem v-show="state.detailsModel.formitem12.visible" name="formitem12" :rules="state.rules.formitem12" :required="state.detailsModel.formitem12.required" label="列表框（选择）">
 <appListBox
   name="formitem12"
   :data="state.data"
@@ -440,7 +440,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem52.visible" name="formitem52" :required="state.detailsModel.formitem52.required" label="默认">
+  <AppFormItem v-show="state.detailsModel.formitem52.visible" name="formitem52" :rules="state.rules.formitem52" :required="state.detailsModel.formitem52.required" label="默认">
 <appAutoComplete
   name="formitem52"
   :data="state.data"
@@ -458,7 +458,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem51.visible" name="formitem51" :required="state.detailsModel.formitem51.required" label="只能选择">
+  <AppFormItem v-show="state.detailsModel.formitem51.visible" name="formitem51" :rules="state.rules.formitem51" :required="state.detailsModel.formitem51.required" label="只能选择">
 <appAutoComplete
   name="formitem51"
   :data="state.data"
@@ -476,7 +476,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem50.visible" name="formitem50" :required="state.detailsModel.formitem50.required" label="无按钮">
+  <AppFormItem v-show="state.detailsModel.formitem50.visible" name="formitem50" :rules="state.rules.formitem50" :required="state.detailsModel.formitem50.required" label="无按钮">
 <appAutoComplete
   name="formitem50"
   :data="state.data"
@@ -495,7 +495,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem49.visible" name="formitem49" :required="state.detailsModel.formitem49.required" label="只能选择、无按钮">
+  <AppFormItem v-show="state.detailsModel.formitem49.visible" name="formitem49" :rules="state.rules.formitem49" :required="state.detailsModel.formitem49.required" label="只能选择、无按钮">
 <appAutoComplete
   name="formitem49"
   :data="state.data"
@@ -534,7 +534,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem19.visible" name="formitem19" :required="state.detailsModel.formitem19.required" label="HH:mm">
+  <AppFormItem v-show="state.detailsModel.formitem19.visible" name="formitem19" :rules="state.rules.formitem19" :required="state.detailsModel.formitem19.required" label="HH:mm">
 <appDatePicker
   name="formitem19"
   :disabled="state.detailsModel.formitem19.disabled"
@@ -551,7 +551,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem29.visible" name="formitem29" :required="state.detailsModel.formitem29.required" label="HH:mm:ss">
+  <AppFormItem v-show="state.detailsModel.formitem29.visible" name="formitem29" :rules="state.rules.formitem29" :required="state.detailsModel.formitem29.required" label="HH:mm:ss">
 <appDatePicker
   name="formitem29"
   :disabled="state.detailsModel.formitem29.disabled"
@@ -568,7 +568,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem15.visible" name="formitem15" :required="state.detailsModel.formitem15.required" label="YYYY-MM-DD">
+  <AppFormItem v-show="state.detailsModel.formitem15.visible" name="formitem15" :rules="state.rules.formitem15" :required="state.detailsModel.formitem15.required" label="YYYY-MM-DD">
 <appDatePicker
   name="formitem15"
   :disabled="state.detailsModel.formitem15.disabled"
@@ -585,7 +585,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem27.visible" name="formitem27" :required="state.detailsModel.formitem27.required" label="YYYY-MM-DD HH">
+  <AppFormItem v-show="state.detailsModel.formitem27.visible" name="formitem27" :rules="state.rules.formitem27" :required="state.detailsModel.formitem27.required" label="YYYY-MM-DD HH">
 <appDatePicker
   name="formitem27"
   :disabled="state.detailsModel.formitem27.disabled"
@@ -602,7 +602,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem28.visible" name="formitem28" :required="state.detailsModel.formitem28.required" label="YYYY-MM-DD HH:mm">
+  <AppFormItem v-show="state.detailsModel.formitem28.visible" name="formitem28" :rules="state.rules.formitem28" :required="state.detailsModel.formitem28.required" label="YYYY-MM-DD HH:mm">
 <appDatePicker
   name="formitem28"
   :disabled="state.detailsModel.formitem28.disabled"
@@ -619,7 +619,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem14.visible" name="formitem14" :required="state.detailsModel.formitem14.required" label="YYYY-MM-DD HH:mm:ss">
+  <AppFormItem v-show="state.detailsModel.formitem14.visible" name="formitem14" :rules="state.rules.formitem14" :required="state.detailsModel.formitem14.required" label="YYYY-MM-DD HH:mm:ss">
 <appDatePicker
   name="formitem14"
   :disabled="state.detailsModel.formitem14.disabled"
@@ -656,7 +656,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem26.visible" name="formitem26" :required="state.detailsModel.formitem26.required" label="默认">
+  <AppFormItem v-show="state.detailsModel.formitem26.visible" name="formitem26" :rules="state.rules.formitem26" :required="state.detailsModel.formitem26.required" label="默认">
 <appDataPicker
   name="formitem26"
   :data="state.data"
@@ -675,7 +675,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem17.visible" name="formitem17" :required="state.detailsModel.formitem17.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem17.visible" name="formitem17" :rules="state.rules.formitem17" :required="state.detailsModel.formitem17.required" label="">
 <appSpan
   name="formitem17"
   :disabled="state.detailsModel.formitem17.disabled"
@@ -691,7 +691,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem33.visible" name="formitem33" :required="state.detailsModel.formitem33.required" label="数据链接">
+  <AppFormItem v-show="state.detailsModel.formitem33.visible" name="formitem33" :rules="state.rules.formitem33" :required="state.detailsModel.formitem33.required" label="数据链接">
 <appDataPicker
   name="formitem33"
   :data="state.data"
@@ -711,7 +711,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem39.visible" name="formitem39" :required="state.detailsModel.formitem39.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem39.visible" name="formitem39" :rules="state.rules.formitem39" :required="state.detailsModel.formitem39.required" label="">
 <appSpan
   name="formitem39"
   :disabled="state.detailsModel.formitem39.disabled"
@@ -727,7 +727,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem32.visible" name="formitem32" :required="state.detailsModel.formitem32.required" label="无AC">
+  <AppFormItem v-show="state.detailsModel.formitem32.visible" name="formitem32" :rules="state.rules.formitem32" :required="state.detailsModel.formitem32.required" label="无AC">
 <appDataPicker
   name="formitem32"
   :data="state.data"
@@ -747,7 +747,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem40.visible" name="formitem40" :required="state.detailsModel.formitem40.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem40.visible" name="formitem40" :rules="state.rules.formitem40" :required="state.detailsModel.formitem40.required" label="">
 <appSpan
   name="formitem40"
   :disabled="state.detailsModel.formitem40.disabled"
@@ -763,7 +763,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem31.visible" name="formitem31" :required="state.detailsModel.formitem31.required" label="无AC、数据链接">
+  <AppFormItem v-show="state.detailsModel.formitem31.visible" name="formitem31" :rules="state.rules.formitem31" :required="state.detailsModel.formitem31.required" label="无AC、数据链接">
 <appDataPicker
   name="formitem31"
   :data="state.data"
@@ -783,7 +783,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem36.visible" name="formitem36" :required="state.detailsModel.formitem36.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem36.visible" name="formitem36" :rules="state.rules.formitem36" :required="state.detailsModel.formitem36.required" label="">
 <appSpan
   name="formitem36"
   :disabled="state.detailsModel.formitem36.disabled"
@@ -799,7 +799,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem30.visible" name="formitem30" :required="state.detailsModel.formitem30.required" label="下拉">
+  <AppFormItem v-show="state.detailsModel.formitem30.visible" name="formitem30" :rules="state.rules.formitem30" :required="state.detailsModel.formitem30.required" label="下拉">
 <appDataPickerView
   name="formitem30"
   :data="state.data"
@@ -817,7 +817,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem41.visible" name="formitem41" :required="state.detailsModel.formitem41.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem41.visible" name="formitem41" :rules="state.rules.formitem41" :required="state.detailsModel.formitem41.required" label="">
 <appSpan
   name="formitem41"
   :disabled="state.detailsModel.formitem41.disabled"
@@ -833,7 +833,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem35.visible" name="formitem35" :required="state.detailsModel.formitem35.required" label="下拉、数据链接">
+  <AppFormItem v-show="state.detailsModel.formitem35.visible" name="formitem35" :rules="state.rules.formitem35" :required="state.detailsModel.formitem35.required" label="下拉、数据链接">
 <appDataPicker
   name="formitem35"
   :data="state.data"
@@ -853,7 +853,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem42.visible" name="formitem42" :required="state.detailsModel.formitem42.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem42.visible" name="formitem42" :rules="state.rules.formitem42" :required="state.detailsModel.formitem42.required" label="">
 <appSpan
   name="formitem42"
   :disabled="state.detailsModel.formitem42.disabled"
@@ -869,7 +869,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem37.visible" name="formitem37" :required="state.detailsModel.formitem37.required" label="无按钮">
+  <AppFormItem v-show="state.detailsModel.formitem37.visible" name="formitem37" :rules="state.rules.formitem37" :required="state.detailsModel.formitem37.required" label="无按钮">
 <appDataPicker
   name="formitem37"
   :data="state.data"
@@ -888,7 +888,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem43.visible" name="formitem43" :required="state.detailsModel.formitem43.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem43.visible" name="formitem43" :rules="state.rules.formitem43" :required="state.detailsModel.formitem43.required" label="">
 <appSpan
   name="formitem43"
   :disabled="state.detailsModel.formitem43.disabled"
@@ -904,7 +904,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem38.visible" name="formitem38" :required="state.detailsModel.formitem38.required" label="下拉视图">
+  <AppFormItem v-show="state.detailsModel.formitem38.visible" name="formitem38" :rules="state.rules.formitem38" :required="state.detailsModel.formitem38.required" label="下拉视图">
 <appDataPickerView
   name="formitem38"
   :data="state.data"
@@ -922,7 +922,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem44.visible" name="formitem44" :required="state.detailsModel.formitem44.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem44.visible" name="formitem44" :rules="state.rules.formitem44" :required="state.detailsModel.formitem44.required" label="">
 <appSpan
   name="formitem44"
   :disabled="state.detailsModel.formitem44.disabled"
@@ -938,7 +938,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem61.visible" name="formitem61" :required="state.detailsModel.formitem61.required" label="下拉树视图">
+  <AppFormItem v-show="state.detailsModel.formitem61.visible" name="formitem61" :rules="state.rules.formitem61" :required="state.detailsModel.formitem61.required" label="下拉树视图">
 <appDataPickerView
   name="formitem61"
   :data="state.data"
@@ -956,7 +956,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem62.visible" name="formitem62" :required="state.detailsModel.formitem62.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem62.visible" name="formitem62" :rules="state.rules.formitem62" :required="state.detailsModel.formitem62.required" label="">
 <appSpan
   name="formitem62"
   :disabled="state.detailsModel.formitem62.disabled"
@@ -972,7 +972,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem34.visible" name="formitem34" :required="state.detailsModel.formitem34.required" label="下拉视图、数据链接">
+  <AppFormItem v-show="state.detailsModel.formitem34.visible" name="formitem34" :rules="state.rules.formitem34" :required="state.detailsModel.formitem34.required" label="下拉视图、数据链接">
 <appDataPickerView
   name="formitem34"
   :data="state.data"
@@ -990,7 +990,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem45.visible" name="formitem45" :required="state.detailsModel.formitem45.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem45.visible" name="formitem45" :rules="state.rules.formitem45" :required="state.detailsModel.formitem45.required" label="">
 <appSpan
   name="formitem45"
   :disabled="state.detailsModel.formitem45.disabled"
@@ -1006,7 +1006,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem16.visible" name="formitem16" :required="state.detailsModel.formitem16.required" label="嵌入选择视图">
+  <AppFormItem v-show="state.detailsModel.formitem16.visible" name="formitem16" :rules="state.rules.formitem16" :required="state.detailsModel.formitem16.required" label="嵌入选择视图">
 <appDataPickerView
   name="formitem16"
   :data="state.data"
@@ -1024,7 +1024,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem46.visible" name="formitem46" :required="state.detailsModel.formitem46.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem46.visible" name="formitem46" :rules="state.rules.formitem46" :required="state.detailsModel.formitem46.required" label="">
 <appSpan
   name="formitem46"
   :disabled="state.detailsModel.formitem46.disabled"
@@ -1040,7 +1040,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem13.visible" name="formitem13" :required="state.detailsModel.formitem13.required" label="数据多选">
+  <AppFormItem v-show="state.detailsModel.formitem13.visible" name="formitem13" :rules="state.rules.formitem13" :required="state.detailsModel.formitem13.required" label="数据多选">
 <appDataPicker
   name="formitem13"
   :data="state.data"
@@ -1094,7 +1094,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem57.visible" name="formitem57" :required="state.detailsModel.formitem57.required" label="直接内容（RAW）">
+  <AppFormItem v-show="state.detailsModel.formitem57.visible" name="formitem57" :rules="state.rules.formitem57" :required="state.detailsModel.formitem57.required" label="直接内容（RAW）">
 <AppRaw
   name="formitem57"
   :date="state.data"
@@ -1110,7 +1110,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem58.visible" name="formitem58" :required="state.detailsModel.formitem58.required" label="直接内容（HTML）">
+  <AppFormItem v-show="state.detailsModel.formitem58.visible" name="formitem58" :rules="state.rules.formitem58" :required="state.detailsModel.formitem58.required" label="直接内容（HTML）">
 <AppRaw
   name="formitem58"
   :date="state.data"
@@ -1126,7 +1126,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem59.visible" name="formitem59" :required="state.detailsModel.formitem59.required" label="直接内容（IMAGE）">
+  <AppFormItem v-show="state.detailsModel.formitem59.visible" name="formitem59" :rules="state.rules.formitem59" :required="state.detailsModel.formitem59.required" label="直接内容（IMAGE）">
 <AppRaw
   name="formitem59"
   :date="state.data"
@@ -1142,7 +1142,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem60.visible" name="formitem60" :required="state.detailsModel.formitem60.required" label="直接内容（MARKDOWN）">
+  <AppFormItem v-show="state.detailsModel.formitem60.visible" name="formitem60" :rules="state.rules.formitem60" :required="state.detailsModel.formitem60.required" label="直接内容（MARKDOWN）">
 <AppRaw
   name="formitem60"
   :date="state.data"
@@ -1178,7 +1178,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem25.visible" name="formitem25" :required="state.detailsModel.formitem25.required" label="IP地址">
+  <AppFormItem v-show="state.detailsModel.formitem25.visible" name="formitem25" :rules="state.rules.formitem25" :required="state.detailsModel.formitem25.required" label="IP地址">
 <appInputIp
   name="formitem25"
   :disabled="state.detailsModel.formitem25.disabled"
@@ -1194,7 +1194,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem18.visible" name="formitem18" :required="state.detailsModel.formitem18.required" label="HTML编辑框">
+  <AppFormItem v-show="state.detailsModel.formitem18.visible" name="formitem18" :rules="state.rules.formitem18" :required="state.detailsModel.formitem18.required" label="HTML编辑框">
 <appRichText
   name="formitem18"
   :disabled="state.detailsModel.formitem18.disabled"
@@ -1212,7 +1212,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem55.visible" name="formitem55" :required="state.detailsModel.formitem55.required" label="代码编辑框">
+  <AppFormItem v-show="state.detailsModel.formitem55.visible" name="formitem55" :rules="state.rules.formitem55" :required="state.detailsModel.formitem55.required" label="代码编辑框">
 <appCode
   name="formitem55"
   :disabled="state.detailsModel.formitem55.disabled"
@@ -1227,7 +1227,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem54.visible" name="formitem54" :required="state.detailsModel.formitem54.required" label="MD编辑器（预览）">
+  <AppFormItem v-show="state.detailsModel.formitem54.visible" name="formitem54" :rules="state.rules.formitem54" :required="state.detailsModel.formitem54.required" label="MD编辑器（预览）">
     /*未找到模板[MARKDOWN]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -1236,7 +1236,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem53.visible" name="formitem53" :required="state.detailsModel.formitem53.required" label="MD编辑器（编辑）">
+  <AppFormItem v-show="state.detailsModel.formitem53.visible" name="formitem53" :rules="state.rules.formitem53" :required="state.detailsModel.formitem53.required" label="MD编辑器（编辑）">
     /*未找到模板[MARKDOWN]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -1245,7 +1245,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem56.visible" name="formitem56" :required="state.detailsModel.formitem56.required" label="MD编辑器（即时预览）">
+  <AppFormItem v-show="state.detailsModel.formitem56.visible" name="formitem56" :rules="state.rules.formitem56" :required="state.detailsModel.formitem56.required" label="MD编辑器（即时预览）">
     /*未找到模板[MARKDOWN]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -1272,7 +1272,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.format8.visible" name="format8" :required="state.detailsModel.format8.required" label="文本占位符（@）">
+  <AppFormItem v-show="state.detailsModel.format8.visible" name="format8" :rules="state.rules.format8" :required="state.detailsModel.format8.required" label="文本占位符（@）">
 <appInput
   name="format8"
   :disabled="state.detailsModel.format8.disabled"

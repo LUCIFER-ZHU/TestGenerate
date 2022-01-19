@@ -61,7 +61,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_customername_like.visible" name="n_customername_like" :required="state.detailsModel.n_customername_like.required" label="客户名称(%)">
+  <AppFormItem v-show="state.detailsModel.n_customername_like.visible" name="n_customername_like" :rules="state.rules.n_customername_like" :required="state.detailsModel.n_customername_like.required" label="客户名称(%)">
 <appInput
   name="n_customername_like"
   :disabled="state.detailsModel.n_customername_like.disabled"
@@ -77,7 +77,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_monthval_eq.visible" name="n_monthval_eq" :required="state.detailsModel.n_monthval_eq.required" label="月份(等于(=))">
+  <AppFormItem v-show="state.detailsModel.n_monthval_eq.visible" name="n_monthval_eq" :rules="state.rules.n_monthval_eq" :required="state.detailsModel.n_monthval_eq.required" label="月份(等于(=))">
 <appInput
   name="n_monthval_eq"
   :disabled="state.detailsModel.n_monthval_eq.disabled"
@@ -93,7 +93,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_quarterval_eq.visible" name="n_quarterval_eq" :required="state.detailsModel.n_quarterval_eq.required" label="季度(=)">
+  <AppFormItem v-show="state.detailsModel.n_quarterval_eq.visible" name="n_quarterval_eq" :rules="state.rules.n_quarterval_eq" :required="state.detailsModel.n_quarterval_eq.required" label="季度(=)">
 <appInput
   name="n_quarterval_eq"
   :disabled="state.detailsModel.n_quarterval_eq.disabled"
@@ -109,7 +109,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_yearval_eq.visible" name="n_yearval_eq" :required="state.detailsModel.n_yearval_eq.required" label="年份(等于(=))">
+  <AppFormItem v-show="state.detailsModel.n_yearval_eq.visible" name="n_yearval_eq" :rules="state.rules.n_yearval_eq" :required="state.detailsModel.n_yearval_eq.required" label="年份(等于(=))">
 <appInput
   name="n_yearval_eq"
   :disabled="state.detailsModel.n_yearval_eq.disabled"
@@ -125,7 +125,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_totalval_gtandeq.visible" name="n_totalval_gtandeq" :required="state.detailsModel.n_totalval_gtandeq.required" label="合计(大于等于(>=))">
+  <AppFormItem v-show="state.detailsModel.n_totalval_gtandeq.visible" name="n_totalval_gtandeq" :rules="state.rules.n_totalval_gtandeq" :required="state.detailsModel.n_totalval_gtandeq.required" label="合计(大于等于(>=))">
 <appInput
   name="n_totalval_gtandeq"
   :disabled="state.detailsModel.n_totalval_gtandeq.disabled"

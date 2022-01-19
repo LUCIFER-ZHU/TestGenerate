@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'ExampleGridValueFormatGridView_7046',
   viewName: 'ExampleGridValueFormatGridView_7046',
   viewCaption: '值显示',

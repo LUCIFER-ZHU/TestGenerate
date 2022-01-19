@@ -70,7 +70,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.format1.visible" name="format1" :required="state.detailsModel.format1.required" label="数值编辑器格式化">
+  <AppFormItem v-show="state.detailsModel.format1.visible" name="format1" :rules="state.rules.format1" :required="state.detailsModel.format1.required" label="数值编辑器格式化">
 <appInput
   name="format1"
   :disabled="state.detailsModel.format1.disabled"
@@ -101,7 +101,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.format2.visible" name="format2" :required="state.detailsModel.format2.required" label="标签编辑器格式化">
+  <AppFormItem v-show="state.detailsModel.format2.visible" name="format2" :rules="state.rules.format2" :required="state.detailsModel.format2.required" label="标签编辑器格式化">
 <appSpan
   name="format2"
   :disabled="state.detailsModel.format2.disabled"
@@ -133,7 +133,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.datatype.visible" name="datatype" :required="state.detailsModel.datatype.required" label="表单项">
+  <AppFormItem v-show="state.detailsModel.datatype.visible" name="datatype" :rules="state.rules.datatype" :required="state.detailsModel.datatype.required" label="表单项">
 <appSpan
   name="datatype"
   :disabled="state.detailsModel.datatype.disabled"
@@ -164,7 +164,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="表单项">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="表单项">
 <appSpan
   name="formitem"
   :disabled="state.detailsModel.formitem.disabled"

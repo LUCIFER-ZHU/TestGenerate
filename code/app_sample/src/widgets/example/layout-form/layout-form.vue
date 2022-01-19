@@ -1124,7 +1124,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="上方标签">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="上方标签">
 <appInput
   name="formitem"
   :disabled="state.detailsModel.formitem.disabled"
@@ -1140,7 +1140,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :required="state.detailsModel.formitem1.required" label="左侧标签">
+  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :rules="state.rules.formitem1" :required="state.detailsModel.formitem1.required" label="左侧标签">
 <appInput
   name="formitem1"
   :disabled="state.detailsModel.formitem1.disabled"
@@ -1156,7 +1156,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :required="state.detailsModel.formitem2.required" label="左侧标签（宽200）">
+  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :rules="state.rules.formitem2" :required="state.detailsModel.formitem2.required" label="左侧标签（宽200）">
 <appInput
   name="formitem2"
   :disabled="state.detailsModel.formitem2.disabled"
@@ -1172,7 +1172,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" :required="state.detailsModel.formitem4.required" label="右侧标签">
+  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" :rules="state.rules.formitem4" :required="state.detailsModel.formitem4.required" label="右侧标签">
 <appInput
   name="formitem4"
   :disabled="state.detailsModel.formitem4.disabled"
@@ -1188,7 +1188,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" :required="state.detailsModel.formitem5.required" label="下方标签">
+  <AppFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" :rules="state.rules.formitem5" :required="state.detailsModel.formitem5.required" label="下方标签">
 <appInput
   name="formitem5"
   :disabled="state.detailsModel.formitem5.disabled"
@@ -1219,7 +1219,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" :required="state.detailsModel.formitem3.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" :rules="state.rules.formitem3" :required="state.detailsModel.formitem3.required" label="">
 <appInput
   name="formitem3"
   :disabled="state.detailsModel.formitem3.disabled"
@@ -1255,7 +1255,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem6.visible" name="formitem6" :required="state.detailsModel.formitem6.required" label="表单项">
+  <AppFormItem v-show="state.detailsModel.formitem6.visible" name="formitem6" :rules="state.rules.formitem6" :required="state.detailsModel.formitem6.required" label="表单项">
 <appInput
   name="formitem6"
   :disabled="state.detailsModel.formitem6.disabled"
@@ -1271,7 +1271,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem7.visible" name="formitem7" :required="state.detailsModel.formitem7.required" label="表单项">
+  <AppFormItem v-show="state.detailsModel.formitem7.visible" name="formitem7" :rules="state.rules.formitem7" :required="state.detailsModel.formitem7.required" label="表单项">
 <appInput
   name="formitem7"
   :disabled="state.detailsModel.formitem7.disabled"

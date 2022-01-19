@@ -55,7 +55,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.viewmsgdataname.visible" name="viewmsgdataname" :required="state.detailsModel.viewmsgdataname.required" label="视图消息标题">
+  <AppFormItem v-show="state.detailsModel.viewmsgdataname.visible" name="viewmsgdataname" :rules="state.rules.viewmsgdataname" :required="state.detailsModel.viewmsgdataname.required" label="视图消息标题">
 <appInput
   name="viewmsgdataname"
   :disabled="state.detailsModel.viewmsgdataname.disabled"
@@ -72,7 +72,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.type.visible" name="type" :required="state.detailsModel.type.required" label="视图消息类型">
+  <AppFormItem v-show="state.detailsModel.type.visible" name="type" :rules="state.rules.type" :required="state.detailsModel.type.required" label="视图消息类型">
 <appDropdownList
   name="type"
   :disabled="state.detailsModel.type.disabled"
@@ -90,7 +90,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.location.visible" name="location" :required="state.detailsModel.location.required" label="视图消息位置">
+  <AppFormItem v-show="state.detailsModel.location.visible" name="location" :rules="state.rules.location" :required="state.detailsModel.location.required" label="视图消息位置">
 <appDropdownList
   name="location"
   :disabled="state.detailsModel.location.disabled"
@@ -108,7 +108,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.content.visible" name="content" :required="state.detailsModel.content.required" label="视图消息内容">
+  <AppFormItem v-show="state.detailsModel.content.visible" name="content" :rules="state.rules.content" :required="state.detailsModel.content.required" label="视图消息内容">
 <appInput
   name="content"
   :disabled="state.detailsModel.content.disabled"

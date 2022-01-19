@@ -55,7 +55,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.productname.visible" name="productname" :required="state.detailsModel.productname.required" label="产品">
+  <AppFormItem v-show="state.detailsModel.productname.visible" name="productname" :rules="state.rules.productname" :required="state.detailsModel.productname.required" label="产品">
 <appDataPicker
   name="productname"
   :data="state.data"
@@ -74,7 +74,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.price.visible" name="price" :required="state.detailsModel.price.required" label="单价">
+  <AppFormItem v-show="state.detailsModel.price.visible" name="price" :rules="state.rules.price" :required="state.detailsModel.price.required" label="单价">
 <appInput
   name="price"
   :disabled="state.detailsModel.price.disabled"
@@ -90,7 +90,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.qty.visible" name="qty" :required="state.detailsModel.qty.required" label="数量">
+  <AppFormItem v-show="state.detailsModel.qty.visible" name="qty" :rules="state.rules.qty" :required="state.detailsModel.qty.required" label="数量">
 <appInput
   name="qty"
   :disabled="state.detailsModel.qty.disabled"
@@ -106,7 +106,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.amount.visible" name="amount" :required="state.detailsModel.amount.required" label="小计">
+  <AppFormItem v-show="state.detailsModel.amount.visible" name="amount" :rules="state.rules.amount" :required="state.detailsModel.amount.required" label="小计">
 <appInput
   name="amount"
   :disabled="state.detailsModel.amount.disabled"

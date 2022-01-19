@@ -70,7 +70,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="表单项（默认已展开）">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="表单项（默认已展开）">
 <appInput
   name="formitem"
   :disabled="state.detailsModel.formitem.disabled"
@@ -121,7 +121,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :required="state.detailsModel.formitem1.required" label="表单项（打开才能看到）">
+  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :rules="state.rules.formitem1" :required="state.detailsModel.formitem1.required" label="表单项（打开才能看到）">
 <appInput
   name="formitem1"
   :disabled="state.detailsModel.formitem1.disabled"
@@ -172,7 +172,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :required="state.detailsModel.formitem2.required" label="表单项">
+  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :rules="state.rules.formitem2" :required="state.detailsModel.formitem2.required" label="表单项">
 <appInput
   name="formitem2"
   :disabled="state.detailsModel.formitem2.disabled"
@@ -223,7 +223,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" :required="state.detailsModel.formitem3.required" label="表单项">
+  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" :rules="state.rules.formitem3" :required="state.detailsModel.formitem3.required" label="表单项">
 <appInput
   name="formitem3"
   :disabled="state.detailsModel.formitem3.disabled"
@@ -256,7 +256,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" :required="state.detailsModel.formitem4.required" label="更多表单项1">
+  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" :rules="state.rules.formitem4" :required="state.detailsModel.formitem4.required" label="更多表单项1">
 <appInput
   name="formitem4"
   :disabled="state.detailsModel.formitem4.disabled"
@@ -272,7 +272,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" :required="state.detailsModel.formitem5.required" label="更多表单项2">
+  <AppFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" :rules="state.rules.formitem5" :required="state.detailsModel.formitem5.required" label="更多表单项2">
 <appInput
   name="formitem5"
   :disabled="state.detailsModel.formitem5.disabled"
@@ -326,7 +326,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" :required="state.detailsModel.fieldx.required" label="X值">
+  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" :rules="state.rules.fieldx" :required="state.detailsModel.fieldx.required" label="X值">
 <appSpan
   name="fieldx"
   :disabled="state.detailsModel.fieldx.disabled"
@@ -342,7 +342,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" :required="state.detailsModel.fieldy.required" label="Y值">
+  <AppFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" :rules="state.rules.fieldy" :required="state.detailsModel.fieldy.required" label="Y值">
 <appSpan
   name="fieldy"
   :disabled="state.detailsModel.fieldy.disabled"
@@ -358,7 +358,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" :required="state.detailsModel.fieldz.required" label="Z值">
+  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" :rules="state.rules.fieldz" :required="state.detailsModel.fieldz.required" label="Z值">
 <appSpan
   name="fieldz"
   :disabled="state.detailsModel.fieldz.disabled"

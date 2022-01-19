@@ -13,7 +13,7 @@ const emit = defineEmits<FormGroupEmit>();
 const selectItem: Ref<IParam> = ref({});
 const items: Ref<any> = ref([]);
 const handleClick = ($event: any) => {
-  if ((selectItem.value && selectItem.value.id === $event.id) || $event.children) {
+  if ((selectItem.value && selectItem.value.id && selectItem.value.id === $event.id) || $event.children) {
     return;
   }
   selectItem.value = $event;
@@ -34,14 +34,14 @@ onBeforeMount(() => {
 
 <template>
   <a-space class="app-quick-group" :size="0">
-    <a-button class="quick-group-item" v-for="(item, index) in items" :key="index" type="text" @click="() => handleClick(item)">
+    <a-button class="quick-group-item" v-for="(item, index) in items" :key="index" type="text" @click="handleClick(item)">
       <span :style="{ color: item.color }">
         <AppIconText v-if="!item.children" :text="item.text" :iconClass="item.iconClass" :imgPath="item.imgPath" />
         <a-dropdown v-else>
           <AppIconText :text="item.text" :iconClass="item.iconClass" :imgPath="item.imgPath" />
           <template #overlay>
             <a-menu>
-              <a-menu-item v-for="(childItem,index) in item.children">
+              <a-menu-item v-for="(childItem,index) in item.children" :key="index">
                 <AppIconText :text="childItem.text" :iconClass="childItem.iconClass" :imgPath="childItem.imgPath" />
               </a-menu-item>
             </a-menu>

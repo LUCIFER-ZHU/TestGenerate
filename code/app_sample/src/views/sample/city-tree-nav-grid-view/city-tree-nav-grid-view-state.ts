@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'CityTreeNavGridView',
   viewName: 'CityTreeNavGridView',
   viewCaption: '市',

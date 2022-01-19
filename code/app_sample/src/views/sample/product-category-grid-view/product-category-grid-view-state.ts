@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'ProductCategoryGridView',
   viewName: 'ProductCategoryGridView',
   viewCaption: '产品类别',

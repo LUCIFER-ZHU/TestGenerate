@@ -1158,5 +1158,11 @@ export const ctrlState = {
   actionModel: {
   },
   rules: {
+          formitem3: [
+            {
+                trigger: ['change', 'blur'],
+                pattern: /[0-9]*[1-9][0-9]*/,
+               message:'内容必须为正整数'
+          }],
   },
 };

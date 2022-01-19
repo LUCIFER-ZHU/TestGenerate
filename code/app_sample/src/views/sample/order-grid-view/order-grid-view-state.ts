@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: true,
   enableQuickSearch: true,
+  expandSearchForm: true,
   viewCodeName: 'OrderGridView',
   viewName: 'OrderGridView',
   viewCaption: '订单',

@@ -91,7 +91,7 @@ export class MenuControl extends ControlBase {
     }
     let item = this.compute(dataRef.value, defaultSelectRef.value[0]);
     if (Object.keys(item).length > 0 && !item.hidden) {
-      this.menuClick(item);
+      this.handleMenuClick(item);
     }
   }
 

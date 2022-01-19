@@ -44,7 +44,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_customername_like.visible" name="n_customername_like" :required="state.detailsModel.n_customername_like.required" label="客户名称(文本包含(%))">
+  <AppFormItem v-show="state.detailsModel.n_customername_like.visible" name="n_customername_like" :rules="state.rules.n_customername_like" :required="state.detailsModel.n_customername_like.required" label="客户名称(文本包含(%))">
 <appInput
   name="n_customername_like"
   :disabled="state.detailsModel.n_customername_like.disabled"
@@ -60,7 +60,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 6, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_type_eq.visible" name="n_type_eq" :required="state.detailsModel.n_type_eq.required" label="类型(等于(=))">
+  <AppFormItem v-show="state.detailsModel.n_type_eq.visible" name="n_type_eq" :rules="state.rules.n_type_eq" :required="state.detailsModel.n_type_eq.required" label="类型(等于(=))">
 <appDropdownList
   name="n_type_eq"
   :disabled="state.detailsModel.n_type_eq.disabled"

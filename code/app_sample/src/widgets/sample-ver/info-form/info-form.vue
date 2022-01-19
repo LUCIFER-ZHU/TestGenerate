@@ -51,7 +51,7 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="flex-direction: column;">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.samplevername.visible" name="samplevername" :required="state.detailsModel.samplevername.required" label="标题">
+  <AppFormItem v-show="state.detailsModel.samplevername.visible" name="samplevername" :rules="state.rules.samplevername" :required="state.detailsModel.samplevername.required" label="标题">
 <appSpan
   name="samplevername"
   :disabled="state.detailsModel.samplevername.disabled"
@@ -63,7 +63,7 @@ defineExpose({ state, name: 'form' });
 </a-col>
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.content.visible" name="content" :required="state.detailsModel.content.required" label="内容">
+  <AppFormItem v-show="state.detailsModel.content.visible" name="content" :rules="state.rules.content" :required="state.detailsModel.content.required" label="内容">
 <AppRaw
   name="content"
   :date="state.data"

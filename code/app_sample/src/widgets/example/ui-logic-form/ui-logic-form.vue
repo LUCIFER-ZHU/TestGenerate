@@ -66,7 +66,7 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.inputtext.visible" name="inputtext" :required="state.detailsModel.inputtext.required" label="输入提示">
+  <AppFormItem v-show="state.detailsModel.inputtext.visible" name="inputtext" :rules="state.rules.inputtext" :required="state.detailsModel.inputtext.required" label="输入提示">
 <appInput
   name="inputtext"
   :disabled="state.detailsModel.inputtext.disabled"
@@ -140,7 +140,7 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.exampleid.visible" name="exampleid" :required="state.detailsModel.exampleid.required" label="数据主键">
+  <AppFormItem v-show="state.detailsModel.exampleid.visible" name="exampleid" :rules="state.rules.exampleid" :required="state.detailsModel.exampleid.required" label="数据主键">
 <appInput
   name="exampleid"
   :disabled="state.detailsModel.exampleid.disabled"
@@ -162,7 +162,7 @@ defineExpose({ state, name: 'form' });
 </a-col>
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" :required="state.detailsModel.fieldx.required" label="X值回显">
+  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" :rules="state.rules.fieldx" :required="state.detailsModel.fieldx.required" label="X值回显">
 <appSpan
   name="fieldx"
   :disabled="state.detailsModel.fieldx.disabled"
@@ -194,7 +194,7 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="">
 <appSpan
   name="formitem"
   :disabled="state.detailsModel.formitem.disabled"
@@ -216,7 +216,7 @@ defineExpose({ state, name: 'form' });
 </a-col>
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" :required="state.detailsModel.fieldz.required" label="Z值回显">
+  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" :rules="state.rules.fieldz" :required="state.detailsModel.fieldz.required" label="Z值回显">
 <appSpan
   name="fieldz"
   :disabled="state.detailsModel.fieldz.disabled"
@@ -228,7 +228,7 @@ defineExpose({ state, name: 'form' });
 </a-col>
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.currentdate.visible" name="currentdate" :required="state.detailsModel.currentdate.required" label="当前日期">
+  <AppFormItem v-show="state.detailsModel.currentdate.visible" name="currentdate" :rules="state.rules.currentdate" :required="state.detailsModel.currentdate.required" label="当前日期">
 <appSpan
   name="currentdate"
   :disabled="state.detailsModel.currentdate.disabled"
@@ -278,7 +278,7 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.fieldupdate.visible" name="fieldupdate" :required="state.detailsModel.fieldupdate.required" label="更新值回显">
+  <AppFormItem v-show="state.detailsModel.fieldupdate.visible" name="fieldupdate" :rules="state.rules.fieldupdate" :required="state.detailsModel.fieldupdate.required" label="更新值回显">
 <appInput
   name="fieldupdate"
   :disabled="state.detailsModel.fieldupdate.disabled"

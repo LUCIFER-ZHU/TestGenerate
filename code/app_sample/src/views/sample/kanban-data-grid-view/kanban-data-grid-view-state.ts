@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'KanbanDataGridView',
   viewName: 'KanbanDataGridView',
   viewCaption: '看板数据',

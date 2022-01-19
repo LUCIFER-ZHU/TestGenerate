@@ -55,7 +55,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag.visible" name="countertag" :required="state.detailsModel.countertag.required" label="计数1">
+  <AppFormItem v-show="state.detailsModel.countertag.visible" name="countertag" :rules="state.rules.countertag" :required="state.detailsModel.countertag.required" label="计数1">
 <appInput
   name="countertag"
   :disabled="state.detailsModel.countertag.disabled"
@@ -71,7 +71,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag2.visible" name="countertag2" :required="state.detailsModel.countertag2.required" label="计数2">
+  <AppFormItem v-show="state.detailsModel.countertag2.visible" name="countertag2" :rules="state.rules.countertag2" :required="state.detailsModel.countertag2.required" label="计数2">
 <appInput
   name="countertag2"
   :disabled="state.detailsModel.countertag2.disabled"
@@ -87,7 +87,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag3.visible" name="countertag3" :required="state.detailsModel.countertag3.required" label="计数3">
+  <AppFormItem v-show="state.detailsModel.countertag3.visible" name="countertag3" :rules="state.rules.countertag3" :required="state.detailsModel.countertag3.required" label="计数3">
 <appInput
   name="countertag3"
   :disabled="state.detailsModel.countertag3.disabled"
@@ -103,7 +103,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag4.visible" name="countertag4" :required="state.detailsModel.countertag4.required" label="计数4">
+  <AppFormItem v-show="state.detailsModel.countertag4.visible" name="countertag4" :rules="state.rules.countertag4" :required="state.detailsModel.countertag4.required" label="计数4">
 <appInput
   name="countertag4"
   :disabled="state.detailsModel.countertag4.disabled"
@@ -119,7 +119,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag5.visible" name="countertag5" :required="state.detailsModel.countertag5.required" label="计数5">
+  <AppFormItem v-show="state.detailsModel.countertag5.visible" name="countertag5" :rules="state.rules.countertag5" :required="state.detailsModel.countertag5.required" label="计数5">
 <appInput
   name="countertag5"
   :disabled="state.detailsModel.countertag5.disabled"
@@ -135,7 +135,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag6.visible" name="countertag6" :required="state.detailsModel.countertag6.required" label="计数6">
+  <AppFormItem v-show="state.detailsModel.countertag6.visible" name="countertag6" :rules="state.rules.countertag6" :required="state.detailsModel.countertag6.required" label="计数6">
 <appInput
   name="countertag6"
   :disabled="state.detailsModel.countertag6.disabled"
@@ -151,7 +151,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag7.visible" name="countertag7" :required="state.detailsModel.countertag7.required" label="计数7">
+  <AppFormItem v-show="state.detailsModel.countertag7.visible" name="countertag7" :rules="state.rules.countertag7" :required="state.detailsModel.countertag7.required" label="计数7">
 <appInput
   name="countertag7"
   :disabled="state.detailsModel.countertag7.disabled"
@@ -167,7 +167,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag8.visible" name="countertag8" :required="state.detailsModel.countertag8.required" label="计数8">
+  <AppFormItem v-show="state.detailsModel.countertag8.visible" name="countertag8" :rules="state.rules.countertag8" :required="state.detailsModel.countertag8.required" label="计数8">
 <appInput
   name="countertag8"
   :disabled="state.detailsModel.countertag8.disabled"
@@ -183,7 +183,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag9.visible" name="countertag9" :required="state.detailsModel.countertag9.required" label="计数9">
+  <AppFormItem v-show="state.detailsModel.countertag9.visible" name="countertag9" :rules="state.rules.countertag9" :required="state.detailsModel.countertag9.required" label="计数9">
 <appInput
   name="countertag9"
   :disabled="state.detailsModel.countertag9.disabled"

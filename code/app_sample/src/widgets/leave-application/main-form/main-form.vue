@@ -58,7 +58,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.leaveapplicationname.visible" name="leaveapplicationname" :required="state.detailsModel.leaveapplicationname.required" label="请假申请名称">
+  <AppFormItem v-show="state.detailsModel.leaveapplicationname.visible" name="leaveapplicationname" :rules="state.rules.leaveapplicationname" :required="state.detailsModel.leaveapplicationname.required" label="请假申请名称">
 <appInput
   name="leaveapplicationname"
   :disabled="state.detailsModel.leaveapplicationname.disabled"
@@ -75,7 +75,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.state.visible" name="state" :required="state.detailsModel.state.required" label="申请状态">
+  <AppFormItem v-show="state.detailsModel.state.visible" name="state" :rules="state.rules.state" :required="state.detailsModel.state.required" label="申请状态">
 <appDropdownList
   name="state"
   :disabled="state.detailsModel.state.disabled"
@@ -93,7 +93,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.step.visible" name="step" :required="state.detailsModel.step.required" label="审批步骤">
+  <AppFormItem v-show="state.detailsModel.step.visible" name="step" :rules="state.rules.step" :required="state.detailsModel.step.required" label="审批步骤">
 <appInput
   name="step"
   :disabled="state.detailsModel.step.disabled"
@@ -110,7 +110,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.customername.visible" name="customername" :required="state.detailsModel.customername.required" label="客户名称">
+  <AppFormItem v-show="state.detailsModel.customername.visible" name="customername" :rules="state.rules.customername" :required="state.detailsModel.customername.required" label="客户名称">
 <appDataPicker
   name="customername"
   :data="state.data"
@@ -129,7 +129,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.ext_data.visible" name="ext_data" :required="state.detailsModel.ext_data.required" label="扩展数据">
+  <AppFormItem v-show="state.detailsModel.ext_data.visible" name="ext_data" :rules="state.rules.ext_data" :required="state.detailsModel.ext_data.required" label="扩展数据">
 <appInput
   name="ext_data"
   :disabled="state.detailsModel.ext_data.disabled"
@@ -146,7 +146,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.ext_param.visible" name="ext_param" :required="state.detailsModel.ext_param.required" label="扩展参数">
+  <AppFormItem v-show="state.detailsModel.ext_param.visible" name="ext_param" :rules="state.rules.ext_param" :required="state.detailsModel.ext_param.required" label="扩展参数">
 <appInput
   name="ext_param"
   :disabled="state.detailsModel.ext_param.disabled"
@@ -163,7 +163,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.ext_param2.visible" name="ext_param2" :required="state.detailsModel.ext_param2.required" label="扩展参数2">
+  <AppFormItem v-show="state.detailsModel.ext_param2.visible" name="ext_param2" :rules="state.rules.ext_param2" :required="state.detailsModel.ext_param2.required" label="扩展参数2">
 <appInput
   name="ext_param2"
   :disabled="state.detailsModel.ext_param2.disabled"
@@ -180,7 +180,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.deptid.visible" name="deptid" :required="state.detailsModel.deptid.required" label="组织部门标识">
+  <AppFormItem v-show="state.detailsModel.deptid.visible" name="deptid" :rules="state.rules.deptid" :required="state.detailsModel.deptid.required" label="组织部门标识">
 <appInput
   name="deptid"
   :disabled="state.detailsModel.deptid.disabled"
@@ -197,7 +197,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.orgid.visible" name="orgid" :required="state.detailsModel.orgid.required" label="组织机构标识">
+  <AppFormItem v-show="state.detailsModel.orgid.visible" name="orgid" :rules="state.rules.orgid" :required="state.detailsModel.orgid.required" label="组织机构标识">
 <appInput
   name="orgid"
   :disabled="state.detailsModel.orgid.disabled"
@@ -238,7 +238,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.createman.visible" name="createman" :required="state.detailsModel.createman.required" label="建立人">
+  <AppFormItem v-show="state.detailsModel.createman.visible" name="createman" :rules="state.rules.createman" :required="state.detailsModel.createman.required" label="建立人">
 <appSpan
   name="createman"
   :disabled="state.detailsModel.createman.disabled"
@@ -254,7 +254,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.createdate.visible" name="createdate" :required="state.detailsModel.createdate.required" label="建立时间">
+  <AppFormItem v-show="state.detailsModel.createdate.visible" name="createdate" :rules="state.rules.createdate" :required="state.detailsModel.createdate.required" label="建立时间">
 <appSpan
   name="createdate"
   :disabled="state.detailsModel.createdate.disabled"
@@ -270,7 +270,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.updateman.visible" name="updateman" :required="state.detailsModel.updateman.required" label="更新人">
+  <AppFormItem v-show="state.detailsModel.updateman.visible" name="updateman" :rules="state.rules.updateman" :required="state.detailsModel.updateman.required" label="更新人">
 <appSpan
   name="updateman"
   :disabled="state.detailsModel.updateman.disabled"
@@ -286,7 +286,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" :required="state.detailsModel.updatedate.required" label="更新时间">
+  <AppFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" :rules="state.rules.updatedate" :required="state.detailsModel.updatedate.required" label="更新时间">
 <appSpan
   name="updatedate"
   :disabled="state.detailsModel.updatedate.disabled"

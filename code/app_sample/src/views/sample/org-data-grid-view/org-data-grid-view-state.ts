@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'OrgDataGridView',
   viewName: 'OrgDataGridView',
   viewCaption: '组织数据',

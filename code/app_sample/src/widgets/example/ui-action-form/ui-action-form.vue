@@ -164,7 +164,7 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.wd.visible" name="wd" :required="state.detailsModel.wd.required" label="搜索">
+  <AppFormItem v-show="state.detailsModel.wd.visible" name="wd" :rules="state.rules.wd" :required="state.detailsModel.wd.required" label="搜索">
 <appInput
   name="wd"
   :disabled="state.detailsModel.wd.disabled"

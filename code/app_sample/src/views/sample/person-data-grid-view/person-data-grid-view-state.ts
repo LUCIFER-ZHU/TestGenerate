@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'PersonDataGridView',
   viewName: 'PersonDataGridView',
   viewCaption: '人员数据',

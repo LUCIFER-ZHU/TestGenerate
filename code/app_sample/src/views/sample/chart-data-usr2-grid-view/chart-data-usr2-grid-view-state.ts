@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'ChartDataUsr2GridView',
   viewName: 'ChartDataUsr2GridView',
   viewCaption: '图表实体表格视图（功能确认）',

@@ -55,7 +55,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.orgdataname.visible" name="orgdataname" :required="state.detailsModel.orgdataname.required" label="组织名称">
+  <AppFormItem v-show="state.detailsModel.orgdataname.visible" name="orgdataname" :rules="state.rules.orgdataname" :required="state.detailsModel.orgdataname.required" label="组织名称">
 <appDataPicker
   name="orgdataname"
   :data="state.data"
@@ -74,7 +74,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.deptdataname.visible" name="deptdataname" :required="state.detailsModel.deptdataname.required" label="部门名称">
+  <AppFormItem v-show="state.detailsModel.deptdataname.visible" name="deptdataname" :rules="state.rules.deptdataname" :required="state.detailsModel.deptdataname.required" label="部门名称">
 <appInput
   name="deptdataname"
   :disabled="state.detailsModel.deptdataname.disabled"

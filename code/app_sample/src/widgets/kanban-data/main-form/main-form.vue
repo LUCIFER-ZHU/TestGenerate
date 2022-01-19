@@ -58,7 +58,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.kanbandataname.visible" name="kanbandataname" :required="state.detailsModel.kanbandataname.required" label="任务名称">
+  <AppFormItem v-show="state.detailsModel.kanbandataname.visible" name="kanbandataname" :rules="state.rules.kanbandataname" :required="state.detailsModel.kanbandataname.required" label="任务名称">
 <appInput
   name="kanbandataname"
   :disabled="state.detailsModel.kanbandataname.disabled"
@@ -75,7 +75,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.taskstatus.visible" name="taskstatus" :required="state.detailsModel.taskstatus.required" label="任务状态">
+  <AppFormItem v-show="state.detailsModel.taskstatus.visible" name="taskstatus" :rules="state.rules.taskstatus" :required="state.detailsModel.taskstatus.required" label="任务状态">
 <appDropdownList
   name="taskstatus"
   :disabled="state.detailsModel.taskstatus.disabled"
@@ -93,7 +93,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.begintime.visible" name="begintime" :required="state.detailsModel.begintime.required" label="开始时间">
+  <AppFormItem v-show="state.detailsModel.begintime.visible" name="begintime" :rules="state.rules.begintime" :required="state.detailsModel.begintime.required" label="开始时间">
 <appDatePicker
   name="begintime"
   :disabled="state.detailsModel.begintime.disabled"
@@ -110,7 +110,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.endtime.visible" name="endtime" :required="state.detailsModel.endtime.required" label="结束时间">
+  <AppFormItem v-show="state.detailsModel.endtime.visible" name="endtime" :rules="state.rules.endtime" :required="state.detailsModel.endtime.required" label="结束时间">
 <appDatePicker
   name="endtime"
   :disabled="state.detailsModel.endtime.disabled"
@@ -127,7 +127,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" :required="state.detailsModel.memo.required" label="备注">
+  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" :rules="state.rules.memo" :required="state.detailsModel.memo.required" label="备注">
 <appInput
   name="memo"
   :disabled="state.detailsModel.memo.disabled"
@@ -168,7 +168,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.createman.visible" name="createman" :required="state.detailsModel.createman.required" label="建立人">
+  <AppFormItem v-show="state.detailsModel.createman.visible" name="createman" :rules="state.rules.createman" :required="state.detailsModel.createman.required" label="建立人">
 <appSpan
   name="createman"
   :disabled="state.detailsModel.createman.disabled"
@@ -184,7 +184,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.createdate.visible" name="createdate" :required="state.detailsModel.createdate.required" label="建立时间">
+  <AppFormItem v-show="state.detailsModel.createdate.visible" name="createdate" :rules="state.rules.createdate" :required="state.detailsModel.createdate.required" label="建立时间">
 <appSpan
   name="createdate"
   :disabled="state.detailsModel.createdate.disabled"
@@ -200,7 +200,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.updateman.visible" name="updateman" :required="state.detailsModel.updateman.required" label="更新人">
+  <AppFormItem v-show="state.detailsModel.updateman.visible" name="updateman" :rules="state.rules.updateman" :required="state.detailsModel.updateman.required" label="更新人">
 <appSpan
   name="updateman"
   :disabled="state.detailsModel.updateman.disabled"
@@ -216,7 +216,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" :required="state.detailsModel.updatedate.required" label="更新时间">
+  <AppFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" :rules="state.rules.updatedate" :required="state.detailsModel.updatedate.required" label="更新时间">
 <appSpan
   name="updatedate"
   :disabled="state.detailsModel.updatedate.disabled"

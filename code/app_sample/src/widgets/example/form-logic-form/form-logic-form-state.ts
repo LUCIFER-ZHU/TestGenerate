@@ -695,7 +695,7 @@ export const ctrlState = {
       enableCond: 3,
       formItemUpdate: {
         showBusyIndicator: "true",
-        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@16c8b7bd",
+        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@352e787a",
         updateDetails: [
         "",
         "",
@@ -716,7 +716,7 @@ export const ctrlState = {
       enableCond: 3,
       formItemUpdate: {
         showBusyIndicator: "true",
-        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@16c8b7bd",
+        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@352e787a",
         updateDetails: [
         "",
         "",

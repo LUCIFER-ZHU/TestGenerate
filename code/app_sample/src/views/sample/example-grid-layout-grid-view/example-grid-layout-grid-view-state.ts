@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'ExampleGridLayoutGridView',
   viewName: 'ExampleGridLayoutGridView',
   viewCaption: '表格布局',

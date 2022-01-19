@@ -55,7 +55,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" :required="state.detailsModel.fieldx.required" label="X值">
+  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" :rules="state.rules.fieldx" :required="state.detailsModel.fieldx.required" label="X值">
 <appInput
   name="fieldx"
   :disabled="state.detailsModel.fieldx.disabled"
@@ -71,7 +71,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" :required="state.detailsModel.fieldy.required" label="Y值">
+  <AppFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" :rules="state.rules.fieldy" :required="state.detailsModel.fieldy.required" label="Y值">
 <appInput
   name="fieldy"
   :disabled="state.detailsModel.fieldy.disabled"
@@ -87,7 +87,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" :required="state.detailsModel.fieldz.required" label="Z值">
+  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" :rules="state.rules.fieldz" :required="state.detailsModel.fieldz.required" label="Z值">
 <appInput
   name="fieldz"
   :disabled="state.detailsModel.fieldz.disabled"

@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'LogicValidDataGridView',
   viewName: 'LogicValidDataGridView',
   viewCaption: '示例数据（启用逻辑删除）',

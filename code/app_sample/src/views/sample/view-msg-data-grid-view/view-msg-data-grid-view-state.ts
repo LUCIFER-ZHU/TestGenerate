@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'ViewMsgDataGridView',
   viewName: 'ViewMsgDataGridView',
   viewCaption: '视图消息数据',

@@ -14,6 +14,22 @@ const routes = [
     },
     component: () => import("@views/ungroup/app-index-view"),
     children: [
+            // 临时提交首页视图路由 begin
+            {
+              path: "examples/:example?/views/viewtypeindexview",
+              meta: {
+                  tag:'ViewTypeIndexView'
+              },
+              component: () => import("@views/sample/view-type-index-view"),
+            },
+            {
+              path: "examples/:example?/views/ctrltypeindexview",
+              meta: {
+                  tag:'CtrlTypeIndexView'
+              },
+              component: () => import("@views/sample/ctrl-type-index-view"),
+            },
+            // 临时提交首页视图路由 end
     ]
   },
   {

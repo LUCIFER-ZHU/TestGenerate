@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'ExampleGridCssAndIconGridView',
   viewName: 'ExampleGridCssAndIconGridView',
   viewCaption: '界面样式及图标',

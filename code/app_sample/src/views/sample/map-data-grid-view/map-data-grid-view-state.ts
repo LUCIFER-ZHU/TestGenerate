@@ -2,6 +2,7 @@ export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
   enableQuickSearch: true,
+  expandSearchForm: false,
   viewCodeName: 'MapDataGridView',
   viewName: 'MapDataGridView',
   viewCaption: '地图示例数据',

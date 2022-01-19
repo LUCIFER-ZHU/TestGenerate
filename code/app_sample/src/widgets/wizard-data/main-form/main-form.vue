@@ -55,7 +55,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.textfield.visible" name="textfield" :required="state.detailsModel.textfield.required" label="文本属性">
+  <AppFormItem v-show="state.detailsModel.textfield.visible" name="textfield" :rules="state.rules.textfield" :required="state.detailsModel.textfield.required" label="文本属性">
 <appInput
   name="textfield"
   :disabled="state.detailsModel.textfield.disabled"
@@ -72,7 +72,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.timefield.visible" name="timefield" :required="state.detailsModel.timefield.required" label="时间属性">
+  <AppFormItem v-show="state.detailsModel.timefield.visible" name="timefield" :rules="state.rules.timefield" :required="state.detailsModel.timefield.required" label="时间属性">
 <appDatePicker
   name="timefield"
   :disabled="state.detailsModel.timefield.disabled"
@@ -89,7 +89,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.numfield.visible" name="numfield" :required="state.detailsModel.numfield.required" label="数值属性">
+  <AppFormItem v-show="state.detailsModel.numfield.visible" name="numfield" :rules="state.rules.numfield" :required="state.detailsModel.numfield.required" label="数值属性">
 <appInput
   name="numfield"
   :disabled="state.detailsModel.numfield.disabled"

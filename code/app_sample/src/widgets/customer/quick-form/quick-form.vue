@@ -55,7 +55,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.customername.visible" name="customername" :required="state.detailsModel.customername.required" label="客户名称">
+  <AppFormItem v-show="state.detailsModel.customername.visible" name="customername" :rules="state.rules.customername" :required="state.detailsModel.customername.required" label="客户名称">
 <appInput
   name="customername"
   :disabled="state.detailsModel.customername.disabled"
@@ -72,7 +72,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.pcustomername.visible" name="pcustomername" :required="state.detailsModel.pcustomername.required" label="上级客户">
+  <AppFormItem v-show="state.detailsModel.pcustomername.visible" name="pcustomername" :rules="state.rules.pcustomername" :required="state.detailsModel.pcustomername.required" label="上级客户">
 <appDataPicker
   name="pcustomername"
   :data="state.data"
@@ -91,7 +91,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.type.visible" name="type" :required="state.detailsModel.type.required" label="类型">
+  <AppFormItem v-show="state.detailsModel.type.visible" name="type" :rules="state.rules.type" :required="state.detailsModel.type.required" label="类型">
 <appRadioGroup
   name="type"
   :data="state.data"
@@ -108,7 +108,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" :required="state.detailsModel.memo.required" label="备注">
+  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" :rules="state.rules.memo" :required="state.detailsModel.memo.required" label="备注">
 <appInput
   name="memo"
   :disabled="state.detailsModel.memo.disabled"

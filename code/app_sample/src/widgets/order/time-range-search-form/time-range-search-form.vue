@@ -44,7 +44,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_orderdate_gtandeq.visible" name="n_orderdate_gtandeq" :required="state.detailsModel.n_orderdate_gtandeq.required" label="订单时间(大于等于(>=))">
+  <AppFormItem v-show="state.detailsModel.n_orderdate_gtandeq.visible" name="n_orderdate_gtandeq" :rules="state.rules.n_orderdate_gtandeq" :required="state.detailsModel.n_orderdate_gtandeq.required" label="订单时间(大于等于(>=))">
 <appDatePicker
   name="n_orderdate_gtandeq"
   :disabled="state.detailsModel.n_orderdate_gtandeq.disabled"
@@ -61,7 +61,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_orderdate_ltandeq.visible" name="n_orderdate_ltandeq" :required="state.detailsModel.n_orderdate_ltandeq.required" label="订单时间(小于等于(<=))">
+  <AppFormItem v-show="state.detailsModel.n_orderdate_ltandeq.visible" name="n_orderdate_ltandeq" :rules="state.rules.n_orderdate_ltandeq" :required="state.detailsModel.n_orderdate_ltandeq.required" label="订单时间(小于等于(<=))">
 <appDatePicker
   name="n_orderdate_ltandeq"
   :disabled="state.detailsModel.n_orderdate_ltandeq.disabled"
