@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './ui-logic-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -67,9 +66,10 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.inputtext.visible" name="inputtext" label="输入提示">
+  <AppFormItem v-show="state.detailsModel.inputtext.visible" name="inputtext" :required="state.detailsModel.inputtext.required" label="输入提示">
 <appInput
   name="inputtext"
+  :disabled="state.detailsModel.inputtext.disabled"
   type="text"
   :value="state.data.inputtext"
   @editorEvent="onEditorEvent"
@@ -140,9 +140,10 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.exampleid.visible" name="exampleid" label="数据主键">
+  <AppFormItem v-show="state.detailsModel.exampleid.visible" name="exampleid" :required="state.detailsModel.exampleid.required" label="数据主键">
 <appInput
   name="exampleid"
+  :disabled="state.detailsModel.exampleid.disabled"
   type="text"
   :value="state.data.exampleid"
   @editorEvent="onEditorEvent"
@@ -161,9 +162,10 @@ defineExpose({ state, name: 'form' });
 </a-col>
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" label="X值回显">
+  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" :required="state.detailsModel.fieldx.required" label="X值回显">
 <appSpan
   name="fieldx"
+  :disabled="state.detailsModel.fieldx.disabled"
   dataType="25"
   :value="state.data.fieldx"
   :context="state.context"
@@ -192,9 +194,10 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" label="">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="">
 <appSpan
   name="formitem"
+  :disabled="state.detailsModel.formitem.disabled"
   dataType="25"
   :value="state.data.formitem"
   :context="state.context"
@@ -213,9 +216,10 @@ defineExpose({ state, name: 'form' });
 </a-col>
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" label="Z值回显">
+  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" :required="state.detailsModel.fieldz.required" label="Z值回显">
 <appSpan
   name="fieldz"
+  :disabled="state.detailsModel.fieldz.disabled"
   dataType="25"
   :value="state.data.fieldz"
   :context="state.context"
@@ -224,9 +228,10 @@ defineExpose({ state, name: 'form' });
 </a-col>
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.currentdate.visible" name="currentdate" label="当前日期">
+  <AppFormItem v-show="state.detailsModel.currentdate.visible" name="currentdate" :required="state.detailsModel.currentdate.required" label="当前日期">
 <appSpan
   name="currentdate"
+  :disabled="state.detailsModel.currentdate.disabled"
   dataType="5"
   :value="state.data.currentdate"
   :context="state.context"
@@ -273,9 +278,10 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.fieldupdate.visible" name="fieldupdate" label="更新值回显">
+  <AppFormItem v-show="state.detailsModel.fieldupdate.visible" name="fieldupdate" :required="state.detailsModel.fieldupdate.required" label="更新值回显">
 <appInput
   name="fieldupdate"
+  :disabled="state.detailsModel.fieldupdate.disabled"
   type="number"
   :value="state.data.fieldupdate"
   @editorEvent="onEditorEvent"

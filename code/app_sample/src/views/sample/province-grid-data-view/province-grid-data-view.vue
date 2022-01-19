@@ -36,6 +36,9 @@ const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent } = new Grid
     <template v-slot:caption>
       <AppIconText class="app-view__caption" size="large" :text="state.viewCaption" />
     </template>
+    <template v-slot:quickGroupSearch>
+      <app-quick-group :quickGroupModel="state.quickGroupPSCodeList" @onQuickGroupEvent="onQuickGroupEvent" />
+    </template>
     <template v-slot:toolbar>
       <AppToolbar
         mode="button"

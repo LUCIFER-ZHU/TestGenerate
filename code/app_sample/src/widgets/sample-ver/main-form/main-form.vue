@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './main-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.samplevername.visible" name="samplevername" label="标题">
+  <AppFormItem v-show="state.detailsModel.samplevername.visible" name="samplevername" :required="state.detailsModel.samplevername.required" label="标题">
 <appInput
   name="samplevername"
+  :disabled="state.detailsModel.samplevername.disabled"
   :maxLength="200"
   type="text"
   :value="state.data.samplevername"
@@ -72,9 +72,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.verstr.visible" name="verstr" label="版本号">
+  <AppFormItem v-show="state.detailsModel.verstr.visible" name="verstr" :required="state.detailsModel.verstr.required" label="版本号">
 <appInput
   name="verstr"
+  :disabled="state.detailsModel.verstr.disabled"
   :maxLength="100"
   type="text"
   :value="state.data.verstr"
@@ -88,9 +89,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.type.visible" name="type" label="分类">
+  <AppFormItem v-show="state.detailsModel.type.visible" name="type" :required="state.detailsModel.type.required" label="分类">
 <appDropdownList
   name="type"
+  :disabled="state.detailsModel.type.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
   :value="state.data.type"
@@ -105,7 +107,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.content.visible" name="content" label="内容">
+  <AppFormItem v-show="state.detailsModel.content.visible" name="content" :required="state.detailsModel.content.required" label="内容">
     /*未找到模板[MARKDOWN]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -114,9 +116,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" label="备注">
+  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" :required="state.detailsModel.memo.required" label="备注">
 <appInput
   name="memo"
+  :disabled="state.detailsModel.memo.disabled"
   :maxLength="1000"
   :showMaxLength="true"
   :value="state.data.memo"

@@ -28,6 +28,8 @@ export class CalculatorServiceBase extends EntityService {
   protected initBasicData() {
     this.appEntityCodeName = 'calculator';
     this.appEntityCodeNames = 'calculators';
+    this.appEntityKeyCodeName = 'calculatorid';
+      this.appEntityTextCodeName = 'calculatorname';
     // 初始化关系实体路径集合
     this.deResPaths = [
         [{"pathName":"calculators","parameterName":"calculator"}]

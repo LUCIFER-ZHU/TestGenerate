@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="doc.core.sample.mapper.ViewMsgDataMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="ViewMsgDataResultMap" type="doc.core.sample.domain.ViewMsgData" autoMapping="true">
+		<id property="viewMsgDataId" column="viewmsgdataid" /><!--主键字段映射-->
+    </resultMap>
+
+    <select id="selectById"  resultMap="ViewMsgDataResultMap">
+        <include refid="view" /> 
+         where 
+         t1.viewmsgdataid=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="doc.core.sample.domain.ViewMsgData" resultMap="ViewMsgDataResultMap">
+        <include refid="view" /> 
+         where 
+         (viewmsgdataid = #{ viewMsgDataId })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="ViewMsgDataResultMap">
+        <include refid="view" /> 
+         where 
+         (viewmsgdataid)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.viewMsgDataId }) </foreach>)
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CONTENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`LOCATION`, t1.`ORGID`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VIEWMSGDATAID`, t1.`VIEWMSGDATANAME` FROM `T_VIEWMSGDATA` t1  
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VIEWMSGDATAID`, t1.`VIEWMSGDATANAME` FROM `T_VIEWMSGDATA` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CONTENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`LOCATION`, t1.`ORGID`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VIEWMSGDATAID`, t1.`VIEWMSGDATANAME` FROM `T_VIEWMSGDATA` t1  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="doc.core.sample.filter.ViewMsgDataSearchContext"  resultMap="ViewMsgDataResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+
+</mapper>

@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './css-and-icon-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -71,9 +70,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" label="收文单位">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="收文单位">
 <appInput
   name="formitem"
+  :disabled="state.detailsModel.formitem.disabled"
   type="text"
   :value="state.data.formitem"
   @editorEvent="onEditorEvent"
@@ -86,9 +86,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" label="收文编号">
+  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :required="state.detailsModel.formitem1.required" label="收文编号">
 <appInput
   name="formitem1"
+  :disabled="state.detailsModel.formitem1.disabled"
   type="text"
   :value="state.data.formitem1"
   @editorEvent="onEditorEvent"
@@ -101,9 +102,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" label="收文内容">
+  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :required="state.detailsModel.formitem2.required" label="收文内容">
 <appInput
   name="formitem2"
+  :disabled="state.detailsModel.formitem2.disabled"
   :showMaxLength="true"
   type="textarea"
   :value="state.data.formitem2"
@@ -153,9 +155,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" label="标签图标">
+  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" :required="state.detailsModel.formitem3.required" label="标签图标">
 <appInput
   name="formitem3"
+  :disabled="state.detailsModel.formitem3.disabled"
   type="text"
   :value="state.data.formitem3"
   @editorEvent="onEditorEvent"
@@ -168,9 +171,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" label="无边框浅蓝背景">
+  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" :required="state.detailsModel.formitem4.required" label="无边框浅蓝背景">
 <appInput
   name="formitem4"
+  :disabled="state.detailsModel.formitem4.disabled"
   type="text"
   :value="state.data.formitem4"
   @editorEvent="onEditorEvent"

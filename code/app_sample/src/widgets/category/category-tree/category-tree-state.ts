@@ -142,7 +142,7 @@ export class ControlVO extends ControlVOBase implements TreeControlVO {
 
 export const ctrlState = {
   controlCodeName: 'Category',
-  controlName: 'treeexpbar_tree',
+  controlName: 'tree',
   controlService: new TreeService<ControlVO>(ControlVO, new CategoryService() ),
   currentselectedNode: {},
   data: [],

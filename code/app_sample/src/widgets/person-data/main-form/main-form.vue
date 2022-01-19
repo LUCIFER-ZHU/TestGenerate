@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './main-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -73,9 +72,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.persondataname.visible" name="persondataname" label="姓名">
+  <AppFormItem v-show="state.detailsModel.persondataname.visible" name="persondataname" :required="state.detailsModel.persondataname.required" label="姓名">
 <appInput
   name="persondataname"
+  :disabled="state.detailsModel.persondataname.disabled"
   :maxLength="200"
   type="text"
   :value="state.data.persondataname"
@@ -89,9 +89,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.orgdataname.visible" name="orgdataname" label="组织名称">
+  <AppFormItem v-show="state.detailsModel.orgdataname.visible" name="orgdataname" :required="state.detailsModel.orgdataname.required" label="组织名称">
 <appSpan
   name="orgdataname"
+  :disabled="state.detailsModel.orgdataname.disabled"
   dataType="25"
   :value="state.data.orgdataname"
   :context="state.context"
@@ -104,9 +105,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.deptdataname.visible" name="deptdataname" label="部门名称">
+  <AppFormItem v-show="state.detailsModel.deptdataname.visible" name="deptdataname" :required="state.detailsModel.deptdataname.required" label="部门名称">
 <appSpan
   name="deptdataname"
+  :disabled="state.detailsModel.deptdataname.disabled"
   dataType="25"
   :value="state.data.deptdataname"
   :context="state.context"
@@ -119,9 +121,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.idcard.visible" name="idcard" label="身份证">
+  <AppFormItem v-show="state.detailsModel.idcard.visible" name="idcard" :required="state.detailsModel.idcard.required" label="身份证">
 <appInput
   name="idcard"
+  :disabled="state.detailsModel.idcard.disabled"
   :maxLength="18"
   type="text"
   :value="state.data.idcard"
@@ -135,9 +138,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.gender.visible" name="gender" label="性别">
+  <AppFormItem v-show="state.detailsModel.gender.visible" name="gender" :required="state.detailsModel.gender.required" label="性别">
 <appDropdownList
   name="gender"
+  :disabled="state.detailsModel.gender.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
   :value="state.data.gender"
@@ -152,9 +156,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.age.visible" name="age" label="年龄">
+  <AppFormItem v-show="state.detailsModel.age.visible" name="age" :required="state.detailsModel.age.required" label="年龄">
 <appInput
   name="age"
+  :disabled="state.detailsModel.age.disabled"
   type="text"
   :value="state.data.age"
   @editorEvent="onEditorEvent"
@@ -167,7 +172,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.orgdataid.visible" name="orgdataid" label="组织数据标识">
+  <AppFormItem v-show="state.detailsModel.orgdataid.visible" name="orgdataid" :required="state.detailsModel.orgdataid.required" label="组织数据标识">
     /*未找到模板[HIDDEN]*/  </AppFormItem>
 </a-col>
 <a-col
@@ -176,7 +181,7 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.deptdataid.visible" name="deptdataid" label="部门数据标识">
+  <AppFormItem v-show="state.detailsModel.deptdataid.visible" name="deptdataid" :required="state.detailsModel.deptdataid.required" label="部门数据标识">
     /*未找到模板[HIDDEN]*/  </AppFormItem>
 </a-col>
     </a-row>
@@ -188,9 +193,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.avatar.visible" name="avatar" label="头像">
+  <AppFormItem v-show="state.detailsModel.avatar.visible" name="avatar" :required="state.detailsModel.avatar.required" label="头像">
 <appUpload
   name="avatar"
+  :disabled="state.detailsModel.avatar.disabled"
   :limit="1"
   accept='image/*'
   listType="picture-card"

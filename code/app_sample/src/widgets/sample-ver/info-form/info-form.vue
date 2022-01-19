@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './info-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -52,9 +51,10 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="flex-direction: column;">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.samplevername.visible" name="samplevername" label="标题">
+  <AppFormItem v-show="state.detailsModel.samplevername.visible" name="samplevername" :required="state.detailsModel.samplevername.required" label="标题">
 <appSpan
   name="samplevername"
+  :disabled="state.detailsModel.samplevername.disabled"
   dataType="25"
   :value="state.data.samplevername"
   :context="state.context"
@@ -63,10 +63,11 @@ defineExpose({ state, name: 'form' });
 </a-col>
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.content.visible" name="content" label="内容">
+  <AppFormItem v-show="state.detailsModel.content.visible" name="content" :required="state.detailsModel.content.required" label="内容">
 <AppRaw
   name="content"
   :date="state.data"
+  :disabled="state.detailsModel.content.disabled"
   :value="state.data.content"
   @editorEvent="onEditorEvent"
 /> 

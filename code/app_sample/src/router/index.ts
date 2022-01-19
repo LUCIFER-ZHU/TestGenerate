@@ -15,6 +15,13 @@ const routes = [
     component: () => import("@views/ungroup/sample"),
     children: [
             {
+              path: "customers/:customer?/editorvalues/:editorvalue?/views/editorvalueusr2gridview",
+              meta: {
+                  tag:'EditorValueUsr2GridView'
+              },
+              component: () => import("@views/sample/editor-value-usr2-grid-view"),
+            },
+            {
               path: "customers/:customer?/editorvalues/:editorvalue?/views/editorvalueroweditgridview",
               meta: {
                   tag:'EDITORVALUERowEditGridView'
@@ -55,13 +62,6 @@ const routes = [
                   tag:'ProvinceEditDataView'
               },
               component: () => import("@views/sample/province-edit-data-view"),
-            },
-            {
-              path: "provinces/:province?/views/provinceeditview",
-              meta: {
-                  tag:'ProvinceEditView'
-              },
-              component: () => import("@views/sample/province-edit-view"),
             },
             {
               path: "provinces/:province?/views/provincegriddataview",
@@ -113,25 +113,18 @@ const routes = [
               component: () => import("@views/sample/logic-valid-data-edit-view"),
             },
             {
-              path: "cities/:city?/views/cityeditview",
+              path: "provinces/:province?/cities/:city?/views/cityeditview",
               meta: {
                   tag:'CityEditView'
               },
               component: () => import("@views/sample/city-edit-view"),
             },
             {
-              path: "cities/:city?/views/citytreenavgridview",
+              path: "provinces/:province?/cities/:city?/views/citytreenavgridview",
               meta: {
                   tag:'CityTreeNavGridView'
               },
               component: () => import("@views/sample/city-tree-nav-grid-view"),
-            },
-            {
-              path: "cities/:city?/views/citygridview",
-              meta: {
-                  tag:'CityGridView'
-              },
-              component: () => import("@views/sample/city-grid-view"),
             },
             {
               path: "orders/:order?/orderdetails/:orderdetail?/views/orderdetaileditview",
@@ -141,13 +134,6 @@ const routes = [
               component: () => import("@views/sample/order-detail-edit-view"),
             },
             {
-              path: "orders/:order?/orderdetails/:orderdetail?/views/orderdetailgridview",
-              meta: {
-                  tag:'OrderDetailGridView'
-              },
-              component: () => import("@views/sample/order-detail-grid-view"),
-            },
-            {
               path: "orders/:order?/orderdetails/:orderdetail?/views/orderdetaillineeditgridview",
               meta: {
                   tag:'OrderDetailLineEditGridView'
@@ -155,39 +141,25 @@ const routes = [
               component: () => import("@views/sample/order-detail-line-edit-grid-view"),
             },
             {
-              path: "districts/:district?/views/districteditview",
+              path: "cities/:city?/districts/:district?/views/districteditview",
               meta: {
                   tag:'DistrictEditView'
               },
               component: () => import("@views/sample/district-edit-view"),
             },
             {
-              path: "districts/:district?/views/districttreenavinfoeditview",
+              path: "cities/:city?/districts/:district?/views/districttreenavinfoeditview",
               meta: {
                   tag:'DistrictTreeNavInfoEditView'
               },
               component: () => import("@views/sample/district-tree-nav-info-edit-view"),
             },
             {
-              path: "districts/:district?/views/districttreenavgridview",
+              path: "cities/:city?/districts/:district?/views/districttreenavgridview",
               meta: {
                   tag:'DistrictTreeNavGridView'
               },
               component: () => import("@views/sample/district-tree-nav-grid-view"),
-            },
-            {
-              path: "products/:product?/views/producteditview",
-              meta: {
-                  tag:'ProductEditView'
-              },
-              component: () => import("@views/sample/product-edit-view"),
-            },
-            {
-              path: "products/:product?/views/productgridview",
-              meta: {
-                  tag:'ProductGridView'
-              },
-              component: () => import("@views/sample/product-grid-view"),
             },
             {
               path: "products/:product?/views/productgriddataview",
@@ -202,13 +174,6 @@ const routes = [
                   tag:'ProductEditDataView'
               },
               component: () => import("@views/sample/product-edit-data-view"),
-            },
-            {
-              path: "products/:product?/views/productbycategorygridview",
-              meta: {
-                  tag:'ProductByCategoryGridView'
-              },
-              component: () => import("@views/sample/product-by-category-grid-view"),
             },
             {
               path: "counterdata2s/:counterdata2?/views/counterdata2editview",
@@ -237,13 +202,6 @@ const routes = [
                   tag:'Example2EditView'
               },
               component: () => import("@views/sample/example2-edit-view"),
-            },
-            {
-              path: "examples/:example?/example2s/:example2?/views/example2gridview",
-              meta: {
-                  tag:'Example2GridView'
-              },
-              component: () => import("@views/sample/example2-grid-view"),
             },
             {
               path: "orgdatas/:orgdata?/peopledata/:persondata?/views/persondatagridview",
@@ -293,13 +251,6 @@ const routes = [
                   tag:'ExampleGridSortGridView'
               },
               component: () => import("@views/sample/example-grid-sort-grid-view"),
-            },
-            {
-              path: "examples/:example?/views/examplegirdlogicgridview",
-              meta: {
-                  tag:'ExampleGirdLogicGridView'
-              },
-              component: () => import("@views/sample/example-gird-logic-grid-view"),
             },
             {
               path: "examples/:example?/views/exampleappdeflogiceditview",
@@ -580,13 +531,6 @@ const routes = [
                   tag:'CategoryEditView'
               },
               component: () => import("@views/sample/category-edit-view"),
-            },
-            {
-              path: "categories/:category?/views/categorytreeexpview",
-              meta: {
-                  tag:'CategoryTreeExpView'
-              },
-              component: () => import("@views/sample/category-tree-exp-view"),
             },
             {
               path: "categories/:category?/views/categorygridview",
@@ -895,13 +839,6 @@ const routes = [
                   tag:'ChartDataUsr3GridView'
               },
               component: () => import("@views/sample/chart-data-usr3-grid-view"),
-            },
-            {
-              path: "chartdatas/:chartdata?/views/chartdatatreeexpview",
-              meta: {
-                  tag:'ChartDataTreeExpView'
-              },
-              component: () => import("@views/sample/chart-data-tree-exp-view"),
             },
             {
               path: "chartdatas/:chartdata?/views/chartdataeditview",

@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './main-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -59,9 +58,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.opportunityname.visible" name="opportunityname" label="商机名称">
+  <AppFormItem v-show="state.detailsModel.opportunityname.visible" name="opportunityname" :required="state.detailsModel.opportunityname.required" label="商机名称">
 <appInput
   name="opportunityname"
+  :disabled="state.detailsModel.opportunityname.disabled"
   :maxLength="200"
   type="text"
   :value="state.data.opportunityname"
@@ -75,11 +75,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.customername.visible" name="customername" label="客户名称">
+  <AppFormItem v-show="state.detailsModel.customername.visible" name="customername" :required="state.detailsModel.customername.required" label="客户名称">
 <appDataPicker
   name="customername"
   :data="state.data"
   valueItem="customerid"
+  :disabled="state.detailsModel.customername.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"
@@ -93,9 +94,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 8, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.exprevenue.visible" name="exprevenue" label="预期收益">
+  <AppFormItem v-show="state.detailsModel.exprevenue.visible" name="exprevenue" :required="state.detailsModel.exprevenue.required" label="预期收益">
 <appInput
   name="exprevenue"
+  :disabled="state.detailsModel.exprevenue.disabled"
   type="text"
   :value="state.data.exprevenue"
   @editorEvent="onEditorEvent"
@@ -108,9 +110,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 8, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.expendtime.visible" name="expendtime" label="预计结束时间">
+  <AppFormItem v-show="state.detailsModel.expendtime.visible" name="expendtime" :required="state.detailsModel.expendtime.required" label="预计结束时间">
 <appDatePicker
   name="expendtime"
+  :disabled="state.detailsModel.expendtime.disabled"
   dateFormat="YYYY-MM-DD HH:mm:ss"
   dateType="dateTime"
   :value="state.data.expendtime"
@@ -124,9 +127,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 8, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.priority.visible" name="priority" label="优先级">
+  <AppFormItem v-show="state.detailsModel.priority.visible" name="priority" :required="state.detailsModel.priority.required" label="优先级">
 <appDropdownList
   name="priority"
+  :disabled="state.detailsModel.priority.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
   :value="state.data.priority"
@@ -141,9 +145,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 8, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.state.visible" name="state" label="商机状态">
+  <AppFormItem v-show="state.detailsModel.state.visible" name="state" :required="state.detailsModel.state.required" label="商机状态">
 <appDropdownList
   name="state"
+  :disabled="state.detailsModel.state.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
   :value="state.data.state"
@@ -158,11 +163,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 8, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.persondataname.visible" name="persondataname" label="销售员">
+  <AppFormItem v-show="state.detailsModel.persondataname.visible" name="persondataname" :required="state.detailsModel.persondataname.required" label="销售员">
 <appDataPicker
   name="persondataname"
   :data="state.data"
   valueItem="persondataid"
+  :disabled="state.detailsModel.persondataname.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"
@@ -176,9 +182,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 8, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.phone.visible" name="phone" label="电话">
+  <AppFormItem v-show="state.detailsModel.phone.visible" name="phone" :required="state.detailsModel.phone.required" label="电话">
 <appInput
   name="phone"
+  :disabled="state.detailsModel.phone.disabled"
   :maxLength="100"
   type="text"
   :value="state.data.phone"
@@ -192,9 +199,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.email.visible" name="email" label="电子邮件">
+  <AppFormItem v-show="state.detailsModel.email.visible" name="email" :required="state.detailsModel.email.required" label="电子邮件">
 <appInput
   name="email"
+  :disabled="state.detailsModel.email.disabled"
   :maxLength="100"
   type="text"
   :value="state.data.email"
@@ -232,9 +240,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.createman.visible" name="createman" label="建立人">
+  <AppFormItem v-show="state.detailsModel.createman.visible" name="createman" :required="state.detailsModel.createman.required" label="建立人">
 <appSpan
   name="createman"
+  :disabled="state.detailsModel.createman.disabled"
   dataType="25"
   :value="state.data.createman"
   :context="state.context"
@@ -247,9 +256,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.createdate.visible" name="createdate" label="建立时间">
+  <AppFormItem v-show="state.detailsModel.createdate.visible" name="createdate" :required="state.detailsModel.createdate.required" label="建立时间">
 <appSpan
   name="createdate"
+  :disabled="state.detailsModel.createdate.disabled"
   dataType="5"
   :value="state.data.createdate"
   :context="state.context"
@@ -262,9 +272,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.updateman.visible" name="updateman" label="更新人">
+  <AppFormItem v-show="state.detailsModel.updateman.visible" name="updateman" :required="state.detailsModel.updateman.required" label="更新人">
 <appSpan
   name="updateman"
+  :disabled="state.detailsModel.updateman.disabled"
   dataType="25"
   :value="state.data.updateman"
   :context="state.context"
@@ -277,9 +288,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" label="更新时间">
+  <AppFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" :required="state.detailsModel.updatedate.required" label="更新时间">
 <appSpan
   name="updatedate"
+  :disabled="state.detailsModel.updatedate.disabled"
   dataType="5"
   :value="state.data.updatedate"
   :context="state.context"

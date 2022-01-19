@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './nav-param-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" label="静态参数">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="静态参数">
 <appInput
   name="formitem"
+  :disabled="state.detailsModel.formitem.disabled"
   type="text"
   :value="state.data.formitem"
   @editorEvent="onEditorEvent"
@@ -71,9 +71,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" label="当前树节点id">
+  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :required="state.detailsModel.formitem1.required" label="当前树节点id">
 <appInput
   name="formitem1"
+  :disabled="state.detailsModel.formitem1.disabled"
   type="text"
   :value="state.data.formitem1"
   @editorEvent="onEditorEvent"
@@ -86,9 +87,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" label="当前树节点父id">
+  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :required="state.detailsModel.formitem2.required" label="当前树节点父id">
 <appInput
   name="formitem2"
+  :disabled="state.detailsModel.formitem2.disabled"
   type="text"
   :value="state.data.formitem2"
   @editorEvent="onEditorEvent"

@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './main-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.orgdataname.visible" name="orgdataname" label="组织名称">
+  <AppFormItem v-show="state.detailsModel.orgdataname.visible" name="orgdataname" :required="state.detailsModel.orgdataname.required" label="组织名称">
 <appInput
   name="orgdataname"
+  :disabled="state.detailsModel.orgdataname.disabled"
   :maxLength="200"
   type="text"
   :value="state.data.orgdataname"
@@ -72,9 +72,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.orgdatacode.visible" name="orgdatacode" label="组织编码">
+  <AppFormItem v-show="state.detailsModel.orgdatacode.visible" name="orgdatacode" :required="state.detailsModel.orgdatacode.required" label="组织编码">
 <appInput
   name="orgdatacode"
+  :disabled="state.detailsModel.orgdatacode.disabled"
   :maxLength="100"
   type="text"
   :value="state.data.orgdatacode"
@@ -88,11 +89,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.porgdataname.visible" name="porgdataname" label="父级组织">
+  <AppFormItem v-show="state.detailsModel.porgdataname.visible" name="porgdataname" :required="state.detailsModel.porgdataname.required" label="父级组织">
 <appDataPicker
   name="porgdataname"
   :data="state.data"
   valueItem="porgdataid"
+  :disabled="state.detailsModel.porgdataname.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"

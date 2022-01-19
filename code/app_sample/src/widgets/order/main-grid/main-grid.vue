@@ -88,8 +88,16 @@ defineExpose({ state, name: 'grid' });
     
 </div>
 <div v-if="Object.is(column.dataIndex, 'state')" class="table-cell">
-
-  <div class="text-cell">
+  <div v-if="state.rowEditState" class="editor-cell">
+<appInput
+  name="state"
+  :maxLength="60"
+  type="text"
+  :value="record.state"
+  @editorEvent="onEditorEvent($event,index)"
+/> 
+  </div>
+  <div v-else class="text-cell">
     <span class="text">{{text}}</span>
   </div>
     
@@ -102,6 +110,7 @@ defineExpose({ state, name: 'grid' });
     
 </div>
     </template>
+
   </a-table>
 </template>
 <style lang="scss">

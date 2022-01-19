@@ -97,22 +97,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEPORTALVIEW",
     "fileDir": "@views/sample/customer-main-dashboard-view"
   },
-  "ProductEditView":{
-    "name": "ProductEditView",
-    "codeName": "ProductEditView",
-    "appEntityName":"Product",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"products","parameterName":"product"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "producteditview" }
-    ],
-    "caption": "产品",
-    "viewType": "DEEDITVIEW",
-    "fileDir": "@views/sample/product-edit-view"
-  },
   "ExampleFormValueFormatEditView":{
     "name": "ExampleFormValueFormatEditView",
     "codeName": "ExampleFormValueFormatEditView",
@@ -193,6 +177,22 @@ export const AppViewConfig:IParam = {
     "viewType": "DEGRIDVIEW",
     "fileDir": "@views/sample/customer-auto-search-grid-view"
   },
+  "EditorValueUsr2GridView":{
+    "name": "EditorValueUsr2GridView",
+    "codeName": "EditorValueUsr2GridView",
+    "appEntityName":"EditorValue",
+    "openMode": "INDEXVIEWTAB",
+    "redirectView": false,
+    "deResPaths": [
+      [{"pathName":"customers","parameterName":"customer"},{"pathName":"editorvalues","parameterName":"editorvalue"}]
+    ],
+    "parameters": [
+        { "pathName": "views", "parameterName": "editorvalueusr2gridview" }
+    ],
+    "caption": "编辑器值",
+    "viewType": "DEGRIDVIEW",
+    "fileDir": "@views/sample/editor-value-usr2-grid-view"
+  },
   "ExampleTreeNodeDropPanelView":{
     "name": "ExampleTreeNodeDropPanelView",
     "codeName": "ExampleTreeNodeDropPanelView",
@@ -224,54 +224,6 @@ export const AppViewConfig:IParam = {
     "caption": "图表实体图表视图（折线图）",
     "viewType": "DECHARTVIEW",
     "fileDir": "@views/sample/chart-data-line-chart-view"
-  },
-  "ChartDataMobTabExpView":{
-    "name": "ChartDataMobTabExpView",
-    "codeName": "ChartDataMobTabExpView",
-    "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"chartdatas","parameterName":"chartdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "chartdatamobtabexpview" }
-    ],
-    "caption": "图表实体移动端分页导航视图",
-    "viewType": "DEMOBTABEXPVIEW",
-    "fileDir": "@views/sample/chart-data-mob-tab-exp-view"
-  },
-  "DeptDataPickupView":{
-    "name": "DeptDataPickupView",
-    "codeName": "DeptDataPickupView",
-    "appEntityName":"DeptData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"deptdatas","parameterName":"deptdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "deptdatapickupview" }
-    ],
-    "caption": "部门数据",
-    "viewType": "DEPICKUPVIEW",
-    "fileDir": "@views/sample/dept-data-pickup-view"
-  },
-  "CategoryMPickupView":{
-    "name": "CategoryMPickupView",
-    "codeName": "CategoryMPickupView",
-    "appEntityName":"Category",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"categories","parameterName":"category"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "categorympickupview" }
-    ],
-    "caption": "类别",
-    "viewType": "DEMPICKUPVIEW",
-    "fileDir": "@views/sample/category-m-pickup-view"
   },
   "CustomerSinglePickupGridView":{
     "name": "CustomerSinglePickupGridView",
@@ -385,22 +337,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEREPORTVIEW",
     "fileDir": "@views/sample/chart-data-report-view"
   },
-  "CustomerOptionView":{
-    "name": "CustomerOptionView",
-    "codeName": "CustomerOptionView",
-    "appEntityName":"Customer",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"customers","parameterName":"customer"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "customeroptionview" }
-    ],
-    "caption": "客户",
-    "viewType": "DEOPTVIEW",
-    "fileDir": "@views/sample/customer-option-view"
-  },
   "CityEditView":{
     "name": "CityEditView",
     "codeName": "CityEditView",
@@ -408,7 +344,7 @@ export const AppViewConfig:IParam = {
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
-      [{"pathName":"cities","parameterName":"city"}]
+      [{"pathName":"provinces","parameterName":"province"},{"pathName":"cities","parameterName":"city"}]
     ],
     "parameters": [
         { "pathName": "views", "parameterName": "cityeditview" }
@@ -416,22 +352,6 @@ export const AppViewConfig:IParam = {
     "caption": "市",
     "viewType": "DEEDITVIEW",
     "fileDir": "@views/sample/city-edit-view"
-  },
-  "ProductGridView":{
-    "name": "ProductGridView",
-    "codeName": "ProductGridView",
-    "appEntityName":"Product",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"products","parameterName":"product"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "productgridview" }
-    ],
-    "caption": "产品",
-    "viewType": "DEGRIDVIEW",
-    "fileDir": "@views/sample/product-grid-view"
   },
   "ExampleGridSortGridView":{
     "name": "ExampleGridSortGridView",
@@ -448,22 +368,6 @@ export const AppViewConfig:IParam = {
     "caption": "表格排序",
     "viewType": "DEGRIDVIEW",
     "fileDir": "@views/sample/example-grid-sort-grid-view"
-  },
-  "ExampleGirdLogicGridView":{
-    "name": "ExampleGirdLogicGridView",
-    "codeName": "ExampleGirdLogicGridView",
-    "appEntityName":"Example",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"examples","parameterName":"example"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "examplegirdlogicgridview" }
-    ],
-    "caption": "表格逻辑",
-    "viewType": "DEGRIDVIEW",
-    "fileDir": "@views/sample/example-gird-logic-grid-view"
   },
   "ExampleAppDEFLogicEditView":{
     "name": "ExampleAppDEFLogicEditView",
@@ -673,22 +577,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEEDITVIEW4",
     "fileDir": "@views/sample/customer-edit-view4"
   },
-  "ChartDataMobTreeView":{
-    "name": "ChartDataMobTreeView",
-    "codeName": "ChartDataMobTreeView",
-    "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"chartdatas","parameterName":"chartdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "chartdatamobtreeview" }
-    ],
-    "caption": "图表",
-    "viewType": "DEMOBTREEVIEW",
-    "fileDir": "@views/sample/chart-data-mob-tree-view"
-  },
   "ExampleToolbarBaseCustomView":{
     "name": "ExampleToolbarBaseCustomView",
     "codeName": "ExampleToolbarBaseCustomView",
@@ -720,22 +608,6 @@ export const AppViewConfig:IParam = {
     "caption": "活动",
     "viewType": "DEEDITVIEW",
     "fileDir": "@views/sample/activity-edit-view"
-  },
-  "CategoryPickupGridView":{
-    "name": "CategoryPickupGridView",
-    "codeName": "CategoryPickupGridView",
-    "appEntityName":"Category",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"categories","parameterName":"category"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "categorypickupgridview" }
-    ],
-    "caption": "类别",
-    "viewType": "DEPICKUPGRIDVIEW",
-    "fileDir": "@views/sample/category-pickup-grid-view"
   },
   "ExamplePickupViewEditView":{
     "name": "ExamplePickupViewEditView",
@@ -821,7 +693,7 @@ export const AppViewConfig:IParam = {
     "name": "ChartDataUsr2GridView",
     "codeName": "ChartDataUsr2GridView",
     "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
+    "openMode": "POPUPMODAL",
     "redirectView": false,
     "deResPaths": [
       [{"pathName":"chartdatas","parameterName":"chartdata"}]
@@ -829,6 +701,8 @@ export const AppViewConfig:IParam = {
     "parameters": [
         { "pathName": "views", "parameterName": "chartdatausr2gridview" }
     ],
+    "height": 500,
+    "width": 1000,
     "caption": "图表实体表格视图（功能确认）",
     "imgPath": "",
     "iconCls": "browsers",
@@ -1251,22 +1125,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DECHARTVIEW",
     "fileDir": "@views/sample/chart-data-pie-chart-view"
   },
-  "LeaveApplicationLeaveApplication_D_WFGridView":{
-    "name": "LeaveApplicationLeaveApplication_D_WFGridView",
-    "codeName": "LeaveApplicationLeaveApplication_D_WFGridView",
-    "appEntityName":"LeaveApplication",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"leaveapplications","parameterName":"leaveapplication"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "leaveapplicationleaveapplication_d_wfgridview" }
-    ],
-    "caption": "请假申请",
-    "viewType": "DEWFGRIDVIEW",
-    "fileDir": "@views/sample/leave-application-leave-application-d-wf-grid-view"
-  },
   "ChartDataKLineChartView":{
     "name": "ChartDataKLineChartView",
     "codeName": "ChartDataKLineChartView",
@@ -1589,22 +1447,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DECALENDARVIEW",
     "fileDir": "@views/sample/calendar-data-base-calendar-view"
   },
-  "ExampleTreeGridExView":{
-    "name": "ExampleTreeGridExView",
-    "codeName": "ExampleTreeGridExView",
-    "appEntityName":"Example",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"examples","parameterName":"example"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "exampletreegridexview" }
-    ],
-    "caption": "示例",
-    "viewType": "DETREEGRIDEXVIEW",
-    "fileDir": "@views/sample/example-tree-grid-ex-view"
-  },
   "ExampleGridLayoutGridView":{
     "name": "ExampleGridLayoutGridView",
     "codeName": "ExampleGridLayoutGridView",
@@ -1748,24 +1590,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEDATAVIEW",
     "fileDir": "@views/sample/kanban-data-value-format-card-data-view"
   },
-  "ExampleUIActionTestOptionView":{
-    "name": "ExampleUIActionTestOptionView",
-    "codeName": "ExampleUIActionTestOptionView",
-    "appEntityName":"Example",
-    "openMode": "POPUPMODAL",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"examples","parameterName":"example"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "exampleuiactiontestoptionview" }
-    ],
-    "height": 400,
-    "width": 500,
-    "caption": "界面逻辑",
-    "viewType": "DEOPTVIEW",
-    "fileDir": "@views/sample/example-ui-action-test-option-view"
-  },
   "CustomerEditView":{
     "name": "CustomerEditView",
     "codeName": "CustomerEditView",
@@ -1813,40 +1637,6 @@ export const AppViewConfig:IParam = {
     "caption": "实体数据集",
     "viewType": "DECUSTOMVIEW",
     "fileDir": "@views/sample/example-view-msg2-custom-view"
-  },
-  "WizardDataExampleWizardView":{
-    "name": "WizardDataExampleWizardView",
-    "codeName": "WizardDataExampleWizardView",
-    "appEntityName":"WizardData",
-    "openMode": "POPUPMODAL",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"wizarddatas","parameterName":"wizarddata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "wizarddataexamplewizardview" }
-    ],
-    "height": 600,
-    "width": 700,
-    "caption": "向导示例",
-    "viewType": "DEWIZARDVIEW",
-    "fileDir": "@views/sample/wizard-data-example-wizard-view"
-  },
-  "OrderDetailGridView":{
-    "name": "OrderDetailGridView",
-    "codeName": "OrderDetailGridView",
-    "appEntityName":"OrderDetail",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"orders","parameterName":"order"},{"pathName":"orderdetails","parameterName":"orderdetail"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "orderdetailgridview" }
-    ],
-    "caption": "订单明细",
-    "viewType": "DEGRIDVIEW",
-    "fileDir": "@views/sample/order-detail-grid-view"
   },
   "ExampleValueFormatPanelView":{
     "name": "ExampleValueFormatPanelView",
@@ -1992,22 +1782,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEMOBPICKUPTREEVIEW",
     "fileDir": "@views/sample/province-mob-pickup-tree-view"
   },
-  "ExampleBaseListView":{
-    "name": "ExampleBaseListView",
-    "codeName": "ExampleBaseListView",
-    "appEntityName":"Example",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"examples","parameterName":"example"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "examplebaselistview" }
-    ],
-    "caption": "列表常规",
-    "viewType": "DELISTVIEW",
-    "fileDir": "@views/sample/example-base-list-view"
-  },
   "CalendarDataCalendarDataGridView":{
     "name": "CalendarDataCalendarDataGridView",
     "codeName": "CalendarDataCalendarDataGridView",
@@ -2087,38 +1861,6 @@ export const AppViewConfig:IParam = {
     "caption": "树表格导航",
     "viewType": "DETREEEXPVIEW",
     "fileDir": "@views/sample/example-tree-grid-nav-tree-exp-view"
-  },
-  "ViewMsgDataCustomView":{
-    "name": "ViewMsgDataCustomView",
-    "codeName": "ViewMsgDataCustomView",
-    "appEntityName":"ViewMsgData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"viewmsgdatas","parameterName":"viewmsgdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "viewmsgdatacustomview" }
-    ],
-    "caption": "视图消息数据",
-    "viewType": "DECUSTOMVIEW",
-    "fileDir": "@views/sample/view-msg-data-custom-view"
-  },
-  "Example2GridView":{
-    "name": "Example2GridView",
-    "codeName": "Example2GridView",
-    "appEntityName":"Example2",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"examples","parameterName":"example"},{"pathName":"example2s","parameterName":"example2"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "example2gridview" }
-    ],
-    "caption": "示例明细",
-    "viewType": "DEGRIDVIEW",
-    "fileDir": "@views/sample/example2-grid-view"
   },
   "ExampleFormLayoutEditView":{
     "name": "ExampleFormLayoutEditView",
@@ -2249,22 +1991,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEPICKUPVIEW",
     "fileDir": "@views/sample/product-pickup-view"
   },
-  "ChartDataMobMDView":{
-    "name": "ChartDataMobMDView",
-    "codeName": "ChartDataMobMDView",
-    "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"chartdatas","parameterName":"chartdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "chartdatamobmdview" }
-    ],
-    "caption": "图表",
-    "viewType": "DEMOBMDVIEW",
-    "fileDir": "@views/sample/chart-data-mob-md-view"
-  },
   "ExampleBaseDashboardView":{
     "name": "ExampleBaseDashboardView",
     "codeName": "ExampleBaseDashboardView",
@@ -2280,22 +2006,6 @@ export const AppViewConfig:IParam = {
     "caption": "常规",
     "viewType": "DEPORTALVIEW",
     "fileDir": "@views/sample/example-base-dashboard-view"
-  },
-  "OrgDataOrgDataTreeView":{
-    "name": "OrgDataOrgDataTreeView",
-    "codeName": "OrgDataOrgDataTreeView",
-    "appEntityName":"OrgData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"orgdatas","parameterName":"orgdata"},{"pathName":"orgdatas","parameterName":"orgdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "orgdataorgdatatreeview" }
-    ],
-    "caption": "组织数据",
-    "viewType": "DETREEVIEW",
-    "fileDir": "@views/sample/org-data-org-data-tree-view"
   },
   "CustomerCardDataView":{
     "name": "CustomerCardDataView",
@@ -2393,22 +2103,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEPANELVIEW",
     "fileDir": "@views/sample/example-base-panel-view-css"
   },
-  "ExampleMEditView9":{
-    "name": "ExampleMEditView9",
-    "codeName": "ExampleMEditView9",
-    "appEntityName":"Example",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"examples","parameterName":"example"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "examplemeditview9" }
-    ],
-    "caption": "多表单示例",
-    "viewType": "DEMEDITVIEW9",
-    "fileDir": "@views/sample/example-m-edit-view9"
-  },
   "ChartDataUsr4PickupView":{
     "name": "ChartDataUsr4PickupView",
     "codeName": "ChartDataUsr4PickupView",
@@ -2441,22 +2135,6 @@ export const AppViewConfig:IParam = {
     "caption": "视图消息数据",
     "viewType": "DEEDITVIEW",
     "fileDir": "@views/sample/view-msg-data-edit-view"
-  },
-  "ChartDataTreeExpView":{
-    "name": "ChartDataTreeExpView",
-    "codeName": "ChartDataTreeExpView",
-    "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"chartdatas","parameterName":"chartdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "chartdatatreeexpview" }
-    ],
-    "caption": "图表",
-    "viewType": "DETREEEXPVIEW",
-    "fileDir": "@views/sample/chart-data-tree-exp-view"
   },
   "AppGlobalAppIndexView":{
     "name": "AppGlobalAppIndexView",
@@ -2634,22 +2312,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEPICKUPGRIDVIEW",
     "fileDir": "@views/sample/person-data-pickup-grid-view"
   },
-  "ChartDataTestLayoutPanelMDView":{
-    "name": "ChartDataTestLayoutPanelMDView",
-    "codeName": "ChartDataTestLayoutPanelMDView",
-    "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"chartdatas","parameterName":"chartdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "chartdatatestlayoutpanelmdview" }
-    ],
-    "caption": "图表",
-    "viewType": "DEMOBMDVIEW",
-    "fileDir": "@views/sample/chart-data-test-layout-panel-md-view"
-  },
   "CalculatorPickPartPanelView":{
     "name": "CalculatorPickPartPanelView",
     "codeName": "CalculatorPickPartPanelView",
@@ -2731,22 +2393,6 @@ export const AppViewConfig:IParam = {
     "caption": "组织数据",
     "viewType": "DEPICKUPTREEVIEW",
     "fileDir": "@views/sample/org-data-org-data-pickup-tree-view"
-  },
-  "ExampleProvinceCityDistict_DragTreeView":{
-    "name": "ExampleProvinceCityDistict_DragTreeView",
-    "codeName": "ExampleProvinceCityDistict_DragTreeView",
-    "appEntityName":"Example",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"examples","parameterName":"example"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "exampleprovincecitydistict_dragtreeview" }
-    ],
-    "caption": "示例",
-    "viewType": "DETREEVIEW",
-    "fileDir": "@views/sample/example-province-city-distict-drag-tree-view"
   },
   "ChartDataTreeView":{
     "name": "ChartDataTreeView",
@@ -2851,7 +2497,7 @@ export const AppViewConfig:IParam = {
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
-      [{"pathName":"cities","parameterName":"city"}]
+      [{"pathName":"provinces","parameterName":"province"},{"pathName":"cities","parameterName":"city"}]
     ],
     "parameters": [
         { "pathName": "views", "parameterName": "citytreenavgridview" }
@@ -2915,7 +2561,7 @@ export const AppViewConfig:IParam = {
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
-      [{"pathName":"districts","parameterName":"district"}]
+      [{"pathName":"cities","parameterName":"city"},{"pathName":"districts","parameterName":"district"}]
     ],
     "parameters": [
         { "pathName": "views", "parameterName": "districteditview" }
@@ -2989,22 +2635,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DETABEXPVIEW",
     "fileDir": "@views/sample/customer-main-tab-exp-view"
   },
-  "ProductByCategoryGridView":{
-    "name": "ProductByCategoryGridView",
-    "codeName": "ProductByCategoryGridView",
-    "appEntityName":"Product",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"products","parameterName":"product"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "productbycategorygridview" }
-    ],
-    "caption": "产品",
-    "viewType": "DEGRIDVIEW",
-    "fileDir": "@views/sample/product-by-category-grid-view"
-  },
   "KanbanDataEditView":{
     "name": "KanbanDataEditView",
     "codeName": "KanbanDataEditView",
@@ -3028,7 +2658,7 @@ export const AppViewConfig:IParam = {
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
-      [{"pathName":"districts","parameterName":"district"}]
+      [{"pathName":"cities","parameterName":"city"},{"pathName":"districts","parameterName":"district"}]
     ],
     "parameters": [
         { "pathName": "views", "parameterName": "districttreenavinfoeditview" }
@@ -3085,22 +2715,6 @@ export const AppViewConfig:IParam = {
     "caption": "示例",
     "viewType": "DETREEVIEW",
     "fileDir": "@views/sample/example-data-source-adv-tree-view"
-  },
-  "ProvinceEditView":{
-    "name": "ProvinceEditView",
-    "codeName": "ProvinceEditView",
-    "appEntityName":"Province",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"provinces","parameterName":"province"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "provinceeditview" }
-    ],
-    "caption": "省份",
-    "viewType": "DEEDITVIEW",
-    "fileDir": "@views/sample/province-edit-view"
   },
   "MapDataInfoEditView":{
     "name": "MapDataInfoEditView",
@@ -3247,22 +2861,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DELISTVIEW",
     "fileDir": "@views/sample/customer-list-view"
   },
-  "ExamplePickupGridView":{
-    "name": "ExamplePickupGridView",
-    "codeName": "ExamplePickupGridView",
-    "appEntityName":"Example",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"examples","parameterName":"example"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "examplepickupgridview" }
-    ],
-    "caption": "示例",
-    "viewType": "DEPICKUPGRIDVIEW",
-    "fileDir": "@views/sample/example-pickup-grid-view"
-  },
   "CustomerEditView3":{
     "name": "CustomerEditView3",
     "codeName": "CustomerEditView3",
@@ -3278,22 +2876,6 @@ export const AppViewConfig:IParam = {
     "caption": "客户",
     "viewType": "DEEDITVIEW3",
     "fileDir": "@views/sample/customer-edit-view3"
-  },
-  "CityGridView":{
-    "name": "CityGridView",
-    "codeName": "CityGridView",
-    "appEntityName":"City",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"cities","parameterName":"city"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "citygridview" }
-    ],
-    "caption": "市",
-    "viewType": "DEGRIDVIEW",
-    "fileDir": "@views/sample/city-grid-view"
   },
   "EDITORVALUERowEditGridView":{
     "name": "EDITORVALUERowEditGridView",
@@ -3391,22 +2973,6 @@ export const AppViewConfig:IParam = {
     "caption": "表单事件及调用",
     "viewType": "DECUSTOMVIEW",
     "fileDir": "@views/sample/example-form-evnet-and-invoke-custom-view"
-  },
-  "CategoryTreeExpView":{
-    "name": "CategoryTreeExpView",
-    "codeName": "CategoryTreeExpView",
-    "appEntityName":"Category",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"categories","parameterName":"category"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "categorytreeexpview" }
-    ],
-    "caption": "产品",
-    "viewType": "DETREEEXPVIEW",
-    "fileDir": "@views/sample/category-tree-exp-view"
   },
   "ProvinceMobMPickupView":{
     "name": "ProvinceMobMPickupView",
@@ -3535,22 +3101,6 @@ export const AppViewConfig:IParam = {
     "caption": "分组高级",
     "viewType": "DEEDITVIEW",
     "fileDir": "@views/sample/example-form-adv-group-edit-view"
-  },
-  "ExamplePickupView":{
-    "name": "ExamplePickupView",
-    "codeName": "ExamplePickupView",
-    "appEntityName":"Example",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"examples","parameterName":"example"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "examplepickupview" }
-    ],
-    "caption": "示例",
-    "viewType": "DEPICKUPVIEW",
-    "fileDir": "@views/sample/example-pickup-view"
   },
   "ChartDataTreeExpForChartView":{
     "name": "ChartDataTreeExpForChartView",
@@ -3791,22 +3341,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEPANELVIEW",
     "fileDir": "@views/sample/example-base-panel-view"
   },
-  "ChartDataPanelView":{
-    "name": "ChartDataPanelView",
-    "codeName": "ChartDataPanelView",
-    "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"chartdatas","parameterName":"chartdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "chartdatapanelview" }
-    ],
-    "caption": "图表",
-    "viewType": "DEPANELVIEW",
-    "fileDir": "@views/sample/chart-data-panel-view"
-  },
   "ChartDataMobEditView":{
     "name": "ChartDataMobEditView",
     "codeName": "ChartDataMobEditView",
@@ -3824,22 +3358,6 @@ export const AppViewConfig:IParam = {
     "iconCls": "home",
     "viewType": "DEMOBEDITVIEW",
     "fileDir": "@views/sample/chart-data-mob-edit-view"
-  },
-  "DeptDataPickupGridView":{
-    "name": "DeptDataPickupGridView",
-    "codeName": "DeptDataPickupGridView",
-    "appEntityName":"DeptData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"deptdatas","parameterName":"deptdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "deptdatapickupgridview" }
-    ],
-    "caption": "部门数据",
-    "viewType": "DEPICKUPGRIDVIEW",
-    "fileDir": "@views/sample/dept-data-pickup-grid-view"
   },
   "ChartDataGroupBarChartView":{
     "name": "ChartDataGroupBarChartView",
@@ -4454,22 +3972,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEKANBANVIEW",
     "fileDir": "@views/sample/chart-data-kanban-view"
   },
-  "CalendarDataCssCalendarView":{
-    "name": "CalendarDataCssCalendarView",
-    "codeName": "CalendarDataCssCalendarView",
-    "appEntityName":"CalendarData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"calendardatas","parameterName":"calendardata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "calendardatacsscalendarview" }
-    ],
-    "caption": "界面样式",
-    "viewType": "DECALENDARVIEW",
-    "fileDir": "@views/sample/calendar-data-css-calendar-view"
-  },
   "SampleVerSampleVerTreeExpView":{
     "name": "SampleVerSampleVerTreeExpView",
     "codeName": "SampleVerSampleVerTreeExpView",
@@ -4493,7 +3995,7 @@ export const AppViewConfig:IParam = {
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
-      [{"pathName":"districts","parameterName":"district"}]
+      [{"pathName":"cities","parameterName":"city"},{"pathName":"districts","parameterName":"district"}]
     ],
     "parameters": [
         { "pathName": "views", "parameterName": "districttreenavgridview" }
@@ -4517,22 +4019,6 @@ export const AppViewConfig:IParam = {
     "caption": "树导航传参",
     "viewType": "DETREEEXPVIEW",
     "fileDir": "@views/sample/example-tree-nav-param-tree-exp-view"
-  },
-  "ChartDataMPickupView":{
-    "name": "ChartDataMPickupView",
-    "codeName": "ChartDataMPickupView",
-    "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"chartdatas","parameterName":"chartdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "chartdatampickupview" }
-    ],
-    "caption": "图表",
-    "viewType": "DEMPICKUPVIEW",
-    "fileDir": "@views/sample/chart-data-m-pickup-view"
   },
   "LeaveApplicationWFDynaEditView3":{
     "name": "LeaveApplicationWFDynaEditView3",
@@ -4677,22 +4163,6 @@ export const AppViewConfig:IParam = {
     "caption": "卡片常规",
     "viewType": "DEDATAVIEW",
     "fileDir": "@views/sample/kanban-data-card-base-data-view"
-  },
-  "ChartDataGridView9":{
-    "name": "ChartDataGridView9",
-    "codeName": "ChartDataGridView9",
-    "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"chartdatas","parameterName":"chartdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "chartdatagridview9" }
-    ],
-    "caption": "图表实体表格视图（部件视图）",
-    "viewType": "DEGRIDVIEW9",
-    "fileDir": "@views/sample/chart-data-grid-view9"
   },
   "ChartDataListView":{
     "name": "ChartDataListView",

@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './app-def-logic-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" label="X值">
+  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" :required="state.detailsModel.fieldx.required" label="X值">
 <appSpan
   name="fieldx"
+  :disabled="state.detailsModel.fieldx.disabled"
   dataType="6"
   :value="state.data.fieldx"
   :context="state.context"
@@ -71,9 +71,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" label="Y值">
+  <AppFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" :required="state.detailsModel.fieldy.required" label="Y值">
 <appSpan
   name="fieldy"
+  :disabled="state.detailsModel.fieldy.disabled"
   dataType="6"
   :value="state.data.fieldy"
   :context="state.context"
@@ -86,9 +87,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.appfield.visible" name="appfield" label="XY前端计算值">
+  <AppFormItem v-show="state.detailsModel.appfield.visible" name="appfield" :required="state.detailsModel.appfield.required" label="XY前端计算值">
 <appSpan
   name="appfield"
+  :disabled="state.detailsModel.appfield.disabled"
   dataType="25"
   :value="state.data.appfield"
   :context="state.context"
@@ -101,9 +103,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.appfield2.visible" name="appfield2" label="XY前端计算值2">
+  <AppFormItem v-show="state.detailsModel.appfield2.visible" name="appfield2" :required="state.detailsModel.appfield2.required" label="XY前端计算值2">
 <appSpan
   name="appfield2"
+  :disabled="state.detailsModel.appfield2.disabled"
   dataType="25"
   :value="state.data.appfield2"
   :context="state.context"
@@ -116,9 +119,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.appfield4.visible" name="appfield4" label="XY前端计算值4">
+  <AppFormItem v-show="state.detailsModel.appfield4.visible" name="appfield4" :required="state.detailsModel.appfield4.required" label="XY前端计算值4">
 <appSpan
   name="appfield4"
+  :disabled="state.detailsModel.appfield4.disabled"
   dataType="25"
   :value="state.data.appfield4"
   :context="state.context"
@@ -162,9 +166,10 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.appfield3.visible" name="appfield3" label="XY前端计算值3">
+  <AppFormItem v-show="state.detailsModel.appfield3.visible" name="appfield3" :required="state.detailsModel.appfield3.required" label="XY前端计算值3">
 <appInput
   name="appfield3"
+  :disabled="state.detailsModel.appfield3.disabled"
   type="text"
   :value="state.data.appfield3"
   @editorEvent="onEditorEvent"

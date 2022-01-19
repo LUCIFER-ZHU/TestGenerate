@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './tree-nav-info-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.provincename.visible" name="provincename" label="省份名称">
+  <AppFormItem v-show="state.detailsModel.provincename.visible" name="provincename" :required="state.detailsModel.provincename.required" label="省份名称">
 <appSpan
   name="provincename"
+  :disabled="state.detailsModel.provincename.disabled"
   dataType="25"
   :value="state.data.provincename"
   :context="state.context"

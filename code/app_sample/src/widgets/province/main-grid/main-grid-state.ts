@@ -66,22 +66,16 @@ export const ctrlState = {
   },
   // 多数据部件排序
   mdCtrlSort: {
-    noSort: false,
-    minorSortDir: "",
-    minorSortPSDEF: "",
+    noSort: true,
+    minorSortDir: "DESC",
+    minorSortPSDEF: "CreateDate",
   },
   // 多数据部件分页
   mdCtrlPaging: {
-    enablePagingBar: true,
+    enablePagingBar: false,
     current: 1,
-    pageSize: 20,
-    pagination: {
-      position: ['bottomRight'],
-      defaultPageSize: 20,
-      showQuickJumper: true,
-      showTotal: (total: number, range: IParam[]) => `${range[0]}-${range[1]} of ${total} items`,
-      pageSizeOptions: ['10','20','50','100'],
-    },
+    pageSize: 60,
+    pagination: false,
   },
   gridAgg: {
     aggMode: "NONE",
@@ -98,7 +92,7 @@ export const ctrlState = {
       resizable: true,
       dataIndex: "provincename",
       ellipsis: true,
-      enableSort: true,
+      enableSort: false,
       aggMode: "NONE",
     },
     {
@@ -109,7 +103,7 @@ export const ctrlState = {
       resizable: true,
       dataIndex: "updateman",
       ellipsis: true,
-      enableSort: true,
+      enableSort: false,
       aggMode: "NONE",
     },
     {
@@ -120,7 +114,7 @@ export const ctrlState = {
       resizable: true,
       dataIndex: "updatedate",
       ellipsis: true,
-      enableSort: true,
+      enableSort: false,
       aggMode: "NONE",
     },
   ],

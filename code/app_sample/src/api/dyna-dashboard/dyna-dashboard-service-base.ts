@@ -28,6 +28,8 @@ export class DynaDashboardServiceBase extends EntityService {
   protected initBasicData() {
     this.appEntityCodeName = 'dynadashboard';
     this.appEntityCodeNames = 'dynadashboards';
+    this.appEntityKeyCodeName = 'dynadashboardid';
+      this.appEntityTextCodeName = 'dynadashboardname';
     // 初始化关系实体路径集合
     this.deResPaths = [
         [{"pathName":"dynadashboards","parameterName":"dynadashboard"}]

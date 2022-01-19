@@ -72,6 +72,23 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              navContexts:{},
              navParams:{}
          },
+       "openbaidu":{
+             codeName:'openbaidu',
+             uIActionMode:'FRONT',
+             actionTarget:'NONE',
+             uIActionTag:'OPENBAIDU',
+             frontPSAppView:'',
+             caption:'打开百度',
+             entityCodeName:'ChartData',
+             methodCodeName:'',
+             frontProcessType:'OPENHTMLPAGE',
+             refreshMode:'0',
+             htmlPageUrl:'https://www.baidu.com/',
+             uILogicAttachMode:'',
+             nextActionCodeName:'',
+             navContexts:{},
+             navParams:{}
+         },
        "custom1":{
              codeName:'custom1',
              uIActionMode:'FRONT',
@@ -106,6 +123,23 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              navContexts:{},
              navParams:{}
          },
+       "htxwtest":{
+             codeName:'htxwtest',
+             uIActionMode:'BACKEND',
+             actionTarget:'SINGLEDATA',
+             uIActionTag:'HTXWTEST',
+             frontPSAppView:'',
+             caption:'后台行为',
+             entityCodeName:'ChartData',
+             methodCodeName:'HTXWtest',
+             frontProcessType:'',
+             refreshMode:'0',
+             htmlPageUrl:'',
+             uILogicAttachMode:'',
+             nextActionCodeName:'',
+             navContexts:{},
+             navParams:{}
+         },
        "TestOpenMDView":{
              codeName:'TestOpenMDView',
              uIActionMode:'FRONT',
@@ -122,6 +156,23 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
+         },
+       "openview":{
+             codeName:'openview',
+             uIActionMode:'FRONT',
+             actionTarget:'SINGLEKEY',
+             uIActionTag:'OPENVIEW',
+             frontPSAppView:'ExampleEditorEditView',
+             caption:'打开视图',
+             entityCodeName:'ChartData',
+             methodCodeName:'',
+             frontProcessType:'WIZARD',
+             refreshMode:'0',
+             htmlPageUrl:'',
+             uILogicAttachMode:'',
+             nextActionCodeName:'',
+             navContexts:{testcontextdyna:'%app%',testcontext:'test1',},
+             navParams:{testviewparamdyna:'%app%',testviewparam:'test3',}
          },
        "custom2":{
              codeName:'custom2',
@@ -174,6 +225,17 @@ export class ChartDataUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 打开百度
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async openbaidu(uiAction:any, params:any){
+        const actionModel =  this.getUIActionModel('openbaidu');
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
      * 界面行为测试1
      *
      * @param {*} params
@@ -196,6 +258,17 @@ export class ChartDataUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 后台行为
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async htxwtest(uiAction:any, params:any){
+        const actionModel =  this.getUIActionModel('htxwtest');
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
      * 测试图表实体打开多数据视图
      *
      * @param {*} params
@@ -203,6 +276,17 @@ export class ChartDataUIServiceBase extends UIServiceBase {
      */
     public async TestOpenMDView(uiAction:any, params:any){
         const actionModel =  this.getUIActionModel('TestOpenMDView');
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 打开视图
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async openview(uiAction:any, params:any){
+        const actionModel =  this.getUIActionModel('openview');
         AppFrontAction.doAction(actionModel, params);
     }
 

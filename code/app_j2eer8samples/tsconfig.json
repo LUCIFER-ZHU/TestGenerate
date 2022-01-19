@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "lib": ["esnext", "dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@core":["src/core"],
+      "@core/*":["src/core/*"],
+      "@ui-service":["src/ui-service"],
+      "@ui-service/*":["src/ui-service/*"],
+      "@api":["src/api"],
+      "@api/*":["src/api/*"],
+      "@components":["src/components"],
+      "@components/*":["src/components/*"],
+      "@views":["src/views"],
+      "@views/*":["src/views/*"],
+      "@widgets":["src/widgets"],
+      "@widgets/*":["src/widgets/*"],
+      "@static":["public"],
+      "@static/*":["public/*"],
+      "@/*": ["src/*"],
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "components.d.ts","auto-imports.d.ts"],
+  "exclude": ["node_modules"]
+}

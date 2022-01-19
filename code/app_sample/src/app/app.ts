@@ -1,6 +1,6 @@
 import { Environment } from "@/environments/environment";
 import { OpenViewService } from "@/utils";
-import { AppBase, IParam, ViewDetail, IApp, IOpenViewService, deepCopy, getSessionStorage, Http, AppUtil } from "@core";
+import { AppBase, IParam, ViewDetail, IApp, IOpenViewService, deepCopy, getSessionStorage, Http, AppUtil, NavDataService, INavDataService } from "@core";
 import { SyncSeriesHook } from "qx-util";
 import { AppFuncConfig, AppViewConfig, AppEntityConfig } from './config';
 import { DataServiceRegister, UIServiceRegister } from "./register";
@@ -139,7 +139,16 @@ export class App extends AppBase implements IApp {
      * @return {*}
      */
     public getEntityInfo(codeName: string): any {
-        return AppEntityConfig[codeName] ? deepCopy(AppEntityConfig[codeName]) : undefined;;
+        return AppEntityConfig[codeName] ? deepCopy(AppEntityConfig[codeName]) : undefined;
+    }
+
+    /**
+     * @description 获取导航数据服务
+     * @return {*}  {*}
+     * @memberof App
+     */
+    public getNavDataService(): INavDataService {
+      return NavDataService.getInstance();
     }
 
 }

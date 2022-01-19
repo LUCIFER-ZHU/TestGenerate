@@ -28,6 +28,8 @@ export class OrderServiceBase extends EntityService {
   protected initBasicData() {
     this.appEntityCodeName = 'order';
     this.appEntityCodeNames = 'orders';
+    this.appEntityKeyCodeName = 'orderid';
+      this.appEntityTextCodeName = 'ordername';
     // 初始化关系实体路径集合
     this.deResPaths = [
         [{"pathName":"customers","parameterName":"customer"},{"pathName":"orders","parameterName":"order"}]
@@ -46,7 +48,7 @@ export class OrderServiceBase extends EntityService {
     public async CheckKey(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
       this.beforeExecuteAction(context,data,'CheckKey');
-      const res = await this.http.post(`${deResPath}`,data);
+      const res = await this.http.post(`${deResPath}/checkkey`,data);
       this.afterExecuteAction(context,data,'CheckKey');
       return res;
     }
@@ -76,7 +78,7 @@ export class OrderServiceBase extends EntityService {
     public async Get(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, true);
       this.beforeExecuteAction(context,data,'Get');
-      const res = await this.http.get(`${deResPath}`,data);
+      const res = await this.http.get(`${deResPath}`);
       this.afterExecuteAction(context,data,'Get');
       return res;
     }
@@ -91,7 +93,7 @@ export class OrderServiceBase extends EntityService {
     public async GetDraft(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
       this.beforeExecuteAction(context,data,'GetDraft');
-      const res = await this.http.get(`${deResPath}`,data);
+      const res = await this.http.get(`${deResPath}/getdraft`,data);
       this.afterExecuteAction(context,data,'GetDraft');
       return res;
     }
@@ -106,7 +108,7 @@ export class OrderServiceBase extends EntityService {
     public async Remove(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, true);
       this.beforeExecuteAction(context,data,'Remove');
-      const res = await this.http.delete(`${deResPath}`,data);
+      const res = await this.http.delete(`${deResPath}`);
       this.afterExecuteAction(context,data,'Remove');
       return res;
     }
@@ -135,7 +137,7 @@ export class OrderServiceBase extends EntityService {
       */
     public async FetchDefault(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}`);
+      const res = await this.http.post(`${deResPath}/fetchdefault`);
       return res;
     }
     /**
@@ -148,7 +150,7 @@ export class OrderServiceBase extends EntityService {
       */
     public async FetchGroup(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}`);
+      const res = await this.http.post(`${deResPath}/fetchgroup`);
       return res;
     }
     /**
@@ -161,7 +163,7 @@ export class OrderServiceBase extends EntityService {
       */
     public async FetchPaying(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}`);
+      const res = await this.http.post(`${deResPath}/fetchpaying`);
       return res;
     }
     /**
@@ -174,7 +176,7 @@ export class OrderServiceBase extends EntityService {
       */
     public async FetchProcessing(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}`);
+      const res = await this.http.post(`${deResPath}/fetchprocessing`);
       return res;
     }
     /**
@@ -187,6 +189,6 @@ export class OrderServiceBase extends EntityService {
       */
     public async Select(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}`,data);
+      const res = await this.http.post(`${deResPath}/select`,data);
       return res;
     }}

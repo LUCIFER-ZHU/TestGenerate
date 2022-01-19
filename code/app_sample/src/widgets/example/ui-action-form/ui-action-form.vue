@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './ui-action-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -165,9 +164,10 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.wd.visible" name="wd" label="搜索">
+  <AppFormItem v-show="state.detailsModel.wd.visible" name="wd" :required="state.detailsModel.wd.required" label="搜索">
 <appInput
   name="wd"
+  :disabled="state.detailsModel.wd.disabled"
   placeholder="输入关键字后点击【前台界面行为（打开HTML页面）】"
   type="text"
   :value="state.data.wd"

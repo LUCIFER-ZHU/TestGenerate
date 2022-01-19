@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './main-2-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.infomessage.visible" name="infomessage" label="备注">
+  <AppFormItem v-show="state.detailsModel.infomessage.visible" name="infomessage" :required="state.detailsModel.infomessage.required" label="备注">
 <appInput
   name="infomessage"
+  :disabled="state.detailsModel.infomessage.disabled"
   :maxLength="1048576"
   :showMaxLength="true"
   :value="state.data.infomessage"

@@ -2,7 +2,7 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './base-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
+import Example2GridView9 from '@views/sample/example2-grid-view9';
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -74,9 +74,10 @@ defineExpose({ state, name: 'form2' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" label="表单项">
+  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :required="state.detailsModel.formitem1.required" label="表单项">
 <appInput
   name="formitem1"
+  :disabled="state.detailsModel.formitem1.disabled"
   type="text"
   :value="state.data.formitem1"
   @editorEvent="onEditorEvent"
@@ -106,9 +107,10 @@ defineExpose({ state, name: 'form2' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" label="表单项">
+  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" :required="state.detailsModel.formitem3.required" label="表单项">
 <appInput
   name="formitem3"
+  :disabled="state.detailsModel.formitem3.disabled"
   type="text"
   :value="state.data.formitem3"
   @editorEvent="onEditorEvent"
@@ -121,9 +123,10 @@ defineExpose({ state, name: 'form2' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitemex1.visible" name="formitemex1" label="复合表单项">
+  <AppFormItem v-show="state.detailsModel.formitemex1.visible" name="formitemex1" :required="state.detailsModel.formitemex1.required" label="复合表单项">
 <appDatePicker
   name="formitemex1"
+  :disabled="state.detailsModel.formitemex1.disabled"
   dateFormat="YYYY-MM-DD HH:mm:ss"
   dateType="dateTime"
   :value="state.data.formitemex1"
@@ -175,9 +178,10 @@ defineExpose({ state, name: 'form2' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" label="表单项">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="表单项">
 <appInput
   name="formitem"
+  :disabled="state.detailsModel.formitem.disabled"
   type="text"
   :value="state.data.formitem"
   @editorEvent="onEditorEvent"
@@ -231,7 +235,25 @@ defineExpose({ state, name: 'form2' });
     style="height: -1.0px;width: -1.0px"
     value="关系界面"/>
   </a-col>
-关系界面未实现<a-col
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
+  <AppFormDruipart v-show="state.detailsModel.druipart1.visible" name="druipart1" title="示例明细" v-slot="druipartParams">
+    <Example2GridView9
+      :class="['app-view-layout--from-druipart']"
+      :context="druipartParams.context"
+      :viewParams="druipartParams.viewParams"
+      :viewDefaultUsage="false"
+      :noViewCaption="true"
+      @viewEvent="druipartParams.viewEvent"
+    >
+    </Example2GridView9>
+  </AppFormDruipart>
+</a-col>
+<a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
   :sm="{span: 24, offset: 0 }"
@@ -337,9 +359,10 @@ defineExpose({ state, name: 'form2' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" label="表单项">
+  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :required="state.detailsModel.formitem2.required" label="表单项">
 <appInput
   name="formitem2"
+  :disabled="state.detailsModel.formitem2.disabled"
   type="text"
   :value="state.data.formitem2"
   @editorEvent="onEditorEvent"

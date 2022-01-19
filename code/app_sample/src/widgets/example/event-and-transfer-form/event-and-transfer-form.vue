@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './event-and-transfer-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.examplename.visible" name="examplename" label="名称">
+  <AppFormItem v-show="state.detailsModel.examplename.visible" name="examplename" :required="state.detailsModel.examplename.required" label="名称">
 <appInput
   name="examplename"
+  :disabled="state.detailsModel.examplename.disabled"
   :maxLength="200"
   type="text"
   :value="state.data.examplename"
@@ -72,9 +72,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" label="X值">
+  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" :required="state.detailsModel.fieldx.required" label="X值">
 <appInput
   name="fieldx"
+  :disabled="state.detailsModel.fieldx.disabled"
   type="text"
   :value="state.data.fieldx"
   @editorEvent="onEditorEvent"
@@ -87,9 +88,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" label="Y值">
+  <AppFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" :required="state.detailsModel.fieldy.required" label="Y值">
 <appInput
   name="fieldy"
+  :disabled="state.detailsModel.fieldy.disabled"
   type="text"
   :value="state.data.fieldy"
   @editorEvent="onEditorEvent"
@@ -102,9 +104,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" label="Z值">
+  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" :required="state.detailsModel.fieldz.required" label="Z值">
 <appInput
   name="fieldz"
+  :disabled="state.detailsModel.fieldz.disabled"
   type="text"
   :value="state.data.fieldz"
   @editorEvent="onEditorEvent"

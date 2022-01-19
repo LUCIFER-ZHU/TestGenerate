@@ -32,7 +32,7 @@ const emit = defineEmits<CtrlEmit>();
 const { state, load, treeNodeSelect } = new TreeControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
-defineExpose({ state, name: 'treeexpbar_tree' });
+defineExpose({ state, name: 'tree' });
 </script>
 
 // TODO 树节点待支持图标和自定义绘制

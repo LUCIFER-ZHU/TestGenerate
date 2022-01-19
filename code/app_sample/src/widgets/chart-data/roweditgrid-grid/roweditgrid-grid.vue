@@ -44,7 +44,7 @@ defineExpose({ state, name: 'grid' });
   <a-table
     bordered
     sticky
-    class="app-grid"
+    class="app-grid list-css"
     :rowKey="rowKey"
     :showHeader="true"
     :scroll="scrollOption"

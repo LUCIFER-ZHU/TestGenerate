@@ -1,5 +1,5 @@
 import { IParam, ViewDetail } from "../common";
-import { IAppFuncService, IDataServiceRegister, IOpenViewService, IUIServiceRegister } from "../service";
+import { IAppFuncService, IDataServiceRegister, INavDataService, IOpenViewService, IUIServiceRegister } from "../service";
 
 
 /**
@@ -98,5 +98,12 @@ export interface IApp {
      * @memberof IApp
      */
     setAppData(opt: IParam): void;
+
+    /**
+     * @description 获取导航数据服务
+     * @return {*}  {INavDataService}
+     * @memberof IApp
+     */
+    getNavDataService(): INavDataService;
 
 }

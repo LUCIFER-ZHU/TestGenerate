@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="doc.core.sample.mapper.OpportunityMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="OpportunityResultMap" type="doc.core.sample.domain.Opportunity" autoMapping="true">
+		<id property="opportunityId" column="opportunityid" /><!--主键字段映射-->
+		<result property="customerId" column="customerid" />
+		<result property="personDataId" column="persondataid" />
+        <association property="customer" javaType="doc.core.sample.domain.Customer" column="customerid" select="doc.core.sample.mapper.CustomerMapper.selectById" fetchType="lazy"></association>
+        <association property="personData" javaType="doc.core.sample.domain.PersonData" column="persondataid" select="doc.core.sample.mapper.PersonDataMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+    <select id="selectById"  resultMap="OpportunityResultMap">
+        <include refid="view" /> 
+         where 
+         t1.opportunityid=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="doc.core.sample.domain.Opportunity" resultMap="OpportunityResultMap">
+        <include refid="view" /> 
+         where 
+         (opportunityid = #{ opportunityId })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="OpportunityResultMap">
+        <include refid="view" /> 
+         where 
+         (opportunityid)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.opportunityId }) </foreach>)
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`DEPTID`, t1.`EMAIL`, t1.`EXPENDTIME`, t1.`EXPREVENUE`, t1.`OPPORTUNITYID`, t1.`OPPORTUNITYNAME`, t1.`ORGID`, t1.`PERSONDATAID`, t21.`PERSONDATANAME`, t1.`PHONE`, t1.`PRIORITY`, t1.`STATE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_OPPORTUNITY` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`  LEFT JOIN `T_PERSONDATA` t21 ON t1.`PERSONDATAID` = t21.`PERSONDATAID`  
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`OPPORTUNITYID`, t1.`OPPORTUNITYNAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_OPPORTUNITY` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CUSTOMERID`, t11.`CUSTOMERNAME`, t1.`DEPTID`, t1.`EMAIL`, t1.`EXPENDTIME`, t1.`EXPREVENUE`, t1.`OPPORTUNITYID`, t1.`OPPORTUNITYNAME`, t1.`ORGID`, t1.`PERSONDATAID`, t21.`PERSONDATANAME`, t1.`PHONE`, t1.`PRIORITY`, t1.`STATE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_OPPORTUNITY` t1  LEFT JOIN `T_CUSTOMER` t11 ON t1.`CUSTOMERID` = t11.`CUSTOMERID`  LEFT JOIN `T_PERSONDATA` t21 ON t1.`PERSONDATAID` = t21.`PERSONDATAID`  
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="doc.core.sample.filter.OpportunitySearchContext"  resultMap="OpportunityResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="selectByCustomerId" resultMap="OpportunityResultMap">
+        <include refid="default" />
+         where 
+        customerid = #{ customerId }
+    </select>
+
+    <select id="selectByPersonDataId" resultMap="OpportunityResultMap">
+        <include refid="default" />
+         where 
+        persondataid = #{ personDataId }
+    </select>
+
+
+</mapper>

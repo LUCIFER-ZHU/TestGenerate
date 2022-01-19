@@ -28,6 +28,8 @@ export class ChartDataServiceBase extends EntityService {
   protected initBasicData() {
     this.appEntityCodeName = 'chartdata';
     this.appEntityCodeNames = 'chartdatas';
+    this.appEntityKeyCodeName = 'chartdataid';
+      this.appEntityTextCodeName = 'chartdataname';
     // 初始化关系实体路径集合
     this.deResPaths = [
         [{"pathName":"chartdatas","parameterName":"chartdata"}]
@@ -46,7 +48,7 @@ export class ChartDataServiceBase extends EntityService {
     public async CheckKey(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
       this.beforeExecuteAction(context,data,'CheckKey');
-      const res = await this.http.post(`${deResPath}`,data);
+      const res = await this.http.post(`${deResPath}/checkkey`,data);
       this.afterExecuteAction(context,data,'CheckKey');
       return res;
     }
@@ -76,7 +78,7 @@ export class ChartDataServiceBase extends EntityService {
     public async Get(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, true);
       this.beforeExecuteAction(context,data,'Get');
-      const res = await this.http.get(`${deResPath}`,data);
+      const res = await this.http.get(`${deResPath}`);
       this.afterExecuteAction(context,data,'Get');
       return res;
     }
@@ -91,7 +93,7 @@ export class ChartDataServiceBase extends EntityService {
     public async GetDraft(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
       this.beforeExecuteAction(context,data,'GetDraft');
-      const res = await this.http.get(`${deResPath}`,data);
+      const res = await this.http.get(`${deResPath}/getdraft`,data);
       this.afterExecuteAction(context,data,'GetDraft');
       return res;
     }
@@ -106,8 +108,23 @@ export class ChartDataServiceBase extends EntityService {
     public async GetRandom(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, true);
       this.beforeExecuteAction(context,data,'GetRandom');
-      const res = await this.http.get(`${deResPath}`,data);
+      const res = await this.http.get(`${deResPath}/getrandom`);
       this.afterExecuteAction(context,data,'GetRandom');
+      return res;
+    }
+    /**
+      * HTXWtest
+      *
+      * @param {IContext} [context={}]
+      * @param {IParam} [data = {}]
+      * @returns {Promise<any>}
+      * @memberof ChartDataServiceBase
+      */
+    public async HTXWtest(context: IContext = {}, data: IParam = {}): Promise<any> {
+      const deResPath = this.buildDeResPath(context, true);
+      this.beforeExecuteAction(context,data,'HTXWtest');
+      const res = await this.http.post(`${deResPath}/htxwtest`,data);
+      this.afterExecuteAction(context,data,'HTXWtest');
       return res;
     }
     /**
@@ -121,7 +138,7 @@ export class ChartDataServiceBase extends EntityService {
     public async Remove(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, true);
       this.beforeExecuteAction(context,data,'Remove');
-      const res = await this.http.delete(`${deResPath}`,data);
+      const res = await this.http.delete(`${deResPath}`);
       this.afterExecuteAction(context,data,'Remove');
       return res;
     }
@@ -136,7 +153,7 @@ export class ChartDataServiceBase extends EntityService {
     public async Save(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, true);
       this.beforeExecuteAction(context,data,'Save');
-      const res = await this.http.post(`${deResPath}`,data);
+      const res = await this.http.post(`${deResPath}/save`,data);
       this.afterExecuteAction(context,data,'Save');
       return res;
     }
@@ -151,7 +168,7 @@ export class ChartDataServiceBase extends EntityService {
     public async TestBackEndAction(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, true);
       this.beforeExecuteAction(context,data,'TestBackEndAction');
-      const res = await this.http.post(`${deResPath}`,data);
+      const res = await this.http.post(`${deResPath}/testbackendaction`,data);
       this.afterExecuteAction(context,data,'TestBackEndAction');
       return res;
     }
@@ -180,7 +197,7 @@ export class ChartDataServiceBase extends EntityService {
       */
     public async FetchDefault(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}`);
+      const res = await this.http.post(`${deResPath}/fetchdefault`);
       return res;
     }
     /**
@@ -193,6 +210,6 @@ export class ChartDataServiceBase extends EntityService {
       */
     public async Select(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}`,data);
+      const res = await this.http.post(`${deResPath}/select`,data);
       return res;
     }}

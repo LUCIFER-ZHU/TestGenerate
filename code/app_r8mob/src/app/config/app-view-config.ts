@@ -17,22 +17,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEMOBPICKUPMDVIEW",
     "fileDir": "@views/r8mob/province-mob-pickup-md-view"
   },
-  "ProvinceUsr2MobEditView":{
-    "name": "ProvinceUsr2MobEditView",
-    "codeName": "ProvinceUsr2MobEditView",
-    "appEntityName":"Province",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"provinces","parameterName":"province"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "provinceusr2mobeditview" }
-    ],
-    "caption": "省份实体移动端编辑视图2",
-    "viewType": "DEMOBEDITVIEW",
-    "fileDir": "@views/r8mob/province-usr2-mob-edit-view"
-  },
   "ProvinceMobPickupTreeView":{
     "name": "ProvinceMobPickupTreeView",
     "codeName": "ProvinceMobPickupTreeView",
@@ -100,22 +84,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEMOBEDITVIEW",
     "fileDir": "@views/r8mob/chart-data-mob-edit-view"
   },
-  "ChartDataMobPickupView":{
-    "name": "ChartDataMobPickupView",
-    "codeName": "ChartDataMobPickupView",
-    "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"chartdatas","parameterName":"chartdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "chartdatamobpickupview" }
-    ],
-    "caption": "图表",
-    "viewType": "DEMOBPICKUPVIEW",
-    "fileDir": "@views/r8mob/chart-data-mob-pickup-view"
-  },
   "ChartDataMobTabExpView":{
     "name": "ChartDataMobTabExpView",
     "codeName": "ChartDataMobTabExpView",
@@ -177,22 +145,6 @@ export const AppViewConfig:IParam = {
     "caption": "图表",
     "viewType": "DEMOBTREEVIEW",
     "fileDir": "@views/r8mob/chart-data-mob-tree-view"
-  },
-  "ChartDataMobPickupTreeView":{
-    "name": "ChartDataMobPickupTreeView",
-    "codeName": "ChartDataMobPickupTreeView",
-    "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"chartdatas","parameterName":"chartdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "chartdatamobpickuptreeview" }
-    ],
-    "caption": "图表",
-    "viewType": "DEMOBPICKUPTREEVIEW",
-    "fileDir": "@views/r8mob/chart-data-mob-pickup-tree-view"
   },
   "ProvinceMobMPickupView":{
     "name": "ProvinceMobMPickupView",
@@ -386,22 +338,6 @@ export const AppViewConfig:IParam = {
     "viewType": "DEMOBPORTALVIEW",
     "fileDir": "@views/r8mob/chart-data-mob-dashboard-view"
   },
-  "ChartDataMobMDView":{
-    "name": "ChartDataMobMDView",
-    "codeName": "ChartDataMobMDView",
-    "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"chartdatas","parameterName":"chartdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "chartdatamobmdview" }
-    ],
-    "caption": "图表",
-    "viewType": "DEMOBMDVIEW",
-    "fileDir": "@views/r8mob/chart-data-mob-md-view"
-  },
   "ChartDataMobChartView":{
     "name": "ChartDataMobChartView",
     "codeName": "ChartDataMobChartView",
@@ -417,21 +353,5 @@ export const AppViewConfig:IParam = {
     "caption": "图表",
     "viewType": "DEMOBCHARTVIEW",
     "fileDir": "@views/r8mob/chart-data-mob-chart-view"
-  },
-  "ChartDataUsr2MobPickupView":{
-    "name": "ChartDataUsr2MobPickupView",
-    "codeName": "ChartDataUsr2MobPickupView",
-    "appEntityName":"ChartData",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-      [{"pathName":"chartdatas","parameterName":"chartdata"}]
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "chartdatausr2mobpickupview" }
-    ],
-    "caption": "图表",
-    "viewType": "DEMOBPICKUPVIEW",
-    "fileDir": "@views/r8mob/chart-data-usr2-mob-pickup-view"
   }
 }

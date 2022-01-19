@@ -42,9 +42,10 @@ const { state, onEditorEvent } = new QuickSearchFormControl(ctrlState, props, em
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_chartdataname_like.visible" name="n_chartdataname_like" label="图表名称(%)">
+  <AppFormItem v-show="state.detailsModel.n_chartdataname_like.visible" name="n_chartdataname_like" :required="state.detailsModel.n_chartdataname_like.required" label="图表名称(%)">
 <appInput
   name="n_chartdataname_like"
+  :disabled="state.detailsModel.n_chartdataname_like.disabled"
   type="text"
   :value="state.data.n_chartdataname_like"
   @editorEvent="onEditorEvent"
@@ -57,9 +58,10 @@ const { state, onEditorEvent } = new QuickSearchFormControl(ctrlState, props, em
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_datatype_eq.visible" name="n_datatype_eq" label="数据分类(等于(=))">
+  <AppFormItem v-show="state.detailsModel.n_datatype_eq.visible" name="n_datatype_eq" :required="state.detailsModel.n_datatype_eq.required" label="数据分类(等于(=))">
 <appDropdownList
   name="n_datatype_eq"
+  :disabled="state.detailsModel.n_datatype_eq.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
   :value="state.data.n_datatype_eq"

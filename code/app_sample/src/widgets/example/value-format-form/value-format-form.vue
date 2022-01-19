@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './value-format-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -71,9 +70,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.format1.visible" name="format1" label="数值编辑器格式化">
+  <AppFormItem v-show="state.detailsModel.format1.visible" name="format1" :required="state.detailsModel.format1.required" label="数值编辑器格式化">
 <appInput
   name="format1"
+  :disabled="state.detailsModel.format1.disabled"
   type="number"
   :value="state.data.format1"
   @editorEvent="onEditorEvent"
@@ -101,9 +101,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.format2.visible" name="format2" label="标签编辑器格式化">
+  <AppFormItem v-show="state.detailsModel.format2.visible" name="format2" :required="state.detailsModel.format2.required" label="标签编辑器格式化">
 <appSpan
   name="format2"
+  :disabled="state.detailsModel.format2.disabled"
   dataType="6"
   :precision="4"
   :value="state.data.format2"
@@ -132,9 +133,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.datatype.visible" name="datatype" label="表单项">
+  <AppFormItem v-show="state.detailsModel.datatype.visible" name="datatype" :required="state.detailsModel.datatype.required" label="表单项">
 <appSpan
   name="datatype"
+  :disabled="state.detailsModel.datatype.disabled"
   dataType="25"
   :value="state.data.datatype"
   :context="state.context"
@@ -162,9 +164,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" label="表单项">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="表单项">
 <appSpan
   name="formitem"
+  :disabled="state.detailsModel.formitem.disabled"
   dataType="25"
   :value="state.data.formitem"
   :context="state.context"

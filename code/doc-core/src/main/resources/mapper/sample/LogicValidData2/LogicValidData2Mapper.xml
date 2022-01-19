@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="doc.core.sample.mapper.LogicValidData2Mapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="LogicValidData2ResultMap" type="doc.core.sample.domain.LogicValidData2" autoMapping="true">
+		<id property="logicValidData2Id" column="logicvaliddata2id" /><!--主键字段映射-->
+    </resultMap>
+
+    <select id="selectById"  resultMap="LogicValidData2ResultMap">
+        <include refid="view" /> 
+         and 
+         t1.logicvaliddata2id=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="doc.core.sample.domain.LogicValidData2" resultMap="LogicValidData2ResultMap">
+        <include refid="view" /> 
+         and 
+         (logicvaliddata2id = #{ logicValidData2Id })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="LogicValidData2ResultMap">
+        <include refid="view" /> 
+         and 
+         (logicvaliddata2id)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.logicValidData2Id }) </foreach>)
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CODE`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ENABLE`, t1.`LOGICVALIDDATA2ID`, t1.`LOGICVALIDDATA2NAME`, t1.`ORGID`, t1.`REGION`, t1.`UNIONKEY`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_LOGICVALIDDATA2` t1   where t1.ENABLE = 1
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ENABLE`, t1.`LOGICVALIDDATA2ID`, t1.`LOGICVALIDDATA2NAME`, t1.`ORGID`, t1.`UNIONKEY`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_LOGICVALIDDATA2` t1   where t1.ENABLE = 1
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CODE`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ENABLE`, t1.`LOGICVALIDDATA2ID`, t1.`LOGICVALIDDATA2NAME`, t1.`ORGID`, t1.`REGION`, t1.`UNIONKEY`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_LOGICVALIDDATA2` t1   where t1.ENABLE = 1
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="doc.core.sample.filter.LogicValidData2SearchContext"  resultMap="LogicValidData2ResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+
+</mapper>

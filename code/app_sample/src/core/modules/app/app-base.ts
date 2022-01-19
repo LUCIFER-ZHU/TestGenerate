@@ -1,5 +1,5 @@
 import { AppFuncService, IApp, IAppFuncService, IOpenViewService, ViewDetail } from "@core";
-import { IDataServiceRegister, IParam, IUIServiceRegister } from "@core/interface";
+import { IDataServiceRegister, INavDataService, IParam, IUIServiceRegister } from "@core/interface";
 
 /**
  * 应用基类
@@ -119,5 +119,14 @@ export abstract class AppBase implements IApp {
    */
   public getViewInfo(codeName: string): ViewDetail | undefined {
     return undefined;
+  }
+
+  /**
+   * @description 获取导航数据服务
+   * @return {*}  {INavDataService}
+   * @memberof AppBase
+   */
+  public getNavDataService(): INavDataService {
+    throw new Error("Method not implemented.");
   }
 }

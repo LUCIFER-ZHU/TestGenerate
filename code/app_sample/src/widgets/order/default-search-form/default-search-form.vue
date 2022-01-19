@@ -44,9 +44,10 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_state_eq.visible" name="n_state_eq" label="订单状态(等于(=))">
+  <AppFormItem v-show="state.detailsModel.n_state_eq.visible" name="n_state_eq" :required="state.detailsModel.n_state_eq.required" label="订单状态(等于(=))">
 <appDropdownList
   name="n_state_eq"
+  :disabled="state.detailsModel.n_state_eq.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
   :value="state.data.n_state_eq"
@@ -61,9 +62,10 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_ordername_like.visible" name="n_ordername_like" label="订单名称(文本包含(%))">
+  <AppFormItem v-show="state.detailsModel.n_ordername_like.visible" name="n_ordername_like" :required="state.detailsModel.n_ordername_like.required" label="订单名称(文本包含(%))">
 <appInput
   name="n_ordername_like"
+  :disabled="state.detailsModel.n_ordername_like.disabled"
   type="text"
   :value="state.data.n_ordername_like"
   @editorEvent="onEditorEvent"

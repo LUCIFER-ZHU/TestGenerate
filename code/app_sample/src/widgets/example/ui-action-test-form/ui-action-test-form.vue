@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './ui-action-test-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" label="X值">
+  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" :required="state.detailsModel.fieldx.required" label="X值">
 <appInput
   name="fieldx"
+  :disabled="state.detailsModel.fieldx.disabled"
   type="text"
   :value="state.data.fieldx"
   @editorEvent="onEditorEvent"
@@ -71,9 +71,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" label="Y值">
+  <AppFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" :required="state.detailsModel.fieldy.required" label="Y值">
 <appInput
   name="fieldy"
+  :disabled="state.detailsModel.fieldy.disabled"
   type="text"
   :value="state.data.fieldy"
   @editorEvent="onEditorEvent"
@@ -86,9 +87,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" label="Z值">
+  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" :required="state.detailsModel.fieldz.required" label="Z值">
 <appInput
   name="fieldz"
+  :disabled="state.detailsModel.fieldz.disabled"
   type="text"
   :value="state.data.fieldz"
   @editorEvent="onEditorEvent"
@@ -101,9 +103,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldupdate.visible" name="fieldupdate" label="更新值">
+  <AppFormItem v-show="state.detailsModel.fieldupdate.visible" name="fieldupdate" :required="state.detailsModel.fieldupdate.required" label="更新值">
 <appInput
   name="fieldupdate"
+  :disabled="state.detailsModel.fieldupdate.disabled"
   type="text"
   :value="state.data.fieldupdate"
   @editorEvent="onEditorEvent"

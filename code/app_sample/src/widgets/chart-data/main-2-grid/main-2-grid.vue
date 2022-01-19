@@ -66,7 +66,7 @@ defineExpose({ state, name: 'grid' });
       </div>
     </template>
     <template #bodyCell="{ column, text, record, index }">
-<div v-if="Object.is(column.dataIndex, 'chartname')" class="table-cell">
+<div v-if="Object.is(column.dataIndex, 'chartdataname')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
 <appInput
   name="chartdataname"
@@ -81,7 +81,7 @@ defineExpose({ state, name: 'grid' });
   </div>
     
 </div>
-<div v-if="Object.is(column.dataIndex, 'date')" class="table-cell">
+<div v-if="Object.is(column.dataIndex, 'chartdate')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
 <appDatePicker
   name="chartdate"
@@ -96,7 +96,7 @@ defineExpose({ state, name: 'grid' });
   </div>
     
 </div>
-<div v-if="Object.is(column.dataIndex, 'type')" class="table-cell">
+<div v-if="Object.is(column.dataIndex, 'datatype')" class="table-cell">
 
   <div class="text-cell">
     <span class="text">{{text}}</span>
@@ -117,7 +117,7 @@ defineExpose({ state, name: 'grid' });
   </div>
     
 </div>
-<div v-if="Object.is(column.dataIndex, 'testdata')" class="table-cell">
+<div v-if="Object.is(column.dataIndex, 'data')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
 <appInput
   name="data"

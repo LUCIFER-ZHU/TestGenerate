@@ -15,6 +15,7 @@ declare module 'vue' {
     AppDropdownList: typeof import('./src/components/editors/app-dropdown-list.vue')['default']
     AppEditViewLayout: typeof import('./src/components/layout/app-edit-view-layout.vue')['default']
     AppFilterTree: typeof import('./src/components/render/app-filter-tree.vue')['default']
+    AppFormDruipart: typeof import('./src/components/render/app-form-druipart.vue')['default']
     AppFormGroup: typeof import('./src/components/render/app-form-group.vue')['default']
     AppFormItem: typeof import('./src/components/render/app-form-item.vue')['default']
     AppGridViewLayout: typeof import('./src/components/layout/app-grid-view-layout.vue')['default']

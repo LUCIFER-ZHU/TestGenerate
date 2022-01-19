@@ -50,7 +50,7 @@ export class FormControl extends MainControl {
       // 是否取反
       return logic.notMode ? !result : result;
     } else if (logic.logicType == 'SINGLE') {
-      return verifyValue(data[logic.name], logic.condOP, logic.value);
+      return verifyValue(data[logic.dEFDName], logic.condOP, logic.value);
     }
     return false;
   }

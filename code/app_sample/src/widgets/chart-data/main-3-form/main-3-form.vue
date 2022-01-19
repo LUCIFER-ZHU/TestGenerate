@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './main-3-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,11 +55,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 12, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" label="单项选择表格">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="单项选择表格">
 <appDataPicker
   name="formitem"
   :data="state.data"
   valueItem="formitem1"
+  :disabled="state.detailsModel.formitem.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"
@@ -75,9 +75,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :required="state.detailsModel.formitem1.required" label="值项">
 <appSpan
   name="formitem1"
+  :disabled="state.detailsModel.formitem1.disabled"
   dataType="25"
   :value="state.data.formitem1"
   :context="state.context"
@@ -90,11 +91,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 12, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" label="单选选择树">
+  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :required="state.detailsModel.formitem2.required" label="单选选择树">
 <appDataPicker
   name="formitem2"
   :data="state.data"
   valueItem="formitem3"
+  :disabled="state.detailsModel.formitem2.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"
@@ -109,9 +111,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 12, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" :required="state.detailsModel.formitem3.required" label="值项">
 <appSpan
   name="formitem3"
+  :disabled="state.detailsModel.formitem3.disabled"
   dataType="25"
   :value="state.data.formitem3"
   :context="state.context"
@@ -124,11 +127,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" label="树导航（列表）">
+  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" :required="state.detailsModel.formitem4.required" label="树导航（列表）">
 <appDataPicker
   name="formitem4"
   :data="state.data"
   valueItem="formitem5"
+  :disabled="state.detailsModel.formitem4.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"
@@ -143,9 +147,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" :required="state.detailsModel.formitem5.required" label="值项">
 <appSpan
   name="formitem5"
+  :disabled="state.detailsModel.formitem5.disabled"
   dataType="25"
   :value="state.data.formitem5"
   :context="state.context"
@@ -158,11 +163,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem6.visible" name="formitem6" label="单项选择列表">
+  <AppFormItem v-show="state.detailsModel.formitem6.visible" name="formitem6" :required="state.detailsModel.formitem6.required" label="单项选择列表">
 <appDataPicker
   name="formitem6"
   :data="state.data"
   valueItem="formitem7"
+  :disabled="state.detailsModel.formitem6.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"
@@ -177,9 +183,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem7.visible" name="formitem7" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem7.visible" name="formitem7" :required="state.detailsModel.formitem7.required" label="值项">
 <appSpan
   name="formitem7"
+  :disabled="state.detailsModel.formitem7.disabled"
   dataType="25"
   :value="state.data.formitem7"
   :context="state.context"
@@ -192,11 +199,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem8.visible" name="formitem8" label="单选卡片">
+  <AppFormItem v-show="state.detailsModel.formitem8.visible" name="formitem8" :required="state.detailsModel.formitem8.required" label="单选卡片">
 <appDataPicker
   name="formitem8"
   :data="state.data"
   valueItem="formitem9"
+  :disabled="state.detailsModel.formitem8.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"
@@ -211,9 +219,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem9.visible" name="formitem9" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem9.visible" name="formitem9" :required="state.detailsModel.formitem9.required" label="值项">
 <appSpan
   name="formitem9"
+  :disabled="state.detailsModel.formitem9.disabled"
   dataType="25"
   :value="state.data.formitem9"
   :context="state.context"
@@ -226,11 +235,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem10.visible" name="formitem10" label="树导航（卡片）">
+  <AppFormItem v-show="state.detailsModel.formitem10.visible" name="formitem10" :required="state.detailsModel.formitem10.required" label="树导航（卡片）">
 <appDataPicker
   name="formitem10"
   :data="state.data"
   valueItem="formitem11"
+  :disabled="state.detailsModel.formitem10.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"
@@ -245,9 +255,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem11.visible" name="formitem11" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem11.visible" name="formitem11" :required="state.detailsModel.formitem11.required" label="值项">
 <appSpan
   name="formitem11"
+  :disabled="state.detailsModel.formitem11.disabled"
   dataType="25"
   :value="state.data.formitem11"
   :context="state.context"
@@ -260,11 +271,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem12.visible" name="formitem12" label="树导航（表格）">
+  <AppFormItem v-show="state.detailsModel.formitem12.visible" name="formitem12" :required="state.detailsModel.formitem12.required" label="树导航（表格）">
 <appDataPicker
   name="formitem12"
   :data="state.data"
   valueItem="formitem13"
+  :disabled="state.detailsModel.formitem12.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"
@@ -279,9 +291,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem13.visible" name="formitem13" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem13.visible" name="formitem13" :required="state.detailsModel.formitem13.required" label="值项">
 <appSpan
   name="formitem13"
+  :disabled="state.detailsModel.formitem13.disabled"
   dataType="25"
   :value="state.data.formitem13"
   :context="state.context"
@@ -294,9 +307,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem14.visible" name="formitem14" label="表单项a">
+  <AppFormItem v-show="state.detailsModel.formitem14.visible" name="formitem14" :required="state.detailsModel.formitem14.required" label="表单项a">
 <appInput
   name="formitem14"
+  :disabled="state.detailsModel.formitem14.disabled"
   type="text"
   :value="state.data.formitem14"
   @editorEvent="onEditorEvent"
@@ -309,9 +323,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem15.visible" name="formitem15" label="表单项b">
+  <AppFormItem v-show="state.detailsModel.formitem15.visible" name="formitem15" :required="state.detailsModel.formitem15.required" label="表单项b">
 <appInput
   name="formitem15"
+  :disabled="state.detailsModel.formitem15.disabled"
   type="text"
   :value="state.data.formitem15"
   @editorEvent="onEditorEvent"

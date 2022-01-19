@@ -198,10 +198,10 @@ export const ctrlState = {
           logicCat: 'PANELVISIBLE',
           logicType: 'GROUP',
           notMode: 'false',
-          Logics: [
-          {condOP: 'EQ',dEFDName: 'formitem',logicType: 'SINGLE',name: 'formitem 等于(=) (1)'},
+          logics: [
+          {condOP: 'EQ',dEFDName: 'formitem',logicType: 'SINGLE',name: 'formitem 等于(=) (1)',value:'1'},
           ],
-        }
+        },
       ],
     },
     grouppanel2_1: {
@@ -244,10 +244,10 @@ export const ctrlState = {
           logicCat: 'ITEMENABLE',
           logicType: 'GROUP',
           notMode: 'false',
-          Logics: [
-          {condOP: 'EQ',dEFDName: 'formitem2',logicType: 'SINGLE',name: 'formitem2 等于(=) (1)'},
+          logics: [
+          {condOP: 'EQ',dEFDName: 'formitem2',logicType: 'SINGLE',name: 'formitem2 等于(=) (1)',value:'1'},
           ],
-        }
+        },
       ],
     },
     grouppanel3_1: {
@@ -290,10 +290,10 @@ export const ctrlState = {
           logicCat: 'ITEMBLANK',
           logicType: 'GROUP',
           notMode: 'false',
-          Logics: [
-          {condOP: 'EQ',dEFDName: 'formitem4',logicType: 'SINGLE',name: 'formitem4 等于(=) (1)'},
+          logics: [
+          {condOP: 'EQ',dEFDName: 'formitem4',logicType: 'SINGLE',name: 'formitem4 等于(=) (1)',value:'1'},
           ],
-        }
+        },
       ],
     },
     grouppanel4_1: {
@@ -391,11 +391,11 @@ export const ctrlState = {
           logicCat: 'ITEMENABLE',
           logicType: 'GROUP',
           notMode: 'false',
-          Logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'formitem11',logicType: 'SINGLE',name: 'formitem11 值不为空(NotNil)'},
-          {condOP: 'ISNOTNULL',dEFDName: 'formitem12',logicType: 'SINGLE',name: 'formitem12 值不为空(NotNil)'},
+          logics: [
+          {condOP: 'ISNOTNULL',dEFDName: 'formitem11',logicType: 'SINGLE',name: 'formitem11 值不为空(NotNil)',value:''},
+          {condOP: 'ISNOTNULL',dEFDName: 'formitem12',logicType: 'SINGLE',name: 'formitem12 值不为空(NotNil)',value:''},
           ],
-        }
+        },
       ],
     },
     grouppanel7: {
@@ -450,10 +450,10 @@ export const ctrlState = {
           logicCat: 'ITEMENABLE',
           logicType: 'GROUP',
           notMode: 'false',
-          Logics: [
-          {condOP: '',dEFDName: '',logicType: 'GROUP',name: 'OR'},
+          logics: [
+          {condOP: '',dEFDName: '',logicType: 'GROUP',name: 'OR',value:''},
           ],
-        }
+        },
       ],
     },
     group1: {
@@ -510,10 +510,10 @@ export const ctrlState = {
           logicCat: 'ITEMENABLE',
           logicType: 'GROUP',
           notMode: 'false',
-          Logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'provinceid',logicType: 'SINGLE',name: 'provinceid 值不为空(NotNil)'},
+          logics: [
+          {condOP: 'ISNOTNULL',dEFDName: 'provinceid',logicType: 'SINGLE',name: 'provinceid 值不为空(NotNil)',value:''},
           ],
-        }
+        },
       ],
     },
     districtname: {
@@ -538,10 +538,10 @@ export const ctrlState = {
           logicCat: 'ITEMENABLE',
           logicType: 'GROUP',
           notMode: 'false',
-          Logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'cityid',logicType: 'SINGLE',name: 'cityid 值不为空(NotNil)'},
+          logics: [
+          {condOP: 'ISNOTNULL',dEFDName: 'cityid',logicType: 'SINGLE',name: 'cityid 值不为空(NotNil)',value:''},
           ],
-        }
+        },
       ],
     },
     cityid: {
@@ -695,7 +695,7 @@ export const ctrlState = {
       enableCond: 3,
       formItemUpdate: {
         showBusyIndicator: "true",
-        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@38eb2fb0",
+        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@476a736d",
         updateDetails: [
         "",
         "",
@@ -716,7 +716,7 @@ export const ctrlState = {
       enableCond: 3,
       formItemUpdate: {
         showBusyIndicator: "true",
-        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@38eb2fb0",
+        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@476a736d",
         updateDetails: [
         "",
         "",

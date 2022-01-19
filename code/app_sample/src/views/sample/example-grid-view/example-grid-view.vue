@@ -5,7 +5,6 @@ import { GridView, IActionParam, IParam, IContext } from '@core';
 import { viewState } from './example-grid-view-state';
 import { MainGrid } from '@widgets/example/main-grid';
 import { DefaultSearchForm } from '@widgets/example/default-search-form';
-import { BaseSearchBar } from '@widgets/example/base-searchBar';
 
 // props声明和默认值处理
 interface Props {
@@ -71,11 +70,6 @@ const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent } = new Grid
         <a-button><filter-outlined /></a-button>
       </a-popover>
       </div>
-    </template>
-    <template v-slot:searchBar>
-      <BaseSearchBar
-      :controlAction="state.searchbar.action"
-      :viewSubject="state.viewSubject"/>
     </template>
   </AppGridViewLayout>
 </template>

@@ -297,11 +297,11 @@ export const ctrlState = {
           logicCat: 'PANELVISIBLE',
           logicType: 'GROUP',
           notMode: 'false',
-          Logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'fieldx',logicType: 'SINGLE',name: ''},
-          {condOP: 'NOTEQ',dEFDName: 'fieldx',logicType: 'SINGLE',name: ''},
+          logics: [
+          {condOP: 'ISNOTNULL',dEFDName: 'fieldx',logicType: 'SINGLE',name: '',value:''},
+          {condOP: 'NOTEQ',dEFDName: 'fieldx',logicType: 'SINGLE',name: '',value:''},
           ],
-        }
+        },
       ],
     },
     fieldy: {
@@ -324,11 +324,11 @@ export const ctrlState = {
           logicCat: 'PANELVISIBLE',
           logicType: 'GROUP',
           notMode: 'false',
-          Logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'fieldy',logicType: 'SINGLE',name: ''},
-          {condOP: 'NOTEQ',dEFDName: 'fieldy',logicType: 'SINGLE',name: ''},
+          logics: [
+          {condOP: 'ISNOTNULL',dEFDName: 'fieldy',logicType: 'SINGLE',name: '',value:''},
+          {condOP: 'NOTEQ',dEFDName: 'fieldy',logicType: 'SINGLE',name: '',value:''},
           ],
-        }
+        },
       ],
     },
     fieldz: {
@@ -351,11 +351,11 @@ export const ctrlState = {
           logicCat: 'PANELVISIBLE',
           logicType: 'GROUP',
           notMode: 'false',
-          Logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'fieldz',logicType: 'SINGLE',name: ''},
-          {condOP: 'NOTEQ',dEFDName: 'fieldz',logicType: 'SINGLE',name: ''},
+          logics: [
+          {condOP: 'ISNOTNULL',dEFDName: 'fieldz',logicType: 'SINGLE',name: '',value:''},
+          {condOP: 'NOTEQ',dEFDName: 'fieldz',logicType: 'SINGLE',name: '',value:''},
           ],
-        }
+        },
       ],
     },
   },

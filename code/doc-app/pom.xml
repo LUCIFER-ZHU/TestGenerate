@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>doc</artifactId>
+        <groupId>doc</groupId>
+        <version>1.0.0.0</version>
+    </parent>
+
+    <artifactId>doc-app</artifactId>
+    <name>文档 Application</name>
+    <description>文档 Application</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>doc-app-sample</module>
+        <module>doc-app-r8mob</module>
+        <module>doc-app-j2eer8samples</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

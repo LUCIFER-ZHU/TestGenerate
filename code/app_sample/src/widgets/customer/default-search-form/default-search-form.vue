@@ -44,9 +44,10 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_customername_like.visible" name="n_customername_like" label="客户名称(文本包含(%))">
+  <AppFormItem v-show="state.detailsModel.n_customername_like.visible" name="n_customername_like" :required="state.detailsModel.n_customername_like.required" label="客户名称(文本包含(%))">
 <appInput
   name="n_customername_like"
+  :disabled="state.detailsModel.n_customername_like.disabled"
   type="text"
   :value="state.data.n_customername_like"
   @editorEvent="onEditorEvent"
@@ -59,9 +60,10 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 6, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_type_eq.visible" name="n_type_eq" label="类型(等于(=))">
+  <AppFormItem v-show="state.detailsModel.n_type_eq.visible" name="n_type_eq" :required="state.detailsModel.n_type_eq.required" label="类型(等于(=))">
 <appDropdownList
   name="n_type_eq"
+  :disabled="state.detailsModel.n_type_eq.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
   :value="state.data.n_type_eq"

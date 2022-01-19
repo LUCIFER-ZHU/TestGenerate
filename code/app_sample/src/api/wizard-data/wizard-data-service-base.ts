@@ -28,6 +28,8 @@ export class WizardDataServiceBase extends EntityService {
   protected initBasicData() {
     this.appEntityCodeName = 'wizarddata';
     this.appEntityCodeNames = 'wizarddatas';
+    this.appEntityKeyCodeName = 'wizarddataid';
+      this.appEntityTextCodeName = 'wizarddataname';
     // 初始化关系实体路径集合
     this.deResPaths = [
         [{"pathName":"wizarddatas","parameterName":"wizarddata"}]

@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './main-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,11 +55,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.productname.visible" name="productname" label="产品">
+  <AppFormItem v-show="state.detailsModel.productname.visible" name="productname" :required="state.detailsModel.productname.required" label="产品">
 <appDataPicker
   name="productname"
   :data="state.data"
   valueItem="productid"
+  :disabled="state.detailsModel.productname.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"
@@ -74,9 +74,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.price.visible" name="price" label="单价">
+  <AppFormItem v-show="state.detailsModel.price.visible" name="price" :required="state.detailsModel.price.required" label="单价">
 <appInput
   name="price"
+  :disabled="state.detailsModel.price.disabled"
   type="text"
   :value="state.data.price"
   @editorEvent="onEditorEvent"
@@ -89,9 +90,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.qty.visible" name="qty" label="数量">
+  <AppFormItem v-show="state.detailsModel.qty.visible" name="qty" :required="state.detailsModel.qty.required" label="数量">
 <appInput
   name="qty"
+  :disabled="state.detailsModel.qty.disabled"
   type="text"
   :value="state.data.qty"
   @editorEvent="onEditorEvent"
@@ -104,9 +106,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.amount.visible" name="amount" label="小计">
+  <AppFormItem v-show="state.detailsModel.amount.visible" name="amount" :required="state.detailsModel.amount.required" label="小计">
 <appInput
   name="amount"
+  :disabled="state.detailsModel.amount.disabled"
   type="text"
   :value="state.data.amount"
   @editorEvent="onEditorEvent"

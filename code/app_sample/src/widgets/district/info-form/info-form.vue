@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './info-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.districtname.visible" name="districtname" label="区名称">
+  <AppFormItem v-show="state.detailsModel.districtname.visible" name="districtname" :required="state.detailsModel.districtname.required" label="区名称">
 <appSpan
   name="districtname"
+  :disabled="state.detailsModel.districtname.disabled"
   dataType="25"
   :value="state.data.districtname"
   :context="state.context"

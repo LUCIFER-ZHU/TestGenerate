@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="doc.core.sample.mapper.SampleVerMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="SampleVerResultMap" type="doc.core.sample.domain.SampleVer" autoMapping="true">
+		<id property="sampleVerId" column="sampleverid" /><!--主键字段映射-->
+    </resultMap>
+
+    <select id="selectById"  resultMap="SampleVerResultMap">
+        <include refid="view" /> 
+         where 
+         t1.sampleverid=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="doc.core.sample.domain.SampleVer" resultMap="SampleVerResultMap">
+        <include refid="view" /> 
+         where 
+         (sampleverid = #{ sampleVerId })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="SampleVerResultMap">
+        <include refid="view" /> 
+         where 
+         (sampleverid)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.sampleVerId }) </foreach>)
+    </select>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`MEMO`, t1.`ORGID`, t1.`SAMPLEVERID`, t1.`SAMPLEVERNAME`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VERSTR` FROM `T_SAMPLEVER` t1  
+        ]]>    
+    </sql>
+
+    <sql id="javar7D" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`MEMO`, t1.`ORGID`, t1.`SAMPLEVERID`, t1.`SAMPLEVERNAME`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VERSTR` FROM `T_SAMPLEVER` t1   where ( t1.`TYPE` = 'JAVAR7D' )
+        ]]>    
+    </sql>
+
+    <sql id="mobr7D" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`MEMO`, t1.`ORGID`, t1.`SAMPLEVERID`, t1.`SAMPLEVERNAME`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VERSTR` FROM `T_SAMPLEVER` t1   where ( t1.`TYPE` = 'MOBR7D' )
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`ORGID`, t1.`SAMPLEVERID`, t1.`SAMPLEVERNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_SAMPLEVER` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CONTENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`MEMO`, t1.`ORGID`, t1.`SAMPLEVERID`, t1.`SAMPLEVERNAME`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VERSTR` FROM `T_SAMPLEVER` t1  
+        ]]>    
+    </sql>
+
+    <sql id="webr7D" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`MEMO`, t1.`ORGID`, t1.`SAMPLEVERID`, t1.`SAMPLEVERNAME`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`VERSTR` FROM `T_SAMPLEVER` t1   where ( t1.`TYPE` = 'WEBR7D' )
+        ]]>    
+    </sql>
+
+    <select id="searchDefault"  parameterType="doc.core.sample.filter.SampleVerSearchContext"  resultMap="SampleVerResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="searchJavar7D"  parameterType="doc.core.sample.filter.SampleVerSearchContext"  resultMap="SampleVerResultMap">
+        select t1.* 
+        from (
+            <include refid="javar7D"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="searchMobr7D"  parameterType="doc.core.sample.filter.SampleVerSearchContext"  resultMap="SampleVerResultMap">
+        select t1.* 
+        from (
+            <include refid="mobr7D"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="searchWebr7D"  parameterType="doc.core.sample.filter.SampleVerSearchContext"  resultMap="SampleVerResultMap">
+        select t1.* 
+        from (
+            <include refid="webr7D"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+
+</mapper>

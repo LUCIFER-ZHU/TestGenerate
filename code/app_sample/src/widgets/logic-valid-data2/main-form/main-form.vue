@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './main-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -59,9 +58,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.region.visible" name="region" label="区域">
+  <AppFormItem v-show="state.detailsModel.region.visible" name="region" :required="state.detailsModel.region.required" label="区域">
 <appInput
   name="region"
+  :disabled="state.detailsModel.region.disabled"
   :maxLength="100"
   type="text"
   :value="state.data.region"
@@ -75,9 +75,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.code.visible" name="code" label="标识">
+  <AppFormItem v-show="state.detailsModel.code.visible" name="code" :required="state.detailsModel.code.required" label="标识">
 <appInput
   name="code"
+  :disabled="state.detailsModel.code.disabled"
   :maxLength="100"
   type="text"
   :value="state.data.code"
@@ -91,9 +92,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.logicvaliddata2name.visible" name="logicvaliddata2name" label="名称">
+  <AppFormItem v-show="state.detailsModel.logicvaliddata2name.visible" name="logicvaliddata2name" :required="state.detailsModel.logicvaliddata2name.required" label="名称">
 <appInput
   name="logicvaliddata2name"
+  :disabled="state.detailsModel.logicvaliddata2name.disabled"
   :maxLength="200"
   type="text"
   :value="state.data.logicvaliddata2name"
@@ -131,9 +133,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.createman.visible" name="createman" label="建立人">
+  <AppFormItem v-show="state.detailsModel.createman.visible" name="createman" :required="state.detailsModel.createman.required" label="建立人">
 <appSpan
   name="createman"
+  :disabled="state.detailsModel.createman.disabled"
   dataType="25"
   :value="state.data.createman"
   :context="state.context"
@@ -146,9 +149,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.createdate.visible" name="createdate" label="建立时间">
+  <AppFormItem v-show="state.detailsModel.createdate.visible" name="createdate" :required="state.detailsModel.createdate.required" label="建立时间">
 <appSpan
   name="createdate"
+  :disabled="state.detailsModel.createdate.disabled"
   dataType="5"
   :value="state.data.createdate"
   :context="state.context"
@@ -161,9 +165,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.updateman.visible" name="updateman" label="更新人">
+  <AppFormItem v-show="state.detailsModel.updateman.visible" name="updateman" :required="state.detailsModel.updateman.required" label="更新人">
 <appSpan
   name="updateman"
+  :disabled="state.detailsModel.updateman.disabled"
   dataType="25"
   :value="state.data.updateman"
   :context="state.context"
@@ -176,9 +181,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" label="更新时间">
+  <AppFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" :required="state.detailsModel.updatedate.required" label="更新时间">
 <appSpan
   name="updatedate"
+  :disabled="state.detailsModel.updatedate.disabled"
   dataType="5"
   :value="state.data.updatedate"
   :context="state.context"

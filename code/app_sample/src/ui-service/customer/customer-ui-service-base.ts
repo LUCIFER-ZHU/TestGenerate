@@ -21,24 +21,7 @@ export class CustomerUIServiceBase extends UIServiceBase {
 
 
 
-   public uiActionModes = {       "ACCreate":{
-             codeName:'ACCreate',
-             uIActionMode:'FRONT',
-             actionTarget:'NONE',
-             uIActionTag:'ACCREATE',
-             frontPSAppView:'CustomerOptionView',
-             caption:'新建',
-             entityCodeName:'Customer',
-             methodCodeName:'',
-             frontProcessType:'WIZARD',
-             refreshMode:'0',
-             htmlPageUrl:'',
-             uILogicAttachMode:'',
-             nextActionCodeName:'',
-             navContexts:{},
-             navParams:{}
-         },
-       "Quick":{
+   public uiActionModes = {       "Quick":{
              codeName:'Quick',
              uIActionMode:'FRONT',
              actionTarget:'NONE',
@@ -73,17 +56,6 @@ export class CustomerUIServiceBase extends UIServiceBase {
              navParams:{}
          },
      };    /**
-     * 新建
-     *
-     * @param {*} params
-     * @memberof CustomerUIServiceBase
-     */
-    public async ACCreate(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ACCreate');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
      * 快速新建
      *
      * @param {*} params

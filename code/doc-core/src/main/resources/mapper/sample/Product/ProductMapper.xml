@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper	namespace="doc.core.sample.mapper.ProductMapper">
+
+        <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="ProductResultMap" type="doc.core.sample.domain.Product" autoMapping="true">
+		<id property="productId" column="productid" /><!--主键字段映射-->
+    </resultMap>
+
+    <select id="selectById"  resultMap="ProductResultMap">
+        <include refid="view" /> 
+         where 
+         t1.productid=#{id}
+    </select>
+
+    <select id="selectEntity" parameterType="doc.core.sample.domain.Product" resultMap="ProductResultMap">
+        <include refid="view" /> 
+         where 
+         (productid = #{ productId })
+    </select>
+
+    <select id="selectEntities" parameterType="java.util.List" resultMap="ProductResultMap">
+        <include refid="view" /> 
+         where 
+         (productid)
+         in (<foreach collection="list" item="item" index="index" separator=","> (#{ item.productId }) </foreach>)
+    </select>
+
+    <sql id="byCategory" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`PRODUCTCODE`, t1.`PRODUCTID`, t1.`PRODUCTNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_PRODUCT` t1   where EXISTS(SELECT * FROM `T_PRODUCTCATEGORY` t11   WHERE   t1.`PRODUCTID` = t11.`PRODUCTID`  AND  ( t11.`CATEGORYID` =  #{srf.datacontext.categoryid} ) )
+        ]]>    
+    </sql>
+
+    <sql id="default" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`PRODUCTCODE`, t1.`PRODUCTID`, t1.`PRODUCTNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_PRODUCT` t1  
+        ]]>    
+    </sql>
+
+    <sql id="simple" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`PRODUCTID`, t1.`PRODUCTNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_PRODUCT` t1  
+        ]]>    
+    </sql>
+
+    <sql id="view" databaseId="mysql">
+        <![CDATA[ 
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`PRODUCTCODE`, t1.`PRODUCTID`, t1.`PRODUCTNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_PRODUCT` t1  
+        ]]>    
+    </sql>
+
+    <select id="searchByCategory"  parameterType="doc.core.sample.filter.ProductSearchContext"  resultMap="ProductResultMap">
+        select t1.* 
+        from (
+            <include refid="byCategory"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+    <select id="searchDefault"  parameterType="doc.core.sample.filter.ProductSearchContext"  resultMap="ProductResultMap">
+        select t1.* 
+        from (
+            <include refid="default"/>
+        ) t1 
+        <where><if test="ew!=null and ew.sqlSegment!=null and !ew.emptyOfWhere">${ew.sqlSegment}</if></where>
+        <if test="ew!=null and ew.sqlSegment!=null and ew.emptyOfWhere">${ew.sqlSegment}</if>
+        
+            
+    </select>
+    
+
+</mapper>

@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './auto-complete-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -71,10 +70,11 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.acfield.visible" name="acfield" label="自动填充属性">
+  <AppFormItem v-show="state.detailsModel.acfield.visible" name="acfield" :required="state.detailsModel.acfield.required" label="自动填充属性">
 <appAutoComplete
   name="acfield"
   :data="state.data"
+  :disabled="state.detailsModel.acfield.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
   :value="state.data.acfield"

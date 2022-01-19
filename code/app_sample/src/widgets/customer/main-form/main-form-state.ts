@@ -342,10 +342,10 @@ export const ctrlState = {
           logicCat: 'ITEMENABLE',
           logicType: 'GROUP',
           notMode: 'false',
-          Logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'provinceid',logicType: 'SINGLE',name: 'provinceid 值不为空(NotNil)'},
+          logics: [
+          {condOP: 'ISNOTNULL',dEFDName: 'provinceid',logicType: 'SINGLE',name: 'provinceid 值不为空(NotNil)',value:''},
           ],
-        }
+        },
       ],
     },
     districtname: {
@@ -370,10 +370,10 @@ export const ctrlState = {
           logicCat: 'ITEMENABLE',
           logicType: 'GROUP',
           notMode: 'false',
-          Logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'cityid',logicType: 'SINGLE',name: 'cityid 值不为空(NotNil)'},
+          logics: [
+          {condOP: 'ISNOTNULL',dEFDName: 'cityid',logicType: 'SINGLE',name: 'cityid 值不为空(NotNil)',value:''},
           ],
-        }
+        },
       ],
     },
     street: {

@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './main-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.viewmsgdataname.visible" name="viewmsgdataname" label="视图消息标题">
+  <AppFormItem v-show="state.detailsModel.viewmsgdataname.visible" name="viewmsgdataname" :required="state.detailsModel.viewmsgdataname.required" label="视图消息标题">
 <appInput
   name="viewmsgdataname"
+  :disabled="state.detailsModel.viewmsgdataname.disabled"
   :maxLength="200"
   type="text"
   :value="state.data.viewmsgdataname"
@@ -72,9 +72,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.type.visible" name="type" label="视图消息类型">
+  <AppFormItem v-show="state.detailsModel.type.visible" name="type" :required="state.detailsModel.type.required" label="视图消息类型">
 <appDropdownList
   name="type"
+  :disabled="state.detailsModel.type.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
   :value="state.data.type"
@@ -89,9 +90,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.location.visible" name="location" label="视图消息位置">
+  <AppFormItem v-show="state.detailsModel.location.visible" name="location" :required="state.detailsModel.location.required" label="视图消息位置">
 <appDropdownList
   name="location"
+  :disabled="state.detailsModel.location.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
   :value="state.data.location"
@@ -106,9 +108,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.content.visible" name="content" label="视图消息内容">
+  <AppFormItem v-show="state.detailsModel.content.visible" name="content" :required="state.detailsModel.content.required" label="视图消息内容">
 <appInput
   name="content"
+  :disabled="state.detailsModel.content.disabled"
   :maxLength="1000"
   :showMaxLength="true"
   :value="state.data.content"

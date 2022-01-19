@@ -44,7 +44,7 @@ defineExpose({ state, name: 'grid' });
   <a-table
     bordered
     sticky
-    class="app-grid"
+    class="app-grid wizard-css-font-color"
     :rowKey="rowKey"
     :showHeader="true"
     :scroll="scrollOption"
@@ -61,7 +61,7 @@ defineExpose({ state, name: 'grid' });
     <template #emptyText>
       <div class="not-data">
         <span class="empty-text">
-          无数据
+          这里没有数据
         </span>
       </div>
     </template>

@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './main-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.textfield.visible" name="textfield" label="文本属性">
+  <AppFormItem v-show="state.detailsModel.textfield.visible" name="textfield" :required="state.detailsModel.textfield.required" label="文本属性">
 <appInput
   name="textfield"
+  :disabled="state.detailsModel.textfield.disabled"
   :maxLength="100"
   type="text"
   :value="state.data.textfield"
@@ -72,9 +72,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.timefield.visible" name="timefield" label="时间属性">
+  <AppFormItem v-show="state.detailsModel.timefield.visible" name="timefield" :required="state.detailsModel.timefield.required" label="时间属性">
 <appDatePicker
   name="timefield"
+  :disabled="state.detailsModel.timefield.disabled"
   dateFormat="YYYY-MM-DD HH:mm:ss"
   dateType="dateTime"
   :value="state.data.timefield"
@@ -88,9 +89,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.numfield.visible" name="numfield" label="数值属性">
+  <AppFormItem v-show="state.detailsModel.numfield.visible" name="numfield" :required="state.detailsModel.numfield.required" label="数值属性">
 <appInput
   name="numfield"
+  :disabled="state.detailsModel.numfield.disabled"
   type="text"
   :value="state.data.numfield"
   @editorEvent="onEditorEvent"

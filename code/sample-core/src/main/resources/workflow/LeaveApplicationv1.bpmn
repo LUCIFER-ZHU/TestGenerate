@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:flowable="http://flowable.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.flowable.org/processdef">
+    <process id="sample-leaveapplicationv1" isClosed="false" isExecutable="true" name="请假申请流程 v1" processType="None">
+        <extensionElements>
+            <flowable:eventListener delegateExpression="${processInstanceListener}"  />
+            <flowable:field name="refgroups">
+                <flowable:string></flowable:string>
+            </flowable:field>
+
+        </extensionElements>
+        <endEvent id="sid-End001" name="处理">
+        </endEvent>
+        <startEvent id="sid-Start001" name="提交流程">
+        </startEvent>
+        <userTask flowable:category="${businessKey}" flowable:candidateUsers="${activedata.createman}" flowable:exclusive="true" 
+         id="tid-领导审批-Interactive002" 
+         name="领导审批" >
+            <documentation>${majortext}</documentation>
+        </userTask>
+        <userTask flowable:category="${businessKey}" flowable:candidateUsers="${activedata.createman}" flowable:exclusive="true" 
+         id="tid-组长审批-Interactive001" 
+         name="组长审批" >
+            <documentation>${majortext}</documentation>
+        </userTask>
+
+        <sequenceFlow id="" sourceRef="" targetRef="" name="">
+        </sequenceFlow>    
+        <sequenceFlow id="" sourceRef="" targetRef="" name="通过">
+            <extensionElements>
+                <flowable:form nextCondition="ANY"  /> 
+            </extensionElements>    
+        </sequenceFlow>    
+        <sequenceFlow id="" sourceRef="" targetRef="" name="批准">
+            <extensionElements>
+                <flowable:form nextCondition="ANY"  /> 
+            </extensionElements>    
+        </sequenceFlow>    
+    </process>
+    
+    <bpmndi:BPMNDiagram id="BPMNDiagram_sample-leaveapplicationv1">
+        <bpmndi:BPMNPlane id="BPMNPlane_sample-leaveapplicationv1" bpmnElement="sample-leaveapplicationv1">
+            <bpmndi:BPMNShape id="BPMNShape-tid-领导审批-Interactive002" bpmnElement="tid-领导审批-Interactive002">
+                <omgdi:Bounds x="388" y="74" width="100" height="80" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape-tid-组长审批-Interactive001" bpmnElement="tid-组长审批-Interactive001">
+                <omgdi:Bounds x="243" y="74" width="100" height="80" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape-sid-End001" bpmnElement="sid-End001">
+                <omgdi:Bounds x="533" y="100" width="30" height="30" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape-sid-Start001" bpmnElement="sid-Start001">
+                <omgdi:Bounds x="168" y="99" width="30" height="30" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge id="BPMNEdge-" bpmnElement="">
+                <omgdi:waypoint x="0" y="0" />
+                <omgdi:waypoint x="0" y="0" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge-" bpmnElement="">
+                <omgdi:waypoint x="0" y="0" />
+                <omgdi:waypoint x="0" y="0" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="BPMNEdge-" bpmnElement="">
+                <omgdi:waypoint x="0" y="0" />
+                <omgdi:waypoint x="0" y="0" />
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</definitions>

@@ -14,7 +14,7 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
     // 记录没有映射的属性
-    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','formitem','formitem3','formitem1','formitem2','formitem4','formitem22','formitem23','formitem24','formitem7','formitem9','formitem20','formitem47','formitem21','formitem48','formitem5','formitem6','formitem10','formitem8','formitem11','formitem12','formitem52','formitem51','formitem50','formitem49','formitem19','formitem29','formitem15','formitem27','formitem28','formitem14','formitem26','formitem17','formitem33','formitem39','formitem32','formitem40','formitem31','formitem36','formitem30','formitem41','formitem35','formitem42','formitem37','formitem43','formitem38','formitem44','formitem61','formitem62','formitem34','formitem45','formitem16','formitem46','formitem13','formitem57','formitem58','formitem59','formitem60','formitem25','formitem18','formitem55','formitem54','formitem53','formitem56','exampleid'];  
+    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','formitem','formitem3','formitem1','formitem2','formitem4','formitem22','formitem23','formitem24','formitem7','formitem9','formitem20','formitem47','formitem21','formitem48','formitem5','formitem6','formitem10','formitem8','formitem11','formitem12','formitem52','formitem51','formitem50','formitem49','formitem19','formitem29','formitem15','formitem27','formitem28','formitem14','formitem26','formitem17','formitem33','formitem39','formitem32','formitem40','formitem31','formitem36','formitem30','formitem41','formitem35','formitem42','formitem37','formitem43','formitem38','formitem44','formitem61','formitem62','formitem34','formitem45','formitem16','formitem46','formitem13','formitem57','formitem58','formitem59','formitem60','formitem25','formitem18','formitem55','formitem54','formitem53','formitem56','format8','exampleid'];  
   }
 
   // 表单里映射了属性的字段
@@ -151,6 +151,13 @@ export class ControlVO extends ControlVOBase {
     this.$DO.field = value;
   }
 
+  get format8() {
+    return this.$DO.format8;
+  }
+  set format8(value: any) {
+    this.$DO.format8 = value;
+  }
+
   get exampleid() {
     return this.$DO.exampleid;
   }
@@ -253,7 +260,7 @@ export const ctrlState = {
       detailType: 'FORMITEM',
       showCaption: true,
       dataType: '25',
-      required: false,
+      required: true,
       enableCond: 3,
     },
     formitem1: {
@@ -1089,6 +1096,63 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
+    },
+    druipart1: {
+      caption: '关系界面',
+      name: 'druipart1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'DRUIPART',
+      showCaption: true,
+    },
+    format8: {
+      caption: '文本占位符（@）',
+      name: 'format8',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      valueFormat: '',
+      dataType: '25',
+      required: true,
+      enableCond: 3,
+      groupLogics: [
+        {
+          name: '表单成员[format8][表单项空输入]逻辑',
+          groupOP: 'AND',
+          relatedDetailNames: '[formitem1]',
+          logicCat: 'ITEMBLANK',
+          logicType: 'GROUP',
+          notMode: 'false',
+          logics: [
+          {condOP: 'EQ',dEFDName: 'formitem1',logicType: 'SINGLE',name: 'formitem1 等于(=) (1)',value:'1'},
+          ],
+        },
+        {
+          name: '表单成员[format8][表单项启用]逻辑',
+          groupOP: 'AND',
+          relatedDetailNames: '[formitem]',
+          logicCat: 'ITEMENABLE',
+          logicType: 'GROUP',
+          notMode: 'false',
+          logics: [
+          {condOP: 'EQ',dEFDName: 'formitem',logicType: 'SINGLE',name: 'formitem 等于(=) (1)',value:'1'},
+          ],
+        },
+        {
+          name: '表单成员[format8][面板显示]逻辑',
+          groupOP: 'AND',
+          relatedDetailNames: '[formitem3]',
+          logicCat: 'PANELVISIBLE',
+          logicType: 'GROUP',
+          notMode: 'false',
+          logics: [
+          {condOP: 'EQ',dEFDName: 'formitem3',logicType: 'SINGLE',name: 'formitem3 等于(=) (1)',value:'1'},
+          ],
+        },
+      ],
     },
   },
   actionModel: {

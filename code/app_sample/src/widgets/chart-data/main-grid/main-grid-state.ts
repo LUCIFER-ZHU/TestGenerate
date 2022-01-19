@@ -137,8 +137,8 @@ export const ctrlState = {
     aggData: [],
   },
   uAColumnModel:[
-    { name: "u953df17", caption: "移动端编辑", showIcon: true, showCaption: true, separator: false, uIActionTag: "MobEdit", noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEKEY', disabled: false, visible: true, },
     { name: "u0c7ccd3", caption: "刷新", showIcon: true, showCaption: true, separator: true, uIActionTag: "Refresh", noPrivDisplayMode: "", dataAccessAction: '', actionTarget: '', disabled: false, visible: true, iconClass: "fa fa-refresh", },
+    { name: "u953df17", caption: "移动端编辑", showIcon: true, showCaption: true, separator: false, uIActionTag: "MobEdit", noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEKEY', disabled: false, visible: true, },
   ],
   columnsModel: [
     {

@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './quick-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.customername.visible" name="customername" label="客户名称">
+  <AppFormItem v-show="state.detailsModel.customername.visible" name="customername" :required="state.detailsModel.customername.required" label="客户名称">
 <appInput
   name="customername"
+  :disabled="state.detailsModel.customername.disabled"
   :maxLength="200"
   type="text"
   :value="state.data.customername"
@@ -72,11 +72,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.pcustomername.visible" name="pcustomername" label="上级客户">
+  <AppFormItem v-show="state.detailsModel.pcustomername.visible" name="pcustomername" :required="state.detailsModel.pcustomername.required" label="上级客户">
 <appDataPicker
   name="pcustomername"
   :data="state.data"
   valueItem="pcustomerid"
+  :disabled="state.detailsModel.pcustomername.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"
@@ -90,10 +91,11 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.type.visible" name="type" label="类型">
+  <AppFormItem v-show="state.detailsModel.type.visible" name="type" :required="state.detailsModel.type.required" label="类型">
 <appRadioGroup
   name="type"
   :data="state.data"
+  :disabled="state.detailsModel.type.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
   :value="state.data.type"
@@ -106,9 +108,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" label="备注">
+  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" :required="state.detailsModel.memo.required" label="备注">
 <appInput
   name="memo"
+  :disabled="state.detailsModel.memo.disabled"
   :maxLength="1000"
   :showMaxLength="true"
   :value="state.data.memo"

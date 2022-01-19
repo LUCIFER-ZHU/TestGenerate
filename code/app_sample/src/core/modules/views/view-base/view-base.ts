@@ -194,7 +194,19 @@ export class ViewBase {
    *
    * @memberof ViewBase
    */
-  public useViewInit() { }
+  public useViewInit() {
+    const route = useRoute();
+    App.getNavDataService().addNavData({title: this.state.viewCaption, viewType: this.state.viewType, path: unref(route.fullPath), openType: this.props.openType, tag: this.state.viewCodeName, key: '', data: {}});
+  }
+
+  /**
+   * @description 视图销毁
+   * @memberof ViewBase
+   */
+  public useViewDestroyed() {
+    // 视图销毁从导航栈里面删除数据
+    App.getNavDataService().removeNavData(this.state.viewCodeName);
+  }
 
   /**
    * @description 安装视图所有功能模块的方法

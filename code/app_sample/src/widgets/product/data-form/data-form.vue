@@ -2,7 +2,7 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './data-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
+import ProductCategoryGridView from '@views/sample/product-category-grid-view';
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -59,9 +59,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.productname.visible" name="productname" label="产品名称">
+  <AppFormItem v-show="state.detailsModel.productname.visible" name="productname" :required="state.detailsModel.productname.required" label="产品名称">
 <appInput
   name="productname"
+  :disabled="state.detailsModel.productname.disabled"
   :maxLength="200"
   type="text"
   :value="state.data.productname"
@@ -75,9 +76,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.productcode.visible" name="productcode" label="产品编码">
+  <AppFormItem v-show="state.detailsModel.productcode.visible" name="productcode" :required="state.detailsModel.productcode.required" label="产品编码">
 <appInput
   name="productcode"
+  :disabled="state.detailsModel.productcode.disabled"
   :maxLength="100"
   type="text"
   :value="state.data.productcode"
@@ -105,7 +107,25 @@ defineExpose({ state, name: 'form' });
     :uIActionGroup="state.detailsModel.grouppanel1.uIActionGroup"
     @componentEvent="onComponentEvent">
     <a-row>
-关系界面未实现    </a-row>
+<a-col
+  :lg="{span: 24, offset: 0 }"
+  :md="{span: 24, offset: 0 }"
+  :sm="{span: 24, offset: 0 }"
+  :xs="{span: 24, offset: 0 }"
+ >
+  <AppFormDruipart v-show="state.detailsModel.druipart1.visible" name="druipart1" title="产品类别" v-slot="druipartParams">
+    <ProductCategoryGridView
+      :class="['app-view-layout--from-druipart']"
+      :context="druipartParams.context"
+      :viewParams="druipartParams.viewParams"
+      :viewDefaultUsage="false"
+      :noViewCaption="true"
+      @viewEvent="druipartParams.viewEvent"
+    >
+    </ProductCategoryGridView>
+  </AppFormDruipart>
+</a-col>
+    </a-row>
   </AppFormGroup>
 </a-col>
   </a-row>
@@ -135,9 +155,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.createman.visible" name="createman" label="建立人">
+  <AppFormItem v-show="state.detailsModel.createman.visible" name="createman" :required="state.detailsModel.createman.required" label="建立人">
 <appSpan
   name="createman"
+  :disabled="state.detailsModel.createman.disabled"
   dataType="25"
   :value="state.data.createman"
   :context="state.context"
@@ -150,9 +171,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.createdate.visible" name="createdate" label="建立时间">
+  <AppFormItem v-show="state.detailsModel.createdate.visible" name="createdate" :required="state.detailsModel.createdate.required" label="建立时间">
 <appSpan
   name="createdate"
+  :disabled="state.detailsModel.createdate.disabled"
   dataType="5"
   :value="state.data.createdate"
   :context="state.context"
@@ -165,9 +187,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.updateman.visible" name="updateman" label="更新人">
+  <AppFormItem v-show="state.detailsModel.updateman.visible" name="updateman" :required="state.detailsModel.updateman.required" label="更新人">
 <appSpan
   name="updateman"
+  :disabled="state.detailsModel.updateman.disabled"
   dataType="25"
   :value="state.data.updateman"
   :context="state.context"
@@ -180,9 +203,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" label="更新时间">
+  <AppFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" :required="state.detailsModel.updatedate.required" label="更新时间">
 <appSpan
   name="updatedate"
+  :disabled="state.detailsModel.updatedate.disabled"
   dataType="5"
   :value="state.data.updatedate"
   :context="state.context"

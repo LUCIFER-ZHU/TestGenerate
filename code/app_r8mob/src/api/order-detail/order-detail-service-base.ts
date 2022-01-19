@@ -28,6 +28,8 @@ export class OrderDetailServiceBase extends EntityService {
   protected initBasicData() {
     this.appEntityCodeName = 'orderdetail';
     this.appEntityCodeNames = 'orderdetails';
+    this.appEntityKeyCodeName = 'orderdetailid';
+      this.appEntityTextCodeName = 'orderdetailname';
     // 初始化关系实体路径集合
     this.deResPaths = [
         [{"pathName":"orders","parameterName":"order"},{"pathName":"orderdetails","parameterName":"orderdetail"}]

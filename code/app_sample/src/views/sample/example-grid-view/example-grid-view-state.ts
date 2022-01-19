@@ -50,6 +50,5 @@ export const viewState = {
       loadDraftAction: 'FilterGetDraft',
     } 
   }
-,
-    /*未找到模板[SEARCHBAR]*/
+
 };

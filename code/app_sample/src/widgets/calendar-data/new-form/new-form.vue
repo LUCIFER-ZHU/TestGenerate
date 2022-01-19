@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './new-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,9 +55,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.calendardataname.visible" name="calendardataname" label="事项">
+  <AppFormItem v-show="state.detailsModel.calendardataname.visible" name="calendardataname" :required="state.detailsModel.calendardataname.required" label="事项">
 <appInput
   name="calendardataname"
+  :disabled="state.detailsModel.calendardataname.disabled"
   :maxLength="200"
   type="text"
   :value="state.data.calendardataname"
@@ -72,9 +72,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.begintime.visible" name="begintime" label="开始时间">
+  <AppFormItem v-show="state.detailsModel.begintime.visible" name="begintime" :required="state.detailsModel.begintime.required" label="开始时间">
 <appDatePicker
   name="begintime"
+  :disabled="state.detailsModel.begintime.disabled"
   dateFormat="YYYY-MM-DD HH:mm:ss"
   dateType="dateTime"
   :value="state.data.begintime"
@@ -88,9 +89,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.endtime.visible" name="endtime" label="结束时间">
+  <AppFormItem v-show="state.detailsModel.endtime.visible" name="endtime" :required="state.detailsModel.endtime.required" label="结束时间">
 <appDatePicker
   name="endtime"
+  :disabled="state.detailsModel.endtime.disabled"
   dateFormat="YYYY-MM-DD HH:mm:ss"
   dateType="dateTime"
   :value="state.data.endtime"
@@ -104,9 +106,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" label="备注">
+  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" :required="state.detailsModel.memo.required" label="备注">
 <appInput
   name="memo"
+  :disabled="state.detailsModel.memo.disabled"
   :maxLength="1000"
   :showMaxLength="true"
   :value="state.data.memo"

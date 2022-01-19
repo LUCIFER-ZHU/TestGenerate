@@ -2,7 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './pickup-view-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
-
 interface Props {
   context: IContext;
   viewParams?: IParam;
@@ -56,11 +55,12 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" label="单项选择表格视图">
+  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :required="state.detailsModel.formitem.required" label="单项选择表格视图">
 <appDataPicker
   name="formitem"
   :data="state.data"
   valueItem="formitem1"
+  :disabled="state.detailsModel.formitem.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
    pickUpView="ChartDataPickupView"
@@ -75,9 +75,10 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" label="值项">
+  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :required="state.detailsModel.formitem1.required" label="值项">
 <appSpan
   name="formitem1"
+  :disabled="state.detailsModel.formitem1.disabled"
   dataType="25"
   :value="state.data.formitem1"
   :context="state.context"
