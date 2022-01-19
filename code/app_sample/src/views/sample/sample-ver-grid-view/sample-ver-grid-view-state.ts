@@ -1,6 +1,7 @@
 export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
+  enableQuickSearch: true,
   viewCodeName: 'SampleVerGridView',
   viewName: 'SampleVerGridView',
   viewCaption: '示例版本',

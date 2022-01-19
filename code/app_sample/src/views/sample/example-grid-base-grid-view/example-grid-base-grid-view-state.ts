@@ -1,6 +1,7 @@
 export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
+  enableQuickSearch: true,
   viewCodeName: 'ExampleGridBaseGridView',
   viewName: 'ExampleGridBaseGridView',
   viewCaption: '表格常规',

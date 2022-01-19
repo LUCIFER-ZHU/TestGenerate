@@ -1,6 +1,7 @@
 export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
+  enableQuickSearch: true,
   viewCodeName: 'LeaveApplicationGridView',
   viewName: 'LeaveApplicationGridView',
   viewCaption: '请假申请',

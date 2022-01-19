@@ -5,6 +5,7 @@ export const viewState = {
   height: '0',
   width: '0',
   enableQuickGroup: false,
+  menuAlign: 'LEFT',
   appEntityName: '',
   isLoadDefault: true,
   keyPSDEField: '',

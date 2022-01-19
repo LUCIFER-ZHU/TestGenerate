@@ -1,6 +1,7 @@
 export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
+  enableQuickSearch: true,
   viewCodeName: 'ChartDataUsr3GridView',
   viewName: 'ChartDataUsr3GridView',
   viewCaption: '图表',

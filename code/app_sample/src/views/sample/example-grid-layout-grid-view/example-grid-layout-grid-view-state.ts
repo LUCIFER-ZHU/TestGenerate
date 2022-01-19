@@ -1,6 +1,7 @@
 export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
+  enableQuickSearch: true,
   viewCodeName: 'ExampleGridLayoutGridView',
   viewName: 'ExampleGridLayoutGridView',
   viewCaption: '表格布局',

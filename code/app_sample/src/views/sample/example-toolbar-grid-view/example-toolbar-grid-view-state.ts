@@ -1,6 +1,7 @@
 export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
+  enableQuickSearch: true,
   viewCodeName: 'ExampleToolbarGridView',
   viewName: 'ExampleToolbarGridView',
   viewCaption: '示例',

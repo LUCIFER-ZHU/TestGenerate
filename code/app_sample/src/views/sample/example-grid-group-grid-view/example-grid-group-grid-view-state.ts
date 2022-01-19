@@ -1,6 +1,7 @@
 export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
+  enableQuickSearch: true,
   viewCodeName: 'ExampleGridGroupGridView',
   viewName: 'ExampleGridGroupGridView',
   viewCaption: '表格分组',

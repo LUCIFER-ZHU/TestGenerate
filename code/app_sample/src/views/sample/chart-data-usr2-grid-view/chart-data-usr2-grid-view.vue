@@ -28,7 +28,7 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent } = new GridView(viewState, props, emit).moduleInstall();
+const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSearchEvent } = new GridView(viewState, props, emit).moduleInstall();
 
 </script>
 
@@ -66,7 +66,7 @@ const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent } = new Grid
     ></RoweditgridGrid>
     <template v-slot:quickSearch>
       <div class='app-quick-search'>
-      <a-input/>
+      <a-input v-if="state.enableQuickSearch" @pressEnter="onQuickSearchEvent($event)" allowClear/>
       <a-popover trigger="click" :overlayStyle="{width: '50%'}">
         <template #content>
           <DefaultSearchForm

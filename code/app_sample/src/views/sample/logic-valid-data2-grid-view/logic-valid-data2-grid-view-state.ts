@@ -1,6 +1,7 @@
 export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
+  enableQuickSearch: true,
   viewCodeName: 'LogicValidData2GridView',
   viewName: 'LogicValidData2GridView',
   viewCaption: '示例数据（启用逻辑删除）（主键数值）',

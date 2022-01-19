@@ -20,15 +20,22 @@ interface CtrlEmit {
 }
 const emit = defineEmits <CtrlEmit> ();
 
-const { state, menuSelect } = new MenuControl(ctrlState, props, emit).moduleInstall();
+const { state, onMenuSelect } = new MenuControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ state, name: 'appmenu' });
 </script>
 
 <template>
-  <a-menu class="app-menu" v-model:openKeys="state.defaultOpens" v-model:selectedKeys="state.defaultSelect"
-    :mode="Object.is('LEFT', state.menuAlign) ? 'inline' : 'horizontal'" @select="menuSelect">
+  <div v-if="Object.is('CENTER', state.menuAlign)" class="app-menu app-menu--center">
+  <a-card v-for="(menu,index) in state.menus" v-show="!menu.hidden" :key="index" class="app-menu__card" :bordered="false" :title="menu.caption">
+   <a-space :size="24">
+      <a-button v-for="item in menu.items" size="large" @click="onMenuSelect({key: item.name})">{{item.caption}}</a-button>
+    </a-space>
+  </a-card>
+ </div>
+  <a-menu v-else class="app-menu" v-model:openKeys="state.defaultOpens" v-model:selectedKeys="state.defaultSelect"
+    :mode="Object.is('LEFT', state.menuAlign) ? 'inline' : 'horizontal'" @select="onMenuSelect">
     <AppMenuItem :items="state.menus" :collapsed="collapsed" />
   </a-menu>
 </template>

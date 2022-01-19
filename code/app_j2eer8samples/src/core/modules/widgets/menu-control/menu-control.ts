@@ -163,7 +163,7 @@ export class MenuControl extends ControlBase {
    * @param {IParam} item 菜单项数据
    * @memberof MenuControl
    */
-  public menuClick(item: IParam) {
+  public handleMenuClick(item: IParam) {
     const { context, viewParams } = this.state;
     App.getAppFuncService().executeAppFunc(item, deepCopy(context), deepCopy(viewParams));
   }
@@ -204,12 +204,12 @@ export class MenuControl extends ControlBase {
    * @param {IParam} $event 选中项数据
    * @memberof MenuControl
    */
-  public menuSelect($event: IParam) {
+  public onMenuSelect($event: IParam) {
     const { key } = $event;
     const dataRef = toRef(this.state, 'menus');
     let item = this.compute(dataRef.value, key);
     if (Object.keys(item).length > 0) {
-      this.menuClick(item);
+      this.handleMenuClick(item);
     }
   }
 
@@ -222,15 +222,15 @@ export class MenuControl extends ControlBase {
     const superParams = super.moduleInstall();
     const { load } = this.useLoad();
 
-    const menuSelect = this.menuSelect.bind(this);
-    this.menuSelect = ($event: IParam) => {
-      menuSelect($event);
+    const onMenuSelect = this.onMenuSelect.bind(this);
+    this.onMenuSelect = ($event: IParam) => {
+      onMenuSelect($event);
     }
 
     return {
       ...superParams,
       load,
-      menuSelect: this.menuSelect,
+      onMenuSelect: this.onMenuSelect,
     };
   }
 }

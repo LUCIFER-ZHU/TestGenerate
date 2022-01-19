@@ -1,6 +1,7 @@
 export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
+  enableQuickSearch: true,
   viewCodeName: 'EditorValueUsr2GridView',
   viewName: 'EditorValueUsr2GridView',
   viewCaption: '编辑器值',

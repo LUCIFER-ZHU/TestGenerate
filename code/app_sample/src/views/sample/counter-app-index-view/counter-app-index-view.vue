@@ -35,12 +35,12 @@ const collapsedChange = () => {
 </script>
 
 <template>
-  <AppDefaultIndexViewLayout :class="['app-index-view', state.viewSysCss]" :menuAlign="state.menuAlign" :collapsed="collapsed">
+  <AppDefaultIndexViewLayout :class="['app-index-view', state.viewSysCss]" :showCaptionBar="state.showCaptionBar" :menuAlign="state.menuAlign" :collapsed="collapsed">
     <template #caption>
       <div class="index-view-header">
         {{state.viewCaption}}
         <MenuUnfoldOutlined
-          v-if="collapsed"
+          v-if="collapsed && Object.is(state.menuAlign,'LEFT')"
           class="trigger"
           @click="collapsedChange"
         />

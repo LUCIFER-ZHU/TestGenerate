@@ -117,6 +117,19 @@ export class MDView extends MainView {
   }
 
   /**
+   * @description 快速搜索查询
+   * @param {*} [args={}]
+   * @memberof MDView
+   */
+  public handleQuickSearch(args: any = {}): void {
+    const { viewParams } = this.state;
+    const query = args?.target?._value || '';
+    Object.assign(viewParams,{query: query});
+    const tag = this.getMDCtrl().name;
+    this.next({ tag: tag, action: 'load', data: viewParams });
+  }
+
+  /**
    * 搜索表单搜索
    *
    * @param {*} [args={}]
@@ -229,6 +242,17 @@ export class MDView extends MainView {
   }
 
   /**
+   * @description 处理快速搜索事件
+   * @param {any} $event
+   * @memberof MDView
+   */
+  public onQuickSearchEvent($event: any) {
+    if ($event) {
+      this.handleQuickSearch($event);
+    }
+  }
+
+  /**
    * @description 安装视图所有功能模块的方法
    * 
    * @memberof MDView
@@ -240,7 +264,8 @@ export class MDView extends MainView {
       xDataControl: this.xDataControl,
       searchForm: this.searchForm,
       searchBar: this.searchBar,
-      onQuickGroupEvent: this.onQuickGroupEvent.bind(this)
+      onQuickGroupEvent: this.onQuickGroupEvent.bind(this),
+      onQuickSearchEvent: this.onQuickSearchEvent.bind(this)
     };
   }
 

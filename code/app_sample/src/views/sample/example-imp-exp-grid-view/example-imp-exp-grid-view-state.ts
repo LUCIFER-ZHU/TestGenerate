@@ -1,6 +1,7 @@
 export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
+  enableQuickSearch: true,
   viewCodeName: 'ExampleImpExpGridView',
   viewName: 'ExampleImpExpGridView',
   viewCaption: '数据导入导出',

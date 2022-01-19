@@ -26,7 +26,7 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent } = new GridView(viewState, props, emit).moduleInstall();
+const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSearchEvent } = new GridView(viewState, props, emit).moduleInstall();
 
 </script>
 

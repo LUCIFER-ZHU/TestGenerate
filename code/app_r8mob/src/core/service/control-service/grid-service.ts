@@ -41,9 +41,10 @@ export class GridService<T extends ControlVOBase> extends ControlServiceBase<T> 
     const { context: Context, data: Data } = this.handleRequestData(context, data, opts);
     const action = hasFunction(_entityService, opts.action) ? opts.action : 'GET';
     const response = await _entityService[action](Context, Data, opts.isLoading);
-    response.data?.forEach((item: IParam) => {
-      item = this.newControlVO(item);
-    })
+    let resData:any[] = response.data;
+    for (let index = 0; index < resData.length; index++) {
+      resData[index] = this.newControlVO(resData[index]);
+    }
     return this.handleResponse(response, opts);
   }
 

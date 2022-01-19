@@ -6,7 +6,26 @@
             <flowable:field name="refgroups">
                 <flowable:string></flowable:string>
             </flowable:field>
+            <flowable:field name="bookings">
+                <flowable:string>leaveapplications</flowable:string>
+            </flowable:field>    
+            <flowable:field name="bookingapps_leaveapplications">
+                <flowable:string>Sample</flowable:string>
+            </flowable:field>       
 
+            <flowable:field name="wfstepfield_leaveapplications">
+                <flowable:string>step</flowable:string>
+            </flowable:field>    
+            <flowable:field name="udstatefield_leaveapplications">
+                <flowable:string>state</flowable:string>
+            </flowable:field>    
+            <flowable:field name="majortext_leaveapplications">
+                <flowable:string>leaveapplicationname</flowable:string>
+            </flowable:field>    
+            <flowable:field name="orgfield_leaveapplications">
+                <flowable:string>orgid</flowable:string>
+            </flowable:field>    
+            <flowable:field name="isvalid"><flowable:string>1</flowable:string></flowable:field>
         </extensionElements>
         <startEvent id="sid-Start001" name="提交流程">
         </startEvent>
@@ -23,14 +42,16 @@
             <documentation>${majortext}</documentation>
         </userTask>
 
-        <sequenceFlow id="" sourceRef="" targetRef="" name="">
+        <sequenceFlow id="rid-43a8de1b889469d5a93d32e61034242a" sourceRef="sid-Start001" targetRef="tid-组长审批-Interactive001" name="">
         </sequenceFlow>    
-        <sequenceFlow id="" sourceRef="" targetRef="" name="通过">
+        <sequenceFlow id="lid-C9196-91fe2d900bb1ddc0b8cd346a3cd01a69" sourceRef="tid-组长审批-Interactive001" targetRef="tid-领导审批-Interactive002" name="通过">
+            <conditionExpression  xsi:type="tFormalExpression" ><![CDATA[${sequenceFlowId=="lid-C9196-91fe2d900bb1ddc0b8cd346a3cd01a69"}]]></conditionExpression>
             <extensionElements>
                 <flowable:form nextCondition="ANY"  /> 
             </extensionElements>    
         </sequenceFlow>    
-        <sequenceFlow id="" sourceRef="" targetRef="" name="批准">
+        <sequenceFlow id="lid-C6920-ac5002fc6a9d1c92c871b84cad503dca" sourceRef="tid-领导审批-Interactive002" targetRef="sid-End001" name="批准">
+            <conditionExpression  xsi:type="tFormalExpression" ><![CDATA[${sequenceFlowId=="lid-C6920-ac5002fc6a9d1c92c871b84cad503dca"}]]></conditionExpression>
             <extensionElements>
                 <flowable:form nextCondition="ANY"  /> 
             </extensionElements>    
@@ -51,15 +72,15 @@
             <bpmndi:BPMNShape id="BPMNShape-sid-End001" bpmnElement="sid-End001">
                 <omgdi:Bounds x="533" y="100" width="30" height="30" />
             </bpmndi:BPMNShape>
-            <bpmndi:BPMNEdge id="BPMNEdge-" bpmnElement="">
+            <bpmndi:BPMNEdge id="BPMNEdge-rid-43a8de1b889469d5a93d32e61034242a" bpmnElement="rid-43a8de1b889469d5a93d32e61034242a">
                 <omgdi:waypoint x="0" y="0" />
                 <omgdi:waypoint x="0" y="0" />
             </bpmndi:BPMNEdge>
-            <bpmndi:BPMNEdge id="BPMNEdge-" bpmnElement="">
+            <bpmndi:BPMNEdge id="BPMNEdge-lid-C9196-91fe2d900bb1ddc0b8cd346a3cd01a69" bpmnElement="lid-C9196-91fe2d900bb1ddc0b8cd346a3cd01a69">
                 <omgdi:waypoint x="0" y="0" />
                 <omgdi:waypoint x="0" y="0" />
             </bpmndi:BPMNEdge>
-            <bpmndi:BPMNEdge id="BPMNEdge-" bpmnElement="">
+            <bpmndi:BPMNEdge id="BPMNEdge-lid-C6920-ac5002fc6a9d1c92c871b84cad503dca" bpmnElement="lid-C6920-ac5002fc6a9d1c92c871b84cad503dca">
                 <omgdi:waypoint x="0" y="0" />
                 <omgdi:waypoint x="0" y="0" />
             </bpmndi:BPMNEdge>

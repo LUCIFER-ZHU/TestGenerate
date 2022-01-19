@@ -1,6 +1,7 @@
 export const viewState = {
   gridRowActiveMode: 2,
   rowEditState: false,
+  enableQuickSearch: true,
   viewCodeName: 'ProductGridDataView',
   viewName: 'ProductGridDataView',
   viewCaption: '产品',
