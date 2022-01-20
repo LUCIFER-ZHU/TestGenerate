@@ -11,7 +11,7 @@ interface DropdownListProps {
   /**
    * @description 编辑器值
    */
-  value: string;
+  value?: string;
 
   /**
    * @description 禁用
@@ -110,7 +110,7 @@ onBeforeMount(() => {
     :class="['app-editor-container', 'app-dropdown-list', `app-dropdown-list-${name}`]"
     v-model:value="curValue"
     :options="items"
-    :mode="multiple ? 'multiple': 'combobox'"
+    :mode="multiple ? 'multiple': undefined"
     :disabled="disabled"
     @change="onChange"
     :placeholder="placeholder">

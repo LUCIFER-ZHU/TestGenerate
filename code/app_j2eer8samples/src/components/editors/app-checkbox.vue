@@ -12,7 +12,7 @@ interface CheckboxProps {
    * @type {any}
    * @memberof checkbox
    */
-  value: number;
+  value?: number;
 
   /**
    * 是否禁用

@@ -2,7 +2,7 @@
 import { IParam } from "@core";
 interface Props{
   items: IParam[],
-  collapsed: boolean,
+  collapsed?: boolean,
 }
 const props = withDefaults(defineProps<Props>(), {
   collapsed: false,
@@ -12,19 +12,19 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
   <template v-for="item in items" :key="item.name">
     <template v-if="!item.items">
-      <a-menu-item v-if="!item.hidden" :key="item.name" class="app-menu-item">
+      <a-menu-item v-if="!item.hidden" :key="item.name" :class="['app-menu-item',item.itemSysCss]">
         <template #icon>
-          <AppIconText :iconClass="item.iconClass" :imgPath="item.imgPath" :text="collapsed && item.caption[0]"/>
+          <AppIconText :iconClass="item.iconClass" :imgPath="item.imgPath" :text="collapsed ? item.caption[0] : undefined"/>
         </template>
-        {{item.caption}}
+        <a-tooltip :title="item.tooltip">{{item.caption}}</a-tooltip>
       </a-menu-item>
     </template>
     <template v-else>
-      <a-sub-menu v-if="!item.hidden" :key="item.name" class="app-menu-item">
+      <a-sub-menu v-if="!item.hidden" :key="item.name" :class="['app-menu-item',item.itemSysCss]">
         <template #icon>
-          <AppIconText :iconClass="item.iconClass" :imgPath="item.imgPath" :text="collapsed && item.caption[0]"/>
+          <AppIconText :iconClass="item.iconClass" :imgPath="item.imgPath" :text="collapsed ? item.caption[0] : undefined"/>
         </template>
-        <template #title>{{item.caption}}</template>
+        <template #title><a-tooltip :title="item.tooltip">{{item.caption}}</a-tooltip></template>
         <AppMenuItem :items="item.items" />
       </a-sub-menu>
     </template>

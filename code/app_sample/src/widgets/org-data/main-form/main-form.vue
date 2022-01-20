@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Main"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Main" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="组织数据基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -55,8 +53,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.orgdataname.visible" name="orgdataname" :rules="state.rules.orgdataname" :required="state.detailsModel.orgdataname.required" label="组织名称">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.orgdataname.visible"
+    name="orgdataname"
+    :rules="state.rules.orgdataname"
+    :labelWidth="130"
+    :required="state.detailsModel.orgdataname.required"
+    label="组织名称"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="orgdataname"
   :disabled="state.detailsModel.orgdataname.disabled"
   :maxLength="200"
@@ -64,6 +70,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.orgdataname"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -72,8 +79,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.orgdatacode.visible" name="orgdatacode" :rules="state.rules.orgdatacode" :required="state.detailsModel.orgdatacode.required" label="组织编码">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.orgdatacode.visible"
+    name="orgdatacode"
+    :rules="state.rules.orgdatacode"
+    :labelWidth="130"
+    :required="state.detailsModel.orgdatacode.required"
+    label="组织编码"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="orgdatacode"
   :disabled="state.detailsModel.orgdatacode.disabled"
   :maxLength="100"
@@ -81,6 +96,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.orgdatacode"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -89,8 +105,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.porgdataname.visible" name="porgdataname" :rules="state.rules.porgdataname" :required="state.detailsModel.porgdataname.required" label="父级组织">
-<appDataPicker
+  <AppFormItem 
+    v-show="state.detailsModel.porgdataname.visible"
+    name="porgdataname"
+    :rules="state.rules.porgdataname"
+    :labelWidth="130"
+    :required="state.detailsModel.porgdataname.required"
+    label="父级组织"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDataPicker
   name="porgdataname"
   :data="state.data"
   valueItem="porgdataid"
@@ -100,7 +124,8 @@ defineExpose({ state, name: 'form' });
    pickUpView="ChartDataPickupView"
   :value="state.data.porgdataname"
   @editorEvent="onEditorEvent"
-/>   </AppFormItem>
+/>       </div>
+  </AppFormItem>
 </a-col>
     </a-row>
   </AppFormGroup>

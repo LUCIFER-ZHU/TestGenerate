@@ -4,7 +4,7 @@ import { ctrlState } from "./app-func-app-index-view-menu-state";
 import { IParam, IActionParam, MenuControl, IContext } from "@core";
 interface Props {
   context: IContext;
-  defaultView: string;
+  defaultView?: string;
   collapsed: boolean;
   menuAlign: "LEFT" | "TOP" | "CENTER" | "TABEXP_LEFT" | "TABEXP_TOP" | "TABEXP_RIGHT" | "TABEXP_BOTTOM" | "NONE";
   viewParams?: IParam;
@@ -28,11 +28,7 @@ defineExpose({ state, name: 'appmenu' });
 
 <template>
   <div v-if="Object.is('CENTER', state.menuAlign)" class="app-menu app-menu--center">
-  <a-card v-for="(menu,index) in state.menus" v-show="!menu.hidden" :key="index" class="app-menu__card" :bordered="false" :title="menu.caption">
-   <a-space :size="24">
-      <a-button v-for="item in menu.items" size="large" @click="onMenuSelect({key: item.name})">{{item.caption}}</a-button>
-    </a-space>
-  </a-card>
+    <AppMenuCenter :menus="state.menus" @onMenuSelect="onMenuSelect" />
  </div>
   <a-menu v-else class="app-menu" v-model:openKeys="state.defaultOpens" v-model:selectedKeys="state.defaultSelect"
     :mode="Object.is('LEFT', state.menuAlign) ? 'inline' : 'horizontal'" @select="onMenuSelect">

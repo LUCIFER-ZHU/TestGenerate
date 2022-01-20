@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Main_2"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Main_2" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="图表基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -55,8 +53,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.infomessage.visible" name="infomessage" :rules="state.rules.infomessage" :required="state.detailsModel.infomessage.required" label="备注">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.infomessage.visible"
+    name="infomessage"
+    :rules="state.rules.infomessage"
+    :labelWidth="130"
+    :required="state.detailsModel.infomessage.required"
+    label="备注"
+    style="height: 400.0px">
+      <div class="form-editor-container" style="">
+<AppInput
   name="infomessage"
   :disabled="state.detailsModel.infomessage.disabled"
   :maxLength="1048576"
@@ -64,6 +70,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.infomessage"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

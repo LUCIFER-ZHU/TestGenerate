@@ -20,7 +20,7 @@ export interface MenuControlProps extends ControlPropsBase {
    * @type {string}
    * @memberof MenuControlProps
    */
-  defaultView: string;
+  defaultView?: string;
 
   /**
    * @description 菜单收缩状态

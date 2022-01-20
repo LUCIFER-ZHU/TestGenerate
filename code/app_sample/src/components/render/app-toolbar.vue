@@ -11,7 +11,7 @@ interface ToolbarProps {
   /**
    * @description 模式
    */
-  mode: 'button' | 'link';
+  mode?: 'button' | 'link';
   /**
    * @description 行为模型
    */
@@ -49,14 +49,14 @@ const itemClick = (item: IParam) => {
           @click="itemClick(item)"
         >
           <AppIconText 
-          :text="item.showCaption && item.caption"  
-          :iconClass="item.showIcon && item.iconClass" 
-          :imgPath="item.showIcon && item.imgPath"/>
+          :text="item.showCaption ? item.caption : undefined"  
+          :iconClass="item.showIcon ? item.iconClass : undefined" 
+          :imgPath="item.showIcon ? item.imgPath : undefined"/>
         </a-button>
       </a-tooltip>
-      <a-dropdown v-else-if="Object.is(item.itemType, 'ITEMS')" v-show="item.visible">
-        <!-- todo 模型缺失 -->
-        <!-- <a-menu slot="overlay" @click="itemClick">
+      <!-- todo 模型缺失 -->
+      <!-- <a-dropdown v-else-if="Object.is(item.itemType, 'ITEMS')" v-show="item.visible">
+        <a-menu slot="overlay" @click="itemClick" v-show="item.visible">
           <a-tooltip
             v-for="(childItem, index) in item"
             v-if="Object.is(item.itemType, 'DEUIACTION')"
@@ -74,8 +74,8 @@ const itemClick = (item: IParam) => {
                 :imgPath="item.showIcon && item.imgPath"/>
             </a-menu-item>
           </a-tooltip>
-        </a-menu> -->
-      </a-dropdown>
+        </a-menu>
+      </a-dropdown> -->
       <template v-else-if="Object.is(item.itemType, 'SEPERATOR')">
         <span class='separator'>|</span>
       </template>
@@ -92,9 +92,9 @@ const itemClick = (item: IParam) => {
           @click="itemClick(item)"
         >
           <AppIconText 
-          :text="item.showCaption && item.caption"  
-          :iconClass="item.showIcon && item.iconClass" 
-          :imgPath="item.showIcon && item.imgPath"/>
+          :text="item.showCaption ? item.caption : undefined"  
+          :iconClass="item.showIcon ? item.iconClass : undefined" 
+          :imgPath="item.showIcon ? item.imgPath : undefined"/>
         </a-button>
       </template>
     </a-space>

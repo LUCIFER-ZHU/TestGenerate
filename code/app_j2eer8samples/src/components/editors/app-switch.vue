@@ -8,7 +8,7 @@ interface SwitchProps {
    * @type {number}
    * @memberof Appswitch
    */
-  value: number;
+  value?: number;
 
   /**
    * checked选中状态
@@ -38,7 +38,7 @@ interface SwitchProps {
    *
    * @type {boolean}
    */
-  size: string;
+  size?: string;
 }
 
 interface EditorEmit {

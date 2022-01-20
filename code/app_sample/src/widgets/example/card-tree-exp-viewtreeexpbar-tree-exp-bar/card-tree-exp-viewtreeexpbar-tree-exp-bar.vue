@@ -3,6 +3,11 @@ import { Subject } from 'rxjs';
 import { IActionParam, IParam, ControlAction, TreeExpBarControl, IContext } from '@core';
 import { ctrlState } from './card-tree-exp-viewtreeexpbar-tree-exp-bar-state';
 import { CardTreeTree} from '@widgets/example/card-tree-tree';
+import KanbanDataCardBaseDataView from '@views/sample/kanban-data-card-base-data-view';
+import KanbanDataCardKanbanView from '@views/sample/kanban-data-card-kanban-view';
+import KanbanDataCardBaseDataView_CSS from '@views/sample/kanban-data-card-base-data-view-css';
+import KanbanDataCardDataItemDataView from '@views/sample/kanban-data-card-data-item-data-view';
+import KanbanDataValueFormatCardDataView from '@views/sample/kanban-data-value-format-card-data-view';
 
 interface Props {
   context: IContext;
@@ -26,7 +31,7 @@ interface CtrlEmit {
 const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onCtrlEvent } = new TreeExpBarControl(ctrlState, props, emit).moduleInstall();
+const { state, onCtrlEvent, xData } = new TreeExpBarControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ state, name: 'treeexpbar' });
@@ -38,6 +43,7 @@ defineExpose({ state, name: 'treeexpbar' });
     >
     <a-layout-sider>
       <CardTreeTree
+        ref="xData"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
@@ -46,6 +52,36 @@ defineExpose({ state, name: 'treeexpbar' });
       ></CardTreeTree>
     </a-layout-sider>
     <a-layout>
+      <KanbanDataCardBaseDataView
+        v-if="state.selection.viewName && state.selection.viewName === 'KanbanDataCardBaseDataView'"
+        :viewDefaultUsage="false"
+        :viewdata="JSON.stringify(state.selection.context)"
+        :viewParams="JSON.stringify(state.selection.viewParams)">
+      </KanbanDataCardBaseDataView>
+      <KanbanDataCardKanbanView
+        v-if="state.selection.viewName && state.selection.viewName === 'KanbanDataCardKanbanView'"
+        :viewDefaultUsage="false"
+        :viewdata="JSON.stringify(state.selection.context)"
+        :viewParams="JSON.stringify(state.selection.viewParams)">
+      </KanbanDataCardKanbanView>
+      <KanbanDataCardBaseDataView_CSS
+        v-if="state.selection.viewName && state.selection.viewName === 'KanbanDataCardBaseDataView_CSS'"
+        :viewDefaultUsage="false"
+        :viewdata="JSON.stringify(state.selection.context)"
+        :viewParams="JSON.stringify(state.selection.viewParams)">
+      </KanbanDataCardBaseDataView_CSS>
+      <KanbanDataCardDataItemDataView
+        v-if="state.selection.viewName && state.selection.viewName === 'KanbanDataCardDataItemDataView'"
+        :viewDefaultUsage="false"
+        :viewdata="JSON.stringify(state.selection.context)"
+        :viewParams="JSON.stringify(state.selection.viewParams)">
+      </KanbanDataCardDataItemDataView>
+      <KanbanDataValueFormatCardDataView
+        v-if="state.selection.viewName && state.selection.viewName === 'KanbanDataValueFormatCardDataView'"
+        :viewDefaultUsage="false"
+        :viewdata="JSON.stringify(state.selection.context)"
+        :viewParams="JSON.stringify(state.selection.viewParams)">
+      </KanbanDataValueFormatCardDataView>
     </a-layout>
   </a-layout>
 </template>

@@ -2,22 +2,32 @@ export const viewState = {
   viewCodeName: 'ChartDataUsr4PickupView',
   viewName: 'ChartDataUsr4PickupView',
   viewCaption: '图表',
-  height: '0',
-  width: '0',
-  enableQuickGroup: false,
-  appEntityName: 'ChartData',
-  isLoadDefault: true,
-  keyPSDEField: 'chartdata',
-  viewSysCss: '',
   subCaption: '',
+  viewSysCss: '',
+  showCaptionBar: false,
   viewType: 'DEPICKUPVIEW',
   viewStyle: 'DEFAULT',
-  showCaptionBar: false,
   xDataControlName:'',
-  openDataViewName: 'ExampleEditorEditView',
+  height: '0',
+  width: '0',
+  appEntityName: 'ChartData',
+  keyPSDEField: 'chartdata',
+  isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
+  enableQuickGroup: false,
+  viewLogics: {
+  },
   toolbar: [
   ],
-    /*未找到模板[PICKUPVIEWPANEL]*/
+  pickupviewpanel:{
+    action:{
+      loadAction: '',
+      removeAction: '',
+      updateAction: '',
+      loadDraftAction: '',
+      createAction: '',
+      fetchAction:''
+    }  
+  }
 };

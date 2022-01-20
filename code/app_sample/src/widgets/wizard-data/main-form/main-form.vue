@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Main"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Main" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="向导数据基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -55,8 +53,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.textfield.visible" name="textfield" :rules="state.rules.textfield" :required="state.detailsModel.textfield.required" label="文本属性">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.textfield.visible"
+    name="textfield"
+    :rules="state.rules.textfield"
+    :labelWidth="130"
+    :required="state.detailsModel.textfield.required"
+    label="文本属性"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="textfield"
   :disabled="state.detailsModel.textfield.disabled"
   :maxLength="100"
@@ -64,6 +70,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.textfield"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -72,8 +79,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.timefield.visible" name="timefield" :rules="state.rules.timefield" :required="state.detailsModel.timefield.required" label="时间属性">
-<appDatePicker
+  <AppFormItem 
+    v-show="state.detailsModel.timefield.visible"
+    name="timefield"
+    :rules="state.rules.timefield"
+    :labelWidth="130"
+    :required="state.detailsModel.timefield.required"
+    label="时间属性"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDatePicker
   name="timefield"
   :disabled="state.detailsModel.timefield.disabled"
   dateFormat="YYYY-MM-DD HH:mm:ss"
@@ -81,6 +96,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.timefield"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -89,14 +105,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.numfield.visible" name="numfield" :rules="state.rules.numfield" :required="state.detailsModel.numfield.required" label="数值属性">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.numfield.visible"
+    name="numfield"
+    :rules="state.rules.numfield"
+    :labelWidth="130"
+    :required="state.detailsModel.numfield.required"
+    label="数值属性"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="numfield"
   :disabled="state.detailsModel.numfield.disabled"
   type="text"
   :value="state.data.numfield"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

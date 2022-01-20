@@ -71,6 +71,10 @@ export class ControlVO extends ControlVOBase implements TreeControlVO {
         allowEditText: false,
         allowOrder: false,
         appendPNodeId: false,
+        codeList: {
+          codeName: 'OrderState',
+          type: 'STATIC'
+        },
         counterId: '',
         counterMode: 0,
         disableSelect: false,

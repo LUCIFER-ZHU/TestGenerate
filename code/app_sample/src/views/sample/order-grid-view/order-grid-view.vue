@@ -8,7 +8,7 @@ import { DefaultSearchForm } from '@widgets/order/default-search-form';
 
 // props声明和默认值处理
 interface Props {
-  context: IContext;
+  context?: IContext;
   viewParams?: IParam;
   openType?: "ROUTE" | "MODAL" | "EMBED";
   viewSubject?: Subject<IActionParam>;
@@ -37,7 +37,7 @@ const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSear
       <AppIconText class="app-view__caption" size="large" :text="state.viewCaption" />
     </template>
     <template v-slot:quickGroupSearch>
-      <app-quick-group v-if="state.enableQuickGroup" :quickGroupModel="state.quickGroupPSCodeList" @onQuickGroupEvent="onQuickGroupEvent" />
+      <AppQuickGroup v-if="state.enableQuickGroup" :quickGroupModel="state.quickGroupPSCodeList" @onQuickGroupEvent="onQuickGroupEvent" />
     </template>
     <template v-slot:toolbar>
       <AppToolbar

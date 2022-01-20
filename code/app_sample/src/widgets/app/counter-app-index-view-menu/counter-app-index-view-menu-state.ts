@@ -14,6 +14,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem2",
@@ -26,6 +33,13 @@ export const ctrlState = {
   disableClose: false,
   counterId: "countertag",
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem3",
@@ -38,6 +52,13 @@ export const ctrlState = {
   disableClose: false,
   counterId: "countertag2",
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem4",
@@ -50,6 +71,13 @@ export const ctrlState = {
   disableClose: false,
   counterId: "countertag3",
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },

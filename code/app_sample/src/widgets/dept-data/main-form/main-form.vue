@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Main"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Main" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="部门数据基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -55,8 +53,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.orgdataname.visible" name="orgdataname" :rules="state.rules.orgdataname" :required="state.detailsModel.orgdataname.required" label="组织名称">
-<appDataPicker
+  <AppFormItem 
+    v-show="state.detailsModel.orgdataname.visible"
+    name="orgdataname"
+    :rules="state.rules.orgdataname"
+    :labelWidth="130"
+    :required="state.detailsModel.orgdataname.required"
+    label="组织名称"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDataPicker
   name="orgdataname"
   :data="state.data"
   valueItem="orgdataid"
@@ -66,7 +72,8 @@ defineExpose({ state, name: 'form' });
    pickUpView="ChartDataPickupView"
   :value="state.data.orgdataname"
   @editorEvent="onEditorEvent"
-/>   </AppFormItem>
+/>       </div>
+  </AppFormItem>
 </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -74,8 +81,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.deptdataname.visible" name="deptdataname" :rules="state.rules.deptdataname" :required="state.detailsModel.deptdataname.required" label="部门名称">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.deptdataname.visible"
+    name="deptdataname"
+    :rules="state.rules.deptdataname"
+    :labelWidth="130"
+    :required="state.detailsModel.deptdataname.required"
+    label="部门名称"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="deptdataname"
   :disabled="state.detailsModel.deptdataname.disabled"
   :maxLength="200"
@@ -83,6 +98,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.deptdataname"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

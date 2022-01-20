@@ -32,7 +32,7 @@ interface CheckboxListProps {
    * @type {string}
    * @memberof CheckboxListProps
    */
-  valueSeparator: string;
+  valueSeparator?: string;
 
   /**
    * 模式（数字或者字符串）
@@ -40,7 +40,7 @@ interface CheckboxListProps {
    * @type {'string' | 'number'}
    * @memberof CheckboxListProps
    */
-  mode: 'string' | 'number';
+  mode?: 'string' | 'number';
 
   /**
    * 属性类型
@@ -48,7 +48,7 @@ interface CheckboxListProps {
    * @type {'string' | 'number'}
    * @memberof CheckboxListProps
    */
-  valueType: 'string' | 'number';
+  valueType?: 'string' | 'number';
 
   /**
    * 代码表标识
@@ -88,7 +88,7 @@ interface CheckboxListProps {
    * @type {any}
    * @memberof CheckboxListProps
    */
-  localContext: IParam;
+  localContext?: IParam;
 
   /**
    * 局部导航参数
@@ -96,7 +96,7 @@ interface CheckboxListProps {
    * @type {any}
    * @memberof CheckboxListProps
    */
-  localParam: IParam;
+  localParam?: IParam;
 
   /**
    * 是否禁用

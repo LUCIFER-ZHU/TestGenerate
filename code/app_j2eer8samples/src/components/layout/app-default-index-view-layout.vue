@@ -3,17 +3,17 @@ interface LayoutProps {
   /**
    * @description 菜单方向
    */
-  menuAlign: 'LEFT' | 'TOP' | 'CENTER' | 'TABEXP_LEFT' | 'TABEXP_TOP' | 'TABEXP_RIGHT' | 'TABEXP_BOTTOM' | 'NONE';
+  menuAlign?: 'LEFT' | 'TOP' | 'CENTER' | 'TABEXP_LEFT' | 'TABEXP_TOP' | 'TABEXP_RIGHT' | 'TABEXP_BOTTOM' | 'NONE';
 
   /**
    * @description 收缩
    */
-  collapsed: boolean;
+  collapsed?: boolean;
 
   /**
    * @description 显示标题栏
    */
-  showCaptionBar: boolean;
+  showCaptionBar?: boolean;
 }
 const props = withDefaults(defineProps<LayoutProps>(), {
   menuAlign: 'LEFT',

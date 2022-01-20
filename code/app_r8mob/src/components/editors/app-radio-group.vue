@@ -69,7 +69,7 @@ interface RadioGroupProps {
    * @type {any}
    * @memberof AppCheckBox
    */
-  localContext: IParam;
+  localContext?: IParam;
 
   /**
    * 局部导航参数
@@ -77,7 +77,7 @@ interface RadioGroupProps {
    * @type {any}
    * @memberof AppCheckBox
    */
-  localParam: IParam;
+  localParam?: IParam;
 
   /**
    * 是否禁用

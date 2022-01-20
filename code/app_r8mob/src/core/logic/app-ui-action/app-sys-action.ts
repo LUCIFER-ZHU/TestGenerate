@@ -39,10 +39,10 @@ export class AppSysAction {
      */
     public static Edit(params: { context: IContext, viewParams: IParam, data: IParam, event: MouseEvent, actionEnvironment: IParam }) {
         const { actionEnvironment } = params
-        if (!actionEnvironment?.viewState?.editDataViewName) {
+        if (!actionEnvironment?.state?.viewLogics?.openData?.openDataViewName) {
             return;
         }
-        const viewName = actionEnvironment?.viewState?.editDataViewName;
+        const viewName = actionEnvironment?.state.viewLogics.openData.openDataViewName;
         const view = App.getViewInfo(viewName);
         if (!view) {
             return;
@@ -59,10 +59,10 @@ export class AppSysAction {
      */
     public static New(params: { context: IContext, viewParams: IParam, data: IParam, event: MouseEvent, actionEnvironment: IParam }) {
         const { actionEnvironment } = params
-        if (!actionEnvironment?.viewState?.openDataViewName) {
+        if (!actionEnvironment?.state?.viewLogics?.newData?.newDataViewName) {
             return;
         }
-        const viewName = actionEnvironment?.viewState?.openDataViewName;
+        const viewName = actionEnvironment?.state.viewLogics.newData.newDataViewName;
         const view = App.getViewInfo(viewName);
         if (!view) {
             return;

@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Main"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Main" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="视图消息数据基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -55,8 +53,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.viewmsgdataname.visible" name="viewmsgdataname" :rules="state.rules.viewmsgdataname" :required="state.detailsModel.viewmsgdataname.required" label="视图消息标题">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.viewmsgdataname.visible"
+    name="viewmsgdataname"
+    :rules="state.rules.viewmsgdataname"
+    :labelWidth="130"
+    :required="state.detailsModel.viewmsgdataname.required"
+    label="视图消息标题"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="viewmsgdataname"
   :disabled="state.detailsModel.viewmsgdataname.disabled"
   :maxLength="200"
@@ -64,6 +70,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.viewmsgdataname"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -72,9 +79,20 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.type.visible" name="type" :rules="state.rules.type" :required="state.detailsModel.type.required" label="视图消息类型">
-<appDropdownList
+  <AppFormItem 
+    v-show="state.detailsModel.type.visible"
+    name="type"
+    :rules="state.rules.type"
+    :labelWidth="130"
+    :required="state.detailsModel.type.required"
+    label="视图消息类型"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDropdownList
   name="type"
+  codeListTag="Sample__CodeListViewMsgType"
+  codeListType="STATIC"
+  
   :disabled="state.detailsModel.type.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
@@ -82,6 +100,7 @@ defineExpose({ state, name: 'form' });
   :data="state.data"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -90,9 +109,20 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.location.visible" name="location" :rules="state.rules.location" :required="state.detailsModel.location.required" label="视图消息位置">
-<appDropdownList
+  <AppFormItem 
+    v-show="state.detailsModel.location.visible"
+    name="location"
+    :rules="state.rules.location"
+    :labelWidth="130"
+    :required="state.detailsModel.location.required"
+    label="视图消息位置"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDropdownList
   name="location"
+  codeListTag="Sample__CodeListViewMsgLocation"
+  codeListType="STATIC"
+  
   :disabled="state.detailsModel.location.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
@@ -100,6 +130,7 @@ defineExpose({ state, name: 'form' });
   :data="state.data"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -108,8 +139,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.content.visible" name="content" :rules="state.rules.content" :required="state.detailsModel.content.required" label="视图消息内容">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.content.visible"
+    name="content"
+    :rules="state.rules.content"
+    :labelWidth="130"
+    :required="state.detailsModel.content.required"
+    label="视图消息内容"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="content"
   :disabled="state.detailsModel.content.disabled"
   :maxLength="1000"
@@ -117,6 +156,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.content"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

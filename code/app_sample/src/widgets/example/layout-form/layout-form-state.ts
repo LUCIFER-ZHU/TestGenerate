@@ -72,6 +72,15 @@ export const ctrlState = {
   appDeMajorFieldName: 'ExampleName',
   enableAutoSave: false,
   detailsModel: {
+    formpage1: {
+      caption: '基本信息',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     group1: {
       caption: '栅格布局',
       name: 'group1',

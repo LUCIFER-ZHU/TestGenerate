@@ -28,7 +28,7 @@ defineExpose({ state, name: 'searchbar' });
 </script>
 <template>
 <div class="search-bar">
-  <app-filter-tree :datas="state.filterItems" :fields="state.filterFields"/>
+  <AppFilterTree :datas="state.filterItems" :fields="state.filterFields"/>
 </div>
 </template>
 <style lang="scss">

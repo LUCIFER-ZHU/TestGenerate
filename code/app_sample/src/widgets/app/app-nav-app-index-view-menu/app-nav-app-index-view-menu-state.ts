@@ -14,6 +14,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem4",
@@ -25,6 +32,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem5",
@@ -36,6 +50,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -49,6 +70,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem6",
@@ -60,6 +88,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -73,6 +108,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem7",
@@ -84,6 +126,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },

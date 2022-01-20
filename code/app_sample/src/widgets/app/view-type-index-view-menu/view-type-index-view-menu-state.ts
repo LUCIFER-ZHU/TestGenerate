@@ -14,6 +14,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem27",
@@ -25,6 +32,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -38,6 +52,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem19",
@@ -49,6 +70,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem22",
@@ -60,6 +88,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem24",
@@ -71,6 +106,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem23",
@@ -82,6 +124,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem25",
@@ -93,6 +142,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -106,6 +162,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-list-alt",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem2",
@@ -117,6 +180,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem3",
@@ -128,6 +198,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem21",
@@ -139,6 +216,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem28",
@@ -150,6 +234,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -163,6 +254,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-edit",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem9",
@@ -174,6 +272,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem10",
@@ -185,6 +290,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -198,6 +310,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-navicon",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem29",
@@ -209,6 +328,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem11",
@@ -220,6 +346,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem15",
@@ -231,6 +364,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem16",
@@ -242,6 +382,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem18",
@@ -253,6 +400,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem17",
@@ -264,6 +418,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -277,6 +438,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-check-square",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem7",
@@ -288,6 +456,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem8",
@@ -299,6 +474,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem12",
@@ -310,6 +492,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -323,6 +512,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "grid",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem20",
@@ -334,6 +530,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -347,6 +550,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem30",
@@ -358,6 +568,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },

@@ -9,12 +9,12 @@ interface RawProps {
   /**
    * @description 编辑器值
    */
-  value: string;
+  value?: string;
 
   /**
    * @description 输入框类型
    */
-  contentType: "RAW" | "HTML" | "IMAGE" | "MARKDOWN";
+  contentType?: "RAW" | "HTML" | "IMAGE" | "MARKDOWN";
 
   /**
    * @description 输入框类型

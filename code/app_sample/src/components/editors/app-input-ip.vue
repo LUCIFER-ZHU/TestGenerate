@@ -10,7 +10,7 @@ interface InputIpProps{
   /**
    * @description 编辑器值
    */
-  value: string;
+  value?: string;
 
   /**
    * @description 禁用
@@ -20,7 +20,7 @@ interface InputIpProps{
   /**
    * @description 只读
    */
-  readonly: boolean;
+  readonly?: boolean;
 }
 
 interface EditorEmit{
@@ -52,16 +52,16 @@ onBeforeMount(() => {
     <a-input-group size="large">
       <a-row :gutter="8">
         <a-col :span="5">
-          <a-input @change="onChange" v-model:value="ipData[0]" />
+          <a-form-item-rest><a-input @change="onChange" v-model:value="ipData[0]" /></a-form-item-rest>
         </a-col>
         <a-col :span="5">
-          <a-input @change="onChange" v-model:value="ipData[1]" />
+          <a-form-item-rest><a-input @change="onChange" v-model:value="ipData[1]" /></a-form-item-rest>
         </a-col>
         <a-col :span="5">
-          <a-input @change="onChange" v-model:value="ipData[2]" />
+          <a-form-item-rest><a-input @change="onChange" v-model:value="ipData[2]" /></a-form-item-rest>
         </a-col>
         <a-col :span="5">
-          <a-input @change="onChange" v-model:value="ipData[3]" />
+          <a-form-item-rest><a-input @change="onChange" v-model:value="ipData[3]" /></a-form-item-rest>
         </a-col>
       </a-row>
     </a-input-group>

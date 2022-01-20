@@ -149,6 +149,15 @@ export const ctrlState = {
   appDeMajorFieldName: 'ExampleName',
   enableAutoSave: false,
   detailsModel: {
+    formpage1: {
+      caption: '基本信息',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     group2: {
       caption: '基础控制逻辑',
       name: 'group2',
@@ -695,7 +704,7 @@ export const ctrlState = {
       enableCond: 3,
       formItemUpdate: {
         showBusyIndicator: "true",
-        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@352e787a",
+        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@2ba33e2c",
         updateDetails: [
         "",
         "",
@@ -716,7 +725,7 @@ export const ctrlState = {
       enableCond: 3,
       formItemUpdate: {
         showBusyIndicator: "true",
-        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@352e787a",
+        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@2ba33e2c",
         updateDetails: [
         "",
         "",

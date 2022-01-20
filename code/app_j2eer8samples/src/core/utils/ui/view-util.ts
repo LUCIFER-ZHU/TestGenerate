@@ -3,7 +3,7 @@ import { IContext, IParam, ViewDetail } from "@core";
 export class ViewUtil {
 
   /**
-   * 打开新建数据视图
+   * 打开编辑数据视图
    *
    * @param {any[]} args 数据参数
    * @param {*} actionEnvironment 视图容器对象
@@ -71,7 +71,7 @@ export class ViewUtil {
         context: context,
         viewParams: viewParams
       })
-      subject?.subscribe((result) => {
+      subject?.subscribe((result: any) => {
         if (!result || !Object.is(result.ret, 'OK')) {
           return;
         }
@@ -82,7 +82,8 @@ export class ViewUtil {
 
 
   /**
-   *
+   * 打开编辑视图逻辑
+   * 打开的视图正常关闭后会刷新当前视图
    *
    * @static
    * @param {ViewDetail} view
@@ -105,7 +106,7 @@ export class ViewUtil {
         context: context,
         viewParams: viewParams
       });
-      subject?.subscribe((result) => {
+      subject?.subscribe((result: any) => {
         if (!result || !Object.is(result.ret, 'OK')) {
           return;
         }

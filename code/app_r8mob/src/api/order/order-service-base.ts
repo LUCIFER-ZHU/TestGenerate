@@ -137,7 +137,7 @@ export class OrderServiceBase extends EntityService {
       */
     public async FetchDefault(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchdefault`);
+      const res = await this.http.post(`${deResPath}/fetchdefault`,data);
       return res;
     }
     /**
@@ -150,7 +150,7 @@ export class OrderServiceBase extends EntityService {
       */
     public async FetchGroup(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchgroup`);
+      const res = await this.http.post(`${deResPath}/fetchgroup`,data);
       return res;
     }
     /**
@@ -163,7 +163,7 @@ export class OrderServiceBase extends EntityService {
       */
     public async FetchPaying(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchpaying`);
+      const res = await this.http.post(`${deResPath}/fetchpaying`,data);
       return res;
     }
     /**
@@ -176,7 +176,7 @@ export class OrderServiceBase extends EntityService {
       */
     public async FetchProcessing(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchprocessing`);
+      const res = await this.http.post(`${deResPath}/fetchprocessing`,data);
       return res;
     }
     /**

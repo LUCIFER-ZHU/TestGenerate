@@ -6,13 +6,13 @@ import { GridControl, IActionParam, IParam, IContext, ControlAction, deepCopy } 
 interface Props {
   context: IContext;
   viewParams: IParam;
-  multiple: boolean;
-  rowEditState: boolean;
-  rowActiveMode: 0 | 1 | 2;
+  multiple?: boolean;
+  rowEditState?: boolean;
+  rowActiveMode?: 0 | 1 | 2;
   selectedData?: IParam[];
-  isSelectDefault?: boolean;
+  selectFirstDefault?: boolean;
   controlAction: ControlAction;
-  showBusyIndicator: boolean;
+  showBusyIndicator?: boolean;
   viewSubject: Subject<IActionParam>;
 }
 
@@ -45,12 +45,12 @@ defineExpose({ state, name: 'grid' });
     bordered
     sticky
     class="app-grid"
-    :rowKey="rowKey"
+    :rowKey="useRowKey"
     :showHeader="true"
-    :scroll="scrollOption"
+    :scroll="useScrollOption"
     :sortDirections="['ascend', 'descend']"
     :data-source="state.items"
-    :row-selection="rowSelectionOption"
+    :row-selection="useRowSelectionOption"
     :columns="state.columnsModel"
     :pagination="state.mdCtrlPaging.pagination"
     :customRow="useCustomRow"
@@ -68,7 +68,7 @@ defineExpose({ state, name: 'grid' });
     <template #bodyCell="{ column, text, record, index }">
 <div v-if="Object.is(column.dataIndex, 'productname')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDataPicker
+<AppDataPicker
   name="productname"
   :data="state.data"
   valueItem="productid"
@@ -85,7 +85,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'price')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appInput
+<AppInput
   name="price"
   type="text"
   :value="record.price"
@@ -99,7 +99,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'qty')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appInput
+<AppInput
   name="qty"
   type="text"
   :value="record.qty"

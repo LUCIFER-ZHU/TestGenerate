@@ -25,7 +25,7 @@ export class MDControl extends MainControl {
     this.state.rowEditState = toRef(this.props, 'rowEditState') as any;
     this.state.rowActiveMode = toRef(this.props, 'rowActiveMode') as any;
     this.state.selectedData = toRef(this.props, 'selectedData') as any;
-    this.state.isSelectDefault = toRef(this.props, 'isSelectDefault') as any;
+    this.state.selectFirstDefault = toRef(this.props, 'selectFirstDefault') as any;
   }
 
   /**

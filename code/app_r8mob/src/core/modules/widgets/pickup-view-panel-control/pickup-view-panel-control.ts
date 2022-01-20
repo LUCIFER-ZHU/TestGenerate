@@ -45,11 +45,11 @@ export class PickupViewPanelControl extends MainControl {
    * @param {IActionParam} actionParam
    * @memberof PickupViewPanelControl
    */
-  public handleViewEvent(actionParam: IActionParam) {
+  public onViewEvent(actionParam: IActionParam) {
     const { tag, action, data } = actionParam;
     const { controlName } = this.state;
     if (Object.is("selectionChange", action)) {
-      this.emit("ctrlEvent", { tag: this.props.name, action: action, data: data });
+      this.emit("onCtrlEvent", { tag: this.props.name, action: action, data: data });
     }
   }
 
@@ -62,7 +62,7 @@ export class PickupViewPanelControl extends MainControl {
     const superParams = super.moduleInstall();
     return {
       ...superParams,
-      handleViewEvent: this.handleViewEvent.bind(this)
+      onViewEvent: this.onViewEvent.bind(this)
     };
   }
 }

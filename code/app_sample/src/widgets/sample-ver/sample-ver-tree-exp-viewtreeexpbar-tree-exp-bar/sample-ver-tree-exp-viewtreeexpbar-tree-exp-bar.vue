@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { IActionParam, IParam, ControlAction, TreeExpBarControl, IContext } from '@core';
 import { ctrlState } from './sample-ver-tree-exp-viewtreeexpbar-tree-exp-bar-state';
 import { SampleVerTreeTree} from '@widgets/sample-ver/sample-ver-tree-tree';
+import SampleVerInfoEditView from '@views/sample/sample-ver-info-edit-view';
 
 interface Props {
   context: IContext;
@@ -26,7 +27,7 @@ interface CtrlEmit {
 const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onCtrlEvent } = new TreeExpBarControl(ctrlState, props, emit).moduleInstall();
+const { state, onCtrlEvent, xData } = new TreeExpBarControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ state, name: 'treeexpbar' });
@@ -38,6 +39,7 @@ defineExpose({ state, name: 'treeexpbar' });
     >
     <a-layout-sider>
       <SampleVerTreeTree
+        ref="xData"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
@@ -46,6 +48,12 @@ defineExpose({ state, name: 'treeexpbar' });
       ></SampleVerTreeTree>
     </a-layout-sider>
     <a-layout>
+      <SampleVerInfoEditView
+        v-if="state.selection.viewName && state.selection.viewName === 'SampleVerInfoEditView'"
+        :viewDefaultUsage="false"
+        :viewdata="JSON.stringify(state.selection.context)"
+        :viewParams="JSON.stringify(state.selection.viewParams)">
+      </SampleVerInfoEditView>
     </a-layout>
   </a-layout>
 </template>

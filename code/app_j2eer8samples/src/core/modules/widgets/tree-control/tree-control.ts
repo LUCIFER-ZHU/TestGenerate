@@ -1,4 +1,4 @@
-import { deepCopy, deepObjectMerge, IActionParam, MainControl } from "@core";
+import { deepCopy, deepObjectMerge, IActionParam, MDControl } from "@core";
 import { TreeControlProps } from "./tree-control-prop";
 import { TreeControlState } from "./tree-control-state";
 
@@ -8,7 +8,7 @@ import { TreeControlState } from "./tree-control-state";
  * @class TreeControl
  * @extends {MainControl}
  */
-export class TreeControl extends MainControl {
+export class TreeControl extends MDControl {
   /**
    * @description 部件状态
    * @type {TreeControlState}
@@ -69,13 +69,23 @@ export class TreeControl extends MainControl {
   }
 
   /**
+   * @description 加载数据
+   * @protected
+   * @param {*} node 树节点
+   * @param {boolean} [isFirst]
+   * @return {*}  {Promise<any>}
+   * @memberof TreeControl
+   */
+  protected async load(node: any, isFirst?: boolean): Promise<any> {}
+
+  /**
    * @description 使用加载功能模块
    * @return {*}
    * @memberof TreeControl
    */
   public useLoad() {
     const { viewSubject, controlName } = this.state;
-    const load = async (node: any, isFirst: boolean = false) => {
+    const load = async (node?: any, isFirst: boolean = false): Promise<any> => {
       if (node?.dataRef?.children) {
         return null;
       }
@@ -86,7 +96,7 @@ export class TreeControl extends MainControl {
       let curNode: any = {};
       curNode = deepObjectMerge(curNode, node);
       const params: any = {
-        srfnodeid: node.dataRef && node.dataRef.id ? node.dataRef.id : '#',
+        srfnodeid: node?.dataRef && node.dataRef.id ? node.dataRef.id : '#',
         srfnodefilter: srfnodefilter,
         parentData: curNode.dataRef?.curData
       }
@@ -113,7 +123,7 @@ export class TreeControl extends MainControl {
         // TODO 展开
         // this.formatExpanded(items);
         // this.formatAppendCaption(items);
-        const isRoot = Object.is(node.level, 0);
+        const isRoot = Object.is(node?.level, 0);
         if (isFirst) {
           data.splice(0, data.length);
           items.forEach((item: any) => {
@@ -122,7 +132,7 @@ export class TreeControl extends MainControl {
         } else {
           node.dataRef.children = items;
         }
-        const isSelectedAll = node.checked;
+        const isSelectedAll = node?.checked;
         // TODO 默认选中
         // this.setDefaultSelection(items, isRoot, isSelectedAll);
         this.emit("ctrlEvent", { tag: this.props.name, action: "load", data: items });
@@ -130,10 +140,17 @@ export class TreeControl extends MainControl {
         console.error(error);
       }
     }
+    
+    // 在类里绑定能力方法
+    this.load = load;
+
     // 订阅viewSubject,监听load行为
     if (viewSubject) {
       let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam) => {
-        if (Object.is(controlName, tag) && Object.is("load", action)) {
+        if (!Object.is(controlName, tag)) {
+          return;
+        }
+        if (Object.is("load", action)) {
           load(data, true);
         }
       })

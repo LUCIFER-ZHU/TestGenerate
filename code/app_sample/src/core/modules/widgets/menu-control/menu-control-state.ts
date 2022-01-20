@@ -48,7 +48,7 @@ export interface MenuControlState extends ControlStateBase {
    * @type {string}
    * @memberof MenuControlState
    */
-  defaultView: string;
+  defaultView?: string;
 
   /**
    * @description 菜单方向

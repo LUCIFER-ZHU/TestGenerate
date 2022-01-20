@@ -32,7 +32,7 @@ interface ListBoxProps {
    * @type {string}
    * @memberof ListBoxProps
    */
-  valueSeparator: string;
+  valueSeparator?: string;
 
   /**
    * 模式（数字或者字符串）
@@ -40,7 +40,7 @@ interface ListBoxProps {
    * @type {'string' | 'number'}
    * @memberof CheckboxListProps
    */
-  mode: 'string' | 'number';
+  mode?: 'string' | 'number';
 
   /**
    * 属性类型
@@ -48,7 +48,7 @@ interface ListBoxProps {
    * @type {'string' | 'number'}
    * @memberof ListBoxProps
    */
-  valueType: 'string' | 'number';
+  valueType?: 'string' | 'number';
 
   /**
    * 代码表标识
@@ -56,7 +56,7 @@ interface ListBoxProps {
    * @type {string}
    * @memberof ListBoxProps
    */
-  codeListTag: string;
+  codeListTag?: string;
 
   /**
    * 代码表类型
@@ -64,15 +64,15 @@ interface ListBoxProps {
    * @type {string}
    * @memberof ListBoxProps
    */
-  codeListType: string;
+  codeListType?: string;
 
   /**
-   * 表单服务
+   * 表单服务(todo 编辑器应该脱钩)
    *
    * @type {*}
    * @memberof ListBoxProps
    */
-  service: any;
+  service?: any;
 
   /**
    * 编辑器类型
@@ -80,7 +80,7 @@ interface ListBoxProps {
    * @type {*}
    * @memberof ListBoxProps
    */
-  editorType: 'LISTBOX' | 'LISTBOXPICKUP';
+  editorType?: 'LISTBOX' | 'LISTBOXPICKUP';
 
   /**
    * ac参数
@@ -88,7 +88,7 @@ interface ListBoxProps {
    * @type {*}
    * @memberof ListBoxProps
    */
-  acParams: any;
+  acParams?: any;
 
   /**
    * 视图上下文
@@ -112,7 +112,7 @@ interface ListBoxProps {
    * @type {any}
    * @memberof ListBoxProps
    */
-  localContext: IParam;
+  localContext?: IParam;
 
   /**
    * 局部导航参数
@@ -120,7 +120,7 @@ interface ListBoxProps {
    * @type {any}
    * @memberof ListBoxProps
    */
-  localParam: IParam;
+  localParam?: IParam;
 
   /**
    * 是否多选
@@ -128,7 +128,7 @@ interface ListBoxProps {
    * @type {any}
    * @memberof ListBoxProps
    */
-  multiple: Boolean;
+  multiple?: Boolean;
 
   /**
    * 应用实体主信息属性名称
@@ -136,7 +136,7 @@ interface ListBoxProps {
    * @type {string}
    * @memberof ListBoxProps
    */
-  deMajorField: string;
+  deMajorField?: string;
 
   /**
    * 应用实体主键属性名称
@@ -144,7 +144,7 @@ interface ListBoxProps {
    * @type {string}
    * @memberof ListBoxProps
    */
-  deKeyField: string;
+  deKeyField?: string;
 
   /**
    * 是否禁用
@@ -169,6 +169,7 @@ interface EditorEmit {
 const props = withDefaults(defineProps<ListBoxProps>(), {
   disabled: false,
   readonly: false,
+  multiple: false,
   valueType: 'string',
   valueSeparator: ',',
   mode: 'string',

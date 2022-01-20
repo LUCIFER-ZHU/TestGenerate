@@ -14,6 +14,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem6",
@@ -25,6 +32,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem12",
@@ -36,6 +50,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -49,6 +70,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem3",
@@ -60,6 +88,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem4",
@@ -71,6 +106,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem5",
@@ -82,6 +124,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -95,6 +144,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem8",
@@ -106,6 +162,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem10",
@@ -117,6 +180,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -130,6 +200,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem16",
@@ -141,6 +218,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem9",
@@ -152,6 +236,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem11",
@@ -163,6 +254,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },
@@ -176,6 +274,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
   items: [
 { 
 	name: "menuitem14",
@@ -187,6 +292,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem15",
@@ -198,6 +310,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem7",
@@ -209,6 +328,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem18",
@@ -220,6 +346,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
 { 
 	name: "menuitem19",
@@ -231,6 +364,13 @@ export const ctrlState = {
   hidden: false,
   disableClose: false,
   iconClass: "fa fa-cogs",
+  layoutPos: {
+    layout: 'TABLE_24COL',
+    lg:"24", lgOffset: "0",
+    md:"24", mdOffset: "0",
+    sm:"24", smOffset: "0",
+    xs:"24", xsOffset: "0",
+  },
 },
   ]
 },

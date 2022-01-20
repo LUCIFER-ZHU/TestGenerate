@@ -67,7 +67,7 @@ export class OpenViewService implements IOpenViewService {
    * @param params 相关参数
    */
   public openByOpenMode(view: ViewDetail, params: Params): Subject<any> | undefined {
-    const { openMode } = view;
+    const openMode = params.openMode || view.openMode;
     const { viewParams, context } = params;
     // 路由打开视图
     if (openMode == 'INDEXVIEWTAB' || openMode == 'POPUPAPP') {

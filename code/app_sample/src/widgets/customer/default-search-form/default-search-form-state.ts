@@ -46,6 +46,15 @@ export const ctrlState = {
   selectHistoryItem: {},
   historyItems: [],
   detailsModel: {
+    formpage1: {
+      caption: '常规条件',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     n_customername_like: {
       caption: '客户名称(文本包含(%))',
       name: 'n_customername_like',

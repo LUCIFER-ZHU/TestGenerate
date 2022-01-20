@@ -3,14 +3,14 @@ import { IActionParam, IParam } from "@core";
 
 interface FormGroupProps{
   name: string;
-  title: string;
-  imgPath: string;
-  iconClass: string;
-  titleStyle: string;
-  infoGroupMode: boolean;
-  titleBarCloseMode: number;
-  showCaption: boolean;
-  uIActionGroup: IParam;
+  title?: string;
+  imgPath?: string;
+  iconClass?: string;
+  titleStyle?: string;
+  infoGroupMode?: boolean;
+  titleBarCloseMode?: number;
+  showCaption?: boolean;
+  uIActionGroup?: IParam;
 }
 interface FormGroupEmit{
   (name: 'componentEvent', value: IActionParam): void
@@ -39,7 +39,7 @@ const handleMenuGroupAction = ($event: IParam) => {
     :headStyle="titleStyle"
     :bordered="false">
     <template v-if="showCaption" #title>
-      <p :class="['app-form-group-title', `${titleStyle}`]">
+      <p class="app-form-group-title">
         <AppIconText :iconClass="iconClass" :imgPath="imgPath" :text="title"/>
       </p>
     </template>

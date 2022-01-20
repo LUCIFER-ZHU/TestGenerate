@@ -145,4 +145,6 @@ export const ctrlState = {
       aggMode: "MAX",
     },
   ],
+  // 是否单选
+  isSingleSelect:false,
 };

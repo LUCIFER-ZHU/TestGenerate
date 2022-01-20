@@ -6,13 +6,13 @@ import { GridControl, IActionParam, IParam, IContext, ControlAction, deepCopy } 
 interface Props {
   context: IContext;
   viewParams: IParam;
-  multiple: boolean;
-  rowEditState: boolean;
-  rowActiveMode: 0 | 1 | 2;
+  multiple?: boolean;
+  rowEditState?: boolean;
+  rowActiveMode?: 0 | 1 | 2;
   selectedData?: IParam[];
-  isSelectDefault?: boolean;
+  selectFirstDefault?: boolean;
   controlAction: ControlAction;
-  showBusyIndicator: boolean;
+  showBusyIndicator?: boolean;
   viewSubject: Subject<IActionParam>;
 }
 
@@ -45,12 +45,12 @@ defineExpose({ state, name: 'grid' });
     bordered
     sticky
     class="app-grid list-css"
-    :rowKey="rowKey"
+    :rowKey="useRowKey"
     :showHeader="true"
-    :scroll="scrollOption"
+    :scroll="useScrollOption"
     :sortDirections="['ascend', 'descend']"
     :data-source="state.items"
-    :row-selection="rowSelectionOption"
+    :row-selection="useRowSelectionOption"
     :columns="state.columnsModel"
     :pagination="state.mdCtrlPaging.pagination"
     :customRow="useCustomRow"
@@ -68,7 +68,7 @@ defineExpose({ state, name: 'grid' });
     <template #bodyCell="{ column, text, record, index }">
 <div v-if="Object.is(column.dataIndex, 'chartdataname')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appInput
+<AppInput
   name="name"
   :maxLength="200"
   type="text"
@@ -83,7 +83,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'chartdate')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDatePicker
+<AppDatePicker
   name="chartdate"
   dateFormat="YYYY-MM-DD HH:mm:ss"
   dateType="dateTime"
@@ -98,8 +98,11 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'datatype')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDropdownList
+<AppDropdownList
   name="datatype"
+  codeListTag="Sample__DataType"
+  codeListType="STATIC"
+  
   :context="state.context"
   :viewParams="state.viewParams"
   :value="record.datatype"
@@ -114,7 +117,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'year')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appInput
+<AppInput
   name="year"
   type="text"
   :value="record.year"
@@ -128,7 +131,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'data')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appInput
+<AppInput
   name="testData"
   type="number"
   :value="record.testData"
@@ -142,7 +145,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'datetime')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDatePicker
+<AppDatePicker
   name="datetime"
   dateFormat="YYYY-MM-DD HH:mm:ss"
   dateType="dateTime"

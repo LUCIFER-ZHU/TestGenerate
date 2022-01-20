@@ -44,14 +44,23 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_chartdataname_like.visible" name="n_chartdataname_like" :rules="state.rules.n_chartdataname_like" :required="state.detailsModel.n_chartdataname_like.required" label="图表名称(%)">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.n_chartdataname_like.visible"
+    name="n_chartdataname_like"
+    :rules="state.rules.n_chartdataname_like"
+    :labelWidth="130"
+    :required="state.detailsModel.n_chartdataname_like.required"
+    label="图表名称(%)"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="n_chartdataname_like"
   :disabled="state.detailsModel.n_chartdataname_like.disabled"
   type="text"
   :value="state.data.n_chartdataname_like"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -60,8 +69,17 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_datatype_eq.visible" name="n_datatype_eq" :rules="state.rules.n_datatype_eq" :required="state.detailsModel.n_datatype_eq.required" label="数据分类(等于(=))">
-    /*未找到模板[MOBDROPDOWNLIST]*/  </AppFormItem>
+  <AppFormItem 
+    v-show="state.detailsModel.n_datatype_eq.visible"
+    name="n_datatype_eq"
+    :rules="state.rules.n_datatype_eq"
+    :labelWidth="130"
+    :required="state.detailsModel.n_datatype_eq.required"
+    label="数据分类(等于(=))"
+    style="">
+      <div class="form-editor-container" style="">
+      /*未找到模板[MOBDROPDOWNLIST]*/      </div>
+  </AppFormItem>
 </a-col>
       </a-row>
       </a-col>

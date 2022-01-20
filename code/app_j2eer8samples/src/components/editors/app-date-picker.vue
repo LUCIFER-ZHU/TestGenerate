@@ -10,7 +10,7 @@ interface DatePickerProps {
    * @type {string}
    * @memberof DatePickerProps
    */
-  value: string;
+  value?: string;
 
   /**
    * checked选中状态
@@ -26,7 +26,7 @@ interface DatePickerProps {
    * @type {string}
    * @memberof DatePickerProps
    */
-  dateFormat: string;
+  dateFormat?: string;
 
   /**
    * 时间类型
@@ -34,7 +34,7 @@ interface DatePickerProps {
    * @type {string}
    * @memberof DatePickerProps
    */
-  dateType: 'time' | 'date' | 'dateTime';
+  dateType?: 'time' | 'date' | 'dateTime';
 
   /**
    * 提示信息
@@ -42,7 +42,7 @@ interface DatePickerProps {
    * @type {string}
    * @memberof DatePickerProps
    */
-  placeholder: string;
+  placeholder?: string;
 
   /**
    * 禁用
@@ -67,7 +67,6 @@ interface EditorEmit {
 const props = withDefaults(defineProps<DatePickerProps>(), {
   disabled: false,
   readonly: false,
-  picker: 'date',
   dateType: 'date',
   dateFormat: 'yyyy-MM-dd HH:mm:ss',
   placeholder: '请选择日期',

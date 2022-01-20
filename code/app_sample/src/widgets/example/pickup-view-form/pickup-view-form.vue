@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="PickupView"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="PickupView" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="单项选择"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -55,8 +53,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="单项选择表格视图">
-<appDataPicker
+  <AppFormItem 
+    v-show="state.detailsModel.formitem.visible"
+    name="formitem"
+    :rules="state.rules.formitem"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem.required"
+    label="单项选择表格视图"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDataPicker
   name="formitem"
   :data="state.data"
   valueItem="formitem1"
@@ -67,7 +73,8 @@ defineExpose({ state, name: 'form' });
   :noAC="true"
   :value="state.data.formitem"
   @editorEvent="onEditorEvent"
-/>   </AppFormItem>
+/>       </div>
+  </AppFormItem>
 </a-col>
 <a-col
   :lg="{span: 12, offset: 0 }"
@@ -75,14 +82,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :rules="state.rules.formitem1" :required="state.detailsModel.formitem1.required" label="值项">
-<appSpan
+  <AppFormItem 
+    v-show="state.detailsModel.formitem1.visible"
+    name="formitem1"
+    :rules="state.rules.formitem1"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem1.required"
+    label="值项"
+    style="">
+      <div class="form-editor-container" style="">
+<AppSpan
   name="formitem1"
   :disabled="state.detailsModel.formitem1.disabled"
   dataType="25"
   :value="state.data.formitem1"
   :context="state.context"
   :viewParams="state.viewParams"/>
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

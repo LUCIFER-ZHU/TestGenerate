@@ -106,6 +106,15 @@ export const ctrlState = {
   appDeMajorFieldName: 'ProductName',
   enableAutoSave: false,
   detailsModel: {
+    formpage1: {
+      caption: '基本信息',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     group1: {
       caption: '产品基本信息',
       name: 'group1',
@@ -158,6 +167,15 @@ export const ctrlState = {
       detailStyle: 'DEFAULT',
       detailType: 'DRUIPART',
       showCaption: true,
+    },
+    formpage2: {
+      caption: '其它',
+      name: 'formpage2',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
     },
     group2: {
       caption: '操作信息',

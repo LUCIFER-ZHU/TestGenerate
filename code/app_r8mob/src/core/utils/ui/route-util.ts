@@ -96,12 +96,7 @@ export class RouteUtil {
 
     // 如果一个匹配的没有，即没有任何主键匹配上，关系路径为实体自身的pathName
     if(routePath == ''){
-      //临时添加首页路由
-      if (deResPaths.length > 0) {
-        routePath = "/"+deResPaths[deResPaths.length -1][0].pathName;
-      } else {
-        routePath = '/examples';
-      }
+      routePath = "/"+deResPaths[deResPaths.length -1][0].pathName;
     }
 
     return routePath;

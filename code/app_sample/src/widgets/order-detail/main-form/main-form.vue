@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Main"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Main" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="订单明细基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -55,8 +53,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.productname.visible" name="productname" :rules="state.rules.productname" :required="state.detailsModel.productname.required" label="产品">
-<appDataPicker
+  <AppFormItem 
+    v-show="state.detailsModel.productname.visible"
+    name="productname"
+    :rules="state.rules.productname"
+    :labelWidth="130"
+    :required="state.detailsModel.productname.required"
+    label="产品"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDataPicker
   name="productname"
   :data="state.data"
   valueItem="productid"
@@ -66,7 +72,8 @@ defineExpose({ state, name: 'form' });
    pickUpView="ChartDataPickupView"
   :value="state.data.productname"
   @editorEvent="onEditorEvent"
-/>   </AppFormItem>
+/>       </div>
+  </AppFormItem>
 </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -74,14 +81,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.price.visible" name="price" :rules="state.rules.price" :required="state.detailsModel.price.required" label="单价">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.price.visible"
+    name="price"
+    :rules="state.rules.price"
+    :labelWidth="130"
+    :required="state.detailsModel.price.required"
+    label="单价"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="price"
   :disabled="state.detailsModel.price.disabled"
   type="text"
   :value="state.data.price"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -90,14 +106,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.qty.visible" name="qty" :rules="state.rules.qty" :required="state.detailsModel.qty.required" label="数量">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.qty.visible"
+    name="qty"
+    :rules="state.rules.qty"
+    :labelWidth="130"
+    :required="state.detailsModel.qty.required"
+    label="数量"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="qty"
   :disabled="state.detailsModel.qty.disabled"
   type="text"
   :value="state.data.qty"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -106,14 +131,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.amount.visible" name="amount" :rules="state.rules.amount" :required="state.detailsModel.amount.required" label="小计">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.amount.visible"
+    name="amount"
+    :rules="state.rules.amount"
+    :labelWidth="130"
+    :required="state.detailsModel.amount.required"
+    label="小计"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="amount"
   :disabled="state.detailsModel.amount.disabled"
   type="text"
   :value="state.data.amount"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

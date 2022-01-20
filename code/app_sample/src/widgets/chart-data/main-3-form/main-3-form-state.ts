@@ -80,6 +80,15 @@ export const ctrlState = {
   appDeMajorFieldName: 'ChartDataName',
   enableAutoSave: false,
   detailsModel: {
+    formpage1: {
+      caption: '选择测试',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     grouppanel1: {
       caption: '单项选择',
       name: 'grouppanel1',
@@ -290,7 +299,7 @@ export const ctrlState = {
       enableCond: 3,
       formItemUpdate: {
         showBusyIndicator: "true",
-        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@7159139f",
+        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@2bc9a775",
         updateDetails: [
         "",
         ],

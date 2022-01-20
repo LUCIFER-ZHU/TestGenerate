@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="MPickupView"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="MPickupView" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="多项选择"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -55,8 +53,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="多项选择表格视图">
-<appDataPicker
+  <AppFormItem 
+    v-show="state.detailsModel.formitem.visible"
+    name="formitem"
+    :rules="state.rules.formitem"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem.required"
+    label="多项选择表格视图"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDataPicker
   name="formitem"
   :data="state.data"
   :disabled="state.detailsModel.formitem.disabled"
@@ -66,7 +72,8 @@ defineExpose({ state, name: 'form' });
   :multiple="true"
   :value="state.data.formitem"
   @editorEvent="onEditorEvent"
-/>   </AppFormItem>
+/>       </div>
+  </AppFormItem>
 </a-col>
     </a-row>
   </AppFormGroup>
@@ -81,7 +88,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel1.visible" 
     name="grouppanel1" 
     title="多项选择树"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -94,8 +101,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :rules="state.rules.formitem2" :required="state.detailsModel.formitem2.required" label="多项选择树视图">
-<appDataPicker
+  <AppFormItem 
+    v-show="state.detailsModel.formitem2.visible"
+    name="formitem2"
+    :rules="state.rules.formitem2"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem2.required"
+    label="多项选择树视图"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDataPicker
   name="formitem2"
   :data="state.data"
   :disabled="state.detailsModel.formitem2.disabled"
@@ -105,7 +120,8 @@ defineExpose({ state, name: 'form' });
   :multiple="true"
   :value="state.data.formitem2"
   @editorEvent="onEditorEvent"
-/>   </AppFormItem>
+/>       </div>
+  </AppFormItem>
 </a-col>
     </a-row>
   </AppFormGroup>

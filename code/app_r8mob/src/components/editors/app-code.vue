@@ -24,7 +24,7 @@ interface CodeProps {
    * @type {*}
    * @memberof AppCodeEditor
    */
-  value: string;
+  value?: string;
 
   /**
    * 主题
@@ -32,7 +32,7 @@ interface CodeProps {
    * @type {string}
    * @memberof AppCodeEditor
    */
-  theme: 'vs-light' | 'vs-dark';
+  theme?: 'vs-light' | 'vs-dark';
 
   /**
    * 语言
@@ -40,7 +40,7 @@ interface CodeProps {
    * @type {string}
    * @memberof AppCodeEditor
    */
-  language: 'json' | 'javascript' | 'typescript' | 'css' | 'less' | 'sass' | 'java';
+  language?: 'json' | 'javascript' | 'typescript' | 'css' | 'less' | 'sass' | 'java';
 
   /**
    * 只读模式
@@ -48,7 +48,7 @@ interface CodeProps {
    * @type {boolean}
    * @memberof AppCodeEditor
    */
-  readonly: boolean;
+  readonly?: boolean;
 
   /**
    * 是否显示小地图
@@ -56,7 +56,7 @@ interface CodeProps {
    * @type {boolean}
    * @memberof AppCodeEditor
    */
-  isMinimap: boolean;
+  isMinimap?: boolean;
 
   /**
    * 是否能够更换语言
@@ -64,7 +64,7 @@ interface CodeProps {
    * @type {boolean}
    * @memberof AppCodeEditor
    */
-  isChangeLanguage: boolean;
+  isChangeLanguage?: boolean;
 }
 
 const props = withDefaults(defineProps<CodeProps>(), {

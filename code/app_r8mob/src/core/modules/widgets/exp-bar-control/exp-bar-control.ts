@@ -1,4 +1,4 @@
-import { IActionParam, MainControl } from "@core";
+import { IActionParam, IParam, MainControl } from "@core";
 import { ExpBarControlProps } from "./exp-bar-control-prop";
 import { ExpBarControlState } from "./exp-bar-control-state";
 
@@ -17,6 +17,40 @@ export class ExpBarControl extends MainControl {
   public declare state: ExpBarControlState;
 
   /**
+   * 当前视图表格部件
+   *
+   * @type {IParam}
+   * @memberof GridView
+   */
+  public declare xData: IParam;
+
+  /**
+   * 通知状态
+   *
+   * @param { tag: string, action: string, data: any } { tag, action, data }
+   * @memberof ViewEngine
+   */
+  public next({ tag, action, data }: { tag: string, action: string, data: any }): void {
+    const { viewSubject } = this.props;
+    viewSubject.next({ tag: tag, action: action, data: data })
+  }
+
+  /**
+   * @description 导航部件初始化
+   * @protected
+   * @memberof ExpBarControl
+   */
+  protected useExpCtrlInit() {
+    this.xData = ref(null);
+    onMounted(() => {
+      const xDataControl = this.getXDataCtrl();
+      if (xDataControl) {
+        this.next({ tag: xDataControl.name, action: 'load', data: null });
+      }
+    })
+  }
+
+  /**
    * @description 处理部件事件
    * @param {IActionParam} actionParam
    * @memberof ExpBarControl
@@ -31,10 +65,19 @@ export class ExpBarControl extends MainControl {
     }
   }
 
-  protected onSelectionChange(data: any[]) {
-    console.log("处理选中事件", data);
-  }
+  /**
+   * @description 处理选中事件
+   * @protected
+   * @param {any[]} data
+   * @memberof ExpBarControl
+   */
+  protected onSelectionChange(data: any[]) { }
 
+  /**
+   * @description 计算工具栏权限
+   * @param {boolean} state
+   * @memberof ExpBarControl
+   */
   public calcToolbarItemState(state: boolean) {
     //  TODO 计算工具栏权限
     // let _this: any = this;
@@ -57,11 +100,25 @@ export class ExpBarControl extends MainControl {
     // }
   }
 
+  /**
+   * @description 计算导航栏工具栏权限
+   * @memberof ExpBarControl
+   */
   public calcNavigationToolbarState() {
     let _this: any = this;
     if (_this.toolbarModels) {
       // ViewTool.calcActionItemAuthState({}, this.toolbarModels, this.appUIService);
     }
+  }
+
+  /**
+   * @description 获取多数据部件
+   * @private
+   * @return {*} 
+   * @memberof ExpBarControl
+   */
+  private getXDataCtrl() {
+    return unref(this.xData);
   }
 
   /**
@@ -71,8 +128,10 @@ export class ExpBarControl extends MainControl {
   */
   public moduleInstall() {
     const superParams = super.moduleInstall();
+    this.useExpCtrlInit();
     return {
       ...superParams,
+      xData: this.xData,
       onCtrlEvent: this.onCtrlEvent.bind(this)
     };
   }

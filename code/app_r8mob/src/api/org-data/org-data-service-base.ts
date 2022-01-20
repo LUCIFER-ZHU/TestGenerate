@@ -152,7 +152,7 @@ export class OrgDataServiceBase extends EntityService {
       */
     public async FetchDefault(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchdefault`);
+      const res = await this.http.post(`${deResPath}/fetchdefault`,data);
       return res;
     }
     /**
@@ -165,7 +165,7 @@ export class OrgDataServiceBase extends EntityService {
       */
     public async FetchPORGDATA(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchporgdata`);
+      const res = await this.http.post(`${deResPath}/fetchporgdata`,data);
       return res;
     }
     /**

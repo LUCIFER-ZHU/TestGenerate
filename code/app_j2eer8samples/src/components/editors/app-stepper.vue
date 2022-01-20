@@ -6,7 +6,7 @@ interface StepperProps {
    * @type {any}
    * @memberof AppSlider
    */
-  value: number;
+  value?: number;
 
   /**
    * 属性项名称
@@ -21,14 +21,14 @@ interface StepperProps {
    * @type {number}
    * @memberof AppSlider
    */
-  precision: number;
+  precision?: number;
 
   /**
    * 步长
    * @type {number}
    * @memberof AppSlider
    */
-  step: number;
+  step?: number;
 
   /**
    * 最小值

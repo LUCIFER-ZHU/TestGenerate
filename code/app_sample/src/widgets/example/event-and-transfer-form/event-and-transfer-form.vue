@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="EventAndTransfer"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="EventAndTransfer" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="示例基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -55,8 +53,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.examplename.visible" name="examplename" :rules="state.rules.examplename" :required="state.detailsModel.examplename.required" label="名称">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.examplename.visible"
+    name="examplename"
+    :rules="state.rules.examplename"
+    :labelWidth="130"
+    :required="state.detailsModel.examplename.required"
+    label="名称"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="examplename"
   :disabled="state.detailsModel.examplename.disabled"
   :maxLength="200"
@@ -64,6 +70,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.examplename"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -72,14 +79,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldx.visible" name="fieldx" :rules="state.rules.fieldx" :required="state.detailsModel.fieldx.required" label="X值">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.fieldx.visible"
+    name="fieldx"
+    :rules="state.rules.fieldx"
+    :labelWidth="130"
+    :required="state.detailsModel.fieldx.required"
+    label="X值"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="fieldx"
   :disabled="state.detailsModel.fieldx.disabled"
   type="text"
   :value="state.data.fieldx"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -88,14 +104,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldy.visible" name="fieldy" :rules="state.rules.fieldy" :required="state.detailsModel.fieldy.required" label="Y值">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.fieldy.visible"
+    name="fieldy"
+    :rules="state.rules.fieldy"
+    :labelWidth="130"
+    :required="state.detailsModel.fieldy.required"
+    label="Y值"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="fieldy"
   :disabled="state.detailsModel.fieldy.disabled"
   type="text"
   :value="state.data.fieldy"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -104,14 +129,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.fieldz.visible" name="fieldz" :rules="state.rules.fieldz" :required="state.detailsModel.fieldz.required" label="Z值">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.fieldz.visible"
+    name="fieldz"
+    :rules="state.rules.fieldz"
+    :labelWidth="130"
+    :required="state.detailsModel.fieldz.required"
+    label="Z值"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="fieldz"
   :disabled="state.detailsModel.fieldz.disabled"
   type="text"
   :value="state.data.fieldz"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

@@ -7,7 +7,7 @@ import { ToolbarGrid } from '@widgets/example/toolbar-grid';
 
 // props声明和默认值处理
 interface Props {
-  context: IContext;
+  context?: IContext;
   viewParams?: IParam;
   openType?: "ROUTE" | "MODAL" | "EMBED";
   viewSubject?: Subject<IActionParam>;

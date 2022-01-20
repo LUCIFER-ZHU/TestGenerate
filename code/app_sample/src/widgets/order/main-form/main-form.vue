@@ -30,9 +30,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Main"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Main" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -43,7 +41,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="订单基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -56,8 +54,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.ordername.visible" name="ordername" :rules="state.rules.ordername" :required="state.detailsModel.ordername.required" label="订单号">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.ordername.visible"
+    name="ordername"
+    :rules="state.rules.ordername"
+    :labelWidth="130"
+    :required="state.detailsModel.ordername.required"
+    label="订单号"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="ordername"
   :disabled="state.detailsModel.ordername.disabled"
   :maxLength="200"
@@ -65,6 +71,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.ordername"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -73,8 +80,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 18, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.customername.visible" name="customername" :rules="state.rules.customername" :required="state.detailsModel.customername.required" label="客户">
-<appDataPicker
+  <AppFormItem 
+    v-show="state.detailsModel.customername.visible"
+    name="customername"
+    :rules="state.rules.customername"
+    :labelWidth="130"
+    :required="state.detailsModel.customername.required"
+    label="客户"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDataPicker
   name="customername"
   :data="state.data"
   valueItem="customerid"
@@ -84,7 +99,8 @@ defineExpose({ state, name: 'form' });
    pickUpView="ChartDataPickupView"
   :value="state.data.customername"
   @editorEvent="onEditorEvent"
-/>   </AppFormItem>
+/>       </div>
+  </AppFormItem>
 </a-col>
 <a-col
   :lg="{span: 6, offset: 0 }"
@@ -92,8 +108,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.orderdate.visible" name="orderdate" :rules="state.rules.orderdate" :required="state.detailsModel.orderdate.required" label="订单时间">
-<appDatePicker
+  <AppFormItem 
+    v-show="state.detailsModel.orderdate.visible"
+    name="orderdate"
+    :rules="state.rules.orderdate"
+    :labelWidth="130"
+    :required="state.detailsModel.orderdate.required"
+    label="订单时间"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDatePicker
   name="orderdate"
   :disabled="state.detailsModel.orderdate.disabled"
   dateFormat="YYYY-MM-DD"
@@ -101,6 +125,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.orderdate"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -109,14 +134,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.amount.visible" name="amount" :rules="state.rules.amount" :required="state.detailsModel.amount.required" label="金额">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.amount.visible"
+    name="amount"
+    :rules="state.rules.amount"
+    :labelWidth="130"
+    :required="state.detailsModel.amount.required"
+    label="金额"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="amount"
   :disabled="state.detailsModel.amount.disabled"
   type="text"
   :value="state.data.amount"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -125,9 +159,20 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.state.visible" name="state" :rules="state.rules.state" :required="state.detailsModel.state.required" label="订单状态">
-<appDropdownList
+  <AppFormItem 
+    v-show="state.detailsModel.state.visible"
+    name="state"
+    :rules="state.rules.state"
+    :labelWidth="130"
+    :required="state.detailsModel.state.required"
+    label="订单状态"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDropdownList
   name="state"
+  codeListTag="Sample__OrderState"
+  codeListType="STATIC"
+  
   :disabled="state.detailsModel.state.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
@@ -135,6 +180,7 @@ defineExpose({ state, name: 'form' });
   :data="state.data"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>
@@ -150,7 +196,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel1.visible" 
     name="grouppanel1" 
     title="订单明细"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -163,7 +209,17 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormDruipart v-show="state.detailsModel.druipart1.visible" name="druipart1" title="" v-slot="druipartParams">
+  <AppFormDruipart 
+    v-show="state.detailsModel.druipart1.visible" 
+    
+    style=""
+    name="druipart1" 
+    title="" 
+    :context="context"
+    :viewParams="viewParams"
+    :data="state.data"
+    :viewSubject="state.viewSubject"
+    v-slot="druipartParams">
     <OrderDetailLineEditGridView
       :class="['app-view-layout--from-druipart']"
       :context="druipartParams.context"

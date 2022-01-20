@@ -15,6 +15,13 @@ export class TreeExpBarControl extends ExpBarControl {
    */
   public declare state: TreeExpBarControlState;
 
+  /**
+   * @description 选中数据变化
+   * @protected
+   * @param {any[]} args
+   * @return {*} 
+   * @memberof TreeExpBarControl
+   */
   protected onSelectionChange(args: any[]) {
     if (args.length == 0) {
       this.calcToolbarItemState(true);
@@ -26,7 +33,7 @@ export class TreeExpBarControl extends ExpBarControl {
       return;
     }
     const nodeType = arg.id.split(';')[0];
-    // const refView: any = this.get
+    //  获取导航视图
     const refView = this.getExpItemView({ nodeType: nodeType });
     // TODO 选择视图面板支持
     if (refView) {
@@ -45,6 +52,13 @@ export class TreeExpBarControl extends ExpBarControl {
     }
   }
 
+  /**
+   * @description 获取导航视图
+   * @protected
+   * @param {*} [arg={}]
+   * @return {*}  {(IParam | null)}
+   * @memberof TreeExpBarControl
+   */
   protected getExpItemView(arg: any = {}): IParam | null {
     const expMode: string = `EXPITEM:${arg.nodeType}`;
     const { viewRefs } = this.state;
@@ -56,6 +70,13 @@ export class TreeExpBarControl extends ExpBarControl {
     }
   }
 
+  /**
+   * @description 计算导航参数
+   * @protected
+   * @param {*} arg
+   * @return {*}  {{ tempContext: any, tempViewParams: any }}
+   * @memberof TreeExpBarControl
+   */
   protected computeNavParams(arg: any): { tempContext: any, tempViewParams: any } {
     const tempContext: any = {};
     const tempViewParams: any = {};

@@ -46,6 +46,15 @@ export const ctrlState = {
   selectHistoryItem: {},
   historyItems: [],
   detailsModel: {
+    formpage1: {
+      caption: '常规条件',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     n_state_eq: {
       caption: '订单状态(等于(=))',
       name: 'n_state_eq',

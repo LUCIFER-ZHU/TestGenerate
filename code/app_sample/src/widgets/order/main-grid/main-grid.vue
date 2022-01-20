@@ -6,13 +6,13 @@ import { GridControl, IActionParam, IParam, IContext, ControlAction, deepCopy } 
 interface Props {
   context: IContext;
   viewParams: IParam;
-  multiple: boolean;
-  rowEditState: boolean;
-  rowActiveMode: 0 | 1 | 2;
+  multiple?: boolean;
+  rowEditState?: boolean;
+  rowActiveMode?: 0 | 1 | 2;
   selectedData?: IParam[];
-  isSelectDefault?: boolean;
+  selectFirstDefault?: boolean;
   controlAction: ControlAction;
-  showBusyIndicator: boolean;
+  showBusyIndicator?: boolean;
   viewSubject: Subject<IActionParam>;
 }
 
@@ -45,12 +45,12 @@ defineExpose({ state, name: 'grid' });
     bordered
     sticky
     class="app-grid"
-    :rowKey="rowKey"
+    :rowKey="useRowKey"
     :showHeader="true"
-    :scroll="scrollOption"
+    :scroll="useScrollOption"
     :sortDirections="['ascend', 'descend']"
     :data-source="state.items"
-    :row-selection="rowSelectionOption"
+    :row-selection="useRowSelectionOption"
     :columns="state.columnsModel"
     :pagination="state.mdCtrlPaging.pagination"
     :customRow="useCustomRow"
@@ -89,7 +89,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'state')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appInput
+<AppInput
   name="state"
   :maxLength="60"
   type="text"

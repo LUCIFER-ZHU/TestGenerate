@@ -4,7 +4,7 @@ import { TreeExpView, IActionParam, IParam, IContext } from '@core';
 import { viewState } from './example-search-form-tree-exp-view-state';
 import { SearchFormTreeExpViewtreeexpbarTreeExpBar } from '@widgets/example/search-form-tree-exp-viewtreeexpbar-tree-exp-bar';
 interface Props {
-  context: IContext;
+  context?: IContext;
   viewParams?: IParam;
   openType?: "ROUTE" | "MODAL" | "EMBED";
   viewSubject?: Subject<IActionParam>;

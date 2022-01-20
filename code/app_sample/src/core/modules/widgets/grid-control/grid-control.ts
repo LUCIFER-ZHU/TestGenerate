@@ -30,7 +30,7 @@ export class GridControl extends MDControl {
      * @memberof GridControl
      */
     public useCustom() {
-        const { controlName, selectFirstDefault, rowEditState, rowActiveMode } = this.state;
+        const { controlName, selectFirstDefault, rowEditState, rowActiveMode, isSingleSelect } = this.state;
         const { selectedRowKeys } = toRefs(this.state);
         // 滚动条配置
         const useScrollOption = computed(() => {
@@ -75,6 +75,7 @@ export class GridControl extends MDControl {
                 return false;
             }
             return {
+                type:isSingleSelect ? 'radio' : 'checkbox',
                 columnWidth: 90,
                 selectedRowKeys: selectedRowKeys.value,
                 checkStrictly: this.props.multiple ? false : true,
@@ -177,7 +178,7 @@ export class GridControl extends MDControl {
      * @memberof GridControl
      */
     public handleDefaultSelect() {
-        const { selectedData, isSelectDefault, controlName, items } = this.state;
+        const { selectedData, selectFirstDefault, controlName, items } = this.state;
         const { selectedRowKeys } = toRefs(this.state);
         if (selectedData?.length > 0) {
             const _selectedRowKeys: string[] = [];
@@ -187,7 +188,7 @@ export class GridControl extends MDControl {
                 }
             });
             selectedRowKeys.value = _selectedRowKeys;
-        } else if (isSelectDefault) {
+        } else if (selectFirstDefault) {
             if (items && items.length > 0) {
                 this.emit("ctrlEvent", {
                     tag: this.props.name,

@@ -127,6 +127,15 @@ export const ctrlState = {
   appDeMajorFieldName: 'CounterData2Name',
   enableAutoSave: false,
   detailsModel: {
+    formpage1: {
+      caption: '基本信息',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     group1: {
       caption: '计算器数据2基本信息',
       name: 'group1',

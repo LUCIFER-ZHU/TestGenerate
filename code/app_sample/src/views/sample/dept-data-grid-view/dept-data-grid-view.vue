@@ -8,7 +8,7 @@ import { DefaultSearchForm } from '@widgets/dept-data/default-search-form';
 
 // props声明和默认值处理
 interface Props {
-  context: IContext;
+  context?: IContext;
   viewParams?: IParam;
   openType?: "ROUTE" | "MODAL" | "EMBED";
   viewSubject?: Subject<IActionParam>;

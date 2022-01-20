@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Main"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Main" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="示例版本基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -55,8 +53,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.samplevername.visible" name="samplevername" :rules="state.rules.samplevername" :required="state.detailsModel.samplevername.required" label="标题">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.samplevername.visible"
+    name="samplevername"
+    :rules="state.rules.samplevername"
+    :labelWidth="130"
+    :required="state.detailsModel.samplevername.required"
+    label="标题"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="samplevername"
   :disabled="state.detailsModel.samplevername.disabled"
   :maxLength="200"
@@ -64,6 +70,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.samplevername"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -72,8 +79,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.verstr.visible" name="verstr" :rules="state.rules.verstr" :required="state.detailsModel.verstr.required" label="版本号">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.verstr.visible"
+    name="verstr"
+    :rules="state.rules.verstr"
+    :labelWidth="130"
+    :required="state.detailsModel.verstr.required"
+    label="版本号"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="verstr"
   :disabled="state.detailsModel.verstr.disabled"
   :maxLength="100"
@@ -81,6 +96,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.verstr"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -89,9 +105,20 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.type.visible" name="type" :rules="state.rules.type" :required="state.detailsModel.type.required" label="分类">
-<appDropdownList
+  <AppFormItem 
+    v-show="state.detailsModel.type.visible"
+    name="type"
+    :rules="state.rules.type"
+    :labelWidth="130"
+    :required="state.detailsModel.type.required"
+    label="分类"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDropdownList
   name="type"
+  codeListTag="Sample__SampleCat"
+  codeListType="STATIC"
+  
   :disabled="state.detailsModel.type.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
@@ -99,6 +126,7 @@ defineExpose({ state, name: 'form' });
   :data="state.data"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -107,8 +135,17 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.content.visible" name="content" :rules="state.rules.content" :required="state.detailsModel.content.required" label="内容">
-    /*未找到模板[MARKDOWN]*/  </AppFormItem>
+  <AppFormItem 
+    v-show="state.detailsModel.content.visible"
+    name="content"
+    :rules="state.rules.content"
+    :labelWidth="130"
+    :required="state.detailsModel.content.required"
+    label="内容"
+    style="">
+      <div class="form-editor-container" style="">
+      /*未找到模板[MARKDOWN]*/      </div>
+  </AppFormItem>
 </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -116,8 +153,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" :rules="state.rules.memo" :required="state.detailsModel.memo.required" label="备注">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.memo.visible"
+    name="memo"
+    :rules="state.rules.memo"
+    :labelWidth="130"
+    :required="state.detailsModel.memo.required"
+    label="备注"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="memo"
   :disabled="state.detailsModel.memo.disabled"
   :maxLength="1000"
@@ -125,6 +170,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.memo"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

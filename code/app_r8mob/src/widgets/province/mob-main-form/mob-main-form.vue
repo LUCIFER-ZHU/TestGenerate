@@ -29,11 +29,12 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Mob_main"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Mob_main" class="app-form" style="" :model="state.data" :rules="state.rules">
     <a-tabs class="app-form-page">
-<a-tab-pane v-show="state.detailsModel.formpage1.visible" key="formpage1" tab="基本信息">
+<a-tab-pane v-show="state.detailsModel.formpage1.visible"  key="formpage1">
+  <template #tab>
+    <AppIconText text="基本信息"/>
+  </template>
   <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -45,7 +46,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="省份基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -58,15 +59,27 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.provincename.visible" name="provincename" :rules="state.rules.provincename" :required="state.detailsModel.provincename.required" label="省份名称">
-    /*未找到模板[MOBTEXT]*/  </AppFormItem>
+  <AppFormItem 
+    v-show="state.detailsModel.provincename.visible"
+    name="provincename"
+    :rules="state.rules.provincename"
+    :labelWidth="130"
+    :required="state.detailsModel.provincename.required"
+    label="省份名称"
+    style="">
+      <div class="form-editor-container" style="">
+      /*未找到模板[MOBTEXT]*/      </div>
+  </AppFormItem>
 </a-col>
     </a-row>
   </AppFormGroup>
 </a-col>
   </a-row>
 </a-tab-pane>
-<a-tab-pane v-show="state.detailsModel.formpage2.visible" key="formpage2" tab="其它">
+<a-tab-pane v-show="state.detailsModel.formpage2.visible"  key="formpage2">
+  <template #tab>
+    <AppIconText text="其它"/>
+  </template>
   <a-row>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -78,7 +91,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group2.visible" 
     name="group2" 
     title="操作信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -91,14 +104,25 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.createman.visible" name="createman" :rules="state.rules.createman" :required="state.detailsModel.createman.required" label="建立人">
-<appSpan
+  <AppFormItem 
+    v-show="state.detailsModel.createman.visible"
+    name="createman"
+    :rules="state.rules.createman"
+    :labelWidth="130"
+    :required="state.detailsModel.createman.required"
+    label="建立人"
+    style="">
+      <div class="form-editor-container" style="">
+<AppSpan
   name="createman"
   :disabled="state.detailsModel.createman.disabled"
+  codeListTag="SysOperator"
+  codeListType="DYNAMIC"
   dataType="25"
   :value="state.data.createman"
   :context="state.context"
   :viewParams="state.viewParams"/>
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -107,14 +131,24 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.createdate.visible" name="createdate" :rules="state.rules.createdate" :required="state.detailsModel.createdate.required" label="建立时间">
-<appSpan
+  <AppFormItem 
+    v-show="state.detailsModel.createdate.visible"
+    name="createdate"
+    :rules="state.rules.createdate"
+    :labelWidth="130"
+    :required="state.detailsModel.createdate.required"
+    label="建立时间"
+    style="">
+      <div class="form-editor-container" style="">
+<AppSpan
   name="createdate"
   :disabled="state.detailsModel.createdate.disabled"
   dataType="5"
+  valueFormat="YYYY-MM-DD HH:mm:ss"
   :value="state.data.createdate"
   :context="state.context"
   :viewParams="state.viewParams"/>
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -123,14 +157,25 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.updateman.visible" name="updateman" :rules="state.rules.updateman" :required="state.detailsModel.updateman.required" label="更新人">
-<appSpan
+  <AppFormItem 
+    v-show="state.detailsModel.updateman.visible"
+    name="updateman"
+    :rules="state.rules.updateman"
+    :labelWidth="130"
+    :required="state.detailsModel.updateman.required"
+    label="更新人"
+    style="">
+      <div class="form-editor-container" style="">
+<AppSpan
   name="updateman"
   :disabled="state.detailsModel.updateman.disabled"
+  codeListTag="SysOperator"
+  codeListType="DYNAMIC"
   dataType="25"
   :value="state.data.updateman"
   :context="state.context"
   :viewParams="state.viewParams"/>
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -139,14 +184,24 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.updatedate.visible" name="updatedate" :rules="state.rules.updatedate" :required="state.detailsModel.updatedate.required" label="更新时间">
-<appSpan
+  <AppFormItem 
+    v-show="state.detailsModel.updatedate.visible"
+    name="updatedate"
+    :rules="state.rules.updatedate"
+    :labelWidth="130"
+    :required="state.detailsModel.updatedate.required"
+    label="更新时间"
+    style="">
+      <div class="form-editor-container" style="">
+<AppSpan
   name="updatedate"
   :disabled="state.detailsModel.updatedate.disabled"
   dataType="5"
+  valueFormat="YYYY-MM-DD HH:mm:ss"
   :value="state.data.updatedate"
   :context="state.context"
   :viewParams="state.viewParams"/>
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

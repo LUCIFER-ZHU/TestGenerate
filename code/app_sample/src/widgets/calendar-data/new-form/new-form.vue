@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="New"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="New" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="日历示例数据基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -55,8 +53,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.calendardataname.visible" name="calendardataname" :rules="state.rules.calendardataname" :required="state.detailsModel.calendardataname.required" label="事项">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.calendardataname.visible"
+    name="calendardataname"
+    :rules="state.rules.calendardataname"
+    :labelWidth="130"
+    :required="state.detailsModel.calendardataname.required"
+    label="事项"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="calendardataname"
   :disabled="state.detailsModel.calendardataname.disabled"
   :maxLength="200"
@@ -64,6 +70,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.calendardataname"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -72,8 +79,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.begintime.visible" name="begintime" :rules="state.rules.begintime" :required="state.detailsModel.begintime.required" label="开始时间">
-<appDatePicker
+  <AppFormItem 
+    v-show="state.detailsModel.begintime.visible"
+    name="begintime"
+    :rules="state.rules.begintime"
+    :labelWidth="130"
+    :required="state.detailsModel.begintime.required"
+    label="开始时间"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDatePicker
   name="begintime"
   :disabled="state.detailsModel.begintime.disabled"
   dateFormat="YYYY-MM-DD HH:mm:ss"
@@ -81,6 +96,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.begintime"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -89,8 +105,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.endtime.visible" name="endtime" :rules="state.rules.endtime" :required="state.detailsModel.endtime.required" label="结束时间">
-<appDatePicker
+  <AppFormItem 
+    v-show="state.detailsModel.endtime.visible"
+    name="endtime"
+    :rules="state.rules.endtime"
+    :labelWidth="130"
+    :required="state.detailsModel.endtime.required"
+    label="结束时间"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDatePicker
   name="endtime"
   :disabled="state.detailsModel.endtime.disabled"
   dateFormat="YYYY-MM-DD HH:mm:ss"
@@ -98,6 +122,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.endtime"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -106,8 +131,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.memo.visible" name="memo" :rules="state.rules.memo" :required="state.detailsModel.memo.required" label="备注">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.memo.visible"
+    name="memo"
+    :rules="state.rules.memo"
+    :labelWidth="130"
+    :required="state.detailsModel.memo.required"
+    label="备注"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="memo"
   :disabled="state.detailsModel.memo.disabled"
   :maxLength="1000"
@@ -115,6 +148,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.memo"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

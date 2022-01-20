@@ -152,7 +152,7 @@ export class ActivityServiceBase extends EntityService {
       */
     public async FetchDefault(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchdefault`);
+      const res = await this.http.post(`${deResPath}/fetchdefault`,data);
       return res;
     }
     /**
@@ -165,7 +165,7 @@ export class ActivityServiceBase extends EntityService {
       */
     public async FetchEmail(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchemail`);
+      const res = await this.http.post(`${deResPath}/fetchemail`,data);
       return res;
     }
     /**
@@ -178,7 +178,7 @@ export class ActivityServiceBase extends EntityService {
       */
     public async FetchMeeting(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchmeeting`);
+      const res = await this.http.post(`${deResPath}/fetchmeeting`,data);
       return res;
     }
     /**
@@ -191,7 +191,7 @@ export class ActivityServiceBase extends EntityService {
       */
     public async FetchOther(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchother`);
+      const res = await this.http.post(`${deResPath}/fetchother`,data);
       return res;
     }
     /**
@@ -204,7 +204,7 @@ export class ActivityServiceBase extends EntityService {
       */
     public async FetchPhone(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchphone`);
+      const res = await this.http.post(`${deResPath}/fetchphone`,data);
       return res;
     }
     /**

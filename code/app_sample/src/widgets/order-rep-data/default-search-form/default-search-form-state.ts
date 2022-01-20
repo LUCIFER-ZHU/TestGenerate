@@ -67,6 +67,15 @@ export const ctrlState = {
   selectHistoryItem: {},
   historyItems: [],
   detailsModel: {
+    formpage1: {
+      caption: '常规条件',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     grouppanel1: {
       caption: '分组面板',
       name: 'grouppanel1',

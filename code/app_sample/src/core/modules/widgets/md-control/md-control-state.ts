@@ -55,6 +55,12 @@ export interface MDControlState extends MainControlState {
    * @type {boolean}
    * @memberof MDControlState
    */
-  isSelectDefault: boolean;
+  selectFirstDefault: boolean;
 
+  /**
+   * @description 是否单选
+   * @type {boolean}
+   * @memberof MDControlState
+   */
+   isSingleSelect: boolean;
 }

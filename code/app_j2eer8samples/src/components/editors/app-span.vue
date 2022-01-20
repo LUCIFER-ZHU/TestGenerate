@@ -134,7 +134,7 @@ onBeforeMount(() => {
 
 <template>
   <div :class="['app-editor-container', 'app-span', `app-span-${name}`]">
-    <span>{{text}}</span>
+    <span v-format="textFormat">{{text}}</span>
   </div>
 </template>
 

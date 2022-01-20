@@ -3,6 +3,9 @@ import { Subject } from 'rxjs';
 import { IActionParam, IParam, ControlAction, TreeExpBarControl, IContext } from '@core';
 import { ctrlState } from './dashboard-tree-exp-viewtreeexpbar-tree-exp-bar-state';
 import { DashboardTreeTree} from '@widgets/example/dashboard-tree-tree';
+import ExampleBaseDashboardView from '@views/sample/example-base-dashboard-view';
+import ExampleBaseDashboardView_CSS from '@views/sample/example-base-dashboard-view-css';
+import ExampleValueFormatDashboardView from '@views/sample/example-value-format-dashboard-view';
 
 interface Props {
   context: IContext;
@@ -26,7 +29,7 @@ interface CtrlEmit {
 const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onCtrlEvent } = new TreeExpBarControl(ctrlState, props, emit).moduleInstall();
+const { state, onCtrlEvent, xData } = new TreeExpBarControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ state, name: 'treeexpbar' });
@@ -38,6 +41,7 @@ defineExpose({ state, name: 'treeexpbar' });
     >
     <a-layout-sider>
       <DashboardTreeTree
+        ref="xData"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
@@ -46,6 +50,24 @@ defineExpose({ state, name: 'treeexpbar' });
       ></DashboardTreeTree>
     </a-layout-sider>
     <a-layout>
+      <ExampleBaseDashboardView
+        v-if="state.selection.viewName && state.selection.viewName === 'ExampleBaseDashboardView'"
+        :viewDefaultUsage="false"
+        :viewdata="JSON.stringify(state.selection.context)"
+        :viewParams="JSON.stringify(state.selection.viewParams)">
+      </ExampleBaseDashboardView>
+      <ExampleBaseDashboardView_CSS
+        v-if="state.selection.viewName && state.selection.viewName === 'ExampleBaseDashboardView_CSS'"
+        :viewDefaultUsage="false"
+        :viewdata="JSON.stringify(state.selection.context)"
+        :viewParams="JSON.stringify(state.selection.viewParams)">
+      </ExampleBaseDashboardView_CSS>
+      <ExampleValueFormatDashboardView
+        v-if="state.selection.viewName && state.selection.viewName === 'ExampleValueFormatDashboardView'"
+        :viewDefaultUsage="false"
+        :viewdata="JSON.stringify(state.selection.context)"
+        :viewParams="JSON.stringify(state.selection.viewParams)">
+      </ExampleValueFormatDashboardView>
     </a-layout>
   </a-layout>
 </template>

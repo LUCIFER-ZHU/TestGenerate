@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="UIAction"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="UIAction" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -46,7 +44,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="打开一个模态框（小视图）"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -57,7 +55,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="打开模态"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -75,7 +73,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.button1.visible"
     class="app-form-button"
     style="">
-    前台界面行为（打开模态）
+      <span >前台界面行为（打开模态）</span>
   </a-button>
 </a-col>
     </a-row>
@@ -95,7 +93,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="打开一个顶级视图"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -106,7 +104,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel1.visible" 
     name="grouppanel1" 
     title="打开顶级视图"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -124,7 +122,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.button2.visible"
     class="app-form-button"
     style="">
-    前台界面行为（打开顶级视图）
+      <span >前台界面行为（打开顶级视图）</span>
   </a-button>
 </a-col>
     </a-row>
@@ -144,7 +142,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="打开一个指定的html页面，并将搜索框中的参数传过去"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -155,7 +153,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel2.visible" 
     name="grouppanel2" 
     title="打开HTML页面"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -164,8 +162,16 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.wd.visible" name="wd" :rules="state.rules.wd" :required="state.detailsModel.wd.required" label="搜索">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.wd.visible"
+    name="wd"
+    :rules="state.rules.wd"
+    :labelWidth="80"
+    :required="state.detailsModel.wd.required"
+    label="搜索"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="wd"
   :disabled="state.detailsModel.wd.disabled"
   placeholder="输入关键字后点击【前台界面行为（打开HTML页面）】"
@@ -173,6 +179,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.wd"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -182,7 +189,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.button3.visible"
     class="app-form-button"
     style="">
-    前台界面行为（打开HTML页面）（百度一下）
+      <span >前台界面行为（打开HTML页面）（百度一下）</span>
   </a-button>
 </a-col>
     </div>
@@ -198,7 +205,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel3.visible" 
     name="grouppanel3" 
     title="界面行为（后续界面行为）"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -219,7 +226,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="数据快速新建通常使用界面行为（后续界面行为，后台处理后打开新界面进行确认或后续操作）"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -231,7 +238,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.button4.visible"
     class="app-form-button"
     style="">
-    界面行为（后续界面行为）
+      <span >界面行为（后续界面行为）</span>
   </a-button>
 </a-col>
     </a-row>

@@ -9,7 +9,7 @@ interface InputProps{
   /**
    * @description 编辑器值
    */
-  value: string | number;
+  value?: string | number;
 
   /**
    * @description 禁用
@@ -71,15 +71,6 @@ const onChange = ($event: any) => {
 
 <template>
   <div :class="['app-editor-container','app-input',`app-input-${name}`]">
-    <a-input 
-      allowClear
-      v-if="Object.is('text', type)"
-      v-model:value="value"
-      :disabled="disabled"
-      :maxlength="maxLength"
-      :type="type"
-      @blur="onChange"
-      :placeholder="showMaxLength ? `最大内容长度为${maxLength}` : placeholder" />
     <a-input-number
       v-if="Object.is('number', type)"
       :value="value"
@@ -90,18 +81,27 @@ const onChange = ($event: any) => {
       @change="onChange"
       :placeholder="placeholder" />
     <a-input-password 
-      v-if="Object.is('password', type)"
+      v-else-if="Object.is('password', type)"
       v-model:value="value"
       :disabled="disabled"
       @blur="onChange"
       :placeholder="placeholder"/>
     <a-textarea 
       showCount
-      v-if="Object.is('textarea', type)"
+      v-else-if="Object.is('textarea', type)"
       v-model:value="value"
       :disabled="disabled"
       :maxlength="maxLength"
       @blur="onChange"
       :placeholder="placeholder"/>
+    <a-input 
+      allowClear
+      v-else="Object.is('text', type)"
+      v-model:value="value"
+      :disabled="disabled"
+      :maxlength="maxLength"
+      :type="type"
+      @blur="onChange"
+      :placeholder="showMaxLength ? `最大内容长度为${maxLength}` : placeholder" />
   </div>
 </template>

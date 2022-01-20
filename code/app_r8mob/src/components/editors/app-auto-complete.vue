@@ -10,7 +10,7 @@ interface AutoCompleteProps {
   /**
    * @description 编辑器值
    */
-  value: IParam;
+  value?: IParam;
 
   /**
    * @description 编辑器名称
@@ -20,7 +20,7 @@ interface AutoCompleteProps {
   /**
    * @description 占位提示信息
    */
-  placeholder: string;
+  placeholder?: string;
 
   /**
    * @description 上下文
@@ -70,22 +70,22 @@ interface AutoCompleteProps {
   /**
    * @description 是否默认展开
    */
-  defaultOpen: boolean;
+  defaultOpen?: boolean;
 
   /**
    * @description 是否显示按钮
    */
-  showButton: boolean;
+  showButton?: boolean;
 
   /**
    * @description 禁用
    */
-  disabled: boolean;
+  disabled?: boolean;
 
   /**
    * @description 禁用
    */
-  readonly: boolean;
+  readonly?: boolean;
 }
 interface EditorEmit {
   (name: "editorEvent", value: IActionParam): void;
@@ -141,12 +141,12 @@ const filterOption= (inputValue: string,option: IParam) => {
 
 const onSelect = (value: any) => {
   const selectItem = items.value.find((item: IParam) =>
-    Object.is(item[props.deKeyField], value)
+    Object.is(item[props.deKeyField!], value)
   );
   emit("editorEvent", {
     tag: props.name,
     action: "valueChange",
-    data: selectItem[props.deMajorField],
+    data: selectItem[props.deMajorField!],
   });
 }
 
@@ -165,7 +165,7 @@ const onSelect = (value: any) => {
     :defaultOpen="true"
   >
     <template #option="option">
-      <div @click="onSelect(option[deKeyField])">{{option[deMajorField]}}</div>
+      <div @click="onSelect(option[deKeyField!])">{{option[deMajorField!]}}</div>
     </template>
     <a-input :placeholder="placeholder">
       <template #suffix><search-outlined v-if="showButton" class="certain-category-icon" /></template>

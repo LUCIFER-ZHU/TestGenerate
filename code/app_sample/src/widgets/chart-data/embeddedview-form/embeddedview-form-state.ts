@@ -64,6 +64,15 @@ export const ctrlState = {
   appDeMajorFieldName: 'ChartDataName',
   enableAutoSave: false,
   detailsModel: {
+    formpage1: {
+      caption: '嵌入视图',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     grouppanel2: {
       caption: '看板',
       name: 'grouppanel2',

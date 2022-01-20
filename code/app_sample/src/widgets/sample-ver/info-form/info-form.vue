@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Info"
-    class="app-form formitem-full-height"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Info" class="app-form formitem-full-height" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="示例版本基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -51,19 +49,37 @@ defineExpose({ state, name: 'form' });
     <div class="app-form-layout-flex" style="flex-direction: column;">
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.samplevername.visible" name="samplevername" :rules="state.rules.samplevername" :required="state.detailsModel.samplevername.required" label="标题">
-<appSpan
+  <AppFormItem 
+    v-show="state.detailsModel.samplevername.visible"
+    class="h2-title"
+    name="samplevername"
+    :rules="state.rules.samplevername"
+    :labelWidth="0"
+    :required="state.detailsModel.samplevername.required"
+    label="标题"
+    style="">
+      <div class="form-editor-container" style="">
+<AppSpan
   name="samplevername"
   :disabled="state.detailsModel.samplevername.disabled"
   dataType="25"
   :value="state.data.samplevername"
   :context="state.context"
   :viewParams="state.viewParams"/>
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
  >
-  <AppFormItem v-show="state.detailsModel.content.visible" name="content" :rules="state.rules.content" :required="state.detailsModel.content.required" label="内容">
+  <AppFormItem 
+    v-show="state.detailsModel.content.visible"
+    name="content"
+    :rules="state.rules.content"
+    :labelWidth="0"
+    :required="state.detailsModel.content.required"
+    label="内容"
+    style="">
+      <div class="form-editor-container" style="">
 <AppRaw
   name="content"
   :date="state.data"
@@ -71,6 +87,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.content"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </div>

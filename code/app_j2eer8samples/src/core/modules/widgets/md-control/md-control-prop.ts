@@ -41,5 +41,5 @@ export interface MDControlProps extends MainControlProps {
    * @type {boolean}
    * @memberof MDControlProps
    */
-  isSelectDefault: boolean;
+  selectFirstDefault: boolean;
 }

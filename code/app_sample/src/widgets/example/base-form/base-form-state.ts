@@ -83,6 +83,15 @@ export const ctrlState = {
   appDeMajorFieldName: 'ExampleName',
   enableAutoSave: false,
   detailsModel: {
+    formpage1: {
+      caption: '表单分页',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     rawitem1: {
       caption: '',
       name: 'rawitem1',
@@ -265,6 +274,15 @@ export const ctrlState = {
       visible: true,
       detailStyle: 'DEFAULT',
       detailType: 'TABPANEL',
+      showCaption: false,
+    },
+    formpage2: {
+      caption: '表单分页2',
+      name: 'formpage2',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
       showCaption: false,
     },
     grouppanel2: {

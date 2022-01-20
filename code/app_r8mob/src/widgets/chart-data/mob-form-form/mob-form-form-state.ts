@@ -129,6 +129,15 @@ export const ctrlState = {
   appDeMajorFieldName: 'ChartDataName',
   enableAutoSave: true,
   detailsModel: {
+    formpage1: {
+      caption: '基本信息',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     group1: {
       caption: '图表基本信息',
       name: 'group1',
@@ -439,6 +448,15 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
+    },
+    formpage2: {
+      caption: '表单分页',
+      name: 'formpage2',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
     },
     year: {
       caption: '年份',

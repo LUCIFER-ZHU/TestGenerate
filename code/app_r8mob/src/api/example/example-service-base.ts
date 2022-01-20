@@ -152,7 +152,7 @@ export class ExampleServiceBase extends EntityService {
       */
     public async FetchDefault(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchdefault`);
+      const res = await this.http.post(`${deResPath}/fetchdefault`,data);
       return res;
     }
     /**
@@ -165,7 +165,7 @@ export class ExampleServiceBase extends EntityService {
       */
     public async FetchEmpty(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchempty`);
+      const res = await this.http.post(`${deResPath}/fetchempty`,data);
       return res;
     }
     /**

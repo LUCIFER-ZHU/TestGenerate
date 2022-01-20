@@ -2,22 +2,32 @@ export const viewState = {
   viewCodeName: 'ProductPickupView',
   viewName: 'ProductPickupView',
   viewCaption: '产品',
-  height: '0',
-  width: '0',
-  enableQuickGroup: false,
-  appEntityName: 'Product',
-  isLoadDefault: true,
-  keyPSDEField: 'product',
-  viewSysCss: '',
   subCaption: '',
+  viewSysCss: '',
+  showCaptionBar: false,
   viewType: 'DEPICKUPVIEW',
   viewStyle: 'DEFAULT',
-  showCaptionBar: false,
   xDataControlName:'',
-  openDataViewName: 'ExampleEditorEditView',
+  height: '0',
+  width: '0',
+  appEntityName: 'Product',
+  keyPSDEField: 'product',
+  isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
+  enableQuickGroup: false,
+  viewLogics: {
+  },
   toolbar: [
   ],
-    /*未找到模板[PICKUPVIEWPANEL]*/
+  pickupviewpanel:{
+    action:{
+      loadAction: '',
+      removeAction: '',
+      updateAction: '',
+      loadDraftAction: '',
+      createAction: '',
+      fetchAction:''
+    }  
+  }
 };

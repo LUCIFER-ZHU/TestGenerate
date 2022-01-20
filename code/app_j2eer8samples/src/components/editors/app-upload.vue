@@ -8,7 +8,7 @@ interface UploadProps {
    * @type {any}
    * @memberof UploadProps
    */
-  value: number;
+  value?: number;
 
   /**
    * 属性项名称
@@ -23,49 +23,49 @@ interface UploadProps {
    *
    * @type {boolean}
    */
-  accept: string;
+  accept?: string;
 
   /**
    * 上传请求的 http 方法
    *
    * @type {boolean}
    */
-  method: string;
+  method?: string;
 
   /**
    * 文件是否多选
    *
    * @type {boolean}
    */
-  multiple: boolean;
+  multiple?: boolean;
 
   /**
    * 是否展示文件列表
    *
    * @type {boolean}
    */
-  showUploadList: boolean;
+  showUploadList?: boolean;
 
   /**
    * 最大文件数
    *
    * @type {boolean}
    */
-  limit: number;
+  limit?: number;
 
   /**
    * 文件列表样式
    *
    * @type {boolean}
    */
-  listType: string;
+  listType?: string;
 
   /**
    * 按钮提示信息
    *
    * @type {boolean}
    */
-  tooltip: string;
+  tooltip?: string;
 
   /**
    * 只读模式

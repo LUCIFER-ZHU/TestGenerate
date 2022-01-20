@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Main"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Main" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="地图示例数据基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -55,8 +53,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.mapdataname.visible" name="mapdataname" :rules="state.rules.mapdataname" :required="state.detailsModel.mapdataname.required" label="名称">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.mapdataname.visible"
+    name="mapdataname"
+    :rules="state.rules.mapdataname"
+    :labelWidth="130"
+    :required="state.detailsModel.mapdataname.required"
+    label="名称"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="mapdataname"
   :disabled="state.detailsModel.mapdataname.disabled"
   :maxLength="200"
@@ -64,6 +70,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.mapdataname"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -72,14 +79,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.mapdatacode.visible" name="mapdatacode" :rules="state.rules.mapdatacode" :required="state.detailsModel.mapdatacode.required" label="编码">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.mapdatacode.visible"
+    name="mapdatacode"
+    :rules="state.rules.mapdatacode"
+    :labelWidth="130"
+    :required="state.detailsModel.mapdatacode.required"
+    label="编码"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="mapdatacode"
   :disabled="state.detailsModel.mapdatacode.disabled"
   type="text"
   :value="state.data.mapdatacode"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -88,14 +104,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.longitude.visible" name="longitude" :rules="state.rules.longitude" :required="state.detailsModel.longitude.required" label="经度">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.longitude.visible"
+    name="longitude"
+    :rules="state.rules.longitude"
+    :labelWidth="130"
+    :required="state.detailsModel.longitude.required"
+    label="经度"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="longitude"
   :disabled="state.detailsModel.longitude.disabled"
   type="text"
   :value="state.data.longitude"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -104,14 +129,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.latitude.visible" name="latitude" :rules="state.rules.latitude" :required="state.detailsModel.latitude.required" label="纬度">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.latitude.visible"
+    name="latitude"
+    :rules="state.rules.latitude"
+    :labelWidth="130"
+    :required="state.detailsModel.latitude.required"
+    label="纬度"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="latitude"
   :disabled="state.detailsModel.latitude.disabled"
   type="text"
   :value="state.data.latitude"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -120,14 +154,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.sortvalue.visible" name="sortvalue" :rules="state.rules.sortvalue" :required="state.detailsModel.sortvalue.required" label="排序值">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.sortvalue.visible"
+    name="sortvalue"
+    :rules="state.rules.sortvalue"
+    :labelWidth="130"
+    :required="state.detailsModel.sortvalue.required"
+    label="排序值"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="sortvalue"
   :disabled="state.detailsModel.sortvalue.disabled"
   type="text"
   :value="state.data.sortvalue"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -136,8 +179,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.grouping.visible" name="grouping" :rules="state.rules.grouping" :required="state.detailsModel.grouping.required" label="分组">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.grouping.visible"
+    name="grouping"
+    :rules="state.rules.grouping"
+    :labelWidth="130"
+    :required="state.detailsModel.grouping.required"
+    label="分组"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="grouping"
   :disabled="state.detailsModel.grouping.disabled"
   :maxLength="100"
@@ -145,6 +196,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.grouping"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -153,9 +205,20 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.type.visible" name="type" :rules="state.rules.type" :required="state.detailsModel.type.required" label="类型">
-<appDropdownList
+  <AppFormItem 
+    v-show="state.detailsModel.type.visible"
+    name="type"
+    :rules="state.rules.type"
+    :labelWidth="130"
+    :required="state.detailsModel.type.required"
+    label="类型"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDropdownList
   name="type"
+  codeListTag="Sample__MapDataType"
+  codeListType="STATIC"
+  
   :disabled="state.detailsModel.type.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
@@ -163,6 +226,7 @@ defineExpose({ state, name: 'form' });
   :data="state.data"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

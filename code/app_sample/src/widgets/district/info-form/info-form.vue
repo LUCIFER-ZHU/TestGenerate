@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Info"
-    class="app-form app-info-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Info" class="app-form app-info-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="区基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="true"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -55,14 +53,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.districtname.visible" name="districtname" :rules="state.rules.districtname" :required="state.detailsModel.districtname.required" label="区名称">
-<appSpan
+  <AppFormItem 
+    v-show="state.detailsModel.districtname.visible"
+    name="districtname"
+    :rules="state.rules.districtname"
+    :labelWidth="130"
+    :required="state.detailsModel.districtname.required"
+    label="区名称"
+    style="">
+      <div class="form-editor-container" style="">
+<AppSpan
   name="districtname"
   :disabled="state.detailsModel.districtname.disabled"
   dataType="25"
   :value="state.data.districtname"
   :context="state.context"
   :viewParams="state.viewParams"/>
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

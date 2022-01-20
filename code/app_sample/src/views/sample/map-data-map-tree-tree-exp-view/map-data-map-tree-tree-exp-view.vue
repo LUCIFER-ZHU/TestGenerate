@@ -4,7 +4,7 @@ import { TreeExpView, IActionParam, IParam, IContext } from '@core';
 import { viewState } from './map-data-map-tree-tree-exp-view-state';
 import { MapTreeTreeExpViewtreeexpbarTreeExpBar } from '@widgets/map-data/map-tree-tree-exp-viewtreeexpbar-tree-exp-bar';
 interface Props {
-  context: IContext;
+  context?: IContext;
   viewParams?: IParam;
   openType?: "ROUTE" | "MODAL" | "EMBED";
   viewSubject?: Subject<IActionParam>;

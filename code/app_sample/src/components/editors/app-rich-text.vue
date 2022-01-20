@@ -30,7 +30,7 @@ interface RichTextProps {
   /**
    * @description 编辑器值
    */
-  value: string;
+  value?: string;
 
   /**
    * @description 表单数据或表格行数据
@@ -50,7 +50,7 @@ interface RichTextProps {
   /**
    * @description 编辑器高度
    */
-  height: number;
+  height?: number;
 
   /**
    * @description 上传参数
@@ -68,7 +68,7 @@ interface RichTextProps {
    * @description 是否禁用
    *
    */
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 interface EditorEmit {

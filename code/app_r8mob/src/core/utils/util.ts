@@ -98,6 +98,16 @@ export function hasFunction(arg: any, fnName: string): boolean{
 }
 
 /**
+ * @description 字符串是否存在并且不为空
+ * @export
+ * @param {(string | undefined | null)} str
+ * @return {*}  {boolean}
+ */
+export function isExistAndNotEmpty(str: string | undefined | null): boolean {
+  return isExist(str) && !isEmpty(str);
+}
+
+/**
  * @description 获取当前数据值类型
  * @export
  * @param {*} obj 当前数据

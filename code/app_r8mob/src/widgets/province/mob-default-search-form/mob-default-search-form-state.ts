@@ -40,6 +40,15 @@ export const ctrlState = {
   selectHistoryItem: {},
   historyItems: [],
   detailsModel: {
+    formpage1: {
+      caption: '测试',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     n_provincename_like: {
       caption: '省份名称(%)',
       name: 'n_provincename_like',

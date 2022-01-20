@@ -65,10 +65,10 @@ export class AppModal {
       let props = { view: view, context: params.context, viewParams: params.viewParams, isFullscreen: params.isFullscreen, subject: subject, options: options };
       let dir = view.fileDir?.replace(/@views/, '');
       //Vite 支持使用特殊的 import.meta.glob 函数从文件系统导入多个模块
-      const modules = import.meta.glob('../../page/*/*/index.ts');
+      const modules = import.meta.glob('../../views/*/*/index.ts');
       const AsyncComp = defineAsyncComponent({
         // 工厂函数
-        loader: modules['../../page' + dir + '/index.ts'],
+        loader: modules['../../views' + dir + '/index.ts'],
         // 加载异步组件时要使用的组件
         loadingComponent: AppLoading,
         // 在显示 loadingComponent 之前的延迟 | 默认值：200（单位 ms）

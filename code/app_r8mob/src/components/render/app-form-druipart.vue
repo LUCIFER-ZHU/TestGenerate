@@ -2,36 +2,34 @@
 import { IActionParam, IParam, RouteUtil } from '@core';
 import { Subject, Subscription } from 'rxjs';
 interface FormDruipartProps {
-  // 关联视图
-  viewName: string;
   // 刷新关系项
-  tempMode: string;
+  tempMode?: string;
   // 禁止加载
-  isForbidLoad: string;
+  isForbidLoad?: boolean;
   // 传入参数项名称
-  paramItem: string;
+  paramItem?: string;
   // 视图上下文
-  context: string;
+  context: any;
   // 视图参数
-  viewParams: boolean;
+  viewParams: any;
   // 应用实体参数名称
-  parentName: number;
+  parentName?: string;
   // 应用实体映射实体名称
-  parentDeName: boolean;
+  parentDeName?: string;
   // 标题
-  title: string;
+  title?: string;
   // 刷新关系项
-  refreshItems: string;
+  refreshItems?: string;
   // 表单数据
-  data: string;
-  // 表单订阅对象
-  formState: Subject<any>;
+  data: any;
+  // 视图订阅对象
+  viewSubject: Subject<any>;
   // 视图路由参数
-  parameters: any[];
+  parameters?: any[];
   // 名称
   name: string;
   // 是否忽略表单项值变化
-  ignoreFieldValueChange: boolean;
+  ignoreFieldValueChange?: boolean;
 }
 interface FormDruipartEmit {
   (name: 'componentEvent', value: IActionParam): void;
@@ -40,7 +38,7 @@ const props = withDefaults(defineProps<FormDruipartProps>(), {});
 
 const emit = defineEmits<FormDruipartEmit>();
 
-let formStateEvent: undefined | Subscription = undefined;
+let viewSubjectEvent: undefined | Subscription = undefined;
 
 const formDruipart: Subject<any> = new Subject<any>();
 
@@ -67,10 +65,10 @@ onBeforeMount(() => {
 });
 // 关系界面初始化
 const druipartInit = () => {
-  if (!props.formState) {
+  if (!props.viewSubject) {
     return;
   }
-  formStateEvent = props.formState.subscribe(($event: any) => {
+  viewSubjectEvent = props.viewSubject.subscribe(($event: any) => {
     // 表单加载完成
     if (Object.is($event.type, 'load')) {
       refreshDRUIPart($event.data);

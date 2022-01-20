@@ -78,7 +78,6 @@ const dropdownList = [
     <a-dropdown>
       <a-avatar size="large" :src="user.avatar" @click.prevent>
         <template #icon><AppIconText iconClass="fa fa-user-o"></AppIconText></template>
-        <DownOutlined />
       </a-avatar>
       <template #overlay>
         <a-menu @click="dropdownClick">

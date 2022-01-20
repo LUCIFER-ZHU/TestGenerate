@@ -4,7 +4,7 @@ import { TreeExpView, IActionParam, IParam, IContext } from '@core';
 import { viewState } from './example-dr-ctrl-tree-exp-view-state';
 import { DRCtrlTreeExpViewtreeexpbarTreeExpBar } from '@widgets/example/dr-ctrl-tree-exp-viewtreeexpbar-tree-exp-bar';
 interface Props {
-  context: IContext;
+  context?: IContext;
   viewParams?: IParam;
   openType?: "ROUTE" | "MODAL" | "EMBED";
   viewSubject?: Subject<IActionParam>;

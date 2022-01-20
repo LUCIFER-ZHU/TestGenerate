@@ -2,22 +2,32 @@ export const viewState = {
   viewCodeName: 'PersonDataPickupView',
   viewName: 'PersonDataPickupView',
   viewCaption: '人员数据',
-  height: '0',
-  width: '0',
-  enableQuickGroup: false,
-  appEntityName: 'PersonData',
-  isLoadDefault: true,
-  keyPSDEField: 'persondata',
-  viewSysCss: '',
   subCaption: '',
+  viewSysCss: '',
+  showCaptionBar: false,
   viewType: 'DEPICKUPVIEW',
   viewStyle: 'DEFAULT',
-  showCaptionBar: false,
   xDataControlName:'',
-  openDataViewName: 'ExampleEditorEditView',
+  height: '0',
+  width: '0',
+  appEntityName: 'PersonData',
+  keyPSDEField: 'persondata',
+  isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
+  enableQuickGroup: false,
+  viewLogics: {
+  },
   toolbar: [
   ],
-    /*未找到模板[PICKUPVIEWPANEL]*/
+  pickupviewpanel:{
+    action:{
+      loadAction: '',
+      removeAction: '',
+      updateAction: '',
+      loadDraftAction: '',
+      createAction: '',
+      fetchAction:''
+    }  
+  }
 };

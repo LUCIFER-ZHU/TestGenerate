@@ -1,4 +1,4 @@
-import { MainControlState } from "@core";
+import { MDControlState } from "@core";
 
 /**
  * @description 树部件通讯对象
@@ -6,6 +6,6 @@ import { MainControlState } from "@core";
  * @interface TreeControlState
  * @extends {MainControlState}
  */
-export interface TreeControlState extends MainControlState {
+export interface TreeControlState extends MDControlState {
 
 }

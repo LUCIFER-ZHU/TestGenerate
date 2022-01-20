@@ -46,6 +46,15 @@ export const ctrlState = {
   selectHistoryItem: {},
   historyItems: [],
   detailsModel: {
+    formpage1: {
+      caption: '常规条件',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     n_orderdate_gtandeq: {
       caption: '订单时间(大于等于(>=))',
       name: 'n_orderdate_gtandeq',

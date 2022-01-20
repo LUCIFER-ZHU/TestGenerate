@@ -152,7 +152,7 @@ export class DeptDataServiceBase extends EntityService {
       */
     public async FetchDefault(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchdefault`);
+      const res = await this.http.post(`${deResPath}/fetchdefault`,data);
       return res;
     }
     /**

@@ -26,7 +26,7 @@ interface CtrlEmit {
 const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onCtrlEvent } = new TreeExpBarControl(ctrlState, props, emit).moduleInstall();
+const { state, onCtrlEvent, xData } = new TreeExpBarControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ state, name: 'treeexpbar' });
@@ -38,6 +38,7 @@ defineExpose({ state, name: 'treeexpbar' });
     >
     <a-layout-sider>
       <MFormTree
+        ref="xData"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"

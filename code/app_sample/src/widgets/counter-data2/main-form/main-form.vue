@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Main"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Main" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="计算器数据2基本信息"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -55,14 +53,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag.visible" name="countertag" :rules="state.rules.countertag" :required="state.detailsModel.countertag.required" label="计数1">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.countertag.visible"
+    name="countertag"
+    :rules="state.rules.countertag"
+    :labelWidth="130"
+    :required="state.detailsModel.countertag.required"
+    label="计数1"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="countertag"
   :disabled="state.detailsModel.countertag.disabled"
   type="text"
   :value="state.data.countertag"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -71,14 +78,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag2.visible" name="countertag2" :rules="state.rules.countertag2" :required="state.detailsModel.countertag2.required" label="计数2">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.countertag2.visible"
+    name="countertag2"
+    :rules="state.rules.countertag2"
+    :labelWidth="130"
+    :required="state.detailsModel.countertag2.required"
+    label="计数2"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="countertag2"
   :disabled="state.detailsModel.countertag2.disabled"
   type="text"
   :value="state.data.countertag2"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -87,14 +103,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag3.visible" name="countertag3" :rules="state.rules.countertag3" :required="state.detailsModel.countertag3.required" label="计数3">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.countertag3.visible"
+    name="countertag3"
+    :rules="state.rules.countertag3"
+    :labelWidth="130"
+    :required="state.detailsModel.countertag3.required"
+    label="计数3"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="countertag3"
   :disabled="state.detailsModel.countertag3.disabled"
   type="text"
   :value="state.data.countertag3"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -103,14 +128,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag4.visible" name="countertag4" :rules="state.rules.countertag4" :required="state.detailsModel.countertag4.required" label="计数4">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.countertag4.visible"
+    name="countertag4"
+    :rules="state.rules.countertag4"
+    :labelWidth="130"
+    :required="state.detailsModel.countertag4.required"
+    label="计数4"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="countertag4"
   :disabled="state.detailsModel.countertag4.disabled"
   type="text"
   :value="state.data.countertag4"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -119,14 +153,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag5.visible" name="countertag5" :rules="state.rules.countertag5" :required="state.detailsModel.countertag5.required" label="计数5">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.countertag5.visible"
+    name="countertag5"
+    :rules="state.rules.countertag5"
+    :labelWidth="130"
+    :required="state.detailsModel.countertag5.required"
+    label="计数5"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="countertag5"
   :disabled="state.detailsModel.countertag5.disabled"
   type="text"
   :value="state.data.countertag5"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -135,14 +178,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag6.visible" name="countertag6" :rules="state.rules.countertag6" :required="state.detailsModel.countertag6.required" label="计数6">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.countertag6.visible"
+    name="countertag6"
+    :rules="state.rules.countertag6"
+    :labelWidth="130"
+    :required="state.detailsModel.countertag6.required"
+    label="计数6"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="countertag6"
   :disabled="state.detailsModel.countertag6.disabled"
   type="text"
   :value="state.data.countertag6"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -151,14 +203,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag7.visible" name="countertag7" :rules="state.rules.countertag7" :required="state.detailsModel.countertag7.required" label="计数7">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.countertag7.visible"
+    name="countertag7"
+    :rules="state.rules.countertag7"
+    :labelWidth="130"
+    :required="state.detailsModel.countertag7.required"
+    label="计数7"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="countertag7"
   :disabled="state.detailsModel.countertag7.disabled"
   type="text"
   :value="state.data.countertag7"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -167,14 +228,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag8.visible" name="countertag8" :rules="state.rules.countertag8" :required="state.detailsModel.countertag8.required" label="计数8">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.countertag8.visible"
+    name="countertag8"
+    :rules="state.rules.countertag8"
+    :labelWidth="130"
+    :required="state.detailsModel.countertag8.required"
+    label="计数8"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="countertag8"
   :disabled="state.detailsModel.countertag8.disabled"
   type="text"
   :value="state.data.countertag8"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -183,14 +253,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.countertag9.visible" name="countertag9" :rules="state.rules.countertag9" :required="state.detailsModel.countertag9.required" label="计数9">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.countertag9.visible"
+    name="countertag9"
+    :rules="state.rules.countertag9"
+    :labelWidth="130"
+    :required="state.detailsModel.countertag9.required"
+    label="计数9"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="countertag9"
   :disabled="state.detailsModel.countertag9.disabled"
   type="text"
   :value="state.data.countertag9"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

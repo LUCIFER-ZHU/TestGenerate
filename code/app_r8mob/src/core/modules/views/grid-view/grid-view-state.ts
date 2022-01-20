@@ -21,4 +21,18 @@ export interface GridViewState extends MDViewState {
    * @memberof GridViewState
    */
   rowEditState: boolean;
+
+  /**
+   * @description 支持快速搜索
+   * @type {boolean}
+   * @memberof GridViewState
+   */
+  enableQuickSearch: boolean;
+
+  /**
+   * @description 默认展开搜索表单 
+   * @type {boolean}
+   * @memberof GridViewState
+   */
+  expandSearchForm: boolean;
 }

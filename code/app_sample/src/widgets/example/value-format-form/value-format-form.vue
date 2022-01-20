@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="ValueFormat"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="ValueFormat" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="分组"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -63,21 +61,30 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="值【1234.1】，使用【#.#\元】进行格式化，预期效果【1234.1元】"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.format1.visible" name="format1" :rules="state.rules.format1" :required="state.detailsModel.format1.required" label="数值编辑器格式化">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.format1.visible"
+    name="format1"
+    :rules="state.rules.format1"
+    :labelWidth="130"
+    :required="state.detailsModel.format1.required"
+    label="数值编辑器格式化"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="format1"
   :disabled="state.detailsModel.format1.disabled"
   type="number"
   :value="state.data.format1"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -94,22 +101,32 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="值【100.14】，使用【¥*-#.##】进行格式化，预期效果【¥----------100.14】"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.format2.visible" name="format2" :rules="state.rules.format2" :required="state.detailsModel.format2.required" label="标签编辑器格式化">
-<appSpan
+  <AppFormItem 
+    v-show="state.detailsModel.format2.visible"
+    name="format2"
+    :rules="state.rules.format2"
+    :labelWidth="130"
+    :required="state.detailsModel.format2.required"
+    label="标签编辑器格式化"
+    style="width: 500.0px;">
+      <div class="form-editor-container" style="">
+<AppSpan
   name="format2"
   :disabled="state.detailsModel.format2.disabled"
   dataType="6"
+  valueFormat="¥*-#.##"
   :precision="4"
   :value="state.data.format2"
   :context="state.context"
   :viewParams="state.viewParams"/>
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -126,21 +143,32 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="标签显示属性代码表原值"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.datatype.visible" name="datatype" :rules="state.rules.datatype" :required="state.detailsModel.datatype.required" label="表单项">
-<appSpan
+  <AppFormItem 
+    v-show="state.detailsModel.datatype.visible"
+    name="datatype"
+    :rules="state.rules.datatype"
+    :labelWidth="130"
+    :required="state.detailsModel.datatype.required"
+    label="表单项"
+    style="">
+      <div class="form-editor-container" style="">
+<AppSpan
   name="datatype"
   :disabled="state.detailsModel.datatype.disabled"
+  codeListTag="Sample__ExampleDataType"
+  codeListType="STATIC"
   dataType="25"
   :value="state.data.datatype"
   :context="state.context"
   :viewParams="state.viewParams"/>
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -157,21 +185,32 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="标签显示属性代码表值文本"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="表单项">
-<appSpan
+  <AppFormItem 
+    v-show="state.detailsModel.formitem.visible"
+    name="formitem"
+    :rules="state.rules.formitem"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem.required"
+    label="表单项"
+    style="">
+      <div class="form-editor-container" style="">
+<AppSpan
   name="formitem"
   :disabled="state.detailsModel.formitem.disabled"
+  codeListTag="Sample__ExampleDataType"
+  codeListType="STATIC"
   dataType="25"
   :value="state.data.formitem"
   :context="state.context"
   :viewParams="state.viewParams"/>
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

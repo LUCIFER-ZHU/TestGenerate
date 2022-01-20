@@ -199,4 +199,6 @@ export const ctrlState = {
       aggMode: "NONE",
     },
   ],
+  // 是否单选
+  isSingleSelect:false,
 };

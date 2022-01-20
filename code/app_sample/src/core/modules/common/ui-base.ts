@@ -63,14 +63,14 @@ export class UIBase {
      * @param {Record<any, any>} props
      */
     public static useContextParams(props: Record<any, any>) {
-        const { contextProp, viewParamsProp } = toRefs(props);
+        const { context, viewParams } = toRefs(props);
 
         // 维护上下文并监控其变化
-        const context: Ref<IContext> = ref({});
+        const _context: Ref<IContext> = ref({});
         watch(
-            contextProp,
+            context,
             (newVal: any, oldVal: any) => {
-                context.value = deepCopy(newVal || {});
+                _context.value = deepCopy(newVal || {});
             },
             {
                 immediate: true,
@@ -79,17 +79,17 @@ export class UIBase {
         );
 
         // 维护视图参数并监控其变化
-        const viewParams: Ref<IParam> = ref({});
+        const _viewParams: Ref<IParam> = ref({});
         watch(
-            viewParamsProp,
+            viewParams,
             (newVal: any, oldVal: any) => {
-                viewParams.value = deepCopy(newVal || {});
+                _viewParams.value = deepCopy(newVal || {});
             },
             {
                 immediate: true,
                 deep: true,
             }
         );
-        return { context, viewParams };
+        return { context: _context, viewParams: _viewParams };
     }
 }

@@ -8,7 +8,7 @@ import { MainGrid } from '@widgets/chart-data/main-grid';
 
 // props声明和默认值处理
 interface Props {
-  context: IContext;
+  context?: IContext;
   viewParams?: IParam;
   openType?: "ROUTE" | "MODAL" | "EMBED";
   viewSubject?: Subject<IActionParam>;
@@ -31,7 +31,7 @@ const { state, confirm, onCtrlEvent } = new PickupGridView(viewState, props, emi
 </script>
 
 <template>
-  <AppPickerUpGridViewLayout :class="['app-pickup-grid-view', state.viewSysCss]">
+  <AppPickUpGridViewLayout :class="['app-pickup-grid-view', state.viewSysCss]">
     <template v-slot:header-left>
       <AppIconText class="app-view__caption" size="large" :text="state.viewCaption" />
     </template>
@@ -42,18 +42,8 @@ const { state, confirm, onCtrlEvent } = new PickupGridView(viewState, props, emi
       :rowActiveMode="state.gridRowActiveMode"
       :showBusyIndicator="true"
       :viewParams="state.viewParams"
-      :controlAction="state.controlsAction.grid"
+      :controlAction="state.grid.action"
       :viewSubject="state.viewSubject"
     ></MainGrid>
-        <MainGrid
-          :context="state.context"
-          :rowEditState="state.rowEditState"
-          :rowActiveMode="state.gridRowActiveMode"
-          :showBusyIndicator="true"
-          :viewParams="state.viewParams"
-          :controlAction="state.controlsAction.grid"
-          :viewSubject="state.viewSubject"
-          @ctrlEvent="onCtrlEvent"
-        ></MainGrid>
-  </AppPickerUpGridViewLayout>
+  </AppPickUpGridViewLayout>
 </template>

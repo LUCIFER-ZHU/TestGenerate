@@ -2,10 +2,10 @@
 import { Subject } from 'rxjs';
 import { PickupView, IActionParam, IParam, IContext } from '@core';
 import { viewState } from './chart-data-usr4-pickup-view-state';
-import { Usr4PickupViewpickupviewpanelPickUpViewPanel } from '@widgets/chart-data/usr4-pickup-viewpickupviewpanel-pickup-view-panel';
+import { Usr4PickupViewpickupviewpanelPickupViewPanel } from '@widgets/chart-data/usr4-pickup-viewpickupviewpanel-pickup-view-panel';
 // props声明和默认值处理
 interface Props {
-  context: IContext;
+  context?: IContext;
   viewParams?: IParam;
   openType?: "ROUTE" | "MODAL" | "EMBED";
   viewSubject?: Subject<IActionParam>;
@@ -24,40 +24,29 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, cancel, confirm,onCtrlEvent } = new PickupView(viewState, props, emit).moduleInstall();
+const { state, onCancel, onConfirm, onCtrlEvent } = new PickupView(viewState, props, emit).moduleInstall();
 </script>
 
 <template>
-    <AppPickerUpViewLayout :class="['app-pickup-view', state.viewSysCss]">
-        <template v-slot:header-left>
+    <AppPickUpViewLayout :class="['app-pickup-view', state.viewSysCss]">
+        <template #caption>
           <AppIconText class="app-view__caption" size="large" :text="state.viewCaption" />
         </template>
-
-            <Usr4PickupViewpickupviewpanelPickUpViewPanel
+            <Usr4PickupViewpickupviewpanelPickupViewPanel
               :context="state.context"
               :rowEditState="state.rowEditState"
               :rowActiveMode="state.gridRowActiveMode"
               :showBusyIndicator="true"
               :viewParams="state.viewParams"
-              :controlAction="state.controlsAction.pickupviewpanel"
+              :controlAction="state.pickupviewpanel.action"
               :viewSubject="state.viewSubject"
-              @ctrlEvent="onCtrlEvent"
-            ></Usr4PickupViewpickupviewpanelPickUpViewPanel>
+              @onCtrlEvent="onCtrlEvent"
+            ></Usr4PickupViewpickupviewpanelPickupViewPanel>
               <template v-slot:footer>
       <a-space class="app-pickup-view--footer">
-        <a-button @click="cancel">取消</a-button>
-        <a-button @click="confirm">确认</a-button>
+        <a-button @click="onConfirm">确认</a-button>
+        <a-button @click="onCancel">取消</a-button>
       </a-space>
     </template>
-    </AppPickerUpViewLayout>
+    </AppPickUpViewLayout>
 </template>
-<style lang="scss">
-.app-pickup-view {
-  position: relative;
-  .app-pickup-view--footer {
-    position: absolute;
-    bottom: 20px;
-    right: 35px;
-  }
-}
-</style>

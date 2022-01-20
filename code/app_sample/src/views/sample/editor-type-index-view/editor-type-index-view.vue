@@ -9,7 +9,7 @@ import {
   MenuFoldOutlined
 } from '@ant-design/icons-vue';
 interface Props {
-  context: IContext;
+  context?: IContext;
   viewParams?: IParam;
   openType?: "ROUTE" | "MODAL" | "EMBED";
   viewSubject?: Subject<IActionParam>;

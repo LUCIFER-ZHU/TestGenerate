@@ -7,8 +7,8 @@ interface Props {
   context: IContext;
   multiple: boolean;
   selectedData: IParam[];
-  selectFirstDefault: boolean;
-  isBranchAvailable: boolean;
+  selectFirstDefault?: boolean;
+  isBranchAvailable?: boolean;
   viewParams?: IParam;
   controlAction: ControlAction;
   showBusyIndicator?: boolean;

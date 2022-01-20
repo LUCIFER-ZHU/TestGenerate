@@ -6,7 +6,7 @@ interface sliderProps {
    * @type {any}
    * @memberof AppSlider
    */
-  value: number;
+  value?: number;
 
   /**
    * 属性项名称

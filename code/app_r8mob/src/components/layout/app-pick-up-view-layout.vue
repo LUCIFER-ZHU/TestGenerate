@@ -22,8 +22,3 @@
     </template>
   </AppViewBaseLayout>
 </template>
-
-<style lang="scss">
-
-
-</style>

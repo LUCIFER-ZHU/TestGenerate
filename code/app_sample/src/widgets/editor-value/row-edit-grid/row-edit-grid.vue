@@ -6,13 +6,13 @@ import { GridControl, IActionParam, IParam, IContext, ControlAction, deepCopy } 
 interface Props {
   context: IContext;
   viewParams: IParam;
-  multiple: boolean;
-  rowEditState: boolean;
-  rowActiveMode: 0 | 1 | 2;
+  multiple?: boolean;
+  rowEditState?: boolean;
+  rowActiveMode?: 0 | 1 | 2;
   selectedData?: IParam[];
-  isSelectDefault?: boolean;
+  selectFirstDefault?: boolean;
   controlAction: ControlAction;
-  showBusyIndicator: boolean;
+  showBusyIndicator?: boolean;
   viewSubject: Subject<IActionParam>;
 }
 
@@ -45,12 +45,12 @@ defineExpose({ state, name: 'grid' });
     bordered
     sticky
     class="app-grid"
-    :rowKey="rowKey"
+    :rowKey="useRowKey"
     :showHeader="true"
-    :scroll="scrollOption"
+    :scroll="useScrollOption"
     :sortDirections="['ascend', 'descend']"
     :data-source="state.items"
-    :row-selection="rowSelectionOption"
+    :row-selection="useRowSelectionOption"
     :columns="state.columnsModel"
     :pagination="state.mdCtrlPaging.pagination"
     :customRow="useCustomRow"
@@ -68,8 +68,11 @@ defineExpose({ state, name: 'grid' });
     <template #bodyCell="{ column, text, record, index }">
 <div v-if="Object.is(column.dataIndex, 'dropdownlist')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDropdownList
+<AppDropdownList
   name="dropdownlist"
+  codeListTag="Sample__OrderState"
+  codeListType="STATIC"
+  
   :context="state.context"
   :viewParams="state.viewParams"
   :value="record.dropdownlist"
@@ -84,8 +87,11 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'mdropdownlist')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDropdownList
+<AppDropdownList
   name="mdropdownlist"
+  codeListTag="Sample__OrderState"
+  codeListType="STATIC"
+  
   :multiple="true"
   :context="state.context"
   :viewParams="state.viewParams"
@@ -101,7 +107,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'switchval')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appSwitch
+<AppSwitch
   name="switchval"
   :value="record.switchval"
   @editorEvent="onEditorEvent($event,index)"
@@ -114,7 +120,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'numberval')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appInput
+<AppInput
   name="numberval"
   type="text"
   :value="record.numberval"
@@ -128,7 +134,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'customername')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDataPicker
+<AppDataPicker
   name="customername"
   :data="state.data"
   valueItem="customerid"
@@ -145,7 +151,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'customername2')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDataPickerView
+<AppDataPickerView
   name="customername2"
   :data="state.data"
   valueItem="customerid2"
@@ -161,7 +167,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'customername3')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDataPicker
+<AppDataPicker
   name="customername3"
   :data="state.data"
   valueItem="customerid3"
@@ -179,7 +185,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'customername4')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDataPicker
+<AppDataPicker
   name="customername4"
   :data="state.data"
   valueItem="customerid4"
@@ -197,7 +203,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'customername5')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDataPicker
+<AppDataPicker
   name="customername5"
   :data="state.data"
   valueItem="customerid5"
@@ -214,7 +220,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'textbox')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appInput
+<AppInput
   name="textbox"
   :maxLength="100"
   type="text"
@@ -229,7 +235,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'datepicker')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDatePicker
+<AppDatePicker
   name="datepicker"
   dateFormat="YYYY-MM-DD HH:mm:ss"
   dateType="dateTime"
@@ -244,7 +250,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'datepickerex_hour')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDatePicker
+<AppDatePicker
   name="datepickerex_hour"
   dateFormat="YYYY-MM-DD HH"
   dateType="dateTime"
@@ -259,7 +265,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'datepickerex_minute')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDatePicker
+<AppDatePicker
   name="datepickerex_minute"
   dateFormat="YYYY-MM-DD HH:mm"
   dateType="dateTime"
@@ -274,7 +280,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'datepickerex_noday')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDatePicker
+<AppDatePicker
   name="datepickerex_noday"
   dateFormat="HH:mm:ss"
   dateType="time"
@@ -289,7 +295,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'datepickerex_noday_nosecond')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDatePicker
+<AppDatePicker
   name="datepickerex_noday_nosecond"
   dateFormat="HH:mm"
   dateType="time"
@@ -304,7 +310,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'datepickerex_notime')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDatePicker
+<AppDatePicker
   name="datepickerex_notime"
   dateFormat="YYYY-MM-DD"
   dateType="date"
@@ -319,7 +325,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'datepickerex_second')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appDatePicker
+<AppDatePicker
   name="datepickerex_second"
   dateFormat="YYYY-MM-DD HH:mm:ss"
   dateType="dateTime"
@@ -334,7 +340,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'stepper')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appStepper
+<AppStepper
   name="stepper"
   :step="1.0"
   :value="record.stepper"
@@ -348,7 +354,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'slider')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appSlider
+<AppSlider
   name="slider"
   :date="state.data"
   :step="1.0"
@@ -363,7 +369,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'ac')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appAutoComplete
+<AppAutoComplete
   name="ac"
   :data="state.data"
   :context="state.context"
@@ -379,7 +385,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'rating')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appRating
+<AppRating
   name="rating"
   :value="record.rating"
   @editorEvent="onEditorEvent($event,index)"
@@ -392,7 +398,7 @@ defineExpose({ state, name: 'grid' });
 </div>
 <div v-if="Object.is(column.dataIndex, 'checkbox')" class="table-cell">
   <div v-if="state.rowEditState" class="editor-cell">
-<appCheckbox
+<AppCheckbox
   name="checkbox"
   :value="record.checkbox"
   @editorEvent="onEditorEvent($event,index)"

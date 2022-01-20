@@ -152,7 +152,7 @@ export class SampleVerServiceBase extends EntityService {
       */
     public async FetchDefault(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchdefault`);
+      const res = await this.http.post(`${deResPath}/fetchdefault`,data);
       return res;
     }
     /**
@@ -165,7 +165,7 @@ export class SampleVerServiceBase extends EntityService {
       */
     public async FetchJAVAR7D(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchjavar7d`);
+      const res = await this.http.post(`${deResPath}/fetchjavar7d`,data);
       return res;
     }
     /**
@@ -178,7 +178,7 @@ export class SampleVerServiceBase extends EntityService {
       */
     public async FetchMOBR7D(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchmobr7d`);
+      const res = await this.http.post(`${deResPath}/fetchmobr7d`,data);
       return res;
     }
     /**
@@ -191,7 +191,7 @@ export class SampleVerServiceBase extends EntityService {
       */
     public async FetchWEBR7D(context: IContext = {}, data: IParam = {}): Promise<any> {
       const deResPath = this.buildDeResPath(context, false);
-      const res = await this.http.post(`${deResPath}/fetchwebr7d`);
+      const res = await this.http.post(`${deResPath}/fetchwebr7d`,data);
       return res;
     }
     /**

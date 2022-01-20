@@ -3,10 +3,12 @@ import { IActionParam } from '@core';
 
 interface FormGroupProps {
   name: string;
-  error?: string;
   label: string;
   required: boolean;
+  labelWidth: number;
   rules?: any;
+  error?: string;
+  titleStyle?: string;
 }
 interface FormGroupEmit {
   (name: 'componentEvent', value: IActionParam): void;
@@ -38,11 +40,13 @@ const initRules = () => {
   <a-form-item
     :name="name"
     :rules="itemRules"
-    :label="label"
     :help="error"
     :required="required"
     :validateStatus="error ? 'error' : 'validating'"
   >
+    <template #label>
+      <label :style="{ width: labelWidth + 'px' }" :class="titleStyle">{{ label }}</label>
+    </template>
     <slot></slot>
   </a-form-item>
 </template>

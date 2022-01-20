@@ -4,7 +4,7 @@ import { TreeExpView, IActionParam, IParam, IContext } from '@core';
 import { viewState } from './calendar-data-calendar-tree-tree-exp-view-state';
 import { CalendarTreeTreeExpViewtreeexpbarTreeExpBar } from '@widgets/calendar-data/calendar-tree-tree-exp-viewtreeexpbar-tree-exp-bar';
 interface Props {
-  context: IContext;
+  context?: IContext;
   viewParams?: IParam;
   openType?: "ROUTE" | "MODAL" | "EMBED";
   viewSubject?: Subject<IActionParam>;

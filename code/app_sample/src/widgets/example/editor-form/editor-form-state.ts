@@ -14,7 +14,7 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
     // 记录没有映射的属性
-    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','formitem','formitem3','formitem1','formitem2','formitem4','formitem22','formitem23','formitem24','formitem7','formitem9','formitem20','formitem47','formitem21','formitem48','formitem5','formitem6','formitem10','formitem8','formitem11','formitem12','formitem52','formitem51','formitem50','formitem49','formitem19','formitem29','formitem15','formitem27','formitem28','formitem14','formitem26','formitem17','formitem33','formitem39','formitem32','formitem40','formitem31','formitem36','formitem30','formitem41','formitem35','formitem42','formitem37','formitem43','formitem38','formitem44','formitem61','formitem62','formitem34','formitem45','formitem16','formitem46','formitem13','formitem57','formitem58','formitem59','formitem60','formitem25','formitem18','formitem55','formitem54','formitem53','formitem56','format8','exampleid'];  
+    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','formitem','formitem3','formitem1','formitem2','formitem22','formitem4','formitem23','formitem24','formitem7','formitem9','formitem20','formitem47','formitem21','formitem48','formitem5','formitem6','formitem10','formitem8','formitem11','formitem12','formitem52','formitem51','formitem50','formitem49','formitem19','formitem29','formitem15','formitem27','formitem28','formitem14','formitem26','formitem17','formitem33','formitem39','formitem32','formitem40','formitem31','formitem36','formitem30','formitem41','formitem35','formitem42','formitem37','formitem43','formitem38','formitem44','formitem61','formitem62','formitem34','formitem45','formitem16','formitem46','formitem13','formitem57','formitem58','formitem59','formitem60','formitem25','formitem18','formitem55','formitem54','formitem53','formitem56','format8','exampleid'];  
   }
 
   // 表单里映射了属性的字段
@@ -175,8 +175,8 @@ export class ControlVO extends ControlVOBase {
   formitem3: any;
   formitem1: any;
   formitem2: any;
-  formitem4: any;
   formitem22: any;
+  formitem4: any;
   formitem23: any;
   formitem24: any;
   formitem7: any;
@@ -230,6 +230,15 @@ export const ctrlState = {
   appDeMajorFieldName: 'ExampleName',
   enableAutoSave: false,
   detailsModel: {
+    formpage1: {
+      caption: '基本信息',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     group1: {
       caption: '基础',
       name: 'group1',
@@ -287,9 +296,9 @@ export const ctrlState = {
       required: false,
       enableCond: 3,
     },
-    formitem4: {
-      caption: '标签',
-      name: 'formitem4',
+    formitem22: {
+      caption: '步进器',
+      name: 'formitem22',
       disabled: false, 
       visible: true,
       detailStyle: 'DEFAULT',
@@ -299,9 +308,9 @@ export const ctrlState = {
       required: false,
       enableCond: 3,
     },
-    formitem22: {
-      caption: '步进器',
-      name: 'formitem22',
+    formitem4: {
+      caption: '标签',
+      name: 'formitem4',
       disabled: false, 
       visible: true,
       detailStyle: 'DEFAULT',

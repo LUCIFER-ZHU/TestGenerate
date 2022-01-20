@@ -88,11 +88,11 @@ interface DataPickerViewProps {
    */
   pickUpData?: string;
 
-  linkOnly: boolean;
+  linkOnly?: boolean;
 
-  isAC: boolean;
+  isAC?: boolean;
 
-  isDropdown: boolean;
+  isDropdown?: boolean;
 }
 interface EditorEmit {
   (name: 'editorEvent', value: IActionParam): void;
@@ -115,8 +115,8 @@ let items: Ref<any[]> = ref([]);
 const initItems = () => {
   if (props.valueItem && props.data) {
     items.value.push({
-      [props.deMajorField]: props.value,
-      [props.deKeyField]: props.data[props.valueItem],
+      [props.deMajorField!]: props.value,
+      [props.deKeyField!]: props.data[props.valueItem],
     });
   }
 };
@@ -185,14 +185,18 @@ const filterOption = (inputValue: string, option: IParam) => {
 };
 
 const onSelect = (value: any) => {
-  const selectItem = items.value.find((item: IParam) => Object.is(item[props.deKeyField], value));
+  const selectItem = items.value.find((item: IParam) => Object.is(item[props.deKeyField!], value));
   emit('editorEvent', {
     tag: props.name,
     action: 'valueChange',
-    data: selectItem[props.deMajorField],
+    data: selectItem[props.deMajorField!],
   });
-  emit('editorEvent', { tag: props.valueItem, action: 'valueChange', data: selectItem[props.deKeyField] });
+  emit('editorEvent', { tag: props.valueItem, action: 'valueChange', data: selectItem[props.deKeyField!] });
   fillPickUpData(selectItem);
+};
+
+const onChange = (date: string, dateString: string) => {
+  // todo
 };
 
 </script>
@@ -211,7 +215,7 @@ const onSelect = (value: any) => {
       :placeholder="placeholder"
     >
       <template #suffixIcon>
-        <select-outlined v-if="linkView" @click="openLinkView" />
+        <SearchOutlined v-if="linkView" @click="openLinkView" />
       </template>
       <template #option="item">
         

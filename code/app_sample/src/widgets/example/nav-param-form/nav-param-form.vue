@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="NavParam"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="NavParam" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="树导航传参"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -55,14 +53,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="静态参数">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.formitem.visible"
+    name="formitem"
+    :rules="state.rules.formitem"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem.required"
+    label="静态参数"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="formitem"
   :disabled="state.detailsModel.formitem.disabled"
   type="text"
   :value="state.data.formitem"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -71,14 +78,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :rules="state.rules.formitem1" :required="state.detailsModel.formitem1.required" label="当前树节点id">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.formitem1.visible"
+    name="formitem1"
+    :rules="state.rules.formitem1"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem1.required"
+    label="当前树节点id"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="formitem1"
   :disabled="state.detailsModel.formitem1.disabled"
   type="text"
   :value="state.data.formitem1"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -87,14 +103,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :rules="state.rules.formitem2" :required="state.detailsModel.formitem2.required" label="当前树节点父id">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.formitem2.visible"
+    name="formitem2"
+    :rules="state.rules.formitem2"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem2.required"
+    label="当前树节点父id"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="formitem2"
   :disabled="state.detailsModel.formitem2.disabled"
   type="text"
   :value="state.data.formitem2"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

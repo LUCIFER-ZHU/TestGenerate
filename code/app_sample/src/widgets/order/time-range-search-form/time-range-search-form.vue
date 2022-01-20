@@ -44,8 +44,16 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_orderdate_gtandeq.visible" name="n_orderdate_gtandeq" :rules="state.rules.n_orderdate_gtandeq" :required="state.detailsModel.n_orderdate_gtandeq.required" label="订单时间(大于等于(>=))">
-<appDatePicker
+  <AppFormItem 
+    v-show="state.detailsModel.n_orderdate_gtandeq.visible"
+    name="n_orderdate_gtandeq"
+    :rules="state.rules.n_orderdate_gtandeq"
+    :labelWidth="130"
+    :required="state.detailsModel.n_orderdate_gtandeq.required"
+    label="订单时间(大于等于(>=))"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDatePicker
   name="n_orderdate_gtandeq"
   :disabled="state.detailsModel.n_orderdate_gtandeq.disabled"
   dateFormat="YYYY-MM-DD"
@@ -53,6 +61,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :value="state.data.n_orderdate_gtandeq"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -61,8 +70,16 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 12, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_orderdate_ltandeq.visible" name="n_orderdate_ltandeq" :rules="state.rules.n_orderdate_ltandeq" :required="state.detailsModel.n_orderdate_ltandeq.required" label="订单时间(小于等于(<=))">
-<appDatePicker
+  <AppFormItem 
+    v-show="state.detailsModel.n_orderdate_ltandeq.visible"
+    name="n_orderdate_ltandeq"
+    :rules="state.rules.n_orderdate_ltandeq"
+    :labelWidth="130"
+    :required="state.detailsModel.n_orderdate_ltandeq.required"
+    label="订单时间(小于等于(<=))"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDatePicker
   name="n_orderdate_ltandeq"
   :disabled="state.detailsModel.n_orderdate_ltandeq.disabled"
   dateFormat="YYYY-MM-DD"
@@ -70,6 +87,7 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :value="state.data.n_orderdate_ltandeq"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
       </a-row>

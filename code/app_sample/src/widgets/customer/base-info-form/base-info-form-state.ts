@@ -183,6 +183,15 @@ export const ctrlState = {
   appDeMajorFieldName: 'CustomerName',
   enableAutoSave: true,
   detailsModel: {
+    formpage1: {
+      caption: '基本信息',
+      name: 'formpage1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMPAGE',
+      showCaption: false,
+    },
     group1: {
       caption: '客户基本信息',
       name: 'group1',

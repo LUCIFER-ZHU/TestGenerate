@@ -6,7 +6,7 @@ interface RatingProps {
    * @type {any}
    * @memberof AppRating
    */
-  value: number;
+  value?: number;
 
   /**
    * 数据名称
@@ -41,14 +41,14 @@ interface RatingProps {
    * @type {*}
    * @memberof AppRating
    */
-  max: number;
+  max?: number;
 
   /**
    * 是否半星
    * @type {boolean}
    * @memberof AppRating
    */
-  allowHalf: boolean;
+  allowHalf?: boolean;
 }
 
 interface EditorEmit {

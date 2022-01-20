@@ -29,9 +29,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Layout"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Layout" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -42,7 +40,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="栅格布局"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -59,7 +57,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel1.visible" 
     name="grouppanel1" 
     title="分组面板"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -80,7 +78,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="1"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 1, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -95,7 +93,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="1"/>
-  </a-col>
+</a-col>
     </a-row>
   </AppFormGroup>
 </a-col>
@@ -109,7 +107,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel2.visible" 
     name="grouppanel2" 
     title="分组面板"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -130,7 +128,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="4"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 4, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -145,7 +143,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="4"/>
-  </a-col>
+</a-col>
     </a-row>
   </AppFormGroup>
 </a-col>
@@ -159,7 +157,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel3.visible" 
     name="grouppanel3" 
     title="分组面板"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -180,7 +178,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="8"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 8, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -195,7 +193,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="8"/>
-  </a-col>
+</a-col>
     </a-row>
   </AppFormGroup>
 </a-col>
@@ -209,7 +207,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel4.visible" 
     name="grouppanel4" 
     title="分组面板"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -230,7 +228,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="12"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 12, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -245,7 +243,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="12"/>
-  </a-col>
+</a-col>
     </a-row>
   </AppFormGroup>
 </a-col>
@@ -259,7 +257,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel5.visible" 
     name="grouppanel5" 
     title="分组面板"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -280,7 +278,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="24"/>
-  </a-col>
+</a-col>
     </a-row>
   </AppFormGroup>
 </a-col>
@@ -294,7 +292,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel6.visible" 
     name="grouppanel6" 
     title="偏移"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -315,7 +313,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="4（偏移1）"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 12, offset: 7 }"
   :md="{span: 24, offset: 0 }"
@@ -330,7 +328,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="12（偏移7）"/>
-  </a-col>
+</a-col>
     </a-row>
   </AppFormGroup>
 </a-col>
@@ -344,7 +342,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel8.visible" 
     name="grouppanel8" 
     title="定高宽"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -365,7 +363,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="12（100*100）"/>
-  </a-col>
+</a-col>
     </a-row>
   </AppFormGroup>
 </a-col>
@@ -382,7 +380,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel7.visible" 
     name="grouppanel7" 
     title="Flex布局"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -399,7 +397,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel10.visible" 
     name="grouppanel10" 
     title="Flex从上到下"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -416,7 +414,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -427,7 +425,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -438,7 +436,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -452,7 +450,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel12.visible" 
     name="grouppanel12" 
     title="Flex从下到上"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -469,7 +467,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -480,7 +478,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -491,7 +489,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -505,7 +503,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel13.visible" 
     name="grouppanel13" 
     title="Flex水平向左"
-    titleStyle=""
+    style="height: 200.0px"
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -522,7 +520,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -533,7 +531,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -544,7 +542,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -558,7 +556,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel14.visible" 
     name="grouppanel14" 
     title="Flex水平向右"
-    titleStyle=""
+    style="height: 200.0px"
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -575,7 +573,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -586,7 +584,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -597,7 +595,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -611,7 +609,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel15.visible" 
     name="grouppanel15" 
     title="Flex水平居中"
-    titleStyle=""
+    style="height: 200.0px"
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -628,7 +626,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -639,7 +637,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -650,7 +648,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -664,7 +662,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel16.visible" 
     name="grouppanel16" 
     title="Flex水平两端对齐"
-    titleStyle=""
+    style="height: 200.0px"
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -681,7 +679,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -692,7 +690,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -703,7 +701,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -717,7 +715,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel17.visible" 
     name="grouppanel17" 
     title="Flex水平间隔相同"
-    titleStyle=""
+    style="height: 200.0px"
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -734,7 +732,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -745,7 +743,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -756,7 +754,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -770,7 +768,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel19.visible" 
     name="grouppanel19" 
     title="Flex垂直上对齐"
-    titleStyle=""
+    style="height: 200.0px"
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -787,7 +785,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 40.0px;width: 100.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -798,7 +796,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 70.0px;width: 100.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -809,7 +807,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -823,7 +821,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel20.visible" 
     name="grouppanel20" 
     title="Flex垂直下对齐"
-    titleStyle=""
+    style="height: 200.0px"
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -840,7 +838,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 40.0px;width: 100.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -851,7 +849,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 70.0px;width: 100.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -862,7 +860,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -876,7 +874,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel21.visible" 
     name="grouppanel21" 
     title="Flex垂直居中"
-    titleStyle=""
+    style="height: 200.0px"
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -893,7 +891,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 40.0px;width: 100.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -904,7 +902,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 70.0px;width: 100.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -915,7 +913,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -929,7 +927,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel22.visible" 
     name="grouppanel22" 
     title="Flex垂直基线对齐"
-    titleStyle=""
+    style="height: 200.0px"
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -946,7 +944,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 40.0px;width: 100.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -957,7 +955,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 70.0px;width: 100.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -968,7 +966,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: 100.0px;width: 100.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -982,7 +980,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel23.visible" 
     name="grouppanel23" 
     title="Flex垂直占满"
-    titleStyle=""
+    style="height: 200.0px"
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -999,7 +997,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: 100.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -1010,7 +1008,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: 100.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -1021,7 +1019,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: 100.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -1035,7 +1033,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel24.visible" 
     name="grouppanel24" 
     title="Flex自适应"
-    titleStyle=""
+    style="height: 200.0px"
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -1052,7 +1050,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="A"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -1063,7 +1061,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="B"/>
-  </a-col>
+</a-col>
 <a-col
  >
   <AppRaw 
@@ -1074,7 +1072,7 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="C"/>
-  </a-col>
+</a-col>
     </div>
   </AppFormGroup>
 </a-col>
@@ -1091,7 +1089,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel11.visible" 
     name="grouppanel11" 
     title="分组面板"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="false"
@@ -1111,7 +1109,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel9.visible" 
     name="grouppanel9" 
     title="表单项标签布局"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -1124,14 +1122,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="上方标签">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.formitem.visible"
+    name="formitem"
+    :rules="state.rules.formitem"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem.required"
+    label="上方标签"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="formitem"
   :disabled="state.detailsModel.formitem.disabled"
   type="text"
   :value="state.data.formitem"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -1140,14 +1147,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem1.visible" name="formitem1" :rules="state.rules.formitem1" :required="state.detailsModel.formitem1.required" label="左侧标签">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.formitem1.visible"
+    name="formitem1"
+    :rules="state.rules.formitem1"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem1.required"
+    label="左侧标签"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="formitem1"
   :disabled="state.detailsModel.formitem1.disabled"
   type="text"
   :value="state.data.formitem1"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -1156,14 +1172,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem2.visible" name="formitem2" :rules="state.rules.formitem2" :required="state.detailsModel.formitem2.required" label="左侧标签（宽200）">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.formitem2.visible"
+    name="formitem2"
+    :rules="state.rules.formitem2"
+    :labelWidth="200"
+    :required="state.detailsModel.formitem2.required"
+    label="左侧标签（宽200）"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="formitem2"
   :disabled="state.detailsModel.formitem2.disabled"
   type="text"
   :value="state.data.formitem2"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -1172,14 +1197,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem4.visible" name="formitem4" :rules="state.rules.formitem4" :required="state.detailsModel.formitem4.required" label="右侧标签">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.formitem4.visible"
+    name="formitem4"
+    :rules="state.rules.formitem4"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem4.required"
+    label="右侧标签"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="formitem4"
   :disabled="state.detailsModel.formitem4.disabled"
   type="text"
   :value="state.data.formitem4"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -1188,14 +1222,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem5.visible" name="formitem5" :rules="state.rules.formitem5" :required="state.detailsModel.formitem5.required" label="下方标签">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.formitem5.visible"
+    name="formitem5"
+    :rules="state.rules.formitem5"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem5.required"
+    label="下方标签"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="formitem5"
   :disabled="state.detailsModel.formitem5.disabled"
   type="text"
   :value="state.data.formitem5"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -1212,21 +1255,30 @@ defineExpose({ state, name: 'form' });
     contentType="RAW"
     style="height: -1.0px;width: -1.0px"
     value="无标签"/>
-  </a-col>
+</a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem3.visible" name="formitem3" :rules="state.rules.formitem3" :required="state.detailsModel.formitem3.required" label="">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.formitem3.visible"
+    name="formitem3"
+    :rules="state.rules.formitem3"
+    :labelWidth="0"
+    :required="state.detailsModel.formitem3.required"
+    label=""
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="formitem3"
   :disabled="state.detailsModel.formitem3.disabled"
   type="text"
   :value="state.data.formitem3"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>
@@ -1242,7 +1294,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel18.visible" 
     name="grouppanel18" 
     title="表单项编辑器布局"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -1255,14 +1307,23 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem6.visible" name="formitem6" :rules="state.rules.formitem6" :required="state.detailsModel.formitem6.required" label="表单项">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.formitem6.visible"
+    name="formitem6"
+    :rules="state.rules.formitem6"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem6.required"
+    label="表单项"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="formitem6"
   :disabled="state.detailsModel.formitem6.disabled"
   type="text"
   :value="state.data.formitem6"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -1271,8 +1332,16 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem7.visible" name="formitem7" :rules="state.rules.formitem7" :required="state.detailsModel.formitem7.required" label="表单项">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.formitem7.visible"
+    name="formitem7"
+    :rules="state.rules.formitem7"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem7.required"
+    label="表单项"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="formitem7"
   :disabled="state.detailsModel.formitem7.disabled"
   :showMaxLength="true"
@@ -1280,6 +1349,7 @@ defineExpose({ state, name: 'form' });
   :value="state.data.formitem7"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

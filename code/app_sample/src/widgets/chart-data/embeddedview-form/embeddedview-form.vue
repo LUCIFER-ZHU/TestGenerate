@@ -37,9 +37,7 @@ const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, pr
 defineExpose({ state, name: 'form' });
 </script>
 <template>
-  <a-form name="Embeddedview"
-    class="app-form"
-    style="" :model="state.data" :rules="state.rules">
+  <a-form name="Embeddedview" class="app-form" style="" :model="state.data" :rules="state.rules">
 <a-col
   :lg="{span: 24, offset: 0 }"
   :md="{span: 24, offset: 0 }"
@@ -50,7 +48,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel2.visible" 
     name="grouppanel2" 
     title="看板"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -63,7 +61,17 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormDruipart v-show="state.detailsModel.druipart5.visible" name="druipart5" title="看板视图" v-slot="druipartParams">
+  <AppFormDruipart 
+    v-show="state.detailsModel.druipart5.visible" 
+    
+    style="height: 300.0px"
+    name="druipart5" 
+    title="看板视图" 
+    :context="context"
+    :viewParams="viewParams"
+    :data="state.data"
+    :viewSubject="state.viewSubject"
+    v-slot="druipartParams">
     <ChartDataKanbanView
       :class="['app-view-layout--from-druipart']"
       :context="druipartParams.context"
@@ -88,7 +96,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel1.visible" 
     name="grouppanel1" 
     title="树"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -101,7 +109,17 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormDruipart v-show="state.detailsModel.druipart3.visible" name="druipart3" title="树视图" v-slot="druipartParams">
+  <AppFormDruipart 
+    v-show="state.detailsModel.druipart3.visible" 
+    
+    style="height: 200.0px"
+    name="druipart3" 
+    title="树视图" 
+    :context="context"
+    :viewParams="viewParams"
+    :data="state.data"
+    :viewSubject="state.viewSubject"
+    v-slot="druipartParams">
     <ChartDataTreeView
       :class="['app-view-layout--from-druipart']"
       :context="druipartParams.context"
@@ -119,7 +137,17 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormDruipart v-show="state.detailsModel.druipart4.visible" name="druipart4" title="树导航视图" v-slot="druipartParams">
+  <AppFormDruipart 
+    v-show="state.detailsModel.druipart4.visible" 
+    
+    style="height: 400.0px"
+    name="druipart4" 
+    title="树导航视图" 
+    :context="context"
+    :viewParams="viewParams"
+    :data="state.data"
+    :viewSubject="state.viewSubject"
+    v-slot="druipartParams">
     <ChartDataTreeExpForChartView
       :class="['app-view-layout--from-druipart']"
       :context="druipartParams.context"
@@ -144,7 +172,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.group1.visible" 
     name="group1" 
     title="列表"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -157,7 +185,17 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormDruipart v-show="state.detailsModel.druipart1.visible" name="druipart1" title="列表视图" v-slot="druipartParams">
+  <AppFormDruipart 
+    v-show="state.detailsModel.druipart1.visible" 
+    
+    style="height: 300.0px"
+    name="druipart1" 
+    title="列表视图" 
+    :context="context"
+    :viewParams="viewParams"
+    :data="state.data"
+    :viewSubject="state.viewSubject"
+    v-slot="druipartParams">
     <ChartDataUsr3ListView
       :class="['app-view-layout--from-druipart']"
       :context="druipartParams.context"
@@ -175,7 +213,17 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormDruipart v-show="state.detailsModel.druipart2.visible" name="druipart2" title="列表导航视图" v-slot="druipartParams">
+  <AppFormDruipart 
+    v-show="state.detailsModel.druipart2.visible" 
+    
+    style="height: 400.0px"
+    name="druipart2" 
+    title="列表导航视图" 
+    :context="context"
+    :viewParams="viewParams"
+    :data="state.data"
+    :viewSubject="state.viewSubject"
+    v-slot="druipartParams">
     <ChartDataListExpView
       :class="['app-view-layout--from-druipart']"
       :context="druipartParams.context"
@@ -200,7 +248,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel3.visible" 
     name="grouppanel3" 
     title="数据视图"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -213,7 +261,17 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormDruipart v-show="state.detailsModel.druipart6.visible" name="druipart6" title="数据视图" v-slot="druipartParams">
+  <AppFormDruipart 
+    v-show="state.detailsModel.druipart6.visible" 
+    
+    style="height: 400.0px"
+    name="druipart6" 
+    title="数据视图" 
+    :context="context"
+    :viewParams="viewParams"
+    :data="state.data"
+    :viewSubject="state.viewSubject"
+    v-slot="druipartParams">
     <ChartDataDataView
       :class="['app-view-layout--from-druipart']"
       :context="druipartParams.context"
@@ -231,7 +289,17 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormDruipart v-show="state.detailsModel.druipart7.visible" name="druipart7" title="卡片导航" v-slot="druipartParams">
+  <AppFormDruipart 
+    v-show="state.detailsModel.druipart7.visible" 
+    
+    style="height: 400.0px"
+    name="druipart7" 
+    title="卡片导航" 
+    :context="context"
+    :viewParams="viewParams"
+    :data="state.data"
+    :viewSubject="state.viewSubject"
+    v-slot="druipartParams">
     <ChartDataDataViewExpView
       :class="['app-view-layout--from-druipart']"
       :context="druipartParams.context"
@@ -256,7 +324,7 @@ defineExpose({ state, name: 'form' });
     v-show="state.detailsModel.grouppanel4.visible" 
     name="grouppanel4" 
     title="树表格"
-    titleStyle=""
+    style=""
     :infoGroupMode="false"
     :titleBarCloseMode="0"
     :showCaption="true"
@@ -269,7 +337,17 @@ defineExpose({ state, name: 'form' });
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormDruipart v-show="state.detailsModel.druipart8.visible" name="druipart8" title="树表格" v-slot="druipartParams">
+  <AppFormDruipart 
+    v-show="state.detailsModel.druipart8.visible" 
+    
+    style="height: 400.0px"
+    name="druipart8" 
+    title="树表格" 
+    :context="context"
+    :viewParams="viewParams"
+    :data="state.data"
+    :viewSubject="state.viewSubject"
+    v-slot="druipartParams">
     <ChartDataTreeGridExView
       :class="['app-view-layout--from-druipart']"
       :context="druipartParams.context"

@@ -44,8 +44,17 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_provincename_like.visible" name="n_provincename_like" :rules="state.rules.n_provincename_like" :required="state.detailsModel.n_provincename_like.required" label="省份名称(%)">
-    /*未找到模板[MOBTEXT]*/  </AppFormItem>
+  <AppFormItem 
+    v-show="state.detailsModel.n_provincename_like.visible"
+    name="n_provincename_like"
+    :rules="state.rules.n_provincename_like"
+    :labelWidth="130"
+    :required="state.detailsModel.n_provincename_like.required"
+    label="省份名称(%)"
+    style="">
+      <div class="form-editor-container" style="">
+      /*未找到模板[MOBTEXT]*/      </div>
+  </AppFormItem>
 </a-col>
 <a-col
   :lg="{span: 24, offset: 0 }"
@@ -53,8 +62,17 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.formitem.visible" name="formitem" :rules="state.rules.formitem" :required="state.detailsModel.formitem.required" label="">
-    /*未找到模板[MOBTEXT]*/  </AppFormItem>
+  <AppFormItem 
+    v-show="state.detailsModel.formitem.visible"
+    name="formitem"
+    :rules="state.rules.formitem"
+    :labelWidth="130"
+    :required="state.detailsModel.formitem.required"
+    label=""
+    style="">
+      <div class="form-editor-container" style="">
+      /*未找到模板[MOBTEXT]*/      </div>
+  </AppFormItem>
 </a-col>
       </a-row>
       </a-col>

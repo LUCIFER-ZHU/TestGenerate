@@ -42,14 +42,23 @@ const { state, onEditorEvent } = new QuickSearchFormControl(ctrlState, props, em
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_chartdataname_like.visible" name="n_chartdataname_like" :rules="state.rules.n_chartdataname_like" :required="state.detailsModel.n_chartdataname_like.required" label="图表名称(%)">
-<appInput
+  <AppFormItem 
+    v-show="state.detailsModel.n_chartdataname_like.visible"
+    name="n_chartdataname_like"
+    :rules="state.rules.n_chartdataname_like"
+    :labelWidth="130"
+    :required="state.detailsModel.n_chartdataname_like.required"
+    label="图表名称(%)"
+    style="">
+      <div class="form-editor-container" style="">
+<AppInput
   name="n_chartdataname_like"
   :disabled="state.detailsModel.n_chartdataname_like.disabled"
   type="text"
   :value="state.data.n_chartdataname_like"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
 <a-col
@@ -58,9 +67,20 @@ const { state, onEditorEvent } = new QuickSearchFormControl(ctrlState, props, em
   :sm="{span: 24, offset: 0 }"
   :xs="{span: 24, offset: 0 }"
  >
-  <AppFormItem v-show="state.detailsModel.n_datatype_eq.visible" name="n_datatype_eq" :rules="state.rules.n_datatype_eq" :required="state.detailsModel.n_datatype_eq.required" label="数据分类(等于(=))">
-<appDropdownList
+  <AppFormItem 
+    v-show="state.detailsModel.n_datatype_eq.visible"
+    name="n_datatype_eq"
+    :rules="state.rules.n_datatype_eq"
+    :labelWidth="130"
+    :required="state.detailsModel.n_datatype_eq.required"
+    label="数据分类(等于(=))"
+    style="">
+      <div class="form-editor-container" style="">
+<AppDropdownList
   name="n_datatype_eq"
+  codeListTag="Sample__DataType"
+  codeListType="STATIC"
+  
   :disabled="state.detailsModel.n_datatype_eq.disabled"
   :context="state.context"
   :viewParams="state.viewParams"
@@ -68,6 +88,7 @@ const { state, onEditorEvent } = new QuickSearchFormControl(ctrlState, props, em
   :data="state.data"
   @editorEvent="onEditorEvent"
 /> 
+      </div>
   </AppFormItem>
 </a-col>
     </a-row>

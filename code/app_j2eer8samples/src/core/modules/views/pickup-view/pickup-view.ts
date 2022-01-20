@@ -37,15 +37,15 @@ export class PickupView extends MainView {
    * @description 取消
    * @memberof PickupView
    */
-  public cancel() {
-    //todo
+  public onCancel() {
+    this.emit('close', []);
   }
 
   /**
    * @description 确认
    * @memberof PickupView
    */
-  public confirm() {
+  public onConfirm() {
     this.emit('viewEvent', { data: this.selectData, tag: '', action: 'close' })
   }
 
@@ -74,8 +74,8 @@ export class PickupView extends MainView {
     return {
       ...superParams,
       selectData: this.selectData,
-      cancel: this.cancel.bind(this),
-      confirm: this.confirm.bind(this)
+      onCancel: this.onCancel.bind(this),
+      onConfirm: this.onConfirm.bind(this)
     };
   }
 }

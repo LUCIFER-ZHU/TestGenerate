@@ -14,28 +14,17 @@ const routes = [
     },
     component: () => import("@views//"),
     children: [
-            // 临时提交首页视图路由 begin
-            {
-              path: "examples/:example?/views/viewtypeindexview",
-              meta: {
-                  tag:'ViewTypeIndexView'
-              },
-              component: () => import("@views/sample/view-type-index-view"),
-            },
-            {
-              path: "examples/:example?/views/ctrltypeindexview",
-              meta: {
-                  tag:'CtrlTypeIndexView'
-              },
-              component: () => import("@views/sample/ctrl-type-index-view"),
-            },
-            // 临时提交首页视图路由 end
     ]
   },
   {
     path: "/",
     redirect: "/apps/j2eer8samples"
   },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import("@components/common/login.vue")
+  }
 ]
 const router = createRouter({
   history: createWebHashHistory(),
