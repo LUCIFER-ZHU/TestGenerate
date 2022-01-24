@@ -238,23 +238,11 @@ public class LogicValidData2 extends EntityMP implements Serializable
 
 
 
-
-
-    @Override
-    public Serializable getDefaultKey(boolean gen) {
-        Assert.notNull(getRegion(),"未设置区域");    
-        Assert.notNull(getCode(),"未设置标识");    
-        String key = String.format("%s||%s"
-            ,getRegion(),getCode());
-        key = DigestUtils.md5DigestAsHex(key.getBytes());    
-        return key;
-    }
-
-
+    
     @Override
     public Serializable getDefaultKey(boolean gen) { 
         return IdWorker.getId();
-    }   
+    }
 
     /**
      * 复制当前对象数据到目标对象(粘贴重置)

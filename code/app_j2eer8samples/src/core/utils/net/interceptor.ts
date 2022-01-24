@@ -97,7 +97,7 @@ export class Interceptors {
                 res.data.entityName = res.headers['x-ibz-params'];
             }
             if (res.status === 401) {
-                this.doNoLogin(res, _data.data);
+                App.gotoLoginPage();
             }
             if (res.status === 403) {
                 if (res.data && res.data.status && Object.is(res.data.status, "FORBIDDEN")) {
@@ -112,17 +112,6 @@ export class Interceptors {
             // }
             return Promise.reject(res);
         });
-    }
-
-    /**
-     * 处理未登录异常情况
-     *
-     * @private
-     * @param {*} [data={}]
-     * @memberof Interceptors
-     */
-    private doNoLogin(response: any, data: any = {}): void {
-        // todo
     }
 
 

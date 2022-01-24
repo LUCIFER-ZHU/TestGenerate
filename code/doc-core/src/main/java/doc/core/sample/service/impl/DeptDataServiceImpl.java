@@ -182,10 +182,10 @@ public class DeptDataServiceImpl extends ServiceImpl<DeptDataMapper,DeptData> im
 
     public Page<DeptData> searchDefault(DeptDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<DeptData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<DeptData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<DeptData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),DeptData.class), context.getPageable(), pages.getTotal());
     }
     public List<DeptData> listDefault(DeptDataSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),DeptData.class);
     }
 
     public List<DeptData> selectByOrgDataId(String orgDataId) {

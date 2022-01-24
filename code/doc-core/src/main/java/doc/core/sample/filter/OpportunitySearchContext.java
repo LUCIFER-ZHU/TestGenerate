@@ -46,7 +46,8 @@ public class OpportunitySearchContext extends QueryWrapperContext<Opportunity> {
             this.getSearchCond().eq("opportunityid", opportunityIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_opportunityname_like")
     @JSONField(name = "n_opportunityname_like")
     @ApiModelProperty("商机名称LIKE")
@@ -57,7 +58,8 @@ public class OpportunitySearchContext extends QueryWrapperContext<Opportunity> {
             this.getSearchCond().like("opportunityname", opportunityNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customerid_eq")
     @JSONField(name = "n_customerid_eq")
     @ApiModelProperty("客户标识EQ")
@@ -68,7 +70,8 @@ public class OpportunitySearchContext extends QueryWrapperContext<Opportunity> {
             this.getSearchCond().eq("customerid", customerIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_eq")
     @JSONField(name = "n_customername_eq")
     @ApiModelProperty("客户名称EQ")
@@ -79,7 +82,8 @@ public class OpportunitySearchContext extends QueryWrapperContext<Opportunity> {
             this.getSearchCond().eq("customername", customerNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_like")
     @JSONField(name = "n_customername_like")
     @ApiModelProperty("客户名称LIKE")
@@ -90,7 +94,8 @@ public class OpportunitySearchContext extends QueryWrapperContext<Opportunity> {
             this.getSearchCond().like("customername", customerNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_priority_eq")
     @JSONField(name = "n_priority_eq")
     @ApiModelProperty("优先级EQ")
@@ -101,7 +106,8 @@ public class OpportunitySearchContext extends QueryWrapperContext<Opportunity> {
             this.getSearchCond().eq("priority", priorityEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_persondataid_eq")
     @JSONField(name = "n_persondataid_eq")
     @ApiModelProperty("销售员标识EQ")
@@ -112,7 +118,8 @@ public class OpportunitySearchContext extends QueryWrapperContext<Opportunity> {
             this.getSearchCond().eq("persondataid", personDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_persondataname_eq")
     @JSONField(name = "n_persondataname_eq")
     @ApiModelProperty("销售员EQ")
@@ -123,7 +130,8 @@ public class OpportunitySearchContext extends QueryWrapperContext<Opportunity> {
             this.getSearchCond().eq("persondataname", personDataNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_persondataname_like")
     @JSONField(name = "n_persondataname_like")
     @ApiModelProperty("销售员LIKE")
@@ -134,7 +142,8 @@ public class OpportunitySearchContext extends QueryWrapperContext<Opportunity> {
             this.getSearchCond().like("persondataname", personDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_state_eq")
     @JSONField(name = "n_state_eq")
     @ApiModelProperty("商机状态EQ")
@@ -145,7 +154,8 @@ public class OpportunitySearchContext extends QueryWrapperContext<Opportunity> {
             this.getSearchCond().eq("state", stateEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

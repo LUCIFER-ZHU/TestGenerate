@@ -46,7 +46,8 @@ public class ExampleSearchContext extends QueryWrapperContext<Example> {
             this.getSearchCond().eq("exampleid", exampleIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_examplename_like")
     @JSONField(name = "n_examplename_like")
     @ApiModelProperty("名称LIKE")
@@ -57,7 +58,8 @@ public class ExampleSearchContext extends QueryWrapperContext<Example> {
             this.getSearchCond().like("examplename", exampleNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_datatype_eq")
     @JSONField(name = "n_datatype_eq")
     @ApiModelProperty("数据分类EQ")
@@ -68,7 +70,8 @@ public class ExampleSearchContext extends QueryWrapperContext<Example> {
             this.getSearchCond().eq("datatype", dataTypeEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_cityid_eq")
     @JSONField(name = "n_cityid_eq")
     @ApiModelProperty("市标识EQ")
@@ -79,7 +82,8 @@ public class ExampleSearchContext extends QueryWrapperContext<Example> {
             this.getSearchCond().eq("cityid", cityIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_cityname_eq")
     @JSONField(name = "n_cityname_eq")
     @ApiModelProperty("市EQ")
@@ -90,7 +94,8 @@ public class ExampleSearchContext extends QueryWrapperContext<Example> {
             this.getSearchCond().eq("cityname", cityNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_cityname_like")
     @JSONField(name = "n_cityname_like")
     @ApiModelProperty("市LIKE")
@@ -101,7 +106,8 @@ public class ExampleSearchContext extends QueryWrapperContext<Example> {
             this.getSearchCond().like("cityname", cityNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_provinceid_eq")
     @JSONField(name = "n_provinceid_eq")
     @ApiModelProperty("省份标识EQ")
@@ -112,7 +118,8 @@ public class ExampleSearchContext extends QueryWrapperContext<Example> {
             this.getSearchCond().eq("provinceid", provinceIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_provincename_eq")
     @JSONField(name = "n_provincename_eq")
     @ApiModelProperty("省份EQ")
@@ -123,7 +130,8 @@ public class ExampleSearchContext extends QueryWrapperContext<Example> {
             this.getSearchCond().eq("provincename", provinceNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_provincename_like")
     @JSONField(name = "n_provincename_like")
     @ApiModelProperty("省份LIKE")
@@ -134,7 +142,8 @@ public class ExampleSearchContext extends QueryWrapperContext<Example> {
             this.getSearchCond().like("provincename", provinceNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_districtid_eq")
     @JSONField(name = "n_districtid_eq")
     @ApiModelProperty("区标识EQ")
@@ -145,7 +154,8 @@ public class ExampleSearchContext extends QueryWrapperContext<Example> {
             this.getSearchCond().eq("districtid", districtIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_districtname_eq")
     @JSONField(name = "n_districtname_eq")
     @ApiModelProperty("区/县EQ")
@@ -156,7 +166,8 @@ public class ExampleSearchContext extends QueryWrapperContext<Example> {
             this.getSearchCond().eq("districtname", districtNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_districtname_like")
     @JSONField(name = "n_districtname_like")
     @ApiModelProperty("区/县LIKE")
@@ -167,7 +178,8 @@ public class ExampleSearchContext extends QueryWrapperContext<Example> {
             this.getSearchCond().like("districtname", districtNameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

@@ -46,7 +46,8 @@ public class ContactSearchContext extends QueryWrapperContext<Contact> {
             this.getSearchCond().like("contactname", contactNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_contactid_eq")
     @JSONField(name = "n_contactid_eq")
     @ApiModelProperty("联系人标识EQ")
@@ -57,7 +58,8 @@ public class ContactSearchContext extends QueryWrapperContext<Contact> {
             this.getSearchCond().eq("contactid", contactIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customerid_eq")
     @JSONField(name = "n_customerid_eq")
     @ApiModelProperty("客户标识EQ")
@@ -68,7 +70,8 @@ public class ContactSearchContext extends QueryWrapperContext<Contact> {
             this.getSearchCond().eq("customerid", customerIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_eq")
     @JSONField(name = "n_customername_eq")
     @ApiModelProperty("客户名称EQ")
@@ -79,7 +82,8 @@ public class ContactSearchContext extends QueryWrapperContext<Contact> {
             this.getSearchCond().eq("customername", customerNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_like")
     @JSONField(name = "n_customername_like")
     @ApiModelProperty("客户名称LIKE")
@@ -90,7 +94,8 @@ public class ContactSearchContext extends QueryWrapperContext<Contact> {
             this.getSearchCond().like("customername", customerNameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

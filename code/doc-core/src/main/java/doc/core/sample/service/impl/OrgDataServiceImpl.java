@@ -176,18 +176,18 @@ public class OrgDataServiceImpl extends ServiceImpl<OrgDataMapper,OrgData> imple
 
     public Page<OrgData> searchDefault(OrgDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<OrgData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<OrgData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<OrgData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),OrgData.class), context.getPageable(), pages.getTotal());
     }
     public List<OrgData> listDefault(OrgDataSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),OrgData.class);
     }
 
     public Page<OrgData> searchPorgdata(OrgDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<OrgData> pages=baseMapper.searchPorgdata(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<OrgData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<OrgData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),OrgData.class), context.getPageable(), pages.getTotal());
     }
     public List<OrgData> listPorgdata(OrgDataSearchContext context) {
-        return baseMapper.listPorgdata(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listPorgdata(context,context.getSelectCond())),OrgData.class);
     }
 
     public List<OrgData> selectByPorgdataid(String porgdataid) {

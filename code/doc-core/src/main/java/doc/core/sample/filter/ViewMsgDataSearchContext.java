@@ -46,7 +46,8 @@ public class ViewMsgDataSearchContext extends QueryWrapperContext<ViewMsgData> {
             this.getSearchCond().eq("viewmsgdataid", viewMsgDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_viewmsgdataname_like")
     @JSONField(name = "n_viewmsgdataname_like")
     @ApiModelProperty("视图消息标题LIKE")
@@ -57,7 +58,8 @@ public class ViewMsgDataSearchContext extends QueryWrapperContext<ViewMsgData> {
             this.getSearchCond().like("viewmsgdataname", viewMsgDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_type_eq")
     @JSONField(name = "n_type_eq")
     @ApiModelProperty("视图消息类型EQ")
@@ -68,7 +70,8 @@ public class ViewMsgDataSearchContext extends QueryWrapperContext<ViewMsgData> {
             this.getSearchCond().eq("type", typeEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_location_eq")
     @JSONField(name = "n_location_eq")
     @ApiModelProperty("视图消息位置EQ")
@@ -79,7 +82,8 @@ public class ViewMsgDataSearchContext extends QueryWrapperContext<ViewMsgData> {
             this.getSearchCond().eq("location", locationEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

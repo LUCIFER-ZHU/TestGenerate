@@ -46,7 +46,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().eq("editorvalueid", editorValueIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_editorvaluename_like")
     @JSONField(name = "n_editorvaluename_like")
     @ApiModelProperty("编辑器值名称LIKE")
@@ -57,7 +58,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().like("editorvaluename", editorValueNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_dropdownlist_eq")
     @JSONField(name = "n_dropdownlist_eq")
     @ApiModelProperty("下拉列表框EQ")
@@ -68,7 +70,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().eq("dropdownlist", dropdownlistEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customerid_eq")
     @JSONField(name = "n_customerid_eq")
     @ApiModelProperty("客户标识EQ")
@@ -79,7 +82,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().eq("customerid", customerIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_eq")
     @JSONField(name = "n_customername_eq")
     @ApiModelProperty("客户名称EQ")
@@ -90,7 +94,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().eq("customername", customerNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_like")
     @JSONField(name = "n_customername_like")
     @ApiModelProperty("客户名称LIKE")
@@ -101,7 +106,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().like("customername", customerNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customerid2_eq")
     @JSONField(name = "n_customerid2_eq")
     @ApiModelProperty("客户标识2EQ")
@@ -112,7 +118,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().eq("customerid2", customerid2EQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername2_eq")
     @JSONField(name = "n_customername2_eq")
     @ApiModelProperty("客户名称2EQ")
@@ -123,7 +130,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().eq("customername2", customername2EQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername2_like")
     @JSONField(name = "n_customername2_like")
     @ApiModelProperty("客户名称2LIKE")
@@ -134,7 +142,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().like("customername2", customername2LIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customerid3_eq")
     @JSONField(name = "n_customerid3_eq")
     @ApiModelProperty("客户标识3EQ")
@@ -145,7 +154,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().eq("customerid3", customerid3EQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername3_eq")
     @JSONField(name = "n_customername3_eq")
     @ApiModelProperty("客户名称3EQ")
@@ -156,7 +166,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().eq("customername3", customername3EQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername3_like")
     @JSONField(name = "n_customername3_like")
     @ApiModelProperty("客户名称3LIKE")
@@ -167,7 +178,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().like("customername3", customername3LIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customerid4_eq")
     @JSONField(name = "n_customerid4_eq")
     @ApiModelProperty("客户标识4EQ")
@@ -178,7 +190,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().eq("customerid4", customerid4EQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername4_eq")
     @JSONField(name = "n_customername4_eq")
     @ApiModelProperty("客户名称4EQ")
@@ -189,7 +202,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().eq("customername4", customername4EQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername4_like")
     @JSONField(name = "n_customername4_like")
     @ApiModelProperty("客户名称4LIKE")
@@ -200,7 +214,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().like("customername4", customername4LIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customerid5_eq")
     @JSONField(name = "n_customerid5_eq")
     @ApiModelProperty("客户标识5EQ")
@@ -211,7 +226,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().eq("customerid5", customerid5EQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername5_eq")
     @JSONField(name = "n_customername5_eq")
     @ApiModelProperty("客户名称5EQ")
@@ -222,7 +238,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().eq("customername5", customername5EQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername5_like")
     @JSONField(name = "n_customername5_like")
     @ApiModelProperty("客户名称5LIKE")
@@ -233,7 +250,8 @@ public class EditorValueSearchContext extends QueryWrapperContext<EditorValue> {
             this.getSearchCond().like("customername5", customername5LIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

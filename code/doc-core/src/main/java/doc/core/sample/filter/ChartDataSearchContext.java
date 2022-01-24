@@ -46,7 +46,8 @@ public class ChartDataSearchContext extends QueryWrapperContext<ChartData> {
             this.getSearchCond().eq("chartdataid", chartDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_chartdataname_like")
     @JSONField(name = "n_chartdataname_like")
     @ApiModelProperty("图表名称LIKE")
@@ -57,7 +58,8 @@ public class ChartDataSearchContext extends QueryWrapperContext<ChartData> {
             this.getSearchCond().like("chartdataname", chartDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_datatype_eq")
     @JSONField(name = "n_datatype_eq")
     @ApiModelProperty("数据分类EQ")
@@ -68,7 +70,8 @@ public class ChartDataSearchContext extends QueryWrapperContext<ChartData> {
             this.getSearchCond().eq("datatype", dataTypeEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

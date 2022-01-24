@@ -4,6 +4,7 @@ import { IActionParam, IParam, ControlAction, PickupViewPanelControl, IContext }
 import { ctrlState } from './mob-pickup-for-tree-viewpickupviewpanel-pickup-view-panel-state';
 import ProvinceMobPickupTreeView from '@views/sample/province-mob-pickup-tree-view';
 interface Props {
+  name:string,
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;
@@ -31,7 +32,7 @@ interface CtrlEmit {
 const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { state } = new PickupViewPanelControl(ctrlState, props, emit).moduleInstall();
+const { state, onViewEvent } = new PickupViewPanelControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ state, name: 'pickupviewpanel' });
@@ -43,6 +44,8 @@ defineExpose({ state, name: 'pickupviewpanel' });
     <ProvinceMobPickupTreeView
       :isShowButton="state.isShowButton" 
       :selectedData="state.selectedData"
+      :viewSubject="state.viewSubject"
+      @viewEvent="onViewEvent"      
     />
   </div>
 </template>

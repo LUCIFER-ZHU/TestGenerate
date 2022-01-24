@@ -16,10 +16,10 @@ export const ctrlState = {
   iconClass: "fa fa-cogs",
   layoutPos: {
     layout: 'TABLE_24COL',
-    lg:"24", lgOffset: "0",
+    lg:"", lgOffset: "0",
     md:"24", mdOffset: "0",
-    sm:"24", smOffset: "0",
-    xs:"24", xsOffset: "0",
+    sm:"", smOffset: "0",
+    xs:"", xsOffset: "0",
   },
 },
 { 
@@ -34,10 +34,10 @@ export const ctrlState = {
   iconClass: "heart",
   layoutPos: {
     layout: 'TABLE_24COL',
-    lg:"24", lgOffset: "0",
+    lg:"", lgOffset: "0",
     md:"24", mdOffset: "0",
-    sm:"24", smOffset: "0",
-    xs:"24", xsOffset: "0",
+    sm:"", smOffset: "0",
+    xs:"", xsOffset: "0",
   },
 },
 { 
@@ -52,10 +52,10 @@ export const ctrlState = {
   iconClass: "fa fa-cogs",
   layoutPos: {
     layout: 'TABLE_24COL',
-    lg:"24", lgOffset: "0",
+    lg:"", lgOffset: "0",
     md:"24", mdOffset: "0",
-    sm:"24", smOffset: "0",
-    xs:"24", xsOffset: "0",
+    sm:"", smOffset: "0",
+    xs:"", xsOffset: "0",
   },
 },
   ],

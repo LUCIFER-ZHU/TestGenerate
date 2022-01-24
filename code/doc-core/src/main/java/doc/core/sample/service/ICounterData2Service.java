@@ -55,6 +55,9 @@ public interface ICounterData2Service extends IService<CounterData2> {
     boolean removeBatch(Collection<String> ids);
 
     CounterData2 getRandom(CounterData2 et);
+    default CounterData2 getRandom(String key) {
+        return getRandom(new CounterData2().setCounterData2Id(key));
+    }    
     boolean getRandomBatch(List<CounterData2> list);
 
     Page<CounterData2> searchDefault(CounterData2SearchContext context);

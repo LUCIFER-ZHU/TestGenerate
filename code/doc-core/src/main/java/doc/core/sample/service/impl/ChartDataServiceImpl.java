@@ -190,10 +190,10 @@ public class ChartDataServiceImpl extends ServiceImpl<ChartDataMapper,ChartData>
 
     public Page<ChartData> searchDefault(ChartDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<ChartData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<ChartData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<ChartData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),ChartData.class), context.getPageable(), pages.getTotal());
     }
     public List<ChartData> listDefault(ChartDataSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),ChartData.class);
     }
 
 

@@ -16,7 +16,7 @@ export class ControlVO extends ControlVOBase implements TreeControlVO {
         allowOrder: false,
         appDataEntity: {
           codeName: 'Province',
-          majorField: 'true',
+          majorField: 'ProvinceName',
           keyField: 'ProvinceId',
         },
         appDeDataSet: { codeName: 'FetchDefault' },
@@ -47,7 +47,7 @@ export class ControlVO extends ControlVOBase implements TreeControlVO {
         allowOrder: false,
         appDataEntity: {
           codeName: 'Province',
-          majorField: 'true',
+          majorField: 'ProvinceName',
           keyField: 'ProvinceId',
         },
         appendPNodeId: false,
@@ -99,7 +99,7 @@ export class ControlVO extends ControlVOBase implements TreeControlVO {
         allowOrder: false,
         appDataEntity: {
           codeName: 'Province',
-          majorField: 'true',
+          majorField: 'ProvinceName',
           keyField: 'ProvinceId',
         },
         appendPNodeId: false,
@@ -157,7 +157,10 @@ export const ctrlState = {
   controlCodeName: 'MobTree',
   controlName: 'tree',
   controlService: new TreeService<ControlVO>(ControlVO, new ProvinceService() ),
-  currentselectedNode: {},
+  currentSelectedNode: {},
   data: [],
+  echoSelectedNodes: [],
+  expandedKeys: [],
+  selectedKeys: [],
   selectedNodes: []
 };

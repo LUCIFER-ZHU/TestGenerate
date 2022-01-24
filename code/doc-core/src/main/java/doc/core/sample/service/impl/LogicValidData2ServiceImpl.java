@@ -163,10 +163,10 @@ public class LogicValidData2ServiceImpl extends ServiceImpl<LogicValidData2Mappe
 
     public Page<LogicValidData2> searchDefault(LogicValidData2SearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<LogicValidData2> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<LogicValidData2>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<LogicValidData2>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),LogicValidData2.class), context.getPageable(), pages.getTotal());
     }
     public List<LogicValidData2> listDefault(LogicValidData2SearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),LogicValidData2.class);
     }
 
 

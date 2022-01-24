@@ -46,7 +46,8 @@ public class LogicValidDataSearchContext extends QueryWrapperContext<LogicValidD
             this.getSearchCond().like("logicvaliddataname", logicValidDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_logicvaliddataid_eq")
     @JSONField(name = "n_logicvaliddataid_eq")
     @ApiModelProperty("示例数据（启用逻辑删除）标识EQ")
@@ -57,7 +58,8 @@ public class LogicValidDataSearchContext extends QueryWrapperContext<LogicValidD
             this.getSearchCond().eq("logicvaliddataid", logicValidDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_code_eq")
     @JSONField(name = "n_code_eq")
     @ApiModelProperty("标识EQ")
@@ -68,7 +70,8 @@ public class LogicValidDataSearchContext extends QueryWrapperContext<LogicValidD
             this.getSearchCond().eq("code", codeEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_region_eq")
     @JSONField(name = "n_region_eq")
     @ApiModelProperty("区域EQ")
@@ -79,7 +82,8 @@ public class LogicValidDataSearchContext extends QueryWrapperContext<LogicValidD
             this.getSearchCond().eq("region", regionEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

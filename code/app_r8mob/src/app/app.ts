@@ -1,7 +1,8 @@
-import { Environment } from "@/environments/environment";
-import { OpenViewService } from "@/utils";
-import { AppBase, IParam, ViewDetail, IApp, IOpenViewService, deepCopy, getSessionStorage, Http, AppUtil, NavDataService, INavDataService } from "@core";
 import { SyncSeriesHook } from "qx-util";
+import { Environment } from "@/environments/environment";
+import router from "@/router";
+import { OpenViewService } from "@/utils";
+import { AppBase, IParam, ViewDetail, IApp, IOpenViewService, deepCopy, getSessionStorage, Http, AppUtil } from "@core";
 import { AppFuncConfig, AppViewConfig, AppEntityConfig } from './config';
 import { DataServiceRegister, UIServiceRegister } from "./register";
 
@@ -123,7 +124,6 @@ export class App extends AppBase implements IApp {
     /**
      * 获取视图信息
      *
-     * @static
      * @param codeName 视图codeName
      * @return {*}
      */
@@ -134,7 +134,6 @@ export class App extends AppBase implements IApp {
     /**
      * 获取实体信息
      *
-     * @static
      * @param codeName 实体codeName
      * @return {*}
      */
@@ -143,12 +142,30 @@ export class App extends AppBase implements IApp {
     }
 
     /**
-     * @description 获取导航数据服务
-     * @return {*}  {*}
+     * @description 跳转登录页
+     *
      * @memberof App
      */
-    public getNavDataService(): INavDataService {
-      return NavDataService.getInstance();
+    gotoLoginPage(): void {
+        const currentRoute = unref(router.currentRoute);
+        if (Environment.loginUrl) {
+            window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;
+        } else {
+            if (Object.is(currentRoute.name, 'login')) {
+                return;
+            }
+            router.push({ name: 'login', query: { redirect: window.location.hash.replace("#", '') } });
+        }
+    }
+
+    /**
+     * @description 登录
+     *
+     * @return {*}  {Promise<IParam>}
+     * @memberof App
+     */
+    handleLogin(): Promise<IParam> {
+        throw new Error("Method not implemented.");
     }
 
 }

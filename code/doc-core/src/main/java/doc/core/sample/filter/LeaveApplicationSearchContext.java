@@ -46,7 +46,8 @@ public class LeaveApplicationSearchContext extends QueryWrapperContext<LeaveAppl
             this.getSearchCond().like("leaveapplicationname", leaveApplicationNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_leaveapplicationid_eq")
     @JSONField(name = "n_leaveapplicationid_eq")
     @ApiModelProperty("请假申请标识EQ")
@@ -57,7 +58,8 @@ public class LeaveApplicationSearchContext extends QueryWrapperContext<LeaveAppl
             this.getSearchCond().eq("leaveapplicationid", leaveApplicationIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_state_eq")
     @JSONField(name = "n_state_eq")
     @ApiModelProperty("申请状态EQ")
@@ -68,7 +70,8 @@ public class LeaveApplicationSearchContext extends QueryWrapperContext<LeaveAppl
             this.getSearchCond().eq("state", stateEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customerid_eq")
     @JSONField(name = "n_customerid_eq")
     @ApiModelProperty("客户标识EQ")
@@ -79,7 +82,8 @@ public class LeaveApplicationSearchContext extends QueryWrapperContext<LeaveAppl
             this.getSearchCond().eq("customerid", customerIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_eq")
     @JSONField(name = "n_customername_eq")
     @ApiModelProperty("客户名称EQ")
@@ -90,7 +94,8 @@ public class LeaveApplicationSearchContext extends QueryWrapperContext<LeaveAppl
             this.getSearchCond().eq("customername", customerNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_like")
     @JSONField(name = "n_customername_like")
     @ApiModelProperty("客户名称LIKE")
@@ -101,7 +106,8 @@ public class LeaveApplicationSearchContext extends QueryWrapperContext<LeaveAppl
             this.getSearchCond().like("customername", customerNameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

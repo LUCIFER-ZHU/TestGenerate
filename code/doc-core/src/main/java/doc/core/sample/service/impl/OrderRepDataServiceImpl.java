@@ -163,18 +163,18 @@ public class OrderRepDataServiceImpl extends ServiceImpl<OrderRepDataMapper,Orde
 
     public Page<OrderRepData> searchDefault(OrderRepDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<OrderRepData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<OrderRepData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<OrderRepData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),OrderRepData.class), context.getPageable(), pages.getTotal());
     }
     public List<OrderRepData> listDefault(OrderRepDataSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),OrderRepData.class);
     }
 
-    public Page<Map> searchGroup(OrderRepDataSearchContext context) {
+    public Page<OrderRepData> searchGroup(OrderRepDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Map> pages=baseMapper.searchGroup(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Map>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<OrderRepData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),OrderRepData.class), context.getPageable(), pages.getTotal());
     }
-    public List<Map> listGroup(OrderRepDataSearchContext context) {
-        return baseMapper.listGroup(context,context.getSelectCond());
+    public List<OrderRepData> listGroup(OrderRepDataSearchContext context) {
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listGroup(context,context.getSelectCond())),OrderRepData.class);
     }
 
 

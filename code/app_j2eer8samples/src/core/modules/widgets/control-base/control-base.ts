@@ -75,6 +75,14 @@ export class ControlBase {
   }
 
   /**
+   * 关闭视图
+   *
+   */
+  public closeView(){
+    this.emit('ctrlEvent', { tag: this.props.name, action: 'closeView', data: undefined });
+  }
+
+  /**
    * @description 安装部件所有功能模块的方法
    * @param {ControlPropsBase} props 传入的Props
    * @param {Function} [emit] 事件
@@ -86,7 +94,7 @@ export class ControlBase {
     this.useControlContextParams();
     return {
       state: this.state,
-      activeData: this.getData()
+      getData: this.getData
     };
   }
 }

@@ -163,10 +163,10 @@ public class ViewMsgDataServiceImpl extends ServiceImpl<ViewMsgDataMapper,ViewMs
 
     public Page<ViewMsgData> searchDefault(ViewMsgDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<ViewMsgData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<ViewMsgData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<ViewMsgData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),ViewMsgData.class), context.getPageable(), pages.getTotal());
     }
     public List<ViewMsgData> listDefault(ViewMsgDataSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),ViewMsgData.class);
     }
 
 

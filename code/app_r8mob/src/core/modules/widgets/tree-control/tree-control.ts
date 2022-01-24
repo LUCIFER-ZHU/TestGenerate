@@ -1,4 +1,4 @@
-import { deepCopy, deepObjectMerge, IActionParam, MDControl } from "@core";
+import { deepCopy, deepObjectMerge, IActionParam, IParam, isEmpty, MDControl } from "@core";
 import { TreeControlProps } from "./tree-control-prop";
 import { TreeControlState } from "./tree-control-state";
 
@@ -22,7 +22,7 @@ export class TreeControl extends MDControl {
    */
   public setState(): void {
     super.setState();
-    this.state.isBranchAvailable = toRef(this.props, 'isBranchAvailable') as any;
+    this.state.isBranchAvailable = toRef(this.props, 'isBranchAvailable') !== false;
   }
 
   /**
@@ -36,15 +36,17 @@ export class TreeControl extends MDControl {
       e.node.isCurrent = false;
       return;
     }
-    const { isBranchAvailable, currentselectedNode, multiple, selectedNodes, controlName } = this.state;
-    if (isBranchAvailable && e.node.leaf) {
-      if (currentselectedNode && Object.keys(currentselectedNode).length > 0) {
-        currentselectedNode.value.srfchecked = 0;
+    const { isBranchAvailable, currentSelectedNode, isMultiple } = this.state;
+    let { selectedNodes } = this.state;
+    if (isBranchAvailable && e.node.isLeaf) {
+      if (currentSelectedNode.value && Object.keys(currentSelectedNode.value).length > 0) {
+        currentSelectedNode.value.srfchecked = 0;
       }
       e.node.srfchecked = 1;
-      currentselectedNode.value = e.node;
-      if (!multiple) {
-        selectedNodes.push(currentselectedNode.value);
+      currentSelectedNode.value = e.node;
+      //  多选树树选中不识别，使用checkbox多选
+      if (!isMultiple) {
+        selectedNodes = [currentSelectedNode.value];
         this.emit("ctrlEvent", { tag: this.props.name, action: 'selectionchange', data: deepCopy(selectedNodes) });
       }
     }
@@ -76,7 +78,7 @@ export class TreeControl extends MDControl {
    * @return {*}  {Promise<any>}
    * @memberof TreeControl
    */
-  protected async load(node: any, isFirst?: boolean): Promise<any> {}
+  protected async load(node: any, isFirst?: boolean): Promise<any> { }
 
   /**
    * @description 使用加载功能模块
@@ -120,10 +122,9 @@ export class TreeControl extends MDControl {
           return null;
         }
         const items = response.data;
-        // TODO 展开
-        // this.formatExpanded(items);
-        // this.formatAppendCaption(items);
-        const isRoot = Object.is(node?.level, 0);
+        this.formatExpanded(items);
+        this.formatAppendCaption(items);
+        const isRoot = !node || !node.parent;
         if (isFirst) {
           data.splice(0, data.length);
           items.forEach((item: any) => {
@@ -133,14 +134,13 @@ export class TreeControl extends MDControl {
           node.dataRef.children = items;
         }
         const isSelectedAll = node?.checked;
-        // TODO 默认选中
-        // this.setDefaultSelection(items, isRoot, isSelectedAll);
+        this.setDefaultSelection(items, isRoot, isSelectedAll);
         this.emit("ctrlEvent", { tag: this.props.name, action: "load", data: items });
       } catch (error) {
         console.error(error);
       }
     }
-    
+
     // 在类里绑定能力方法
     this.load = load;
 
@@ -160,6 +160,137 @@ export class TreeControl extends MDControl {
       })
     }
     return load;
+  }
+
+  /**
+   * @description 设置默认展开节点
+   * @protected
+   * @param {IParam[]} items
+   * @memberof TreeControl
+   */
+  protected formatExpanded(items: IParam[]) {
+    const { expandedKeys } = this.state;
+    items.forEach((item: any) => {
+      if (item.expanded) {
+        expandedKeys.push(item.id);
+      }
+    })
+  }
+
+  /**
+   * @description 设置附加标题栏
+   * @protected
+   * @param {IParam[]} items
+   * @memberof TreeControl
+   */
+  protected formatAppendCaption(items: IParam[]) {
+    items.forEach(item => {
+      if (item.appendCaption && item.textFormat) {
+        item.text = item.textFormat + item.text;
+      }
+    });
+  }
+
+  /**
+   * @description 设置默认选中
+   * @protected
+   * @param {IParam[]} items 节点数据
+   * @param {boolean} [isRoot=false] 是否是根节点
+   * @param {boolean} [isSelectedAll=false] 是否选中全部
+   * @return {*}  {void}
+   * @memberof TreeControl
+   */
+  protected setDefaultSelection(items: IParam[], isRoot: boolean = false, isSelectedAll: boolean = false): void {
+    if (items.length === 0) {
+      return;
+    }
+    const {
+      selectFirstDefault,
+      isMultiple,
+      viewParams,
+      currentSelectedNode,
+      isBranchAvailable
+    } = this.state;
+    let { selectedNodes, echoSelectedNodes, selectedKeys } = this.state;
+    let defaultData: any;
+    //  导航视图中，有选中数据时选中该数据，无选中数据默认选中第一项
+    if (selectFirstDefault) {
+      //  单选
+      if (!isMultiple) {
+        let index: number = -1;
+        if (selectedNodes && selectedNodes.length > 0) {
+          //  单选时选中节点数组只有一项
+          const selectedNode: IParam = selectedNodes[0];
+          index = items.findIndex((item: IParam) => {
+            if (isEmpty(item.srfkey)) {
+              return selectedNode.id == item.id;
+            } else {
+              return selectedNode.srfkey == item.srfkey;
+            }
+          });
+        }
+        if (index === -1) {
+          if (isRoot) {
+            if (viewParams && viewParams.srfnavtag) {
+              const activate = viewParams.srfnavtag;
+              index = items.findIndex((item: any) => {
+                return item.id && item.id.split(';') && (item.id.split(';')[0] == activate);
+              });
+              if (index === -1) index = 0;
+            } else {
+              index = 0;
+            }
+          } else {
+            return;
+          }
+        }
+        defaultData = items[index];
+        // 置空选中节点标识集合，避免破坏响应式
+        selectedKeys.splice(0, selectedKeys.length);
+        selectedKeys.push(defaultData.id);
+        currentSelectedNode.value = deepCopy(defaultData);
+        if (isBranchAvailable || defaultData.isLeaf) {
+          selectedNodes.splice(0, selectedNodes.length);
+          selectedNodes.push(currentSelectedNode.value);
+          this.emit("ctrlEvent", { tag: this.props.name, action: "selectionchange", data: selectedNodes });
+        }
+      }
+    }
+    //  回显已选数据
+    if (echoSelectedNodes && echoSelectedNodes.length > 0) {
+      const checkedNodes = items.filter((item: IParam) => {
+        return echoSelectedNodes.some((val: IParam) => {
+          if (Object.is(item.srfkey, val.srfkey) && Object.is(item.srfmajortext, val.srfmajortext)) {
+            val.used = true;
+            selectedNodes.push(val);
+            this.emit("ctrlEvent", { tag: this.props.name, action: "selectionchange", data: selectedNodes });
+            return true;
+          }
+        })
+      });
+      if (checkedNodes.length) {
+        // TODO 待确认响应式是否会消失
+        echoSelectedNodes = echoSelectedNodes.filter((item: any) => !item.used);
+        if (!isSelectedAll) {
+          if (isMultiple) {
+            selectedNodes.push([...checkedNodes]);
+            // selectedNodes = selectedNodes.concat(checkedNodes);
+            //  TODO 设置选中树节点
+          } else {
+            //  TODO 设置选中树节点高亮
+            currentSelectedNode.value = deepCopy(checkedNodes[0]);
+            selectedNodes.splice(0, selectedNodes.length);
+            selectedNodes.push(currentSelectedNode.value);
+          }
+        }
+      }
+    }
+    //  父节点选中树，选中所有子节点
+    if (isSelectedAll) {
+      const leafNodes = items.filter((item: any) => item.isLeaf);
+      selectedNodes = selectedNodes.concat(leafNodes);
+      this.emit("ctrlEvent", { tag: this.props.name, action: 'selectionchange', data: selectedNodes });
+    }
   }
 
   /**

@@ -163,10 +163,10 @@ public class CalendarDataServiceImpl extends ServiceImpl<CalendarDataMapper,Cale
 
     public Page<CalendarData> searchDefault(CalendarDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<CalendarData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<CalendarData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<CalendarData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),CalendarData.class), context.getPageable(), pages.getTotal());
     }
     public List<CalendarData> listDefault(CalendarDataSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),CalendarData.class);
     }
 
 

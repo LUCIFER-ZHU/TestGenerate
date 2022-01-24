@@ -4,8 +4,8 @@ import { IActionParam, IParam, ControlAction, TreeControl, IContext } from '@cor
 import { ctrlState } from './mob-tree-tree-state';
 
 interface Props {
+  name:string,
   context: IContext;
-  multiple: boolean;
   selectedData: IParam[];
   selectFirstDefault?: boolean;
   isBranchAvailable?: boolean;
@@ -39,9 +39,14 @@ defineExpose({ state, name: 'tree' });
 <template>
   <a-tree
     class="app-tree"
+    :blockNode="true"
     :tree-data="state.data"
     :load-data="load"
     :fieldNames="{ title: 'text', key: 'id' }"
+    :checkable="state.isMultiple"
+    :multiple="state.isMultiple"
+    v-model:expandedKeys="state.expandedKeys"
+    v-model:selectedKeys="state.selectedKeys"
     @select="treeNodeSelect">
       <template #title="{ text, id }">
         <div class="app-tree-node">
@@ -50,3 +55,9 @@ defineExpose({ state, name: 'tree' });
       </template>
     </a-tree>
 </template>
+
+<style lang="scss" scoped>
+.app-tree-node {
+  text-align: left;
+}
+</style>

@@ -44,6 +44,13 @@ export interface TreeNodeVO {
   appDeDataSet?: IParam;
 
   /**
+   * @description 附加标题
+   * @type {boolean}
+   * @memberof TreeNodeVO
+   */
+  appendCaption?: boolean;
+
+  /**
    * @description 附加父节点标识
    * @type {boolean}
    * @memberof TreeNodeVO

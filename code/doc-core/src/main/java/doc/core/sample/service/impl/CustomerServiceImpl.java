@@ -221,10 +221,10 @@ public class CustomerServiceImpl extends ServiceImpl<CustomerMapper,Customer> im
 
     public Page<Customer> searchDefault(CustomerSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Customer> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Customer>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Customer>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Customer.class), context.getPageable(), pages.getTotal());
     }
     public List<Customer> listDefault(CustomerSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),Customer.class);
     }
 
     public List<Customer> selectByCityId(String cityId) {

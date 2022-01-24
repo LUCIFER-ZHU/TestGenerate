@@ -46,7 +46,8 @@ public class DeptDataSearchContext extends QueryWrapperContext<DeptData> {
             this.getSearchCond().eq("deptdataid", deptDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_deptdataname_like")
     @JSONField(name = "n_deptdataname_like")
     @ApiModelProperty("部门名称LIKE")
@@ -57,7 +58,8 @@ public class DeptDataSearchContext extends QueryWrapperContext<DeptData> {
             this.getSearchCond().like("deptdataname", deptDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_orgdataid_eq")
     @JSONField(name = "n_orgdataid_eq")
     @ApiModelProperty("组织数据标识EQ")
@@ -68,7 +70,8 @@ public class DeptDataSearchContext extends QueryWrapperContext<DeptData> {
             this.getSearchCond().eq("orgdataid", orgDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_orgdataname_eq")
     @JSONField(name = "n_orgdataname_eq")
     @ApiModelProperty("组织名称EQ")
@@ -79,7 +82,8 @@ public class DeptDataSearchContext extends QueryWrapperContext<DeptData> {
             this.getSearchCond().eq("orgdataname", orgDataNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_orgdataname_like")
     @JSONField(name = "n_orgdataname_like")
     @ApiModelProperty("组织名称LIKE")
@@ -90,7 +94,8 @@ public class DeptDataSearchContext extends QueryWrapperContext<DeptData> {
             this.getSearchCond().like("orgdataname", orgDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

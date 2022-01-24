@@ -46,7 +46,8 @@ public class SampleVerSearchContext extends QueryWrapperContext<SampleVer> {
             this.getSearchCond().like("samplevername", sampleVerNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_sampleverid_eq")
     @JSONField(name = "n_sampleverid_eq")
     @ApiModelProperty("示例版本标识EQ")
@@ -57,7 +58,8 @@ public class SampleVerSearchContext extends QueryWrapperContext<SampleVer> {
             this.getSearchCond().eq("sampleverid", sampleVerIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_type_eq")
     @JSONField(name = "n_type_eq")
     @ApiModelProperty("分类EQ")
@@ -68,7 +70,8 @@ public class SampleVerSearchContext extends QueryWrapperContext<SampleVer> {
             this.getSearchCond().eq("type", typeEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

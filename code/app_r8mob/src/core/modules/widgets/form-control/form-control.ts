@@ -358,7 +358,6 @@ export class FormControl extends MainControl {
 
   /**
    * @description 使用加载草稿功能模块
-   * @param {FormControlProps} props 传入的props
    * @return {*}
    * @memberof FormControl
    */
@@ -579,11 +578,10 @@ export class FormControl extends MainControl {
 
   /**
    * @description 使用加载功能模块
-   * @param {FormControlProps} props 传入的props
    * @return {*}
    * @memberof FormControl
    */
-  public useRemove(props: FormControlProps) {
+  public useRemove() {
     const { viewSubject, controlName } = this.state;
 
     /**
@@ -632,7 +630,7 @@ export class FormControl extends MainControl {
     // 订阅viewSubject,监听load行为
     if (viewSubject) {
       let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam) => {
-        if (Object.is(controlName, tag) && Object.is('load', action)) {
+        if (Object.is(controlName, tag) && Object.is('remove', action)) {
           remove(data);
         }
       });
@@ -644,6 +642,52 @@ export class FormControl extends MainControl {
     }
 
     return remove;
+  }
+
+  /**
+   * 刷新行为
+   *
+   * @protected
+   * @param [opt={}]
+   */
+  protected async refresh(opt: any = {}) {}
+
+  /**
+   * @description 使用刷新功能模块
+   * @return {*}
+   * @memberof FormControl
+   */
+  public useRefresh() {
+    const { viewSubject, controlName } = this.state;
+
+    /**
+     * 刷新行为
+     *
+     * @param [opt={}]
+     * @return {*}
+     */
+    const refresh = async (opt: any = {}) => {
+      this.load(opt);
+    };
+
+    // 在类里绑定能力方法
+    this.refresh = refresh;
+
+    // 订阅viewSubject,监听load行为
+    if (viewSubject) {
+      let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam) => {
+        if (Object.is(controlName, tag) && Object.is('refresh', action)) {
+          refresh(data);
+        }
+      });
+
+      // 部件卸载时退订viewSubject
+      onUnmounted(() => {
+        subscription.unsubscribe();
+      });
+    }
+
+    return refresh;
   }
 
   /**
@@ -700,6 +744,7 @@ export class FormControl extends MainControl {
       load: this.useLoad(),
       loadDraft: this.useLoadDraft(),
       save: this.useSave(),
+      refresh: this.useRefresh(),
       onEditorEvent: this.onEditorEvent.bind(this),
       onComponentEvent: this.onComponentEvent.bind(this),
     };

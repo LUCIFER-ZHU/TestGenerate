@@ -238,6 +238,7 @@ public class ProductCategory extends EntityMP implements Serializable
 
 
 
+    
 
 
     @Override
@@ -249,7 +250,6 @@ public class ProductCategory extends EntityMP implements Serializable
         key = DigestUtils.md5DigestAsHex(key.getBytes());    
         return key;
     }
-
 
 
     /**

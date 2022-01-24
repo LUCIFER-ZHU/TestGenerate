@@ -30,6 +30,14 @@ export interface GridControlState extends MDControlState {
   rules: IParam;
 
   /**
+   * 表格编辑状态
+   *
+   * @type {IParam[]}
+   * @memberof GridControlState
+   */
+  gridEditState: any;
+
+  /**
    * @description 表格聚合
    * @type {IParam}
    * @memberof GridControlState

@@ -46,7 +46,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().eq("customerid", customerIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_like")
     @JSONField(name = "n_customername_like")
     @ApiModelProperty("客户名称LIKE")
@@ -57,7 +58,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().like("customername", customerNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_pcustomerid_eq")
     @JSONField(name = "n_pcustomerid_eq")
     @ApiModelProperty("上级客户标识EQ")
@@ -68,7 +70,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().eq("pcustomerid", pcustomeridEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_pcustomername_eq")
     @JSONField(name = "n_pcustomername_eq")
     @ApiModelProperty("上级客户EQ")
@@ -79,7 +82,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().eq("pcustomername", pcustomernameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_pcustomername_like")
     @JSONField(name = "n_pcustomername_like")
     @ApiModelProperty("上级客户LIKE")
@@ -90,7 +94,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().like("pcustomername", pcustomernameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_provinceid_eq")
     @JSONField(name = "n_provinceid_eq")
     @ApiModelProperty("省份标识EQ")
@@ -101,7 +106,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().eq("provinceid", provinceIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_cityid_eq")
     @JSONField(name = "n_cityid_eq")
     @ApiModelProperty("市标识EQ")
@@ -112,7 +118,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().eq("cityid", cityIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_districtid_eq")
     @JSONField(name = "n_districtid_eq")
     @ApiModelProperty("区标识EQ")
@@ -123,7 +130,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().eq("districtid", districtIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_provincename_eq")
     @JSONField(name = "n_provincename_eq")
     @ApiModelProperty("省份EQ")
@@ -134,7 +142,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().eq("provincename", provinceNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_provincename_like")
     @JSONField(name = "n_provincename_like")
     @ApiModelProperty("省份LIKE")
@@ -145,7 +154,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().like("provincename", provinceNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_cityname_eq")
     @JSONField(name = "n_cityname_eq")
     @ApiModelProperty("市EQ")
@@ -156,7 +166,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().eq("cityname", cityNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_cityname_like")
     @JSONField(name = "n_cityname_like")
     @ApiModelProperty("市LIKE")
@@ -167,7 +178,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().like("cityname", cityNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_districtname_eq")
     @JSONField(name = "n_districtname_eq")
     @ApiModelProperty("区/县EQ")
@@ -178,7 +190,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().eq("districtname", districtNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_districtname_like")
     @JSONField(name = "n_districtname_like")
     @ApiModelProperty("区/县LIKE")
@@ -189,7 +202,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().like("districtname", districtNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_type_eq")
     @JSONField(name = "n_type_eq")
     @ApiModelProperty("类型EQ")
@@ -200,7 +214,8 @@ public class CustomerSearchContext extends QueryWrapperContext<Customer> {
             this.getSearchCond().eq("type", typeEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

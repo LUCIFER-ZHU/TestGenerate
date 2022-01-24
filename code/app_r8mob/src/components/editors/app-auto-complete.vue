@@ -83,7 +83,7 @@ interface AutoCompleteProps {
   disabled?: boolean;
 
   /**
-   * @description 禁用
+   * @description 只读
    */
   readonly?: boolean;
 }

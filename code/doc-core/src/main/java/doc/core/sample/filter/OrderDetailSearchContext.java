@@ -46,7 +46,8 @@ public class OrderDetailSearchContext extends QueryWrapperContext<OrderDetail> {
             this.getSearchCond().like("orderdetailname", orderDetailNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_orderdetailid_eq")
     @JSONField(name = "n_orderdetailid_eq")
     @ApiModelProperty("订单明细标识EQ")
@@ -57,7 +58,8 @@ public class OrderDetailSearchContext extends QueryWrapperContext<OrderDetail> {
             this.getSearchCond().eq("orderdetailid", orderDetailIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_orderid_eq")
     @JSONField(name = "n_orderid_eq")
     @ApiModelProperty("订单标识EQ")
@@ -68,7 +70,8 @@ public class OrderDetailSearchContext extends QueryWrapperContext<OrderDetail> {
             this.getSearchCond().eq("orderid", orderIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_productid_eq")
     @JSONField(name = "n_productid_eq")
     @ApiModelProperty("产品标识EQ")
@@ -79,7 +82,8 @@ public class OrderDetailSearchContext extends QueryWrapperContext<OrderDetail> {
             this.getSearchCond().eq("productid", productIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_productname_eq")
     @JSONField(name = "n_productname_eq")
     @ApiModelProperty("产品EQ")
@@ -90,7 +94,8 @@ public class OrderDetailSearchContext extends QueryWrapperContext<OrderDetail> {
             this.getSearchCond().eq("productname", productNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_productname_like")
     @JSONField(name = "n_productname_like")
     @ApiModelProperty("产品LIKE")
@@ -101,7 +106,8 @@ public class OrderDetailSearchContext extends QueryWrapperContext<OrderDetail> {
             this.getSearchCond().like("productname", productNameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

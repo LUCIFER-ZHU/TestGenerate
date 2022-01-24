@@ -206,10 +206,10 @@ public class EditorValueServiceImpl extends ServiceImpl<EditorValueMapper,Editor
 
     public Page<EditorValue> searchDefault(EditorValueSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<EditorValue> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<EditorValue>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<EditorValue>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),EditorValue.class), context.getPageable(), pages.getTotal());
     }
     public List<EditorValue> listDefault(EditorValueSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),EditorValue.class);
     }
 
     public List<EditorValue> selectByCustomerId(String customerId) {

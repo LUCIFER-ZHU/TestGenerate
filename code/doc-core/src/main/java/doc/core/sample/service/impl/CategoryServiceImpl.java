@@ -176,18 +176,18 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper,Category> im
 
     public Page<Category> searchDefault(CategorySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Category> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Category>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Category>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Category.class), context.getPageable(), pages.getTotal());
     }
     public List<Category> listDefault(CategorySearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),Category.class);
     }
 
     public Page<Category> searchRoot(CategorySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Category> pages=baseMapper.searchRoot(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Category>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Category>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Category.class), context.getPageable(), pages.getTotal());
     }
     public List<Category> listRoot(CategorySearchContext context) {
-        return baseMapper.listRoot(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listRoot(context,context.getSelectCond())),Category.class);
     }
 
     public List<Category> selectByPcategoryid(String pcategoryid) {

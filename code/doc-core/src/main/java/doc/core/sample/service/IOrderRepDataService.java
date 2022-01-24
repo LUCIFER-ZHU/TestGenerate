@@ -57,7 +57,7 @@ public interface IOrderRepDataService extends IService<OrderRepData> {
     Page<OrderRepData> searchDefault(OrderRepDataSearchContext context);
     List<OrderRepData> listDefault(OrderRepDataSearchContext context);
 
-    Page<Map> searchGroup(OrderRepDataSearchContext context);
-    List<Map> listGroup(OrderRepDataSearchContext context);
+    Page<OrderRepData> searchGroup(OrderRepDataSearchContext context);
+    List<OrderRepData> listGroup(OrderRepDataSearchContext context);
 
 }

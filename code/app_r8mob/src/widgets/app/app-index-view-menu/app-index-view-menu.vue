@@ -3,6 +3,7 @@ import { Subject } from "rxjs";
 import { ctrlState } from "./app-index-view-menu-state";
 import { IParam, IActionParam, MenuControl, IContext } from "@core";
 interface Props {
+  name:string,
   context: IContext;
   defaultView?: string;
   collapsed: boolean;

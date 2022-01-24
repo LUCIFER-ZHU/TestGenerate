@@ -46,7 +46,8 @@ public class CounterDataSearchContext extends QueryWrapperContext<CounterData> {
             this.getSearchCond().like("counterdataname", counterDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_counterdataid_eq")
     @JSONField(name = "n_counterdataid_eq")
     @ApiModelProperty("计数器数据标识EQ")
@@ -57,7 +58,8 @@ public class CounterDataSearchContext extends QueryWrapperContext<CounterData> {
             this.getSearchCond().eq("counterdataid", counterDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

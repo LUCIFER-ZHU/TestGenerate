@@ -46,7 +46,8 @@ public class CitySearchContext extends QueryWrapperContext<City> {
             this.getSearchCond().eq("cityid", cityIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_cityname_like")
     @JSONField(name = "n_cityname_like")
     @ApiModelProperty("市名称LIKE")
@@ -57,7 +58,8 @@ public class CitySearchContext extends QueryWrapperContext<City> {
             this.getSearchCond().like("cityname", cityNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_provinceid_eq")
     @JSONField(name = "n_provinceid_eq")
     @ApiModelProperty("省份标识EQ")
@@ -68,7 +70,8 @@ public class CitySearchContext extends QueryWrapperContext<City> {
             this.getSearchCond().eq("provinceid", provinceIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_provincename_eq")
     @JSONField(name = "n_provincename_eq")
     @ApiModelProperty("省份名称EQ")
@@ -79,7 +82,8 @@ public class CitySearchContext extends QueryWrapperContext<City> {
             this.getSearchCond().eq("provincename", provinceNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_provincename_like")
     @JSONField(name = "n_provincename_like")
     @ApiModelProperty("省份名称LIKE")
@@ -90,7 +94,8 @@ public class CitySearchContext extends QueryWrapperContext<City> {
             this.getSearchCond().like("provincename", provinceNameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

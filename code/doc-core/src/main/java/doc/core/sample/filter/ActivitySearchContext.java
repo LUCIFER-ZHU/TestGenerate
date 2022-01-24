@@ -46,7 +46,8 @@ public class ActivitySearchContext extends QueryWrapperContext<Activity> {
             this.getSearchCond().eq("activityid", activityIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_activityname_like")
     @JSONField(name = "n_activityname_like")
     @ApiModelProperty("活动名称LIKE")
@@ -57,7 +58,8 @@ public class ActivitySearchContext extends QueryWrapperContext<Activity> {
             this.getSearchCond().like("activityname", activityNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_activitytype_eq")
     @JSONField(name = "n_activitytype_eq")
     @ApiModelProperty("活动类型EQ")
@@ -68,7 +70,8 @@ public class ActivitySearchContext extends QueryWrapperContext<Activity> {
             this.getSearchCond().eq("activitytype", activitytypeEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customerid_eq")
     @JSONField(name = "n_customerid_eq")
     @ApiModelProperty("客户标识EQ")
@@ -79,7 +82,8 @@ public class ActivitySearchContext extends QueryWrapperContext<Activity> {
             this.getSearchCond().eq("customerid", customerIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_eq")
     @JSONField(name = "n_customername_eq")
     @ApiModelProperty("客户名称EQ")
@@ -90,7 +94,8 @@ public class ActivitySearchContext extends QueryWrapperContext<Activity> {
             this.getSearchCond().eq("customername", customerNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_like")
     @JSONField(name = "n_customername_like")
     @ApiModelProperty("客户名称LIKE")
@@ -101,7 +106,8 @@ public class ActivitySearchContext extends QueryWrapperContext<Activity> {
             this.getSearchCond().like("customername", customerNameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

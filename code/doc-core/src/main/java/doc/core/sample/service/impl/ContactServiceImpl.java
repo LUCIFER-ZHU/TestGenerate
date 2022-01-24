@@ -182,10 +182,10 @@ public class ContactServiceImpl extends ServiceImpl<ContactMapper,Contact> imple
 
     public Page<Contact> searchDefault(ContactSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Contact> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Contact>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Contact>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Contact.class), context.getPageable(), pages.getTotal());
     }
     public List<Contact> listDefault(ContactSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),Contact.class);
     }
 
     public List<Contact> selectByCustomerId(String customerId) {

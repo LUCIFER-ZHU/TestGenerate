@@ -1,6 +1,6 @@
 import { deepCopy, GridControlState, IActionParam, IParam, MDControl } from "@core";
 import { createUUID } from "qx-util";
-
+import schema, { ErrorList, FieldErrorList } from 'async-validator';
 /**
  * @description 表格部件
  * @export
@@ -56,14 +56,12 @@ export class GridControl extends MDControl {
                         selectedRowKeys.value = [record.srfkey];
                         if (!record.children) {
                             this.emit("ctrlEvent", { tag: this.props.name, action: "selectionChange", data: [deepCopy(record)] })
-                            if (Object.is(rowActiveMode, 1)) {
-                                this.emit("ctrlEvent", { tag: this.props.name, action: "rowClick", data: [deepCopy(record)] })
-                            }
+                            this.emit("ctrlEvent", { tag: this.props.name, action: "rowClick", data: [deepCopy(record)] })
                         }
                     }
                 },
                 onDblclick: () => {
-                    if (!record.children && Object.is(rowActiveMode, 2)) {
+                    if (!record.children) {
                         this.emit("ctrlEvent", { tag: this.props.name, action: "rowDbClick", data: [deepCopy(record)] })
                     }
                 }
@@ -75,7 +73,7 @@ export class GridControl extends MDControl {
                 return false;
             }
             return {
-                type:isSingleSelect ? 'radio' : 'checkbox',
+                type: isSingleSelect ? 'radio' : 'checkbox',
                 columnWidth: 90,
                 selectedRowKeys: selectedRowKeys.value,
                 checkStrictly: this.props.multiple ? false : true,
@@ -87,6 +85,8 @@ export class GridControl extends MDControl {
                             selection.push(select);
                         }
                     })
+                    // 选中赋值
+                    this.state.selectedData = selection;
                     this.emit("ctrlEvent", { tag: this.props.name, action: "selectionChange", data: selection })
                 },
             };
@@ -125,11 +125,38 @@ export class GridControl extends MDControl {
                 if (items.value[rowIndex][tag] !== data) {
                     items.value[rowIndex][tag] = data;
                     items.value[rowIndex]["rowDataState"] = "update";
+                    this.validateField(tag, data, rowIndex);
                 }
                 break;
             default:
                 break;
         }
+    }
+
+
+    /**
+     *
+     *
+     * @param {string} name
+     * @param {*} value
+     * @memberof GridControl
+     */
+    public validateField(name: string, value: any, rowIndex: number): Promise<boolean> {
+        return new Promise((resolve: any, reject: any) => {
+            const { rules, gridEditState } = toRefs(this.state);
+            const fileRule = rules.value[name];
+            if (!fileRule) {
+                resolve(true);
+                return;
+            }
+            const validator = new schema({ [name]: fileRule });
+            validator.validate({ [name]: value }, undefined, (errors: ErrorList, fields: FieldErrorList) => {
+                const error =errors?.find((item:any)=>{
+                    return item.field ===  name;
+                })
+                gridEditState.value[name][rowIndex] = error;
+            })
+        })
     }
 
     /**
@@ -139,7 +166,7 @@ export class GridControl extends MDControl {
      * @memberof GridControl
      */
     public onToolbarEvent(action: IActionParam, record: IParam) {
-      //todo 界面行为
+        //todo 界面行为
     }
 
     /**
@@ -201,7 +228,7 @@ export class GridControl extends MDControl {
 
     /**
      * @description 处理数据聚合
-     * 
+     *
      * @memberof GridControl
      */
     public async handleDataAgg() {
@@ -246,7 +273,7 @@ export class GridControl extends MDControl {
 
     /**
      * @description 远程聚合
-     * 
+     *
      * @memberof GridControl
      */
     public async remoteAgg(): Promise<IParam[]> {
@@ -258,7 +285,7 @@ export class GridControl extends MDControl {
 
     /**
      * @description 获取聚合值
-     * 
+     *
      * @param {IParam[]} aggData 聚合数据
      * @param {string} column 列模型
      * @memberof GridControl
@@ -440,6 +467,8 @@ export class GridControl extends MDControl {
      */
     public moduleInstall() {
         const superParams = super.moduleInstall();
+        console.log(this.state);
+
         return {
             ...superParams,
             useCustom: this.useCustom(),

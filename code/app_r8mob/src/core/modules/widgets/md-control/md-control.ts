@@ -1,4 +1,4 @@
-import { MDControlState, MainControl, deepCopy, IActionParam, IParam } from '@core';
+import { MDControlState, MainControl, deepCopy, IActionParam, IParam, UIBase } from '@core';
 
 /**
  * @description 多数据部件
@@ -24,7 +24,7 @@ export class MDControl extends MainControl {
     this.state.isMultiple = toRef(this.props, 'isMultiple') as any;
     this.state.rowEditState = toRef(this.props, 'rowEditState') as any;
     this.state.rowActiveMode = toRef(this.props, 'rowActiveMode') as any;
-    this.state.selectedData = toRef(this.props, 'selectedData') as any;
+    this.state.selectedData = UIBase.toOneWayRef(this.props, 'selectedData') as any;
     this.state.selectFirstDefault = toRef(this.props, 'selectFirstDefault') as any;
   }
 
@@ -67,14 +67,14 @@ export class MDControl extends MainControl {
         Object.assign(arg, tempViewParams);
 
         // 组装视图其他查询参数
-        this.emit("ctrlEvent", { tag: this.props.name, action: 'beforeload', data: arg });
+        this.emit('ctrlEvent', { tag: this.props.name, action: 'beforeload', data: arg });
         const response = await controlService.search(tempContext, arg, {
           action: controlAction.fetchAction,
           isLoading: showBusyIndicator,
         });
         if (response.status || response.status == 200) {
           this.state.items = response.data;
-          this.emit("ctrlEvent", { tag: this.props.name, action: 'load', data: response.data });
+          this.emit('ctrlEvent', { tag: this.props.name, action: 'load', data: response.data });
           if (enablePagingBar) {
             this.state.mdCtrlPaging.pagination['total'] = response.total;
           }
@@ -128,6 +128,7 @@ export class MDControl extends MainControl {
           const { updateAction, createAction } = controlAction;
           const saveAction: any =
             item.rowDataState == 'update' ? updateAction : item.rowDataState == 'create' ? createAction : '';
+          const saveFunName = item.rowDataState == 'update' ? 'update' : 'create'; 
           if (!saveAction) {
             return;
           }
@@ -136,7 +137,7 @@ export class MDControl extends MainControl {
           let _viewParams = deepCopy(viewParams);
           Object.assign(arg, item.getDo());
           Object.assign(arg, { viewParams: _viewParams });
-          const response = await controlService[saveAction](_context, arg, {
+          const response = await controlService[saveFunName](_context, arg, {
             action: saveAction,
             isLoading: showBusyIndicator,
           });
@@ -307,6 +308,52 @@ export class MDControl extends MainControl {
   }
 
   /**
+   * 刷新行为
+   *
+   * @protected
+   * @param [opt={}]
+   */
+  protected async refresh(opt: any = {}) {}
+
+  /**
+   * @description 使用刷新功能模块
+   * @return {*}
+   * @memberof MDControl
+   */
+  public useRefresh() {
+    const { viewSubject, controlName } = this.state;
+
+    /**
+     * 刷新行为
+     *
+     * @param [opt={}]
+     * @return {*}
+     */
+    const refresh = async (opt: any = {}) => {
+      this.load(opt);
+    };
+
+    // 在类里绑定能力方法
+    this.refresh = refresh;
+
+    // 订阅viewSubject,监听load行为
+    if (viewSubject) {
+      let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam) => {
+        if (Object.is(controlName, tag) && Object.is('refresh', action)) {
+          refresh(data);
+        }
+      });
+
+      // 部件卸载时退订viewSubject
+      onUnmounted(() => {
+        subscription.unsubscribe();
+      });
+    }
+
+    return refresh;
+  }
+
+  /**
    * 处理数据状态变化(逻辑数据+UI)
    *
    * @memberof MDControl
@@ -351,8 +398,7 @@ export class MDControl extends MainControl {
    * @memberof MDControl
    */
   public getData(): IParam[] {
-    const { selectedData } = this.state;
-    return selectedData;
+    return this.state.selectedData;
   }
 
   /**
@@ -368,6 +414,7 @@ export class MDControl extends MainControl {
       save: this.useSave(),
       remove: this.useRemove(),
       newRow: this.useNewRow(),
+      refresh: this.useRefresh(),
     };
   }
 }

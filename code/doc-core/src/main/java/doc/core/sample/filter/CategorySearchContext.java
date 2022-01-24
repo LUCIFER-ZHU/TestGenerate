@@ -46,7 +46,8 @@ public class CategorySearchContext extends QueryWrapperContext<Category> {
             this.getSearchCond().like("categoryname", categoryNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_categoryid_eq")
     @JSONField(name = "n_categoryid_eq")
     @ApiModelProperty("类别标识EQ")
@@ -57,7 +58,8 @@ public class CategorySearchContext extends QueryWrapperContext<Category> {
             this.getSearchCond().eq("categoryid", categoryIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_pcategoryid_eq")
     @JSONField(name = "n_pcategoryid_eq")
     @ApiModelProperty("类别标识EQ")
@@ -68,7 +70,8 @@ public class CategorySearchContext extends QueryWrapperContext<Category> {
             this.getSearchCond().eq("pcategoryid", pcategoryidEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_pcategoryname_eq")
     @JSONField(name = "n_pcategoryname_eq")
     @ApiModelProperty("类别EQ")
@@ -79,7 +82,8 @@ public class CategorySearchContext extends QueryWrapperContext<Category> {
             this.getSearchCond().eq("pcategoryname", pcategorynameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_pcategoryname_like")
     @JSONField(name = "n_pcategoryname_like")
     @ApiModelProperty("类别LIKE")
@@ -90,7 +94,8 @@ public class CategorySearchContext extends QueryWrapperContext<Category> {
             this.getSearchCond().like("pcategoryname", pcategorynameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

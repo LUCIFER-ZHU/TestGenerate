@@ -30,13 +30,13 @@ export class MainView extends ViewBase {
    * @memberof MainView
    */
   public onToolbarEvent(actionParam: IActionParam) {
-    const { tag, action, data } = actionParam;
-    if (!tag || !action || !data) {
+    const { data } = actionParam;
+    if (!data) {
       console.warn("工具栏执行参数不足");
       return;
     }
-    const { xDataControlName, uIAction } = data;
-    if (!xDataControlName || !uIAction) {
+    const { uIAction } = data;
+    if (!uIAction) {
       console.warn("工具栏执行参数不足");
       return;
     }
@@ -44,7 +44,7 @@ export class MainView extends ViewBase {
     const inputParam = {
       context: this.state.context,
       viewParams: this.state.viewParams,
-      data: this.xDataControl?.value?.data,
+      data: this.xDataControl?.getData?.(),
       event: data.event,
       actionEnvironment: this
     };
@@ -58,7 +58,12 @@ export class MainView extends ViewBase {
    * @param {IActionParam} actionParam
    * @memberof MainView
    */
-  public onCtrlEvent(actionParam: IActionParam) { }
+  public onCtrlEvent(actionParam: IActionParam) { 
+    const { tag, action, data } = actionParam;
+    if (Object.is(action, 'closeView')) {
+      this.closeView();
+    }
+  }
 
   /**
    * @description 安装视图所有功能模块的方法

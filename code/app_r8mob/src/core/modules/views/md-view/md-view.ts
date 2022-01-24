@@ -8,7 +8,6 @@ import { IActionParam, IParam, MainView, MDViewState } from '@core';
  * @extends {MainView}
  */
 export class MDView extends MainView {
-
   /**
    *  视图状态数据
    *
@@ -57,7 +56,7 @@ export class MDView extends MainView {
       } else {
         this.state.isLoadDefault = true;
       }
-    })
+    });
   }
 
   /**
@@ -111,7 +110,7 @@ export class MDView extends MainView {
    */
   public handleQuickGroupSearch(args: any = {}): void {
     const { viewParams } = this.state;
-    Object.assign(viewParams,{quickGroup: args.data})
+    Object.assign(viewParams, { quickGroup: args.data });
     const tag = this.getMDCtrl().name;
     this.next({ tag: tag, action: 'load', data: viewParams });
   }
@@ -124,7 +123,7 @@ export class MDView extends MainView {
   public handleQuickSearch(args: any = {}): void {
     const { viewParams } = this.state;
     const query = args?.target?._value || '';
-    Object.assign(viewParams,{query: query});
+    Object.assign(viewParams, { query: query });
     const tag = this.getMDCtrl().name;
     this.next({ tag: tag, action: 'load', data: viewParams });
   }
@@ -153,15 +152,15 @@ export class MDView extends MainView {
    */
   public MDCtrlEvent(eventName: string, args: any): void {
     if (Object.is(eventName, 'beforeload')) {
-      this.MDCtrlBeforeLoad(args)
+      this.MDCtrlBeforeLoad(args);
     }
     if (Object.is(eventName, 'load')) {
       this.MDCtrlLoaded(args);
     }
-    if (Object.is(eventName, 'rowclick')) {
+    if (Object.is(eventName, 'rowClick') && this.state.gridRowActiveMode === 1) {
       this.doEdit(args);
     }
-    if (Object.is(eventName, 'rowdblclick')) {
+    if (Object.is(eventName, 'rowDbClick') && this.state.gridRowActiveMode === 2) {
       this.doEdit(args);
     }
     if (Object.is(eventName, 'selectionchange')) {
@@ -207,7 +206,7 @@ export class MDView extends MainView {
    * @memberof MDView
    */
   public MDCtrlLoaded(args: any) {
-    console.log("数据加载完成", args);
+    console.log('数据加载完成', args);
   }
 
   /**
@@ -227,7 +226,19 @@ export class MDView extends MainView {
    * @memberof MDView
    */
   public doEdit(args: any) {
-    throw new Error('Method not implemented.');
+    this.onToolbarEvent({
+      tag: '',
+      action: '',
+      data: {
+        uIAction: {
+          codeName: 'Edit',
+          fullCodeName: 'Edit',
+          uIActionMode: 'SYS',
+          uIActionTag: 'Edit',
+          uIActionType: 'DEUIACTION',
+        },
+      },
+    });
   }
 
   /**
@@ -254,7 +265,7 @@ export class MDView extends MainView {
 
   /**
    * @description 安装视图所有功能模块的方法
-   * 
+   *
    * @memberof MDView
    */
   public moduleInstall() {
@@ -265,7 +276,7 @@ export class MDView extends MainView {
       searchForm: this.searchForm,
       searchBar: this.searchBar,
       onQuickGroupEvent: this.onQuickGroupEvent.bind(this),
-      onQuickSearchEvent: this.onQuickSearchEvent.bind(this)
+      onQuickSearchEvent: this.onQuickSearchEvent.bind(this),
     };
   }
 
@@ -295,6 +306,5 @@ export class MDView extends MainView {
    * @return {*}  {*}
    * @memberof MDView
    */
-  public getMDCtrl(): any { }
-
+  public getMDCtrl(): any {}
 }

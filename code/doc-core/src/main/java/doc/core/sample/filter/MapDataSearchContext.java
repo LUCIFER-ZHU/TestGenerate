@@ -46,7 +46,8 @@ public class MapDataSearchContext extends QueryWrapperContext<MapData> {
             this.getSearchCond().eq("mapdataid", mapDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_mapdataname_like")
     @JSONField(name = "n_mapdataname_like")
     @ApiModelProperty("名称LIKE")
@@ -57,7 +58,8 @@ public class MapDataSearchContext extends QueryWrapperContext<MapData> {
             this.getSearchCond().like("mapdataname", mapDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_type_eq")
     @JSONField(name = "n_type_eq")
     @ApiModelProperty("类型EQ")
@@ -68,7 +70,8 @@ public class MapDataSearchContext extends QueryWrapperContext<MapData> {
             this.getSearchCond().eq("type", typeEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

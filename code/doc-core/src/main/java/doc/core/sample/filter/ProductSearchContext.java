@@ -46,7 +46,8 @@ public class ProductSearchContext extends QueryWrapperContext<Product> {
             this.getSearchCond().eq("productid", productIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_productname_like")
     @JSONField(name = "n_productname_like")
     @ApiModelProperty("产品名称LIKE")
@@ -57,7 +58,8 @@ public class ProductSearchContext extends QueryWrapperContext<Product> {
             this.getSearchCond().like("productname", productNameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

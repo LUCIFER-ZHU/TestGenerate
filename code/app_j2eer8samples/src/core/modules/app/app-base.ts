@@ -1,5 +1,5 @@
 import { AppFuncService, IApp, IAppFuncService, IOpenViewService, ViewDetail } from "@core";
-import { IDataServiceRegister, INavDataService, IParam, IUIServiceRegister } from "@core/interface";
+import { IParam } from "@core/interface";
 
 /**
  * 应用基类
@@ -122,11 +122,31 @@ export abstract class AppBase implements IApp {
   }
 
   /**
-   * @description 获取导航数据服务
-   * @return {*}  {INavDataService}
+   * @description 获取实体信息
+   *
+   * @param {string} codeName
    * @memberof AppBase
    */
-  public getNavDataService(): INavDataService {
+  public getEntityInfo(codeName: string) {
+    throw new Error("Method not implemented.");
+  }
+
+  /**
+   * @description 跳转登录页
+   *
+   * @memberof AppBase
+   */
+  gotoLoginPage(): void {
+    throw new Error("Method not implemented.");
+  }
+
+  /**
+   * @description 登录
+   *
+   * @return {*}  {Promise<IParam>}
+   * @memberof AppBase
+   */
+  handleLogin(): Promise<IParam> {
     throw new Error("Method not implemented.");
   }
 }

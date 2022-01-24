@@ -182,42 +182,42 @@ public class ActivityServiceImpl extends ServiceImpl<ActivityMapper,Activity> im
 
     public Page<Activity> searchDefault(ActivitySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Activity> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Activity>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Activity>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Activity.class), context.getPageable(), pages.getTotal());
     }
     public List<Activity> listDefault(ActivitySearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),Activity.class);
     }
 
     public Page<Activity> searchEmail(ActivitySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Activity> pages=baseMapper.searchEmail(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Activity>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Activity>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Activity.class), context.getPageable(), pages.getTotal());
     }
     public List<Activity> listEmail(ActivitySearchContext context) {
-        return baseMapper.listEmail(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listEmail(context,context.getSelectCond())),Activity.class);
     }
 
     public Page<Activity> searchMeeting(ActivitySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Activity> pages=baseMapper.searchMeeting(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Activity>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Activity>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Activity.class), context.getPageable(), pages.getTotal());
     }
     public List<Activity> listMeeting(ActivitySearchContext context) {
-        return baseMapper.listMeeting(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listMeeting(context,context.getSelectCond())),Activity.class);
     }
 
     public Page<Activity> searchOther(ActivitySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Activity> pages=baseMapper.searchOther(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Activity>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Activity>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Activity.class), context.getPageable(), pages.getTotal());
     }
     public List<Activity> listOther(ActivitySearchContext context) {
-        return baseMapper.listOther(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listOther(context,context.getSelectCond())),Activity.class);
     }
 
     public Page<Activity> searchPhone(ActivitySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Activity> pages=baseMapper.searchPhone(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Activity>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Activity>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Activity.class), context.getPageable(), pages.getTotal());
     }
     public List<Activity> listPhone(ActivitySearchContext context) {
-        return baseMapper.listPhone(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listPhone(context,context.getSelectCond())),Activity.class);
     }
 
     public List<Activity> selectByCustomerId(String customerId) {

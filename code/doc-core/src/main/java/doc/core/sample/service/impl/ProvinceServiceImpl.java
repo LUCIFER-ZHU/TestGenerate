@@ -163,18 +163,18 @@ public class ProvinceServiceImpl extends ServiceImpl<ProvinceMapper,Province> im
 
     public Page<Province> searchConditions(ProvinceSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Province> pages=baseMapper.searchConditions(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Province>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Province>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Province.class), context.getPageable(), pages.getTotal());
     }
     public List<Province> listConditions(ProvinceSearchContext context) {
-        return baseMapper.listConditions(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listConditions(context,context.getSelectCond())),Province.class);
     }
 
     public Page<Province> searchDefault(ProvinceSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Province> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Province>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Province>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Province.class), context.getPageable(), pages.getTotal());
     }
     public List<Province> listDefault(ProvinceSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),Province.class);
     }
 
 

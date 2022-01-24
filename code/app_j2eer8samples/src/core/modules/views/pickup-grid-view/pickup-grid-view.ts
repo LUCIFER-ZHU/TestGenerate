@@ -1,5 +1,5 @@
-import { IActionParam } from "@core";
-import { PickupView } from "../pickup-view";
+import { IActionParam, IParam } from "@core";
+import { MDView } from "../md-view";
 import { PickupGridViewProps } from "./pickup-grid-view-prop";
 import { PickupGridViewState } from "./pickup-grid-view-state";
 
@@ -9,7 +9,7 @@ import { PickupGridViewState } from "./pickup-grid-view-state";
  * @class PickupGridView
  * @extends {MainView}
  */
-export class PickupGridView extends PickupView {
+export class PickupGridView extends MDView {
 
   /**
    * @description 视图状态
@@ -18,6 +18,24 @@ export class PickupGridView extends PickupView {
    */
   public declare state: PickupGridViewState;
 
+  /**
+   * 当前视图表格部件
+   *
+   * @type {IParam}
+   * @memberof PickupGridView
+   */
+  public declare grid: IParam;
+
+  /**
+   * @description 处理视图初始化
+   *
+   * @memberof PickupGridView
+   */
+  public useViewInit() {
+    super.useViewInit();
+    // 初始化搜索表格引用
+    this.grid = ref(null);
+  }
 
   /**
    * @description 使用加载功能模块
@@ -31,7 +49,6 @@ export class PickupGridView extends PickupView {
     })
   }
 
-
   /**
    * 部件事件
    *
@@ -44,11 +61,19 @@ export class PickupGridView extends PickupView {
       return;
     }
     if (action === 'selectionChange') {
-      this.selectData = data;
       this.emit('viewEvent', actionParam)
     }
   }
 
+  /**
+   *  获取多数据部件
+   *
+   * @return {*}  {*}
+   * @memberof PickupGridView
+   */
+  public getMDCtrl(): any {
+    return unref(this.grid);
+  }
 
   /**
    * @description 安装视图所有功能模块的方法
@@ -60,7 +85,8 @@ export class PickupGridView extends PickupView {
   public moduleInstall() {
     const superParams = super.moduleInstall();
     return {
-      ...superParams
+      ...superParams,
+      grid: this.grid      
     };
   }
 }

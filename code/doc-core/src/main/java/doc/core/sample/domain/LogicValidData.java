@@ -218,6 +218,7 @@ public class LogicValidData extends EntityMP implements Serializable
 
 
 
+    
 
 
     @Override
@@ -229,7 +230,6 @@ public class LogicValidData extends EntityMP implements Serializable
         key = DigestUtils.md5DigestAsHex(key.getBytes());    
         return key;
     }
-
 
 
     /**

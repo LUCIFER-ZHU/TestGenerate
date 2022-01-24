@@ -163,10 +163,10 @@ public class KanbanDataServiceImpl extends ServiceImpl<KanbanDataMapper,KanbanDa
 
     public Page<KanbanData> searchDefault(KanbanDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<KanbanData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<KanbanData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<KanbanData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),KanbanData.class), context.getPageable(), pages.getTotal());
     }
     public List<KanbanData> listDefault(KanbanDataSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),KanbanData.class);
     }
 
 

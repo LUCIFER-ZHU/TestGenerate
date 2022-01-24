@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { ctrlState } from './mob-form-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
 interface Props {
+  name:string,
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;

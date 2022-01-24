@@ -14,6 +14,22 @@ const onClick = (item: IParam) => {
     item: item,
   });
 };
+const getLayout = (item: IParam ,name: string) => {
+  switch(name) {
+    case 'lg':
+      const lg = item.layoutPos.lg > 0 ? item.layoutPos.lg : 4;
+      return {span: lg, offset: item.layoutPos.lgOffset};
+    case 'md':
+      const md = item.layoutPos.md > 0 ? item.layoutPos.md : 4;
+      return {span: md, offset: item.layoutPos.mdOffset};
+    case 'sm':
+      const sm = item.layoutPos.sm > 0 ? item.layoutPos.sm : 4;
+      return {span: sm, offset: item.layoutPos.smOffset};
+    case 'xs':
+      const xs = item.layoutPos.xs > 0 ? item.layoutPos.xs : 4;
+      return {span: xs, offset: item.layoutPos.xsOffset};
+  }
+}
 </script>
 
 <template>
@@ -39,10 +55,10 @@ const onClick = (item: IParam) => {
         <a-col
           v-for="(item,key) in menu.items"
           :key="key"
-          :lg="{span: item.layoutPos.lg, offset: item.layoutPos.lgOffset }"
-          :md="{span: item.layoutPos.md, offset: item.layoutPos.mdOffset }"
-          :sm="{span: item.layoutPos.sm, offset: item.layoutPos.smOffset }"
-          :xs="{span: item.layoutPos.xs, offset: item.layoutPos.xsOffset }"
+          :lg="getLayout(item,'lg')"
+          :md="getLayout(item,'md')"
+          :sm="getLayout(item,'sm')"
+          :xs="getLayout(item,'xs')"
           v-show="!item.hidden"
           :class="['app-menu-item', item.itemSysCss]"
           @click="onClick(item)"

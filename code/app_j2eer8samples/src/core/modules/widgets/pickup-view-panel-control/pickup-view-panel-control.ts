@@ -28,7 +28,7 @@ export class PickupViewPanelControl extends MainControl {
     if (viewSubject) {
       let subscription = viewSubject.subscribe(({ tag, action, data }: IActionParam) => {
         if (Object.is(controlName, tag) && Object.is("load", action)) {
-
+          viewSubject.next({ tag: tag, action: "load", data: data });
         }
       })
       // 部件卸载时退订viewSubject
@@ -62,6 +62,7 @@ export class PickupViewPanelControl extends MainControl {
     const superParams = super.moduleInstall();
     return {
       ...superParams,
+      load:this.useLoad.bind(this),      
       onViewEvent: this.onViewEvent.bind(this)
     };
   }

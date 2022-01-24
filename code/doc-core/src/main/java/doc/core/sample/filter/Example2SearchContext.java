@@ -46,7 +46,8 @@ public class Example2SearchContext extends QueryWrapperContext<Example2> {
             this.getSearchCond().eq("example2id", example2IdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_example2name_like")
     @JSONField(name = "n_example2name_like")
     @ApiModelProperty("示例明细名称LIKE")
@@ -57,7 +58,8 @@ public class Example2SearchContext extends QueryWrapperContext<Example2> {
             this.getSearchCond().like("example2name", example2NameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_exampleid_eq")
     @JSONField(name = "n_exampleid_eq")
     @ApiModelProperty("示例标识EQ")
@@ -68,7 +70,8 @@ public class Example2SearchContext extends QueryWrapperContext<Example2> {
             this.getSearchCond().eq("exampleid", exampleIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_examplename_eq")
     @JSONField(name = "n_examplename_eq")
     @ApiModelProperty("示例名称EQ")
@@ -79,7 +82,8 @@ public class Example2SearchContext extends QueryWrapperContext<Example2> {
             this.getSearchCond().eq("examplename", exampleNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_examplename_like")
     @JSONField(name = "n_examplename_like")
     @ApiModelProperty("示例名称LIKE")
@@ -90,7 +94,8 @@ public class Example2SearchContext extends QueryWrapperContext<Example2> {
             this.getSearchCond().like("examplename", exampleNameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

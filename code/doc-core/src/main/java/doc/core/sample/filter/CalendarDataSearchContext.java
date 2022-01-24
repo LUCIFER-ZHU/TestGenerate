@@ -46,7 +46,8 @@ public class CalendarDataSearchContext extends QueryWrapperContext<CalendarData>
             this.getSearchCond().eq("calendardataid", calendarDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_calendardataname_like")
     @JSONField(name = "n_calendardataname_like")
     @ApiModelProperty("事项LIKE")
@@ -57,7 +58,8 @@ public class CalendarDataSearchContext extends QueryWrapperContext<CalendarData>
             this.getSearchCond().like("calendardataname", calendarDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_type_eq")
     @JSONField(name = "n_type_eq")
     @ApiModelProperty("类型EQ")
@@ -68,7 +70,8 @@ public class CalendarDataSearchContext extends QueryWrapperContext<CalendarData>
             this.getSearchCond().eq("type", typeEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

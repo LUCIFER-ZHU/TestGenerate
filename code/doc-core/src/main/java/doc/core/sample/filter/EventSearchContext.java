@@ -46,7 +46,8 @@ public class EventSearchContext extends QueryWrapperContext<Event> {
             this.getSearchCond().like("eventname", eventNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_eventid_eq")
     @JSONField(name = "n_eventid_eq")
     @ApiModelProperty("事件标识EQ")
@@ -57,7 +58,8 @@ public class EventSearchContext extends QueryWrapperContext<Event> {
             this.getSearchCond().eq("eventid", eventIdEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

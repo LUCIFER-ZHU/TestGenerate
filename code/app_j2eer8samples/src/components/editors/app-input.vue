@@ -93,7 +93,7 @@ const onChange = ($event: any) => {
       :disabled="disabled"
       :maxlength="maxLength"
       @blur="onChange"
-      :placeholder="placeholder"/>
+      :placeholder="showMaxLength ? `最大内容长度为${maxLength}` : placeholder"/>
     <a-input 
       allowClear
       v-else="Object.is('text', type)"

@@ -236,10 +236,10 @@ public class LeaveApplicationServiceImpl extends ServiceImpl<LeaveApplicationMap
 
     public Page<LeaveApplication> searchDefault(LeaveApplicationSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<LeaveApplication> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<LeaveApplication>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<LeaveApplication>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),LeaveApplication.class), context.getPageable(), pages.getTotal());
     }
     public List<LeaveApplication> listDefault(LeaveApplicationSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),LeaveApplication.class);
     }
 
     public List<LeaveApplication> selectByCustomerId(String customerId) {

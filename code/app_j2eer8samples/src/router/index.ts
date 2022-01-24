@@ -21,10 +21,18 @@ const routes = [
     redirect: "/apps/j2eer8samples"
   },
   {
+    path: '/404',
+    component: () => import('@components/common/404.vue')
+  },
+  {
     path: '/login',
     name: 'login',
     component: () => import("@components/common/login.vue")
-  }
+  },
+  {
+    path: '/:pathMatch(.*)',
+    redirect: '/404'
+  },
 ]
 const router = createRouter({
   history: createWebHashHistory(),

@@ -5,6 +5,7 @@ import { ctrlState } from './default-search-form-state';
 import { SearchFormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
 
 interface Props {
+  name:string,
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;

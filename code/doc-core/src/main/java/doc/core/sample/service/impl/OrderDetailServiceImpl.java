@@ -188,10 +188,10 @@ public class OrderDetailServiceImpl extends ServiceImpl<OrderDetailMapper,OrderD
 
     public Page<OrderDetail> searchDefault(OrderDetailSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<OrderDetail> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<OrderDetail>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<OrderDetail>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),OrderDetail.class), context.getPageable(), pages.getTotal());
     }
     public List<OrderDetail> listDefault(OrderDetailSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),OrderDetail.class);
     }
 
     public List<OrderDetail> selectByOrderId(String orderId) {

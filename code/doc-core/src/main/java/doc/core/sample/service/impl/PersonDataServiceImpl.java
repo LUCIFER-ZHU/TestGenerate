@@ -194,10 +194,10 @@ public class PersonDataServiceImpl extends ServiceImpl<PersonDataMapper,PersonDa
 
     public Page<PersonData> searchDefault(PersonDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<PersonData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<PersonData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<PersonData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),PersonData.class), context.getPageable(), pages.getTotal());
     }
     public List<PersonData> listDefault(PersonDataSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),PersonData.class);
     }
 
     public List<PersonData> selectByDeptDataId(String deptDataId) {

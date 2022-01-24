@@ -182,10 +182,10 @@ public class Example2ServiceImpl extends ServiceImpl<Example2Mapper,Example2> im
 
     public Page<Example2> searchDefault(Example2SearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Example2> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Example2>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Example2>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Example2.class), context.getPageable(), pages.getTotal());
     }
     public List<Example2> listDefault(Example2SearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),Example2.class);
     }
 
     public List<Example2> selectByExampleId(String exampleId) {

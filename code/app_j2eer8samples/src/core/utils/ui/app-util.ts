@@ -1,7 +1,7 @@
-import { Environment } from "@/environments/environment";
-import { getSessionStorage, Http, IParam, setSessionStorage } from "@core";
 import qs from "qs";
 import { getCookie } from "qx-util";
+import { Environment } from "@/environments/environment";
+import { getSessionStorage, Http, IParam, setSessionStorage } from "@core";
 
 /**
  * 应用相关处理逻辑工具类
@@ -47,7 +47,7 @@ export class AppUtil {
                 return false;
             }
         } catch (error) {
-            console.warn(error);
+            // App.gotoLoginPage();
             return false;
         }
     }
@@ -95,7 +95,7 @@ export class AppUtil {
                 return false;
             }
         } catch (error) {
-            console.warn(error);
+            // App.gotoLoginPage();
             return false;
         }
     }

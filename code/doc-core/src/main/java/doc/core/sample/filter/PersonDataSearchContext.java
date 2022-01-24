@@ -46,7 +46,8 @@ public class PersonDataSearchContext extends QueryWrapperContext<PersonData> {
             this.getSearchCond().eq("persondataid", personDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_persondataname_like")
     @JSONField(name = "n_persondataname_like")
     @ApiModelProperty("姓名LIKE")
@@ -57,7 +58,8 @@ public class PersonDataSearchContext extends QueryWrapperContext<PersonData> {
             this.getSearchCond().like("persondataname", personDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_orgdataid_eq")
     @JSONField(name = "n_orgdataid_eq")
     @ApiModelProperty("组织数据标识EQ")
@@ -68,7 +70,8 @@ public class PersonDataSearchContext extends QueryWrapperContext<PersonData> {
             this.getSearchCond().eq("orgdataid", orgDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_orgdataname_eq")
     @JSONField(name = "n_orgdataname_eq")
     @ApiModelProperty("组织名称EQ")
@@ -79,7 +82,8 @@ public class PersonDataSearchContext extends QueryWrapperContext<PersonData> {
             this.getSearchCond().eq("orgdataname", orgDataNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_orgdataname_like")
     @JSONField(name = "n_orgdataname_like")
     @ApiModelProperty("组织名称LIKE")
@@ -90,7 +94,8 @@ public class PersonDataSearchContext extends QueryWrapperContext<PersonData> {
             this.getSearchCond().like("orgdataname", orgDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_deptdataid_eq")
     @JSONField(name = "n_deptdataid_eq")
     @ApiModelProperty("部门数据标识EQ")
@@ -101,7 +106,8 @@ public class PersonDataSearchContext extends QueryWrapperContext<PersonData> {
             this.getSearchCond().eq("deptdataid", deptDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_deptdataname_eq")
     @JSONField(name = "n_deptdataname_eq")
     @ApiModelProperty("部门名称EQ")
@@ -112,7 +118,8 @@ public class PersonDataSearchContext extends QueryWrapperContext<PersonData> {
             this.getSearchCond().eq("deptdataname", deptDataNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_deptdataname_like")
     @JSONField(name = "n_deptdataname_like")
     @ApiModelProperty("部门名称LIKE")
@@ -123,7 +130,8 @@ public class PersonDataSearchContext extends QueryWrapperContext<PersonData> {
             this.getSearchCond().like("deptdataname", deptDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_gender_eq")
     @JSONField(name = "n_gender_eq")
     @ApiModelProperty("性别EQ")
@@ -134,7 +142,8 @@ public class PersonDataSearchContext extends QueryWrapperContext<PersonData> {
             this.getSearchCond().eq("gender", genderEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

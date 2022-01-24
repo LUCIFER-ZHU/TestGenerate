@@ -14,4 +14,11 @@ export interface ExpBarControlState extends MainControlState {
    * @memberof ExpBarControlState
    */
   selection: IParam;
+
+  /**
+   * @description 分割栏绑定值
+   * @type {number}
+   * @memberof ExpBarControlState
+   */
+  split: number;
 }

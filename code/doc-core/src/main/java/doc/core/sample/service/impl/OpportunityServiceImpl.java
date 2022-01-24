@@ -194,10 +194,10 @@ public class OpportunityServiceImpl extends ServiceImpl<OpportunityMapper,Opport
 
     public Page<Opportunity> searchDefault(OpportunitySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Opportunity> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Opportunity>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Opportunity>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Opportunity.class), context.getPageable(), pages.getTotal());
     }
     public List<Opportunity> listDefault(OpportunitySearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),Opportunity.class);
     }
 
     public List<Opportunity> selectByCustomerId(String customerId) {

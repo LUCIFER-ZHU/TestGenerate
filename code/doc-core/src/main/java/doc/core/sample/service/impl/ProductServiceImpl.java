@@ -163,18 +163,18 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper,Product> imple
 
     public Page<Product> searchByCategory(ProductSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchByCategory(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Product>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Product.class), context.getPageable(), pages.getTotal());
     }
     public List<Product> listByCategory(ProductSearchContext context) {
-        return baseMapper.listByCategory(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listByCategory(context,context.getSelectCond())),Product.class);
     }
 
     public Page<Product> searchDefault(ProductSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Product>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Product.class), context.getPageable(), pages.getTotal());
     }
     public List<Product> listDefault(ProductSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),Product.class);
     }
 
 

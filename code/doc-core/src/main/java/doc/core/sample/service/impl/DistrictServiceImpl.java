@@ -182,10 +182,10 @@ public class DistrictServiceImpl extends ServiceImpl<DistrictMapper,District> im
 
     public Page<District> searchDefault(DistrictSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<District> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<District>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<District>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),District.class), context.getPageable(), pages.getTotal());
     }
     public List<District> listDefault(DistrictSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),District.class);
     }
 
     public List<District> selectByCityId(String cityId) {

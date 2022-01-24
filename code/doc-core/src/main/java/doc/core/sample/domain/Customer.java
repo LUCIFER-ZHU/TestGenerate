@@ -557,7 +557,7 @@ public class Customer extends EntityMP implements Serializable
 
 
 
-
+    
 
     /**
      * 复制当前对象数据到目标对象(粘贴重置)

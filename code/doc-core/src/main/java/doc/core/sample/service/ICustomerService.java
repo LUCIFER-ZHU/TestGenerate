@@ -55,6 +55,9 @@ public interface ICustomerService extends IService<Customer> {
     boolean removeBatch(Collection<String> ids);
 
     Customer getOrderCnt(Customer et);
+    default Customer getOrderCnt(String key) {
+        return getOrderCnt(new Customer().setCustomerId(key));
+    }    
     boolean getOrderCntBatch(List<Customer> list);
 
     Page<Customer> searchDefault(CustomerSearchContext context);

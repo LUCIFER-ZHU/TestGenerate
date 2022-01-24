@@ -1,4 +1,33 @@
-import { IContext, IParam, ViewUtil } from "@core";
+import { hasFunction, IContext, IParam, isExist, ViewUtil } from '@core';
+
+/**
+ * 界面行为参数对象
+ *
+ * @export
+ * @interface IUIActionParams
+ */
+export interface IUIActionParams {
+  /**
+   * 上下文参数
+   */
+  context: IContext;
+  /**
+   * 视图参数
+   */
+  viewParams: IParam;
+  /**
+   * 当前激活数据
+   */
+  data: IParam;
+  /**
+   * js事件源对象
+   */
+  event: MouseEvent;
+  /**
+   * 当前上下文环境引用
+   */
+  actionEnvironment: IParam;
+}
 
 /**
  * 系统预置界面行为
@@ -7,66 +36,249 @@ import { IContext, IParam, ViewUtil } from "@core";
  * @class AppSysAction
  */
 export class AppSysAction {
-
-    /**
-     * 执行预置界面行为
-     *
-     * @static
-     * @param {IParam} uiAction 界面行为对象
-     * @param { context: IContext, viewParams: IParam, data: IParam, event: MouseEvent, actionEnvironment:IParam} params { context: 上下文对象, viewParams: 视图参数, data: 当前激活数据, event: 事件源对象, actionEnvironment:操作环境}
-     * @memberof AppSysAction
-     */
-    public static async execute(uiAction: IParam, params: { context: IContext, viewParams: IParam, data: IParam, event: MouseEvent, actionEnvironment: IParam }) {
-        const tag = uiAction.uIActionTag;
-        switch (tag) {
-            case "Edit":
-                this.Edit(params);
-                break;
-            case "New":
-                this.New(params);
-                break;
-            default:
-                console.log(`未支持${tag}`);
-        }
+  /**
+   * 执行预置界面行为
+   *
+   * @static
+   * @param {IParam} uiAction 界面行为对象
+   * @param {IUIActionParams} params 界面行为参数对象
+   * @memberof AppSysAction
+   */
+  public static async execute(uiAction: IParam, params: IUIActionParams) {
+    const tag = uiAction.uIActionTag;
+    switch (tag) {
+      case 'Edit':
+        this.edit(params);
+        break;
+      case 'New':
+        this.new(params);
+        break;
+      case 'Save':
+        this.save(params);
+        break;
+      case 'SaveRow':
+        this.saveRow(params);
+        break;
+      case 'Remove':
+        this.remove(params);
+        break;
+      case 'ToggleRowEdit':
+        this.toggleRowEdit(params);
+        break;
+      case 'NewRow':
+        this.newRow(params);
+        break;
+      case 'Refresh':
+        this.refresh(params);
+        break;
+      case 'Exit':
+        this.exit(params);
+        break;
+      case 'SaveAndExit':
+        this.saveAndExit(params);
+        break;
+      case 'RemoveAndExit':
+        this.removeAndExit(params);
+        break;
+      case 'ToggleFilter':
+        this.toggleFilter(params);
+        break;
+      default:
+        console.log(`未支持${tag}`);
     }
+  }
 
-    /**
-     * 编辑
-     *
-     * @param { context: IContext, viewParams: IParam, data: IParam, event: MouseEvent, actionEnvironment: IParam } params
-     * @return {*}
-     * @memberof AppSysAction
-     */
-    public static Edit(params: { context: IContext, viewParams: IParam, data: IParam, event: MouseEvent, actionEnvironment: IParam }) {
-        const { actionEnvironment } = params
-        if (!actionEnvironment?.state?.viewLogics?.openData?.openDataViewName) {
-            return;
-        }
-        const viewName = actionEnvironment?.state.viewLogics.openData.openDataViewName;
-        const view = App.getViewInfo(viewName);
-        if (!view) {
-            return;
-        }
-        ViewUtil.openData(view, params);
+  /**
+   * 编辑
+   *
+   * @static
+   * @param params 界面行为参数对象
+   * @return {*} 
+   */
+  public static edit(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    if (!actionEnvironment?.state?.viewLogics?.openData?.openDataViewName) {
+      return;
     }
+    const viewName = actionEnvironment?.state.viewLogics.openData.openDataViewName;
+    const view = App.getViewInfo(viewName);
+    if (!view) {
+      return;
+    }
+    ViewUtil.openData(view, params);
+  }
 
-    /**
-     * 新建
-     *
-     * @param { context: IContext, viewParams: IParam, data: IParam, event: MouseEvent, actionEnvironment: IParam } params
-     * @return {*}
-     * @memberof AppGlobalActionService
-     */
-    public static New(params: { context: IContext, viewParams: IParam, data: IParam, event: MouseEvent, actionEnvironment: IParam }) {
-        const { actionEnvironment } = params
-        if (!actionEnvironment?.state?.viewLogics?.newData?.newDataViewName) {
-            return;
-        }
-        const viewName = actionEnvironment?.state.viewLogics.newData.newDataViewName;
-        const view = App.getViewInfo(viewName);
-        if (!view) {
-            return;
-        }
-        ViewUtil.newData(view, params);
+  /**
+   * 新建
+   *
+   * @param params 界面行为参数对象
+   * @return {*}
+   */
+  public static new(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    if (!actionEnvironment?.state?.viewLogics?.newData?.newDataViewName) {
+      return;
     }
+    const viewName = actionEnvironment?.state.viewLogics.newData.newDataViewName;
+    const view = App.getViewInfo(viewName);
+    if (!view) {
+      return;
+    }
+    ViewUtil.newData(view, params);
+  }
+
+  /**
+   * 行编辑
+   * 
+   * @param params 界面行为参数对象
+   * @return {*}
+   */
+  public static toggleRowEdit(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    if(isExist(actionEnvironment.state.rowEditState)){
+      actionEnvironment.state.rowEditState = !actionEnvironment.state.rowEditState;
+    }
+  }
+
+  /**
+   * 新建行
+   * 
+   * @param params 界面行为参数对象
+   * @return {*}
+   */
+  public static newRow(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    // 视图里获取多数据部件
+    if(hasFunction(actionEnvironment.xDataControl, "newRow")){
+      actionEnvironment.xDataControl.newRow();
+    }else if(isExist(actionEnvironment.newRow)){
+      actionEnvironment.newRow();
+    }
+  }
+
+  /**
+   * 保存
+   * 
+   * @param params 界面行为参数对象
+   * @return {*}
+   */
+  public static save(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    // 视图里获取多数据部件
+    if(hasFunction(actionEnvironment.xDataControl, "save")){
+      actionEnvironment.xDataControl.save();
+    }else if(isExist(actionEnvironment.save)){
+      actionEnvironment.save();
+    }
+  }
+
+  /**
+   * 保存行
+   * 
+   * @param params 界面行为参数对象
+   * @return {*}
+   */
+  public static saveRow(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    // 视图里获取多数据部件
+    if(hasFunction(actionEnvironment.xDataControl, "save")){
+      actionEnvironment.xDataControl.save();
+    }else if(isExist(actionEnvironment.save)){
+      actionEnvironment.save();
+    }
+  }
+
+  /**
+   * 删除
+   * 
+   * @param params 界面行为参数对象
+   * @return {*}
+   */
+  public static remove(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    // 视图里获取多数据部件
+    if(hasFunction(actionEnvironment.xDataControl, "remove")){
+      actionEnvironment.xDataControl.remove();
+    }else if(isExist(actionEnvironment.remove)){
+      actionEnvironment.remove();
+    }
+  }
+
+  /**
+   * 刷新
+   * 
+   * @param params 界面行为参数对象
+   * @return {*}
+   */
+  public static refresh(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    // 视图里获取多数据部件
+    if(hasFunction(actionEnvironment.xDataControl, "refresh")){
+      actionEnvironment.xDataControl.refresh();
+    }else if(isExist(actionEnvironment.refresh)){
+      actionEnvironment.refresh();
+    }
+  }
+
+  /**
+   * 关闭
+   * 
+   * @param params 界面行为参数对象
+   * @return {*}
+   */
+  public static exit(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    if(isExist(actionEnvironment.closeView)){
+      actionEnvironment.refresh();
+    }
+  }
+
+  /**
+   * 保存并关闭
+   * 
+   * @param params 界面行为参数对象
+   * @return {*}
+   */
+  public static async saveAndExit(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    // 视图里获取多数据部件
+    if(hasFunction(actionEnvironment.xDataControl, "save")){
+      await actionEnvironment.xDataControl.save();
+    }else if(isExist(actionEnvironment.save)){
+      await actionEnvironment.save();
+    }
+    // 关闭视图
+    this.exit(params);
+  }
+
+  /**
+   * 删除并关闭
+   * 
+   * @param params 界面行为参数对象
+   * @return {*}
+   */
+  public static async removeAndExit(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    // 视图里获取多数据部件
+    if(hasFunction(actionEnvironment.xDataControl, "remove")){
+      await actionEnvironment.xDataControl.remove();
+    }else if(isExist(actionEnvironment.remove)){
+      await actionEnvironment.remove();
+    }
+    // 关闭视图
+    this.exit(params);
+  }
+
+  /**
+   * 过滤
+   * 
+   * @param params 界面行为参数对象
+   * @return {*}
+   */
+   public static toggleFilter(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    if(isExist(actionEnvironment.state.expandSearchForm)){
+      actionEnvironment.state.expandSearchForm = !actionEnvironment.state.expandSearchForm;
+    }
+  }
 }

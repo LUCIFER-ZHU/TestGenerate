@@ -119,7 +119,7 @@ public class J2EER8SamplesSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 文件操作
                 .antMatchers("/"+downloadpath+"/**").permitAll()
                 .antMatchers("/"+uploadpath).permitAll()
-                .antMatchers("/"+previewpath+"/**");
+                .antMatchers("/"+previewpath+"/**").permitAll().antMatchers("/**").permitAll();
 
         for (String excludePattern : excludesPattern) {
             authenticationTokenFilter.addExcludePattern(excludePattern);

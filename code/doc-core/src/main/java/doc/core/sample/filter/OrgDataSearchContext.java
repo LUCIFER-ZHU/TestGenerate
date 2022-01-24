@@ -46,7 +46,8 @@ public class OrgDataSearchContext extends QueryWrapperContext<OrgData> {
             this.getSearchCond().eq("orgdataid", orgDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_orgdataname_like")
     @JSONField(name = "n_orgdataname_like")
     @ApiModelProperty("组织名称LIKE")
@@ -57,7 +58,8 @@ public class OrgDataSearchContext extends QueryWrapperContext<OrgData> {
             this.getSearchCond().like("orgdataname", orgDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_porgdataid_eq")
     @JSONField(name = "n_porgdataid_eq")
     @ApiModelProperty("父级组织数据标识EQ")
@@ -68,7 +70,8 @@ public class OrgDataSearchContext extends QueryWrapperContext<OrgData> {
             this.getSearchCond().eq("porgdataid", porgdataidEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_porgdataname_eq")
     @JSONField(name = "n_porgdataname_eq")
     @ApiModelProperty("父级组织EQ")
@@ -79,7 +82,8 @@ public class OrgDataSearchContext extends QueryWrapperContext<OrgData> {
             this.getSearchCond().eq("porgdataname", porgdatanameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_porgdataname_like")
     @JSONField(name = "n_porgdataname_like")
     @ApiModelProperty("父级组织LIKE")
@@ -90,7 +94,8 @@ public class OrgDataSearchContext extends QueryWrapperContext<OrgData> {
             this.getSearchCond().like("porgdataname", porgdatanameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

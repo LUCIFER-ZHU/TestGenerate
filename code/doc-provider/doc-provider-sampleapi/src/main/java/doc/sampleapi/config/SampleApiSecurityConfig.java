@@ -121,7 +121,7 @@ public class SampleApiSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 文件操作
                 .antMatchers("/"+downloadpath+"/**").permitAll()
                 .antMatchers("/"+uploadpath).permitAll()
-                .antMatchers("/"+previewpath+"/**").permitAll();
+                .antMatchers("/"+previewpath+"/**").permitAll().antMatchers("/**").permitAll();
                 
         for (String excludePattern : excludesPattern) {
             authenticationTokenFilter.addExcludePattern(excludePattern);

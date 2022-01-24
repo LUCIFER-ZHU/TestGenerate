@@ -192,34 +192,34 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper,Order> implements 
 
     public Page<Order> searchDefault(OrderSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Order> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Order>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Order>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Order.class), context.getPageable(), pages.getTotal());
     }
     public List<Order> listDefault(OrderSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),Order.class);
     }
 
     public Page<Order> searchGroup(OrderSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Order> pages=baseMapper.searchGroup(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Order>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Order>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Order.class), context.getPageable(), pages.getTotal());
     }
     public List<Order> listGroup(OrderSearchContext context) {
-        return baseMapper.listGroup(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listGroup(context,context.getSelectCond())),Order.class);
     }
 
     public Page<Order> searchPaying(OrderSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Order> pages=baseMapper.searchPaying(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Order>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Order>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Order.class), context.getPageable(), pages.getTotal());
     }
     public List<Order> listPaying(OrderSearchContext context) {
-        return baseMapper.listPaying(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listPaying(context,context.getSelectCond())),Order.class);
     }
 
     public Page<Order> searchProcessing(OrderSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Order> pages=baseMapper.searchProcessing(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Order>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Order>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Order.class), context.getPageable(), pages.getTotal());
     }
     public List<Order> listProcessing(OrderSearchContext context) {
-        return baseMapper.listProcessing(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listProcessing(context,context.getSelectCond())),Order.class);
     }
 
     public List<Order> selectByCustomerId(String customerId) {

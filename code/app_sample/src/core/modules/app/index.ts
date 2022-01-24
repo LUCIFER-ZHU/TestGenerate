@@ -1,1 +1,0 @@
-export { AppBase } from './app-base';

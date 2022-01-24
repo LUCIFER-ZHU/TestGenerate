@@ -1,4 +1,5 @@
 import { ControlServiceBase, ControlVOBase, deepCopy, IContext, IParam, isEmpty, TreeNodeRSVO, TreeNodeVO } from "@core";
+import { Environment } from "@/environments/environment";
 
 /**
  * @description 树部件服务
@@ -188,7 +189,7 @@ export class TreeService<T extends ControlVOBase> extends ControlServiceBase<T> 
           enableckeck: node.enableCheck,
           disabled: node.disableSelect,
           expanded: node.expanded || filter.isAutoExpand,
-          leaf: !node.hasPSDETreeNodeRSs,
+          isLeaf: !node.hasPSDETreeNodeRSs,
           selected: node.selected,
           navfilter: node.navFilter,
           navigateContext: node.navigateContext,
@@ -246,7 +247,6 @@ export class TreeService<T extends ControlVOBase> extends ControlServiceBase<T> 
         }
         try {
           this.searchNodeData(node, context, searchFilter, filter).then((records: any) => {
-            console.log(222, "实体级", records);
             if (records && records.length) {
               records.forEach((entity: any) => {
                 let treeNode: any = {};
@@ -323,25 +323,39 @@ export class TreeService<T extends ControlVOBase> extends ControlServiceBase<T> 
                 } else {
                   Object.assign(treeNode, { expanded: filter.isAutoExpand });
                 }
+                if (node.appendCaption) {
+                  Object.assign(treeNode, { appendCaption: true });
+                }
                 if (node.textFormat) {
                   Object.assign(treeNode, { textFormat: node.textFormat });
                 }
-                Object.assign(treeNode, { leaf: !node.hasPSDETreeNodeRSs });
+                Object.assign(treeNode, { isLeaf: !node.hasPSDETreeNodeRSs });
                 if (node.leafFlagPSAppDEField?.codeName) {
                   const leafFlag = entity[node.leafFlagPSAppDEField.codeName.toLowerCase()];
                   if (leafFlag != null && leafFlag != undefined) {
                     let strLeafFlag: string = leafFlag.toString().toLowerCase();
                     if (Object.is(strLeafFlag, '1') || Object.is(strLeafFlag, 'true')) {
-                      Object.assign(treeNode, { leaf: true });
+                      Object.assign(treeNode, { isLeaf: true });
                     } else {
-                      Object.assign(treeNode, { leaf: false });
+                      Object.assign(treeNode, { isLeaf: false });
                     }
                   }
                 }
                 const nodeDataItems: any[] = node.deTreeNodeDataItems || [];
                 if (nodeDataItems.length > 0) {
                   nodeDataItems.forEach((item: any) => {
-                    //  TODO 节点数据项
+                    const name = item.name.toLowerCase();
+                    if (item.fieldCodeName) {
+                      Object.assign(treeNode, {
+                        [name]: entity[item.fieldCodeName.toLowerCase()],
+                      })
+                    }
+                    if (Object.is('text', name) && item.customCode) {
+                      Object.assign(treeNode, { textCustomCode: true, textScriptCode: item.scriptCode });
+                    }
+                    if (Object.is('icon', name) && item.customCode) {
+                      Object.assign(treeNode, { iconCustomCode: true, iconScriptCode: item.scriptCode });
+                    }
                   })
                 }
                 Object.assign(treeNode, { selected: node.selected });
@@ -349,7 +363,6 @@ export class TreeService<T extends ControlVOBase> extends ControlServiceBase<T> 
                   Object.assign(treeNode, { navfilter: node.navFilter });
                 }
                 Object.assign(treeNode, { curData: entity });
-                //  TODO 导航上下文 导航参数
                 if (node.counterId) {
                   Object.assign(treeNode, { counterId: node.counterId });
                 }
@@ -403,11 +416,9 @@ export class TreeService<T extends ControlVOBase> extends ControlServiceBase<T> 
     }
     if (context && context.srfparentkey) {
       Object.assign(searchFilter, { srfparentkey: deepCopy(context).srfparentkey });
-      // TODO 识别环境参数 enableIssue
-      // const Environment = AppServiceBase.getInstance().getAppEnvironment();
-      // if (Environment.enableIssue) {
-      //   Object.assign(searchFilter, { nodeid: Util.deepCopy(context).srfparentkey });
-      // }
+      if (Environment && Environment.enableIssue) {
+        Object.assign(searchFilter, { nodeid: deepCopy(context).srfparentkey });
+      }
     }
     if (node.sortPSAppDEField?.codeName) {
       Object.assign(searchFilter, { sort: `${node.sortPSAppDEField.codeName.toLowerCase()},${node.sortDir ? node.sortDir : 'asc'}` });

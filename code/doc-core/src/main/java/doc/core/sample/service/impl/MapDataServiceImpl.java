@@ -163,10 +163,10 @@ public class MapDataServiceImpl extends ServiceImpl<MapDataMapper,MapData> imple
 
     public Page<MapData> searchDefault(MapDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<MapData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<MapData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<MapData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),MapData.class), context.getPageable(), pages.getTotal());
     }
     public List<MapData> listDefault(MapDataSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),MapData.class);
     }
 
 

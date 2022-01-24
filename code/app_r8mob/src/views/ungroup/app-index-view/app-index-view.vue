@@ -38,7 +38,7 @@ const collapsedChange = () => {
   <AppDefaultIndexViewLayout :class="['app-index-view', state.viewSysCss]" :showCaptionBar="state.showCaptionBar" :menuAlign="state.menuAlign" :collapsed="collapsed">
     <template #caption>
       <div class="index-view-header">
-        {{state.viewCaption}}
+{{state.viewCaption}}
         <MenuUnfoldOutlined
           v-if="collapsed && Object.is(state.menuAlign,'LEFT')"
           class="trigger"
@@ -51,8 +51,9 @@ const collapsedChange = () => {
         <AppUser/>
     </template>
     <template #menu>
-      <AppIndexViewMenu
+        <AppIndexViewMenu
         ref="menu" 
+        name="appmenu"
         :context="state.context"
         :collapsed="collapsed"
         :menuAlign="state.menuAlign"

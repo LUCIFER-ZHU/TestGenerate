@@ -242,18 +242,18 @@ public class ExampleServiceImpl extends ServiceImpl<ExampleMapper,Example> imple
 
     public Page<Example> searchDefault(ExampleSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Example> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Example>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Example>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Example.class), context.getPageable(), pages.getTotal());
     }
     public List<Example> listDefault(ExampleSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),Example.class);
     }
 
     public Page<Example> searchEmpty(ExampleSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Example> pages=baseMapper.searchEmpty(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Example>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Example>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Example.class), context.getPageable(), pages.getTotal());
     }
     public List<Example> listEmpty(ExampleSearchContext context) {
-        return baseMapper.listEmpty(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listEmpty(context,context.getSelectCond())),Example.class);
     }
 
     public List<Example> selectByCityId(String cityId) {

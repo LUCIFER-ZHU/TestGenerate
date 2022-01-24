@@ -46,7 +46,8 @@ public class KanbanDataSearchContext extends QueryWrapperContext<KanbanData> {
             this.getSearchCond().like("kanbandataname", kanbanDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_kanbandataid_eq")
     @JSONField(name = "n_kanbandataid_eq")
     @ApiModelProperty("看板数据标识EQ")
@@ -57,7 +58,8 @@ public class KanbanDataSearchContext extends QueryWrapperContext<KanbanData> {
             this.getSearchCond().eq("kanbandataid", kanbanDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_taskstatus_eq")
     @JSONField(name = "n_taskstatus_eq")
     @ApiModelProperty("任务状态EQ")
@@ -68,7 +70,8 @@ public class KanbanDataSearchContext extends QueryWrapperContext<KanbanData> {
             this.getSearchCond().eq("taskstatus", taskstatusEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

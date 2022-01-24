@@ -172,10 +172,10 @@ public class CounterData2ServiceImpl extends ServiceImpl<CounterData2Mapper,Coun
 
     public Page<CounterData2> searchDefault(CounterData2SearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<CounterData2> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<CounterData2>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<CounterData2>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),CounterData2.class), context.getPageable(), pages.getTotal());
     }
     public List<CounterData2> listDefault(CounterData2SearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),CounterData2.class);
     }
 
 

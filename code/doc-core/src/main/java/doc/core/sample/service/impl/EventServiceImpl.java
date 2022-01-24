@@ -163,10 +163,10 @@ public class EventServiceImpl extends ServiceImpl<EventMapper,Event> implements 
 
     public Page<Event> searchDefault(EventSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Event> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Event>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<Event>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),Event.class), context.getPageable(), pages.getTotal());
     }
     public List<Event> listDefault(EventSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),Event.class);
     }
 
 

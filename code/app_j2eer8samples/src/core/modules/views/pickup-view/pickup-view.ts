@@ -73,7 +73,7 @@ export class PickupView extends MainView {
     const superParams = super.moduleInstall();
     return {
       ...superParams,
-      selectData: this.selectData,
+      selectData:this.selectData,      
       onCancel: this.onCancel.bind(this),
       onConfirm: this.onConfirm.bind(this)
     };

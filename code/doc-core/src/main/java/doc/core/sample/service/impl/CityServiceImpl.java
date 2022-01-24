@@ -182,10 +182,10 @@ public class CityServiceImpl extends ServiceImpl<CityMapper,City> implements ICi
 
     public Page<City> searchDefault(CitySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<City> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<City>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<City>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),City.class), context.getPageable(), pages.getTotal());
     }
     public List<City> listDefault(CitySearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),City.class);
     }
 
     public List<City> selectByProvinceId(String provinceId) {

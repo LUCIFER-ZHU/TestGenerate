@@ -17,7 +17,7 @@ export class ControlVO extends ControlVOBase implements TreeControlVO {
         appDataEntity: {
           codeName: 'ChartData',
           keyField: 'ChartDataId',
-          majorField: 'true',
+          majorField: 'ChartDataName',
         },
         appendPNodeId: false,
         counterId: 'countertag2',
@@ -45,7 +45,7 @@ export class ControlVO extends ControlVOBase implements TreeControlVO {
         appDataEntity: {
           codeName: 'ChartData',
           keyField: 'ChartDataId',
-          majorField: 'true',
+          majorField: 'ChartDataName',
         },
         appendPNodeId: false,
         counterId: 'countertag',
@@ -73,8 +73,9 @@ export class ControlVO extends ControlVOBase implements TreeControlVO {
         appDataEntity: {
           codeName: 'ChartData',
           keyField: 'ChartDataId',
-          majorField: 'true',
+          majorField: 'ChartDataName',
         },
+        appendCaption: true,
         appDeDataSet: { codeName: 'FetchDefault' },
         appendPNodeId: false,
         counterId: '',
@@ -109,7 +110,7 @@ export class ControlVO extends ControlVOBase implements TreeControlVO {
         appDataEntity: {
           codeName: 'ChartData',
           keyField: 'ChartDataId',
-          majorField: 'true',
+          majorField: 'ChartDataName',
         },
         appendPNodeId: false,
         counterId: '',
@@ -162,7 +163,7 @@ export class ControlVO extends ControlVOBase implements TreeControlVO {
         appDataEntity: {
           codeName: 'ChartData',
           keyField: 'ChartDataId',
-          majorField: 'true',
+          majorField: 'ChartDataName',
         },
         appendPNodeId: false,
         counterId: '',
@@ -191,7 +192,7 @@ export class ControlVO extends ControlVOBase implements TreeControlVO {
         appDataEntity: {
           codeName: 'ChartData',
           keyField: 'ChartDataId',
-          majorField: 'true',
+          majorField: 'ChartDataName',
         },
         appendPNodeId: false,
         counterId: '',
@@ -294,7 +295,10 @@ export const ctrlState = {
   controlCodeName: 'Treeview',
   controlName: 'tree',
   controlService: new TreeService<ControlVO>(ControlVO, new ChartDataService() ),
-  currentselectedNode: {},
+  currentSelectedNode: {},
   data: [],
+  echoSelectedNodes: [],
+  expandedKeys: [],
+  selectedKeys: [],
   selectedNodes: []
 };

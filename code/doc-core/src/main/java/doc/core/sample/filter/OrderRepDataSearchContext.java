@@ -46,7 +46,8 @@ public class OrderRepDataSearchContext extends QueryWrapperContext<OrderRepData>
             this.getSearchCond().eq("orderrepdataid", orderRepDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_orderrepdataname_like")
     @JSONField(name = "n_orderrepdataname_like")
     @ApiModelProperty("订单报表数据名称LIKE")
@@ -57,7 +58,8 @@ public class OrderRepDataSearchContext extends QueryWrapperContext<OrderRepData>
             this.getSearchCond().like("orderrepdataname", orderRepDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_quarterval_eq")
     @JSONField(name = "n_quarterval_eq")
     @ApiModelProperty("季度EQ")
@@ -68,7 +70,8 @@ public class OrderRepDataSearchContext extends QueryWrapperContext<OrderRepData>
             this.getSearchCond().eq("quarterval", quartervalEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_yearval_eq")
     @JSONField(name = "n_yearval_eq")
     @ApiModelProperty("年份EQ")
@@ -79,7 +82,8 @@ public class OrderRepDataSearchContext extends QueryWrapperContext<OrderRepData>
             this.getSearchCond().eq("yearval", yearvalEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_monthval_eq")
     @JSONField(name = "n_monthval_eq")
     @ApiModelProperty("月份EQ")
@@ -90,7 +94,8 @@ public class OrderRepDataSearchContext extends QueryWrapperContext<OrderRepData>
             this.getSearchCond().eq("monthval", monthvalEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_totalval_gtandeq")
     @JSONField(name = "n_totalval_gtandeq")
     @ApiModelProperty("合计GTANDEQ")
@@ -101,7 +106,8 @@ public class OrderRepDataSearchContext extends QueryWrapperContext<OrderRepData>
             this.getSearchCond().ge("totalval", totalvalGTANDEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_like")
     @JSONField(name = "n_customername_like")
     @ApiModelProperty("客户名称LIKE")
@@ -112,7 +118,8 @@ public class OrderRepDataSearchContext extends QueryWrapperContext<OrderRepData>
             this.getSearchCond().like("customername", customerNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_state_eq")
     @JSONField(name = "n_state_eq")
     @ApiModelProperty("订单状态EQ")
@@ -123,7 +130,8 @@ public class OrderRepDataSearchContext extends QueryWrapperContext<OrderRepData>
             this.getSearchCond().eq("state", stateEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

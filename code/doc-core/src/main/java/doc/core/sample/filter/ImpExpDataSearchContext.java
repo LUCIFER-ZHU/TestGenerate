@@ -46,7 +46,8 @@ public class ImpExpDataSearchContext extends QueryWrapperContext<ImpExpData> {
             this.getSearchCond().eq("impexpdataid", impExpDataIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_impexpdataname_like")
     @JSONField(name = "n_impexpdataname_like")
     @ApiModelProperty("导入导出数据名称LIKE")
@@ -57,7 +58,8 @@ public class ImpExpDataSearchContext extends QueryWrapperContext<ImpExpData> {
             this.getSearchCond().like("impexpdataname", impExpDataNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_codelistfield_eq")
     @JSONField(name = "n_codelistfield_eq")
     @ApiModelProperty("代码表属性EQ")
@@ -68,7 +70,8 @@ public class ImpExpDataSearchContext extends QueryWrapperContext<ImpExpData> {
             this.getSearchCond().eq("codelistfield", codelistfieldEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customerid_eq")
     @JSONField(name = "n_customerid_eq")
     @ApiModelProperty("客户标识EQ")
@@ -79,7 +82,8 @@ public class ImpExpDataSearchContext extends QueryWrapperContext<ImpExpData> {
             this.getSearchCond().eq("customerid", customerIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_eq")
     @JSONField(name = "n_customername_eq")
     @ApiModelProperty("客户名称EQ")
@@ -90,7 +94,8 @@ public class ImpExpDataSearchContext extends QueryWrapperContext<ImpExpData> {
             this.getSearchCond().eq("customername", customerNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_like")
     @JSONField(name = "n_customername_like")
     @ApiModelProperty("客户名称LIKE")
@@ -101,7 +106,8 @@ public class ImpExpDataSearchContext extends QueryWrapperContext<ImpExpData> {
             this.getSearchCond().like("customername", customerNameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

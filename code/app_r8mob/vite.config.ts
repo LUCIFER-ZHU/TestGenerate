@@ -24,9 +24,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
-  server:{
-    proxy:{
-      '/api':'http://localhost:8080'
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://10.19.1.128:8080',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
     }
   },
   plugins: [
@@ -40,10 +44,10 @@ export default defineConfig({
       dts: true,
       resolvers: [ElementPlusResolver()],
     }),
-    monacoEditorPlugin(),    
+    monacoEditorPlugin(),
   ],
   build: {
-      outDir: resolve(__dirname, 'dist')
+    outDir: resolve(__dirname, 'dist')
   }
 });
 

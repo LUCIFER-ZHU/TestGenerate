@@ -63,6 +63,13 @@ export class ViewBase {
   }
 
   /**
+   * @description 处理视图初始化
+   *
+   * @memberof ViewBase
+   */
+  public useViewInit() { }
+
+  /**
    * @description 处理响应式状态（state中的对象属性）
    * @memberof ViewBase
    */
@@ -79,6 +86,14 @@ export class ViewBase {
   public next({ tag, action, data }: { tag: string, action: string, data: any }): void {
     const { viewSubject } = this.props;
     viewSubject.next({ tag: tag, action: action, data: data })
+  }
+
+  /**
+   * 关闭视图
+   *
+   */
+  public closeView(){
+    window.history.go(-1);
   }
 
   /**
@@ -189,24 +204,6 @@ export class ViewBase {
    */
   public useCounterService() { }
 
-  /**
-   * @description 处理视图初始化
-   *
-   * @memberof ViewBase
-   */
-  public useViewInit() {
-    const route = useRoute();
-    App.getNavDataService().addNavData({title: this.state.viewCaption, viewType: this.state.viewType, path: unref(route.fullPath), openType: this.props.openType, tag: this.state.viewCodeName, key: '', data: {}});
-  }
-
-  /**
-   * @description 视图销毁
-   * @memberof ViewBase
-   */
-  public useViewDestroyed() {
-    // 视图销毁从导航栈里面删除数据
-    App.getNavDataService().removeNavData(this.state.viewCodeName);
-  }
 
   /**
    * @description 安装视图所有功能模块的方法

@@ -46,7 +46,8 @@ public class OrderSearchContext extends QueryWrapperContext<Order> {
             this.getSearchCond().like("ordername", orderNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_orderid_eq")
     @JSONField(name = "n_orderid_eq")
     @ApiModelProperty("订单标识EQ")
@@ -57,31 +58,8 @@ public class OrderSearchContext extends QueryWrapperContext<Order> {
             this.getSearchCond().eq("orderid", orderIdEQ);
         }
         return this;
-    } 
-    @JsonProperty("f_orderdate_datediffnow2_ltandeq")
-    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "f_orderdate_datediffnow2_ltandeq" , format = "yyyy-MM-dd")
-    @ApiModelProperty("订单时间LTANDEQ")
-	private Timestamp orderDateLTANDEQ;
-	public OrderSearchContext setOrderDateLTANDEQ(Timestamp orderDateLTANDEQ) {
-        this.orderDateLTANDEQ = orderDateLTANDEQ;
-        if(!ObjectUtils.isEmpty(this.orderDateLTANDEQ)){
-            this.getSearchCond().le("orderdate", orderDateLTANDEQ);
-        }
-        return this;
-    } 
-    @JsonProperty("f_orderdate_datediffnow_ltandeq")
-    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "f_orderdate_datediffnow_ltandeq" , format = "yyyy-MM-dd")
-    @ApiModelProperty("订单时间LTANDEQ")
-	private Timestamp orderDateLTANDEQ;
-	public OrderSearchContext setOrderDateLTANDEQ(Timestamp orderDateLTANDEQ) {
-        this.orderDateLTANDEQ = orderDateLTANDEQ;
-        if(!ObjectUtils.isEmpty(this.orderDateLTANDEQ)){
-            this.getSearchCond().le("orderdate", orderDateLTANDEQ);
-        }
-        return this;
-    } 
+    }
+                    
     @JsonProperty("n_orderdate_gtandeq")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "n_orderdate_gtandeq" , format = "yyyy-MM-dd")
@@ -93,7 +71,8 @@ public class OrderSearchContext extends QueryWrapperContext<Order> {
             this.getSearchCond().ge("orderdate", orderDateGTANDEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_orderdate_ltandeq")
     @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
     @JSONField(name = "n_orderdate_ltandeq" , format = "yyyy-MM-dd")
@@ -105,7 +84,8 @@ public class OrderSearchContext extends QueryWrapperContext<Order> {
             this.getSearchCond().le("orderdate", orderDateLTANDEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_state_eq")
     @JSONField(name = "n_state_eq")
     @ApiModelProperty("订单状态EQ")
@@ -116,7 +96,8 @@ public class OrderSearchContext extends QueryWrapperContext<Order> {
             this.getSearchCond().eq("state", stateEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customerid_eq")
     @JSONField(name = "n_customerid_eq")
     @ApiModelProperty("客户标识EQ")
@@ -127,7 +108,8 @@ public class OrderSearchContext extends QueryWrapperContext<Order> {
             this.getSearchCond().eq("customerid", customerIdEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_eq")
     @JSONField(name = "n_customername_eq")
     @ApiModelProperty("客户EQ")
@@ -138,7 +120,8 @@ public class OrderSearchContext extends QueryWrapperContext<Order> {
             this.getSearchCond().eq("customername", customerNameEQ);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_customername_like")
     @JSONField(name = "n_customername_like")
     @ApiModelProperty("客户LIKE")
@@ -149,7 +132,8 @@ public class OrderSearchContext extends QueryWrapperContext<Order> {
             this.getSearchCond().like("customername", customerNameLIKE);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索

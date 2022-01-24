@@ -163,34 +163,34 @@ public class SampleVerServiceImpl extends ServiceImpl<SampleVerMapper,SampleVer>
 
     public Page<SampleVer> searchDefault(SampleVerSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<SampleVer> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<SampleVer>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<SampleVer>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),SampleVer.class), context.getPageable(), pages.getTotal());
     }
     public List<SampleVer> listDefault(SampleVerSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),SampleVer.class);
     }
 
     public Page<SampleVer> searchJavar7D(SampleVerSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<SampleVer> pages=baseMapper.searchJavar7D(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<SampleVer>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<SampleVer>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),SampleVer.class), context.getPageable(), pages.getTotal());
     }
     public List<SampleVer> listJavar7D(SampleVerSearchContext context) {
-        return baseMapper.listJavar7D(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listJavar7D(context,context.getSelectCond())),SampleVer.class);
     }
 
     public Page<SampleVer> searchMobr7D(SampleVerSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<SampleVer> pages=baseMapper.searchMobr7D(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<SampleVer>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<SampleVer>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),SampleVer.class), context.getPageable(), pages.getTotal());
     }
     public List<SampleVer> listMobr7D(SampleVerSearchContext context) {
-        return baseMapper.listMobr7D(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listMobr7D(context,context.getSelectCond())),SampleVer.class);
     }
 
     public Page<SampleVer> searchWebr7D(SampleVerSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<SampleVer> pages=baseMapper.searchWebr7D(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<SampleVer>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<SampleVer>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),SampleVer.class), context.getPageable(), pages.getTotal());
     }
     public List<SampleVer> listWebr7D(SampleVerSearchContext context) {
-        return baseMapper.listWebr7D(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listWebr7D(context,context.getSelectCond())),SampleVer.class);
     }
 
 

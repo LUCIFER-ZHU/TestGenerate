@@ -194,10 +194,10 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
 
     public Page<ProductCategory> searchDefault(ProductCategorySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductCategory> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<ProductCategory>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<ProductCategory>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),ProductCategory.class), context.getPageable(), pages.getTotal());
     }
     public List<ProductCategory> listDefault(ProductCategorySearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),ProductCategory.class);
     }
 
     public List<ProductCategory> selectByCategoryId(String categoryId) {

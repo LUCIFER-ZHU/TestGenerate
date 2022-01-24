@@ -182,10 +182,10 @@ public class ImpExpDataServiceImpl extends ServiceImpl<ImpExpDataMapper,ImpExpDa
 
     public Page<ImpExpData> searchDefault(ImpExpDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<ImpExpData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<ImpExpData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<ImpExpData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),ImpExpData.class), context.getPageable(), pages.getTotal());
     }
     public List<ImpExpData> listDefault(ImpExpDataSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),ImpExpData.class);
     }
 
     public List<ImpExpData> selectByCustomerId(String customerId) {

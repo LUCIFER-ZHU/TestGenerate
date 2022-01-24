@@ -163,10 +163,10 @@ public class CounterDataServiceImpl extends ServiceImpl<CounterDataMapper,Counte
 
     public Page<CounterData> searchDefault(CounterDataSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<CounterData> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<CounterData>(pages.getRecords(), context.getPageable(), pages.getTotal());
+        return new PageImpl<CounterData>(com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(pages.getRecords()),CounterData.class), context.getPageable(), pages.getTotal());
     }
     public List<CounterData> listDefault(CounterDataSearchContext context) {
-        return baseMapper.listDefault(context,context.getSelectCond());
+        return com.alibaba.fastjson.JSON.parseArray(com.alibaba.fastjson.JSON.toJSONString(baseMapper.listDefault(context,context.getSelectCond())),CounterData.class);
     }
 
 

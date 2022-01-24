@@ -46,7 +46,8 @@ public class ProvinceSearchContext extends QueryWrapperContext<Province> {
             this.getSearchCond().like("provincename", provinceNameLIKE);
         }
         return this;
-    } 
+    }
+                    
     @JsonProperty("n_provinceid_eq")
     @JSONField(name = "n_provinceid_eq")
     @ApiModelProperty("省份标识EQ")
@@ -57,7 +58,8 @@ public class ProvinceSearchContext extends QueryWrapperContext<Province> {
             this.getSearchCond().eq("provinceid", provinceIdEQ);
         }
         return this;
-    } 
+    }
+                    
 
     /**
 	 * 启用快速搜索
