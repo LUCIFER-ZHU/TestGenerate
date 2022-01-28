@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface DistrictMapper extends BaseMapper<District> {
 
 
-    Page<District> searchDefault(IPage page, @Param("srf") DistrictSearchContext context, @Param("ew") Wrapper<District> wrapper);
-    List<District> listDefault(@Param("srf") DistrictSearchContext context, @Param("ew") Wrapper<District> wrapper);
+    Page<District> searchDefault(IPage page, @Param("ctx") DistrictSearchContext context, @Param("ew") Wrapper<District> wrapper);
+    List<District> listDefault(@Param("ctx") DistrictSearchContext context, @Param("ew") Wrapper<District> wrapper);
 
     @Override
     District selectById(Serializable id);

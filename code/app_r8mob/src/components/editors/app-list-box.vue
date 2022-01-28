@@ -56,7 +56,7 @@ interface ListBoxProps {
    * @type {string}
    * @memberof ListBoxProps
    */
-  codeListTag?: string;
+  codeListTag: string;
 
   /**
    * 代码表类型
@@ -128,7 +128,7 @@ interface ListBoxProps {
    * @type {any}
    * @memberof ListBoxProps
    */
-  multiple?: Boolean;
+  multiple?: boolean;
 
   /**
    * 应用实体主信息属性名称
@@ -179,7 +179,7 @@ const props = withDefaults(defineProps<ListBoxProps>(), {
   deKeyField: 'srfkey',
 });
 const emit = defineEmits<EditorEmit>();
-const { handleEditorNavParams, handleLevelCodeList, loadCodeListData } = new EditorBase();
+const { handleEditorNavParams, loadCodeListData } = new EditorBase();
 const { navContext, navViewParam } = handleEditorNavParams(props);
 let items: Ref<IParam[]> = ref([]);
 const selectArray: Ref<boolean> = computed(() => {
@@ -205,13 +205,13 @@ const selectArray: Ref<boolean> = computed(() => {
   }
 });
 
-const curMajorField: Ref<string> = computed(() => {
-  return Object.is(props.editorType, 'LISTBOX') ? 'text' : props.deMajorField;
-});
+// const curMajorField: Ref<string> = computed(() => {
+//   return Object.is(props.editorType, 'LISTBOX') ? 'text' : props.deMajorField;
+// });
 
-const curKeyField: Ref<string> = computed(() => {
-  return Object.is(props.editorType, 'LISTBOX') ? 'value' : props.deKeyField;
-});
+// const curKeyField: Ref<string> = computed(() => {
+//   return Object.is(props.editorType, 'LISTBOX') ? 'value' : props.deKeyField;
+// });
 
 const onChange = ($event: any[]) => {
   let value: null | string | number = null;
@@ -291,8 +291,8 @@ const loadData = () => {
 };
 onBeforeMount(() => {
   if (Object.is('LISTBOX', props.editorType)) {
-    loadCodeListData(props.codeListTag, props.codeListType, navContext, navViewParam).then((codeListData: IParam[]) => {
-      items.value = formatCodeList(handleLevelCodeList(codeListData));
+    loadCodeListData(props.codeListTag, navContext, navViewParam).then((codeListData: IParam[]) => {
+      items.value = formatCodeList(codeListData);
     });
   } else if (Object.is('LISTBOXPICKUP', props.editorType)) {
     loadData();

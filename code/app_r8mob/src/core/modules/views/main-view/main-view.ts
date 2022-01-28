@@ -1,4 +1,4 @@
-import { ViewBase, MainViewState, IActionParam, IParam, AppActionService } from '@core';
+import { ViewBase, MainViewState, IActionParam, IParam } from '@core';
 
 /**
  * 实体视图
@@ -14,14 +14,6 @@ export class MainView extends ViewBase {
    * @memberof MainView
    */
   public declare state: MainViewState;
-
-  /**
-   * 当前视图具有数据能力部件
-   *
-   * @type {IParam}
-   * @memberof MainView
-   */
-  public declare xDataControl: IParam;
 
   /**
    * @description 处理工具栏事件
@@ -44,25 +36,12 @@ export class MainView extends ViewBase {
     const inputParam = {
       context: this.state.context,
       viewParams: this.state.viewParams,
-      data: this.xDataControl?.getData?.(),
+      data: this.xDataControl?.getData(),
       event: data.event,
       actionEnvironment: this
     };
     // 执行行为
-    AppActionService.getInstance().execute(uIAction, inputParam);
-  }
-
-  /**
-   * 处理部件事件
-   *
-   * @param {IActionParam} actionParam
-   * @memberof MainView
-   */
-  public onCtrlEvent(actionParam: IActionParam) { 
-    const { tag, action, data } = actionParam;
-    if (Object.is(action, 'closeView')) {
-      this.closeView();
-    }
+    App.getAppActionService().execute(uIAction, inputParam);
   }
 
   /**
@@ -76,7 +55,6 @@ export class MainView extends ViewBase {
       ...superParams,
       xDataControl: this.xDataControl,
       onToolbarEvent: this.onToolbarEvent.bind(this),
-      onCtrlEvent: this.onCtrlEvent.bind(this),
     };
   }
 }

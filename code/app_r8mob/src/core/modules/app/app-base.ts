@@ -1,5 +1,5 @@
-import { AppFuncService, IApp, IAppFuncService, IOpenViewService, ViewDetail } from "@core";
-import { IParam } from "@core/interface";
+import { IApp, IAppFuncService, IOpenViewService, ViewDetail } from "@core";
+import { IAppActionService, IAppAuthService, IAppCodeListService, IAppNotificationService, IParam } from "@core/interface";
 
 /**
  * 应用基类
@@ -10,31 +10,12 @@ import { IParam } from "@core/interface";
 export abstract class AppBase implements IApp {
 
   /**
-   * 应用功能服务
+   *  初始化应用
    *
-   * @private
-   * @type {AppFuncService}
+   * @param {IParam} opt
    * @memberof AppBase
    */
-  private appFuncService: AppFuncService = AppFuncService.getInstance();
-
-  /**
-   *  应用数据
-   *
-   * @private
-   * @type {IParam}
-   * @memberof AppBase
-   */
-  private appData: IParam = {};
-
-  /**
-   * 初始化应用权限
-   *
-   * @param {IParam} params 应用预置参数
-   * @return {*}  {Promise<any>}
-   * @memberof AppBase
-   */
-  public async initAppAuth(params: IParam): Promise<any> {
+  public initApp(params: IParam): Promise<any> {
     throw new Error("Method not implemented.");
   }
 
@@ -45,7 +26,7 @@ export abstract class AppBase implements IApp {
    * @memberof AppBase
    */
   public setAppData(opt: IParam): void {
-    this.appData = opt;
+    this.getAppAuthService().setAppData(opt);
   }
 
   /**
@@ -55,7 +36,27 @@ export abstract class AppBase implements IApp {
    * @memberof AppBase
    */
   public getAppData(): IParam {
-    return this.appData;
+    return this.getAppAuthService().getAppData();
+  }
+
+  /**
+   * 获取应用权限服务
+   *
+   * @return {IAppFuncService}
+   * @memberof AppBase
+   */
+  public getAppAuthService(): IAppAuthService {
+    throw new Error("Method not implemented.");
+  }
+
+  /**
+   * 获取通知服务
+   *
+   * @return {*}  {IAppNotificationService}
+   * @memberof AppBase
+   */
+  public getNotificationService(): IAppNotificationService {
+    throw new Error("Method not implemented.");
   }
 
   /**
@@ -65,7 +66,7 @@ export abstract class AppBase implements IApp {
    * @memberof AppBase
    */
   public getAppFuncService(): IAppFuncService {
-    return this.appFuncService;
+    throw new Error("Method not implemented.");
   }
 
   /**
@@ -75,6 +76,26 @@ export abstract class AppBase implements IApp {
    * @memberof AppBase
    */
   public getOpenViewService(): IOpenViewService {
+    throw new Error("Method not implemented.");
+  }
+
+  /**
+   * 获取界面行为服务
+   *
+   * @return {*}  {IAppActionService}
+   * @memberof AppBase
+   */
+  public getAppActionService(): IAppActionService {
+    throw new Error("Method not implemented.");
+  }
+
+  /**
+   * 获取代码表服务
+   *
+   * @return {*}  {IAppCodeListService}
+   * @memberof AppBase
+   */
+  public getCodeListService(): IAppCodeListService {
     throw new Error("Method not implemented.");
   }
 
@@ -132,21 +153,12 @@ export abstract class AppBase implements IApp {
   }
 
   /**
-   * @description 跳转登录页
+   * @description 跳转登录页面
    *
    * @memberof AppBase
    */
-  gotoLoginPage(): void {
+  public gotoLoginPage(): void {
     throw new Error("Method not implemented.");
   }
 
-  /**
-   * @description 登录
-   *
-   * @return {*}  {Promise<IParam>}
-   * @memberof AppBase
-   */
-  handleLogin(): Promise<IParam> {
-    throw new Error("Method not implemented.");
-  }
 }

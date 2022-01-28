@@ -14,10 +14,10 @@ export interface IActionParam {
 
   /**
    * @description 触发行为
-   * @type {('LOAD' | 'SAVE' | 'REMOVE' | 'AUTOLOAD' | 'LOADDRAFT' | 'FILTER' | 'REFRESH_PARENT' | string)}
+   * @type { string }
    * @memberof IActionParam
    */
-  action: 'LOAD' | 'SAVE' | 'REMOVE' | 'AUTOLOAD' | 'LOADDRAFT' | 'FILTER' | 'REFRESH_PARENT' | string;
+  action: string;
 
   /**
    * @description 数据

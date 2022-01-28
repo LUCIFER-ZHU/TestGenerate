@@ -4,7 +4,7 @@ export const AppViewConfig:IParam = {
   "ProvinceMobPickupMDView":{
     "name": "ProvinceMobPickupMDView",
     "codeName": "ProvinceMobPickupMDView",
-    "appEntityName":"Province",
+    "appEntityCodeName":"Province",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -20,7 +20,7 @@ export const AppViewConfig:IParam = {
   "ProvinceMobPickupTreeView":{
     "name": "ProvinceMobPickupTreeView",
     "codeName": "ProvinceMobPickupTreeView",
-    "appEntityName":"Province",
+    "appEntityCodeName":"Province",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -36,7 +36,7 @@ export const AppViewConfig:IParam = {
   "AppIndexView":{
     "name": "AppIndexView",
     "codeName": "AppIndexView",
-    "appEntityName":"",
+    "appEntityCodeName":"",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -53,7 +53,7 @@ export const AppViewConfig:IParam = {
   "ProvinceForTreeMobMPickupView":{
     "name": "ProvinceForTreeMobMPickupView",
     "codeName": "ProvinceForTreeMobMPickupView",
-    "appEntityName":"Province",
+    "appEntityCodeName":"Province",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -69,7 +69,7 @@ export const AppViewConfig:IParam = {
   "ChartDataMobEditView":{
     "name": "ChartDataMobEditView",
     "codeName": "ChartDataMobEditView",
-    "appEntityName":"ChartData",
+    "appEntityCodeName":"ChartData",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -87,7 +87,7 @@ export const AppViewConfig:IParam = {
   "ChartDataMobTabExpView":{
     "name": "ChartDataMobTabExpView",
     "codeName": "ChartDataMobTabExpView",
-    "appEntityName":"ChartData",
+    "appEntityCodeName":"ChartData",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -103,7 +103,7 @@ export const AppViewConfig:IParam = {
   "QuickMenuAppPortalView":{
     "name": "QuickMenuAppPortalView",
     "codeName": "QuickMenuAppPortalView",
-    "appEntityName":"",
+    "appEntityCodeName":"",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -118,7 +118,7 @@ export const AppViewConfig:IParam = {
   "AppPortalView":{
     "name": "AppPortalView",
     "codeName": "AppPortalView",
-    "appEntityName":"",
+    "appEntityCodeName":"",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -133,7 +133,7 @@ export const AppViewConfig:IParam = {
   "ChartDataMobTreeView":{
     "name": "ChartDataMobTreeView",
     "codeName": "ChartDataMobTreeView",
-    "appEntityName":"ChartData",
+    "appEntityCodeName":"ChartData",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -149,7 +149,7 @@ export const AppViewConfig:IParam = {
   "ProvinceMobMPickupView":{
     "name": "ProvinceMobMPickupView",
     "codeName": "ProvinceMobMPickupView",
-    "appEntityName":"Province",
+    "appEntityCodeName":"Province",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -165,7 +165,7 @@ export const AppViewConfig:IParam = {
   "ProvinceMobEditView":{
     "name": "ProvinceMobEditView",
     "codeName": "ProvinceMobEditView",
-    "appEntityName":"Province",
+    "appEntityCodeName":"Province",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -181,7 +181,7 @@ export const AppViewConfig:IParam = {
   "ProvinceMobMEditView9":{
     "name": "ProvinceMobMEditView9",
     "codeName": "ProvinceMobMEditView9",
-    "appEntityName":"Province",
+    "appEntityCodeName":"Province",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -197,7 +197,7 @@ export const AppViewConfig:IParam = {
   "ChartDataMobPanelView":{
     "name": "ChartDataMobPanelView",
     "codeName": "ChartDataMobPanelView",
-    "appEntityName":"ChartData",
+    "appEntityCodeName":"ChartData",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -213,7 +213,7 @@ export const AppViewConfig:IParam = {
   "ProvinceMobHtmlView":{
     "name": "ProvinceMobHtmlView",
     "codeName": "ProvinceMobHtmlView",
-    "appEntityName":"Province",
+    "appEntityCodeName":"Province",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -229,7 +229,7 @@ export const AppViewConfig:IParam = {
   "ProvinceMobCalendarView":{
     "name": "ProvinceMobCalendarView",
     "codeName": "ProvinceMobCalendarView",
-    "appEntityName":"Province",
+    "appEntityCodeName":"Province",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -245,7 +245,7 @@ export const AppViewConfig:IParam = {
   "ProvinceMobPickupForTreeView":{
     "name": "ProvinceMobPickupForTreeView",
     "codeName": "ProvinceMobPickupForTreeView",
-    "appEntityName":"Province",
+    "appEntityCodeName":"Province",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -261,7 +261,7 @@ export const AppViewConfig:IParam = {
   "ProvinceMobPickupView":{
     "name": "ProvinceMobPickupView",
     "codeName": "ProvinceMobPickupView",
-    "appEntityName":"Province",
+    "appEntityCodeName":"Province",
     "openMode": "DRAWER_LEFT",
     "redirectView": false,
     "deResPaths": [
@@ -277,7 +277,7 @@ export const AppViewConfig:IParam = {
   "ProvinceMobMDView":{
     "name": "ProvinceMobMDView",
     "codeName": "ProvinceMobMDView",
-    "appEntityName":"Province",
+    "appEntityCodeName":"Province",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -293,7 +293,7 @@ export const AppViewConfig:IParam = {
   "ChartDataTestLayoutPanelMDView":{
     "name": "ChartDataTestLayoutPanelMDView",
     "codeName": "ChartDataTestLayoutPanelMDView",
-    "appEntityName":"ChartData",
+    "appEntityCodeName":"ChartData",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -309,7 +309,7 @@ export const AppViewConfig:IParam = {
   "MapDataMobMapView":{
     "name": "MapDataMobMapView",
     "codeName": "MapDataMobMapView",
-    "appEntityName":"MapData",
+    "appEntityCodeName":"MapData",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -325,7 +325,7 @@ export const AppViewConfig:IParam = {
   "ChartDataMobDashboardView":{
     "name": "ChartDataMobDashboardView",
     "codeName": "ChartDataMobDashboardView",
-    "appEntityName":"ChartData",
+    "appEntityCodeName":"ChartData",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [
@@ -341,7 +341,7 @@ export const AppViewConfig:IParam = {
   "ChartDataMobChartView":{
     "name": "ChartDataMobChartView",
     "codeName": "ChartDataMobChartView",
-    "appEntityName":"ChartData",
+    "appEntityCodeName":"ChartData",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
     "deResPaths": [

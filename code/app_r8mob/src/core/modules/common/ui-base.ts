@@ -92,4 +92,33 @@ export class UIBase {
         );
         return { context: _context, viewParams: _viewParams };
     }
+
+}
+
+/**
+ * @description 切换应用全屏
+ * @export
+ * @return {*}  {boolean}
+ */
+export function toggleFullScreen(): boolean {
+  const isFullscreen = (document as any).isFullScreen || (document as any).mozIsFullScreen || (document as any).webkitIsFullScreen;
+  if (isFullscreen) {
+    if ((document as any).documentElement.requestFullScreen) {
+      (document as any).exitFullScreen();
+    } else if ((document as any).documentElement.webkitRequestFullScreen) {
+      (document as any).webkitCancelFullScreen();
+    } else if ((document as any).documentElement.mozRequestFullScreen) {
+      (document as any).mozCancelFullScreen();
+    }
+    return false;
+  } else {
+    if ((document as any).documentElement.requestFullScreen) {
+      (document as any).documentElement.requestFullScreen();
+    } else if ((document as any).documentElement.webkitRequestFullScreen) {
+      (document as any).documentElement.webkitRequestFullScreen();
+    } else if ((document as any).documentElement.mozRequestFullScreen) {
+      (document as any).documentElement.mozRequestFullScreen();
+    }
+    return true;
+  }
 }

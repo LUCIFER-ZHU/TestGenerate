@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface LeaveApplicationMapper extends BaseMapper<LeaveApplication> {
 
 
-    Page<LeaveApplication> searchDefault(IPage page, @Param("srf") LeaveApplicationSearchContext context, @Param("ew") Wrapper<LeaveApplication> wrapper);
-    List<LeaveApplication> listDefault(@Param("srf") LeaveApplicationSearchContext context, @Param("ew") Wrapper<LeaveApplication> wrapper);
+    Page<LeaveApplication> searchDefault(IPage page, @Param("ctx") LeaveApplicationSearchContext context, @Param("ew") Wrapper<LeaveApplication> wrapper);
+    List<LeaveApplication> listDefault(@Param("ctx") LeaveApplicationSearchContext context, @Param("ew") Wrapper<LeaveApplication> wrapper);
 
     @Override
     LeaveApplication selectById(Serializable id);

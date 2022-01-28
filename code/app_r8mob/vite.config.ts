@@ -26,11 +26,11 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/api': {
-        target: 'http://10.19.1.128:8080',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
+      // '/api': {
+      //   target: 'http://10.19.1.128:8080',
+      //   changeOrigin: true,
+      //   rewrite: (path) => path.replace(/^\/api/, '')
+      // }
     }
   },
   plugins: [

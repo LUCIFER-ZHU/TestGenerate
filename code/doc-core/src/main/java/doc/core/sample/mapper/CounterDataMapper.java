@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface CounterDataMapper extends BaseMapper<CounterData> {
 
 
-    Page<CounterData> searchDefault(IPage page, @Param("srf") CounterDataSearchContext context, @Param("ew") Wrapper<CounterData> wrapper);
-    List<CounterData> listDefault(@Param("srf") CounterDataSearchContext context, @Param("ew") Wrapper<CounterData> wrapper);
+    Page<CounterData> searchDefault(IPage page, @Param("ctx") CounterDataSearchContext context, @Param("ew") Wrapper<CounterData> wrapper);
+    List<CounterData> listDefault(@Param("ctx") CounterDataSearchContext context, @Param("ew") Wrapper<CounterData> wrapper);
 
     @Override
     CounterData selectById(Serializable id);

@@ -38,7 +38,7 @@ const collapsedChange = () => {
   <AppDefaultIndexViewLayout :class="['app-index-view', state.viewSysCss]" :showCaptionBar="state.showCaptionBar" :menuAlign="state.menuAlign" :collapsed="collapsed">
     <template #caption>
       <div class="index-view-header">
-{{state.viewCaption}}
+        <div class="sys-title">{{state.viewCaption}}</div>
         <MenuUnfoldOutlined
           v-if="collapsed && Object.is(state.menuAlign,'LEFT')"
           class="trigger"
@@ -51,7 +51,8 @@ const collapsedChange = () => {
         <AppUser/>
     </template>
     <template #menu>
-        <AppIndexViewMenu
+  
+      <AppIndexViewMenu
         ref="menu" 
         name="appmenu"
         :context="state.context"
@@ -67,14 +68,3 @@ const collapsedChange = () => {
     </template>
   </AppDefaultIndexViewLayout>
 </template>
-
-<style lang="scss">
-.app-index-view {
-  .index-view-header {
-    font-size: 18px;
-    >.trigger:hover {
-      color: #1890ff;
-    }
-  }
-}
-</style>

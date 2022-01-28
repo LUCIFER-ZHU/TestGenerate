@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface EditorValueMapper extends BaseMapper<EditorValue> {
 
 
-    Page<EditorValue> searchDefault(IPage page, @Param("srf") EditorValueSearchContext context, @Param("ew") Wrapper<EditorValue> wrapper);
-    List<EditorValue> listDefault(@Param("srf") EditorValueSearchContext context, @Param("ew") Wrapper<EditorValue> wrapper);
+    Page<EditorValue> searchDefault(IPage page, @Param("ctx") EditorValueSearchContext context, @Param("ew") Wrapper<EditorValue> wrapper);
+    List<EditorValue> listDefault(@Param("ctx") EditorValueSearchContext context, @Param("ew") Wrapper<EditorValue> wrapper);
 
     @Override
     EditorValue selectById(Serializable id);

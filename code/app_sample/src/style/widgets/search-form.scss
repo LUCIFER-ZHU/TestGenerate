@@ -1,0 +1,55 @@
+.app-search-form {
+  &>.ant-row {
+    flex-direction: column;
+    .search-form-footer {
+      text-align: right;
+    }
+  }
+  &.right-button>.ant-row {
+    flex-flow: row wrap;
+    .search-form-content {
+      flex: auto;
+    }
+  }
+  .search-form-footer {
+    padding-left: 8px;
+    .ant-btn {
+      margin-right: 4px;
+    }
+    .search-form-history {
+      margin-right: 12px;
+      width: 200px;
+      .ant-select-selection-item {
+        text-align: left;
+      }
+    }
+  }
+}
+//搜索表单气泡
+.search-form-popover {
+  .ant-popover-inner-content {
+    .search-form-buttons {
+      margin-top: 8px;
+      display: flex;
+      justify-content: right;
+      .ant-btn {
+        margin-left: 4px;
+      }
+    }
+  }
+}
+.search-form-history-option {
+  .ant-select-item-option-content {
+    &:hover {
+      color: var(--app-color-primary);
+    }
+    position: relative;
+    .anticon-close {
+      font-size: 12px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

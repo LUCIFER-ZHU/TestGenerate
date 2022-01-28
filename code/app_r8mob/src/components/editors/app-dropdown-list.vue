@@ -56,7 +56,7 @@ interface DropdownListProps {
   /**
    * @description 代码表标识
    */
-  codeListTag?: string;
+  codeListTag: string;
  
   /**
    * @description 代码表类型
@@ -79,7 +79,7 @@ const props = withDefaults(defineProps<DropdownListProps>(), {
 })
 
 const emit = defineEmits<EditorEmit>()
-const { handleEditorNavParams, loadCodeListData, handleLevelCodeList } = new EditorBase();
+const { handleEditorNavParams, loadCodeListData } = new EditorBase();
 const { navContext, navViewParam } = handleEditorNavParams(props);
 let curValue: Ref<any> = ref(
   props.multiple ? 
@@ -93,12 +93,11 @@ const onChange = (select: any, option: any) => {
 
 onBeforeMount(() => {
   loadCodeListData(
-    props.codeListTag, 
-    props.codeListType, 
+    props.codeListTag,
     navContext, 
     navViewParam, 
   ).then((codeListData: IParam[]) => {
-    items.value = handleLevelCodeList(codeListData);
+    items.value = codeListData;
   })
 })
 

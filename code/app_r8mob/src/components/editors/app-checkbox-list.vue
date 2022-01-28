@@ -126,7 +126,7 @@ const props = withDefaults(defineProps<CheckboxListProps>(), {
   mode: 'string',
 });
 const emit = defineEmits<EditorEmit>();
-const { handleEditorNavParams, handleLevelCodeList, loadCodeListData } = new EditorBase();
+const { handleEditorNavParams, loadCodeListData } = new EditorBase();
 const { navContext, navViewParam } = handleEditorNavParams(props);
 let items: Ref<IParam[]> = ref([]);
 const selectArray: Ref<boolean> = computed(() => {
@@ -205,8 +205,8 @@ const formatCodeList = (items: Array<any>) => {
   }
 };
 onBeforeMount(() => {
-  loadCodeListData(props.codeListTag, props.codeListType, navContext, navViewParam).then((codeListData: IParam[]) => {
-    items.value = formatCodeList(handleLevelCodeList(codeListData));
+  loadCodeListData(props.codeListTag, navContext, navViewParam).then((codeListData: IParam[]) => {
+    items.value = formatCodeList(codeListData);
   });
 });
 </script>

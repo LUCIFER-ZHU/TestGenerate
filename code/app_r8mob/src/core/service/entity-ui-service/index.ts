@@ -1,0 +1,1 @@
+export { UIServiceBase } from './entity-ui-service-base';

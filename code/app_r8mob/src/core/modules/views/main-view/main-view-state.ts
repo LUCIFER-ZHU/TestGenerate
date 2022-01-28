@@ -21,7 +21,7 @@ export interface MainViewState extends ViewStateBase {
    * @type {string}
    * @memberof MainViewState
    */
-  appEntityName: string;
+  appEntityCodeName: string;
 
   /**
    * 视图逻辑配置

@@ -24,17 +24,17 @@ interface CtrlEmit {
 const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, props, emit).moduleInstall();
+const { name, state, load, loadDraft, save, remove, refresh, onEditorEvent, onComponentEvent, getData } = new FormControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
-defineExpose({ state, name: 'form' });
+defineExpose({ name, state, load, loadDraft, save, remove, refresh, getData });
 </script>
 <template>
   <a-form name="MobForm" class="app-form" style="" :model="state.data" :rules="state.rules">
     <a-tabs class="app-form-page">
 <a-tab-pane v-show="state.detailsModel.formpage1.visible" class="form-red-border" key="formpage1">
   <template #tab>
-    <AppIconText class="h2-title" :iconClass="ribbon" text="基本信息"/>
+    <AppIconText class="h2-title" iconClass="ribbon" text="基本信息"/>
   </template>
   <a-row>
 <a-col
@@ -204,24 +204,6 @@ defineExpose({ state, name: 'form' });
     style="">
       <div class="form-editor-container" style="">
       /*未找到模板[MOBPICKER]*/      </div>
-  </AppFormItem>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.formitem2.visible"
-    name="formitem2"
-    :rules="state.rules.formitem2"
-    :labelWidth="130"
-    :required="state.detailsModel.formitem2.required"
-    label="值项"
-    style="">
-      <div class="form-editor-container" style="">
-      /*未找到模板[HIDDEN]*/      </div>
   </AppFormItem>
 </a-col>
 <a-col

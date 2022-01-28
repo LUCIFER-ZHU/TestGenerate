@@ -50,6 +50,7 @@ export class ControlBase {
    */
   public setState() {
     this.state.viewSubject = toRef(this.props, 'viewSubject') as any;
+    this.state.controlName = this.props.name;
   }
 
   /**
@@ -78,9 +79,17 @@ export class ControlBase {
    * 关闭视图
    *
    */
-  public closeView(){
+  public closeView() {
     this.emit('ctrlEvent', { tag: this.props.name, action: 'closeView', data: undefined });
   }
+
+  /**
+   * 处理部件事件
+   *
+   * @param {IActionParam} actionParam
+   * @memberof ControlBase
+   */
+  public onCtrlEvent(actionParam: IActionParam) { }
 
   /**
    * @description 安装部件所有功能模块的方法
@@ -94,7 +103,9 @@ export class ControlBase {
     this.useControlContextParams();
     return {
       state: this.state,
-      getData: this.getData
+      name: this.state.controlName,
+      getData: this.getData,
+      onCtrlEvent: this.onCtrlEvent,
     };
   }
 }

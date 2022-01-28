@@ -1,5 +1,5 @@
 import { IParam, ViewDetail } from "../common";
-import { IAppFuncService, IOpenViewService } from "../service";
+import { IAppActionService, IAppAuthService, IAppCodeListService, IAppFuncService, IAppNotificationService, IOpenViewService } from "../service";
 
 
 /**
@@ -11,21 +11,13 @@ import { IAppFuncService, IOpenViewService } from "../service";
 export interface IApp {
 
     /**
-     * 初始化应用权限
+     * 初始化应用
      *
      * @param {IParam} params 应用预置参数
      * @return {*}  {Promise<any>}
      * @memberof IApp
      */
-    initAppAuth(params: IParam): Promise<any>;
-
-    /**
-     * 获取应用所有功能
-     *
-     * @return {*}  {IParam[]}
-     * @memberof IApp
-     */
-    getAllFuncs(): IParam[];
+    initApp(params: IParam): Promise<any>;
 
     /**
      * 获取应用功能服务
@@ -42,6 +34,38 @@ export interface IApp {
      * @memberof IApp
      */
     getOpenViewService(): IOpenViewService;
+
+    /**
+     * 获取应用权限服务
+     *
+     * @return {*}  {IAppAuthService}
+     * @memberof IApp
+     */
+    getAppAuthService(): IAppAuthService;
+
+    /**
+     * 获取通知服务
+     *
+     * @return {*}  {IAppNotificationService}
+     * @memberof IApp
+     */
+    getNotificationService(): IAppNotificationService;
+
+    /**
+     * 获取界面行为服务
+     *
+     * @return {*}  {IAppActionService}
+     * @memberof IApp
+     */
+    getAppActionService(): IAppActionService;
+
+    /**
+     * 获取代码表服务
+     *
+     * @return {*}  {IAppCodeListService}
+     * @memberof IApp
+     */
+    getCodeListService(): IAppCodeListService;
 
     /**
      * 获取UI服务
@@ -64,6 +88,14 @@ export interface IApp {
     getDataService(entityKey: string, context?: IParam): Promise<any>;
 
     /**
+     * 获取应用所有功能
+     *
+     * @return {*}  {IParam[]}
+     * @memberof IApp
+     */
+    getAllFuncs(): IParam[];
+
+    /**
      * 获取指定视图信息
      *
      * @param {string} codeName
@@ -81,7 +113,6 @@ export interface IApp {
      * @return {*}
      */
     getEntityInfo(codeName: string): any;
-
 
     /**
      * 获取应用数据
@@ -105,13 +136,5 @@ export interface IApp {
      * @memberof IApp
      */
     gotoLoginPage(): void;
-
-    /**
-     * @description 登录
-     *
-     * @return {*}  {Promise<IParam>}
-     * @memberof IApp
-     */
-    handleLogin(): Promise<IParam>;
 
 }

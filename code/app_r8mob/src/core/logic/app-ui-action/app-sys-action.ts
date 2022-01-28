@@ -80,11 +80,17 @@ export class AppSysAction {
       case 'RemoveAndExit':
         this.removeAndExit(params);
         break;
+      case 'SaveAndNew':
+        this.saveAndNew(params);
+        break;
       case 'ToggleFilter':
         this.toggleFilter(params);
         break;
       default:
-        console.log(`未支持${tag}`);
+        App.getNotificationService().info({
+          message: '提示',
+          description: `暂未支持${tag}`
+        });
     }
   }
 
@@ -96,15 +102,23 @@ export class AppSysAction {
    * @return {*} 
    */
   public static edit(params: IUIActionParams) {
-    const { actionEnvironment } = params;
+    const { actionEnvironment, data } = params;
+    // 准备视图参数
     if (!actionEnvironment?.state?.viewLogics?.openData?.openDataViewName) {
       return;
     }
     const viewName = actionEnvironment?.state.viewLogics.openData.openDataViewName;
     const view = App.getViewInfo(viewName);
     if (!view) {
+      console.warn("视图参数不足");
       return;
     }
+    // 准备数据参数
+    if (!data || !Array.isArray(data) || (data.length == 0)) {
+      console.warn("数据参数不足");
+      return;
+    }
+    Object.assign(params.context, { [actionEnvironment.state.keyPSDEField]: data[0].srfkey })
     ViewUtil.openData(view, params);
   }
 
@@ -116,6 +130,7 @@ export class AppSysAction {
    */
   public static new(params: IUIActionParams) {
     const { actionEnvironment } = params;
+    // 准备视图参数
     if (!actionEnvironment?.state?.viewLogics?.newData?.newDataViewName) {
       return;
     }
@@ -124,6 +139,8 @@ export class AppSysAction {
     if (!view) {
       return;
     }
+    // 准备数据参数
+    Object.assign(params.viewParams, { w: new Date().getTime() });
     ViewUtil.newData(view, params);
   }
 
@@ -135,7 +152,7 @@ export class AppSysAction {
    */
   public static toggleRowEdit(params: IUIActionParams) {
     const { actionEnvironment } = params;
-    if(isExist(actionEnvironment.state.rowEditState)){
+    if (isExist(actionEnvironment.state.rowEditState)) {
       actionEnvironment.state.rowEditState = !actionEnvironment.state.rowEditState;
     }
   }
@@ -149,9 +166,9 @@ export class AppSysAction {
   public static newRow(params: IUIActionParams) {
     const { actionEnvironment } = params;
     // 视图里获取多数据部件
-    if(hasFunction(actionEnvironment.xDataControl, "newRow")){
+    if (hasFunction(actionEnvironment.xDataControl, "newRow")) {
       actionEnvironment.xDataControl.newRow();
-    }else if(isExist(actionEnvironment.newRow)){
+    } else if (isExist(actionEnvironment.newRow)) {
       actionEnvironment.newRow();
     }
   }
@@ -165,9 +182,9 @@ export class AppSysAction {
   public static save(params: IUIActionParams) {
     const { actionEnvironment } = params;
     // 视图里获取多数据部件
-    if(hasFunction(actionEnvironment.xDataControl, "save")){
+    if (hasFunction(actionEnvironment.xDataControl, "save")) {
       actionEnvironment.xDataControl.save();
-    }else if(isExist(actionEnvironment.save)){
+    } else if (isExist(actionEnvironment.save)) {
       actionEnvironment.save();
     }
   }
@@ -181,9 +198,9 @@ export class AppSysAction {
   public static saveRow(params: IUIActionParams) {
     const { actionEnvironment } = params;
     // 视图里获取多数据部件
-    if(hasFunction(actionEnvironment.xDataControl, "save")){
+    if (hasFunction(actionEnvironment.xDataControl, "save")) {
       actionEnvironment.xDataControl.save();
-    }else if(isExist(actionEnvironment.save)){
+    } else if (isExist(actionEnvironment.save)) {
       actionEnvironment.save();
     }
   }
@@ -197,9 +214,9 @@ export class AppSysAction {
   public static remove(params: IUIActionParams) {
     const { actionEnvironment } = params;
     // 视图里获取多数据部件
-    if(hasFunction(actionEnvironment.xDataControl, "remove")){
+    if (hasFunction(actionEnvironment.xDataControl, "remove")) {
       actionEnvironment.xDataControl.remove();
-    }else if(isExist(actionEnvironment.remove)){
+    } else if (isExist(actionEnvironment.remove)) {
       actionEnvironment.remove();
     }
   }
@@ -213,9 +230,9 @@ export class AppSysAction {
   public static refresh(params: IUIActionParams) {
     const { actionEnvironment } = params;
     // 视图里获取多数据部件
-    if(hasFunction(actionEnvironment.xDataControl, "refresh")){
+    if (hasFunction(actionEnvironment.xDataControl, "refresh")) {
       actionEnvironment.xDataControl.refresh();
-    }else if(isExist(actionEnvironment.refresh)){
+    } else if (isExist(actionEnvironment.refresh)) {
       actionEnvironment.refresh();
     }
   }
@@ -228,8 +245,8 @@ export class AppSysAction {
    */
   public static exit(params: IUIActionParams) {
     const { actionEnvironment } = params;
-    if(isExist(actionEnvironment.closeView)){
-      actionEnvironment.refresh();
+    if (isExist(actionEnvironment.closeView)) {
+      actionEnvironment.closeView();
     }
   }
 
@@ -241,14 +258,37 @@ export class AppSysAction {
    */
   public static async saveAndExit(params: IUIActionParams) {
     const { actionEnvironment } = params;
-    // 视图里获取多数据部件
-    if(hasFunction(actionEnvironment.xDataControl, "save")){
+    if (hasFunction(actionEnvironment.xDataControl, "save")) {
       await actionEnvironment.xDataControl.save();
-    }else if(isExist(actionEnvironment.save)){
+    } else if (isExist(actionEnvironment.save)) {
       await actionEnvironment.save();
     }
     // 关闭视图
     this.exit(params);
+  }
+
+  /**
+   * 保存并新建
+   *
+   * @static
+   * @param {IUIActionParams} params
+   * @memberof AppSysAction
+   */
+  public static async saveAndNew(params: IUIActionParams) {
+    const { actionEnvironment } = params;
+    if (hasFunction(actionEnvironment.xDataControl, "save")) {
+      await actionEnvironment.xDataControl.save();
+    } else if (isExist(actionEnvironment.save)) {
+      await actionEnvironment.save();
+    }
+    // 跳转新建页面
+    const view = App.getViewInfo(actionEnvironment.state.viewCodeName);
+    if (!view) {
+      return;
+    }
+    // 准备数据参数
+    Object.assign(params.viewParams, { w: new Date().getTime() });
+    ViewUtil.newData(view, params);
   }
 
   /**
@@ -260,9 +300,9 @@ export class AppSysAction {
   public static async removeAndExit(params: IUIActionParams) {
     const { actionEnvironment } = params;
     // 视图里获取多数据部件
-    if(hasFunction(actionEnvironment.xDataControl, "remove")){
+    if (hasFunction(actionEnvironment.xDataControl, "remove")) {
       await actionEnvironment.xDataControl.remove();
-    }else if(isExist(actionEnvironment.remove)){
+    } else if (isExist(actionEnvironment.remove)) {
       await actionEnvironment.remove();
     }
     // 关闭视图
@@ -275,9 +315,9 @@ export class AppSysAction {
    * @param params 界面行为参数对象
    * @return {*}
    */
-   public static toggleFilter(params: IUIActionParams) {
+  public static toggleFilter(params: IUIActionParams) {
     const { actionEnvironment } = params;
-    if(isExist(actionEnvironment.state.expandSearchForm)){
+    if (isExist(actionEnvironment.state.expandSearchForm)) {
       actionEnvironment.state.expandSearchForm = !actionEnvironment.state.expandSearchForm;
     }
   }

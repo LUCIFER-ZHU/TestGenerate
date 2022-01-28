@@ -100,8 +100,7 @@ let textFormat: Ref<string> = ref("");
 onBeforeMount(() => {
   if (props.codeListTag) {
     loadCodeListData(
-      props.codeListTag,
-      props.codeListType,
+      props.codeListTag as string,
       navContext,
       navViewParam
     ).then((codeListData: IParam[]) => {

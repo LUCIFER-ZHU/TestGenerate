@@ -1,4 +1,4 @@
-import { AppActionService, IContext, IParam, UIActionUtil } from "@core";
+import { IContext, IParam, UIActionUtil } from "@core";
 export interface ActionParams {
 
     /**
@@ -60,7 +60,7 @@ export class AppActionBase {
      * @memberof AppActionBase
      */
     public static async getUIService(actionEnvironment: IParam) {
-        const entityName = actionEnvironment?.state?.appEntityName;
+        const entityName = actionEnvironment?.state?.appEntityCodeName;
         if (!entityName) {
             console.log("实体名称不存在");
             return;
@@ -211,7 +211,7 @@ export class AppActionBase {
             return;
         }
         //  参数合并 todo
-        AppActionService.getInstance().execute(actionModel, params);
+        App.getAppActionService().execute(actionModel, params);
     }
 
     /**

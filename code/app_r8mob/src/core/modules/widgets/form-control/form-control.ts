@@ -27,6 +27,15 @@ export class FormControl extends MainControl {
   public declare state: FormControlState;
 
   /**
+   * 获取当前激活数据
+   *
+   * @memberof FormControl
+   */
+   public getData(): IParam[] {
+    return [this.state.data];
+  }
+
+  /**
    * @description 检验表单动态逻辑
    * @param {IParam} data 表单数据
    * @param {IParam} logic 动态逻辑
@@ -354,7 +363,7 @@ export class FormControl extends MainControl {
    * @protected
    * @param [opt={}]
    */
-  protected async loadDraft(opt: any = {}) {}
+  protected async loadDraft(opt: any = {}) { }
 
   /**
    * @description 使用加载草稿功能模块
@@ -378,7 +387,7 @@ export class FormControl extends MainControl {
         // 发起请求处理与解析请求
         const response = await controlService.loadDraft(
           _context,
-          { viewParams: _viewParams },
+          _viewParams,
           { action: controlAction.loadDraftAction, isLoading: showBusyIndicator },
         );
         if (response.status && response.status == 200) {
@@ -419,7 +428,7 @@ export class FormControl extends MainControl {
    * @protected
    * @param [opt={}]
    */
-  protected async load(opt: any = {}) {}
+  protected async load(opt: any = {}) { }
 
   /**
    * @description 使用加载功能模块
@@ -449,7 +458,7 @@ export class FormControl extends MainControl {
         // 发起请求处理与解析请求
         const response = await controlService.get(
           _context,
-          { viewParams: _viewParams },
+          _viewParams,
           { action: controlAction.loadAction, isLoading: showBusyIndicator },
         );
         if (response.status && response.status == 200) {
@@ -488,7 +497,7 @@ export class FormControl extends MainControl {
    * @protected
    * @param [opt={}]
    */
-  protected async save(opt: any = {}) {}
+  protected async save(opt: any = {}) { }
 
   /**
    * @description 使用加载功能模块
@@ -524,7 +533,7 @@ export class FormControl extends MainControl {
         let _viewParams = deepCopy(viewParams);
         const arg: any = { ...opt };
         Object.assign(arg, data.getDo());
-        Object.assign(arg, { viewParams: _viewParams });
+        Object.assign(arg, _viewParams);
 
         // TODO 关系界面保存通知处理，做成异步。
         // TODO 拷贝相关。
@@ -574,7 +583,7 @@ export class FormControl extends MainControl {
    * @protected
    * @param [opt={}]
    */
-  protected async remove(opt: any = {}) {}
+  protected async remove(opt: any = {}) { }
 
   /**
    * @description 使用加载功能模块
@@ -604,8 +613,8 @@ export class FormControl extends MainControl {
         // 处理请求参数
         let _context = deepCopy(context);
         let _viewParams = deepCopy(viewParams);
-        const arg: any = opt[0];
-        Object.assign(arg, { viewParams: _viewParams });
+        const arg: any = opt;
+        Object.assign(arg, _viewParams);
 
         // 发起请求处理与解析请求
         const response = await controlService.remove(_context, arg, {
@@ -650,7 +659,7 @@ export class FormControl extends MainControl {
    * @protected
    * @param [opt={}]
    */
-  protected async refresh(opt: any = {}) {}
+  protected async refresh(opt: any = {}) { }
 
   /**
    * @description 使用刷新功能模块
@@ -744,6 +753,7 @@ export class FormControl extends MainControl {
       load: this.useLoad(),
       loadDraft: this.useLoadDraft(),
       save: this.useSave(),
+      remove: this.useRemove(),
       refresh: this.useRefresh(),
       onEditorEvent: this.onEditorEvent.bind(this),
       onComponentEvent: this.onComponentEvent.bind(this),

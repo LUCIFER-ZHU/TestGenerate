@@ -17,16 +17,16 @@ const onClick = (item: IParam) => {
 const getLayout = (item: IParam ,name: string) => {
   switch(name) {
     case 'lg':
-      const lg = item.layoutPos.lg > 0 ? item.layoutPos.lg : 4;
+      const lg = item.layoutPos.lg > 0 ? item.layoutPos.lg : 6;
       return {span: lg, offset: item.layoutPos.lgOffset};
     case 'md':
-      const md = item.layoutPos.md > 0 ? item.layoutPos.md : 4;
+      const md = item.layoutPos.md > 0 ? item.layoutPos.md : 6;
       return {span: md, offset: item.layoutPos.mdOffset};
     case 'sm':
-      const sm = item.layoutPos.sm > 0 ? item.layoutPos.sm : 4;
+      const sm = item.layoutPos.sm > 0 ? item.layoutPos.sm : 6;
       return {span: sm, offset: item.layoutPos.smOffset};
     case 'xs':
-      const xs = item.layoutPos.xs > 0 ? item.layoutPos.xs : 4;
+      const xs = item.layoutPos.xs > 0 ? item.layoutPos.xs : 6;
       return {span: xs, offset: item.layoutPos.xsOffset};
   }
 }

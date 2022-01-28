@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface KanbanDataMapper extends BaseMapper<KanbanData> {
 
 
-    Page<KanbanData> searchDefault(IPage page, @Param("srf") KanbanDataSearchContext context, @Param("ew") Wrapper<KanbanData> wrapper);
-    List<KanbanData> listDefault(@Param("srf") KanbanDataSearchContext context, @Param("ew") Wrapper<KanbanData> wrapper);
+    Page<KanbanData> searchDefault(IPage page, @Param("ctx") KanbanDataSearchContext context, @Param("ew") Wrapper<KanbanData> wrapper);
+    List<KanbanData> listDefault(@Param("ctx") KanbanDataSearchContext context, @Param("ew") Wrapper<KanbanData> wrapper);
 
     @Override
     KanbanData selectById(Serializable id);

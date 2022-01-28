@@ -21,20 +21,20 @@ import com.alibaba.fastjson.JSONObject;
 public interface ActivityMapper extends BaseMapper<Activity> {
 
 
-    Page<Activity> searchDefault(IPage page, @Param("srf") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
-    List<Activity> listDefault(@Param("srf") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
+    Page<Activity> searchDefault(IPage page, @Param("ctx") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
+    List<Activity> listDefault(@Param("ctx") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
 
-    Page<Activity> searchEmail(IPage page, @Param("srf") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
-    List<Activity> listEmail(@Param("srf") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
+    Page<Activity> searchEmail(IPage page, @Param("ctx") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
+    List<Activity> listEmail(@Param("ctx") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
 
-    Page<Activity> searchMeeting(IPage page, @Param("srf") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
-    List<Activity> listMeeting(@Param("srf") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
+    Page<Activity> searchMeeting(IPage page, @Param("ctx") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
+    List<Activity> listMeeting(@Param("ctx") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
 
-    Page<Activity> searchOther(IPage page, @Param("srf") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
-    List<Activity> listOther(@Param("srf") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
+    Page<Activity> searchOther(IPage page, @Param("ctx") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
+    List<Activity> listOther(@Param("ctx") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
 
-    Page<Activity> searchPhone(IPage page, @Param("srf") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
-    List<Activity> listPhone(@Param("srf") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
+    Page<Activity> searchPhone(IPage page, @Param("ctx") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
+    List<Activity> listPhone(@Param("ctx") ActivitySearchContext context, @Param("ew") Wrapper<Activity> wrapper);
 
     @Override
     Activity selectById(Serializable id);

@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface OpportunityMapper extends BaseMapper<Opportunity> {
 
 
-    Page<Opportunity> searchDefault(IPage page, @Param("srf") OpportunitySearchContext context, @Param("ew") Wrapper<Opportunity> wrapper);
-    List<Opportunity> listDefault(@Param("srf") OpportunitySearchContext context, @Param("ew") Wrapper<Opportunity> wrapper);
+    Page<Opportunity> searchDefault(IPage page, @Param("ctx") OpportunitySearchContext context, @Param("ew") Wrapper<Opportunity> wrapper);
+    List<Opportunity> listDefault(@Param("ctx") OpportunitySearchContext context, @Param("ew") Wrapper<Opportunity> wrapper);
 
     @Override
     Opportunity selectById(Serializable id);

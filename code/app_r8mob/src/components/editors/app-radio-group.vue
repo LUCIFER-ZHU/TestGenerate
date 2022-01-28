@@ -1,11 +1,6 @@
 <script setup lang="ts">
-import {
-  IActionParam, 
-  IParam,
-  EditorBase,
-  IContext
-} from "@core";
-import { onBeforeMount, ref, Ref } from "vue";
+import { IActionParam, IParam, EditorBase, IContext } from '@core';
+import { onBeforeMount, ref, Ref } from 'vue';
 interface RadioGroupProps {
   /**
    * 值
@@ -96,7 +91,7 @@ interface RadioGroupProps {
 }
 
 interface EditorEmit {
-  (name: "editorEvent", value: IActionParam): void;
+  (name: 'editorEvent', value: IActionParam): void;
 }
 
 const props = withDefaults(defineProps<RadioGroupProps>(), {
@@ -104,39 +99,28 @@ const props = withDefaults(defineProps<RadioGroupProps>(), {
   readonly: false,
 });
 const emit = defineEmits<EditorEmit>();
-const { handleEditorNavParams, loadCodeListData, handleLevelCodeList } = new EditorBase();
+const { handleEditorNavParams, loadCodeListData } = new EditorBase();
 const { navContext, navViewParam } = handleEditorNavParams(props);
 let items: Ref<IParam[]> = ref([]);
 
 const onChange = ($event: any) => {
-  const value = $event.target.value
-  emit("editorEvent", {
+  const value = $event.target.value;
+  emit('editorEvent', {
     tag: props.name,
-    action: "valueChange",
+    action: 'valueChange',
     data: value,
   });
 };
 onBeforeMount(() => {
-  loadCodeListData(
-    props.codeListTag,
-    props.codeListType,
-    navContext,
-    navViewParam
-  ).then((codeListData: IParam[]) => {
-    items.value = handleLevelCodeList(codeListData);
+  loadCodeListData(props.codeListTag, navContext, navViewParam).then((codeListData: IParam[]) => {
+    items.value = codeListData;
   });
 });
 </script>
 
 <template>
   <div :class="['app-editor-container', 'app-radio-group', `app-radio-group-${name}`]">
-    <a-radio-group
-      @change="onChange"
-      :value="value"
-      :options="items"
-      :disabled="disabled || readonly"
-    >
-    </a-radio-group>
+    <a-radio-group @change="onChange" :value="value" :options="items" :disabled="disabled || readonly"></a-radio-group>
   </div>
 </template>
 

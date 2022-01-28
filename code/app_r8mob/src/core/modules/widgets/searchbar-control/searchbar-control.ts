@@ -20,8 +20,8 @@ export class SearchBarControl extends MainControl {
    * @param {SearchBarControlProps} props
    * @memberof SearchBarControl
    */
-  public setState(props: SearchBarControlState) {
-    super.setState(props);
+  public setState() {
+    super.setState();
     this.state.filterFields = Object.values(this.state.detailsModel);
     this.state.filterItems = [];
   }
@@ -33,8 +33,8 @@ export class SearchBarControl extends MainControl {
    * @return {*}
    * @memberof SearchBarControl [emit] 事件
    */
-  public moduleInstall(props: SearchBarControlProps, emit?: Function) {
-    const superParams = super.moduleInstall(props, emit);
+  public moduleInstall() {
+    const superParams = super.moduleInstall();
     return {
       ...superParams,
       state: this.state,

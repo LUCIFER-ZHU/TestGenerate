@@ -21,10 +21,10 @@ interface CtrlEmit {
 }
 const emit = defineEmits <CtrlEmit> ();
 
-const { state, onMenuSelect } = new MenuControl(ctrlState, props, emit).moduleInstall();
+const { name, state, onMenuSelect } = new MenuControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
-defineExpose({ state, name: 'appmenu' });
+defineExpose({ name, state });
 </script>
 
 <template>

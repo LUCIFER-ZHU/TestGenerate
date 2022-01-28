@@ -24,7 +24,13 @@ export class MDControl extends MainControl {
     this.state.isMultiple = toRef(this.props, 'isMultiple') as any;
     this.state.rowEditState = toRef(this.props, 'rowEditState') as any;
     this.state.rowActiveMode = toRef(this.props, 'rowActiveMode') as any;
-    this.state.selectedData = UIBase.toOneWayRef(this.props, 'selectedData') as any;
+    if (this.props['selectedData']) {
+      this.state.selectedData = UIBase.toOneWayRef(this.props, 'selectedData') as any;
+    } else {
+      if (!this.state.selectedData) {
+        this.state.selectedData = ref([]) as any;
+      }
+    }
     this.state.selectFirstDefault = toRef(this.props, 'selectFirstDefault') as any;
   }
 
@@ -34,7 +40,7 @@ export class MDControl extends MainControl {
    * @protected
    * @param [opt={}]
    */
-  protected async load(opt: any = {}) {}
+  protected async load(opt: any = {}) { }
 
   /**
    * @description 使用加载功能模块
@@ -80,9 +86,11 @@ export class MDControl extends MainControl {
           }
           this.handleStateChange();
         }
-      } catch (error) {
-        // todo 错误异常处理
-        console.log(error);
+      } catch (error: any) {
+        App.getNotificationService().error({
+          message: '加载数据失败',
+          description: error?.data
+        })
       }
     };
 
@@ -111,7 +119,7 @@ export class MDControl extends MainControl {
    * @protected
    * @param [opt={}]
    */
-  protected async save(opt: any = {}) {}
+  protected async save(opt: any = {}) { }
 
   /**
    * @description 使用保存功能模块
@@ -128,7 +136,7 @@ export class MDControl extends MainControl {
           const { updateAction, createAction } = controlAction;
           const saveAction: any =
             item.rowDataState == 'update' ? updateAction : item.rowDataState == 'create' ? createAction : '';
-          const saveFunName = item.rowDataState == 'update' ? 'update' : 'create'; 
+          const saveFunName = item.rowDataState == 'update' ? 'update' : 'create';
           if (!saveAction) {
             return;
           }
@@ -175,7 +183,7 @@ export class MDControl extends MainControl {
    * @protected
    * @param [opt={}]
    */
-  protected async remove(opt: any = {}) {}
+  protected async remove(opt: any = {}) { }
 
   /**
    * @description 使用删除功能模块
@@ -255,7 +263,7 @@ export class MDControl extends MainControl {
    * @protected
    * @param [opt={}]
    */
-  protected async newRow(opt: any = {}) {}
+  protected async newRow(opt: any = {}) { }
 
   /**
    * @description 使用新建功能模块
@@ -313,7 +321,7 @@ export class MDControl extends MainControl {
    * @protected
    * @param [opt={}]
    */
-  protected async refresh(opt: any = {}) {}
+  protected async refresh(opt: any = {}) { }
 
   /**
    * @description 使用刷新功能模块
@@ -358,7 +366,7 @@ export class MDControl extends MainControl {
    *
    * @memberof MDControl
    */
-  public handleStateChange() {}
+  public handleStateChange() { }
 
   /**
    * 处理数据分组
@@ -382,7 +390,7 @@ export class MDControl extends MainControl {
    * @protected
    * @memberof MDControl
    */
-  protected autoGroupData() {}
+  protected autoGroupData() { }
 
   /**
    * 代码表分组
@@ -390,7 +398,7 @@ export class MDControl extends MainControl {
    * @protected
    * @memberof MDControl
    */
-  protected codeListGroupData() {}
+  protected codeListGroupData() { }
 
   /**
    * 获取当前激活数据

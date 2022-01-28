@@ -21,11 +21,11 @@ import com.alibaba.fastjson.JSONObject;
 public interface ProvinceMapper extends BaseMapper<Province> {
 
 
-    Page<Province> searchConditions(IPage page, @Param("srf") ProvinceSearchContext context, @Param("ew") Wrapper<Province> wrapper);
-    List<Province> listConditions(@Param("srf") ProvinceSearchContext context, @Param("ew") Wrapper<Province> wrapper);
+    Page<Province> searchConditions(IPage page, @Param("ctx") ProvinceSearchContext context, @Param("ew") Wrapper<Province> wrapper);
+    List<Province> listConditions(@Param("ctx") ProvinceSearchContext context, @Param("ew") Wrapper<Province> wrapper);
 
-    Page<Province> searchDefault(IPage page, @Param("srf") ProvinceSearchContext context, @Param("ew") Wrapper<Province> wrapper);
-    List<Province> listDefault(@Param("srf") ProvinceSearchContext context, @Param("ew") Wrapper<Province> wrapper);
+    Page<Province> searchDefault(IPage page, @Param("ctx") ProvinceSearchContext context, @Param("ew") Wrapper<Province> wrapper);
+    List<Province> listDefault(@Param("ctx") ProvinceSearchContext context, @Param("ew") Wrapper<Province> wrapper);
 
     @Override
     Province selectById(Serializable id);

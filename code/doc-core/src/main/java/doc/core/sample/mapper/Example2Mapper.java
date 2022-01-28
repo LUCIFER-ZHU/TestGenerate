@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface Example2Mapper extends BaseMapper<Example2> {
 
 
-    Page<Example2> searchDefault(IPage page, @Param("srf") Example2SearchContext context, @Param("ew") Wrapper<Example2> wrapper);
-    List<Example2> listDefault(@Param("srf") Example2SearchContext context, @Param("ew") Wrapper<Example2> wrapper);
+    Page<Example2> searchDefault(IPage page, @Param("ctx") Example2SearchContext context, @Param("ew") Wrapper<Example2> wrapper);
+    List<Example2> listDefault(@Param("ctx") Example2SearchContext context, @Param("ew") Wrapper<Example2> wrapper);
 
     @Override
     Example2 selectById(Serializable id);

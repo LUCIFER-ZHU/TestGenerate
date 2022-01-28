@@ -10,7 +10,7 @@ export const viewState = {
   xDataControlName:'',
   height: '0',
   width: '0',
-  appEntityName: '',
+  appEntityCodeName: '',
   keyPSDEField: '',
   isLoadDefault: true,
   appViewNavContexts:{  },

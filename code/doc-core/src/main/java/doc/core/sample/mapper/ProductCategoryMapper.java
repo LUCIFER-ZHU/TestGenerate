@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface ProductCategoryMapper extends BaseMapper<ProductCategory> {
 
 
-    Page<ProductCategory> searchDefault(IPage page, @Param("srf") ProductCategorySearchContext context, @Param("ew") Wrapper<ProductCategory> wrapper);
-    List<ProductCategory> listDefault(@Param("srf") ProductCategorySearchContext context, @Param("ew") Wrapper<ProductCategory> wrapper);
+    Page<ProductCategory> searchDefault(IPage page, @Param("ctx") ProductCategorySearchContext context, @Param("ew") Wrapper<ProductCategory> wrapper);
+    List<ProductCategory> listDefault(@Param("ctx") ProductCategorySearchContext context, @Param("ew") Wrapper<ProductCategory> wrapper);
 
     @Override
     ProductCategory selectById(Serializable id);

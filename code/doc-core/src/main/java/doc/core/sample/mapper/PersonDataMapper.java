@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface PersonDataMapper extends BaseMapper<PersonData> {
 
 
-    Page<PersonData> searchDefault(IPage page, @Param("srf") PersonDataSearchContext context, @Param("ew") Wrapper<PersonData> wrapper);
-    List<PersonData> listDefault(@Param("srf") PersonDataSearchContext context, @Param("ew") Wrapper<PersonData> wrapper);
+    Page<PersonData> searchDefault(IPage page, @Param("ctx") PersonDataSearchContext context, @Param("ew") Wrapper<PersonData> wrapper);
+    List<PersonData> listDefault(@Param("ctx") PersonDataSearchContext context, @Param("ew") Wrapper<PersonData> wrapper);
 
     @Override
     PersonData selectById(Serializable id);

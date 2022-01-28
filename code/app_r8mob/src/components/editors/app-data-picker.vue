@@ -268,7 +268,7 @@ const onChange = (date: string, dateString: string) => {
       :defaultOpen="true"
     >
       <template #option="option">
-        <div @click="onSelect(option[deKeyField!])"></div>
+        <div @click="onSelect(option[deKeyField!])">{{ option[deMajorField!] }}</div>
       </template>
       <a-input :placeholder="placeholder">
         <template #suffix>
@@ -303,7 +303,7 @@ const onChange = (date: string, dateString: string) => {
         <ExportOutlined v-if="linkView" @click="openLinkView" />
       </template>
       <a-select-option v-for="(item, index) in items" :key="index" :value="item[deKeyField!]">
-        
+        {{ item[deMajorField!] }}
       </a-select-option>
     </a-select>
   </template>

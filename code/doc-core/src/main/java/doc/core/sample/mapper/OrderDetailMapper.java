@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface OrderDetailMapper extends BaseMapper<OrderDetail> {
 
 
-    Page<OrderDetail> searchDefault(IPage page, @Param("srf") OrderDetailSearchContext context, @Param("ew") Wrapper<OrderDetail> wrapper);
-    List<OrderDetail> listDefault(@Param("srf") OrderDetailSearchContext context, @Param("ew") Wrapper<OrderDetail> wrapper);
+    Page<OrderDetail> searchDefault(IPage page, @Param("ctx") OrderDetailSearchContext context, @Param("ew") Wrapper<OrderDetail> wrapper);
+    List<OrderDetail> listDefault(@Param("ctx") OrderDetailSearchContext context, @Param("ew") Wrapper<OrderDetail> wrapper);
 
     @Override
     OrderDetail selectById(Serializable id);

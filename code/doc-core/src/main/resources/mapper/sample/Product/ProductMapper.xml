@@ -28,7 +28,7 @@
 
     <sql id="byCategory" databaseId="mysql">
         <![CDATA[ 
-            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`PRODUCTCODE`, t1.`PRODUCTID`, t1.`PRODUCTNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_PRODUCT` t1   where EXISTS(SELECT * FROM `T_PRODUCTCATEGORY` t11   WHERE   t1.`PRODUCTID` = t11.`PRODUCTID`  AND  ( t11.`CATEGORYID` =  #{srf.datacontext.categoryid} ) )
+            SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`PRODUCTCODE`, t1.`PRODUCTID`, t1.`PRODUCTNAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_PRODUCT` t1   where EXISTS(SELECT * FROM `T_PRODUCTCATEGORY` t11   WHERE   t1.`PRODUCTID` = t11.`PRODUCTID`  AND  ( t11.`CATEGORYID` =  #{ctx.datacontext.categoryid} ) )
         ]]>    
     </sql>
 

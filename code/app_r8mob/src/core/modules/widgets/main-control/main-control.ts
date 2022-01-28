@@ -16,6 +16,14 @@ export class MainControl extends ControlBase {
   public declare state: MainControlState;
 
   /**
+   * 界面行为服务
+   *
+   * @type {(IParam | undefined)}
+   * @memberof MainControl
+   */
+  public appUIService: IParam | undefined;
+
+  /**
    * @memberof MainControl
    */
   public setState() {
@@ -39,12 +47,29 @@ export class MainControl extends ControlBase {
   }
 
   /**
+   *@description 使用UI服务
+   *
+   * @memberof MainControl
+   */
+  public useUIService() {
+    const { context, appEntityCodeName } = this.state;
+    if (appEntityCodeName) {
+      App.getUIService(appEntityCodeName.toLowerCase(), context).then((service: IParam) => {
+        this.appUIService = service;
+        this.state.UIService = this.appUIService;
+      })
+    }
+  }
+
+  /**
    * @description 安装部件所有功能模块的方法
    * @return {*} 
    * @memberof MainControl
    */
   public moduleInstall() {
     const superParams = super.moduleInstall();
+    // 使用UI服务
+    this.useUIService();    
     return {
       ...superParams
     };

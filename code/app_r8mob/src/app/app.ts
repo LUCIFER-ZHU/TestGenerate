@@ -1,10 +1,10 @@
 import { SyncSeriesHook } from "qx-util";
 import { Environment } from "@/environments/environment";
 import router from "@/router";
-import { OpenViewService } from "@/utils";
-import { AppBase, IParam, ViewDetail, IApp, IOpenViewService, deepCopy, getSessionStorage, Http, AppUtil } from "@core";
+import { AppBase, IParam, ViewDetail, IApp, IOpenViewService, deepCopy, Http, IAppAuthService, IAppNotificationService, IAppFuncService, IAppActionService, IAppCodeListService } from "@core";
 import { AppFuncConfig, AppViewConfig, AppEntityConfig } from './config';
 import { DataServiceRegister, UIServiceRegister } from "./register";
+import { AppActionService, AppAuthService, AppCodeListService, AppFuncService, AppNotificationService, OpenViewService } from "@/service";
 
 export class App extends AppBase implements IApp {
 
@@ -50,31 +50,14 @@ export class App extends AppBase implements IApp {
     }
 
     /**
-     * 初始化应用权限
+     * 初始化应用
      *
      * @param {IParam} params 应用预置参数
      * @return {*}  {Promise<any>}
      * @memberof App
      */
-    public async initAppAuth(params: IParam): Promise<any> {
-        let result = true;
-        if (Environment && Environment.SaaSMode) {
-            if (getSessionStorage('activeOrgData')) {
-                result = await AppUtil.getAppData(App.hooks, params);
-            } else {
-                result = await AppUtil.getOrgsByDcsystem(App.hooks);
-                if (result) {
-                    result = await AppUtil.getAppData(App.hooks, params);
-                }
-            }
-        } else {
-            result = await AppUtil.getAppData(App.hooks, params);
-        }
-        if (!result) {
-            // 登录
-        }
-        // TODO
-        return true;
+    public async initApp(params: IParam): Promise<any> {
+        return await this.getAppAuthService().initAppAuth(params, App.hooks);
     }
 
     /**
@@ -88,6 +71,16 @@ export class App extends AppBase implements IApp {
     }
 
     /**
+     * 获取应用权限服务
+     *
+     * @return {*}  {IAppAuthService}
+     * @memberof App
+     */
+    public getAppAuthService(): IAppAuthService {
+        return AppAuthService.getInstance();
+    }
+
+    /**
      * 获取打开视图服务
      *
      * @return {*}  {IOpenViewService}
@@ -95,6 +88,46 @@ export class App extends AppBase implements IApp {
      */
     public getOpenViewService(): IOpenViewService {
         return OpenViewService.getInstance();
+    }
+
+    /**
+     * 获取通知服务
+     *
+     * @return {*}  {IAppNotificationService}
+     * @memberof App
+     */
+    public getNotificationService(): IAppNotificationService {
+        return AppNotificationService.getInstance();
+    }
+
+    /**
+     * 获取应用功能服务
+     *
+     * @return {IAppFuncService}
+     * @memberof App
+     */
+    public getAppFuncService(): IAppFuncService {
+        return AppFuncService.getInstance();
+    }
+
+    /**
+     * 获取界面行为服务
+     *
+     * @return {*}  {IAppActionService}
+     * @memberof App
+     */
+    public getAppActionService(): IAppActionService {
+        return AppActionService.getInstance();
+    }
+
+    /**
+     * 获取代码表服务
+     *
+     * @return {*}  {IAppCodeListService}
+     * @memberof App
+     */
+    public getCodeListService(): IAppCodeListService {
+        return AppCodeListService.getInstance();
     }
 
     /**
@@ -156,16 +189,6 @@ export class App extends AppBase implements IApp {
             }
             router.push({ name: 'login', query: { redirect: window.location.hash.replace("#", '') } });
         }
-    }
-
-    /**
-     * @description 登录
-     *
-     * @return {*}  {Promise<IParam>}
-     * @memberof App
-     */
-    handleLogin(): Promise<IParam> {
-        throw new Error("Method not implemented.");
     }
 
 }

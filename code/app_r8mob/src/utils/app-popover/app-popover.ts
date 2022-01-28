@@ -2,7 +2,7 @@ import { Subject } from 'rxjs';
 import Router from '@/router';
 import Antd from 'ant-design-vue';
 import AppPopoverComponent from "./app-popover.vue";
-import AppLoading from '@components/render/app-loading.vue';
+import AppLoading from '@components/common/app-loading.vue';
 import { IParam, ViewDetail } from '@core';
 import './app-popover.scss';
 import { createPopper, Instance } from '@popperjs/core/lib/popper-lite.js';

@@ -89,7 +89,7 @@ export class ViewUtil {
    * @param {ViewDetail} view
    * @memberof ViewUtil
    */
-  public static async openData(view: ViewDetail, params: { context: IContext, viewParams: IParam, data: IParam, event: MouseEvent, actionEnvironment: IParam }) {
+  public static async openData(view: ViewDetail, params: { context: IContext, viewParams: IParam, data: IParam, event: MouseEvent | undefined, actionEnvironment: IParam }) {
     const { context, viewParams, data, event, actionEnvironment } = params
     if (view) {
       // const _data: any = {};

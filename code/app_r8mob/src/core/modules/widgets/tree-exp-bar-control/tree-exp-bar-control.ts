@@ -74,7 +74,7 @@ export class TreeExpBarControl extends ExpBarControl {
    * @description 计算导航参数
    * @protected
    * @param {*} arg
-   * @return {*}  {{ tempContext: any, tempViewParams: any }}
+   * @return {*}  \{{ tempContext: any, tempViewParams: any }}
    * @memberof TreeExpBarControl
    */
   protected computeNavParams(arg: any): { tempContext: any, tempViewParams: any } {

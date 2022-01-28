@@ -373,7 +373,7 @@ export class TreeService<T extends ControlVOBase> extends ControlServiceBase<T> 
                 Object.assign(treeNode, { nodeid: treeNode.srfkey });
                 Object.assign(treeNode, { nodeid2: filter.strRealNodeId });
 
-                Object.assign(treeNode, { nodeType: node.nodeType, appEntityName: deCodeName });
+                Object.assign(treeNode, { nodeType: node.nodeType, appEntityCodeName: deCodeName });
                 list.push(treeNode);
                 resolve(list);
                 bFirst = false;

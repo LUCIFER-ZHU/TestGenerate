@@ -2,7 +2,7 @@ import { Subject } from 'rxjs';
 import Router from '@/router';
 import Antd from 'ant-design-vue';
 import AppModalComponent from "./app-modal.vue";
-import AppLoading from '@components/render/app-loading.vue';
+import AppLoading from '@components/common/app-loading.vue';
 import { IParam, ViewDetail } from '@core';
 
 export class AppModal {

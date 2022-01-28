@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface ImpExpDataMapper extends BaseMapper<ImpExpData> {
 
 
-    Page<ImpExpData> searchDefault(IPage page, @Param("srf") ImpExpDataSearchContext context, @Param("ew") Wrapper<ImpExpData> wrapper);
-    List<ImpExpData> listDefault(@Param("srf") ImpExpDataSearchContext context, @Param("ew") Wrapper<ImpExpData> wrapper);
+    Page<ImpExpData> searchDefault(IPage page, @Param("ctx") ImpExpDataSearchContext context, @Param("ew") Wrapper<ImpExpData> wrapper);
+    List<ImpExpData> listDefault(@Param("ctx") ImpExpDataSearchContext context, @Param("ew") Wrapper<ImpExpData> wrapper);
 
     @Override
     ImpExpData selectById(Serializable id);

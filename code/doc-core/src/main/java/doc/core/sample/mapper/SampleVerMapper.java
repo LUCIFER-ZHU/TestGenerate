@@ -21,17 +21,17 @@ import com.alibaba.fastjson.JSONObject;
 public interface SampleVerMapper extends BaseMapper<SampleVer> {
 
 
-    Page<SampleVer> searchDefault(IPage page, @Param("srf") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
-    List<SampleVer> listDefault(@Param("srf") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
+    Page<SampleVer> searchDefault(IPage page, @Param("ctx") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
+    List<SampleVer> listDefault(@Param("ctx") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
 
-    Page<SampleVer> searchJavar7D(IPage page, @Param("srf") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
-    List<SampleVer> listJavar7D(@Param("srf") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
+    Page<SampleVer> searchJavar7D(IPage page, @Param("ctx") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
+    List<SampleVer> listJavar7D(@Param("ctx") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
 
-    Page<SampleVer> searchMobr7D(IPage page, @Param("srf") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
-    List<SampleVer> listMobr7D(@Param("srf") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
+    Page<SampleVer> searchMobr7D(IPage page, @Param("ctx") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
+    List<SampleVer> listMobr7D(@Param("ctx") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
 
-    Page<SampleVer> searchWebr7D(IPage page, @Param("srf") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
-    List<SampleVer> listWebr7D(@Param("srf") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
+    Page<SampleVer> searchWebr7D(IPage page, @Param("ctx") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
+    List<SampleVer> listWebr7D(@Param("ctx") SampleVerSearchContext context, @Param("ew") Wrapper<SampleVer> wrapper);
 
     @Override
     SampleVer selectById(Serializable id);

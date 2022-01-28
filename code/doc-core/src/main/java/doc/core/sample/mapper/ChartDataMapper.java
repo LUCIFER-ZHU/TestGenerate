@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface ChartDataMapper extends BaseMapper<ChartData> {
 
 
-    Page<ChartData> searchDefault(IPage page, @Param("srf") ChartDataSearchContext context, @Param("ew") Wrapper<ChartData> wrapper);
-    List<ChartData> listDefault(@Param("srf") ChartDataSearchContext context, @Param("ew") Wrapper<ChartData> wrapper);
+    Page<ChartData> searchDefault(IPage page, @Param("ctx") ChartDataSearchContext context, @Param("ew") Wrapper<ChartData> wrapper);
+    List<ChartData> listDefault(@Param("ctx") ChartDataSearchContext context, @Param("ew") Wrapper<ChartData> wrapper);
 
     @Override
     ChartData selectById(Serializable id);

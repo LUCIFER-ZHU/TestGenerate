@@ -1,6 +1,6 @@
 import { Ref } from 'vue';
 import { useRoute } from 'vue-router';
-import { ViewPropsBase, ViewStateBase, UIBase, IParam, UIUtil, deepCopy } from '@core';
+import { ViewPropsBase, ViewStateBase, UIBase, IParam, UIUtil, deepCopy, IActionParam } from '@core';
 
 /**
  * @description 视图基类
@@ -32,6 +32,14 @@ export class ViewBase {
    * @memberof ViewBase
    */
   public declare emit: Function;
+
+  /**
+   * 当前视图具有数据能力部件
+   *
+   * @type {IParam}
+   * @memberof ViewBase
+   */
+  public declare xDataControl: IParam;
 
   /**
    * 界面行为服务
@@ -92,8 +100,14 @@ export class ViewBase {
    * 关闭视图
    *
    */
-  public closeView(){
-    window.history.go(-1);
+  public closeView() {
+    // 路由模式直接返回
+    if (Object.is(this.props.openType, 'ROUTE')) {
+      window.history.back();
+    } else {
+      // 非路由模式继续向外抛关闭视图事件
+      this.emit('onViewEvent', { tag: this.state.viewName, action: 'closeView', data: this.xDataControl?.getData() });
+    }
   }
 
   /**
@@ -109,8 +123,8 @@ export class ViewBase {
     const { appViewNavContexts, appViewNavParams } = this.state;
     if (Object.is(props.openType, 'ROUTE')) {
       // 应用上下文
-      const appContext = App.getAppData();
-      Object.assign(context.value, appContext);
+      const appData = App.getAppData();
+      Object.assign(context.value, appData.context ? appData.context : {});
       // 视图应用上下文
       const pageContext = {};
       const routeParams = useRoute().params;
@@ -175,9 +189,9 @@ export class ViewBase {
    * @memberof ViewBase
    */
   public useUIService() {
-    const { appEntityName, context } = this.state;
-    if (appEntityName) {
-      App.getUIService(appEntityName.toLowerCase(), context).then((service: IParam) => {
+    const { appEntityCodeName, context } = this.state;
+    if (appEntityCodeName) {
+      App.getUIService(appEntityCodeName.toLowerCase(), context).then((service: IParam) => {
         this.appUIService = service;
       })
     }
@@ -189,9 +203,9 @@ export class ViewBase {
    * @memberof ViewBase
    */
   public useDataService() {
-    const { appEntityName, context } = this.state;
-    if (appEntityName) {
-      App.getDataService(appEntityName.toLowerCase(), context).then((service: IParam) => {
+    const { appEntityCodeName, context } = this.state;
+    if (appEntityCodeName) {
+      App.getDataService(appEntityCodeName.toLowerCase(), context).then((service: IParam) => {
         this.appDataService = service;
       })
     }
@@ -204,6 +218,18 @@ export class ViewBase {
    */
   public useCounterService() { }
 
+  /**
+   * 处理部件事件
+   *
+   * @param {IActionParam} actionParam
+   * @memberof ViewBase
+   */
+  public onCtrlEvent(actionParam: IActionParam) {
+    const { tag, action, data } = actionParam;
+    if (Object.is(action, 'closeView')) {
+      this.closeView();
+    }
+  }
 
   /**
    * @description 安装视图所有功能模块的方法
@@ -224,7 +250,8 @@ export class ViewBase {
     // 处理视图初始化
     this.useViewInit();
     return {
-      state: this.state
+      state: this.state,
+      onCtrlEvent: this.onCtrlEvent.bind(this),
     };
   }
 }

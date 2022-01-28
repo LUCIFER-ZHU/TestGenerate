@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface ContactMapper extends BaseMapper<Contact> {
 
 
-    Page<Contact> searchDefault(IPage page, @Param("srf") ContactSearchContext context, @Param("ew") Wrapper<Contact> wrapper);
-    List<Contact> listDefault(@Param("srf") ContactSearchContext context, @Param("ew") Wrapper<Contact> wrapper);
+    Page<Contact> searchDefault(IPage page, @Param("ctx") ContactSearchContext context, @Param("ew") Wrapper<Contact> wrapper);
+    List<Contact> listDefault(@Param("ctx") ContactSearchContext context, @Param("ew") Wrapper<Contact> wrapper);
 
     @Override
     Contact selectById(Serializable id);

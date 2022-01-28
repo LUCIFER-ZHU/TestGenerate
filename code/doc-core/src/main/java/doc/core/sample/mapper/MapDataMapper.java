@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface MapDataMapper extends BaseMapper<MapData> {
 
 
-    Page<MapData> searchDefault(IPage page, @Param("srf") MapDataSearchContext context, @Param("ew") Wrapper<MapData> wrapper);
-    List<MapData> listDefault(@Param("srf") MapDataSearchContext context, @Param("ew") Wrapper<MapData> wrapper);
+    Page<MapData> searchDefault(IPage page, @Param("ctx") MapDataSearchContext context, @Param("ew") Wrapper<MapData> wrapper);
+    List<MapData> listDefault(@Param("ctx") MapDataSearchContext context, @Param("ew") Wrapper<MapData> wrapper);
 
     @Override
     MapData selectById(Serializable id);

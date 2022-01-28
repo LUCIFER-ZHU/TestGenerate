@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <AppViewBaseLayout>
+  <AppViewBaseLayout class="app-grid-view-layout">
     <template v-slot:header-top>
       <slot name="topMessage" />
     </template>
@@ -11,16 +11,20 @@
       <slot name="caption" />
     </template>
     <template v-slot:header-content>
-      <slot name="quickGroupSearch" />
-      <slot name="quickSearch" />
     </template>
     <template v-slot:header-right>
-      <slot name="toolbar" />
+      <div class="grid-view__header-right">
+        <slot name="quickGroupSearch" />
+        <slot name="quickSearch" />
+        <slot name="toolbar" />
+      </div>
     </template>
     <template v-slot:header-bottom>
+      <div>
       <slot name="quickSearchForm" />
       <slot name="searchForm" />
       <slot name="searchBar" />
+      </div>
     </template>
     <template v-slot:body-top>
       <slot name="bodyMessage" />
@@ -33,6 +37,11 @@
 </template>
 
 <style lang="scss">
-
+.app-grid-view-layout {
+  .grid-view__header-right {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
 
 </style>

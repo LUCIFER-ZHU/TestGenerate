@@ -21,11 +21,11 @@ import com.alibaba.fastjson.JSONObject;
 public interface ExampleMapper extends BaseMapper<Example> {
 
 
-    Page<Example> searchDefault(IPage page, @Param("srf") ExampleSearchContext context, @Param("ew") Wrapper<Example> wrapper);
-    List<Example> listDefault(@Param("srf") ExampleSearchContext context, @Param("ew") Wrapper<Example> wrapper);
+    Page<Example> searchDefault(IPage page, @Param("ctx") ExampleSearchContext context, @Param("ew") Wrapper<Example> wrapper);
+    List<Example> listDefault(@Param("ctx") ExampleSearchContext context, @Param("ew") Wrapper<Example> wrapper);
 
-    Page<Example> searchEmpty(IPage page, @Param("srf") ExampleSearchContext context, @Param("ew") Wrapper<Example> wrapper);
-    List<Example> listEmpty(@Param("srf") ExampleSearchContext context, @Param("ew") Wrapper<Example> wrapper);
+    Page<Example> searchEmpty(IPage page, @Param("ctx") ExampleSearchContext context, @Param("ew") Wrapper<Example> wrapper);
+    List<Example> listEmpty(@Param("ctx") ExampleSearchContext context, @Param("ew") Wrapper<Example> wrapper);
 
     @Override
     Example selectById(Serializable id);

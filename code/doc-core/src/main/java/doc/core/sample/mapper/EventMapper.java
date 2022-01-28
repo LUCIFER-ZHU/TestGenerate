@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface EventMapper extends BaseMapper<Event> {
 
 
-    Page<Event> searchDefault(IPage page, @Param("srf") EventSearchContext context, @Param("ew") Wrapper<Event> wrapper);
-    List<Event> listDefault(@Param("srf") EventSearchContext context, @Param("ew") Wrapper<Event> wrapper);
+    Page<Event> searchDefault(IPage page, @Param("ctx") EventSearchContext context, @Param("ew") Wrapper<Event> wrapper);
+    List<Event> listDefault(@Param("ctx") EventSearchContext context, @Param("ew") Wrapper<Event> wrapper);
 
     @Override
     Event selectById(Serializable id);

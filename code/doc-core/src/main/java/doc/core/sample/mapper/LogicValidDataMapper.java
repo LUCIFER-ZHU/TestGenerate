@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface LogicValidDataMapper extends BaseMapper<LogicValidData> {
 
 
-    Page<LogicValidData> searchDefault(IPage page, @Param("srf") LogicValidDataSearchContext context, @Param("ew") Wrapper<LogicValidData> wrapper);
-    List<LogicValidData> listDefault(@Param("srf") LogicValidDataSearchContext context, @Param("ew") Wrapper<LogicValidData> wrapper);
+    Page<LogicValidData> searchDefault(IPage page, @Param("ctx") LogicValidDataSearchContext context, @Param("ew") Wrapper<LogicValidData> wrapper);
+    List<LogicValidData> listDefault(@Param("ctx") LogicValidDataSearchContext context, @Param("ew") Wrapper<LogicValidData> wrapper);
 
     @Override
     LogicValidData selectById(Serializable id);

@@ -33,6 +33,8 @@ export class EditView extends MainView {
     // 初始化表单引用
     this.form = ref(null);
     onMounted(() => {
+      // 初始化数据能力部件
+      this.xDataControl = this.getForm();
       const { isLoadDefault, context, viewparams, keyPSDEField } = this.state;
       if (this.getForm() && isLoadDefault) {
         const tag = this.getForm().name;

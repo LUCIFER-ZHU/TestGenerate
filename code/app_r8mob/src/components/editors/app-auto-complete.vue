@@ -165,7 +165,7 @@ const onSelect = (value: any) => {
     :defaultOpen="true"
   >
     <template #option="option">
-      <div @click="onSelect(option[deKeyField!])">{{option[deMajorField!]}}</div>
+      <div @click="onSelect(option[deKeyField!])">\{{option[deMajorField!]}}</div>
     </template>
     <a-input :placeholder="placeholder">
       <template #suffix><search-outlined v-if="showButton" class="certain-category-icon" /></template>

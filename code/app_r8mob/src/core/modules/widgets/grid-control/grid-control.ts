@@ -31,13 +31,12 @@ export class GridControl extends MDControl {
      */
     public useCustom() {
         const { controlName, selectFirstDefault, rowEditState, rowActiveMode, isSingleSelect } = this.state;
-        const { selectedRowKeys } = toRefs(this.state);
         // 滚动条配置
         const useScrollOption = computed(() => {
             return {
                 scrollToFirstRowOnChange: true,
-                x: '110%',
-                y: '690px',
+                x: '100%',
+                y: '100%',
             }
         });
         // 指定表格行key
@@ -52,17 +51,51 @@ export class GridControl extends MDControl {
         const useCustomRow = (record: IParam, index: number) => {
             return {
                 onClick: () => {
-                    if (!rowEditState) {
-                        selectedRowKeys.value = [record.srfkey];
-                        if (!record.children) {
-                            this.emit("ctrlEvent", { tag: this.props.name, action: "selectionChange", data: [deepCopy(record)] })
-                            this.emit("ctrlEvent", { tag: this.props.name, action: "rowClick", data: [deepCopy(record)] })
+                    // 单击激活
+                    if (this.state.rowActiveMode === 1) {
+                        if (!rowEditState) {
+                            const activeIndex: number = this.state.selectedRowKeys.findIndex((key: string) => {
+                                return record.srfkey === key;
+                            });
+                            if (activeIndex === -1) {
+                                this.state.selectedRowKeys.push(record.srfkey);
+                                this.state.selectedData.push(record);
+                            } else {
+                                this.state.selectedRowKeys = this.state.selectedRowKeys.filter((key: string) => {
+                                    return key !== record.srfkey;
+                                })
+                                this.state.selectedData = this.state.selectedData.filter((item: any) => {
+                                    return item.srfkey !== record.srfkey;
+                                })
+                            }
+
+                            if (!record.children) {
+                                this.emit("ctrlEvent", { tag: this.props.name, action: "selectionChange", data: [record] });
+                                this.emit("ctrlEvent", { tag: this.props.name, action: "rowClick", data: [record] });
+                            }
                         }
                     }
                 },
                 onDblclick: () => {
-                    if (!record.children) {
-                        this.emit("ctrlEvent", { tag: this.props.name, action: "rowDbClick", data: [deepCopy(record)] })
+                    // 双击激活
+                    if (this.state.rowActiveMode === 2) {
+                        if (!record.children) {
+                            const activeIndex: number = this.state.selectedRowKeys.findIndex((key: string) => {
+                                return record.srfkey === key;
+                            });
+                            if (activeIndex === -1) {
+                                this.state.selectedRowKeys.push(record.srfkey);
+                                this.state.selectedData.push(record);
+                            } else {
+                                this.state.selectedRowKeys = this.state.selectedRowKeys.filter((key: string) => {
+                                    return key !== record.srfkey;
+                                })
+                                this.state.selectedData = this.state.selectedData.filter((item: any) => {
+                                    return item.srfkey !== record.srfkey;
+                                })
+                            }
+                            this.emit("ctrlEvent", { tag: this.props.name, action: "rowDbClick", data: [record] });
+                        }
                     }
                 }
             };
@@ -74,11 +107,11 @@ export class GridControl extends MDControl {
             }
             return {
                 type: isSingleSelect ? 'radio' : 'checkbox',
-                columnWidth: 90,
-                selectedRowKeys: selectedRowKeys.value,
+                columnWidth: 32,
+                selectedRowKeys: this.state.selectedRowKeys,
                 checkStrictly: this.props.multiple ? false : true,
                 onChange: (_selectedRowKeys: string[], selectedRows: IParam[]) => {
-                    selectedRowKeys.value = _selectedRowKeys;
+                    this.state.selectedRowKeys = _selectedRowKeys;
                     const selection: IParam[] = [];
                     selectedRows.forEach((select: IParam) => {
                         if (!select.children) {
@@ -151,8 +184,8 @@ export class GridControl extends MDControl {
             }
             const validator = new schema({ [name]: fileRule });
             validator.validate({ [name]: value }, undefined, (errors: ErrorList, fields: FieldErrorList) => {
-                const error =errors?.find((item:any)=>{
-                    return item.field ===  name;
+                const error = errors?.find((item: any) => {
+                    return item.field === name;
                 })
                 gridEditState.value[name][rowIndex] = error;
             })
@@ -467,13 +500,11 @@ export class GridControl extends MDControl {
      */
     public moduleInstall() {
         const superParams = super.moduleInstall();
-        console.log(this.state);
-
         return {
             ...superParams,
             useCustom: this.useCustom(),
-            onEditorEvent: this.onEditorEvent.bind(this),
-            onToolbarEvent: this.onToolbarEvent.bind(this)
+            onEditorEvent: this.onEditorEvent,
+            onToolbarEvent: this.onToolbarEvent
         };
     }
 }

@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface CalendarDataMapper extends BaseMapper<CalendarData> {
 
 
-    Page<CalendarData> searchDefault(IPage page, @Param("srf") CalendarDataSearchContext context, @Param("ew") Wrapper<CalendarData> wrapper);
-    List<CalendarData> listDefault(@Param("srf") CalendarDataSearchContext context, @Param("ew") Wrapper<CalendarData> wrapper);
+    Page<CalendarData> searchDefault(IPage page, @Param("ctx") CalendarDataSearchContext context, @Param("ew") Wrapper<CalendarData> wrapper);
+    List<CalendarData> listDefault(@Param("ctx") CalendarDataSearchContext context, @Param("ew") Wrapper<CalendarData> wrapper);
 
     @Override
     CalendarData selectById(Serializable id);

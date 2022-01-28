@@ -1,4 +1,4 @@
-import { IActionParam, IParam, MainView, MDViewState } from '@core';
+import { IActionParam, IParam, MainView, MDViewState, ViewUtil } from '@core';
 
 /**
  * 多数据视图
@@ -157,13 +157,13 @@ export class MDView extends MainView {
     if (Object.is(eventName, 'load')) {
       this.MDCtrlLoaded(args);
     }
-    if (Object.is(eventName, 'rowClick') && this.state.gridRowActiveMode === 1) {
+    if (Object.is(eventName, 'rowClick')) {
       this.doEdit(args);
     }
-    if (Object.is(eventName, 'rowDbClick') && this.state.gridRowActiveMode === 2) {
+    if (Object.is(eventName, 'rowDbClick')) {
       this.doEdit(args);
     }
-    if (Object.is(eventName, 'selectionchange')) {
+    if (Object.is(eventName, 'selectionChange')) {
       this.selectionChange(args);
     }
   }
@@ -181,7 +181,6 @@ export class MDView extends MainView {
     if (this.getSearchBar()) {
       Object.assign(args, this.getSearchBar().getData());
     }
-    Object.assign(args, { test: 111 });
     // if (this.view && !this.view.isExpandSearchForm) {
     //   Object.assign(args, { query: this.view.query });
     // }
@@ -216,7 +215,9 @@ export class MDView extends MainView {
    * @memberof MDView
    */
   public selectionChange(args: any) {
-    throw new Error('Method not implemented.');
+    // 抛出数据
+    this.emit("onViewEvent", { tag: this.state.viewName, action: 'selectionChange', data: args });
+    // 计算按钮权限 todo
   }
 
   /**
@@ -226,19 +227,27 @@ export class MDView extends MainView {
    * @memberof MDView
    */
   public doEdit(args: any) {
-    this.onToolbarEvent({
-      tag: '',
-      action: '',
-      data: {
-        uIAction: {
-          codeName: 'Edit',
-          fullCodeName: 'Edit',
-          uIActionMode: 'SYS',
-          uIActionTag: 'Edit',
-          uIActionType: 'DEUIACTION',
-        },
-      },
-    });
+    //准备打开视图
+    if (!this.state?.viewLogics?.openData?.openDataViewName) {
+      return;
+    }
+    const viewName = this.state.viewLogics.openData.openDataViewName;
+    const view = App.getViewInfo(viewName);
+    if (!view) {
+      return;
+    }
+    // 准备参数
+    const tempContext = {};
+    Object.assign(tempContext, { [this.state.keyPSDEField]: args[0].srfkey });
+    Object.assign(tempContext, this.state.context);
+    const params = {
+      context: tempContext,
+      viewParams: this.state.viewParams,
+      data: args,
+      event: undefined,
+      actionEnvironment: this
+    }
+    ViewUtil.openData(view, params);
   }
 
   /**
@@ -306,5 +315,5 @@ export class MDView extends MainView {
    * @return {*}  {*}
    * @memberof MDView
    */
-  public getMDCtrl(): any {}
+  public getMDCtrl(): any { }
 }

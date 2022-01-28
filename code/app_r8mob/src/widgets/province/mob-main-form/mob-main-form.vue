@@ -24,10 +24,10 @@ interface CtrlEmit {
 const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onEditorEvent, onComponentEvent } = new FormControl(ctrlState, props, emit).moduleInstall();
+const { name, state, load, loadDraft, save, remove, refresh, onEditorEvent, onComponentEvent, getData } = new FormControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
-defineExpose({ state, name: 'form' });
+defineExpose({ name, state, load, loadDraft, save, remove, refresh, getData });
 </script>
 <template>
   <a-form name="Mob_main" class="app-form" style="" :model="state.data" :rules="state.rules">

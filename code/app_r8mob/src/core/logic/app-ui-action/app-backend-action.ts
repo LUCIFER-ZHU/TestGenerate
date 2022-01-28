@@ -18,7 +18,7 @@ export class AppBackendAction extends AppActionBase {
     try {
       const { actionEnvironment } = params;
       const { context } = actionParams;
-      const entityName = actionEnvironment?.state?.appEntityName;
+      const entityName = actionEnvironment?.state?.appEntityCodeName;
       if (!entityName) {
         console.log("实体名称不存在");
         return { ok: false, result: null };

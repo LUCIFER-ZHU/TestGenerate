@@ -21,17 +21,17 @@ import com.alibaba.fastjson.JSONObject;
 public interface OrderMapper extends BaseMapper<Order> {
 
 
-    Page<Order> searchDefault(IPage page, @Param("srf") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
-    List<Order> listDefault(@Param("srf") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
+    Page<Order> searchDefault(IPage page, @Param("ctx") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
+    List<Order> listDefault(@Param("ctx") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
 
-    Page<Order> searchGroup(IPage page, @Param("srf") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
-    List<Order> listGroup(@Param("srf") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
+    Page<Order> searchGroup(IPage page, @Param("ctx") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
+    List<Order> listGroup(@Param("ctx") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
 
-    Page<Order> searchPaying(IPage page, @Param("srf") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
-    List<Order> listPaying(@Param("srf") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
+    Page<Order> searchPaying(IPage page, @Param("ctx") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
+    List<Order> listPaying(@Param("ctx") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
 
-    Page<Order> searchProcessing(IPage page, @Param("srf") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
-    List<Order> listProcessing(@Param("srf") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
+    Page<Order> searchProcessing(IPage page, @Param("ctx") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
+    List<Order> listProcessing(@Param("ctx") OrderSearchContext context, @Param("ew") Wrapper<Order> wrapper);
 
     @Override
     Order selectById(Serializable id);

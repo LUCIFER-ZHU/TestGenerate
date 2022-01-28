@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface CustomerMapper extends BaseMapper<Customer> {
 
 
-    Page<Customer> searchDefault(IPage page, @Param("srf") CustomerSearchContext context, @Param("ew") Wrapper<Customer> wrapper);
-    List<Customer> listDefault(@Param("srf") CustomerSearchContext context, @Param("ew") Wrapper<Customer> wrapper);
+    Page<Customer> searchDefault(IPage page, @Param("ctx") CustomerSearchContext context, @Param("ew") Wrapper<Customer> wrapper);
+    List<Customer> listDefault(@Param("ctx") CustomerSearchContext context, @Param("ew") Wrapper<Customer> wrapper);
 
     @Override
     Customer selectById(Serializable id);

@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface CityMapper extends BaseMapper<City> {
 
 
-    Page<City> searchDefault(IPage page, @Param("srf") CitySearchContext context, @Param("ew") Wrapper<City> wrapper);
-    List<City> listDefault(@Param("srf") CitySearchContext context, @Param("ew") Wrapper<City> wrapper);
+    Page<City> searchDefault(IPage page, @Param("ctx") CitySearchContext context, @Param("ew") Wrapper<City> wrapper);
+    List<City> listDefault(@Param("ctx") CitySearchContext context, @Param("ew") Wrapper<City> wrapper);
 
     @Override
     City selectById(Serializable id);

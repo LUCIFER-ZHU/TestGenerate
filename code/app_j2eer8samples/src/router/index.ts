@@ -6,7 +6,7 @@ const routes = [
     path: "/apps/:app?",
     beforeEnter: async (to: any, from: any) => {
       const appParams:IParam = {};
-      const auth: Promise<any> = await App.initAppAuth(appParams);
+      const auth: Promise<any> = await App.initApp(appParams);
       return auth;
     },
     meta: {  
@@ -22,12 +22,18 @@ const routes = [
   },
   {
     path: '/404',
+    name: '404',
     component: () => import('@components/common/404.vue')
   },
   {
     path: '/login',
     name: 'login',
     component: () => import("@components/common/login.vue")
+  },
+  {
+    path: '/lock',
+    name: 'lock',
+    component: () => import('@components/common/lock.vue'),
   },
   {
     path: '/:pathMatch(.*)',

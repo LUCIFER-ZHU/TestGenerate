@@ -21,11 +21,11 @@ import com.alibaba.fastjson.JSONObject;
 public interface OrderRepDataMapper extends BaseMapper<OrderRepData> {
 
 
-    Page<OrderRepData> searchDefault(IPage page, @Param("srf") OrderRepDataSearchContext context, @Param("ew") Wrapper<OrderRepData> wrapper);
-    List<OrderRepData> listDefault(@Param("srf") OrderRepDataSearchContext context, @Param("ew") Wrapper<OrderRepData> wrapper);
+    Page<OrderRepData> searchDefault(IPage page, @Param("ctx") OrderRepDataSearchContext context, @Param("ew") Wrapper<OrderRepData> wrapper);
+    List<OrderRepData> listDefault(@Param("ctx") OrderRepDataSearchContext context, @Param("ew") Wrapper<OrderRepData> wrapper);
 
-    Page<Map> searchGroup(IPage page, @Param("srf") OrderRepDataSearchContext context, @Param("ew") Wrapper<OrderRepData> wrapper);
-    List<Map> listGroup(@Param("srf") OrderRepDataSearchContext context, @Param("ew") Wrapper<OrderRepData> wrapper);
+    Page<Map> searchGroup(IPage page, @Param("ctx") OrderRepDataSearchContext context, @Param("ew") Wrapper<OrderRepData> wrapper);
+    List<Map> listGroup(@Param("ctx") OrderRepDataSearchContext context, @Param("ew") Wrapper<OrderRepData> wrapper);
 
     @Override
     OrderRepData selectById(Serializable id);

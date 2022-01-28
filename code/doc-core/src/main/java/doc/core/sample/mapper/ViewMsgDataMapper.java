@@ -21,8 +21,8 @@ import com.alibaba.fastjson.JSONObject;
 public interface ViewMsgDataMapper extends BaseMapper<ViewMsgData> {
 
 
-    Page<ViewMsgData> searchDefault(IPage page, @Param("srf") ViewMsgDataSearchContext context, @Param("ew") Wrapper<ViewMsgData> wrapper);
-    List<ViewMsgData> listDefault(@Param("srf") ViewMsgDataSearchContext context, @Param("ew") Wrapper<ViewMsgData> wrapper);
+    Page<ViewMsgData> searchDefault(IPage page, @Param("ctx") ViewMsgDataSearchContext context, @Param("ew") Wrapper<ViewMsgData> wrapper);
+    List<ViewMsgData> listDefault(@Param("ctx") ViewMsgDataSearchContext context, @Param("ew") Wrapper<ViewMsgData> wrapper);
 
     @Override
     ViewMsgData selectById(Serializable id);

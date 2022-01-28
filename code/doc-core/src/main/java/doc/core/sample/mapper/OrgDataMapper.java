@@ -21,11 +21,11 @@ import com.alibaba.fastjson.JSONObject;
 public interface OrgDataMapper extends BaseMapper<OrgData> {
 
 
-    Page<OrgData> searchDefault(IPage page, @Param("srf") OrgDataSearchContext context, @Param("ew") Wrapper<OrgData> wrapper);
-    List<OrgData> listDefault(@Param("srf") OrgDataSearchContext context, @Param("ew") Wrapper<OrgData> wrapper);
+    Page<OrgData> searchDefault(IPage page, @Param("ctx") OrgDataSearchContext context, @Param("ew") Wrapper<OrgData> wrapper);
+    List<OrgData> listDefault(@Param("ctx") OrgDataSearchContext context, @Param("ew") Wrapper<OrgData> wrapper);
 
-    Page<OrgData> searchPorgdata(IPage page, @Param("srf") OrgDataSearchContext context, @Param("ew") Wrapper<OrgData> wrapper);
-    List<OrgData> listPorgdata(@Param("srf") OrgDataSearchContext context, @Param("ew") Wrapper<OrgData> wrapper);
+    Page<OrgData> searchPorgdata(IPage page, @Param("ctx") OrgDataSearchContext context, @Param("ew") Wrapper<OrgData> wrapper);
+    List<OrgData> listPorgdata(@Param("ctx") OrgDataSearchContext context, @Param("ew") Wrapper<OrgData> wrapper);
 
     @Override
     OrgData selectById(Serializable id);

@@ -21,11 +21,11 @@ import com.alibaba.fastjson.JSONObject;
 public interface CategoryMapper extends BaseMapper<Category> {
 
 
-    Page<Category> searchDefault(IPage page, @Param("srf") CategorySearchContext context, @Param("ew") Wrapper<Category> wrapper);
-    List<Category> listDefault(@Param("srf") CategorySearchContext context, @Param("ew") Wrapper<Category> wrapper);
+    Page<Category> searchDefault(IPage page, @Param("ctx") CategorySearchContext context, @Param("ew") Wrapper<Category> wrapper);
+    List<Category> listDefault(@Param("ctx") CategorySearchContext context, @Param("ew") Wrapper<Category> wrapper);
 
-    Page<Category> searchRoot(IPage page, @Param("srf") CategorySearchContext context, @Param("ew") Wrapper<Category> wrapper);
-    List<Category> listRoot(@Param("srf") CategorySearchContext context, @Param("ew") Wrapper<Category> wrapper);
+    Page<Category> searchRoot(IPage page, @Param("ctx") CategorySearchContext context, @Param("ew") Wrapper<Category> wrapper);
+    List<Category> listRoot(@Param("ctx") CategorySearchContext context, @Param("ew") Wrapper<Category> wrapper);
 
     @Override
     Category selectById(Serializable id);
