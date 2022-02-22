@@ -21,7 +21,7 @@ export const ctrlState = {
     },
     {
       name: 'EXPITEM:RowEdit',
-      viewName: 'EDITORVALUERowEditGridView',
+      viewName: 'EditorValueRowEditGridView',
       deKeyField: 'EditorValue',
     },
     {

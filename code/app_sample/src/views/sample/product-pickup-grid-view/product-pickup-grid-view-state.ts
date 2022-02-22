@@ -13,15 +13,14 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'Product',
-  keyPSDEField: 'product',
+  appDeKeyFieldName: 'productid',
+  appDeMajorFieldName: 'productname',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
   enableQuickGroup: false,
   viewLogics: {
   },
-  toolbar: [
-  ],
   grid:{
     action:{
       loadAction: '',
@@ -38,6 +37,5 @@ export const viewState = {
       loadDraftAction: 'FilterGetDraft',
       loadAction: 'FilterGet',
     } 
-  }
-
+  },
 };

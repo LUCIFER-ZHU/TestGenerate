@@ -8,7 +8,7 @@ interface Props{
 
 const props = withDefaults(defineProps<Props>(), {})
 
-let style = reactive({width:'600px',height:'600px'});
+let style = reactive({width:'800px',height:'600px'});
 
 /**
  * Vue生命周期beforeMount
@@ -16,7 +16,10 @@ let style = reactive({width:'600px',height:'600px'});
 onBeforeMount(() => {
   if (props.width) {
     style.width = props.width + 'px';
-  } else if(props.height){
+  } else {
+    style.width = '100%';
+  }
+  if(props.height){
     style.height = props.height + 'px';
   } 
 });

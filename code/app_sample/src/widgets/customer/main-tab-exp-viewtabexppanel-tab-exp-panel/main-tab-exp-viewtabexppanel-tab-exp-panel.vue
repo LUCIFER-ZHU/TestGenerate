@@ -6,6 +6,7 @@ import { MainTabExpViewtabviewpanelTabViewPanel } from '@widgets/customer/main-t
 import { MainTabExpViewtabviewpanel2TabViewPanel } from '@widgets/customer/main-tab-exp-viewtabviewpanel2-tab-view-panel';
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   showBusyIndicator?: boolean;
@@ -49,6 +50,7 @@ defineExpose({ name, state });
           :context="state.context"
           :viewParams="state.viewParams"
           :viewSubject="state.viewSubject"
+          :parent="parent"
           @onCtrlEvent="onCtrlEvent"
         />
       </a-tab-pane>
@@ -61,6 +63,7 @@ defineExpose({ name, state });
           :context="state.context"
           :viewParams="state.viewParams"
           :viewSubject="state.viewSubject"
+          :parent="parent"
           @onCtrlEvent="onCtrlEvent"
         />
       </a-tab-pane>

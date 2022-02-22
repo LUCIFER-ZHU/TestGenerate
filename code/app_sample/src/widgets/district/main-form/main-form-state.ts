@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { DistrictService } from '@api/district/district-service';
 
 /**
@@ -95,9 +95,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new DistrictService() ),
   data: new ControlVO({}),
-  appDeMajorFieldName: 'DistrictName',
+  appEntityCodeName: 'District',
+  appDeCodeName:'District',
+  appDeLogicName: '区',
   appDeKeyFieldName: 'DistrictId',
+  appDeMajorFieldName: 'DistrictName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',

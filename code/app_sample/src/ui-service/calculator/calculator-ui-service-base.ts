@@ -9,19 +9,37 @@ import { AppFrontAction, AppBackendAction } from '@core';
  */
 export class CalculatorUIServiceBase extends UIServiceBase {
 
-  /**
-    * Creates an instance of CalculatorUIServiceBase
-    * 
-    * @param {*} [opts={}]
-    * @memberof CalculatorUIServiceBase
-    */
-  constructor(opts: IParam = {}) {
-      super(opts);
-  }
+    /**
+      * Creates an instance of CalculatorUIServiceBase
+      * 
+      * @param {*} [opts={}]
+      * @memberof CalculatorUIServiceBase
+      */
+    constructor(opts: IParam = {}) {
+        super(opts);
+        this.initBasicData();
+    }
 
+    /**
+     * 初始化基础数据
+     *
+     * @memberof CalculatorUIServiceBase
+     */
+    public initBasicData() {
+        // 应用实体主键属性
+        this.appDeKeyFieldName = 'calculatorid';
+        // 是否启用主状态
+        this.isEnableDEMainState = false;
+    }
 
-
-   public uiActionModes = {       "ShowPart3":{
+    /**
+     * 显示分区3
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async ShowPart3(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ShowPart3',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEDATA',
@@ -37,8 +55,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "OpenPickPart":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 显示选择分区
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async OpenPickPart(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'OpenPickPart',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEDATA',
@@ -54,8 +82,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "ClickMinus":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * -
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async ClickMinus(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ClickMinus',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -71,8 +109,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "Click8":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 8
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async Click8(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Click8',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -88,8 +136,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "Click6":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 6
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async Click6(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Click6',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -105,8 +163,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "Click7":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 7
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async Click7(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Click7',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -122,8 +190,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "ClickBackspace":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * Backspace
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async ClickBackspace(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ClickBackspace',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -139,8 +217,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "ClickMultiply":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * *
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async ClickMultiply(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ClickMultiply',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -156,8 +244,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "Click3":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 3
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async Click3(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Click3',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -173,8 +271,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "ShowPart2":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 显示分区2
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async ShowPart2(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ShowPart2',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEDATA',
@@ -190,8 +298,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "ClickClear":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * Clear
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async ClickClear(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ClickClear',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -207,8 +325,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "Click4":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 4
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async Click4(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Click4',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -224,8 +352,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "ClickPoint":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * .
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async ClickPoint(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ClickPoint',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -241,8 +379,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "ClickExcept":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * /
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async ClickExcept(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ClickExcept',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -258,8 +406,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "ClickPlus":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * +
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async ClickPlus(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ClickPlus',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -275,8 +433,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "ShowPart1":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 显示分区1
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async ShowPart1(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ShowPart1',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEDATA',
@@ -292,8 +460,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "Click0":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 0
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async Click0(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Click0',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -309,8 +487,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "Click1":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 1
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async Click1(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Click1',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -326,8 +514,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "ClickEq":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * =
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async ClickEq(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ClickEq',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -343,8 +541,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "Click5":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 5
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async Click5(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Click5',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -360,8 +568,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "Click2":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 2
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async Click2(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Click2',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -377,8 +595,18 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "Click9":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 9
+     *
+     * @param {*} params
+     * @memberof CalculatorUIServiceBase
+     */
+    public async Click9(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Click9',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -394,246 +622,7 @@ export class CalculatorUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-     };    /**
-     * 显示分区3
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async ShowPart3(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ShowPart3');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 显示选择分区
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async OpenPickPart(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('OpenPickPart');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * -
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async ClickMinus(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ClickMinus');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 8
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async Click8(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Click8');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 6
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async Click6(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Click6');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 7
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async Click7(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Click7');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * Backspace
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async ClickBackspace(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ClickBackspace');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * *
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async ClickMultiply(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ClickMultiply');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 3
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async Click3(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Click3');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 显示分区2
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async ShowPart2(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ShowPart2');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * Clear
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async ClickClear(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ClickClear');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 4
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async Click4(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Click4');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * .
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async ClickPoint(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ClickPoint');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * /
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async ClickExcept(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ClickExcept');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * +
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async ClickPlus(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ClickPlus');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 显示分区1
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async ShowPart1(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ShowPart1');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 0
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async Click0(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Click0');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 1
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async Click1(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Click1');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * =
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async ClickEq(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ClickEq');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 5
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async Click5(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Click5');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 2
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async Click2(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Click2');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 9
-     *
-     * @param {*} params
-     * @memberof CalculatorUIServiceBase
-     */
-    public async Click9(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Click9');
+         };
         AppBackendAction.doAction(actionModel, params);
     }
 

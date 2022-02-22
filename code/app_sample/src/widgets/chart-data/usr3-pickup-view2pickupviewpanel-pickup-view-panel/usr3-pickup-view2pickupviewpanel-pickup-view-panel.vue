@@ -5,6 +5,7 @@ import { ctrlState } from './usr3-pickup-view2pickupviewpanel-pickup-view-panel-
 import ChartDataUsr2GridView from '@views/sample/chart-data-usr2-grid-view';
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;

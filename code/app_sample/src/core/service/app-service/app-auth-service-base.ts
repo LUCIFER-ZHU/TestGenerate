@@ -1,7 +1,6 @@
 import qs from "qs";
 import { clearCookie, getCookie, setCookie } from "qx-util";
 import { deepCopy, getSessionStorage, Http, IAppAuthService, IParam, removeSessionStorage, setSessionStorage } from "@core";
-import { Environment } from "@/environments/environment";
 
 /**
  * 应用权限服务基类
@@ -21,6 +20,22 @@ export abstract class AppAuthServiceBase implements IAppAuthService {
      * @memberof AppAuthServiceBase
      */
     private appData: IParam = {};
+
+    /**
+     * 系统默认操作标识
+     *
+     * @protected
+     * @type {IParam}
+     * @memberof AppAuthServiceBase
+     */
+    protected sysOPPrivs: IParam = {};
+
+    /**
+     * @description 系统操作标识映射统一资源映射表
+     * @type {Map<string, string>}
+     * @memberof AppAuthServiceBase
+     */
+    protected sysOPPrivsMap: Map<string, string> = new Map();
 
     /**
      * 获取应用数据
@@ -43,6 +58,16 @@ export abstract class AppAuthServiceBase implements IAppAuthService {
     }
 
     /**
+     * 应用是否启用权限
+     *
+     * @return {boolean} 
+     * @memberof AppAuthServiceBase
+     */
+    public getEnablePermission(): boolean {
+        return this.appData.enablepermissionvalid && App.getEnvironmentParam().enablePermissionValid;
+    }
+
+    /**
      * 初始化应用权限
      *
      * @param {IParam} params 应用预置参数
@@ -51,7 +76,7 @@ export abstract class AppAuthServiceBase implements IAppAuthService {
      */
     public async initAppAuth(params: IParam, hooks: IParam): Promise<any> {
         let result = true;
-        if (Environment && Environment.SaaSMode) {
+        if (App.getEnvironmentParam() && App.getEnvironmentParam().SaaSMode) {
             if (getSessionStorage('activeOrgData')) {
                 result = await this.getAppInitData(hooks, params);
             } else {
@@ -109,6 +134,103 @@ export abstract class AppAuthServiceBase implements IAppAuthService {
     }
 
     /**
+     * 获取指定数据操作标识是否鉴权
+     *
+     * @param {IParam} context 应用上下文
+     * @param {{ key: string, dataAccAction: string, mainSateOPPrivs: IParam }} { key, dataAccAction, mainSateOPPrivs } {数据主键，操作标识，指定数据主状态操作标识 }
+     * @param {IParam} [param] 额外参数
+     * @return {*}  {IParam}
+     * @memberof AppAuthServiceBase
+     */
+    /**
+     * 获取指定数据操作标识是否鉴权
+     *
+     * @param {IParam} context 应用上下文
+     * @param {string} dataAccAction 操作标识
+     * @param {string} [key] 数据主键
+     * @param {IParam} [mainSateOPPrivs] 指定数据主状态操作标识
+     * @param {IParam} [param] 额外参数
+     * @return {*}  {IParam}
+     * @memberof IAppAuthService
+     */
+    public getOPEnableAuth(context: IParam, dataAccAction: string, key?: string, mainSateOPPrivs?: IParam, param?: IParam): IParam {
+        let result: IParam = { [dataAccAction]: 1 };
+        // 统一资源权限
+        const curDefaultOPPrivs: any = this.handleSysOPPrivs();
+        if (curDefaultOPPrivs && (Object.keys(curDefaultOPPrivs).length > 0) && (curDefaultOPPrivs[dataAccAction] === 0)) {
+            result[dataAccAction] = 0;
+        }
+        // 主状态权限
+        if (mainSateOPPrivs && (Object.keys(mainSateOPPrivs).length > 0) && mainSateOPPrivs.hasOwnProperty(dataAccAction)) {
+            result[dataAccAction] = result[dataAccAction] && mainSateOPPrivs[dataAccAction];
+        }
+        // 实体级权限
+        if (key && !this.getDEAuth(context, key, dataAccAction, param)) {
+            result[dataAccAction] = 0;
+        }
+        return result;
+    }
+
+    /**
+     * 获取应用权限
+     *
+     * @param {string | undefined} dataAccAction 操作标识
+     * @param {('RESOURCE'|'RT'|'MINIX')} [mode='RESOURCE'] RT(RT模式),RESOURCE(资源模式),MINIX(混合模式),默认值RESOURCE
+     * @return {*}  {boolean}
+     * @memberof AppAuthServiceBase
+     */
+    public getAppAuth(dataAccAction: string | undefined, mode: 'RESOURCE' | 'RT' | 'MINIX' = 'RESOURCE'): boolean {
+        if (!this.getEnablePermission() || !dataAccAction) {
+            return true;
+        }
+        const computeAuth = (authData: string[]) => {
+            if (!authData || (authData.length == 0)) {
+                return false;
+            }
+            const index = authData.findIndex((item: string) => {
+                return item === dataAccAction;
+            })
+            if (index === -1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        // 统一资源数据
+        const resourceData: string[] = this.getAppData().unires;
+        // 菜单数据
+        const menuData: string[] = this.getAppData().appmenu;
+        // 资源模式
+        if (Object.is(mode, 'RESOURCE')) {
+            return computeAuth(resourceData);
+        }
+        // RT模式(菜单)
+        if (Object.is(mode, 'RT')) {
+            return computeAuth(menuData);
+        }
+        // 混合模式
+        if (Object.is(mode, 'MINIX')) {
+            return computeAuth(resourceData) && computeAuth(menuData);
+        }
+        return false;
+    }
+
+    /**
+     * 获取实体级权限
+     *
+     * @param {IParam} context 应用上下文
+     * @param {string} key 数据主键标识
+     * @param {string} dataAccAction 操作标识
+     * @param {IParam} [param] 额外参数
+     * @return {*}  {boolean}
+     * @memberof AppAuthServiceBase
+     */
+    public getDEAuth(context: IParam, key: string, dataAccAction: string, param?: IParam): boolean {
+        // TODO 暂未实现
+        return true;
+    }
+
+    /**
      * 通过租户获取组织数据
      *
      * @static
@@ -128,8 +250,8 @@ export abstract class AppAuthServiceBase implements IAppAuthService {
                     tempViewParam = this.hanldeViewParam(tempViewParam.redirect);
                 }
             }
-            if (!tempViewParam.srfdcsystem && Environment.mockDcSystemId) {
-                Object.assign(tempViewParam, { srfdcsystem: Environment.mockDcSystemId });
+            if (!tempViewParam.srfdcsystem && App.getEnvironmentParam().mockDcSystemId) {
+                Object.assign(tempViewParam, { srfdcsystem: App.getEnvironmentParam().mockDcSystemId });
             }
             if (tempViewParam.srfdcsystem) {
                 hooks.dcSystemBefore.callSync({ dcsystem: tempViewParam.srfdcsystem });
@@ -239,6 +361,23 @@ export abstract class AppAuthServiceBase implements IAppAuthService {
             });
         }
         return tempViewParam;
+    }
+
+    /**
+     * 处理统一资源与系统操作标识映射
+     *
+     * @return {IParam} 
+     * @memberof AppAuthServiceBase
+     */
+    public handleSysOPPrivs() {
+        let copySysOPPrivs: IParam = JSON.parse(JSON.stringify(this.sysOPPrivs));
+        if (Object.keys(copySysOPPrivs).length === 0) return {};
+        Object.keys(copySysOPPrivs).forEach((name: any) => {
+            if (this.sysOPPrivsMap.get(name)) {
+                copySysOPPrivs[name] = this.getAppAuth(this.sysOPPrivsMap.get(name)) ? 1 : 0;
+            }
+        })
+        return copySysOPPrivs;
     }
 
 }

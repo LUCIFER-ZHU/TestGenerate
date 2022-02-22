@@ -5,8 +5,9 @@ import { ctrlState } from './search-bar-tree-tree-state';
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
-  selectedData: IParam[];
+  selectedData?: IParam[];
   selectFirstDefault?: boolean;
   isBranchAvailable?: boolean;
   viewParams?: IParam;

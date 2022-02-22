@@ -1,4 +1,4 @@
-import { IParam, MainControlState } from '@core';
+import { ControlVOBase, IParam, MainControlState } from '@core';
 
 /**
  * @description 多数据部件状态
@@ -9,11 +9,18 @@ import { IParam, MainControlState } from '@core';
 export interface MDControlState extends MainControlState {
 
   /**
+   * @description 导出项
+   * @type {IParam[]}
+   * @memberof MDControlState
+   */
+  exportItems?: IParam[];
+
+  /**
    * @description 多数据部件数据
    * @type {IParam[]}
    * @memberof MDControlState
    */
-  items: IParam[];
+  items: ControlVOBase[];
 
   /**
    * @description 是否多选
@@ -62,5 +69,5 @@ export interface MDControlState extends MainControlState {
    * @type {boolean}
    * @memberof MDControlState
    */
-   isSingleSelect: boolean;
+  isSingleSelect: boolean;
 }

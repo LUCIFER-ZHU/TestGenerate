@@ -11,6 +11,7 @@ import { MobKanBanForHTMLPortlet } from '@widgets/chart-data/mob-kan-ban-for-htm
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   viewSubject: Subject<IActionParam>;
@@ -36,98 +37,70 @@ defineExpose({ name, state });
 <template>
   <div class="app-dashboard">
     <template v-if="!state.isEnableCustomized">
-  <a-row class="app-dashboard-layout-table">
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-        <div class="portlet-card" :bordered="false" dis-hover :padding="0">
-          <div class="portlet-card-title">外层容器</div>
-          <div class="portlet-container">
-  <a-row class="app-dashboard-layout-table">
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-      <db_appview1Portlet
-        ref="portlet"
-        name="db_appview1"
-        :context="state.context"
-        :viewParams="state.viewParams"
-        :viewSubject="state.viewSubject"
-        @ctrlEvent="onCtrlEvent"      
-      ></db_appview1Portlet>
-         </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-      <MobDashBoardForChartPortlet
-        ref="portlet"
-        name="db_sysportlet1"
-        :context="state.context"
-        :viewParams="state.viewParams"
-        :viewSubject="state.viewSubject"
-        @ctrlEvent="onCtrlEvent"      
-      ></MobDashBoardForChartPortlet>
-         </a-col>
-  </a-row>
-           </div>
-        </div>
-     </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
+      <AppPortletCard
+        name=db_container1
+        :isContainer="true"
+        :showCaption="true"
+        :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+        class="app-portletContainer "
+      >
+            <db_appview1Portlet
+              ref="portlet"
+              name="db_appview1"
+              :showCaption="true"
+              :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+              style="height: 501.0px;"
+              :context="state.context"
+              :viewParams="state.viewParams"
+              :viewSubject="state.viewSubject"
+              @ctrlEvent="onCtrlEvent"      
+            />
+            <MobDashBoardForChartPortlet
+              ref="portlet"
+              name="db_sysportlet1"
+              :showCaption="true"
+              :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+              style="height: 400.0px;"
+              :context="state.context"
+              :viewParams="state.viewParams"
+              :viewSubject="state.viewSubject"
+              @ctrlEvent="onCtrlEvent"      
+            />
+      </AppPortletCard>
       <MobAppMenuForKanBanPortlet
         ref="portlet"
         name="db_appmenu1"
+        :showCaption="true"
+        :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+        style="height: 300.0px;"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
         @ctrlEvent="onCtrlEvent"      
-      ></MobAppMenuForKanBanPortlet>
-         </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
+      />
       <MobActionBarPortlet
         ref="portlet"
         name="db_sysportlet2"
+        :showCaption="true"
+        :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+        style="height: 100.0px;"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
         @ctrlEvent="onCtrlEvent"      
-      ></MobActionBarPortlet>
-         </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
+      />
       <MobKanBanForHTMLPortlet
         ref="portlet"
         name="db_sysportlet3"
+        :showCaption="true"
+        :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+        style="height: 300.0px;"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
         @ctrlEvent="onCtrlEvent"      
-      ></MobKanBanForHTMLPortlet>
-         </a-col>
-  </a-row>
-     </template>
+      />
+    </template>
   </div>
 </template>
 <style lang="scss">

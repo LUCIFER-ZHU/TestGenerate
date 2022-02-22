@@ -2,8 +2,6 @@
 export const ctrlState = {
   controlCodeName: 'actionbar',
   controlName: 'db_sysportlet2',
-  showTitleBar: true,
-  title: '测试操作栏',
   portletType: 'ACTIONBAR',
   // 实体名称
   appEntityCodeName: 'Example',
@@ -14,7 +12,7 @@ export const ctrlState = {
       showCaption:true,
       actionName: '表单项更新前台计算', 
       icon: '', 
-      imagePath: '', 
+      imgPath: '', 
       disabled: false, visabled: true, 
       dataAccessAction: true, 
       getNoPrivDisplayMode: 6,
@@ -29,7 +27,7 @@ export const ctrlState = {
       showCaption:true,
       actionName: '执行', 
       icon: '', 
-      imagePath: '', 
+      imgPath: '', 
       disabled: false, visabled: true, 
       dataAccessAction: true, 
       getNoPrivDisplayMode: 6,

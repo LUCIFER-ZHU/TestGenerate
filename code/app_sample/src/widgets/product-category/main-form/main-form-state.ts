@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ProductCategoryService } from '@api/product-category/product-category-service';
 
 /**
@@ -95,9 +95,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ProductCategoryService() ),
   data: new ControlVO({}),
-  appDeMajorFieldName: 'ProductCategoryName',
+  appEntityCodeName: 'ProductCategory',
+  appDeCodeName:'ProductCategory',
+  appDeLogicName: '产品类别',
   appDeKeyFieldName: 'ProductCategoryId',
+  appDeMajorFieldName: 'ProductCategoryName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',

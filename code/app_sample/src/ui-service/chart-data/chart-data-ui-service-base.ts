@@ -9,19 +9,37 @@ import { AppFrontAction, AppBackendAction } from '@core';
  */
 export class ChartDataUIServiceBase extends UIServiceBase {
 
-  /**
-    * Creates an instance of ChartDataUIServiceBase
-    * 
-    * @param {*} [opts={}]
-    * @memberof ChartDataUIServiceBase
-    */
-  constructor(opts: IParam = {}) {
-      super(opts);
-  }
+    /**
+      * Creates an instance of ChartDataUIServiceBase
+      * 
+      * @param {*} [opts={}]
+      * @memberof ChartDataUIServiceBase
+      */
+    constructor(opts: IParam = {}) {
+        super(opts);
+        this.initBasicData();
+    }
 
+    /**
+     * 初始化基础数据
+     *
+     * @memberof ChartDataUIServiceBase
+     */
+    public initBasicData() {
+        // 应用实体主键属性
+        this.appDeKeyFieldName = 'chartdataid';
+        // 是否启用主状态
+        this.isEnableDEMainState = false;
+    }
 
-
-   public uiActionModes = {       "editview":{
+    /**
+     * 编辑
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async editview(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'editview',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEKEY',
@@ -37,8 +55,18 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "MobEdit":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 移动端编辑
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async MobEdit(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'MobEdit',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEKEY',
@@ -54,8 +82,18 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "TestBackUIAction":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 测试后台界面行为
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async TestBackUIAction(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'TestBackUIAction',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEKEY',
@@ -71,8 +109,18 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "openbaidu":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 打开百度
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async openbaidu(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'openbaidu',
              uIActionMode:'FRONT',
              actionTarget:'NONE',
@@ -88,8 +136,18 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "custom1":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 界面行为测试1
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async custom1(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'custom1',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEDATA',
@@ -105,8 +163,18 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "Count":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 计数器
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async Count(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Count',
              uIActionMode:'FRONT',
              actionTarget:'NONE',
@@ -122,8 +190,18 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "htxwtest":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 后台行为
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async htxwtest(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'htxwtest',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -139,8 +217,18 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "TestOpenMDView":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 测试图表实体打开多数据视图
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async TestOpenMDView(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'TestOpenMDView',
              uIActionMode:'FRONT',
              actionTarget:'NONE',
@@ -156,8 +244,18 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "openview":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 打开视图
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async openview(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'openview',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEKEY',
@@ -173,8 +271,18 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{testcontextdyna:'%app%',testcontext:'test1',},
              navParams:{testviewparamdyna:'%app%',testviewparam:'test3',}
-         },
-       "custom2":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 界面行为测试2
+     *
+     * @param {*} params
+     * @memberof ChartDataUIServiceBase
+     */
+    public async custom2(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'custom2',
              uIActionMode:'BACKEND',
              actionTarget:'NONE',
@@ -190,114 +298,7 @@ export class ChartDataUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-     };    /**
-     * 编辑
-     *
-     * @param {*} params
-     * @memberof ChartDataUIServiceBase
-     */
-    public async editview(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('editview');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 移动端编辑
-     *
-     * @param {*} params
-     * @memberof ChartDataUIServiceBase
-     */
-    public async MobEdit(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('MobEdit');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 测试后台界面行为
-     *
-     * @param {*} params
-     * @memberof ChartDataUIServiceBase
-     */
-    public async TestBackUIAction(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('TestBackUIAction');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 打开百度
-     *
-     * @param {*} params
-     * @memberof ChartDataUIServiceBase
-     */
-    public async openbaidu(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('openbaidu');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 界面行为测试1
-     *
-     * @param {*} params
-     * @memberof ChartDataUIServiceBase
-     */
-    public async custom1(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('custom1');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 计数器
-     *
-     * @param {*} params
-     * @memberof ChartDataUIServiceBase
-     */
-    public async Count(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Count');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 后台行为
-     *
-     * @param {*} params
-     * @memberof ChartDataUIServiceBase
-     */
-    public async htxwtest(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('htxwtest');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 测试图表实体打开多数据视图
-     *
-     * @param {*} params
-     * @memberof ChartDataUIServiceBase
-     */
-    public async TestOpenMDView(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('TestOpenMDView');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 打开视图
-     *
-     * @param {*} params
-     * @memberof ChartDataUIServiceBase
-     */
-    public async openview(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('openview');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 界面行为测试2
-     *
-     * @param {*} params
-     * @memberof ChartDataUIServiceBase
-     */
-    public async custom2(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('custom2');
+         };
         AppBackendAction.doAction(actionModel, params);
     }
 

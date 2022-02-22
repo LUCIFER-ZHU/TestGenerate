@@ -131,7 +131,7 @@ onMounted(() => {
  */
 const close = (result: any) => {
   if (result && Array.isArray(result) && result.length > 0) {
-    Object.assign(tempResult, { ret: 'OK' }, { resultData: JSON.parse(JSON.stringify(result)) });
+    Object.assign(tempResult, { ret: 'OK' }, { resultData: result });
   }
   props.subject?.next(tempResult);
   isVisible.value = false;
@@ -143,7 +143,7 @@ const close = (result: any) => {
 const viewDataChange = (result: any) => {
   tempResult = { ret: '' };
   if (result && Array.isArray(result) && result.length > 0) {
-    Object.assign(tempResult, { ret: 'OK' }, { resultData: JSON.parse(JSON.stringify(result)) });
+    Object.assign(tempResult, { ret: 'OK' }, { resultData: result });
   }
 };
 

@@ -5,8 +5,9 @@ import { ctrlState } from './province-city-distict-enable-check-tree-state';
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
-  selectedData: IParam[];
+  selectedData?: IParam[];
   selectFirstDefault?: boolean;
   isBranchAvailable?: boolean;
   viewParams?: IParam;

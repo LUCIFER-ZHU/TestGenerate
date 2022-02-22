@@ -5,6 +5,7 @@ import { ctrlState } from './tree-m-pickup-viewpickupviewpanel-pickup-view-panel
 import CategoryPickupTreeView from '@views/sample/category-pickup-tree-view';
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;

@@ -11,12 +11,12 @@ interface DataPickerViewProps {
   /**
    * @description 值项
    */
-  valueItem: string;
+  valueItem?: string;
 
   /**
    * @description 编辑器值
    */
-  value: any;
+  value?: any;
 
   /**
    * @description 禁用

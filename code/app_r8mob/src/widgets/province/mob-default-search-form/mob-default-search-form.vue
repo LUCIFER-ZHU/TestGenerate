@@ -6,6 +6,7 @@ import { SearchFormControl, IActionParam, IParam, ControlAction, IContext } from
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;
@@ -26,8 +27,8 @@ interface CtrlEmit {
 const emit = defineEmits<CtrlEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHistoryItem, onCancel, onRemoveHistoryItem } = new SearchFormControl(ctrlState, props, emit).moduleInstall();
-
+const { name, state, getData, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHistoryItem, onCancel, onRemoveHistoryItem } = new SearchFormControl(ctrlState, props, emit).moduleInstall();
+defineExpose({ name, state, getData });
 </script>
 <template>
   <a-form 
@@ -39,42 +40,34 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
     <a-row>
       <a-col>
         <a-row>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.n_provincename_like.visible"
-    name="n_provincename_like"
-    :rules="state.rules.n_provincename_like"
-    :labelWidth="130"
-    :required="state.detailsModel.n_provincename_like.required"
-    label="省份名称(%)"
-    style="">
-      <div class="form-editor-container" style="">
-      /*未找到模板[MOBTEXT]*/      </div>
-  </AppFormItem>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.formitem.visible"
-    name="formitem"
-    :rules="state.rules.formitem"
-    :labelWidth="130"
-    :required="state.detailsModel.formitem.required"
-    label=""
-    style="">
-      <div class="form-editor-container" style="">
-      /*未找到模板[MOBTEXT]*/      </div>
-  </AppFormItem>
-</a-col>
+          <AppFormItem 
+            name="n_provincename_like"
+            label="省份名称(%)"
+            labelPos="TOP"
+            :labelWidth="130"
+            :showLabel="true"
+            :rules="state.rules.n_provincename_like"
+            :required="state.detailsModel.n_provincename_like.required"
+            :visible="state.detailsModel.n_provincename_like.visible" 
+            :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+            >
+            <div class="form-editor-container" style="">
+            </div>
+          </AppFormItem>
+          <AppFormItem 
+            name="formitem"
+            label=""
+            labelPos="LEFT"
+            :labelWidth="130"
+            :showLabel="true"
+            :rules="state.rules.formitem"
+            :required="state.detailsModel.formitem.required"
+            :visible="state.detailsModel.formitem.visible" 
+            :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+            >
+            <div class="form-editor-container" style="">
+            </div>
+          </AppFormItem>
       </a-row>
       </a-col>
       <a-col class='search-form-footer'>

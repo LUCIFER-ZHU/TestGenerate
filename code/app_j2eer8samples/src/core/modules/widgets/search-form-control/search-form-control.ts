@@ -21,7 +21,7 @@ export class SearchFormControl extends FormControl {
   public onSearch() {
     this.emit("ctrlEvent", {
       tag: this.props.name,
-      action: "selectionChange",
+      action: "search",
       data: this.state.data,
     });
   }

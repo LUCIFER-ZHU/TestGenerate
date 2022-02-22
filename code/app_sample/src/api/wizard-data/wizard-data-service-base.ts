@@ -36,4 +36,22 @@ export class WizardDataServiceBase extends EntityService {
     ]
   }
 
+  /**
+   * GotoFinishForm
+   *
+   * @param {IContext} [context={}]
+   * @param {IParam} [data = {}]
+   * @returns {Promise<any>}
+   * @memberof WizardDataServiceBase
+   */
+  public async GotoFinishForm(context: IContext = {}, data: IParam = {}): Promise<any> {
+  	eval(`data.srfnextform='FinishForm';`);
+  	const res = {
+  		ok: true,
+  		status: 200,
+  		data: data
+  	}
+    return res;
+  }
+
 }

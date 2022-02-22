@@ -13,6 +13,7 @@ import { webpagepartPortlet } from '@widgets/example/webpagepart-portlet';
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   viewSubject: Subject<IActionParam>;
@@ -38,127 +39,92 @@ defineExpose({ name, state });
 <template>
   <div class="app-dashboard">
     <template v-if="!state.isEnableCustomized">
-  <a-row class="app-dashboard-layout-table">
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
       <ValueFormatDashboardViewdashboard_rawitem1Portlet
         ref="portlet"
         name="dashboard_rawitem1"
+        :showCaption="true"
+        :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+        class="el-alert el-alert--info is-light"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
         @ctrlEvent="onCtrlEvent"      
-      ></ValueFormatDashboardViewdashboard_rawitem1Portlet>
-         </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-        <div class="portlet-card" :bordered="false" dis-hover :padding="0">
-          <div class="portlet-container">
-  <a-row class="app-dashboard-layout-table">
-    <a-col
-          :lg="{span: 12, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-      <listPortlet
-        ref="portlet"
-        name="dashboard_sysportlet1"
-        :context="state.context"
-        :viewParams="state.viewParams"
-        :viewSubject="state.viewSubject"
-        @ctrlEvent="onCtrlEvent"      
-      ></listPortlet>
-         </a-col>
-    <a-col
-          :lg="{span: 12, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-      <chartPortlet
-        ref="portlet"
-        name="dashboard_sysportlet2"
-        :context="state.context"
-        :viewParams="state.viewParams"
-        :viewSubject="state.viewSubject"
-        @ctrlEvent="onCtrlEvent"      
-      ></chartPortlet>
-         </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-      <viewPortlet
-        ref="portlet"
-        name="dashboard_sysportlet3"
-        :context="state.context"
-        :viewParams="state.viewParams"
-        :viewSubject="state.viewSubject"
-        @ctrlEvent="onCtrlEvent"      
-      ></viewPortlet>
-         </a-col>
-    <a-col
-          :lg="{span: 12, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-      <toolbarPortlet
-        ref="portlet"
-        name="dashboard_sysportlet4"
-        :context="state.context"
-        :viewParams="state.viewParams"
-        :viewSubject="state.viewSubject"
-        @ctrlEvent="onCtrlEvent"      
-      ></toolbarPortlet>
-         </a-col>
-    <a-col
-          :lg="{span: 12, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-      <actionbarPortlet
-        ref="portlet"
-        name="dashboard_sysportlet5"
-        :context="state.context"
-        :viewParams="state.viewParams"
-        :viewSubject="state.viewSubject"
-        @ctrlEvent="onCtrlEvent"      
-      ></actionbarPortlet>
-         </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-      <webpagepartPortlet
-        ref="portlet"
-        name="dashboard_sysportlet6"
-        :context="state.context"
-        :viewParams="state.viewParams"
-        :viewSubject="state.viewSubject"
-        @ctrlEvent="onCtrlEvent"      
-      ></webpagepartPortlet>
-         </a-col>
-  </a-row>
-           </div>
-        </div>
-     </a-col>
-  </a-row>
-     </template>
+      />
+      <AppPortletCard
+        name=dashboard_container1
+        :isContainer="true"
+        :showCaption="true"
+        :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+        class="app-portletContainer "
+      >
+            <listPortlet
+              ref="portlet"
+              name="dashboard_sysportlet1"
+              :showCaption="true"
+              :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 12,colMD: 24,}"
+              style="height: 300.0px;"
+              :context="state.context"
+              :viewParams="state.viewParams"
+              :viewSubject="state.viewSubject"
+              @ctrlEvent="onCtrlEvent"      
+            />
+            <chartPortlet
+              ref="portlet"
+              name="dashboard_sysportlet2"
+              :showCaption="true"
+              :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 12,colMD: 24,}"
+              style="height: 300.0px;"
+              :context="state.context"
+              :viewParams="state.viewParams"
+              :viewSubject="state.viewSubject"
+              @ctrlEvent="onCtrlEvent"      
+            />
+            <viewPortlet
+              ref="portlet"
+              name="dashboard_sysportlet3"
+              :showCaption="true"
+              :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+              style="height: 300.0px;"
+              :context="state.context"
+              :viewParams="state.viewParams"
+              :viewSubject="state.viewSubject"
+              @ctrlEvent="onCtrlEvent"      
+            />
+            <toolbarPortlet
+              ref="portlet"
+              name="dashboard_sysportlet4"
+              :showCaption="true"
+              :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 12,colMD: 24,}"
+              style="height: 300.0px;"
+              :context="state.context"
+              :viewParams="state.viewParams"
+              :viewSubject="state.viewSubject"
+              @ctrlEvent="onCtrlEvent"      
+            />
+            <actionbarPortlet
+              ref="portlet"
+              name="dashboard_sysportlet5"
+              :showCaption="true"
+              :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 12,colMD: 24,}"
+              style="height: 300.0px;"
+              :context="state.context"
+              :viewParams="state.viewParams"
+              :viewSubject="state.viewSubject"
+              @ctrlEvent="onCtrlEvent"      
+            />
+            <webpagepartPortlet
+              ref="portlet"
+              name="dashboard_sysportlet6"
+              :showCaption="true"
+              :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+              style="height: 300.0px;"
+              :context="state.context"
+              :viewParams="state.viewParams"
+              :viewSubject="state.viewSubject"
+              @ctrlEvent="onCtrlEvent"      
+            />
+      </AppPortletCard>
+    </template>
   </div>
 </template>
 <style lang="scss">

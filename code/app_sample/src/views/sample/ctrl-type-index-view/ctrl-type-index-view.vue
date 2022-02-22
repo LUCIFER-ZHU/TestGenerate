@@ -27,7 +27,8 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, menu } = new IndexView(viewState, props, emit).moduleInstall();
+const indexView = new IndexView(viewState, props, emit).moduleInstall();
+const { state, menu } = indexView;
 const collapsed: Ref<boolean> = ref(false);
 const collapsedChange = () => {
   collapsed.value = !collapsed.value;
@@ -61,6 +62,7 @@ const collapsedChange = () => {
         :defaultView="state.defaultView"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
+        :parent="indexView"
       ></CtrlTypeIndexViewMenu>
     </template>
     <template #router>

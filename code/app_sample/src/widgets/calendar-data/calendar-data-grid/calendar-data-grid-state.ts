@@ -1,4 +1,4 @@
-import { ControlVOBase, IParam, GridService } from '@core';
+import { ControlVOBase, IParam, GridService, isEmpty, Verify } from '@core';
 import { CalendarDataService } from '@api/calendar-data/calendar-data-service';
 
 export class ControlVO extends ControlVOBase {
@@ -6,49 +6,42 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
   }
-
   get endtime() {
     return this.$DO.endtime;
   }
   set endtime(value: any) {
     this.$DO.endtime = value;
   }
-
   get memo() {
     return this.$DO.memo;
   }
   set memo(value: any) {
     this.$DO.memo = value;
   }
-
   get begintime() {
     return this.$DO.begintime;
   }
   set begintime(value: any) {
     this.$DO.begintime = value;
   }
-
   get calendardataname() {
     return this.$DO.calendardataname;
   }
   set calendardataname(value: any) {
     this.$DO.calendardataname = value;
   }
-
   get srfmajortext() {
     return this.$DO.calendardataname;
   }
   set srfmajortext(value: any) {
     this.$DO.calendardataname = value;
   }
-
   get srfdataaccaction() {
     return this.$DO.calendardataid;
   }
   set srfdataaccaction(value: any) {
     this.$DO.calendardataid = value;
   }
-
   get srfkey() {
     return this.$DO.calendardataid;
   }
@@ -61,8 +54,17 @@ export class ControlVO extends ControlVOBase {
 export const ctrlState = {
   controlCodeName: 'CalendarData',
   controlName: 'grid',
-  appEntityCodeName:'CalendarData',
+  totalColumnWidth: 571,
+  selectColumnWidth: 50,
+  appEntityCodeName: 'CalendarData',
+  appDeCodeName:'CalendarData',
+  appDeLogicName: '日历示例数据',
+  appDeKeyFieldName: 'CalendarDataId',
+  appDeMajorFieldName: 'CalendarDataName',
   controlService: new GridService<ControlVO>(ControlVO, new CalendarDataService() ),
+  //  新建默认值
+  createDefaultItems: [
+  ],
   items: [],
   selectedRowKeys: [],
   // 多数据部件分组
@@ -94,8 +96,8 @@ export const ctrlState = {
     aggMode: "NONE",
     aggData: [],
   },
-  uAColumnModel:[
-  ],
+  uAColumnModel: {
+  },
   gridEditState:{
     srfkey:{},
   },
@@ -104,7 +106,6 @@ export const ctrlState = {
       title: "事项",
       columnType: "DEFGRIDCOLUMN",
       align: "left",
-      width: 1,
       resizable: true,
       dataIndex: "calendardataname",
       ellipsis: true,
@@ -147,6 +148,9 @@ export const ctrlState = {
   ],
   // 是否单选
   isSingleSelect:false,
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   rules:{
   }
 };

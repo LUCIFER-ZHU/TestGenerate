@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ContactService } from '@api/contact/contact-service';
 
 /**
@@ -137,9 +137,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ContactService() ),
   data: new ControlVO({}),
-  appDeMajorFieldName: 'ContactName',
+  appEntityCodeName: 'Contact',
+  appDeCodeName:'Contact',
+  appDeLogicName: '联系人',
   appDeKeyFieldName: 'ContactId',
+  appDeMajorFieldName: 'ContactName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',

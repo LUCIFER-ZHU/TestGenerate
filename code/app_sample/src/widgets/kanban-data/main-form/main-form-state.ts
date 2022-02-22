@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { KanbanDataService } from '@api/kanban-data/kanban-data-service';
 
 /**
@@ -123,9 +123,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new KanbanDataService() ),
   data: new ControlVO({}),
-  appDeMajorFieldName: 'KanbanDataName',
+  appEntityCodeName: 'KanbanData',
+  appDeCodeName:'KanbanData',
+  appDeLogicName: '看板数据',
   appDeKeyFieldName: 'KanbanDataId',
+  appDeMajorFieldName: 'KanbanDataName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',

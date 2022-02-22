@@ -1,4 +1,4 @@
-import { ControlVOBase, IParam, GridService } from '@core';
+import { ControlVOBase, IParam, GridService, isEmpty, Verify } from '@core';
 import { WizardDataService } from '@api/wizard-data/wizard-data-service';
 
 export class ControlVO extends ControlVOBase {
@@ -6,49 +6,42 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
   }
-
   get timefield() {
     return this.$DO.timefield;
   }
   set timefield(value: any) {
     this.$DO.timefield = value;
   }
-
   get textfield() {
     return this.$DO.textfield;
   }
   set textfield(value: any) {
     this.$DO.textfield = value;
   }
-
   get numfield() {
     return this.$DO.numfield;
   }
   set numfield(value: any) {
     this.$DO.numfield = value;
   }
-
   get srfnextform() {
     return this.$DO.srfnextform;
   }
   set srfnextform(value: any) {
     this.$DO.srfnextform = value;
   }
-
   get srfmajortext() {
     return this.$DO.wizarddataname;
   }
   set srfmajortext(value: any) {
     this.$DO.wizarddataname = value;
   }
-
   get srfdataaccaction() {
     return this.$DO.wizarddataid;
   }
   set srfdataaccaction(value: any) {
     this.$DO.wizarddataid = value;
   }
-
   get srfkey() {
     return this.$DO.wizarddataid;
   }
@@ -61,8 +54,17 @@ export class ControlVO extends ControlVOBase {
 export const ctrlState = {
   controlCodeName: 'Main',
   controlName: 'grid',
-  appEntityCodeName:'WizardData',
+  totalColumnWidth: 611,
+  selectColumnWidth: 50,
+  appEntityCodeName: 'WizardData',
+  appDeCodeName:'WizardData',
+  appDeLogicName: '向导数据',
+  appDeKeyFieldName: 'WizardDataId',
+  appDeMajorFieldName: 'WizardDataName',
   controlService: new GridService<ControlVO>(ControlVO, new WizardDataService() ),
+  //  新建默认值
+  createDefaultItems: [
+  ],
   items: [],
   selectedRowKeys: [],
   // 多数据部件分组
@@ -94,8 +96,8 @@ export const ctrlState = {
     aggMode: "NONE",
     aggData: [],
   },
-  uAColumnModel:[
-  ],
+  uAColumnModel: {
+  },
   gridEditState:{
     srfkey:{},
   },
@@ -137,7 +139,6 @@ export const ctrlState = {
       title: "下一步表单",
       columnType: "DEFGRIDCOLUMN",
       align: "left",
-      width: 1,
       resizable: true,
       dataIndex: "srfnextform",
       ellipsis: true,
@@ -147,6 +148,9 @@ export const ctrlState = {
   ],
   // 是否单选
   isSingleSelect:false,
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   rules:{
   }
 };

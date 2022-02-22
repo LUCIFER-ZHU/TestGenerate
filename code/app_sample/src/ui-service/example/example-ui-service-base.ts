@@ -9,19 +9,37 @@ import { AppFrontAction, AppBackendAction } from '@core';
  */
 export class ExampleUIServiceBase extends UIServiceBase {
 
-  /**
-    * Creates an instance of ExampleUIServiceBase
-    * 
-    * @param {*} [opts={}]
-    * @memberof ExampleUIServiceBase
-    */
-  constructor(opts: IParam = {}) {
-      super(opts);
-  }
+    /**
+      * Creates an instance of ExampleUIServiceBase
+      * 
+      * @param {*} [opts={}]
+      * @memberof ExampleUIServiceBase
+      */
+    constructor(opts: IParam = {}) {
+        super(opts);
+        this.initBasicData();
+    }
 
+    /**
+     * 初始化基础数据
+     *
+     * @memberof ExampleUIServiceBase
+     */
+    public initBasicData() {
+        // 应用实体主键属性
+        this.appDeKeyFieldName = 'exampleid';
+        // 是否启用主状态
+        this.isEnableDEMainState = false;
+    }
 
-
-   public uiActionModes = {       "CallUISimple":{
+    /**
+     * 执行
+     *
+     * @param {*} params
+     * @memberof ExampleUIServiceBase
+     */
+    public async CallUISimple(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'CallUISimple',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEDATA',
@@ -37,8 +55,18 @@ export class ExampleUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "ClearContent":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 清空内容
+     *
+     * @param {*} params
+     * @memberof ExampleUIServiceBase
+     */
+    public async ClearContent(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ClearContent',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEDATA',
@@ -54,8 +82,18 @@ export class ExampleUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "CallUpdateFieldy":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 执行
+     *
+     * @param {*} params
+     * @memberof ExampleUIServiceBase
+     */
+    public async CallUpdateFieldy(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'CallUpdateFieldy',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEDATA',
@@ -71,8 +109,18 @@ export class ExampleUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "OpenView_UIActionTest":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 打开视图（界面逻辑-界面行为调用）
+     *
+     * @param {*} params
+     * @memberof ExampleUIServiceBase
+     */
+    public async OpenView_UIActionTest(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'OpenView_UIActionTest',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEDATA',
@@ -88,8 +136,18 @@ export class ExampleUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "openModel":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 前台界面行为（打开模态）
+     *
+     * @param {*} params
+     * @memberof ExampleUIServiceBase
+     */
+    public async openModel(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'openModel',
              uIActionMode:'FRONT',
              actionTarget:'NONE',
@@ -105,8 +163,18 @@ export class ExampleUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "CallUIActionTest":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 执行
+     *
+     * @param {*} params
+     * @memberof ExampleUIServiceBase
+     */
+    public async CallUIActionTest(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'CallUIActionTest',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEDATA',
@@ -122,8 +190,18 @@ export class ExampleUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "openHtml":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 前台界面行为（打开HTML页面）
+     *
+     * @param {*} params
+     * @memberof ExampleUIServiceBase
+     */
+    public async openHtml(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'openHtml',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEKEY',
@@ -139,8 +217,18 @@ export class ExampleUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{wd:'%wd%',}
-         },
-       "openWindow":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 前台界面行为（打开顶级视图）
+     *
+     * @param {*} params
+     * @memberof ExampleUIServiceBase
+     */
+    public async openWindow(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'openWindow',
              uIActionMode:'FRONT',
              actionTarget:'NONE',
@@ -156,8 +244,18 @@ export class ExampleUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "CalcPF":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 表单项更新前台计算
+     *
+     * @param {*} params
+     * @memberof ExampleUIServiceBase
+     */
+    public async CalcPF(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'CalcPF',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEKEY',
@@ -173,8 +271,18 @@ export class ExampleUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "ReCalc":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 重新计算
+     *
+     * @param {*} params
+     * @memberof ExampleUIServiceBase
+     */
+    public async ReCalc(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'ReCalc',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEKEY',
@@ -190,8 +298,18 @@ export class ExampleUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "PrepareCtx":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 动态设置上下文并获取数据
+     *
+     * @param {*} params
+     * @memberof ExampleUIServiceBase
+     */
+    public async PrepareCtx(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'PrepareCtx',
              uIActionMode:'BACKEND',
              actionTarget:'SINGLEKEY',
@@ -207,8 +325,18 @@ export class ExampleUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "Edit":{
+         };
+        AppBackendAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 编辑
+     *
+     * @param {*} params
+     * @memberof ExampleUIServiceBase
+     */
+    public async Edit(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Edit',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEKEY',
@@ -224,136 +352,7 @@ export class ExampleUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-     };    /**
-     * 执行
-     *
-     * @param {*} params
-     * @memberof ExampleUIServiceBase
-     */
-    public async CallUISimple(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('CallUISimple');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 清空内容
-     *
-     * @param {*} params
-     * @memberof ExampleUIServiceBase
-     */
-    public async ClearContent(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ClearContent');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 执行
-     *
-     * @param {*} params
-     * @memberof ExampleUIServiceBase
-     */
-    public async CallUpdateFieldy(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('CallUpdateFieldy');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 打开视图（界面逻辑-界面行为调用）
-     *
-     * @param {*} params
-     * @memberof ExampleUIServiceBase
-     */
-    public async OpenView_UIActionTest(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('OpenView_UIActionTest');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 前台界面行为（打开模态）
-     *
-     * @param {*} params
-     * @memberof ExampleUIServiceBase
-     */
-    public async openModel(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('openModel');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 执行
-     *
-     * @param {*} params
-     * @memberof ExampleUIServiceBase
-     */
-    public async CallUIActionTest(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('CallUIActionTest');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 前台界面行为（打开HTML页面）
-     *
-     * @param {*} params
-     * @memberof ExampleUIServiceBase
-     */
-    public async openHtml(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('openHtml');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 前台界面行为（打开顶级视图）
-     *
-     * @param {*} params
-     * @memberof ExampleUIServiceBase
-     */
-    public async openWindow(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('openWindow');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 表单项更新前台计算
-     *
-     * @param {*} params
-     * @memberof ExampleUIServiceBase
-     */
-    public async CalcPF(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('CalcPF');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 重新计算
-     *
-     * @param {*} params
-     * @memberof ExampleUIServiceBase
-     */
-    public async ReCalc(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('ReCalc');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 动态设置上下文并获取数据
-     *
-     * @param {*} params
-     * @memberof ExampleUIServiceBase
-     */
-    public async PrepareCtx(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('PrepareCtx');
-        AppBackendAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 编辑
-     *
-     * @param {*} params
-     * @memberof ExampleUIServiceBase
-     */
-    public async Edit(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Edit');
+         };
         AppFrontAction.doAction(actionModel, params);
     }
 

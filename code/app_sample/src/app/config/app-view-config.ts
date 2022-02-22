@@ -225,6 +225,22 @@ export const AppViewConfig:IParam = {
     "viewType": "DECHARTVIEW",
     "fileDir": "@views/sample/chart-data-line-chart-view"
   },
+  "OrderPickupGridView":{
+    "name": "OrderPickupGridView",
+    "codeName": "OrderPickupGridView",
+    "appEntityCodeName":"Order",
+    "openMode": "INDEXVIEWTAB",
+    "redirectView": false,
+    "deResPaths": [
+      [{"pathName":"customers","parameterName":"customer"},{"pathName":"orders","parameterName":"order"}]
+    ],
+    "parameters": [
+        { "pathName": "views", "parameterName": "orderpickupgridview" }
+    ],
+    "caption": "订单",
+    "viewType": "DEPICKUPGRIDVIEW",
+    "fileDir": "@views/sample/order-pickup-grid-view"
+  },
   "CustomerSinglePickupGridView":{
     "name": "CustomerSinglePickupGridView",
     "codeName": "CustomerSinglePickupGridView",
@@ -884,21 +900,6 @@ export const AppViewConfig:IParam = {
     "caption": "表单逻辑",
     "viewType": "DEEDITVIEW",
     "fileDir": "@views/sample/example-form-logic-edit-view"
-  },
-  "Sample":{
-    "name": "Sample",
-    "codeName": "Sample",
-    "appEntityCodeName":"",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "sample" }
-    ],
-    "caption": "桌面端应用示例",
-    "viewType": "APPINDEXVIEW",
-    "fileDir": "@views/sample/sample"
   },
   "ExampleProvinceCityDistictPickupTreeView":{
     "name": "ExampleProvinceCityDistictPickupTreeView",
@@ -1637,6 +1638,22 @@ export const AppViewConfig:IParam = {
     "caption": "实体数据集",
     "viewType": "DECUSTOMVIEW",
     "fileDir": "@views/sample/example-view-msg2-custom-view"
+  },
+  "OrderMPickupView":{
+    "name": "OrderMPickupView",
+    "codeName": "OrderMPickupView",
+    "appEntityCodeName":"Order",
+    "openMode": "INDEXVIEWTAB",
+    "redirectView": false,
+    "deResPaths": [
+      [{"pathName":"customers","parameterName":"customer"},{"pathName":"orders","parameterName":"order"}]
+    ],
+    "parameters": [
+        { "pathName": "views", "parameterName": "ordermpickupview" }
+    ],
+    "caption": "订单",
+    "viewType": "DEMPICKUPVIEW",
+    "fileDir": "@views/sample/order-m-pickup-view"
   },
   "ExampleValueFormatPanelView":{
     "name": "ExampleValueFormatPanelView",
@@ -2892,9 +2909,9 @@ export const AppViewConfig:IParam = {
     "viewType": "DEEDITVIEW3",
     "fileDir": "@views/sample/customer-edit-view3"
   },
-  "EDITORVALUERowEditGridView":{
-    "name": "EDITORVALUERowEditGridView",
-    "codeName": "EDITORVALUERowEditGridView",
+  "EditorValueRowEditGridView":{
+    "name": "EditorValueRowEditGridView",
+    "codeName": "EditorValueRowEditGridView",
     "appEntityCodeName":"EditorValue",
     "openMode": "INDEXVIEWTAB",
     "redirectView": false,
@@ -2906,7 +2923,7 @@ export const AppViewConfig:IParam = {
     ],
     "caption": "编辑器值",
     "viewType": "DEGRIDVIEW",
-    "fileDir": "@views/sample/editorvalue-row-edit-grid-view"
+    "fileDir": "@views/sample/editor-value-row-edit-grid-view"
   },
   "ExampleFormTreeExpView":{
     "name": "ExampleFormTreeExpView",
@@ -3857,6 +3874,22 @@ export const AppViewConfig:IParam = {
     "viewType": "DEEDITVIEW",
     "fileDir": "@views/sample/calendar-data-edit-view"
   },
+  "CityUsr2GridView":{
+    "name": "CityUsr2GridView",
+    "codeName": "CityUsr2GridView",
+    "appEntityCodeName":"City",
+    "openMode": "INDEXVIEWTAB",
+    "redirectView": false,
+    "deResPaths": [
+      [{"pathName":"provinces","parameterName":"province"},{"pathName":"cities","parameterName":"city"}]
+    ],
+    "parameters": [
+        { "pathName": "views", "parameterName": "cityusr2gridview" }
+    ],
+    "caption": "市",
+    "viewType": "DEGRIDVIEW",
+    "fileDir": "@views/sample/city-usr2-grid-view"
+  },
   "ExampleCustomView":{
     "name": "ExampleCustomView",
     "codeName": "ExampleCustomView",
@@ -4225,5 +4258,20 @@ export const AppViewConfig:IParam = {
     "caption": "图表视图（环形饼图）",
     "viewType": "DECHARTVIEW",
     "fileDir": "@views/sample/chart-data-ring-pie-chart-view"
+  },
+  "Sample":{
+    "name": "Sample",
+    "codeName": "Sample",
+    "appEntityCodeName":"",
+    "openMode": "INDEXVIEWTAB",
+    "redirectView": false,
+    "deResPaths": [
+    ],
+    "parameters": [
+        { "pathName": "views", "parameterName": "sample" }
+    ],
+    "caption": "桌面端应用示例",
+    "viewType": "APPINDEXVIEW",
+    "fileDir": "@views/sample/sample"
   }
 }

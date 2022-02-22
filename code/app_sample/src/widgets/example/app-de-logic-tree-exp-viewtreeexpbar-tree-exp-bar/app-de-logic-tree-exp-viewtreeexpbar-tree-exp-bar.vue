@@ -9,9 +9,9 @@ import ExampleImpExpGridView from '@views/sample/example-imp-exp-grid-view';
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -47,11 +47,13 @@ defineExpose({ name, state });
           
           <AppDELogicTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></AppDELogicTree>
         </div>
@@ -61,22 +63,22 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleAppDEFLogicEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleAppDEFLogicEditView>
         <WizardDataGridView
           v-if="state.selection.viewName && state.selection.viewName === 'WizardDataGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </WizardDataGridView>
         <ExampleImpExpGridView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleImpExpGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleImpExpGridView>
       </template>
     </AppSplit>

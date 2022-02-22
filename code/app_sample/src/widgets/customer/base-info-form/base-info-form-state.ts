@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { CustomerService } from '@api/customer/customer-service';
 
 /**
@@ -179,9 +179,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new CustomerService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'Customer',
+  appDeCodeName:'Customer',
+  appDeLogicName: '客户',
   appDeKeyFieldName: 'CustomerId',
   appDeMajorFieldName: 'CustomerName',
   enableAutoSave: true,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',
@@ -335,15 +345,22 @@ export const ctrlState = {
       resetItemName: 'provinceid',
       groupLogics: [
         {
-          name: '表单成员[cityname][表单项启用]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[provinceid]',
-          logicCat: 'ITEMENABLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'provinceid',logicType: 'SINGLE',name: 'provinceid 值不为空(NotNil)',value:''},
-          ],
+        	name: '表单成员[cityname][表单项启用]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'ITEMENABLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["provinceid"],
+        	childLogics: [
+        		{
+        			name: 'provinceid 值不为空(NotNil)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "ISNOTNULL",
+        			dEFDName: "provinceid",
+        			value: ""
+        		},
+        	]
         },
       ],
     },
@@ -362,15 +379,22 @@ export const ctrlState = {
       resetItemName: 'cityid',
       groupLogics: [
         {
-          name: '表单成员[districtname][表单项启用]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[cityid]',
-          logicCat: 'ITEMENABLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'cityid',logicType: 'SINGLE',name: 'cityid 值不为空(NotNil)',value:''},
-          ],
+        	name: '表单成员[districtname][表单项启用]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'ITEMENABLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["cityid"],
+        	childLogics: [
+        		{
+        			name: 'cityid 值不为空(NotNil)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "ISNOTNULL",
+        			dEFDName: "cityid",
+        			value: ""
+        		},
+        	]
         },
       ],
     },

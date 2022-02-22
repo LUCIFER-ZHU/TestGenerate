@@ -9,9 +9,9 @@ import CustomerAdvSearchGridView from '@views/sample/customer-adv-search-grid-vi
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -47,11 +47,13 @@ defineExpose({ name, state });
           
           <SearchFormTreeTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></SearchFormTreeTree>
         </div>
@@ -61,22 +63,22 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'CustomerAutoSearchGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </CustomerAutoSearchGridView>
         <CustomerSearchFormButtonStyleCustomView
           v-if="state.selection.viewName && state.selection.viewName === 'CustomerSearchFormButtonStyleCustomView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </CustomerSearchFormButtonStyleCustomView>
         <CustomerAdvSearchGridView
           v-if="state.selection.viewName && state.selection.viewName === 'CustomerAdvSearchGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </CustomerAdvSearchGridView>
       </template>
     </AppSplit>

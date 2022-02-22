@@ -5,6 +5,7 @@ import { ctrlState } from './pickup-viewpickupviewpanel-pickup-view-panel-state'
 import OrgDataPickupGridView from '@views/sample/org-data-pickup-grid-view';
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;

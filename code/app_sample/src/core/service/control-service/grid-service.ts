@@ -98,4 +98,24 @@ export class GridService<T extends ControlVOBase> extends ControlServiceBase<T> 
     response.data = this.newControlVO(response.data);
     return this.handleResponse(response, opts);
   }
+
+  /**
+   * 前台逻辑
+   *
+   * @param [context={}] 上下文参数
+   * @param [data={}] 视图参数
+   * @param opts
+   * @return {*}
+   */
+  public async frontLogic(context: any, data: any, opts: { action: string; isLoading?: boolean }): Promise<any> {
+    let _entityService: any = this.entityService;
+    const { context: Context, data: Data } = this.handleRequestData(context, data, opts);
+    if (hasFunction(_entityService, opts.action)) {
+      const response = await _entityService[opts.action](Context, Data, opts.isLoading);
+      response.data = this.newControlVO(response.data);
+      return this.handleResponse(response, opts);
+    } else {
+      return null;
+    }
+  }
 }

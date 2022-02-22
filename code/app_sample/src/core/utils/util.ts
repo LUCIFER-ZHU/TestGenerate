@@ -1,4 +1,6 @@
-import { clone } from "ramda";
+import { AppCodeListConfig } from '@/app/config';
+import { IParam } from '@core';
+import { clone } from 'ramda';
 
 /**
  * @description 克隆方法
@@ -6,8 +8,8 @@ import { clone } from "ramda";
  * @param {Record<any, any>} data
  * @return {*}  {Record<any, any>}
  */
-export function deepCopy(data: Record<any, any>): Record<any, any>{
-  return clone(data)
+export function deepCopy(data: Record<any, any>): Record<any, any> {
+  return clone(data);
 }
 
 /**
@@ -15,9 +17,9 @@ export function deepCopy(data: Record<any, any>): Record<any, any>{
  * @export
  * @param {*} FirstOBJ 目标对象
  * @param {*} SecondOBJ 源对象
- * @return {*} 
+ * @return {*}
  */
- export function deepObjectMerge(FirstOBJ: any, SecondOBJ: any) {
+export function deepObjectMerge(FirstOBJ: any, SecondOBJ: any) {
   for (var key in SecondOBJ) {
     FirstOBJ[key] =
       FirstOBJ[key] && FirstOBJ[key].toString() === '[object Object]'
@@ -37,22 +39,22 @@ export function deepCopy(data: Record<any, any>): Record<any, any>{
 export function dateFormat(date: any, fmt: string = 'YYYY-MM-DD HH:mm:ss'): string {
   let ret;
   const opt: any = {
-      'Y+': date.getFullYear().toString(), // 年
-      'M+': (date.getMonth() + 1).toString(), // 月
-      'd+': date.getDate().toString(), // 日
-      'D+': date.getDate().toString(), // 日
-      'H+': date.getHours().toString(), // 时
-      'h+': date.getHours().toString(), // 时
-      'm+': date.getMinutes().toString(), // 分
-      's+': date.getSeconds().toString(), // 秒
-      'S+': date.getSeconds().toString()
-      // 有其他格式化字符需求可以继续添加，必须转化成字符串
+    'Y+': date.getFullYear().toString(), // 年
+    'M+': (date.getMonth() + 1).toString(), // 月
+    'd+': date.getDate().toString(), // 日
+    'D+': date.getDate().toString(), // 日
+    'H+': date.getHours().toString(), // 时
+    'h+': date.getHours().toString(), // 时
+    'm+': date.getMinutes().toString(), // 分
+    's+': date.getSeconds().toString(), // 秒
+    'S+': date.getSeconds().toString(),
+    // 有其他格式化字符需求可以继续添加，必须转化成字符串
   };
   for (let k in opt) {
-      ret = new RegExp('(' + k + ')').exec(fmt);
-      if (ret) {
-          fmt = fmt.replace(ret[1], ret[1].length == 1 ? opt[k] : opt[k].padStart(ret[1].length, '0'));
-      }
+    ret = new RegExp('(' + k + ')').exec(fmt);
+    if (ret) {
+      fmt = fmt.replace(ret[1], ret[1].length == 1 ? opt[k] : opt[k].padStart(ret[1].length, '0'));
+    }
   }
   return fmt;
 }
@@ -63,7 +65,7 @@ export function dateFormat(date: any, fmt: string = 'YYYY-MM-DD HH:mm:ss'): stri
  * @param {*} arg
  * @return {*}  {boolean}
  */
-export function isExist(arg: any): boolean{
+export function isExist(arg: any): boolean {
   return arg !== undefined && arg !== null && arg === arg;
 }
 
@@ -83,7 +85,7 @@ export function isEmpty(value: any): boolean {
  * @param {*} arg
  * @return {*}  {boolean}
  */
-export function notEmpty(arg: any): boolean{
+export function notEmpty(arg: any): boolean {
   return isExist(arg) && arg != '';
 }
 
@@ -91,9 +93,9 @@ export function notEmpty(arg: any): boolean{
  * @description 是否拥有某个方法
  * @param {*} arg 校验对象
  * @param fnName 方法名
- * @return {*} 
+ * @return {*}
  */
-export function hasFunction(arg: any, fnName: string): boolean{
+export function hasFunction(arg: any, fnName: string): boolean {
   return arg[fnName] && arg[fnName] instanceof Function;
 }
 
@@ -137,7 +139,7 @@ export function typeOf(obj: any): string {
  * @param {*} value2 对比值
  * @return {*}  {boolean}
  */
- export function verifyValue(value: any, op: any, value2: any): boolean {
+export function verifyValue(value: any, op: any, value2: any): boolean {
   // 等于操作
   if (Object.is(op, 'EQ')) {
     const _value = `${value}`;
@@ -338,38 +340,110 @@ function contains(value: any, value2: any): boolean {
  * 设置sessionStorage数据
  *
  */
- export const setSessionStorage: Function = (key: string, value: any) => {
+export const setSessionStorage: Function = (key: string, value: any) => {
   if (!value) {
-      return;
+    return;
   }
   sessionStorage.setItem(key, JSON.stringify(value));
-}
+};
 
 /**
-* 获取sessionStorage数据
-*
-*/
+ * 获取sessionStorage数据
+ *
+ */
 export const getSessionStorage: Function = (key: string) => {
   if (!key) {
-      return null;
+    return null;
   }
   let value = sessionStorage.getItem(key);
   if (value) {
-      return JSON.parse(value);
+    return JSON.parse(value);
   } else {
-      return value;
+    return value;
   }
+};
+
+/**
+ * 删除sessionStorage数据
+ *
+ */
+export const removeSessionStorage: Function = (key: string) => {
+  if (!key) {
+    return;
+  }
+  if (sessionStorage.getItem(key)) {
+    sessionStorage.removeItem(key);
+  }
+};
+
+/**
+ * style对象转换成字符串
+ *
+ */
+export const styleObj2Str: Function = (style: any) => {
+  let s = "";
+  for (let i in style) {
+    s += i + ':' + style[i]+";";
+  }
+  return s;
+};
+
+/**
+ * 获取选中代码表项
+ * @param codeListTag 
+ * @param value 
+ * @param codeListItems 
+ * @returns 
+ */
+const getSelectCodeListItems: Function = (codeListTag: string, value: any, codeListItems: IParam[], valueSeparator: string = ',') => {
+  const codeList = AppCodeListConfig[codeListTag];
+  const _valueSeparator = codeList.valueSeparator || valueSeparator;
+  // 值的集合
+  let values: any[] = [];
+  // 选中代码表项的集合
+  const selectedItems: any[] = [];
+  if(codeList.orMode == 'NUM'){
+    codeListItems.forEach((_item: any, index: number)=>{
+      const nValue = parseInt((value as any), 10);
+      if((parseInt(_item.value, 10) & nValue) > 0){
+        selectedItems.push(deepCopy(_item));
+      } 
+    });
+  } else {
+    //  数值直接赋值
+    if (typeof value === 'number'){
+      values = [value];
+    } else {
+      values = [...value.toString().split(_valueSeparator)];
+    }
+    values.forEach((v: any)=>{
+      let selected = codeListItems.find((_item:any)=> _item.value == v);
+      if (selected) {
+        selectedItems.push(selected);
+      } else {
+        selectedItems.push({ text: v });
+      }
+    })
+  }
+  return selectedItems;
 }
 
 /**
-* 删除sessionStorage数据
-*
-*/
-export const removeSessionStorage: Function = (key: string) => {
-  if (!key) {
-      return;
-  }
-  if (sessionStorage.getItem(key)) {
-      sessionStorage.removeItem(key);
-  }
+ * 翻译代码表
+ * @param codeListTag 代码表标识
+ * @param value 值
+ * @param codeListItems 代码表项
+ * @param textSeparator 值分隔符
+ * @returns 
+ */
+export const translateCodeList2Text: Function = (codeListTag: string, value: any, codeListItems: IParam[] = [], textSeparator: string = '、'): string => {
+  let text: string = '';
+  const items = getSelectCodeListItems(codeListTag, value, codeListItems);
+  items.forEach((item: any, index: number) => {
+      if (index !== 0) {
+          text += textSeparator;
+      }
+      text += item.text;
+  });
+  return isExistAndNotEmpty(text) ? text : '';
 }

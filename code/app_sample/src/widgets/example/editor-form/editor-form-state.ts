@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ExampleService } from '@api/example/example-service';
 
 /**
@@ -226,9 +226,116 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'Example',
+  appDeCodeName:'Example',
+  appDeLogicName: '示例',
   appDeKeyFieldName: 'ExampleId',
   appDeMajorFieldName: 'ExampleName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+    {
+      createDV: "10",
+      createDVT: "",
+      property: "formitem1",
+    },
+    {
+      createDV: "password",
+      createDVT: "",
+      property: "formitem2",
+    },
+    {
+      createDV: "2",
+      createDVT: "",
+      property: "formitem22",
+    },
+    {
+      createDV: "demo@ibiz.com",
+      createDVT: "",
+      property: "formitem4",
+    },
+    {
+      createDV: "3",
+      createDVT: "",
+      property: "formitem23",
+    },
+    {
+      createDV: "20",
+      createDVT: "",
+      property: "formitem24",
+    },
+    {
+      createDV: "",
+      createDVT: "CURTIME",
+      property: "formitem19",
+    },
+    {
+      createDV: "",
+      createDVT: "CURTIME",
+      property: "formitem29",
+    },
+    {
+      createDV: "",
+      createDVT: "CURTIME",
+      property: "formitem15",
+    },
+    {
+      createDV: "",
+      createDVT: "CURTIME",
+      property: "formitem27",
+    },
+    {
+      createDV: "",
+      createDVT: "CURTIME",
+      property: "formitem28",
+    },
+    {
+      createDV: "",
+      createDVT: "CURTIME",
+      property: "formitem14",
+    },
+    {
+      createDV: "上海客户",
+      createDVT: "",
+      property: "formitem33",
+      valueFormat: "",
+      dataType: "0"
+    },
+    {
+      createDV: "DE3C6025-4356-4AAF-8278-55E8C1E6DA31",
+      createDVT: "",
+      property: "formitem39",
+    },
+    {
+      createDV: "<B>ABC</B>",
+      createDVT: "",
+      property: "formitem57",
+    },
+    {
+      createDV: "<B>ABC</B>",
+      createDVT: "",
+      property: "formitem58",
+    },
+    {
+      createDV: "https://www.ibizsys.cn/imgs/ibizlogo.svg",
+      createDVT: "",
+      property: "formitem59",
+    },
+    {
+      createDV: "<B>ABC</B>",
+      createDVT: "",
+      property: "formitem60",
+    },
+    {
+      createDV: "172.16.100.32",
+      createDVT: "",
+      property: "formitem25",
+    },
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',
@@ -579,8 +686,6 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
-      createDVT: "CURTIME",
-      createDV: "",
     },
     formitem29: {
       caption: 'HH:mm:ss',
@@ -593,8 +698,6 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
-      createDVT: "CURTIME",
-      createDV: "",
     },
     formitem15: {
       caption: 'YYYY-MM-DD',
@@ -607,8 +710,6 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
-      createDVT: "CURTIME",
-      createDV: "",
     },
     formitem27: {
       caption: 'YYYY-MM-DD HH',
@@ -621,8 +722,6 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
-      createDVT: "CURTIME",
-      createDV: "",
     },
     formitem28: {
       caption: 'YYYY-MM-DD HH:mm',
@@ -635,8 +734,6 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
-      createDVT: "CURTIME",
-      createDV: "",
     },
     formitem14: {
       caption: 'YYYY-MM-DD HH:mm:ss',
@@ -649,8 +746,6 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
-      createDVT: "CURTIME",
-      createDV: "",
     },
     grouppanel3: {
       caption: '数据选择',
@@ -1129,37 +1224,58 @@ export const ctrlState = {
       enableCond: 3,
       groupLogics: [
         {
-          name: '表单成员[format8][表单项空输入]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[formitem1]',
-          logicCat: 'ITEMBLANK',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'EQ',dEFDName: 'formitem1',logicType: 'SINGLE',name: 'formitem1 等于(=) (1)',value:'1'},
-          ],
+        	name: '表单成员[format8][表单项空输入]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'ITEMBLANK',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["formitem1"],
+        	childLogics: [
+        		{
+        			name: 'formitem1 等于(=) (1)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "EQ",
+        			dEFDName: "formitem1",
+        			value: "1"
+        		},
+        	]
         },
         {
-          name: '表单成员[format8][表单项启用]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[formitem]',
-          logicCat: 'ITEMENABLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'EQ',dEFDName: 'formitem',logicType: 'SINGLE',name: 'formitem 等于(=) (1)',value:'1'},
-          ],
+        	name: '表单成员[format8][表单项启用]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'ITEMENABLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["formitem"],
+        	childLogics: [
+        		{
+        			name: 'formitem 等于(=) (1)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "EQ",
+        			dEFDName: "formitem",
+        			value: "1"
+        		},
+        	]
         },
         {
-          name: '表单成员[format8][面板显示]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[formitem3]',
-          logicCat: 'PANELVISIBLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'EQ',dEFDName: 'formitem3',logicType: 'SINGLE',name: 'formitem3 等于(=) (1)',value:'1'},
-          ],
+        	name: '表单成员[format8][面板显示]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'PANELVISIBLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["formitem3"],
+        	childLogics: [
+        		{
+        			name: 'formitem3 等于(=) (1)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "EQ",
+        			dEFDName: "formitem3",
+        			value: "1"
+        		},
+        	]
         },
       ],
     },
@@ -1167,11 +1283,12 @@ export const ctrlState = {
   actionModel: {
   },
   rules: {
-          formitem3: [
-            {
-                trigger: ['change', 'blur'],
-                pattern: /[0-9]*[1-9][0-9]*/,
-               message:'内容必须为正整数'
-          }],
+    formitem3: [
+      {
+        trigger: ['change', 'blur'],
+        pattern: /[0-9]*[1-9][0-9]*/,
+        message:'内容必须为正整数'
+      },
+    ],
   },
 };

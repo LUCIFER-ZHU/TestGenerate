@@ -25,18 +25,18 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, form, onToolbarEvent } = new EditView(viewState, props, emit).moduleInstall();
+const editView = new EditView(viewState, props, emit).moduleInstall();
+const { state, form, onToolbarEvent, onCtrlEvent } = editView;
 
 </script>
 
 <template>
-  <AppEditViewLayout :class="['app-edit-view', state.viewSysCss]">
+  <AppEditViewLayout :class="['app-edit-view', state.viewSysCss]" :showCaptionBar="state.showCaptionBar">
     <template v-slot:caption>
       <AppIconText
         class="app-view__caption"
         size="large"
         :subCaption="state.subCaption"
-        :showCaptionBar="state.showCaptionBar"
         :text="state.viewCaption"
       />
     </template>
@@ -48,6 +48,8 @@ const { state, form, onToolbarEvent } = new EditView(viewState, props, emit).mod
       :viewParams="state.viewParams"
       :controlAction="state.form.action"
       :viewSubject="state.viewSubject"
+      :parent="editView"
+      @ctrlEvent="onCtrlEvent"
     ></BaseInfoForm>
   </AppEditViewLayout>
 </template>

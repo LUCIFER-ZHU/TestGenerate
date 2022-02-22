@@ -4,6 +4,7 @@ import { ctrlState } from './event-and-transfer-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;
@@ -24,134 +25,116 @@ interface CtrlEmit {
 const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { name, state, load, loadDraft, save, remove, refresh, onEditorEvent, onComponentEvent, getData } = new FormControl(ctrlState, props, emit).moduleInstall();
+const { name, state, load, loadDraft, save, remove, refresh, onEditorEvent, onComponentEvent, getData, xDataCtrl } = new FormControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ name, state, load, loadDraft, save, remove, refresh, getData });
 </script>
 <template>
-  <a-form name="EventAndTransfer" class="app-form" style="" :model="state.data" :rules="state.rules">
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormGroup 
-    v-show="state.detailsModel.group1.visible" 
-    name="group1" 
-    title="示例基本信息"
+  <a-form
+    name="EventAndTransfer"
+    class="app-form"
     style=""
-    :infoGroupMode="false"
-    :titleBarCloseMode="0"
-    :showCaption="false"
-    :uIActionGroup="state.detailsModel.group1.uIActionGroup"
-    @componentEvent="onComponentEvent">
-    <a-row>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.examplename.visible"
-    name="examplename"
-    :rules="state.rules.examplename"
-    :labelWidth="130"
-    :required="state.detailsModel.examplename.required"
-    label="名称"
-    style="">
-      <div class="form-editor-container" style="">
-<AppInput
-  name="examplename"
-  :disabled="state.detailsModel.examplename.disabled"
-  :maxLength="200"
-  type="text"
-  :value="state.data.examplename"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.fieldx.visible"
-    name="fieldx"
-    :rules="state.rules.fieldx"
-    :labelWidth="130"
-    :required="state.detailsModel.fieldx.required"
-    label="X值"
-    style="">
-      <div class="form-editor-container" style="">
-<AppInput
-  name="fieldx"
-  :disabled="state.detailsModel.fieldx.disabled"
-  type="text"
-  :value="state.data.fieldx"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.fieldy.visible"
-    name="fieldy"
-    :rules="state.rules.fieldy"
-    :labelWidth="130"
-    :required="state.detailsModel.fieldy.required"
-    label="Y值"
-    style="">
-      <div class="form-editor-container" style="">
-<AppInput
-  name="fieldy"
-  :disabled="state.detailsModel.fieldy.disabled"
-  type="text"
-  :value="state.data.fieldy"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.fieldz.visible"
-    name="fieldz"
-    :rules="state.rules.fieldz"
-    :labelWidth="130"
-    :required="state.detailsModel.fieldz.required"
-    label="Z值"
-    style="">
-      <div class="form-editor-container" style="">
-<AppInput
-  name="fieldz"
-  :disabled="state.detailsModel.fieldz.disabled"
-  type="text"
-  :value="state.data.fieldz"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-    </a-row>
-  </AppFormGroup>
-</a-col>
+    :model="state.data"
+    :rules="state.rules"
+    ref="xDataCtrl"
+  >
+    <AppFormGroup 
+      name="group1"
+      title="示例基本信息"
+      :visible="state.detailsModel.group1.visible" 
+      :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+      :infoGroupMode="false"
+      :titleBarCloseMode="0"
+      :showCaption="false"
+      :uIActionGroup="state.detailsModel.group1.uIActionGroup"
+      @componentEvent="onComponentEvent">
+        <AppFormItem 
+          name="examplename"
+          label="名称"
+          labelPos="LEFT"
+          :labelWidth="130"
+          :showLabel="true"
+          :rules="state.rules.examplename"
+          :required="state.detailsModel.examplename.required"
+          :visible="state.detailsModel.examplename.visible" 
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          >
+          <div class="form-editor-container" style="">
+          <AppInput
+            name="examplename"
+            :disabled="state.detailsModel.examplename.disabled"
+            :maxLength="200"
+            type="text"
+            :value="state.data.examplename"
+            @editorEvent="onEditorEvent"
+          />
+          </div>
+        </AppFormItem>
+        <AppFormItem 
+          name="fieldx"
+          label="X值"
+          labelPos="LEFT"
+          :labelWidth="130"
+          :showLabel="true"
+          :rules="state.rules.fieldx"
+          :required="state.detailsModel.fieldx.required"
+          :visible="state.detailsModel.fieldx.visible" 
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          >
+          <div class="form-editor-container" style="">
+          <AppInput
+            name="fieldx"
+            :disabled="state.detailsModel.fieldx.disabled"
+            type="text"
+            :value="state.data.fieldx"
+            @editorEvent="onEditorEvent"
+          />
+          </div>
+        </AppFormItem>
+        <AppFormItem 
+          name="fieldy"
+          label="Y值"
+          labelPos="LEFT"
+          :labelWidth="130"
+          :showLabel="true"
+          :rules="state.rules.fieldy"
+          :required="state.detailsModel.fieldy.required"
+          :visible="state.detailsModel.fieldy.visible" 
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          >
+          <div class="form-editor-container" style="">
+          <AppInput
+            name="fieldy"
+            :disabled="state.detailsModel.fieldy.disabled"
+            type="text"
+            :value="state.data.fieldy"
+            @editorEvent="onEditorEvent"
+          />
+          </div>
+        </AppFormItem>
+        <AppFormItem 
+          name="fieldz"
+          label="Z值"
+          labelPos="LEFT"
+          :labelWidth="130"
+          :showLabel="true"
+          :rules="state.rules.fieldz"
+          :required="state.detailsModel.fieldz.required"
+          :visible="state.detailsModel.fieldz.visible" 
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          >
+          <div class="form-editor-container" style="">
+          <AppInput
+            name="fieldz"
+            :disabled="state.detailsModel.fieldz.disabled"
+            type="text"
+            :value="state.data.fieldz"
+            @editorEvent="onEditorEvent"
+          />
+          </div>
+        </AppFormItem>
+    </AppFormGroup>
   </a-form>
 </template>
 <style lang="scss">

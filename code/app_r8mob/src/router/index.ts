@@ -14,20 +14,20 @@ const routes = [
     },
     component: () => import("@views/ungroup/app-index-view"),
     children: [
-                {
-                  path: "views/quickmenuappportalview",
-                  meta: {
-                      tag:'QuickMenuAppPortalView'
-                  },
-                  component: () => import("@views/ungroup/quick-menu-app-portal-view"),
-                },
-                {
-                  path: "views/appportalview",
-                  meta: {
-                      tag:'AppPortalView'
-                  },
-                  component: () => import("@views/ungroup/app-portal-view"),
-                },
+      {
+        path: "views/quickmenuappportalview",
+        meta: {
+            tag:'QuickMenuAppPortalView'
+        },
+        component: () => import("@views/ungroup/quick-menu-app-portal-view"),
+      },
+      {
+        path: "views/appportalview",
+        meta: {
+            tag:'AppPortalView'
+        },
+        component: () => import("@views/ungroup/app-portal-view"),
+      },
     ]
   },
   {

@@ -13,15 +13,14 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'Customer',
-  keyPSDEField: 'customer',
+  appDeKeyFieldName: 'customerid',
+  appDeMajorFieldName: 'customername',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
   enableQuickGroup: false,
   viewLogics: {
   },
-  toolbar: [
-  ],
   grid:{
     action:{
       loadAction: '',
@@ -31,5 +30,5 @@ export const viewState = {
       createAction: '',
       fetchAction:'FetchDefault'
     }  
-  }
+  },
 };

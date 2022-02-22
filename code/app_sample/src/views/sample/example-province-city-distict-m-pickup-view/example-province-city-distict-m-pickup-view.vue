@@ -25,7 +25,8 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onCancel, onConfirm, onCtrlEvent, useSelections, onMoveRight, onMoveLeft, onAllMoveRight, onAllMoveLeft } = new MPickupView(viewState, props, emit).moduleInstall();
+const mpickupView = new MPickupView(viewState, props, emit).moduleInstall();
+const { state, onCancel, onConfirm, onCtrlEvent, useSelections, onMoveRight, onMoveLeft, onAllMoveRight, onAllMoveLeft } = mpickupView;
 </script>
 
 <template>
@@ -44,6 +45,7 @@ const { state, onCancel, onConfirm, onCtrlEvent, useSelections, onMoveRight, onM
               :viewParams="state.viewParams"
               :controlAction="state.pickupviewpanel.action"
               :viewSubject="state.viewSubject"
+              :parent="mpickupView"
               @onCtrlEvent="onCtrlEvent"
             ></ProvinceCityDistictMPickupViewpickupviewpanelPickupViewPanel>
         </a-col>

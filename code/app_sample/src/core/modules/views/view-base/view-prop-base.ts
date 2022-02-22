@@ -35,4 +35,11 @@ export interface ViewPropsBase {
    * @memberof ViewPropsBase
    */
   openType?: "ROUTE" | "MODAL" | "EMBED";
+
+  /**
+   * @description 是否显示标题栏
+   * @type {boolean}
+   * @memberof ViewPropsBase
+   */
+  showCaptionBar?: boolean;
 }

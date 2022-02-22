@@ -5,6 +5,7 @@ import { GridControl, IActionParam, IParam, IContext, ControlAction, deepCopy } 
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams: IParam;
   multiple?: boolean;
@@ -35,11 +36,11 @@ interface CtrlEmit {
 const emit = defineEmits<CtrlEmit>();
 
 // 安装功能模块，提供状态和能力
-const { name, state, useCustom, onEditorEvent, onToolbarEvent, newRow, remove, save, load, refresh, getData } = new GridControl(ctrlState, props, emit).moduleInstall();
-const { useScrollOption, useRowKey, useRowClassName, useCustomRow, useRowSelectionOption, onResizeColumn, onGridChange } = useCustom;
+const { name, state, useCustom, onEditorEvent, onToolbarEvent, onActionColEvent, newRow, remove, save, load, refresh, getData, exportExcel } = new GridControl(ctrlState, props, emit).moduleInstall();
+const { useScrollOption, useRowKey, useRowClassName, useCustomRow, useRowSelectionOption, onResizeColumn, onGridChange, useExpandedRowKeys, onExpandedRowsChange } = useCustom;
 
 // 暴露内部状态及能力
-defineExpose({ name, state, newRow, remove, save, load, refresh, getData });
+defineExpose({ name, state, newRow, remove, save, load, refresh, getData, exportExcel });
 </script>
 <template>
     <a-form name="grid" class="app-grid-form"  >
@@ -53,11 +54,13 @@ defineExpose({ name, state, newRow, remove, save, load, refresh, getData });
         :sortDirections="['ascend', 'descend']"
         :data-source="state.items"
         :row-selection="useRowSelectionOption"
+        :expandedRowKeys="useExpandedRowKeys"
         :columns="state.columnsModel"
         :pagination="state.mdCtrlPaging.pagination"
         :customRow="useCustomRow"
         :rowClassName="useRowClassName"
         @change="onGridChange"
+        @expandedRowsChange="onExpandedRowsChange"
         @resizeColumn="onResizeColumn"
       >
         <template #emptyText>
@@ -68,190 +71,225 @@ defineExpose({ name, state, newRow, remove, save, load, refresh, getData });
           </div>
         </template>
         <template #headerCell="{title, column}">
-<div v-if="Object.is(column.dataIndex, 'chartdataname')" class="header-cell">
+          <div v-if="Object.is(column.dataIndex, 'chartdataname')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
-<div v-if="Object.is(column.dataIndex, 'chartdate')" class="header-cell">
+              <span class="title">{{title}}</span>
+            
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'chartdate')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
-<div v-if="Object.is(column.dataIndex, 'datatype')" class="header-cell">
+              <span class="title">{{title}}</span>
+            
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'datatype')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
-<div v-if="Object.is(column.dataIndex, 'year')" class="header-cell">
+              <span class="title">{{title}}</span>
+            
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'year')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
-<div v-if="Object.is(column.dataIndex, 'data')" class="header-cell">
+              <span class="title">{{title}}</span>
+            
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'data')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
-<div v-if="Object.is(column.dataIndex, 'datetime')" class="header-cell">
+              <span class="title">{{title}}</span>
+            
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'datetime')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
-<div v-if="Object.is(column.dataIndex, 'updateman')" class="header-cell">
+              <span class="title">{{title}}</span>
+            
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'updateman')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
-<div v-if="Object.is(column.dataIndex, 'updatedate')" class="header-cell">
+              <span class="title">{{title}}</span>
+            
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'updatedate')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
+              <span class="title">{{title}}</span>
+            
+          </div>
         </template>
         <template #bodyCell="{ column, text, record, index }">
-<div v-if="Object.is(column.dataIndex, 'chartdataname')" class="table-cell">
-  <div v-if="state.rowEditState" class="editor-cell">
-      <AppFormItem
-        name="name"
-        :error="state.gridEditState.name?.[index]?.message"
-        :rules="state.rules.name"
-      >
-<AppInput
-  name="name"
-  :maxLength="200"
-  type="text"
-  :value="record.name"
-  @editorEvent="onEditorEvent($event,index)"
-/> 
-    </AppFormItem>
-  </div>
-  <div v-else class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
-<div v-if="Object.is(column.dataIndex, 'chartdate')" class="table-cell">
-  <div v-if="state.rowEditState" class="editor-cell">
-      <AppFormItem
-        name="chartdate"
-        :error="state.gridEditState.chartdate?.[index]?.message"
-        :rules="state.rules.chartdate"
-      >
-<AppDatePicker
-  name="chartdate"
-  dateFormat="YYYY-MM-DD HH:mm:ss"
-  dateType="dateTime"
-  :value="record.chartdate"
-  @editorEvent="onEditorEvent($event,index)"
-/> 
-    </AppFormItem>
-  </div>
-  <div v-else class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
-<div v-if="Object.is(column.dataIndex, 'datatype')" class="table-cell">
-  <div v-if="state.rowEditState" class="editor-cell">
-      <AppFormItem
-        name="datatype"
-        :error="state.gridEditState.datatype?.[index]?.message"
-        :rules="state.rules.datatype"
-      >
-<AppDropdownList
-  name="datatype"
-  codeListTag="Sample__DataType"
-  codeListType="STATIC"
-  
-  :context="state.context"
-  :viewParams="state.viewParams"
-  :value="record.datatype"
-  :data="record"
-  @editorEvent="onEditorEvent($event,index)"
-/> 
-    </AppFormItem>
-  </div>
-  <div v-else class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
-<div v-if="Object.is(column.dataIndex, 'year')" class="table-cell">
-  <div v-if="state.rowEditState" class="editor-cell">
-      <AppFormItem
-        name="year"
-        :error="state.gridEditState.year?.[index]?.message"
-        :rules="state.rules.year"
-      >
-<AppInput
-  name="year"
-  type="text"
-  :value="record.year"
-  @editorEvent="onEditorEvent($event,index)"
-/> 
-    </AppFormItem>
-  </div>
-  <div v-else class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
-<div v-if="Object.is(column.dataIndex, 'data')" class="table-cell">
-  <div v-if="state.rowEditState" class="editor-cell">
-      <AppFormItem
-        name="testData"
-        :error="state.gridEditState.testData?.[index]?.message"
-        :rules="state.rules.testData"
-      >
-<AppInput
-  name="testData"
-  type="number"
-  :value="record.testData"
-  @editorEvent="onEditorEvent($event,index)"
-/> 
-    </AppFormItem>
-  </div>
-  <div v-else class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
-<div v-if="Object.is(column.dataIndex, 'datetime')" class="table-cell">
-  <div v-if="state.rowEditState" class="editor-cell">
-      <AppFormItem
-        name="datetime"
-        :error="state.gridEditState.datetime?.[index]?.message"
-        :rules="state.rules.datetime"
-      >
-<AppDatePicker
-  name="datetime"
-  dateFormat="YYYY-MM-DD HH:mm:ss"
-  dateType="dateTime"
-  :value="record.datetime"
-  @editorEvent="onEditorEvent($event,index)"
-/> 
-    </AppFormItem>
-  </div>
-  <div v-else class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
-<div v-if="Object.is(column.dataIndex, 'updateman')" class="table-cell">
+          <div v-if="Object.is(column.dataIndex, 'chartdataname')" class="table-cell">
+            <div v-if="state.rowEditState" class="editor-cell">
+              <AppFormItem
+                name="chartdataname"
+                :error="state.gridEditState.chartdataname?.[index]?.message"
+                :rules="state.rules.name"
+                :showLabel="false"
+              >
+              <AppInput
+                name="chartdataname"
+                placeholder="占位提示测试"
+                :maxLength="200"
+                type="text"
+                :value="record.chartdataname"
+                @editorEvent="onEditorEvent($event,index)"
+              />
+              </AppFormItem>
+            </div>
+            <div v-else class="text-cell">
+              <span class="text">{{text}}</span>
+              
+            </div>
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'chartdate')" class="table-cell">
+            <div v-if="state.rowEditState" class="editor-cell">
+              <AppFormItem
+                name="chartdate"
+                :error="state.gridEditState.chartdate?.[index]?.message"
+                :rules="state.rules.chartdate"
+                :showLabel="false"
+              >
+              <AppDatePicker
+                name="chartdate"
+                dateFormat="YYYY-MM-DD HH:mm:ss"
+                dateType="dateTime"
+                :value="record.chartdate"
+                @editorEvent="onEditorEvent($event,index)"
+              />
+              </AppFormItem>
+            </div>
+            <div v-else class="text-cell">
+              <AppSpan
+                name="chartdate"
+                :value="text"
+                :dataType="0"
+                valueFormat="YYYY-MM-DD HH:mm:ss"
+                :precision="0"
+              ></AppSpan>
 
-  <div class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
-<div v-if="Object.is(column.dataIndex, 'updatedate')" class="table-cell">
+            </div>
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'datatype')" class="table-cell">
+            <div v-if="state.rowEditState" class="editor-cell">
+              <AppFormItem
+                name="datatype"
+                :error="state.gridEditState.datatype?.[index]?.message"
+                :rules="state.rules.datatype"
+                :showLabel="false"
+              >
+              <AppDropdownList
+                name="datatype"
+                codeListTag="Sample__DataType"
+                codeListType="STATIC"
+                :context="state.context"
+                :viewParams="state.viewParams"
+                :value="record.datatype"
+                :data="record"
+                @editorEvent="onEditorEvent($event,index)"
+              /> 
+              </AppFormItem>
+            </div>
+            <div v-else class="text-cell">
+              <AppCodelist
+                name="datatype"
+                codeListTag="Sample__DataType"
+                :context="state.context"
+                :data="record"
+                :value="text"
+                :viewParams="state.viewParams"
+              ></AppCodelist>
+            </div>
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'year')" class="table-cell">
+            <div v-if="state.rowEditState" class="editor-cell">
+              <AppFormItem
+                name="year"
+                :error="state.gridEditState.year?.[index]?.message"
+                :rules="state.rules.year"
+                :showLabel="false"
+              >
+              <AppInput
+                name="year"
+                type="text"
+                :value="record.year"
+                @editorEvent="onEditorEvent($event,index)"
+              />
+              </AppFormItem>
+            </div>
+            <div v-else class="text-cell">
+              <span class="text">{{text}}</span>
+              
+            </div>
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'data')" class="table-cell">
+            <div v-if="state.rowEditState" class="editor-cell">
+              <AppFormItem
+                name="data"
+                :error="state.gridEditState.data?.[index]?.message"
+                :rules="state.rules.testData"
+                :showLabel="false"
+              >
+              <AppInput
+                name="data"
+                :disabled="!Object.is(record.srfuf,1)"
+                type="number"
+                :value="record.data"
+                @editorEvent="onEditorEvent($event,index)"
+              />
+              </AppFormItem>
+            </div>
+            <div v-else class="text-cell">
+              <span class="text">{{text}}</span>
+              
+            </div>
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'datetime')" class="table-cell">
+            <div v-if="state.rowEditState" class="editor-cell">
+              <AppFormItem
+                name="datetime"
+                :error="state.gridEditState.datetime?.[index]?.message"
+                :rules="state.rules.datetime"
+                :showLabel="false"
+              >
+              <AppDatePicker
+                name="datetime"
+                dateFormat="YYYY-MM-DD HH:mm:ss"
+                dateType="dateTime"
+                :value="record.datetime"
+                @editorEvent="onEditorEvent($event,index)"
+              />
+              </AppFormItem>
+            </div>
+            <div v-else class="text-cell">
+              <AppSpan
+                name="datetime"
+                :value="text"
+                :dataType="0"
+                valueFormat="YYYY-MM-DD HH:mm:ss"
+                :precision="0"
+              ></AppSpan>
 
-  <div class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
+            </div>
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'updateman')" class="table-cell">
+            <div class="text-cell">
+              <AppCodelist
+                name="updateman"
+                codeListTag="SysOperator"
+                :context="state.context"
+                :data="record"
+                :value="text"
+                :viewParams="state.viewParams"
+              ></AppCodelist>
+            </div>
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'updatedate')" class="table-cell">
+            <div class="text-cell">
+              <AppSpan
+                name="updatedate"
+                :value="text"
+                :dataType="0"
+                valueFormat="YYYY-MM-DD HH:mm:ss"
+                :precision="0"
+              ></AppSpan>
+
+            </div>
+          </div>
         </template>
         <template #summary>
           <a-table-summary>

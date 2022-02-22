@@ -9,6 +9,7 @@ interface Props {
   collapsed: boolean;
   menuAlign: "LEFT" | "TOP" | "CENTER" | "TABEXP_LEFT" | "TABEXP_TOP" | "TABEXP_RIGHT" | "TABEXP_BOTTOM" | "NONE";
   viewParams?: IParam;
+  parent: IParam;
   viewSubject: Subject<IActionParam>;
 }
 const props = withDefaults(defineProps < Props > (), {

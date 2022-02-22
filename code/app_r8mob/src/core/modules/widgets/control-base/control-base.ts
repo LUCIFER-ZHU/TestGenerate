@@ -51,6 +51,7 @@ export class ControlBase {
   public setState() {
     this.state.viewSubject = toRef(this.props, 'viewSubject') as any;
     this.state.controlName = this.props.name;
+    this.state.parent = this.props.parent;
   }
 
   /**

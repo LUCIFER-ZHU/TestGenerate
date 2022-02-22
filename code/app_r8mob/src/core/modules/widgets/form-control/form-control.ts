@@ -1,9 +1,11 @@
+import { Subject } from 'rxjs';
 import {
   DataTypes,
   dateFormat,
   deepCopy,
   FormControlProps,
   FormControlState,
+  hasFunction,
   IActionParam,
   IParam,
   MainControl,
@@ -31,8 +33,18 @@ export class FormControl extends MainControl {
    *
    * @memberof FormControl
    */
-   public getData(): IParam[] {
+  public getData(): IParam[] {
     return [this.state.data];
+  }
+
+  /**
+   * 设置表单状态
+   *
+   * @memberof FormControl
+   */
+  public setState() {
+    super.setState();
+    this.state.formSubject = new Subject();
   }
 
   /**
@@ -43,15 +55,15 @@ export class FormControl extends MainControl {
    * @memberof FormControl
    */
   public verifyGroupLogic(data: IParam, logic: IParam) {
-    if (logic.logicType == 'GROUP' && logic.logics?.length > 0) {
+    if (logic.logicType == 'GROUP' && logic.childLogics?.length > 0) {
       let result: boolean = true;
       if (logic.groupOP == 'AND') {
-        const falseItem = logic.logics.find((childLogic: IParam) => {
+        const falseItem = logic.childLogics.find((childLogic: IParam) => {
           return !this.verifyGroupLogic(data, childLogic);
         });
         result = falseItem ? false : true;
       } else if (logic.groupOP == 'OR') {
-        const trueItem = logic.logics.find((childLogic: IParam) => {
+        const trueItem = logic.childLogics.find((childLogic: IParam) => {
           return this.verifyGroupLogic(data, childLogic);
         });
         result = trueItem ? true : false;
@@ -77,6 +89,10 @@ export class FormControl extends MainControl {
   public handleFormDataChange(name: string, value: any) {
     const { enableAutoSave } = this.state;
     const { data } = toRefs(this.state);
+    //  无标识或数据未变化不触发后续逻辑
+    if (!name || Object.is(value, data.value[name])) {
+      return;
+    }
     data.value[name] = value;
     this.resetFormData(name);
     this.formItemUpdate(name);
@@ -110,24 +126,26 @@ export class FormControl extends MainControl {
    */
   public async formItemUpdate(name: string) {
     const { detailsModel, context, viewParams, controlService } = this.state;
-    const { data } = toRefs(this.state);
     if (detailsModel[name] && detailsModel[name].formItemUpdate) {
       const formItemUpdate = detailsModel[name].formItemUpdate;
       if (formItemUpdate.customCode) {
         if (formItemUpdate.scriptCode) {
+          const { data: _data } = toRefs(this.state);
+          let data: any = _data.value;
           eval(formItemUpdate.scriptCode);
         }
       } else {
-        const arg = Object.assign(deepCopy(viewParams), data.value);
+        const { data } = toRefs(this.state);
+        const arg = Object.assign(deepCopy(viewParams), data.value.getDo());
         const tempContext = deepCopy(context);
         const response = await controlService.frontLogic(
           tempContext,
-          { viewParams: arg },
+          arg,
           { action: formItemUpdate.appDEMethod, isLoading: formItemUpdate.showBusyIndicator },
         );
         if (response.status && response.status == 200) {
           formItemUpdate.updateDetails?.forEach((detailsName: string) => {
-            if (data.value.hasOwnProperty(detailsName)) {
+            if (data.value.hasKey(detailsName)) {
               data.value[detailsName] = response.data[detailsName];
             }
           });
@@ -209,7 +227,7 @@ export class FormControl extends MainControl {
         switch (item.enableCond) {
           case 0:
             // 不启用
-            item.disabled = false;
+            item.disabled = true;
             break;
           case 1:
             // 新建
@@ -221,7 +239,7 @@ export class FormControl extends MainControl {
             break;
           case 3:
             // 启用
-            item.disabled = true;
+            item.disabled = false;
             break;
           default:
             break;
@@ -247,7 +265,7 @@ export class FormControl extends MainControl {
         item.isPower = tempModel[item.uIActionTag].dataActionResult === 1 ? true : false;
       } else if (Object.is(item.detailType, 'GROUPPANEL') && item.uIActionGroup?.details?.length > 0) {
         // 更新分组面板界面行为组的权限状态值
-        item.uiActionGroup.details.forEach((actionDetail: any) => {
+        item.uIActionGroup.details.forEach((actionDetail: any) => {
           actionDetail.visible = tempModel[actionDetail.uIActionTag].visible;
           actionDetail.disabled = tempModel[actionDetail.uIActionTag].disabled;
         });
@@ -276,42 +294,43 @@ export class FormControl extends MainControl {
    * @memberof FormControl
    */
   public setCreateDefault() {
-    const { detailsModel, context, viewParams, controlService } = this.state;
+    const { createDefaultItems, context, viewParams, controlService } = this.state;
     const { data } = toRefs(this.state);
-    Object.values(detailsModel).forEach((detail: IParam) => {
-      if (Object.is(detail.detailType, 'FORMITEM')) {
-        if ((detail.createDV || detail.createDVT) && data.value.hasOwnProperty(detail.codeName)) {
-          switch (detail.createDVT) {
+    if (createDefaultItems && createDefaultItems.length) {
+      createDefaultItems.forEach((item: IParam) => {
+        const { createDV, createDVT, property, dataType, valueFormat } = item;
+        if ((createDV || createDVT) && data.value.hasKey(property)) {
+          switch (createDVT) {
             case 'CONTEXT':
-              data.value[detail.codeName] = viewParams[detail.createDV];
+              data.value[property] = viewParams[createDV];
               break;
             case 'SESSION':
-              data.value[detail.codeName] = context[detail.createDV];
+              data.value[property] = context[createDV];
               break;
             case 'APPDATA':
-              data.value[detail.codeName] = context[detail.createDV];
+              data.value[property] = context[createDV];
               break;
             case 'OPERATORNAME':
-              data.value[detail.codeName] = context['srfusername'];
+              data.value[property] = context['srfusername'];
               break;
             case 'OPERATOR':
-              data.value[detail.codeName] = context['srfuserid'];
+              data.value[property] = context['srfuserid'];
               break;
             case 'CURTIME':
-              data.value[detail.codeName] = dateFormat(new Date(), detail.valueFormat);
+              data.value[property] = dateFormat(new Date(), valueFormat);
               break;
             case 'PARAM':
-              data.value[detail.codeName] = controlService.getRemoteCopyData()?.[detail.codeName] || null;
+              data.value[property] = controlService.getRemoteCopyData()?.[property] || null;
               break;
             default:
-              data.value[detail.codeName] = DataTypes.isNumber(detail.dataType)
-                ? Number(detail?.createDV)
-                : detail?.createDV;
+              data.value[property] = DataTypes.isNumber(dataType)
+                ? Number(createDV)
+                : createDV;
               break;
           }
         }
-      }
-    });
+      });
+    }
   }
 
   /**
@@ -319,42 +338,43 @@ export class FormControl extends MainControl {
    * @memberof FormControl
    */
   public setUpdateDefault() {
-    const { detailsModel, context, viewParams, controlService } = this.state;
+    const { updateDefaultItems, context, viewParams, controlService } = this.state;
     const { data } = toRefs(this.state);
-    Object.values(detailsModel).forEach((detail: IParam) => {
-      if (Object.is(detail.detailType, 'FORMITEM')) {
-        if ((detail.updateDV || detail.updateDVT) && data.value.hasOwnProperty(detail.codeName)) {
-          switch (detail.updateDVT) {
+    if (updateDefaultItems && updateDefaultItems.length) {
+      updateDefaultItems.forEach((item: IParam) => {
+        const { updateDV, updateDVT, property, dataType, valueFormat } = item;
+        if ((updateDV || updateDVT) && data.value.hasKey(property)) {
+          switch (updateDVT) {
             case 'CONTEXT':
-              data.value[detail.codeName] = viewParams[detail.updateDV];
+              data.value[property] = viewParams[updateDV];
               break;
             case 'SESSION':
-              data.value[detail.codeName] = context[detail.updateDV];
+              data.value[property] = context[updateDV];
               break;
             case 'APPDATA':
-              data.value[detail.codeName] = context[detail.updateDV];
+              data.value[property] = context[updateDV];
               break;
             case 'OPERATORNAME':
-              data.value[detail.codeName] = context['srfusername'];
+              data.value[property] = context['srfusername'];
               break;
             case 'OPERATOR':
-              data.value[detail.codeName] = context['srfuserid'];
+              data.value[property] = context['srfuserid'];
               break;
             case 'CURTIME':
-              data.value[detail.codeName] = dateFormat(new Date(), detail.valueFormat);
+              data.value[property] = dateFormat(new Date(), valueFormat);
               break;
             case 'PARAM':
-              data.value[detail.codeName] = controlService.getRemoteCopyData()?.[detail.codeName] || null;
+              data.value[property] = controlService.getRemoteCopyData()?.[property] || null;
               break;
             default:
-              data.value[detail.codeName] = DataTypes.isNumber(detail.dataType)
-                ? Number(detail.updateDV)
-                : detail.updateDV;
+              data.value[property] = DataTypes.isNumber(dataType)
+                ? Number(updateDV)
+                : updateDV;
               break;
           }
         }
-      }
-    });
+      })
+    }
   }
 
   /**
@@ -446,8 +466,7 @@ export class FormControl extends MainControl {
      */
     const load = async (opt: any = {}) => {
       try {
-        const { controlService, context, viewParams, showBusyIndicator, controlAction } = this.state;
-        const { data } = toRefs(this.state);
+        const { controlService, context, viewParams, showBusyIndicator, controlAction, formSubject } = this.state;
         if (!controlAction.loadAction) {
           return;
         }
@@ -462,8 +481,10 @@ export class FormControl extends MainControl {
           { action: controlAction.loadAction, isLoading: showBusyIndicator },
         );
         if (response.status && response.status == 200) {
-          data.value = response.data;
+          this.state.data = response.data;
+          this.emit('ctrlEvent', { tag: this.props.name, action: 'load', data: [response.data] });
           this.afterFormAction('load');
+          formSubject.next({ type: 'load', data: this.state.data });
         }
       } catch (error) {
         // TODO 错误异常处理
@@ -516,28 +537,30 @@ export class FormControl extends MainControl {
     const save = async (opt: any = {}) => {
       try {
         // 获取需要的状态变量
-        const { controlService, context, viewParams, showBusyIndicator, data } = this.state;
-
-        // TODO 值规则校验处理
-
-        // 判断实体行为
-        const { updateAction, createAction } = this.state.controlAction;
-        const saveAction: any = data.srfuf == '1' ? updateAction : createAction;
-        const saveFunName = data.srfuf == '1' ? 'update' : 'create';
-        if (!saveAction) {
+        const { controlService, context, viewParams, showBusyIndicator, data, formSubject } = this.state;
+        if (!(await this.formValidateStatus())) {
+          this.showErrorMessage();
           return;
         }
-
         // 处理请求参数
         let _context = deepCopy(context);
         let _viewParams = deepCopy(viewParams);
         const arg: any = { ...opt };
         Object.assign(arg, data.getDo());
         Object.assign(arg, _viewParams);
-
+        //  拷贝模式
+        if (_viewParams && _viewParams.copyMode) {
+          data.srfuf = '0';
+        }
         // TODO 关系界面保存通知处理，做成异步。
-        // TODO 拷贝相关。
-
+        // 判断实体行为
+        const { updateAction, createAction } = this.state.controlAction;
+        const saveAction: any = data.srfuf == '1' ? updateAction : createAction;
+        const saveFunName = data.srfuf == '1' ? 'update' : 'create';
+        if (!saveAction) {
+          App.getNotificationService().warning({ message: '', description: '未配置SaveAction' });
+          return;
+        }
         // 发起请求处理与解析请求
         const response = await controlService[saveFunName](_context, arg, {
           action: saveAction,
@@ -547,14 +570,19 @@ export class FormControl extends MainControl {
           // TODO 统一Error格式
           return;
         }
+        // TODO 取消拷贝模式
 
+        const { data: _data } = toRefs(this.state);
         // 请求后处理
-        this.state.data = response.data;
-
-        // TODO 表单onFormLoad
-      } catch (error) {
+        _data.value = response.data;
+        this.emit('ctrlEvent', { tag: this.props.name, action: 'save', data: [response.data] });
+        this.afterFormAction('save');
+        nextTick(() => {
+          formSubject.next({ type: 'save', data: _data.value });
+        })
+      } catch (error: any) {
+        App.getNotificationService().error({ message: '保存失败', description: error?.message || '' });
         // TODO 错误异常处理
-        console.log(error);
       }
     };
 
@@ -726,6 +754,9 @@ export class FormControl extends MainControl {
       case 'formGroupAction':
         this.handleFormGroupAction(tag, data);
         break;
+      case 'formButtonAction':
+        this.handleFormButtonAction(tag, data);
+        break;
       default:
         break;
     }
@@ -733,12 +764,95 @@ export class FormControl extends MainControl {
 
   /**
    * @description 处理表单分组行为
-   * @param {string} tag
-   * @param {*} data
+   * @protected
+   * @param {string} 标识
+   * @param {*} data 数据
    * @memberof FormControl
    */
-  public handleFormGroupAction(tag: string, data: any) {
-    console.log(tag, data);
+  protected handleFormGroupAction(tag: string, data: any) {
+    this.handleUIAction(data);
+  }
+
+  /**
+   * @description 处理表单按钮界面行为
+   * @protected
+   * @param {string} tag 按钮标识
+   * @param {*} data 数据
+   * @memberof FormControl
+   */
+  protected handleFormButtonAction(tag: string, data: any) {
+    this.handleUIAction(data);
+  }
+
+  /**
+   * @description 处理界面行为
+   * @private
+   * @param {*} data
+   * @return {*} 
+   * @memberof FormControl
+   */
+  private handleUIAction(data: any) {
+    if (!data) {
+      console.warn("工具栏执行参数不足");
+      return;
+    }
+    // 准备参数
+    const inputParam = {
+      context: this.state.context,
+      viewParams: this.state.viewParams,
+      data: this.getData(),
+      event: data.event,
+      actionEnvironment: this
+    };
+    // 执行行为
+    App.getAppActionService().execute(data, inputParam);
+  }
+
+  /**
+   * @description 表单值规则校验状态
+   * @private
+   * @return {*}  {Promise<boolean>}
+   * @memberof FormControl
+   */
+  private async formValidateStatus(): Promise<boolean> {
+    const form = this.getXDataCtrl()?.value;
+    let result: boolean = true;
+    if (form && hasFunction(form, 'validate')) {
+      try {
+        await form.validate();
+      } catch (error: any) {
+        result = false;
+        if (error.errorFields && error.errorFields.length) {
+          const { detailsModel } = this.state;
+          this.state.errorMessage = [];
+          error.errorFields.forEach((field: IParam) => {
+            const caption = detailsModel[field.name[0]]?.caption;
+            this.state.errorMessage.push(`${caption}: ${field.errors?.join('、')}`);
+          });
+        }
+      }
+    }
+    return result;
+  }
+
+  /**
+   * @description 展示错误信息
+   * @private
+   * @memberof FormControl
+   */
+  private showErrorMessage() {
+    const errorMessage = this.state.errorMessage;
+    if (errorMessage && errorMessage.length) {
+      const getMessage = () => {
+        const messages: any[] = [];
+        errorMessage.forEach((message: string) => {
+          messages.push(h('span', {}, message));
+        });
+        return messages;
+      }
+      const content = h('div', { class: 'error-messages', style: { 'display': 'flex', 'flex-direction': 'column' } }, getMessage());
+      App.getNotificationService().error({ message: '值规则错误', description: content });
+    }
   }
 
   /**

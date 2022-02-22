@@ -6,6 +6,7 @@ import { SearchFormControl, IActionParam, IParam, ControlAction, IContext } from
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;
@@ -26,8 +27,8 @@ interface CtrlEmit {
 const emit = defineEmits<CtrlEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHistoryItem, onCancel, onRemoveHistoryItem } = new SearchFormControl(ctrlState, props, emit).moduleInstall();
-
+const { name, state, getData, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHistoryItem, onCancel, onRemoveHistoryItem } = new SearchFormControl(ctrlState, props, emit).moduleInstall();
+defineExpose({ name, state, getData });
 </script>
 <template>
   <a-form 
@@ -39,61 +40,52 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
     <a-row>
       <a-col>
         <a-row>
-<a-col
-  :lg="{span: 12, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.n_customername_like.visible"
-    name="n_customername_like"
-    :rules="state.rules.n_customername_like"
-    :labelWidth="130"
-    :required="state.detailsModel.n_customername_like.required"
-    label="客户名称(文本包含(%))"
-    style="">
-      <div class="form-editor-container" style="">
-<AppInput
-  name="n_customername_like"
-  :disabled="state.detailsModel.n_customername_like.disabled"
-  type="text"
-  :value="state.data.n_customername_like"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-<a-col
-  :lg="{span: 6, offset: 0 }"
-  :md="{span: 6, offset: 0 }"
-  :sm="{span: 6, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.n_type_eq.visible"
-    name="n_type_eq"
-    :rules="state.rules.n_type_eq"
-    :labelWidth="130"
-    :required="state.detailsModel.n_type_eq.required"
-    label="类型(等于(=))"
-    style="">
-      <div class="form-editor-container" style="">
-<AppDropdownList
-  name="n_type_eq"
-  codeListTag="Sample__CustomerType"
-  codeListType="STATIC"
-  
-  :disabled="state.detailsModel.n_type_eq.disabled"
-  :context="state.context"
-  :viewParams="state.viewParams"
-  :value="state.data.n_type_eq"
-  :data="state.data"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
+          <AppFormItem 
+            name="n_customername_like"
+            label="客户名称(文本包含(%))"
+            labelPos="LEFT"
+            :labelWidth="130"
+            :showLabel="true"
+            :rules="state.rules.n_customername_like"
+            :required="state.detailsModel.n_customername_like.required"
+            :visible="state.detailsModel.n_customername_like.visible" 
+            :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 12,colMD: 24,}"
+            >
+            <div class="form-editor-container" style="">
+            <AppInput
+              name="n_customername_like"
+              :disabled="state.detailsModel.n_customername_like.disabled"
+              type="text"
+              :value="state.data.n_customername_like"
+              @editorEvent="onEditorEvent"
+            />
+            </div>
+          </AppFormItem>
+          <AppFormItem 
+            name="n_type_eq"
+            label="类型(等于(=))"
+            labelPos="LEFT"
+            :labelWidth="130"
+            :showLabel="true"
+            :rules="state.rules.n_type_eq"
+            :required="state.detailsModel.n_type_eq.required"
+            :visible="state.detailsModel.n_type_eq.visible" 
+            :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 6,colMD: 6,colSM: 6,}"
+            >
+            <div class="form-editor-container" style="">
+            <AppDropdownList
+              name="n_type_eq"
+              codeListTag="Sample__CustomerType"
+              codeListType="STATIC"
+              :disabled="state.detailsModel.n_type_eq.disabled"
+              :context="state.context"
+              :viewParams="state.viewParams"
+              :value="state.data.n_type_eq"
+              :data="state.data"
+              @editorEvent="onEditorEvent"
+            /> 
+            </div>
+          </AppFormItem>
       </a-row>
       </a-col>
       <a-col class='search-form-footer'>

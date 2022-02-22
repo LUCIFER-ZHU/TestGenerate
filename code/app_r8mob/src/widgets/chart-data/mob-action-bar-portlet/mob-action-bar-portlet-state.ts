@@ -2,8 +2,6 @@
 export const ctrlState = {
   controlCodeName: 'MobActionBar',
   controlName: 'db_sysportlet2',
-  showTitleBar: true,
-  title: '操作栏',
   portletType: 'ACTIONBAR',
   // 部件高度
   height: 100,
@@ -16,7 +14,7 @@ export const ctrlState = {
       showCaption:true,
       actionName: '移动端编辑', 
       icon: '', 
-      imagePath: '', 
+      imgPath: '', 
       disabled: false, visabled: true, 
       dataAccessAction: true, 
       getNoPrivDisplayMode: 6,
@@ -31,7 +29,7 @@ export const ctrlState = {
       showCaption:true,
       actionName: '刷新', 
       icon: 'fa fa-refresh', 
-      imagePath: '', 
+      imgPath: '', 
       disabled: false, visabled: true, 
       dataAccessAction: true, 
       getNoPrivDisplayMode: 6,

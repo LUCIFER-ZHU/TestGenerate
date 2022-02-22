@@ -8,9 +8,9 @@ import DistrictTreeNavGridView from '@views/sample/district-tree-nav-grid-view';
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -51,22 +51,22 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'DistrictTreeNavInfoEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </DistrictTreeNavInfoEditView>
         <CityTreeNavGridView
           v-if="state.selection.viewName && state.selection.viewName === 'CityTreeNavGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </CityTreeNavGridView>
         <DistrictTreeNavGridView
           v-if="state.selection.viewName && state.selection.viewName === 'DistrictTreeNavGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </DistrictTreeNavGridView>
       </template>
     </AppSplit>

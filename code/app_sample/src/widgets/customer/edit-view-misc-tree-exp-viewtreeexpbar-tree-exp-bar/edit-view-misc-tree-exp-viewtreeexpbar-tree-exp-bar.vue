@@ -7,9 +7,9 @@ import CustomerNoTitleEditView from '@views/sample/customer-no-title-edit-view';
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -45,11 +45,13 @@ defineExpose({ name, state });
           
           <EditViewMiscTreeTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></EditViewMiscTreeTree>
         </div>
@@ -59,8 +61,8 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'CustomerNoTitleEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </CustomerNoTitleEditView>
       </template>
     </AppSplit>

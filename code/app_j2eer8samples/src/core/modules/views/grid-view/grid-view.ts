@@ -42,11 +42,11 @@ public declare state: GridViewState;
    * @memberof MDView
    */
   public onCtrlEvent(actionParam: IActionParam) {
+    super.onCtrlEvent(actionParam);
     const { tag, action, data } = actionParam;
     if (Object.is(tag, 'grid')) {
       this.MDCtrlEvent(action, data);
     }
-    super.onCtrlEvent(actionParam);
   }
 
   /**

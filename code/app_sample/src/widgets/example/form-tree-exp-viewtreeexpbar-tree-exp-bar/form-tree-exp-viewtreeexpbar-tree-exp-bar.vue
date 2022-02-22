@@ -13,9 +13,9 @@ import ExampleFormValueFormatEditView from '@views/sample/example-form-value-for
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -51,11 +51,13 @@ defineExpose({ name, state });
           
           <FormTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></FormTree>
         </div>
@@ -65,50 +67,50 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleFormDetailEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleFormDetailEditView>
         <ExampleFormCssAndIconEditView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleFormCssAndIconEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleFormCssAndIconEditView>
         <ExampleFormEvnetAndInvokeCustomView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleFormEvnetAndInvokeCustomView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleFormEvnetAndInvokeCustomView>
         <ExampleFormLayoutEditView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleFormLayoutEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleFormLayoutEditView>
         <ExampleFormLogicEditView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleFormLogicEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleFormLogicEditView>
         <ExampleFormAdvGroupEditView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleFormAdvGroupEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleFormAdvGroupEditView>
         <ExampleFormValueFormatEditView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleFormValueFormatEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleFormValueFormatEditView>
       </template>
     </AppSplit>

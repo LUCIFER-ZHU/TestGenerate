@@ -12,6 +12,7 @@ import ChartDataDataViewExpView from '@views/sample/chart-data-data-view-exp-vie
 import ChartDataTreeGridExView from '@views/sample/chart-data-tree-grid-ex-view';
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;
@@ -32,337 +33,299 @@ interface CtrlEmit {
 const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { name, state, load, loadDraft, save, remove, refresh, onEditorEvent, onComponentEvent, getData } = new FormControl(ctrlState, props, emit).moduleInstall();
+const { name, state, load, loadDraft, save, remove, refresh, onEditorEvent, onComponentEvent, getData, xDataCtrl } = new FormControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ name, state, load, loadDraft, save, remove, refresh, getData });
 </script>
 <template>
-  <a-form name="Embeddedview" class="app-form" style="" :model="state.data" :rules="state.rules">
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormGroup 
-    v-show="state.detailsModel.grouppanel2.visible" 
-    name="grouppanel2" 
-    title="看板"
+  <a-form
+    name="Embeddedview"
+    class="app-form"
     style=""
-    :infoGroupMode="false"
-    :titleBarCloseMode="0"
-    :showCaption="true"
-    :uIActionGroup="state.detailsModel.grouppanel2.uIActionGroup"
-    @componentEvent="onComponentEvent">
-    <a-row>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormDruipart 
-    v-show="state.detailsModel.druipart5.visible" 
-    
-    style="height: 300.0px"
-    name="druipart5" 
-    title="看板视图" 
-    :context="context"
-    :viewParams="viewParams"
-    :data="state.data"
-    :viewSubject="state.viewSubject"
-    v-slot="druipartParams">
-    <ChartDataKanbanView
-      :class="['app-view-layout--from-druipart']"
-      :context="druipartParams.context"
-      :viewParams="druipartParams.viewParams"
-      :viewDefaultUsage="false"
-      :noViewCaption="true"
-      @viewEvent="druipartParams.viewEvent"
-    >
-    </ChartDataKanbanView>
-  </AppFormDruipart>
-</a-col>
-    </a-row>
-  </AppFormGroup>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormGroup 
-    v-show="state.detailsModel.grouppanel1.visible" 
-    name="grouppanel1" 
-    title="树"
-    style=""
-    :infoGroupMode="false"
-    :titleBarCloseMode="0"
-    :showCaption="true"
-    :uIActionGroup="state.detailsModel.grouppanel1.uIActionGroup"
-    @componentEvent="onComponentEvent">
-    <a-row>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormDruipart 
-    v-show="state.detailsModel.druipart3.visible" 
-    
-    style="height: 200.0px"
-    name="druipart3" 
-    title="树视图" 
-    :context="context"
-    :viewParams="viewParams"
-    :data="state.data"
-    :viewSubject="state.viewSubject"
-    v-slot="druipartParams">
-    <ChartDataTreeView
-      :class="['app-view-layout--from-druipart']"
-      :context="druipartParams.context"
-      :viewParams="druipartParams.viewParams"
-      :viewDefaultUsage="false"
-      :noViewCaption="true"
-      @viewEvent="druipartParams.viewEvent"
-    >
-    </ChartDataTreeView>
-  </AppFormDruipart>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormDruipart 
-    v-show="state.detailsModel.druipart4.visible" 
-    
-    style="height: 400.0px"
-    name="druipart4" 
-    title="树导航视图" 
-    :context="context"
-    :viewParams="viewParams"
-    :data="state.data"
-    :viewSubject="state.viewSubject"
-    v-slot="druipartParams">
-    <ChartDataTreeExpForChartView
-      :class="['app-view-layout--from-druipart']"
-      :context="druipartParams.context"
-      :viewParams="druipartParams.viewParams"
-      :viewDefaultUsage="false"
-      :noViewCaption="true"
-      @viewEvent="druipartParams.viewEvent"
-    >
-    </ChartDataTreeExpForChartView>
-  </AppFormDruipart>
-</a-col>
-    </a-row>
-  </AppFormGroup>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormGroup 
-    v-show="state.detailsModel.group1.visible" 
-    name="group1" 
-    title="列表"
-    style=""
-    :infoGroupMode="false"
-    :titleBarCloseMode="0"
-    :showCaption="true"
-    :uIActionGroup="state.detailsModel.group1.uIActionGroup"
-    @componentEvent="onComponentEvent">
-    <a-row>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormDruipart 
-    v-show="state.detailsModel.druipart1.visible" 
-    
-    style="height: 300.0px"
-    name="druipart1" 
-    title="列表视图" 
-    :context="context"
-    :viewParams="viewParams"
-    :data="state.data"
-    :viewSubject="state.viewSubject"
-    v-slot="druipartParams">
-    <ChartDataUsr3ListView
-      :class="['app-view-layout--from-druipart']"
-      :context="druipartParams.context"
-      :viewParams="druipartParams.viewParams"
-      :viewDefaultUsage="false"
-      :noViewCaption="true"
-      @viewEvent="druipartParams.viewEvent"
-    >
-    </ChartDataUsr3ListView>
-  </AppFormDruipart>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormDruipart 
-    v-show="state.detailsModel.druipart2.visible" 
-    
-    style="height: 400.0px"
-    name="druipart2" 
-    title="列表导航视图" 
-    :context="context"
-    :viewParams="viewParams"
-    :data="state.data"
-    :viewSubject="state.viewSubject"
-    v-slot="druipartParams">
-    <ChartDataListExpView
-      :class="['app-view-layout--from-druipart']"
-      :context="druipartParams.context"
-      :viewParams="druipartParams.viewParams"
-      :viewDefaultUsage="false"
-      :noViewCaption="true"
-      @viewEvent="druipartParams.viewEvent"
-    >
-    </ChartDataListExpView>
-  </AppFormDruipart>
-</a-col>
-    </a-row>
-  </AppFormGroup>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormGroup 
-    v-show="state.detailsModel.grouppanel3.visible" 
-    name="grouppanel3" 
-    title="数据视图"
-    style=""
-    :infoGroupMode="false"
-    :titleBarCloseMode="0"
-    :showCaption="true"
-    :uIActionGroup="state.detailsModel.grouppanel3.uIActionGroup"
-    @componentEvent="onComponentEvent">
-    <a-row>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormDruipart 
-    v-show="state.detailsModel.druipart6.visible" 
-    
-    style="height: 400.0px"
-    name="druipart6" 
-    title="数据视图" 
-    :context="context"
-    :viewParams="viewParams"
-    :data="state.data"
-    :viewSubject="state.viewSubject"
-    v-slot="druipartParams">
-    <ChartDataDataView
-      :class="['app-view-layout--from-druipart']"
-      :context="druipartParams.context"
-      :viewParams="druipartParams.viewParams"
-      :viewDefaultUsage="false"
-      :noViewCaption="true"
-      @viewEvent="druipartParams.viewEvent"
-    >
-    </ChartDataDataView>
-  </AppFormDruipart>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormDruipart 
-    v-show="state.detailsModel.druipart7.visible" 
-    
-    style="height: 400.0px"
-    name="druipart7" 
-    title="卡片导航" 
-    :context="context"
-    :viewParams="viewParams"
-    :data="state.data"
-    :viewSubject="state.viewSubject"
-    v-slot="druipartParams">
-    <ChartDataDataViewExpView
-      :class="['app-view-layout--from-druipart']"
-      :context="druipartParams.context"
-      :viewParams="druipartParams.viewParams"
-      :viewDefaultUsage="false"
-      :noViewCaption="true"
-      @viewEvent="druipartParams.viewEvent"
-    >
-    </ChartDataDataViewExpView>
-  </AppFormDruipart>
-</a-col>
-    </a-row>
-  </AppFormGroup>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormGroup 
-    v-show="state.detailsModel.grouppanel4.visible" 
-    name="grouppanel4" 
-    title="树表格"
-    style=""
-    :infoGroupMode="false"
-    :titleBarCloseMode="0"
-    :showCaption="true"
-    :uIActionGroup="state.detailsModel.grouppanel4.uIActionGroup"
-    @componentEvent="onComponentEvent">
-    <a-row>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormDruipart 
-    v-show="state.detailsModel.druipart8.visible" 
-    
-    style="height: 400.0px"
-    name="druipart8" 
-    title="树表格" 
-    :context="context"
-    :viewParams="viewParams"
-    :data="state.data"
-    :viewSubject="state.viewSubject"
-    v-slot="druipartParams">
-    <ChartDataTreeGridExView
-      :class="['app-view-layout--from-druipart']"
-      :context="druipartParams.context"
-      :viewParams="druipartParams.viewParams"
-      :viewDefaultUsage="false"
-      :noViewCaption="true"
-      @viewEvent="druipartParams.viewEvent"
-    >
-    </ChartDataTreeGridExView>
-  </AppFormDruipart>
-</a-col>
-    </a-row>
-  </AppFormGroup>
-</a-col>
+    :model="state.data"
+    :rules="state.rules"
+    ref="xDataCtrl"
+  >
+    <AppFormGroup 
+      name="grouppanel2"
+      title="看板"
+      :visible="state.detailsModel.grouppanel2.visible" 
+      :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+      :infoGroupMode="false"
+      :titleBarCloseMode="0"
+      :showCaption="true"
+      :uIActionGroup="state.detailsModel.grouppanel2.uIActionGroup"
+      @componentEvent="onComponentEvent">
+        <AppFormDruipart 
+          name="druipart5" 
+          title="看板视图"
+          :formSubject="state.formSubject"
+          :visible="state.detailsModel.druipart5.visible"
+          viewCodeName="ChartDataKanbanView"
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          style="height: 300.0px;"
+          paramItem="srfkey"
+          deCodeName="chartdata"
+          :context="context"
+          :viewParams="viewParams"
+          :data="state.data"
+          :viewSubject="state.viewSubject">
+            <template #default="druipartParams">
+            <ChartDataKanbanView
+              :class="['app-view-layout--from-druipart']"
+              :context="druipartParams.context"
+              :viewParams="druipartParams.viewParams"
+              :viewDefaultUsage="false"
+              :showCaptionBar="false"
+              openType="EMBED"
+              :viewSubject="state.viewSubject"
+              @viewEvent="druipartParams.viewEvent"
+            >
+            </ChartDataKanbanView>
+            </template>
+        </AppFormDruipart>
+    </AppFormGroup>
+    <AppFormGroup 
+      name="grouppanel1"
+      title="树"
+      :visible="state.detailsModel.grouppanel1.visible" 
+      :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+      :infoGroupMode="false"
+      :titleBarCloseMode="0"
+      :showCaption="true"
+      :uIActionGroup="state.detailsModel.grouppanel1.uIActionGroup"
+      @componentEvent="onComponentEvent">
+        <AppFormDruipart 
+          name="druipart3" 
+          title="树视图"
+          :formSubject="state.formSubject"
+          :visible="state.detailsModel.druipart3.visible"
+          viewCodeName="ChartDataTreeView"
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          style="height: 200.0px;"
+          paramItem="srfkey"
+          deCodeName="chartdata"
+          :context="context"
+          :viewParams="viewParams"
+          :data="state.data"
+          :viewSubject="state.viewSubject">
+            <template #default="druipartParams">
+            <ChartDataTreeView
+              :class="['app-view-layout--from-druipart']"
+              :context="druipartParams.context"
+              :viewParams="druipartParams.viewParams"
+              :viewDefaultUsage="false"
+              :showCaptionBar="false"
+              openType="EMBED"
+              :viewSubject="state.viewSubject"
+              @viewEvent="druipartParams.viewEvent"
+            >
+            </ChartDataTreeView>
+            </template>
+        </AppFormDruipart>
+        <AppFormDruipart 
+          name="druipart4" 
+          title="树导航视图"
+          :formSubject="state.formSubject"
+          :visible="state.detailsModel.druipart4.visible"
+          viewCodeName="ChartDataTreeExpForChartView"
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          style="height: 400.0px;"
+          paramItem="srfkey"
+          deCodeName="chartdata"
+          :context="context"
+          :viewParams="viewParams"
+          :data="state.data"
+          :viewSubject="state.viewSubject">
+            <template #default="druipartParams">
+            <ChartDataTreeExpForChartView
+              :class="['app-view-layout--from-druipart']"
+              :context="druipartParams.context"
+              :viewParams="druipartParams.viewParams"
+              :viewDefaultUsage="false"
+              :showCaptionBar="false"
+              openType="EMBED"
+              :viewSubject="state.viewSubject"
+              @viewEvent="druipartParams.viewEvent"
+            >
+            </ChartDataTreeExpForChartView>
+            </template>
+        </AppFormDruipart>
+    </AppFormGroup>
+    <AppFormGroup 
+      name="group1"
+      title="列表"
+      :visible="state.detailsModel.group1.visible" 
+      :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+      :infoGroupMode="false"
+      :titleBarCloseMode="0"
+      :showCaption="true"
+      :uIActionGroup="state.detailsModel.group1.uIActionGroup"
+      @componentEvent="onComponentEvent">
+        <AppFormDruipart 
+          name="druipart1" 
+          title="列表视图"
+          :formSubject="state.formSubject"
+          :visible="state.detailsModel.druipart1.visible"
+          viewCodeName="ChartDataUsr3ListView"
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          style="height: 300.0px;"
+          paramItem="srfkey"
+          deCodeName="chartdata"
+          :context="context"
+          :viewParams="viewParams"
+          :data="state.data"
+          :viewSubject="state.viewSubject">
+            <template #default="druipartParams">
+            <ChartDataUsr3ListView
+              :class="['app-view-layout--from-druipart']"
+              :context="druipartParams.context"
+              :viewParams="druipartParams.viewParams"
+              :viewDefaultUsage="false"
+              :showCaptionBar="false"
+              openType="EMBED"
+              :viewSubject="state.viewSubject"
+              @viewEvent="druipartParams.viewEvent"
+            >
+            </ChartDataUsr3ListView>
+            </template>
+        </AppFormDruipart>
+        <AppFormDruipart 
+          name="druipart2" 
+          title="列表导航视图"
+          :formSubject="state.formSubject"
+          :visible="state.detailsModel.druipart2.visible"
+          viewCodeName="ChartDataListExpView"
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          style="height: 400.0px;"
+          paramItem="srfkey"
+          deCodeName="chartdata"
+          :context="context"
+          :viewParams="viewParams"
+          :data="state.data"
+          :viewSubject="state.viewSubject">
+            <template #default="druipartParams">
+            <ChartDataListExpView
+              :class="['app-view-layout--from-druipart']"
+              :context="druipartParams.context"
+              :viewParams="druipartParams.viewParams"
+              :viewDefaultUsage="false"
+              :showCaptionBar="false"
+              openType="EMBED"
+              :viewSubject="state.viewSubject"
+              @viewEvent="druipartParams.viewEvent"
+            >
+            </ChartDataListExpView>
+            </template>
+        </AppFormDruipart>
+    </AppFormGroup>
+    <AppFormGroup 
+      name="grouppanel3"
+      title="数据视图"
+      :visible="state.detailsModel.grouppanel3.visible" 
+      :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+      :infoGroupMode="false"
+      :titleBarCloseMode="0"
+      :showCaption="true"
+      :uIActionGroup="state.detailsModel.grouppanel3.uIActionGroup"
+      @componentEvent="onComponentEvent">
+        <AppFormDruipart 
+          name="druipart6" 
+          title="数据视图"
+          :formSubject="state.formSubject"
+          :visible="state.detailsModel.druipart6.visible"
+          viewCodeName="ChartDataDataView"
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          style="height: 400.0px;"
+          paramItem="srfkey"
+          deCodeName="chartdata"
+          :context="context"
+          :viewParams="viewParams"
+          :data="state.data"
+          :viewSubject="state.viewSubject">
+            <template #default="druipartParams">
+            <ChartDataDataView
+              :class="['app-view-layout--from-druipart']"
+              :context="druipartParams.context"
+              :viewParams="druipartParams.viewParams"
+              :viewDefaultUsage="false"
+              :showCaptionBar="false"
+              openType="EMBED"
+              :viewSubject="state.viewSubject"
+              @viewEvent="druipartParams.viewEvent"
+            >
+            </ChartDataDataView>
+            </template>
+        </AppFormDruipart>
+        <AppFormDruipart 
+          name="druipart7" 
+          title="卡片导航"
+          :formSubject="state.formSubject"
+          :visible="state.detailsModel.druipart7.visible"
+          viewCodeName="ChartDataDataViewExpView"
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          style="height: 400.0px;"
+          paramItem="srfkey"
+          deCodeName="chartdata"
+          :context="context"
+          :viewParams="viewParams"
+          :data="state.data"
+          :viewSubject="state.viewSubject">
+            <template #default="druipartParams">
+            <ChartDataDataViewExpView
+              :class="['app-view-layout--from-druipart']"
+              :context="druipartParams.context"
+              :viewParams="druipartParams.viewParams"
+              :viewDefaultUsage="false"
+              :showCaptionBar="false"
+              openType="EMBED"
+              :viewSubject="state.viewSubject"
+              @viewEvent="druipartParams.viewEvent"
+            >
+            </ChartDataDataViewExpView>
+            </template>
+        </AppFormDruipart>
+    </AppFormGroup>
+    <AppFormGroup 
+      name="grouppanel4"
+      title="树表格"
+      :visible="state.detailsModel.grouppanel4.visible" 
+      :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+      :infoGroupMode="false"
+      :titleBarCloseMode="0"
+      :showCaption="true"
+      :uIActionGroup="state.detailsModel.grouppanel4.uIActionGroup"
+      @componentEvent="onComponentEvent">
+        <AppFormDruipart 
+          name="druipart8" 
+          title="树表格"
+          :formSubject="state.formSubject"
+          :visible="state.detailsModel.druipart8.visible"
+          viewCodeName="ChartDataTreeGridExView"
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          style="height: 400.0px;"
+          paramItem="srfkey"
+          deCodeName="chartdata"
+          :context="context"
+          :viewParams="viewParams"
+          :data="state.data"
+          :viewSubject="state.viewSubject">
+            <template #default="druipartParams">
+            <ChartDataTreeGridExView
+              :class="['app-view-layout--from-druipart']"
+              :context="druipartParams.context"
+              :viewParams="druipartParams.viewParams"
+              :viewDefaultUsage="false"
+              :showCaptionBar="false"
+              openType="EMBED"
+              :viewSubject="state.viewSubject"
+              @viewEvent="druipartParams.viewEvent"
+            >
+            </ChartDataTreeGridExView>
+            </template>
+        </AppFormDruipart>
+    </AppFormGroup>
   </a-form>
 </template>
 <style lang="scss">

@@ -3,7 +3,6 @@ import { Subject } from 'rxjs';
 import { FilterOutlined } from '@ant-design/icons-vue';
 import { GridView, IActionParam, IParam, IContext } from '@core';
 import { viewState } from './chart-data-usr2-grid-view-state';
-import { DefaultQuickSearchForm } from '@widgets/chart-data/default-quick-search-form';
 import { RoweditgridGrid } from '@widgets/chart-data/roweditgrid-grid';
 import { DefaultSearchForm } from '@widgets/chart-data/default-search-form';
 
@@ -28,24 +27,18 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSearchEvent } = new GridView(viewState, props, emit).moduleInstall();
+const gridView = new GridView(viewState, props, emit).moduleInstall();
+const { state, grid, searchForm, quickSearchForm, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSearchEvent } = gridView;
 
 </script>
 
 <template>
-  <AppGridViewLayout :class="['app-grid-view', state.viewSysCss]">
+  <AppGridViewLayout :class="['app-grid-view', state.viewSysCss]" :showCaptionBar="state.showCaptionBar">
     <template v-slot:caption>
       <AppIconText class="app-view__caption" size="large" :text="state.viewCaption" />
     </template>
-    <template v-slot:quickSearchForm>
-    <DefaultQuickSearchForm
-      name="quicksearchform"
-      :context="state.context"
-      :viewParams="state.viewParams"
-      :controlAction="state.quicksearchform.action"
-      :viewSubject="state.viewSubject"
-      @ctrlEvent="onCtrlEvent"
-    ></DefaultQuickSearchForm>
+    <template v-slot:quickGroupSearch>
+      <AppQuickGroup v-if="state.enableQuickGroup" :quickGroupModel="state.quickGroupPSCodeList" @onQuickGroupEvent="onQuickGroupEvent" />
     </template>
     <template v-slot:toolbar>
       <AppToolbar
@@ -64,15 +57,16 @@ const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSear
       :viewParams="state.viewParams"
       :controlAction="state.grid.action"
       :viewSubject="state.viewSubject"
+      :parent="gridView"
       @ctrlEvent="onCtrlEvent"
     ></RoweditgridGrid>
     <template v-slot:quickSearch>
       <div class='app-quick-search'>
-      <a-input v-if="state.enableQuickSearch" @pressEnter="onQuickSearchEvent($event)" allowClear/>
-      <a-popover trigger="click" :overlayStyle="{width: '50%'}" placement="bottom">
+      <a-input-search v-if="state.enableQuickSearch" @search="onQuickSearchEvent" allowClear/>
+      <a-popover v-show="state.expandSearchForm" trigger="click" :overlayStyle="{width: '50%'}" placement="bottom">
         <template #content>
           <DefaultSearchForm
-            v-if="state.expandSearchForm"
+            ref="searchForm"
             name="searchform"
             :context="state.context"
             :viewParams="state.viewParams"

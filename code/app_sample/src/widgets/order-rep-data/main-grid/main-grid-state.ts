@@ -1,4 +1,4 @@
-import { ControlVOBase, IParam, GridService } from '@core';
+import { ControlVOBase, IParam, GridService, isEmpty, Verify } from '@core';
 import { OrderRepDataService } from '@api/order-rep-data/order-rep-data-service';
 
 export class ControlVO extends ControlVOBase {
@@ -6,77 +6,66 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
   }
-
   get totalval() {
     return this.$DO.totalval;
   }
   set totalval(value: any) {
     this.$DO.totalval = value;
   }
-
   get payingval() {
     return this.$DO.payingval;
   }
   set payingval(value: any) {
     this.$DO.payingval = value;
   }
-
   get finishedval() {
     return this.$DO.finishedval;
   }
   set finishedval(value: any) {
     this.$DO.finishedval = value;
   }
-
   get monthval() {
     return this.$DO.monthval;
   }
   set monthval(value: any) {
     this.$DO.monthval = value;
   }
-
   get processingval() {
     return this.$DO.processingval;
   }
   set processingval(value: any) {
     this.$DO.processingval = value;
   }
-
   get quarterval() {
     return this.$DO.quarterval;
   }
   set quarterval(value: any) {
     this.$DO.quarterval = value;
   }
-
   get yearval() {
     return this.$DO.yearval;
   }
   set yearval(value: any) {
     this.$DO.yearval = value;
   }
-
   get srfmajortext() {
     return this.$DO.orderrepdataname;
   }
   set srfmajortext(value: any) {
     this.$DO.orderrepdataname = value;
   }
-
   get srfdataaccaction() {
     return this.$DO.orderrepdataid;
   }
   set srfdataaccaction(value: any) {
     this.$DO.orderrepdataid = value;
   }
-
   get srfkey() {
     return this.$DO.orderrepdataid;
   }
   set srfkey(value: any) {
     this.$DO.orderrepdataid = value;
   }
-
   get customername() {
     return this.$DO.customername;
   }
@@ -89,8 +78,17 @@ export class ControlVO extends ControlVOBase {
 export const ctrlState = {
   controlCodeName: 'Main',
   controlName: 'grid',
-  appEntityCodeName:'OrderRepData',
+  totalColumnWidth: 1070,
+  selectColumnWidth: 50,
+  appEntityCodeName: 'OrderRepData',
+  appDeCodeName:'OrderRepData',
+  appDeLogicName: '订单报表数据',
+  appDeKeyFieldName: 'OrderRepDataId',
+  appDeMajorFieldName: 'OrderRepDataName',
   controlService: new GridService<ControlVO>(ControlVO, new OrderRepDataService() ),
+  //  新建默认值
+  createDefaultItems: [
+  ],
   items: [],
   selectedRowKeys: [],
   // 多数据部件分组
@@ -122,8 +120,8 @@ export const ctrlState = {
     aggMode: "NONE",
     aggData: [],
   },
-  uAColumnModel:[
-  ],
+  uAColumnModel: {
+  },
   gridEditState:{
     srfkey:{},
   },
@@ -216,9 +214,21 @@ export const ctrlState = {
       enableSort: true,
       aggMode: "NONE",
     },
+    {
+      title: "",
+      columnType: "EMPTYCOLUMN",
+      dataIndex: "autowidthcolumn",
+      align: "center",
+      resizable: true,
+      ellipsis: true,
+      aggMode: "NONE",
+    },
   ],
   // 是否单选
   isSingleSelect:false,
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   rules:{
   }
 };

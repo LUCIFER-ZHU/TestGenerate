@@ -5,6 +5,7 @@ import { GridControl, IActionParam, IParam, IContext, ControlAction, deepCopy } 
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams: IParam;
   multiple?: boolean;
@@ -35,11 +36,11 @@ interface CtrlEmit {
 const emit = defineEmits<CtrlEmit>();
 
 // 安装功能模块，提供状态和能力
-const { name, state, useCustom, onEditorEvent, onToolbarEvent, newRow, remove, save, load, refresh, getData } = new GridControl(ctrlState, props, emit).moduleInstall();
-const { useScrollOption, useRowKey, useRowClassName, useCustomRow, useRowSelectionOption, onResizeColumn, onGridChange } = useCustom;
+const { name, state, useCustom, onEditorEvent, onToolbarEvent, onActionColEvent, newRow, remove, save, load, refresh, getData, exportExcel } = new GridControl(ctrlState, props, emit).moduleInstall();
+const { useScrollOption, useRowKey, useRowClassName, useCustomRow, useRowSelectionOption, onResizeColumn, onGridChange, useExpandedRowKeys, onExpandedRowsChange } = useCustom;
 
 // 暴露内部状态及能力
-defineExpose({ name, state, newRow, remove, save, load, refresh, getData });
+defineExpose({ name, state, newRow, remove, save, load, refresh, getData, exportExcel });
 </script>
 <template>
     <a-form name="grid" class="app-grid-form"  >
@@ -53,11 +54,13 @@ defineExpose({ name, state, newRow, remove, save, load, refresh, getData });
         :sortDirections="['ascend', 'descend']"
         :data-source="state.items"
         :row-selection="useRowSelectionOption"
+        :expandedRowKeys="useExpandedRowKeys"
         :columns="state.columnsModel"
         :pagination="state.mdCtrlPaging.pagination"
         :customRow="useCustomRow"
         :rowClassName="useRowClassName"
         @change="onGridChange"
+        @expandedRowsChange="onExpandedRowsChange"
         @resizeColumn="onResizeColumn"
       >
         <template #emptyText>
@@ -68,80 +71,80 @@ defineExpose({ name, state, newRow, remove, save, load, refresh, getData });
           </div>
         </template>
         <template #headerCell="{title, column}">
-<div v-if="Object.is(column.dataIndex, 'mapdataname')" class="header-cell">
+          <div v-if="Object.is(column.dataIndex, 'mapdataname')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
-<div v-if="Object.is(column.dataIndex, 'sortvalue')" class="header-cell">
+              <span class="title">{{title}}</span>
+            
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'sortvalue')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
-<div v-if="Object.is(column.dataIndex, 'grouping')" class="header-cell">
+              <span class="title">{{title}}</span>
+            
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'grouping')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
-<div v-if="Object.is(column.dataIndex, 'type')" class="header-cell">
+              <span class="title">{{title}}</span>
+            
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'type')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
-<div v-if="Object.is(column.dataIndex, 'longitude')" class="header-cell">
+              <span class="title">{{title}}</span>
+            
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'longitude')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
-<div v-if="Object.is(column.dataIndex, 'latitude')" class="header-cell">
+              <span class="title">{{title}}</span>
+            
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'latitude')" class="header-cell">
 
-    <span class="title">{{title}}</span>
-  
-</div>
+              <span class="title">{{title}}</span>
+            
+          </div>
         </template>
         <template #bodyCell="{ column, text, record, index }">
-<div v-if="Object.is(column.dataIndex, 'mapdataname')" class="table-cell">
-
-  <div class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
-<div v-if="Object.is(column.dataIndex, 'sortvalue')" class="table-cell">
-
-  <div class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
-<div v-if="Object.is(column.dataIndex, 'grouping')" class="table-cell">
-
-  <div class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
-<div v-if="Object.is(column.dataIndex, 'type')" class="table-cell">
-
-  <div class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
-<div v-if="Object.is(column.dataIndex, 'longitude')" class="table-cell">
-
-  <div class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
-<div v-if="Object.is(column.dataIndex, 'latitude')" class="table-cell">
-
-  <div class="text-cell">
-    <span class="text">{{text}}</span>
-  </div>
-    
-</div>
+          <div v-if="Object.is(column.dataIndex, 'mapdataname')" class="table-cell">
+            <div class="text-cell">
+              <span class="text">{{text}}</span>
+              
+            </div>
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'sortvalue')" class="table-cell">
+            <div class="text-cell">
+              <span class="text">{{text}}</span>
+              
+            </div>
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'grouping')" class="table-cell">
+            <div class="text-cell">
+              <span class="text">{{text}}</span>
+              
+            </div>
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'type')" class="table-cell">
+            <div class="text-cell">
+              <AppCodelist
+                name="type"
+                codeListTag="Sample__MapDataType"
+                :context="state.context"
+                :data="record"
+                :value="text"
+                :viewParams="state.viewParams"
+              ></AppCodelist>
+            </div>
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'longitude')" class="table-cell">
+            <div class="text-cell">
+              <span class="text">{{text}}</span>
+              
+            </div>
+          </div>
+          <div v-if="Object.is(column.dataIndex, 'latitude')" class="table-cell">
+            <div class="text-cell">
+              <span class="text">{{text}}</span>
+              
+            </div>
+          </div>
         </template>
 
       </a-table>

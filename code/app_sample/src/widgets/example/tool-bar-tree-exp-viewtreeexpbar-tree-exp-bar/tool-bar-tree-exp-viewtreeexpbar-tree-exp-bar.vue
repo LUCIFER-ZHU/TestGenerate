@@ -9,9 +9,9 @@ import ExampleToolbarCssAndIconCustomView from '@views/sample/example-toolbar-cs
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -47,11 +47,13 @@ defineExpose({ name, state });
           
           <ToolBarTreeTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></ToolBarTreeTree>
         </div>
@@ -61,22 +63,22 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleToolbarBaseCustomView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleToolbarBaseCustomView>
         <ExampleToolbarGroupCustomView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleToolbarGroupCustomView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleToolbarGroupCustomView>
         <ExampleToolbarCssAndIconCustomView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleToolbarCssAndIconCustomView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleToolbarCssAndIconCustomView>
       </template>
     </AppSplit>

@@ -6,6 +6,7 @@ import { SearchFormControl, IActionParam, IParam, ControlAction, IContext } from
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;
@@ -26,8 +27,8 @@ interface CtrlEmit {
 const emit = defineEmits<CtrlEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHistoryItem, onCancel, onRemoveHistoryItem } = new SearchFormControl(ctrlState, props, emit).moduleInstall();
-
+const { name, state, getData, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHistoryItem, onCancel, onRemoveHistoryItem } = new SearchFormControl(ctrlState, props, emit).moduleInstall();
+defineExpose({ name, state, getData });
 </script>
 <template>
   <a-form 
@@ -39,61 +40,52 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
     <a-row>
       <a-col>
         <a-row>
-<a-col
-  :lg="{span: 8, offset: 0 }"
-  :md="{span: 8, offset: 0 }"
-  :sm="{span: 12, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.n_state_eq.visible"
-    name="n_state_eq"
-    :rules="state.rules.n_state_eq"
-    :labelWidth="130"
-    :required="state.detailsModel.n_state_eq.required"
-    label="订单状态(等于(=))"
-    style="">
-      <div class="form-editor-container" style="">
-<AppDropdownList
-  name="n_state_eq"
-  codeListTag="Sample__OrderState"
-  codeListType="STATIC"
-  
-  :disabled="state.detailsModel.n_state_eq.disabled"
-  :context="state.context"
-  :viewParams="state.viewParams"
-  :value="state.data.n_state_eq"
-  :data="state.data"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-<a-col
-  :lg="{span: 8, offset: 0 }"
-  :md="{span: 8, offset: 0 }"
-  :sm="{span: 12, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.n_ordername_like.visible"
-    name="n_ordername_like"
-    :rules="state.rules.n_ordername_like"
-    :labelWidth="130"
-    :required="state.detailsModel.n_ordername_like.required"
-    label="订单名称(文本包含(%))"
-    style="">
-      <div class="form-editor-container" style="">
-<AppInput
-  name="n_ordername_like"
-  :disabled="state.detailsModel.n_ordername_like.disabled"
-  type="text"
-  :value="state.data.n_ordername_like"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
+          <AppFormItem 
+            name="n_state_eq"
+            label="订单状态(等于(=))"
+            labelPos="LEFT"
+            :labelWidth="130"
+            :showLabel="true"
+            :rules="state.rules.n_state_eq"
+            :required="state.detailsModel.n_state_eq.required"
+            :visible="state.detailsModel.n_state_eq.visible" 
+            :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 8,colMD: 8,colSM: 12,}"
+            >
+            <div class="form-editor-container" style="">
+            <AppDropdownList
+              name="n_state_eq"
+              codeListTag="Sample__OrderState"
+              codeListType="STATIC"
+              :disabled="state.detailsModel.n_state_eq.disabled"
+              :context="state.context"
+              :viewParams="state.viewParams"
+              :value="state.data.n_state_eq"
+              :data="state.data"
+              @editorEvent="onEditorEvent"
+            /> 
+            </div>
+          </AppFormItem>
+          <AppFormItem 
+            name="n_ordername_like"
+            label="订单名称(文本包含(%))"
+            labelPos="LEFT"
+            :labelWidth="130"
+            :showLabel="true"
+            :rules="state.rules.n_ordername_like"
+            :required="state.detailsModel.n_ordername_like.required"
+            :visible="state.detailsModel.n_ordername_like.visible" 
+            :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 8,colMD: 8,colSM: 12,}"
+            >
+            <div class="form-editor-container" style="">
+            <AppInput
+              name="n_ordername_like"
+              :disabled="state.detailsModel.n_ordername_like.disabled"
+              type="text"
+              :value="state.data.n_ordername_like"
+              @editorEvent="onEditorEvent"
+            />
+            </div>
+          </AppFormItem>
       </a-row>
       </a-col>
       <a-col class='search-form-footer'>

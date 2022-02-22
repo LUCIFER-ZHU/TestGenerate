@@ -1,4 +1,4 @@
-import { ControlVOBase, IParam, GridService } from '@core';
+import { ControlVOBase, IParam, GridService, isEmpty, Verify } from '@core';
 import { Example2Service } from '@api/example2/example2-service';
 
 export class ControlVO extends ControlVOBase {
@@ -6,49 +6,42 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
   }
-
   get exampleid() {
     return this.$DO.exampleid;
   }
   set exampleid(value: any) {
     this.$DO.exampleid = value;
   }
-
   get updateman() {
     return this.$DO.updateman;
   }
   set updateman(value: any) {
     this.$DO.updateman = value;
   }
-
   get example2name() {
     return this.$DO.example2name;
   }
   set example2name(value: any) {
     this.$DO.example2name = value;
   }
-
   get updatedate() {
     return this.$DO.updatedate;
   }
   set updatedate(value: any) {
     this.$DO.updatedate = value;
   }
-
   get srfmajortext() {
     return this.$DO.example2name;
   }
   set srfmajortext(value: any) {
     this.$DO.example2name = value;
   }
-
   get srfdataaccaction() {
     return this.$DO.example2id;
   }
   set srfdataaccaction(value: any) {
     this.$DO.example2id = value;
   }
-
   get srfkey() {
     return this.$DO.example2id;
   }
@@ -61,8 +54,17 @@ export class ControlVO extends ControlVOBase {
 export const ctrlState = {
   controlCodeName: 'Main',
   controlName: 'grid',
-  appEntityCodeName:'Example2',
+  totalColumnWidth: 460,
+  selectColumnWidth: 50,
+  appEntityCodeName: 'Example2',
+  appDeCodeName:'Example2',
+  appDeLogicName: '示例明细',
+  appDeKeyFieldName: 'Example2Id',
+  appDeMajorFieldName: 'Example2Name',
   controlService: new GridService<ControlVO>(ControlVO, new Example2Service() ),
+  //  新建默认值
+  createDefaultItems: [
+  ],
   items: [],
   selectedRowKeys: [],
   // 多数据部件分组
@@ -94,8 +96,8 @@ export const ctrlState = {
     aggMode: "NONE",
     aggData: [],
   },
-  uAColumnModel:[
-  ],
+  uAColumnModel: {
+  },
   gridEditState:{
     srfkey:{},
   },
@@ -133,9 +135,21 @@ export const ctrlState = {
       enableSort: true,
       aggMode: "NONE",
     },
+    {
+      title: "",
+      columnType: "EMPTYCOLUMN",
+      dataIndex: "autowidthcolumn",
+      align: "center",
+      resizable: true,
+      ellipsis: true,
+      aggMode: "NONE",
+    },
   ],
   // 是否单选
   isSingleSelect:false,
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   rules:{
   }
 };

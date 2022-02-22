@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ExampleService } from '@api/example/example-service';
 
 /**
@@ -145,9 +145,49 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'Example',
+  appDeCodeName:'Example',
+  appDeLogicName: '示例',
   appDeKeyFieldName: 'ExampleId',
   appDeMajorFieldName: 'ExampleName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+    {
+      createDV: "1",
+      createDVT: "",
+      property: "formitem",
+    },
+    {
+      createDV: "1",
+      createDVT: "",
+      property: "formitem2",
+    },
+    {
+      createDV: "1",
+      createDVT: "",
+      property: "formitem4",
+    },
+    {
+      createDV: "这里是默认值",
+      createDVT: "",
+      property: "formitem7",
+    },
+    {
+      createDV: "动态分组标题",
+      createDVT: "",
+      property: "formitem8",
+    },
+    {
+      createDV: "标题",
+      createDVT: "",
+      property: "formitem10",
+    },
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',
@@ -201,15 +241,22 @@ export const ctrlState = {
       enableCond: 3,
       groupLogics: [
         {
-          name: '表单成员[formitem1][面板显示]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[formitem]',
-          logicCat: 'PANELVISIBLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'EQ',dEFDName: 'formitem',logicType: 'SINGLE',name: 'formitem 等于(=) (1)',value:'1'},
-          ],
+        	name: '表单成员[formitem1][面板显示]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'PANELVISIBLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["formitem"],
+        	childLogics: [
+        		{
+        			name: 'formitem 等于(=) (1)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "EQ",
+        			dEFDName: "formitem",
+        			value: "1"
+        		},
+        	]
         },
       ],
     },
@@ -247,15 +294,22 @@ export const ctrlState = {
       enableCond: 3,
       groupLogics: [
         {
-          name: '表单成员[formitem3][表单项启用]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[formitem2]',
-          logicCat: 'ITEMENABLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'EQ',dEFDName: 'formitem2',logicType: 'SINGLE',name: 'formitem2 等于(=) (1)',value:'1'},
-          ],
+        	name: '表单成员[formitem3][表单项启用]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'ITEMENABLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["formitem2"],
+        	childLogics: [
+        		{
+        			name: 'formitem2 等于(=) (1)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "EQ",
+        			dEFDName: "formitem2",
+        			value: "1"
+        		},
+        	]
         },
       ],
     },
@@ -293,15 +347,22 @@ export const ctrlState = {
       enableCond: 3,
       groupLogics: [
         {
-          name: '表单成员[formitem5][表单项空输入]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[formitem4]',
-          logicCat: 'ITEMBLANK',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'EQ',dEFDName: 'formitem4',logicType: 'SINGLE',name: 'formitem4 等于(=) (1)',value:'1'},
-          ],
+        	name: '表单成员[formitem5][表单项空输入]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'ITEMBLANK',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["formitem4"],
+        	childLogics: [
+        		{
+        			name: 'formitem4 等于(=) (1)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "EQ",
+        			dEFDName: "formitem4",
+        			value: "1"
+        		},
+        	]
         },
       ],
     },
@@ -394,16 +455,30 @@ export const ctrlState = {
       enableCond: 3,
       groupLogics: [
         {
-          name: '表单成员[formitem13][表单项启用]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[formitem12, formitem11]',
-          logicCat: 'ITEMENABLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'formitem11',logicType: 'SINGLE',name: 'formitem11 值不为空(NotNil)',value:''},
-          {condOP: 'ISNOTNULL',dEFDName: 'formitem12',logicType: 'SINGLE',name: 'formitem12 值不为空(NotNil)',value:''},
-          ],
+        	name: '表单成员[formitem13][表单项启用]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'ITEMENABLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["formitem12","formitem11"],
+        	childLogics: [
+        		{
+        			name: 'formitem11 值不为空(NotNil)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "ISNOTNULL",
+        			dEFDName: "formitem11",
+        			value: ""
+        		},
+        		{
+        			name: 'formitem12 值不为空(NotNil)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "ISNOTNULL",
+        			dEFDName: "formitem12",
+        			value: ""
+        		},
+        	]
         },
       ],
     },
@@ -453,15 +528,40 @@ export const ctrlState = {
       enableCond: 3,
       groupLogics: [
         {
-          name: '表单成员[formitem16][表单项启用]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[formitem15, formitem14]',
-          logicCat: 'ITEMENABLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: '',dEFDName: '',logicType: 'GROUP',name: 'OR',value:''},
-          ],
+        	name: '表单成员[formitem16][表单项启用]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'ITEMENABLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["formitem15","formitem14"],
+        	childLogics: [
+        		{
+        			name: 'OR',
+        			logicType: 'GROUP',
+        			logicCat: '',
+        			notMode: false,
+        			groupOP: 'OR',
+        			relatedDetailNames: [],
+        			childLogics: [
+        				{
+        					name: 'formitem14 值不为空(NotNil)',
+        					logicType: 'SINGLE',
+        					logicCat: '',
+        					condOP: "ISNOTNULL",
+        					dEFDName: "formitem14",
+        					value: ""
+        				},
+        				{
+        					name: 'formitem15 值不为空(NotNil)',
+        					logicType: 'SINGLE',
+        					logicCat: '',
+        					condOP: "ISNOTNULL",
+        					dEFDName: "formitem15",
+        					value: ""
+        				},
+        			]
+        		},
+        	]
         },
       ],
     },
@@ -513,15 +613,22 @@ export const ctrlState = {
       valueItemName: 'cityid',
       groupLogics: [
         {
-          name: '表单成员[cityname][表单项启用]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[provinceid]',
-          logicCat: 'ITEMENABLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'provinceid',logicType: 'SINGLE',name: 'provinceid 值不为空(NotNil)',value:''},
-          ],
+        	name: '表单成员[cityname][表单项启用]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'ITEMENABLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["provinceid"],
+        	childLogics: [
+        		{
+        			name: 'provinceid 值不为空(NotNil)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "ISNOTNULL",
+        			dEFDName: "provinceid",
+        			value: ""
+        		},
+        	]
         },
       ],
     },
@@ -541,15 +648,22 @@ export const ctrlState = {
       valueItemName: 'districtid',
       groupLogics: [
         {
-          name: '表单成员[districtname][表单项启用]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[cityid]',
-          logicCat: 'ITEMENABLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'cityid',logicType: 'SINGLE',name: 'cityid 值不为空(NotNil)',value:''},
-          ],
+        	name: '表单成员[districtname][表单项启用]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'ITEMENABLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["cityid"],
+        	childLogics: [
+        		{
+        			name: 'cityid 值不为空(NotNil)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "ISNOTNULL",
+        			dEFDName: "cityid",
+        			value: ""
+        		},
+        	]
         },
       ],
     },
@@ -704,10 +818,10 @@ export const ctrlState = {
       enableCond: 3,
       formItemUpdate: {
         showBusyIndicator: "true",
-        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@6f0cb5a1",
+        appDEMethod: "CalcPF2",
         updateDetails: [
-        "",
-        "",
+        "fieldz",
+        "formitem17",
         ],
       },
     },
@@ -725,10 +839,10 @@ export const ctrlState = {
       enableCond: 3,
       formItemUpdate: {
         showBusyIndicator: "true",
-        appDEMethod: "net.ibizsys.model.app.dataentity.PSAppDEMethodImpl@6f0cb5a1",
+        appDEMethod: "CalcPF2",
         updateDetails: [
-        "",
-        "",
+        "fieldz",
+        "formitem17",
         ],
       },
     },

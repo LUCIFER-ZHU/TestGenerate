@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ExampleService } from '@api/example/example-service';
 
 /**
@@ -87,9 +87,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'Example',
+  appDeCodeName:'Example',
+  appDeLogicName: '示例',
   appDeKeyFieldName: 'ExampleId',
   appDeMajorFieldName: 'ExampleName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',
@@ -181,8 +191,8 @@ export const ctrlState = {
         extractMode: '',
         caption: '表单分组',
         details: [
-        { caption: '表单项更新前台计算', disabled: false, visible: true, uIActionTag: 'CalcPF', showCaption: true, showIcon: true,  },
-        { caption: '执行', disabled: false, visible: true, uIActionTag: 'CallUISimple', showCaption: true, showIcon: true,  },
+          { caption: '表单项更新前台计算', uIActionMode: "BACKEND", disabled: false, visible: true, uIActionTag: 'CalcPF', showCaption: true, showIcon: true,  },
+          { caption: '执行', uIActionMode: "FRONT", disabled: false, visible: true, uIActionTag: 'CallUISimple', showCaption: true, showIcon: true,  },
         ],
       },
     },
@@ -282,7 +292,7 @@ export const ctrlState = {
         extractMode: '',
         caption: '表单快速配置',
         details: [
-        { caption: '编辑', disabled: false, visible: true, uIActionTag: 'Edit', showCaption: true, showIcon: true,  },
+          { caption: '编辑', uIActionMode: "FRONT", disabled: false, visible: true, uIActionTag: 'Edit', showCaption: true, showIcon: true,  },
         ],
       },
     },
@@ -300,16 +310,30 @@ export const ctrlState = {
       enableCond: 3,
       groupLogics: [
         {
-          name: '表单成员[fieldx][面板显示]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[fieldx]',
-          logicCat: 'PANELVISIBLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'fieldx',logicType: 'SINGLE',name: '',value:''},
-          {condOP: 'NOTEQ',dEFDName: 'fieldx',logicType: 'SINGLE',name: '',value:''},
-          ],
+        	name: '表单成员[fieldx][面板显示]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'PANELVISIBLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["fieldx"],
+        	childLogics: [
+        		{
+        			name: '',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "ISNOTNULL",
+        			dEFDName: "fieldx",
+        			value: ""
+        		},
+        		{
+        			name: '',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "NOTEQ",
+        			dEFDName: "fieldx",
+        			value: ""
+        		},
+        	]
         },
       ],
     },
@@ -327,16 +351,30 @@ export const ctrlState = {
       enableCond: 3,
       groupLogics: [
         {
-          name: '表单成员[fieldy][面板显示]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[fieldy]',
-          logicCat: 'PANELVISIBLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'fieldy',logicType: 'SINGLE',name: '',value:''},
-          {condOP: 'NOTEQ',dEFDName: 'fieldy',logicType: 'SINGLE',name: '',value:''},
-          ],
+        	name: '表单成员[fieldy][面板显示]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'PANELVISIBLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["fieldy"],
+        	childLogics: [
+        		{
+        			name: '',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "ISNOTNULL",
+        			dEFDName: "fieldy",
+        			value: ""
+        		},
+        		{
+        			name: '',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "NOTEQ",
+        			dEFDName: "fieldy",
+        			value: ""
+        		},
+        	]
         },
       ],
     },
@@ -354,21 +392,38 @@ export const ctrlState = {
       enableCond: 3,
       groupLogics: [
         {
-          name: '表单成员[fieldz][面板显示]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[fieldz]',
-          logicCat: 'PANELVISIBLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'fieldz',logicType: 'SINGLE',name: '',value:''},
-          {condOP: 'NOTEQ',dEFDName: 'fieldz',logicType: 'SINGLE',name: '',value:''},
-          ],
+        	name: '表单成员[fieldz][面板显示]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'PANELVISIBLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["fieldz"],
+        	childLogics: [
+        		{
+        			name: '',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "ISNOTNULL",
+        			dEFDName: "fieldz",
+        			value: ""
+        		},
+        		{
+        			name: '',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "NOTEQ",
+        			dEFDName: "fieldz",
+        			value: ""
+        		},
+        	]
         },
       ],
     },
   },
   actionModel: {
+      'CalcPF': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEKEY' },
+      'CallUISimple': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEDATA' },
+      'Edit': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEKEY' },
   },
   rules: {
   },

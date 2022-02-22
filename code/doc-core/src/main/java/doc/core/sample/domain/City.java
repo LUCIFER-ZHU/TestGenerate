@@ -148,6 +148,16 @@ public class City extends EntityMP implements Serializable
     @ApiModelProperty("备注")
     private String memo;
 
+    /**
+     * 本地标识
+     */
+    @TableField(value = "local" , exist = false)
+    @DEField(name = "local")
+    @JsonProperty("local")
+    @JSONField(name = "local")
+    @ApiModelProperty("本地标识")
+    private String local;
+
 
     /**
      * 省份
@@ -225,6 +235,15 @@ public class City extends EntityMP implements Serializable
     public City setMemo(String memo) {
         this.memo = memo;
         this.modify("memo", memo);
+        return this;
+    }
+
+    /**
+     * 设置 [本地标识]
+     */
+    public City setLocal(String local) {
+        this.local = local;
+        this.modify("local", local);
         return this;
     }
 

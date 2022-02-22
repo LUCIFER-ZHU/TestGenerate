@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ExampleService } from '@api/example/example-service';
 
 /**
@@ -79,9 +79,19 @@ export const ctrlState = {
   controlName: 'form2',
   controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'Example',
+  appDeCodeName:'Example',
+  appDeLogicName: '示例',
   appDeKeyFieldName: 'ExampleId',
   appDeMajorFieldName: 'ExampleName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '表单分页',
@@ -202,7 +212,7 @@ export const ctrlState = {
       detailStyle: 'DEFAULT',
       detailType: 'BUTTON',
       showCaption: true,
-      uIActionTag: '02505cfb9b1806f05690804930190c6e',
+      uIAction: { caption: '流程自定义操作', uIActionMode: "SYS", disabled: false, visible: true, uIActionTag: '02505cfb9b1806f05690804930190c6e', showCaption: true,  },
     },
     rawitem5: {
       caption: '',
@@ -308,7 +318,7 @@ export const ctrlState = {
     },
   },
   actionModel: {
-    '02505cfb9b1806f05690804930190c6e': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEKEY' },
+      '02505cfb9b1806f05690804930190c6e': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEKEY' },
   },
   rules: {
   },

@@ -1,4 +1,4 @@
-import { IActionParam, IParam, MainView, MDViewState, ViewUtil } from '@core';
+import { deepCopy, IActionParam, IParam, isExistAndNotEmpty, MainView, MDViewState, ViewUtil } from '@core';
 
 /**
  * 多数据视图
@@ -25,12 +25,42 @@ export class MDView extends MainView {
   public declare searchForm: IParam;
 
   /**
+   * 当前视图快速搜索表单部件
+   *
+   * @type {IParam}
+   * @memberof MDView
+   */
+  public declare quickSearchForm: IParam;
+
+  /**
    * 当前视图搜索栏部件
    *
    * @type {IParam}
    * @memberof MDView
    */
   public declare searchBar: IParam;
+
+  /**
+   * @description 数据部件加载
+   * @protected
+   * @param {IParam} [data]
+   * @memberof MDView
+   */
+  protected xDataControlLoad(data?: IParam): void {
+    // 初始化数据能力部件
+    this.xDataControl = this.getMDCtrl();
+    const { isLoadDefault } = this.state;
+    const searchForm = this.getSearchForm();
+    if (searchForm && isLoadDefault) {
+      const tag = searchForm.name;
+      this.next({ tag: tag, action: 'loaddraft', data: null });
+    } else if (this.xDataControl && isLoadDefault) {
+      const tag = this.xDataControl.name;
+      this.next({ tag: tag, action: 'load', data: null });
+    } else {
+      this.state.isLoadDefault = true;
+    }
+  }
 
   /**
    * @description 处理视图初始化
@@ -41,21 +71,12 @@ export class MDView extends MainView {
     super.useViewInit();
     // 初始化搜索表单引用
     this.searchForm = ref(null);
+    //  初始化快速搜索表单引用
+    this.quickSearchForm = ref(null);
     // 初始化搜索栏引用
     this.searchBar = ref(null);
     onMounted(() => {
-      // 初始化数据能力部件
-      this.xDataControl = this.getMDCtrl();
-      const { isLoadDefault } = this.state;
-      if (this.getSearchForm() && isLoadDefault) {
-        const tag = this.getSearchForm().name;
-        this.next({ tag: tag, action: 'loaddraft', data: null });
-      } else if (this.getMDCtrl() && isLoadDefault) {
-        const tag = this.getMDCtrl().name;
-        this.next({ tag: tag, action: 'load', data: null });
-      } else {
-        this.state.isLoadDefault = true;
-      }
+      this.xDataControlLoad();
     });
   }
 
@@ -66,8 +87,9 @@ export class MDView extends MainView {
    * @memberof MDView
    */
   public onCtrlEvent(actionParam: IActionParam) {
+    super.onCtrlEvent(actionParam);
     const { tag, action, data } = actionParam;
-    if (Object.is(tag, 'searchform')) {
+    if (Object.is(tag, 'searchform') || Object.is(tag, 'quicksearchform')) {
       this.handleSearchFormEvent(action, data);
     }
   }
@@ -84,7 +106,7 @@ export class MDView extends MainView {
       this.onSearchFormLoad(args);
     }
     if (Object.is(eventName, 'search')) {
-      this.onSearchFormLoad(args);
+      this.onSearchFormSearch(args);
     }
   }
 
@@ -110,9 +132,12 @@ export class MDView extends MainView {
    */
   public handleQuickGroupSearch(args: any = {}): void {
     const { viewParams } = this.state;
-    Object.assign(viewParams, { quickGroup: args.data });
+    const tempViewParams = deepCopy(viewParams);
+    if (args && isExistAndNotEmpty(args.data) && typeof args.data === 'string') {
+      Object.assign(tempViewParams, JSON.parse(args.data));
+    }
     const tag = this.getMDCtrl().name;
-    this.next({ tag: tag, action: 'load', data: viewParams });
+    this.next({ tag: tag, action: 'load', data: tempViewParams });
   }
 
   /**
@@ -120,9 +145,9 @@ export class MDView extends MainView {
    * @param {*} [args={}]
    * @memberof MDView
    */
-  public handleQuickSearch(args: any = {}): void {
+  public handleQuickSearch(args: string): void {
     const { viewParams } = this.state;
-    const query = args?.target?._value || '';
+    const query = args || '';
     Object.assign(viewParams, { query: query });
     const tag = this.getMDCtrl().name;
     this.next({ tag: tag, action: 'load', data: viewParams });
@@ -175,11 +200,20 @@ export class MDView extends MainView {
    * @memberof MDView
    */
   public MDCtrlBeforeLoad(args: any = {}) {
-    if (this.getSearchForm()) {
-      Object.assign(args, this.getSearchForm().getData());
+    //  搜索表单
+    const searchForm = this.getSearchForm();
+    if (searchForm) {
+      Object.assign(args, searchForm.getData());
     }
-    if (this.getSearchBar()) {
-      Object.assign(args, this.getSearchBar().getData());
+    //  快速搜索表单
+    const quickSearchForm = this.getQuickSearchForm();
+    if (quickSearchForm) {
+      Object.assign(args, quickSearchForm.getData());
+    }
+    //  搜索栏
+    const searchBar = this.getSearchBar();
+    if (searchBar) {
+      Object.assign(args, searchBar.getData());
     }
     // if (this.view && !this.view.isExpandSearchForm) {
     //   Object.assign(args, { query: this.view.query });
@@ -201,23 +235,28 @@ export class MDView extends MainView {
   /**
    * 多数据部件加载完成
    *
-   * @param {*} args
+   * @param {IParam[]} data
    * @memberof MDView
    */
-  public MDCtrlLoaded(args: any) {
-    console.log('数据加载完成', args);
+  public MDCtrlLoaded(data: IParam[]) {
+    // 抛出数据
+    this.emit("onViewEvent", { tag: this.state.viewName, action: 'viewLoad', data: data });
+    // 设置工具栏状态
+    this.setToolbarItemState(true);
   }
 
   /**
    * 多数据部件选中数据
    *
-   * @param {*} args
+   * @param {IParam[]} data
    * @memberof MDView
    */
-  public selectionChange(args: any) {
+  public selectionChange(data: IParam[]) {
     // 抛出数据
-    this.emit("onViewEvent", { tag: this.state.viewName, action: 'selectionChange', data: args });
-    // 计算按钮权限 todo
+    this.emit("onViewEvent", { tag: this.state.viewName, action: 'viewDataChange', data: data });
+    // 设置工具栏状态
+    const state: boolean = !Object.is(data[0]?.srfuf, '1');
+    this.setToolbarItemState(state, data[0]?.$DO);
   }
 
   /**
@@ -238,7 +277,7 @@ export class MDView extends MainView {
     }
     // 准备参数
     const tempContext = {};
-    Object.assign(tempContext, { [this.state.keyPSDEField]: args[0].srfkey });
+    Object.assign(tempContext, { [this.state.appEntityCodeName?.toLowerCase()]: args[0].srfkey });
     Object.assign(tempContext, this.state.context);
     const params = {
       context: tempContext,
@@ -257,7 +296,7 @@ export class MDView extends MainView {
    */
   public onQuickGroupEvent($event: IActionParam) {
     if ($event) {
-      this.handleQuickGroupSearch($event);
+      this.handleQuickGroupSearch($event.data);
     }
   }
 
@@ -283,6 +322,7 @@ export class MDView extends MainView {
       ...superParams,
       xDataControl: this.xDataControl,
       searchForm: this.searchForm,
+      quickSearchForm: this.quickSearchForm,
       searchBar: this.searchBar,
       onQuickGroupEvent: this.onQuickGroupEvent.bind(this),
       onQuickSearchEvent: this.onQuickSearchEvent.bind(this),
@@ -297,6 +337,16 @@ export class MDView extends MainView {
    */
   public getSearchForm(): any {
     return unref(this.searchForm);
+  }
+
+  /**
+   * @description 获取快速搜索表单部件
+   *
+   * @return {*}  {*}
+   * @memberof MDView
+   */
+  public getQuickSearchForm(): any {
+    return unref(this.quickSearchForm);
   }
 
   /**

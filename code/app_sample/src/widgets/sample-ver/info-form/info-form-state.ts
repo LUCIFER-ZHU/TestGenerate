@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { SampleVerService } from '@api/sample-ver/sample-ver-service';
 
 /**
@@ -74,9 +74,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new SampleVerService() ),
   data: new ControlVO({}),
-  appDeMajorFieldName: 'SampleVerName',
+  appEntityCodeName: 'SampleVer',
+  appDeCodeName:'SampleVer',
+  appDeLogicName: '示例版本',
   appDeKeyFieldName: 'SampleVerId',
+  appDeMajorFieldName: 'SampleVerName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',

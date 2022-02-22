@@ -26,12 +26,13 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSearchEvent } = new GridView(viewState, props, emit).moduleInstall();
+const gridView = new GridView(viewState, props, emit).moduleInstall();
+const { state, grid, searchForm, quickSearchForm, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSearchEvent } = gridView;
 
 </script>
 
 <template>
-  <AppGridViewLayout :class="['app-grid-view', state.viewSysCss]">
+  <AppGridViewLayout :class="['app-grid-view', state.viewSysCss]" :showCaptionBar="state.showCaptionBar">
     <template v-slot:caption>
       <AppIconText class="app-view__caption" size="large" :text="state.viewCaption" />
     </template>
@@ -45,6 +46,7 @@ const { state, grid, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSear
       :viewParams="state.viewParams"
       :controlAction="state.grid.action"
       :viewSubject="state.viewSubject"
+      :parent="gridView"
       @ctrlEvent="onCtrlEvent"
     ></ToolbarGrid>
   </AppGridViewLayout>

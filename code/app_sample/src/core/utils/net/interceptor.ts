@@ -1,6 +1,4 @@
-import { Environment } from '@/environments/environment';
-import { IParam } from '@core';
-import { clearCookie, getCookie, SyncSeriesHook } from 'qx-util';
+import { getCookie, SyncSeriesHook } from 'qx-util';
 import { getSessionStorage } from '../util';
 import { Http } from './http';
 
@@ -66,7 +64,7 @@ export class Interceptors {
     private intercept(): void {
         Http.getHttp().interceptors.request.use((config: any) => {
             Interceptors.hooks.request.callSync({ config: config });
-            if (Environment.SaaSMode && (!config.url.startsWith("/uaa/getbydcsystem/"))) {
+            if (App.getEnvironmentParam().SaaSMode && (!config.url.startsWith("/uaa/getbydcsystem/"))) {
                 let activeOrgData = getSessionStorage('activeOrgData');
                 config.headers['srforgid'] = activeOrgData?.orgid;
                 config.headers['srfsystemid'] = activeOrgData?.systemid;
@@ -74,8 +72,8 @@ export class Interceptors {
             if (getCookie('ibzuaa-token')) {
                 config.headers['Authorization'] = `Bearer ${getCookie('ibzuaa-token')}`;
             }
-            if (!Object.is(Environment.BaseUrl, "") && !config.url.startsWith('https://') && !config.url.startsWith('http://') && !config.url.startsWith('./assets')) {
-                config.url = Environment.BaseUrl + config.url;
+            if (!Object.is(App.getEnvironmentParam().BaseUrl, "") && !config.url.startsWith('https://') && !config.url.startsWith('http://') && !config.url.startsWith('./assets')) {
+                config.url = App.getEnvironmentParam().BaseUrl + config.url;
             }
             return config;
         }, (error: any) => {

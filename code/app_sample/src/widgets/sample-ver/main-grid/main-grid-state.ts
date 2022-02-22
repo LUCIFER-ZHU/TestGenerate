@@ -1,4 +1,4 @@
-import { ControlVOBase, IParam, GridService } from '@core';
+import { ControlVOBase, IParam, GridService, isEmpty, Verify } from '@core';
 import { SampleVerService } from '@api/sample-ver/sample-ver-service';
 
 export class ControlVO extends ControlVOBase {
@@ -6,56 +6,48 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
   }
-
   get verstr() {
     return this.$DO.verstr;
   }
   set verstr(value: any) {
     this.$DO.verstr = value;
   }
-
   get samplevername() {
     return this.$DO.samplevername;
   }
   set samplevername(value: any) {
     this.$DO.samplevername = value;
   }
-
   get updateman() {
     return this.$DO.updateman;
   }
   set updateman(value: any) {
     this.$DO.updateman = value;
   }
-
   get updatedate() {
     return this.$DO.updatedate;
   }
   set updatedate(value: any) {
     this.$DO.updatedate = value;
   }
-
   get type() {
     return this.$DO.type;
   }
   set type(value: any) {
     this.$DO.type = value;
   }
-
   get srfmajortext() {
     return this.$DO.samplevername;
   }
   set srfmajortext(value: any) {
     this.$DO.samplevername = value;
   }
-
   get srfdataaccaction() {
     return this.$DO.sampleverid;
   }
   set srfdataaccaction(value: any) {
     this.$DO.sampleverid = value;
   }
-
   get srfkey() {
     return this.$DO.sampleverid;
   }
@@ -68,8 +60,17 @@ export class ControlVO extends ControlVOBase {
 export const ctrlState = {
   controlCodeName: 'Main',
   controlName: 'grid',
-  appEntityCodeName:'SampleVer',
+  totalColumnWidth: 790,
+  selectColumnWidth: 50,
+  appEntityCodeName: 'SampleVer',
+  appDeCodeName:'SampleVer',
+  appDeLogicName: '示例版本',
+  appDeKeyFieldName: 'SampleVerId',
+  appDeMajorFieldName: 'SampleVerName',
   controlService: new GridService<ControlVO>(ControlVO, new SampleVerService() ),
+  //  新建默认值
+  createDefaultItems: [
+  ],
   items: [],
   selectedRowKeys: [],
   // 多数据部件分组
@@ -101,8 +102,8 @@ export const ctrlState = {
     aggMode: "NONE",
     aggData: [],
   },
-  uAColumnModel:[
-  ],
+  uAColumnModel: {
+  },
   gridEditState:{
     srfkey:{},
   },
@@ -162,9 +163,21 @@ export const ctrlState = {
       enableSort: true,
       aggMode: "NONE",
     },
+    {
+      title: "",
+      columnType: "EMPTYCOLUMN",
+      dataIndex: "autowidthcolumn",
+      align: "center",
+      resizable: true,
+      ellipsis: true,
+      aggMode: "NONE",
+    },
   ],
   // 是否单选
   isSingleSelect:false,
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   rules:{
   }
 };

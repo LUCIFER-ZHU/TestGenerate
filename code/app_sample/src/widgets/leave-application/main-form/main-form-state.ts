@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { LeaveApplicationService } from '@api/leave-application/leave-application-service';
 
 /**
@@ -158,9 +158,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new LeaveApplicationService() ),
   data: new ControlVO({}),
-  appDeMajorFieldName: 'LeaveApplicationName',
+  appEntityCodeName: 'LeaveApplication',
+  appDeCodeName:'LeaveApplication',
+  appDeLogicName: '请假申请',
   appDeKeyFieldName: 'LeaveApplicationId',
+  appDeMajorFieldName: 'LeaveApplicationName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',

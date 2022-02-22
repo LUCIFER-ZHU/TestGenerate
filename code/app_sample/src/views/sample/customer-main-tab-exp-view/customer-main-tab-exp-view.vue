@@ -24,7 +24,8 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onCtrlEvent } = new TabExpView(viewState, props, emit).moduleInstall();
+const tabExpView = new TabExpView(viewState, props, emit).moduleInstall();
+const { state, onCtrlEvent } = tabExpView;
 </script>
 
 <template>
@@ -39,6 +40,7 @@ const { state, onCtrlEvent } = new TabExpView(viewState, props, emit).moduleInst
               :viewParams="state.viewParams"
               :viewSubject="state.viewSubject"
               :defaultActivePanel="state.defaultActivePanel"
+              :parent="tabExpView"
               @onCtrlEvent="onCtrlEvent"
             ></MainTabExpViewtabexppanelTabExpPanel>
     </AppPickupViewLayout>

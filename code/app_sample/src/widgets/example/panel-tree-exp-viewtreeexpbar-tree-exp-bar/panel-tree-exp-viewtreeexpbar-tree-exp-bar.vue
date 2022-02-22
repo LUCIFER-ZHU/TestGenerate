@@ -11,9 +11,9 @@ import ExampleValueFormatPanelView from '@views/sample/example-value-format-pane
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -49,11 +49,13 @@ defineExpose({ name, state });
           
           <PanelTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></PanelTree>
         </div>
@@ -63,36 +65,36 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleBasePanelView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleBasePanelView>
         <ExampleBasePanelView_CSS
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleBasePanelView_CSS'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleBasePanelView_CSS>
         <CalculatorPickPanelView
           v-if="state.selection.viewName && state.selection.viewName === 'CalculatorPickPanelView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </CalculatorPickPanelView>
         <CalculatorCalcPanelView
           v-if="state.selection.viewName && state.selection.viewName === 'CalculatorCalcPanelView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </CalculatorCalcPanelView>
         <ExampleValueFormatPanelView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleValueFormatPanelView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleValueFormatPanelView>
       </template>
     </AppSplit>

@@ -143,6 +143,17 @@ export abstract class AppBase implements IApp {
   }
 
   /**
+   * 获取环境参数
+   *
+   * @return {*}  {IParam}
+   * @memberof AppBase
+   */
+  public getEnvironmentParam(): IParam {
+    throw new Error("Method not implemented.");
+  }
+
+
+  /**
    * @description 获取实体信息
    *
    * @param {string} codeName

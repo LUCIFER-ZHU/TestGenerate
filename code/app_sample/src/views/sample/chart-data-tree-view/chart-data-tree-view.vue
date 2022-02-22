@@ -26,7 +26,8 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, tree, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSearchEvent } = new TreeView(viewState, props, emit).moduleInstall();
+const treeView = new TreeView(viewState, props, emit).moduleInstall();
+const { state, tree, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSearchEvent } = treeView;
 
 </script>
 
@@ -69,6 +70,7 @@ const { state, tree, onCtrlEvent, onToolbarEvent, onQuickGroupEvent, onQuickSear
       :viewParams="state.viewParams"
       :controlAction="state.tree.action"
       :viewSubject="state.viewSubject"
+      :parent="treeView"
       @ctrlEvent="onCtrlEvent"
     ></TreeviewTree>
   </AppTreeViewLayout>

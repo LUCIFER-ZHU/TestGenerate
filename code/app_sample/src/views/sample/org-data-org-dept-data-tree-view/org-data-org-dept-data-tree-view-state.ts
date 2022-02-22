@@ -13,15 +13,14 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'OrgData',
-  keyPSDEField: 'orgdata',
+  appDeKeyFieldName: 'orgdataid',
+  appDeMajorFieldName: 'orgdataname',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
   enableQuickGroup: false,
   viewLogics: {
   },
-  toolbar: [
-  ],
   tree: {
     action:{
       loadAction: 'Get',
@@ -31,5 +30,5 @@ export const viewState = {
       createAction: 'Create',
       fetchAction:''
     }  
-  }
+  },
 };

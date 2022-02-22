@@ -5,6 +5,7 @@ import { ctrlState } from './province-city-distict-m-pickup-viewpickupviewpanel-
 import ExampleProvinceCityDistictPickupTreeView from '@views/sample/example-province-city-distict-pickup-tree-view';
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;

@@ -25,7 +25,8 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, dashboard, onCtrlEvent } = new PortalView(viewState, props, emit).moduleInstall();
+const portalView = new PortalView(viewState, props, emit).moduleInstall();
+const { state, dashboard, onCtrlEvent } = portalView;
 
 </script>
 
@@ -35,8 +36,6 @@ const { state, dashboard, onCtrlEvent } = new PortalView(viewState, props, emit)
       <AppIconText
         class="app-view__caption"
         size="large"
-        :subCaption="state.subCaption"
-        :showCaptionBar="state.showCaptionBar"
         :text="state.viewCaption"
       />
     </template>
@@ -46,6 +45,7 @@ const { state, dashboard, onCtrlEvent } = new PortalView(viewState, props, emit)
       :context="state.context"
       :viewParams="state.viewParams"
       :viewSubject="state.viewSubject"
+      :parent="portalView"
       @ctrlEvent="onCtrlEvent"      
     ></QuickMenuAppPortalView_dbDashboard>
   </AppPortalViewLayout>

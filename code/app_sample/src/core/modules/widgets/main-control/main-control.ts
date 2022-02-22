@@ -1,4 +1,4 @@
-import { ControlBase, IParam, MainControlProps, MainControlState, UIUtil } from '@core';
+import { ControlBase, IParam, MainControlState } from '@core';
 
 /**
  * @description 实体部件
@@ -14,6 +14,14 @@ export class MainControl extends ControlBase {
    * @memberof MainControl
    */
   public declare state: MainControlState;
+
+  /**
+   * @description 数据部件组件
+   * @private
+   * @type {IParam}
+   * @memberof MainControl
+   */
+  private declare xData: IParam;
 
   /**
    * 界面行为服务
@@ -33,20 +41,6 @@ export class MainControl extends ControlBase {
   }
 
   /**
-   * 获取指定数据的操作权限
-   *
-   * @param {IParam} data 指定数据
-   * @param {IParam} actionModel 界面行为模型
-   * @memberof MainControl
-   */
-  public async getActionAuthState(data: IParam, actionModel: IParam) {
-    const { context, appEntityCodeName } = this.state;
-    const tempUIservice = await App.getUIService(appEntityCodeName.toLowerCase(), context);
-    UIUtil.calcActionItemAuthState(data, actionModel, tempUIservice);
-    return actionModel;
-  }
-
-  /**
    *@description 使用UI服务
    *
    * @memberof MainControl
@@ -62,6 +56,27 @@ export class MainControl extends ControlBase {
   }
 
   /**
+   * @description 使用设置数据部件模块
+   * @private
+   * @return {*} 
+   * @memberof MainControl
+   */
+  private useSetXDataCtrl() {
+    const xData = ref(null);
+    this.xData = xData;
+    return xData;
+  }
+
+  /**
+   * @description 获取数据部件
+   * @return {*} 
+   * @memberof MainControl
+   */
+  public getXDataCtrl() {
+    return this.xData;
+  }
+
+  /**
    * @description 安装部件所有功能模块的方法
    * @return {*} 
    * @memberof MainControl
@@ -71,7 +86,8 @@ export class MainControl extends ControlBase {
     // 使用UI服务
     this.useUIService();    
     return {
-      ...superParams
+      ...superParams,
+      xDataCtrl: this.useSetXDataCtrl()
     };
   }
 }

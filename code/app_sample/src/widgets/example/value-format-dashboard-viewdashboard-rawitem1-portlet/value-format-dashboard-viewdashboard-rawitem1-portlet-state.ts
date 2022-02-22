@@ -2,8 +2,6 @@
 export const ctrlState = {
   controlCodeName: 'ValueFormatDashboardViewdashboard_rawitem1',
   controlName: 'dashboard_rawitem1',
-  showTitleBar: true,
-  title: '',
   portletType: 'RAWITEM',
   // 实体名称
   appEntityCodeName: 'Example',

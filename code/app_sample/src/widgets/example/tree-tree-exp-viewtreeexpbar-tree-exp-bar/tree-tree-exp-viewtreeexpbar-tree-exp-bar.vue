@@ -15,9 +15,9 @@ import ExampleTreeGridNavTreeExpView from '@views/sample/example-tree-grid-nav-t
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -53,11 +53,13 @@ defineExpose({ name, state });
           
           <TreeTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></TreeTree>
         </div>
@@ -67,64 +69,64 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleDataSourceAdvTreeView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleDataSourceAdvTreeView>
         <ExampleDataSourceTreeView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleDataSourceTreeView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleDataSourceTreeView>
         <ExampleSearchTreeView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleSearchTreeView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleSearchTreeView>
         <ExampleCssAndIconTreeView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleCssAndIconTreeView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleCssAndIconTreeView>
         <ExampleTreeNodeDropPanelView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleTreeNodeDropPanelView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleTreeNodeDropPanelView>
         <ExampleTreeNavParamTreeExpView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleTreeNavParamTreeExpView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleTreeNavParamTreeExpView>
         <OrgDataOrgDeptDataTreeView
           v-if="state.selection.viewName && state.selection.viewName === 'OrgDataOrgDeptDataTreeView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </OrgDataOrgDeptDataTreeView>
         <ExampleRightClickTreeView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleRightClickTreeView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleRightClickTreeView>
         <ExampleTreeGridNavTreeExpView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleTreeGridNavTreeExpView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleTreeGridNavTreeExpView>
       </template>
     </AppSplit>

@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ChartDataService } from '@api/chart-data/chart-data-service';
 
 /**
@@ -125,9 +125,24 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ChartDataService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'ChartData',
+  appDeCodeName:'ChartData',
+  appDeLogicName: '图表',
   appDeKeyFieldName: 'ChartDataId',
   appDeMajorFieldName: 'ChartDataName',
   enableAutoSave: true,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+    {
+      createDV: "标签测试",
+      createDVT: "",
+      property: "formitem3",
+    },
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',
@@ -150,7 +165,7 @@ export const ctrlState = {
         extractMode: '',
         caption: '界面行为组测试',
         details: [
-        { caption: '界面行为测试1', disabled: false, visible: true, uIActionTag: 'custom1', showCaption: true, showIcon: true,  },
+          { caption: '界面行为测试1', uIActionMode: "FRONT", disabled: false, visible: true, uIActionTag: 'custom1', showCaption: true, showIcon: true,  },
         ],
       },
     },
@@ -338,7 +353,7 @@ export const ctrlState = {
       detailStyle: 'DEFAULT',
       detailType: 'BUTTON',
       showCaption: true,
-      uIActionTag: 'Save',
+      uIAction: { caption: '保存', uIActionMode: "SYS", disabled: false, visible: true, uIActionTag: 'Save', showCaption: true,  iconClass: "fa fa-save", },
     },
     grouppanel1: {
       caption: '数据选择测试',
@@ -473,7 +488,8 @@ export const ctrlState = {
     },
   },
   actionModel: {
-    'Save': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: '' },
+      'custom1': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEDATA' },
+      'Save': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: '' },
   },
   rules: {
   },

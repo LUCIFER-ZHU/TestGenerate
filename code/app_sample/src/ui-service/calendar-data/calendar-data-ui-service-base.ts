@@ -9,18 +9,29 @@ import { AppFrontAction, AppBackendAction } from '@core';
  */
 export class CalendarDataUIServiceBase extends UIServiceBase {
 
-  /**
-    * Creates an instance of CalendarDataUIServiceBase
-    * 
-    * @param {*} [opts={}]
-    * @memberof CalendarDataUIServiceBase
-    */
-  constructor(opts: IParam = {}) {
-      super(opts);
-  }
+    /**
+      * Creates an instance of CalendarDataUIServiceBase
+      * 
+      * @param {*} [opts={}]
+      * @memberof CalendarDataUIServiceBase
+      */
+    constructor(opts: IParam = {}) {
+        super(opts);
+        this.initBasicData();
+    }
+
+    /**
+     * 初始化基础数据
+     *
+     * @memberof CalendarDataUIServiceBase
+     */
+    public initBasicData() {
+        // 应用实体主键属性
+        this.appDeKeyFieldName = 'calendardataid';
+        // 是否启用主状态
+        this.isEnableDEMainState = false;
+    }
 
 
-
-   public uiActionModes = {     };
 
 }

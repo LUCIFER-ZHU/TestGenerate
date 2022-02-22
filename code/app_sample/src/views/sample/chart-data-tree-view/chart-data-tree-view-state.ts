@@ -13,7 +13,8 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'ChartData',
-  keyPSDEField: 'chartdata',
+  appDeKeyFieldName: 'chartdataid',
+  appDeMajorFieldName: 'chartdataname',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
@@ -21,11 +22,11 @@ export const viewState = {
   viewLogics: {
   },
   toolbar: [
-    { id:'toolbar_deuiaction1',name:'deuiaction1',caption:'新建',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'新建',disabled: false, visible: true, imgPath: '',iconClass: 'fa fa-file-text-o',xDataControlName:'tree',uIAction:{codeName:'New',fullCodeName:'New',uIActionMode:'SYS',uIActionTag:'New',uIActionType:'DEUIACTION'} },
-    { id:'toolbar_deuiaction2',name:'deuiaction2',caption:'保存',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'保存',disabled: false, visible: true, imgPath: '/assets/images/test.png',iconClass: '',xDataControlName:'tree',uIAction:{codeName:'Save',fullCodeName:'Save',uIActionMode:'SYS',uIActionTag:'Save',uIActionType:'DEUIACTION'} },
-    { id:'toolbar_deuiaction3',name:'deuiaction3',caption:'计数器',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'计数器',disabled: false, visible: true, imgPath: '',iconClass: '',xDataControlName:'tree',uIAction:{codeName:'Count',fullCodeName:'ChartData_Count',uIActionMode:'FRONT',uIActionTag:'Count',uIActionType:'DEUIACTION'} },
-    { id:'toolbar_deuiaction4',name:'deuiaction4',caption:'测试1',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'测试1',disabled: false, visible: true, imgPath: '',iconClass: '',xDataControlName:'tree',uIAction:{codeName:'custom1',fullCodeName:'ChartData_custom1',uIActionMode:'FRONT',uIActionTag:'custom1',uIActionType:'DEUIACTION'} },
-    { id:'toolbar_deuiaction5',name:'deuiaction5',caption:'测试2',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'测试2',disabled: false, visible: true, imgPath: '',iconClass: '',xDataControlName:'tree',uIAction:{codeName:'custom2',fullCodeName:'ChartData_custom2',uIActionMode:'BACKEND',uIActionTag:'custom2',uIActionType:'DEUIACTION'} },
+    { id:'toolbar_deuiaction1',name:'deuiaction1',caption:'新建',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'新建',disabled: false, visible: true, imgPath: '',iconClass: 'fa fa-file-text-o',xDataControlName:'tree',uIAction:{codeName:'New',fullCodeName:'New',uIActionMode:'SYS',actionTarget:'',uIActionTag:'New',dataAccessAction:'',uIActionType:'DEUIACTION'} },
+    { id:'toolbar_deuiaction2',name:'deuiaction2',caption:'保存',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'保存',disabled: false, visible: true, imgPath: '/assets/images/test.png',iconClass: '',xDataControlName:'tree',uIAction:{codeName:'Save',fullCodeName:'Save',uIActionMode:'SYS',actionTarget:'',uIActionTag:'Save',dataAccessAction:'',uIActionType:'DEUIACTION'} },
+    { id:'toolbar_deuiaction3',name:'deuiaction3',caption:'计数器',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'计数器',disabled: false, visible: true, imgPath: '',iconClass: '',xDataControlName:'tree',uIAction:{codeName:'Count',fullCodeName:'ChartData_Count',uIActionMode:'FRONT',actionTarget:'NONE',uIActionTag:'Count',dataAccessAction:'',uIActionType:'DEUIACTION'} },
+    { id:'toolbar_deuiaction4',name:'deuiaction4',caption:'测试1',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'测试1',disabled: false, visible: true, imgPath: '',iconClass: '',xDataControlName:'tree',uIAction:{codeName:'custom1',fullCodeName:'ChartData_custom1',uIActionMode:'FRONT',actionTarget:'SINGLEDATA',uIActionTag:'custom1',dataAccessAction:'',uIActionType:'DEUIACTION'} },
+    { id:'toolbar_deuiaction5',name:'deuiaction5',caption:'测试2',groupExtractMode:'2',itemType:'DEUIACTION',noPrivDisplayMode:'2',showIcon:true,showCaption:true,tooltip:'测试2',disabled: false, visible: true, imgPath: '',iconClass: '',xDataControlName:'tree',uIAction:{codeName:'custom2',fullCodeName:'ChartData_custom2',uIActionMode:'BACKEND',actionTarget:'NONE',uIActionTag:'custom2',dataAccessAction:'',uIActionType:'DEUIACTION'} },
   ],
   searchform:{
     action:{
@@ -33,8 +34,7 @@ export const viewState = {
       loadDraftAction: 'FilterGetDraft',
       loadAction: 'FilterGet',
     } 
-  }
-,
+  },
   tree: {
     action:{
       loadAction: 'Get',
@@ -44,5 +44,5 @@ export const viewState = {
       createAction: 'Create',
       fetchAction:''
     }  
-  }
+  },
 };

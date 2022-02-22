@@ -16,6 +16,13 @@ export interface ViewStateBase {
   context: IParam;
 
   /**
+   * @description 视图标识
+   * @type {string}
+   * @memberof ViewStateBase
+   */
+  viewCodeName: string;
+
+  /**
    * @description 视图参数
    * @type {IParam}
    * @memberof ViewStateBase
@@ -28,6 +35,13 @@ export interface ViewStateBase {
    * @memberof ViewStateBase
    */
   viewSubject: Subject<IActionParam>;
+
+  /**
+   * @description 是否显示标题栏
+   * @type {boolean}
+   * @memberof ViewStateBase
+   */
+  showCaptionBar: boolean;
 
   // 声明任意属性
   [propName: string]: any;

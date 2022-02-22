@@ -11,6 +11,7 @@ import { db_rawitem1Portlet } from '@widgets/app/db-rawitem1-portlet';
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   viewSubject: Subject<IActionParam>;
@@ -36,97 +37,70 @@ defineExpose({ name, state });
 <template>
   <div class="app-dashboard">
     <template v-if="!state.isEnableCustomized">
-  <a-row class="app-dashboard-layout-table">
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
       <testappmenuPortlet
         ref="portlet"
         name="db_appmenu1"
+        :showCaption="true"
+        :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 24,colMD: 24,}"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
         @ctrlEvent="onCtrlEvent"      
-      ></testappmenuPortlet>
-         </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
+      />
       <actionbarPortlet
         ref="portlet"
         name="db_sysportlet2"
+        :showCaption="true"
+        :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 24,colMD: 24,}"
+        style="height: 300.0px;"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
         @ctrlEvent="onCtrlEvent"      
-      ></actionbarPortlet>
-         </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-        <div class="portlet-card" :bordered="false" dis-hover :padding="0">
-          <div class="portlet-container">
-  <a-row class="app-dashboard-layout-table">
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-      <viewPortlet
-        ref="portlet"
-        name="db_sysportlet1"
-        :context="state.context"
-        :viewParams="state.viewParams"
-        :viewSubject="state.viewSubject"
-        @ctrlEvent="onCtrlEvent"      
-      ></viewPortlet>
-         </a-col>
-  </a-row>
-           </div>
-        </div>
-     </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
+      />
+      <AppPortletCard
+        name=db_container1
+        :isContainer="true"
+        :showCaption="true"
+        :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+        class="app-portletContainer "
+      >
+            <viewPortlet
+              ref="portlet"
+              name="db_sysportlet1"
+              :showCaption="true"
+              :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+              style="height: 300.0px;"
+              :context="state.context"
+              :viewParams="state.viewParams"
+              :viewSubject="state.viewSubject"
+              @ctrlEvent="onCtrlEvent"      
+            />
+      </AppPortletCard>
       <testHtmlPortlet
         ref="portlet"
         name="db_sysportlet3"
+        :showCaption="true"
+        :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+        style="height: 300.0px;"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
         @ctrlEvent="onCtrlEvent"      
-      ></testHtmlPortlet>
-         </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
+      />
       <db_rawitem1Portlet
         ref="portlet"
         name="db_rawitem1"
+        :showCaption="true"
+        :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+        iconClass="fa fa-eye"
+        style="height: 300.0px;"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
         @ctrlEvent="onCtrlEvent"      
-      ></db_rawitem1Portlet>
-         </a-col>
-  </a-row>
-     </template>
+      />
+    </template>
   </div>
 </template>
 <style lang="scss">

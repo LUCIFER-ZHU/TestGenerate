@@ -10,6 +10,7 @@ import { MobDashboardForViewPortlet } from '@widgets/chart-data/mob-dashboard-fo
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   viewSubject: Subject<IActionParam>;
@@ -35,83 +36,59 @@ defineExpose({ name, state });
 <template>
   <div class="app-dashboard">
     <template v-if="!state.isEnableCustomized">
-  <a-row class="app-dashboard-layout-table">
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-        <div class="portlet-card" :bordered="false" dis-hover :padding="0">
-          <div class="portlet-card-title">外层容器</div>
-          <div class="portlet-container">
-  <a-row class="app-dashboard-layout-table">
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
-      <MobDashBoardForChartPortlet
-        ref="portlet"
-        name="dashboard_sysportlet2"
-        :context="state.context"
-        :viewParams="state.viewParams"
-        :viewSubject="state.viewSubject"
-        @ctrlEvent="onCtrlEvent"      
-      ></MobDashBoardForChartPortlet>
-         </a-col>
-  </a-row>
-           </div>
-        </div>
-     </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
+      <AppPortletCard
+        name=dashboard_container1
+        :isContainer="true"
+        :showCaption="true"
+        :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+        class="app-portletContainer "
+      >
+            <MobDashBoardForChartPortlet
+              ref="portlet"
+              name="dashboard_sysportlet2"
+              :showCaption="false"
+              :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+              style="height: 300.0px;"
+              :context="state.context"
+              :viewParams="state.viewParams"
+              :viewSubject="state.viewSubject"
+              @ctrlEvent="onCtrlEvent"      
+            />
+      </AppPortletCard>
       <MobMdCtrlDashBoardPortlet
         ref="portlet"
         name="dashboard_sysportlet1"
+        :showCaption="true"
+        :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+        style="height: 400.0px;"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
         @ctrlEvent="onCtrlEvent"      
-      ></MobMdCtrlDashBoardPortlet>
-         </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
+      />
       <MobDashboardViewdashboard_rawitem1Portlet
         ref="portlet"
         name="dashboard_rawitem1"
+        :showCaption="true"
+        :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+        style="width: 200.0px;height: 200.0px;"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
         @ctrlEvent="onCtrlEvent"      
-      ></MobDashboardViewdashboard_rawitem1Portlet>
-         </a-col>
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
+      />
       <MobDashboardForViewPortlet
         ref="portlet"
         name="dashboard_sysportlet3"
+        :showCaption="true"
+        :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+        style="height: 600.0px;"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
         @ctrlEvent="onCtrlEvent"      
-      ></MobDashboardForViewPortlet>
-         </a-col>
-  </a-row>
-     </template>
+      />
+    </template>
   </div>
 </template>
 <style lang="scss">

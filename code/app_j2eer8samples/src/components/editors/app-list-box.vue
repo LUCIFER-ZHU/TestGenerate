@@ -8,7 +8,7 @@ interface ListBoxProps {
    * @type {*}
    * @memberof ListBoxProps
    */
-  value: any;
+  value?: any;
 
   /**
    * 属性名称
@@ -56,7 +56,7 @@ interface ListBoxProps {
    * @type {string}
    * @memberof ListBoxProps
    */
-  codeListTag: string;
+  codeListTag?: string;
 
   /**
    * 代码表类型
@@ -213,24 +213,28 @@ const selectArray: Ref<boolean> = computed(() => {
 //   return Object.is(props.editorType, 'LISTBOX') ? 'value' : props.deKeyField;
 // });
 
-const onChange = ($event: any[]) => {
+const onChange = ($event: any) => {
   let value: null | string | number = null;
-  if (Object.is(props.mode, 'string')) {
-    let _datas: string[] = [];
-    items.value.forEach((item: any) => {
-      const index = $event.findIndex((_key: any) => Object.is(item.value, _key));
-      if (index === -1) {
-        return;
-      }
-      _datas.push(item.value);
-    });
-    value = _datas.join(props.valueSeparator);
+  if (props.multiple == true) {
+    if (Object.is(props.mode, 'string')) {
+      let _datas: string[] = [];
+      items.value.forEach((item: any) => {
+        const index = $event.findIndex((_key: any) => Object.is(item.value, _key));
+        if (index === -1) {
+          return;
+        }
+        _datas.push(item.value);
+      });
+      value = _datas.join(props.valueSeparator);
+    } else {
+      let temp: number = 0;
+      $event.forEach((item: any) => {
+        temp = temp | parseInt(item, 10);
+      });
+      value = temp;
+    }
   } else {
-    let temp: number = 0;
-    $event.forEach((item: any) => {
-      temp = temp | parseInt(item, 10);
-    });
-    value = temp;
+    value = $event.target.value;
   }
   emit('editorEvent', {
     tag: props.name,

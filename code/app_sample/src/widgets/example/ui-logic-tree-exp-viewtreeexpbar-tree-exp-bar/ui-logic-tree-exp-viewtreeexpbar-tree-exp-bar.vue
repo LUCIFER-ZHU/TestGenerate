@@ -10,9 +10,9 @@ import ViewMsgDataViewMsgPanelView from '@views/sample/view-msg-data-view-msg-pa
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -48,11 +48,13 @@ defineExpose({ name, state });
           
           <UILogicTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></UILogicTree>
         </div>
@@ -62,29 +64,29 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleUIActionEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleUIActionEditView>
         <ExampleAutoCompleteEditView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleAutoCompleteEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleAutoCompleteEditView>
         <ExampleUILogicEditView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleUILogicEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleUILogicEditView>
         <ViewMsgDataViewMsgPanelView
           v-if="state.selection.viewName && state.selection.viewName === 'ViewMsgDataViewMsgPanelView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ViewMsgDataViewMsgPanelView>
       </template>
     </AppSplit>

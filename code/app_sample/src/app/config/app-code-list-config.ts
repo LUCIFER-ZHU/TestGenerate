@@ -10,9 +10,9 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': '10', 'text': '示例类型一','codeName': 'Item_10' },
-        {'value': '20', 'text': '示例类型二','codeName': 'Item_20' },
-        {'value': '30', 'text': '示例类型三','codeName': 'Item_30' }
+        {'value': '10', 'text': '示例类型一','codeName': 'Item_10','textClass': '', },
+        {'value': '20', 'text': '示例类型二','codeName': 'Item_20','textClass': '', },
+        {'value': '30', 'text': '示例类型三','codeName': 'Item_30','textClass': '', }
     ]
   },
   'SysOperator':{
@@ -33,10 +33,10 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': '10', 'text': '草稿','codeName': 'Item_10' },
-        {'value': '20', 'text': '流程中','codeName': 'Item_20' },
-        {'value': '30', 'text': '通过','codeName': 'Item_30' },
-        {'value': '40', 'text': '驳回','codeName': 'Item_40' }
+        {'value': '10', 'text': '草稿','codeName': 'Item_10','textClass': '', },
+        {'value': '20', 'text': '流程中','codeName': 'Item_20','textClass': '', },
+        {'value': '30', 'text': '通过','codeName': 'Item_30','textClass': '', },
+        {'value': '40', 'text': '驳回','codeName': 'Item_40','textClass': '', }
     ]
   },
   'CodeList33':{
@@ -48,12 +48,12 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': 'DB2', 'text': 'DB2','codeName': 'Db2' },
-        {'value': 'ORACLE', 'text': 'ORACLE','codeName': 'Oracle' },
-        {'value': 'MSSQL', 'text': 'MSSQLSERVER','codeName': 'Mssql' },
-        {'value': 'MYSQL', 'text': 'MySQL','codeName': 'Mysql' },
-        {'value': 'SYBASE', 'text': 'SYBASE','codeName': 'Sybase' },
-        {'value': 'INFORMIX', 'text': 'INFORMIX','codeName': 'Informix' }
+        {'value': 'DB2', 'text': 'DB2','codeName': 'Db2','textClass': '', },
+        {'value': 'ORACLE', 'text': 'ORACLE','codeName': 'Oracle','textClass': '', },
+        {'value': 'MSSQL', 'text': 'MSSQLSERVER','codeName': 'Mssql','textClass': '', },
+        {'value': 'MYSQL', 'text': 'MySQL','codeName': 'Mysql','textClass': '', },
+        {'value': 'SYBASE', 'text': 'SYBASE','codeName': 'Sybase','textClass': '', },
+        {'value': 'INFORMIX', 'text': 'INFORMIX','codeName': 'Informix','textClass': '', }
     ]
   },
   'Sample__OpportunityState':{
@@ -65,10 +65,10 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': '0', 'text': '创建','codeName': 'Item_0' },
-        {'value': '1', 'text': '验证','codeName': 'Item_1' },
-        {'value': '2', 'text': '建议','codeName': 'Item_2' },
-        {'value': '9', 'text': '赢得','codeName': 'Item_9' }
+        {'value': '0', 'text': '创建','codeName': 'Item_0','textClass': '', },
+        {'value': '1', 'text': '验证','codeName': 'Item_1','textClass': '', },
+        {'value': '2', 'text': '建议','codeName': 'Item_2','textClass': '', },
+        {'value': '9', 'text': '赢得','codeName': 'Item_9','textClass': '', }
     ]
   },
   'Sample__CodeListViewMsgType':{
@@ -80,10 +80,10 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': 'INFO', 'text': '常规信息','codeName': 'Info' },
-        {'value': 'WARN', 'text': '警告信息','codeName': 'Warn' },
-        {'value': 'ERROR', 'text': '错误信息','codeName': 'Error' },
-        {'value': 'CUSTOM', 'text': '自定义信息','codeName': 'Custom' }
+        {'value': 'INFO', 'text': '常规信息','codeName': 'Info','textClass': '', },
+        {'value': 'WARN', 'text': '警告信息','codeName': 'Warn','textClass': '', },
+        {'value': 'ERROR', 'text': '错误信息','codeName': 'Error','textClass': '', },
+        {'value': 'CUSTOM', 'text': '自定义信息','codeName': 'Custom','textClass': '', }
     ]
   },
   'Sample__TaskStatus':{
@@ -95,12 +95,12 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': '10', 'text': '未开始','codeName': 'Item_10' },
-        {'value': '20', 'text': '进行中','codeName': 'Item_20' },
-        {'value': '30', 'text': '已完成','codeName': 'Item_30' },
-        {'value': '40', 'text': '已暂停','codeName': 'Item_40' },
-        {'value': '50', 'text': '已取消','codeName': 'Item_50' },
-        {'value': '60', 'text': '已关闭','codeName': 'Item_60' }
+        {'value': '10', 'text': '未开始','codeName': 'Item_10','textClass': '', },
+        {'value': '20', 'text': '进行中','codeName': 'Item_20','textClass': '', },
+        {'value': '30', 'text': '已完成','codeName': 'Item_30','textClass': '', },
+        {'value': '40', 'text': '已暂停','codeName': 'Item_40','textClass': '', },
+        {'value': '50', 'text': '已取消','codeName': 'Item_50','textClass': '', },
+        {'value': '60', 'text': '已关闭','codeName': 'Item_60','textClass': '', }
     ]
   },
   'YesNo':{
@@ -112,8 +112,8 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': '1', 'text': '是','codeName': 'Item_1' },
-        {'value': '0', 'text': '否','codeName': 'Item_0' }
+        {'value': '1', 'text': '是','codeName': 'Item_1','textClass': '', },
+        {'value': '0', 'text': '否','codeName': 'Item_0','textClass': '', }
     ]
   },
   'Sample__DataType':{
@@ -125,9 +125,9 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': 'home', 'text': '家居用品','codeName': 'Home' },
-        {'value': 'necessary', 'text': '日用品','codeName': 'Necessary' },
-        {'value': 'toy', 'text': '玩具','codeName': 'Toy' }
+        {'value': 'home', 'text': '家居用品','codeName': 'Home','textClass': '', },
+        {'value': 'necessary', 'text': '日用品','codeName': 'Necessary','textClass': '', },
+        {'value': 'toy', 'text': '玩具','codeName': 'Toy','textClass': '', }
     ]
   },
   'Sample__OrderState':{
@@ -139,9 +139,9 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': '10', 'text': '待支付','codeName': 'Item_10' },
-        {'value': '20', 'text': '待处理','codeName': 'Item_20' },
-        {'value': '30', 'text': '已完成','codeName': 'Item_30' }
+        {'value': '10', 'text': '待支付','codeName': 'Item_10','textClass': '', },
+        {'value': '20', 'text': '待处理','codeName': 'Item_20','textClass': '', },
+        {'value': '30', 'text': '已完成','codeName': 'Item_30','textClass': '', }
     ]
   },
   'Sample__SampleCat':{
@@ -153,9 +153,9 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': 'WEBR7D', 'text': '桌面应用','codeName': 'Webr7d' },
-        {'value': 'MOBR7D', 'text': '移动端','codeName': 'Mobr7d' },
-        {'value': 'JAVAR7D', 'text': '后台','codeName': 'Javar7d' }
+        {'value': 'WEBR7D', 'text': '桌面应用','codeName': 'Webr7d','textClass': '', },
+        {'value': 'MOBR7D', 'text': '移动端','codeName': 'Mobr7d','textClass': '', },
+        {'value': 'JAVAR7D', 'text': '后台','codeName': 'Javar7d','textClass': '', }
     ]
   },
   'Sample__MapDataType':{
@@ -167,10 +167,10 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': 'Nation', 'text': '国家','codeName': 'Nation' },
-        {'value': 'Province', 'text': '省份','codeName': 'Province' },
-        {'value': 'City', 'text': '城市','codeName': 'City' },
-        {'value': 'District', 'text': '区县','codeName': 'District' }
+        {'value': 'Nation', 'text': '国家','codeName': 'Nation','textClass': '', },
+        {'value': 'Province', 'text': '省份','codeName': 'Province','textClass': '', },
+        {'value': 'City', 'text': '城市','codeName': 'City','textClass': '', },
+        {'value': 'District', 'text': '区县','codeName': 'District','textClass': '', }
     ]
   },
   'Sample__NextForm':{
@@ -182,9 +182,9 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': 'WizardForm2', 'text': '模式1','codeName': 'Wizardform2' },
-        {'value': 'WizardForm3', 'text': '模式2','codeName': 'Wizardform3' },
-        {'value': 'WizardForm4', 'text': '模式3','codeName': 'Wizardform4' }
+        {'value': 'WizardForm2', 'text': '模式1','codeName': 'Wizardform2','textClass': '', },
+        {'value': 'WizardForm3', 'text': '模式2','codeName': 'Wizardform3','textClass': '', },
+        {'value': 'WizardForm4', 'text': '模式3','codeName': 'Wizardform4','textClass': '', }
     ]
   },
   'Sample__ActivityType':{
@@ -196,10 +196,10 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': 'Meeting', 'text': '会议','codeName': 'Meeting' },
-        {'value': 'Phone', 'text': '电话','codeName': 'Phone' },
-        {'value': 'Email', 'text': '电子邮件','codeName': 'Email' },
-        {'value': 'Other', 'text': '其它','codeName': 'Other' }
+        {'value': 'Meeting', 'text': '会议','codeName': 'Meeting','textClass': '', },
+        {'value': 'Phone', 'text': '电话','codeName': 'Phone','textClass': '', },
+        {'value': 'Email', 'text': '电子邮件','codeName': 'Email','textClass': '', },
+        {'value': 'Other', 'text': '其它','codeName': 'Other','textClass': '', }
     ]
   },
   'Sample__CodeList':{
@@ -220,11 +220,11 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': 'TOP', 'text': '视图上方','codeName': 'Top' },
-        {'value': 'BOTTOM', 'text': '视图下方','codeName': 'Bottom' },
-        {'value': 'BODY', 'text': '视图内容区','codeName': 'Body' },
-        {'value': 'POPUP', 'text': '弹出','codeName': 'Popup' },
-        {'value': 'CUSTOM', 'text': '自定义','codeName': 'Custom' }
+        {'value': 'TOP', 'text': '视图上方','codeName': 'Top','textClass': '', },
+        {'value': 'BOTTOM', 'text': '视图下方','codeName': 'Bottom','textClass': '', },
+        {'value': 'BODY', 'text': '视图内容区','codeName': 'Body','textClass': '', },
+        {'value': 'POPUP', 'text': '弹出','codeName': 'Popup','textClass': '', },
+        {'value': 'CUSTOM', 'text': '自定义','codeName': 'Custom','textClass': '', }
     ]
   },
   'Sample__CustomerType':{
@@ -236,10 +236,10 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': '10', 'text': '政府单位','codeName': 'Item_10' },
-        {'value': '20', 'text': '企事业单位','codeName': 'Item_20' },
-        {'value': '30', 'text': '国企','codeName': 'Item_30' },
-        {'value': '40', 'text': '民企','codeName': 'Item_40' }
+        {'value': '10', 'text': '政府单位','codeName': 'Item_10','textClass': '', },
+        {'value': '20', 'text': '企事业单位','codeName': 'Item_20','textClass': '', },
+        {'value': '30', 'text': '国企','codeName': 'Item_30','textClass': '', },
+        {'value': '40', 'text': '民企','codeName': 'Item_40','textClass': '', }
     ]
   },
   'Sample__Priority':{
@@ -251,9 +251,9 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': '1', 'text': '低','codeName': 'Low' },
-        {'value': '2', 'text': '中','codeName': 'Middle' },
-        {'value': '3', 'text': '高','codeName': 'High' }
+        {'value': '1', 'text': '低','codeName': 'Low','textClass': '', },
+        {'value': '2', 'text': '中','codeName': 'Middle','textClass': '', },
+        {'value': '3', 'text': '高','codeName': 'High','textClass': '', }
     ]
   },
   'Sample__Gender':{
@@ -265,8 +265,8 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': '1', 'text': '男','codeName': 'Item_1' },
-        {'value': '0', 'text': '女','codeName': 'Item_0' }
+        {'value': '1', 'text': '男','codeName': 'Item_1','textClass': '', },
+        {'value': '0', 'text': '女','codeName': 'Item_0','textClass': '', }
     ]
   }
 }

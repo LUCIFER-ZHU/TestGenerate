@@ -28,7 +28,8 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, grid, onCtrlEvent, onQuickGroupEvent, onQuickSearchEvent } = new PickupGridView(viewState, props, emit).moduleInstall();
+const pickupGridView = new PickupGridView(viewState, props, emit).moduleInstall();
+const { state, grid, onCtrlEvent, onQuickGroupEvent, onQuickSearchEvent } = pickupGridView;
 </script>
 
 <template>
@@ -47,6 +48,7 @@ const { state, grid, onCtrlEvent, onQuickGroupEvent, onQuickSearchEvent } = new 
       :viewParams="state.viewParams"
       :controlAction="state.grid.action"
       :viewSubject="state.viewSubject"
+      :parent="pickupGridView"
       @ctrlEvent="onCtrlEvent"     
     ></MainGrid>
   </AppPickupGridViewLayout>

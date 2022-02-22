@@ -20,9 +20,9 @@ import ChartDataAreaChartView from '@views/sample/chart-data-area-chart-view';
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -58,11 +58,13 @@ defineExpose({ name, state });
           
           <ExpForChartTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></ExpForChartTree>
         </div>
@@ -72,99 +74,99 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataBarChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataBarChartView>
         <ChartDataUsr2ChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataUsr2ChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataUsr2ChartView>
         <ChartDataRingPieChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataRingPieChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataRingPieChartView>
         <ChartDataFunnelChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataFunnelChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataFunnelChartView>
         <ChartDataKLineChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataKLineChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataKLineChartView>
         <ChartDataChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataChartView>
         <ChartDataGaugeChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataGaugeChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataGaugeChartView>
         <ChartDataPieChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataPieChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataPieChartView>
         <ChartDataGroupBarChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataGroupBarChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataGroupBarChartView>
         <ChartDataRadarChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataRadarChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataRadarChartView>
         <ChartDataStackBarChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataStackBarChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataStackBarChartView>
         <ChartDataUsr3ChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataUsr3ChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataUsr3ChartView>
         <ChartDataLineChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataLineChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataLineChartView>
         <ChartDataAreaChartView
           v-if="state.selection.viewName && state.selection.viewName === 'ChartDataAreaChartView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ChartDataAreaChartView>
       </template>
     </AppSplit>

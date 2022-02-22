@@ -11,15 +11,14 @@ export const viewState = {
   height: '0',
   width: '700',
   appEntityCodeName: 'MapData',
-  keyPSDEField: 'mapdata',
+  appDeKeyFieldName: 'mapdataid',
+  appDeMajorFieldName: 'mapdataname',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
   enableQuickGroup: false,
   viewLogics: {
   },
-  toolbar: [
-  ],
   form:{
     action:{
       loadAction: 'Get',
@@ -28,5 +27,5 @@ export const viewState = {
       loadDraftAction: 'GetDraft',
       createAction: 'Create'
     }
-  }
+  },
 };

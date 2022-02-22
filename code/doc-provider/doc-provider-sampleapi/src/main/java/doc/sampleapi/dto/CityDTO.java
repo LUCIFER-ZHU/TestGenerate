@@ -78,6 +78,14 @@ public class CityDTO extends DTOBase implements Serializable {
     private String createMan;
 
     /**
+     * 本地标识
+     */
+    @JsonProperty("local")
+    @JSONField(name = "local")
+    @ApiModelProperty("本地标识")
+    private String local;
+
+    /**
      * 备注
      */
     @JsonProperty("memo")
@@ -134,6 +142,15 @@ public class CityDTO extends DTOBase implements Serializable {
     public CityDTO setCode(String code) {
         this.code = code;
         this.modify("code", code);
+        return this;
+    }
+
+    /**
+     * 设置 [本地标识]
+     */
+    public CityDTO setLocal(String local) {
+        this.local = local;
+        this.modify("local", local);
         return this;
     }
 

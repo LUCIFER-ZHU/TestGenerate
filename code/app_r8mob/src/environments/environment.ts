@@ -30,7 +30,8 @@ export const Environment = {
     // 仿真mockDcSystemId
     mockDcSystemId: '',
     // 登录地址
-    loginUrl: ''
+    loginUrl: '',
+    enableIssue: false,
 };
 // 挂载外部配置文件
 if ((window as any).Environment) {

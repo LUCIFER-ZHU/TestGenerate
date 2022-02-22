@@ -2,8 +2,6 @@
 export const ctrlState = {
   controlCodeName: 'MobDashBoardForChart',
   controlName: 'dashboard_sysportlet2',
-  showTitleBar: false,
-  title: '图表',
   portletType: 'CHART',
   // 部件高度
   height: 300,

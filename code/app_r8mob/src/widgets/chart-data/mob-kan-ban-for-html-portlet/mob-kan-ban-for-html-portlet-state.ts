@@ -2,8 +2,6 @@
 export const ctrlState = {
   controlCodeName: 'MobKanBanForHTML',
   controlName: 'db_sysportlet3',
-  showTitleBar: true,
-  title: 'HTML',
   portletType: 'HTML',
   // 实体名称
   appEntityCodeName: 'ChartData',

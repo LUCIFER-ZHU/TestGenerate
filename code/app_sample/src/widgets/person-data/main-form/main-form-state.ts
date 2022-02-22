@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { PersonDataService } from '@api/person-data/person-data-service';
 
 /**
@@ -123,9 +123,33 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new PersonDataService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'PersonData',
+  appDeCodeName:'PersonData',
+  appDeLogicName: '人员数据',
   appDeKeyFieldName: 'PersonDataId',
   appDeMajorFieldName: 'PersonDataName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+    {
+      createDV: "orgdataid",
+      createDVT: "CONTEXT",
+      property: "orgdataid",
+      valueFormat: "",
+      dataType: "0"
+    },
+    {
+      createDV: "deptdataid",
+      createDVT: "CONTEXT",
+      property: "deptdataid",
+      valueFormat: "",
+      dataType: "0"
+    },
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',
@@ -246,8 +270,6 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
-      createDVT: "CONTEXT",
-      createDV: "orgdataid",
     },
     deptdataid: {
       caption: '部门数据标识',
@@ -261,8 +283,6 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
-      createDVT: "CONTEXT",
-      createDV: "deptdataid",
     },
     avatar: {
       caption: '头像',

@@ -1,6 +1,7 @@
-import { deepCopy, GridControlState, IActionParam, IParam, MDControl } from "@core";
+import { DataTypes, dateFormat, deepCopy, GridControlState, IActionParam, IParam, isExistAndNotEmpty, MDControl } from "@core";
 import { createUUID } from "qx-util";
 import schema, { ErrorList, FieldErrorList } from 'async-validator';
+import { Ref } from "vue";
 /**
  * @description 表格部件
  * @export
@@ -30,12 +31,12 @@ export class GridControl extends MDControl {
      * @memberof GridControl
      */
     public useCustom() {
-        const { controlName, selectFirstDefault, rowEditState, rowActiveMode, isSingleSelect } = this.state;
+        const { selectFirstDefault, rowEditState, selectColumnWidth, isSingleSelect, totalColumnWidth } = this.state;
         // 滚动条配置
         const useScrollOption = computed(() => {
             return {
                 scrollToFirstRowOnChange: true,
-                x: '100%',
+                x: totalColumnWidth || '150%',
                 y: '100%',
             }
         });
@@ -100,6 +101,11 @@ export class GridControl extends MDControl {
                 }
             };
         }
+        // 展开行
+        const useExpandedRowKeys: Ref<Array<string>> = ref([]);
+        const onExpandedRowsChange = (expandedRows: string[]) => {
+            useExpandedRowKeys.value = expandedRows;
+        }
         // 表格选择功能配置
         const useRowSelectionOption = computed(() => {
             if (selectFirstDefault) {
@@ -107,10 +113,20 @@ export class GridControl extends MDControl {
             }
             return {
                 type: isSingleSelect ? 'radio' : 'checkbox',
-                columnWidth: 32,
+                columnWidth: selectColumnWidth,
                 selectedRowKeys: this.state.selectedRowKeys,
-                checkStrictly: this.props.multiple ? false : true,
-                onChange: (_selectedRowKeys: string[], selectedRows: IParam[]) => {
+                checkStrictly: false,
+                onSelect: (record: IParam, selected: boolean, selectedRows: IParam[], $event: any) => {
+                    if (selected) {
+                        const { appDeKeyFieldName } = this.state;
+                        const selectedRowKey: string = record[appDeKeyFieldName] || record.srfkey;
+                        const index: number = useExpandedRowKeys.value.findIndex((key: string) => Object.is(key, selectedRowKey))
+                        if (Object.is(index,-1) && record.children && record.children.length > 0) {
+                            useExpandedRowKeys.value.push(selectedRowKey);
+                        }
+                    }
+                },
+                onChange: (_selectedRowKeys: string[], selectedRows: any[]) => {
                     this.state.selectedRowKeys = _selectedRowKeys;
                     const selection: IParam[] = [];
                     selectedRows.forEach((select: IParam) => {
@@ -133,15 +149,20 @@ export class GridControl extends MDControl {
             if (pagination) {
                 this.load();
             }
+            if (sorter) {
+                this.load({ sort: `${sorter.field},${sorter.order == 'descend' ? 'desc' : 'asc'}` });
+            }
         }
         return {
             useScrollOption,
             useRowKey,
             useRowClassName,
             useCustomRow,
+            useExpandedRowKeys,
             useRowSelectionOption,
             onResizeColumn,
-            onGridChange
+            onGridChange,
+            onExpandedRowsChange
         }
     }
 
@@ -154,18 +175,51 @@ export class GridControl extends MDControl {
         const { tag, action, data } = actionParam;
         switch (action) {
             case "valueChange":
-                const { items } = toRefs(this.state);
-                if (items.value[rowIndex][tag] !== data) {
-                    items.value[rowIndex][tag] = data;
-                    items.value[rowIndex]["rowDataState"] = "update";
-                    this.validateField(tag, data, rowIndex);
-                }
+                this.handleGridItemValueChange(rowIndex, tag, data);
                 break;
             default:
                 break;
         }
     }
 
+    /**
+     * @description 表格项值改变
+     * @param {*} data
+     * @param {number} rowIndex
+     * @param {string} tag
+     * @memberof GridControl
+     */
+    private handleGridItemValueChange(rowIndex: number, tag: string, data: any) {
+        const { items } = toRefs(this.state);
+        if (items.value[rowIndex][tag] !== data) {
+            items.value[rowIndex][tag] = data;
+            items.value[rowIndex]["rowDataState"] = "update";
+            this.resetGridData(tag, data, rowIndex);
+            this.validateField(tag, data, rowIndex);
+            this.updateGridEditItem(tag, data, rowIndex);
+        }
+    }
+
+    /**
+     * @description 重置表格数据
+     * @param {string} name
+     * @param {*} data
+     * @param {number} rowIndex
+     * @memberof GridControl
+     */
+    public resetGridData(name: string, data: any, rowIndex: number) {
+        const { columnsModel } = this.state;
+        if (columnsModel && columnsModel.length > 0) {
+            columnsModel.forEach((column: any) => {
+                if (column.resetItemName && Object.is(name, column.resetItemName)) {
+                    this.handleGridItemValueChange(rowIndex, column.dataIndex, null);
+                    if (column.valueItemName) {
+                        this.handleGridItemValueChange(rowIndex, column.valueItemName, null);
+                    }
+                }
+            })
+        }
+    }
 
     /**
      *
@@ -193,24 +247,94 @@ export class GridControl extends MDControl {
     }
 
     /**
-     * @description 操作列事件触发
-     * @param {IActionParam} action
-     * @param {IParam} record
+     * @description 更新表格编辑项
+     * @param {string} name
+     * @param {*} data
+     * @param {number} rowIndex
      * @memberof GridControl
      */
-    public onToolbarEvent(action: IActionParam, record: IParam) {
-        //todo 界面行为
+    public async updateGridEditItem(name: string, data: any, rowIndex: number) {
+        const { items, columnsModel, context, viewParams, controlService, appDeCodeName, appDeKeyFieldName } = this.state;
+        if (columnsModel && columnsModel.length > 0) {
+            columnsModel.forEach(async (column: any) => {
+                if (column.updateItem) {
+                  const updateItem: any = column.updateItem;
+                  if (updateItem.customCode) {
+                      if (updateItem.scriptCode) {
+                          eval(updateItem.scriptCode);
+                      }
+                  } else {
+                      const arg = Object.assign(deepCopy(viewParams), items[rowIndex]);
+                      const tempContext = Object.assign(deepCopy(context), { [appDeCodeName?.toLowerCase()]: items[rowIndex][appDeKeyFieldName] || items[rowIndex].srfkey });
+                      const response = await controlService.frontLogic(
+                          tempContext,
+                          { viewParams: arg },
+                          { action: updateItem.appDEMethod, isLoading: updateItem.showBusyIndicator },
+                      );
+                      if (response.status && response.status == 200) {
+                          updateItem.updateDetails?.forEach((detailName: string) => {
+                              if (detailName && items[rowIndex].hasOwnProperty(detailName)) {
+                                  items[rowIndex][detailName] = response.data[detailName];
+                              }
+                          });
+                      }
+                  }
+                }
+            })
+        }
     }
 
     /**
-     * @description 处理表格操作列事件
+     * @description 操作列事件触发
+     * @param {IActionParam} actionParam
+     * @param {IParam} record
+     * @memberof GridControl
+     */
+     public onToolbarEvent(actionParam: IActionParam) {
+        const { data } = actionParam;
+        if (!data) {
+            console.warn("工具栏执行参数不足");
+            return;
+        }
+        const { uIAction } = data;
+        if (!uIAction) {
+            console.warn("工具栏执行参数不足");
+            return;
+        }
+        // 准备参数
+        const inputParam = {
+            context: this.state.context,
+            viewParams: this.state.viewParams,
+            data: this.getData(),
+            event: data.event,
+            actionEnvironment: this
+        };
+        // 执行行为
+        App.getAppActionService().execute(uIAction, inputParam);
+    }
+
+    /**
+     * @description 处理表格行事件（操作列，界面行为）
      * @param {IActionParam} actionParam 行为参数
      * @param {IParam} [row] 表格行数据
      * @memberof GridControl
      */
     public onActionColEvent(actionParam: IActionParam, row?: IParam) {
-        const { tag, action, data } = actionParam;
-        console.log('触发界面行为', actionParam, row);
+        const { data } = actionParam;
+        if (!row || !data) {
+            console.warn("工具栏执行参数不足");
+            return;
+        }
+        // 准备参数
+        const inputParam = {
+            context: this.state.context,
+            viewParams: this.state.viewParams,
+            data: [row],
+            event: data.event,
+            actionEnvironment: this
+        };
+        // 执行行为
+        App.getAppActionService().execute(data, inputParam);
     }
 
     /**
@@ -220,8 +344,15 @@ export class GridControl extends MDControl {
      */
     public handleStateChange() {
         // 计算表格操作列行为权限
-        const { items, columnsModel } = toRefs(this.state);
-        // this.getActionAuthState
+        const { items, uAColumnModel } = toRefs(this.state);
+        if (items.value.length > 0 && uAColumnModel.value && Object.keys(uAColumnModel.value).length > 0) {
+            Object.keys(uAColumnModel.value).forEach((key: string) => {
+                const tempActionModel = uAColumnModel.value[key];
+                items.value.forEach((item: any) => {
+                    Object.assign(item, { [key]: this.getActionAuthState(item, tempActionModel) });
+                });
+            })
+        }
         // 处理分组
         this.handleDataGroup();
         // 处理数据聚合
@@ -268,6 +399,10 @@ export class GridControl extends MDControl {
         const { mdCtrlPaging, mdCtrlGroup, columnsModel } = this.state;
         const { gridAgg } = toRefs(this.state);
         let { aggMode, aggData } = gridAgg.value;
+        //  先置空再添加，避免重复
+        if (aggData && aggData.length > 0) {
+            aggData.splice(0, aggData.length);
+        }
         const { enableGroup } = mdCtrlGroup;
         if (!Object.is(aggMode, "NONE")) {
             const { enablePagingBar, current, pageSize } = mdCtrlPaging;
@@ -374,7 +509,7 @@ export class GridControl extends MDControl {
         const { groupField } = gridGroup;
         let autoGroup: string[] = [];
         items.value.forEach((item: IParam) => {
-            if (item.hasOwnProperty(groupField)) {
+            if (item.hasKey(groupField)) {
                 autoGroup.push(item[groupField]);
             }
         })
@@ -405,44 +540,60 @@ export class GridControl extends MDControl {
      * @protected
      * @memberof MDControl
      */
-    protected codeListGroupData() {
-        const { gridGroup } = this.state;
-        const { items, columnsModel } = toRefs(this.state);
-        const { groupField } = gridGroup;
-        // TODO 代码表数据
-        let codeListGroup: IParam[] = [];
-        if (codeListGroup.length > 0) {
-            const groupColumn = this.getGridColumn(columnsModel.value, "GROUP");
-            const gridData: IParam[] = [];
-            const otherGroup: IParam[] = [];
-            codeListGroup.forEach((group: IParam) => {
-                const children: IParam[] = [];
-                items.value.forEach((item: IParam) => {
-                    if (Object.is(group.value, item[groupField])) {
-                        children.push(item);
-                    }
-                });
-                gridData.push({
-                    srfkey: createUUID(),
-                    [groupColumn.dataIndex]: group.text,
-                    children: deepCopy(children),
-                })
+    protected async codeListGroupData() {
+        const { groupField, groupCodeList } = this.state.mdCtrlGroup;
+        const { items, context, viewParams, columnsModel } = toRefs(this.state);
+        if (!groupCodeList || !isExistAndNotEmpty(groupCodeList.codeListTag)) {
+            App.getNotificationService().warning({
+                message: '警告',
+                description: '未配置分组代码表'
             });
+            return;
+        }
+        const codeListService = App.getCodeListService();
+        let codeListItems: IParam[] = [];
+        try {
+            codeListItems = await codeListService.getCodeListItems({
+                tag: groupCodeList.codeListTag,
+                context,
+                viewParams
+            });
+        } catch(error) {
+            console.warn(`分组代码表 ${groupCodeList.codeListTag} 获取数据项异常`);
+        }
+        //  分组列
+        const groupColumn = this.getGridColumn(columnsModel.value, "GROUP");
+        //  分组数据集合
+        const groupItems: IParam[] = [];
+        //  其他分组项
+        const otherGroupItems: IParam[] = [];
+        codeListItems.forEach((group: IParam) => {
+            const children: IParam[] = [];
             items.value.forEach((item: IParam) => {
-                const index: number = codeListGroup.findIndex((_item: IParam) => Object.is(item[groupField], _item.value));
-                if (index < 0) {
-                    otherGroup.push(item);
+                if (Object.is(group.value, item[groupField])) {
+                    children.push(item);
                 }
             });
-            if (otherGroup.length > 0) {
-                gridData.push({
-                    srfkey: createUUID(),
-                    [groupColumn.dataIndex]: "其它",
-                    children: deepCopy(otherGroup),
-                })
+            groupItems.push({
+                srfkey: createUUID(),
+                [groupColumn.dataIndex]: group.text,
+                children: children
+            })
+        });
+        items.value.forEach((item: IParam) => {
+            const index: number = codeListItems.findIndex((_item: IParam) => Object.is(item[groupField], _item.value));
+            if (index < 0) {
+                otherGroupItems.push(item);
             }
-            items.value = gridData;
+        });
+        if (otherGroupItems.length > 0) {
+            groupItems.push({
+                srfkey: createUUID(),
+                [groupColumn.dataIndex]: "其它",
+                children: otherGroupItems,
+            })
         }
+        this.state.items = [...groupItems];
     }
 
     /**
@@ -494,6 +645,140 @@ export class GridControl extends MDControl {
     }
 
     /**
+     * 新建默认值
+     *
+     * @protected
+     * @param {IParam} [row={}]
+     * @memberof GridControl
+     */
+    protected setCreateDefault(row: IParam = {}): void {
+        const { createDefaultItems, viewParams, context } = this.state;
+        if (createDefaultItems.length === 0) {
+            return;
+        }
+        createDefaultItems.forEach((item: IParam) => {
+            const { createDVT, createDV, property, valueFormat, dataType } = item;
+            if (createDVT && row.hasKey(property)) {
+                switch (createDVT) {
+                    case "CONTEXT":
+                        if (createDV) {
+                            row[property] = viewParams[createDV];
+                        }
+                        break;
+                    case "SESSION":
+                    case "APPDATA":
+                        if (createDV) {
+                            row[property] = context[createDV];
+                        }
+                        break;
+                    case "OPERATORNAME":
+                        row[property] = context["srfusername"];
+                        break;
+                    case "OPERATOR":
+                        row[property] = context["srfuserid"];
+                        break;
+                    case "CURTIME":
+                        row[property] = valueFormat ? dateFormat(new Date(), valueFormat) : (new Date()).toDateString();
+                        break;
+                    case "PARAM":
+                        if (item.createDV) {
+                            row[property] = this.computeDefaultValueWithParam("CREATE", item.createDV, row);
+                        }
+                        break;
+                }
+            } else if (createDV && row.hasKey(property)) {
+                row[property] = dataType && DataTypes.isNumber(dataType) ? Number(createDV) : createDV;
+            }
+        });
+    }
+
+    /**
+     * 设置更新默认值
+     *
+     * @protected
+     * @return {*}  {void}
+     * @memberof GridControl
+     */
+    protected setUpdateDefault(): void {
+        const { updateDefaultItems, viewParams, context, items } = this.state;
+        if (updateDefaultItems.length === 0 || items.length === 0) {
+            return;
+        }
+        const setDefault = (row: IParam = {}) => {
+            updateDefaultItems.forEach((item: IParam) => {
+                const { updateDV, updateDVT, property, valueFormat, dataType } = item;
+                if (updateDVT && row.hasKey(property)) {
+                    switch (updateDVT) {
+                        case "CONTEXT":
+                            if (updateDV) {
+                                row[property] = viewParams[updateDV];
+                            }
+                            break;
+                        case "SESSION":
+                        case "APPDATA":
+                            if (updateDV) {
+                                row[property] = context[updateDV];
+                            }
+                            break;
+                        case "OPERATORNAME":
+                            row[property] = context["srfusername"];
+                            break;
+                        case "OPERATOR":
+                            row[property] = context["srfuserid"];
+                            break;
+                        case "CURTIME":
+                            row[property] = valueFormat ? dateFormat(new Date(), valueFormat) : (new Date()).toDateString();
+                            break;
+                        case "PARAM":
+                            if (item.createDV) {
+                                row[property] = this.computeDefaultValueWithParam("UPDATE", updateDV, row);
+                            }
+                            break;
+                    }
+                } else if (updateDV && row.hasKey(property)) {
+                    row[property] = dataType && DataTypes.isNumber(dataType) ? Number(updateDV) : updateDV;
+                }
+            });
+        }
+        items.forEach((item: IParam) => {
+            if (item.rowDataState == 'update') {
+                setDefault(item);
+            }
+        });
+    }
+
+    /**
+     * 计算数据对象类型的默认值
+     * @private
+     * @param {('UPDATE' | 'CREATE')} action
+     * @param {string} param
+     * @param {IParam} row
+     * @return {*} 
+     * @memberof GridControl
+     */
+    private computeDefaultValueWithParam(action: 'UPDATE' | 'CREATE', param: string, row: IParam) {
+        const { controlService, appDeKeyFieldName } = this.state;
+        if (Object.is(action, "UPDATE")) {
+            const nativeData: any = controlService.getCopynativeData();
+            if (nativeData && (nativeData instanceof Array) && nativeData.length > 0) {
+                const targetData: any = nativeData.find((item: any) => {
+                    return item[appDeKeyFieldName.toLowerCase()] === row.srfkey;
+                });
+                if (targetData) {
+                    return targetData[param] ? targetData[param] : null;
+                } else {
+                    return null;
+                }
+            } else {
+                return null;
+            }
+        } else {
+            const remoteData = controlService.getRemoteCopyData()[param];
+            return remoteData ? remoteData : null;
+        }
+    }
+
+    /**
      * @description 安装部件所有功能模块的方法
      * @return {*}
      * @memberof GridControl
@@ -503,8 +788,9 @@ export class GridControl extends MDControl {
         return {
             ...superParams,
             useCustom: this.useCustom(),
-            onEditorEvent: this.onEditorEvent,
-            onToolbarEvent: this.onToolbarEvent
+            onEditorEvent: this.onEditorEvent.bind(this),
+            onToolbarEvent: this.onToolbarEvent.bind(this),
+            onActionColEvent: this.onActionColEvent.bind(this)
         };
     }
 }

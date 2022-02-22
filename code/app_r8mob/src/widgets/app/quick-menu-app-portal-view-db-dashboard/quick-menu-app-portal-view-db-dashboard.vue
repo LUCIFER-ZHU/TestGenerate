@@ -7,6 +7,7 @@ import { MobQuickMenuPortlet } from '@widgets/app/mob-quick-menu-portlet';
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   viewSubject: Subject<IActionParam>;
@@ -32,24 +33,17 @@ defineExpose({ name, state });
 <template>
   <div class="app-dashboard">
     <template v-if="!state.isEnableCustomized">
-  <a-row class="app-dashboard-layout-table">
-    <a-col
-          :lg="{span: 24, offset: 0 }"
-      :md="{span: 24, offset: 0 }"
-      :sm="{span: 24, offset: 0 }"
-      :xs="{span: 24, offset: 0 }"
- >
       <MobQuickMenuPortlet
         ref="portlet"
         name="db_appmenu1"
+        :showCaption="false"
+        :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
         :context="state.context"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
         @ctrlEvent="onCtrlEvent"      
-      ></MobQuickMenuPortlet>
-         </a-col>
-  </a-row>
-     </template>
+      />
+    </template>
   </div>
 </template>
 <style lang="scss">

@@ -9,9 +9,9 @@ import CityTreeNavGridView from '@views/sample/city-tree-nav-grid-view';
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -47,11 +47,13 @@ defineExpose({ name, state });
           
           <TreeNavParamTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></TreeNavParamTree>
         </div>
@@ -61,22 +63,22 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'ProvinceTreeNavInfoEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ProvinceTreeNavInfoEditView>
         <ExampleNavParamEditView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleNavParamEditView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleNavParamEditView>
         <CityTreeNavGridView
           v-if="state.selection.viewName && state.selection.viewName === 'CityTreeNavGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </CityTreeNavGridView>
       </template>
     </AppSplit>

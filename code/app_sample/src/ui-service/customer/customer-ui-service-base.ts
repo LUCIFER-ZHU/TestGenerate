@@ -9,19 +9,37 @@ import { AppFrontAction, AppBackendAction } from '@core';
  */
 export class CustomerUIServiceBase extends UIServiceBase {
 
-  /**
-    * Creates an instance of CustomerUIServiceBase
-    * 
-    * @param {*} [opts={}]
-    * @memberof CustomerUIServiceBase
-    */
-  constructor(opts: IParam = {}) {
-      super(opts);
-  }
+    /**
+      * Creates an instance of CustomerUIServiceBase
+      * 
+      * @param {*} [opts={}]
+      * @memberof CustomerUIServiceBase
+      */
+    constructor(opts: IParam = {}) {
+        super(opts);
+        this.initBasicData();
+    }
 
+    /**
+     * 初始化基础数据
+     *
+     * @memberof CustomerUIServiceBase
+     */
+    public initBasicData() {
+        // 应用实体主键属性
+        this.appDeKeyFieldName = 'customerid';
+        // 是否启用主状态
+        this.isEnableDEMainState = false;
+    }
 
-
-   public uiActionModes = {       "Quick":{
+    /**
+     * 快速新建
+     *
+     * @param {*} params
+     * @memberof CustomerUIServiceBase
+     */
+    public async Quick(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'Quick',
              uIActionMode:'FRONT',
              actionTarget:'NONE',
@@ -37,8 +55,18 @@ export class CustomerUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-       "OpenMain":{
+         };
+        AppFrontAction.doAction(actionModel, params);
+    }
+
+    /**
+     * 打开客户主数据分页导航
+     *
+     * @param {*} params
+     * @memberof CustomerUIServiceBase
+     */
+    public async OpenMain(uiAction:any, params:any){
+        const actionModel =  {
              codeName:'OpenMain',
              uIActionMode:'FRONT',
              actionTarget:'SINGLEKEY',
@@ -54,26 +82,7 @@ export class CustomerUIServiceBase extends UIServiceBase {
              nextActionCodeName:'',
              navContexts:{},
              navParams:{}
-         },
-     };    /**
-     * 快速新建
-     *
-     * @param {*} params
-     * @memberof CustomerUIServiceBase
-     */
-    public async Quick(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('Quick');
-        AppFrontAction.doAction(actionModel, params);
-    }
-
-    /**
-     * 打开客户主数据分页导航
-     *
-     * @param {*} params
-     * @memberof CustomerUIServiceBase
-     */
-    public async OpenMain(uiAction:any, params:any){
-        const actionModel =  this.getUIActionModel('OpenMain');
+         };
         AppFrontAction.doAction(actionModel, params);
     }
 

@@ -2,10 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './base-dashboard-viewdashboard-rawitem1-portlet-state';
 import { PortletControl, IActionParam, IParam, IContext } from '@core';
-// 引入视图start
-// 引入视图end
-// 引入菜单start
-// 引入菜单end
 
 
 interface Props {
@@ -13,10 +9,15 @@ interface Props {
   context: IContext;
   viewParams?: IParam;
   viewSubject: Subject<IActionParam>;
+  showCaption?: boolean;
+  title?: string;
+  imgPath?: string;
+  iconClass?: string;
 }
 
 const props = withDefaults(defineProps < Props > (), {
   viewSubject: () => new Subject < IActionParam > (),
+  showCaption: 'true',
 })
 
 // emit声明
@@ -33,19 +34,19 @@ const { name, state, onViewEvent, onCtrlEvent, handleItemClick, handleActionClic
 defineExpose({ name, state });
 </script>
 <template>
-  <div class="app-portlet el-alert el-alert--info is-light" >
-  <template v-if="state.showTitleBar && state.title">
-    <div class='portlet-title'>
-      <span>
-        <i v-if="state.iconcls" :class="state.iconcls" />
-        <img v-if="state.imagePath" :src="state.imagePath" />
-{{state.title}}
-      </span>
+  <AppPortletCard 
+     class="app-portlet el-alert el-alert--info is-light"
+     :title="title"
+     :iconClass="iconClass"
+     :imgPath="imgPath"
+     :showCaption="showCaption"
+  >
+    <template #header-right>
       <span class="portlet-action" v-if="state.actionBarModelData && state.portletType !== 'ACTIONBAR'">
         <template v-for="(item,index) in Object.values(state.actionBarModelData)" :key="index">
           <a-tooltip>
             <template #title>
-              {{item.actionName}}
+{{item.actionName}}
             </template>
             <a @click="handleActionClick(item,$event)">
               <i v-if="item.icon" :class="item.icon" />
@@ -55,9 +56,7 @@ defineExpose({ name, state });
           </a-tooltip>
         </template>  
       </span>
-    </div>
-  </template>
-  <div :class="{'portlet-with-title': state.showTitleBar, 'portlet-without-title': !state.showTitleBar}">
+    </template>
           <app-raw
         :name="state.controlName"
         :contentType="state.contentType"
@@ -65,9 +64,8 @@ defineExpose({ name, state });
         :imgPath="state.imagePath"
         style=""
         :value="`<p>数据看板常用于系统首页，部件可定制，支持以下部件：&lt;/br&gt;<br />实体列表、实体图表、实体视图、工具栏、操作栏、网页部件</p>`"
-      ></app-raw>>
-  </div>
-  </div>
+      ></app-raw>
+  </AppPortletCard>
 </template>
 <style lang="scss">
 </style>

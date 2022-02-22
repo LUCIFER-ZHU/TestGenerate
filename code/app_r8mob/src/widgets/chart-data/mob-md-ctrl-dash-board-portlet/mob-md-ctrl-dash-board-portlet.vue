@@ -2,10 +2,6 @@
 import { Subject } from 'rxjs';
 import { ctrlState } from './mob-md-ctrl-dash-board-portlet-state';
 import { PortletControl, IActionParam, IParam, IContext } from '@core';
-// 引入视图start
-// 引入视图end
-// 引入菜单start
-// 引入菜单end
 
 
 interface Props {
@@ -13,10 +9,16 @@ interface Props {
   context: IContext;
   viewParams?: IParam;
   viewSubject: Subject<IActionParam>;
+  showCaption?: boolean;
+  title?: string;
+  imgPath?: string;
+  iconClass?: string;
 }
 
 const props = withDefaults(defineProps < Props > (), {
   viewSubject: () => new Subject < IActionParam > (),
+  title: '多数据部件',
+  showCaption: 'true',
 })
 
 // emit声明
@@ -33,19 +35,20 @@ const { name, state, onViewEvent, onCtrlEvent, handleItemClick, handleActionClic
 defineExpose({ name, state });
 </script>
 <template>
-  <div class="app-portlet" >
-  <template v-if="state.showTitleBar && state.title">
-    <div class='portlet-title'>
-      <span>
-        <i v-if="state.iconcls" :class="state.iconcls" />
-        <img v-if="state.imagePath" :src="state.imagePath" />
-{{state.title}}
-      </span>
+  <AppPortletCard 
+     class="app-portlet"
+     :title="title"
+     :iconClass="iconClass"
+     :imgPath="imgPath"
+     :showCaption="showCaption"
+      style="height: 400.0px;"
+  >
+    <template #header-right>
       <span class="portlet-action" v-if="state.actionBarModelData && state.portletType !== 'ACTIONBAR'">
         <template v-for="(item,index) in Object.values(state.actionBarModelData)" :key="index">
           <a-tooltip>
             <template #title>
-              {{item.actionName}}
+{{item.actionName}}
             </template>
             <a @click="handleActionClick(item,$event)">
               <i v-if="item.icon" :class="item.icon" />
@@ -55,11 +58,8 @@ defineExpose({ name, state });
           </a-tooltip>
         </template>  
       </span>
-    </div>
-  </template>
-  <div :class="{'portlet-with-title': state.showTitleBar, 'portlet-without-title': !state.showTitleBar}">
-      </div>
-  </div>
+    </template>
+      </AppPortletCard>
 </template>
 <style lang="scss">
 </style>

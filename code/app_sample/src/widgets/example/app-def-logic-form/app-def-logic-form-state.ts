@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ExampleService } from '@api/example/example-service';
 
 /**
@@ -102,9 +102,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'Example',
+  appDeCodeName:'Example',
+  appDeLogicName: '示例',
   appDeKeyFieldName: 'ExampleId',
   appDeMajorFieldName: 'ExampleName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',
@@ -228,7 +238,7 @@ export const ctrlState = {
       detailStyle: 'DEFAULT',
       detailType: 'BUTTON',
       showCaption: true,
-      uIActionTag: 'Save',
+      uIAction: { caption: '保存', uIActionMode: "SYS", disabled: false, visible: true, uIActionTag: 'Save', showCaption: true,  iconClass: "fa fa-save", },
     },
     rawitem2: {
       caption: '',
@@ -241,7 +251,7 @@ export const ctrlState = {
     },
   },
   actionModel: {
-    'Save': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: '' },
+      'Save': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: '' },
   },
   rules: {
   },

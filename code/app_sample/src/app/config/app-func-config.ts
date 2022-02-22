@@ -998,6 +998,18 @@ export const AppFuncConfig = [
         },
       },
       {
+        name: "测试合并单元格",
+        funcTag: "AppFunc88",
+        appFuncType: "APPVIEW",
+        openMode: "INDEXVIEWTAB",
+        viewName: "CityUsr2GridView",
+        viewCodeName: "CityUsr2GridView",
+        navParam: {
+        },
+        navContext: {
+        },
+      },
+      {
         name: "日历数据",
         funcTag: "AppFunc51",
         appFuncType: "APPVIEW",

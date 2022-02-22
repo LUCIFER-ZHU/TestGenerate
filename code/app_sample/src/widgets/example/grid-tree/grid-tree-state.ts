@@ -393,7 +393,7 @@ export class ControlVO extends ControlVOBase implements TreeControlVO {
         id: 'RowEdit',
         navFilter: '',
         navView: {
-          viewName: 'EDITORVALUERowEditGridView'
+          viewName: 'EditorValueRowEditGridView'
         },
         nodeType: 'RowEdit',
         rootNode: false,

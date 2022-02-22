@@ -8,7 +8,7 @@ interface SpanProps {
    * @type {*}
    * @memberof AppSpan
    */
-  value: string;
+  value?: string;
 
   /**
    * 传入表单数据
@@ -97,7 +97,8 @@ const { handleEditorNavParams, loadCodeListData } = new EditorBase();
 const { navContext, navViewParam } = handleEditorNavParams(props);
 let text: Ref<string> = ref("");
 let textFormat: Ref<string> = ref("");
-onBeforeMount(() => {
+//  初始化值
+const initText = () => {
   if (props.codeListTag) {
     loadCodeListData(
       props.codeListTag as string,
@@ -110,11 +111,11 @@ onBeforeMount(() => {
       if (item) {
         text.value = item.label;
       } else {
-        text.value = props.value;
+        text.value = props.value as string;
       }
     });
   } else {
-    text.value = props.value;
+    text.value = props.value as string;
   }
   if (props.valueFormat) {
     textFormat.value = props.valueFormat;
@@ -128,6 +129,12 @@ onBeforeMount(() => {
   } else if (Object.is(props.dataType, "NUMBER")) {
     textFormat.value = `#${props.unitName}`;
   }
+}
+
+onBeforeMount(() => {
+  //  监听值变化
+  watch(() => props.value, (newVal: any, oldVal: any) => { if (newVal !== oldVal) initText(); });
+  initText();
 });
 </script>
 

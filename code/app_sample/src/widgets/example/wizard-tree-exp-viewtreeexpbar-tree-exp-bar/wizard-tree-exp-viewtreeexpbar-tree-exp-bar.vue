@@ -9,9 +9,9 @@ import WizardDataExamplePanelView from '@views/sample/wizard-data-example-panel-
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -47,11 +47,13 @@ defineExpose({ name, state });
           
           <WizardTreeTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></WizardTreeTree>
         </div>
@@ -61,22 +63,22 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'WizardDataBaseWizardView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </WizardDataBaseWizardView>
         <WizardDataStyleWizardView_8964
           v-if="state.selection.viewName && state.selection.viewName === 'WizardDataStyleWizardView_8964'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </WizardDataStyleWizardView_8964>
         <WizardDataExamplePanelView
           v-if="state.selection.viewName && state.selection.viewName === 'WizardDataExamplePanelView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </WizardDataExamplePanelView>
       </template>
     </AppSplit>

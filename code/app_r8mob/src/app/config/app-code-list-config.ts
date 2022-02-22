@@ -19,9 +19,9 @@ export const AppCodeListConfig:IParam = {
     'cacheTimeout': -1,
     'emptyText': '未定义',
     'items':[
-        {'value': 'home', 'text': '家居用品','codeName': 'Home' },
-        {'value': 'necessary', 'text': '日用品','codeName': 'Necessary' },
-        {'value': 'toy', 'text': '玩具','codeName': 'Toy' }
+        {'value': 'home', 'text': '家居用品','codeName': 'Home','textClass': '', },
+        {'value': 'necessary', 'text': '日用品','codeName': 'Necessary','textClass': '', },
+        {'value': 'toy', 'text': '玩具','codeName': 'Toy','textClass': '', }
     ]
   }
 }

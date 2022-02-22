@@ -11,7 +11,8 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: '',
-  keyPSDEField: '',
+  appDeKeyFieldName: '',
+  appDeMajorFieldName: '',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
@@ -19,9 +20,7 @@ export const viewState = {
   menuAlign: 'CENTER',
   viewLogics: {
   },
-  toolbar: [
-  ],
   appmenu:{
     loadAction: ''
-  }
+  },
 };

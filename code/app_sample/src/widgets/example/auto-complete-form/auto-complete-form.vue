@@ -4,6 +4,7 @@ import { ctrlState } from './auto-complete-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;
@@ -24,74 +25,64 @@ interface CtrlEmit {
 const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { name, state, load, loadDraft, save, remove, refresh, onEditorEvent, onComponentEvent, getData } = new FormControl(ctrlState, props, emit).moduleInstall();
+const { name, state, load, loadDraft, save, remove, refresh, onEditorEvent, onComponentEvent, getData, xDataCtrl } = new FormControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ name, state, load, loadDraft, save, remove, refresh, getData });
 </script>
 <template>
-  <a-form name="AutoComplete" class="app-form" style="" :model="state.data" :rules="state.rules">
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormGroup 
-    v-show="state.detailsModel.group1.visible" 
-    name="group1" 
-    title="示例基本信息"
+  <a-form
+    name="AutoComplete"
+    class="app-form"
     style=""
-    :infoGroupMode="false"
-    :titleBarCloseMode="0"
-    :showCaption="false"
-    :uIActionGroup="state.detailsModel.group1.uIActionGroup"
-    @componentEvent="onComponentEvent">
-    <a-row>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppRaw 
-    name="rawitem1"
-    v-show="state.detailsModel.rawitem1.visible"
-    class="el-alert el-alert--info is-light"
-    contentType="RAW"
-    style="height: -1.0px;width: -1.0px"
-    value="自动填充文本格式为：产品名称+产品编号"/>
-</a-col>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.acfield.visible"
-    name="acfield"
-    :rules="state.rules.acfield"
-    :labelWidth="130"
-    :required="state.detailsModel.acfield.required"
-    label="自动填充属性"
-    style="">
-      <div class="form-editor-container" style="">
-<AppAutoComplete
-  name="acfield"
-  :data="state.data"
-  :disabled="state.detailsModel.acfield.disabled"
-  :context="state.context"
-  :viewParams="state.viewParams"
-  :value="state.data.acfield"
-  @editorEvent="onEditorEvent"
-/>
-      </div>
-  </AppFormItem>
-</a-col>
-    </a-row>
-  </AppFormGroup>
-</a-col>
+    :model="state.data"
+    :rules="state.rules"
+    ref="xDataCtrl"
+  >
+    <AppFormGroup 
+      name="group1"
+      title="示例基本信息"
+      :visible="state.detailsModel.group1.visible" 
+      :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+      :infoGroupMode="false"
+      :titleBarCloseMode="0"
+      :showCaption="false"
+      :uIActionGroup="state.detailsModel.group1.uIActionGroup"
+      @componentEvent="onComponentEvent">
+        <AppFormRaw 
+          name="rawitem1"
+          :visible="state.detailsModel.rawitem1.visible"
+          class="el-alert el-alert--info is-light"
+          contentType="RAW"
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          value="自动填充文本格式为：产品名称+产品编号"
+          />
+        <AppFormItem 
+          name="acfield"
+          label="自动填充属性"
+          labelPos="LEFT"
+          :labelWidth="130"
+          :showLabel="true"
+          :rules="state.rules.acfield"
+          :required="state.detailsModel.acfield.required"
+          :visible="state.detailsModel.acfield.visible" 
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          >
+          <div class="form-editor-container" style="">
+          <AppAutoComplete
+            name="acfield"
+            :data="state.data"
+            :disabled="state.detailsModel.acfield.disabled"
+            :context="state.context"
+            :viewParams="state.viewParams"
+            deMajorField="productname"
+            deKeyField="productid"
+            :value="state.data.acfield"
+            @editorEvent="onEditorEvent"
+          />
+          </div>
+        </AppFormItem>
+    </AppFormGroup>
   </a-form>
 </template>
 <style lang="scss">

@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ChartDataService } from '@api/chart-data/chart-data-service';
 
 /**
@@ -14,7 +14,7 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
     // 记录没有映射的属性
-    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','infomessage','chartdataid'];  
+    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','begintime','year','datatype','chartdataid'];  
   }
 
   // 表单里映射了属性的字段
@@ -39,11 +39,25 @@ export class ControlVO extends ControlVOBase {
     this.$DO.chartdataname = value;
   }
 
-  get infomessage() {
-    return this.$DO.infomessage;
+  get begintime() {
+    return this.$DO.begintime;
   }
-  set infomessage(value: any) {
-    this.$DO.infomessage = value;
+  set begintime(value: any) {
+    this.$DO.begintime = value;
+  }
+
+  get year() {
+    return this.$DO.year;
+  }
+  set year(value: any) {
+    this.$DO.year = value;
+  }
+
+  get datatype() {
+    return this.$DO.datatype;
+  }
+  set datatype(value: any) {
+    this.$DO.datatype = value;
   }
 
   get chartdataid() {
@@ -67,12 +81,22 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ChartDataService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'ChartData',
+  appDeCodeName:'ChartData',
+  appDeLogicName: '图表',
   appDeKeyFieldName: 'ChartDataId',
   appDeMajorFieldName: 'ChartDataName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
-      caption: '基本信息',
+      caption: '值规则',
       name: 'formpage1',
       disabled: false, 
       visible: true,
@@ -80,25 +104,60 @@ export const ctrlState = {
       detailType: 'FORMPAGE',
       showCaption: false,
     },
-    group1: {
-      caption: '图表基本信息',
-      name: 'group1',
+    begintime: {
+      caption: '必须大于当前时间',
+      name: 'begintime',
       disabled: false, 
       visible: true,
-      detailStyle: 'STYLE2',
-      detailType: 'GROUPPANEL',
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
       showCaption: true,
+      valueFormat: 'YYYY-MM-DD HH:mm:ss',
+      dataType: '5',
+      required: false,
+      enableCond: 3,
     },
-    infomessage: {
-      caption: '备注',
-      name: 'infomessage',
+    year: {
+      caption: '系统值规则',
+      name: 'year',
       disabled: false, 
       visible: true,
       detailStyle: 'DEFAULT',
       detailType: 'FORMITEM',
       showCaption: true,
       valueFormat: '',
-      dataType: '21',
+      dataType: '9',
+      required: false,
+      enableCond: 3,
+    },
+    grouppanel1: {
+      caption: '关系界面',
+      name: 'grouppanel1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'GROUPPANEL',
+      showCaption: true,
+    },
+    druipart1: {
+      caption: '',
+      name: 'druipart1',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'DRUIPART',
+      showCaption: true,
+    },
+    datatype: {
+      caption: '数据分类',
+      name: 'datatype',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
+      valueFormat: '',
+      dataType: '25',
       required: false,
       enableCond: 3,
     },
@@ -106,5 +165,49 @@ export const ctrlState = {
   actionModel: {
   },
   rules: {
+    year: [
+      {
+        trigger: ['change', 'blur'],
+        pattern: /[0-9]*[1-9][0-9]*/,
+        message:'内容必须为正整数'
+      },
+    ],
+    begintime: [
+      {
+        validator: async (rule: any, value: any, callback: any) => {
+          if (isEmpty(value)) {
+            return Promise.resolve();
+          }
+          let source: any = { 'begintime': value };
+          const { isPast, infoMessage } = Verify.verifyDeRules(
+            'begintime',
+            source,
+            {
+              "condOp": "AND",
+              "notMode": false,
+              "condType": "GROUP",
+              "ruleInfo": "",
+            	"keyCond": false,
+              "conditions": [
+                {
+                  "condOp": "GT",
+                  "notMode": false,
+                  "condType": "SIMPLE",
+                  "ruleInfo": "",
+                	"keyCond": false,
+                	"paramType": "CURTIME",
+                	"paramValue": "",
+                }
+            		
+              ]
+            }
+          );
+          if (!isPast) {
+            return Promise.reject(infoMessage || '必须大于当前时间');
+          }
+          return Promise.resolve();
+        }
+      }
+    ],
   },
 };

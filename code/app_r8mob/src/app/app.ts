@@ -1,9 +1,9 @@
 import { SyncSeriesHook } from "qx-util";
-import { Environment } from "@/environments/environment";
 import router from "@/router";
 import { AppBase, IParam, ViewDetail, IApp, IOpenViewService, deepCopy, Http, IAppAuthService, IAppNotificationService, IAppFuncService, IAppActionService, IAppCodeListService } from "@core";
 import { AppFuncConfig, AppViewConfig, AppEntityConfig } from './config';
 import { DataServiceRegister, UIServiceRegister } from "./register";
+import { Environment } from "@/environments/environment";
 import { AppActionService, AppAuthService, AppCodeListService, AppFuncService, AppNotificationService, OpenViewService } from "@/service";
 
 export class App extends AppBase implements IApp {
@@ -175,14 +175,24 @@ export class App extends AppBase implements IApp {
     }
 
     /**
+     * 获取环境参数
+     *
+     * @return {*}  {IParam}
+     * @memberof App
+     */
+    public getEnvironmentParam(): IParam {
+        return Environment;
+    }
+
+    /**
      * @description 跳转登录页
      *
      * @memberof App
      */
     gotoLoginPage(): void {
         const currentRoute = unref(router.currentRoute);
-        if (Environment.loginUrl) {
-            window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;
+        if (this.getEnvironmentParam().loginUrl) {
+            window.location.href = `${this.getEnvironmentParam().loginUrl}?redirect=${window.location.href}`;
         } else {
             if (Object.is(currentRoute.name, 'login')) {
                 return;

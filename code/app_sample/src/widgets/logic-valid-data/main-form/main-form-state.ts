@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { LogicValidDataService } from '@api/logic-valid-data/logic-valid-data-service';
 
 /**
@@ -109,9 +109,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new LogicValidDataService() ),
   data: new ControlVO({}),
-  appDeMajorFieldName: 'LogicValidDataName',
+  appEntityCodeName: 'LogicValidData',
+  appDeCodeName:'LogicValidData',
+  appDeLogicName: '示例数据（启用逻辑删除）',
   appDeKeyFieldName: 'LogicValidDataId',
+  appDeMajorFieldName: 'LogicValidDataName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',

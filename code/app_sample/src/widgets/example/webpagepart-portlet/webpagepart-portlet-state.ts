@@ -2,8 +2,6 @@
 export const ctrlState = {
   controlCodeName: 'webpagepart',
   controlName: 'dashboard_sysportlet6',
-  showTitleBar: true,
-  title: '网页部件',
   portletType: 'HTML',
   // 实体名称
   appEntityCodeName: 'Example',

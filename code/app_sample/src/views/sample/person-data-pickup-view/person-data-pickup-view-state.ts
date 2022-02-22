@@ -11,15 +11,14 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'PersonData',
-  keyPSDEField: 'persondata',
+  appDeKeyFieldName: 'persondataid',
+  appDeMajorFieldName: 'persondataname',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
   enableQuickGroup: false,
   viewLogics: {
   },
-  toolbar: [
-  ],
   pickupviewpanel:{
     action:{
       loadAction: '',
@@ -29,5 +28,5 @@ export const viewState = {
       createAction: '',
       fetchAction:''
     }  
-  }
+  },
 };

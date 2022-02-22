@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ChartDataService } from '@api/chart-data/chart-data-service';
 
 /**
@@ -60,9 +60,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ChartDataService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'ChartData',
+  appDeCodeName:'ChartData',
+  appDeLogicName: '图表',
   appDeKeyFieldName: 'ChartDataId',
   appDeMajorFieldName: 'ChartDataName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '嵌入视图',

@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { OrderDetailService } from '@api/order-detail/order-detail-service';
 
 /**
@@ -95,9 +95,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new OrderDetailService() ),
   data: new ControlVO({}),
-  appDeMajorFieldName: 'OrderDetailName',
+  appEntityCodeName: 'OrderDetail',
+  appDeCodeName:'OrderDetail',
+  appDeLogicName: '订单明细',
   appDeKeyFieldName: 'OrderDetailId',
+  appDeMajorFieldName: 'OrderDetailName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',

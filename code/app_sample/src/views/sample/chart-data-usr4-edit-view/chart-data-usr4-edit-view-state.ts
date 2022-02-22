@@ -11,7 +11,8 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'ChartData',
-  keyPSDEField: 'chartdata',
+  appDeKeyFieldName: 'chartdataid',
+  appDeMajorFieldName: 'chartdataname',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
@@ -28,5 +29,5 @@ export const viewState = {
       loadDraftAction: 'GetDraft',
       createAction: 'Create'
     }
-  }
+  },
 };

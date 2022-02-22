@@ -55,9 +55,6 @@ public interface IChartDataService extends IService<ChartData> {
     boolean removeBatch(Collection<String> ids);
 
     ChartData getRandom(ChartData et);
-    default ChartData getRandom(String key) {
-        return getRandom(new ChartData().setChartDataId(key));
-    }    
     boolean getRandomBatch(List<ChartData> list);
 
     ChartData htxWtest(ChartData et);

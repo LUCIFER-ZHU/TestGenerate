@@ -11,12 +11,12 @@ interface DataPickerProps {
   /**
    * @description 值项
    */
-  valueItem: string;
+  valueItem?: string;
 
   /**
    * @description 编辑器值
    */
-  value: any;
+  value?: any;
 
   /**
    * @description 禁用
@@ -104,6 +104,8 @@ interface DataPickerProps {
 
   noAc?:boolean;
 
+  showButton?:boolean;
+
   isDropdown?: boolean;
 }
 interface EditorEmit {
@@ -175,20 +177,20 @@ const onSearch = (value: string) => {
   // TODO数据服务请求数据
   items.value = [
     {
-      srfkey: '4646',
-      srfmajortext: 'Jack',
+      [props.deKeyField]: '4646',
+      [props.deMajorField]: 'Jack',
     },
     {
-      srfkey: '49897',
-      srfmajortext: 'Lucy',
+      [props.deKeyField]: '49897',
+      [props.deMajorField]: 'Lucy',
     },
     {
-      srfkey: '164646',
-      srfmajortext: 'Disabled',
+      [props.deKeyField]: '164646',
+      [props.deMajorField]: 'Disabled',
     },
     {
-      srfkey: '4646',
-      srfmajortext: 'Yiminghe',
+      [props.deKeyField]: '4646',
+      [props.deMajorField]: 'Yiminghe',
     },
   ];
 };
@@ -213,8 +215,8 @@ const doEditorEmit = (data: any[]): any => {
   let majorValue: any = '';
   let keyValue: any = '';
   data.forEach((item: any) => {
-    majorValue = majorValue + (majorValue ? props.separator : '') + item[props.deMajorField!];
-    keyValue = keyValue + (keyValue ? props.separator : '') + item[props.deKeyField];
+    majorValue = item[props.deMajorField] ? majorValue + (majorValue ? props.separator : '') + item[props.deMajorField] : majorValue + (majorValue ? props.separator : '') + item['srfmajortext'];
+    keyValue = item[props.deKeyField] ? keyValue + (keyValue ? props.separator : '') + item[props.deKeyField] : keyValue + (keyValue ? props.separator : '') + item['srfkey'];
   });
   if (props.valueItem) {
     emit('editorEvent', { tag: props.valueItem, action: 'valueChange', data: keyValue });

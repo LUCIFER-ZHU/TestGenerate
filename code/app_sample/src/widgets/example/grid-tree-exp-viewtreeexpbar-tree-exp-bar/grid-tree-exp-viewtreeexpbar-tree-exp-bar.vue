@@ -5,7 +5,7 @@ import { ctrlState } from './grid-tree-exp-viewtreeexpbar-tree-exp-bar-state';
 import { GridTree} from '@widgets/example/grid-tree';
 import ExampleGridGroupGridView from '@views/sample/example-grid-group-grid-view';
 import ExampleGridBaseGridView from '@views/sample/example-grid-base-grid-view';
-import EDITORVALUERowEditGridView from '@views/sample/editorvalue-row-edit-grid-view';
+import EditorValueRowEditGridView from '@views/sample/editor-value-row-edit-grid-view';
 import ExampleGridCssAndIconGridView from '@views/sample/example-grid-css-and-icon-grid-view';
 import ExampleDataItemGridView from '@views/sample/example-data-item-grid-view';
 import ExampleToolbarGridView from '@views/sample/example-toolbar-grid-view';
@@ -17,9 +17,9 @@ import ExampleGridValueFormatGridView_7046 from '@views/sample/example-grid-valu
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -55,11 +55,13 @@ defineExpose({ name, state });
           
           <GridTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></GridTree>
         </div>
@@ -69,78 +71,78 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleGridGroupGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleGridGroupGridView>
         <ExampleGridBaseGridView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleGridBaseGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleGridBaseGridView>
-        <EDITORVALUERowEditGridView
-          v-if="state.selection.viewName && state.selection.viewName === 'EDITORVALUERowEditGridView'"
+        <EditorValueRowEditGridView
+          v-if="state.selection.viewName && state.selection.viewName === 'EditorValueRowEditGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
-        </EDITORVALUERowEditGridView>
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
+        </EditorValueRowEditGridView>
         <ExampleGridCssAndIconGridView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleGridCssAndIconGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleGridCssAndIconGridView>
         <ExampleDataItemGridView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleDataItemGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleDataItemGridView>
         <ExampleToolbarGridView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleToolbarGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleToolbarGridView>
         <ExampleGridLayoutGridView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleGridLayoutGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleGridLayoutGridView>
         <ExampleGridLogicCustomView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleGridLogicCustomView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleGridLogicCustomView>
         <ExampleGridActionColumnCustomView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleGridActionColumnCustomView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleGridActionColumnCustomView>
         <ExampleGridSortGridView
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleGridSortGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleGridSortGridView>
         <ExampleGridValueFormatGridView_7046
           v-if="state.selection.viewName && state.selection.viewName === 'ExampleGridValueFormatGridView_7046'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </ExampleGridValueFormatGridView_7046>
       </template>
     </AppSplit>

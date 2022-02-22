@@ -12,7 +12,8 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'OrgData',
-  keyPSDEField: 'orgdata',
+  appDeKeyFieldName: 'orgdataid',
+  appDeMajorFieldName: 'orgdataname',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
@@ -25,7 +26,5 @@ export const viewState = {
       openDataViewName: '',
     },
   },
-  toolbar: [
-  ],
-    /*未找到模板[TREEEXPBAR]*/
+
 };

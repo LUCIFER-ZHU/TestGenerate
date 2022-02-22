@@ -15,7 +15,8 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'EditorValue',
-  keyPSDEField: 'editorvalue',
+  appDeKeyFieldName: 'editorvalueid',
+  appDeMajorFieldName: 'editorvaluename',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
@@ -28,8 +29,6 @@ export const viewState = {
       openDataViewName: 'EDITORVALUEEditView',
     },
   },
-  toolbar: [
-  ],
   grid:{
     action:{
       loadAction: '',
@@ -39,5 +38,5 @@ export const viewState = {
       createAction: '',
       fetchAction:'FetchDefault'
     }  
-  }
+  },
 };

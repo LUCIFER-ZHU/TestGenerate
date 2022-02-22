@@ -6,6 +6,7 @@ import { SearchFormControl, IActionParam, IParam, ControlAction, IContext } from
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;
@@ -26,8 +27,8 @@ interface CtrlEmit {
 const emit = defineEmits<CtrlEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHistoryItem, onCancel, onRemoveHistoryItem } = new SearchFormControl(ctrlState, props, emit).moduleInstall();
-
+const { name, state, getData, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHistoryItem, onCancel, onRemoveHistoryItem } = new SearchFormControl(ctrlState, props, emit).moduleInstall();
+defineExpose({ name, state, getData });
 </script>
 <template>
   <a-form 
@@ -39,151 +40,122 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
     <a-row>
       <a-col>
         <a-row>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormGroup 
-    v-show="state.detailsModel.grouppanel1.visible" 
-    name="grouppanel1" 
-    title="分组面板"
-    style=""
-    :infoGroupMode="false"
-    :titleBarCloseMode="0"
-    :showCaption="false"
-    :uIActionGroup="state.detailsModel.grouppanel1.uIActionGroup"
-    @componentEvent="onComponentEvent">
-    <a-row>
-<a-col
-  :lg="{span: 6, offset: 0 }"
-  :md="{span: 8, offset: 0 }"
-  :sm="{span: 12, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.n_customername_like.visible"
-    name="n_customername_like"
-    :rules="state.rules.n_customername_like"
-    :labelWidth="130"
-    :required="state.detailsModel.n_customername_like.required"
-    label="客户名称(%)"
-    style="">
-      <div class="form-editor-container" style="">
-<AppInput
-  name="n_customername_like"
-  :disabled="state.detailsModel.n_customername_like.disabled"
-  type="text"
-  :value="state.data.n_customername_like"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-<a-col
-  :lg="{span: 6, offset: 0 }"
-  :md="{span: 8, offset: 0 }"
-  :sm="{span: 12, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.n_monthval_eq.visible"
-    name="n_monthval_eq"
-    :rules="state.rules.n_monthval_eq"
-    :labelWidth="130"
-    :required="state.detailsModel.n_monthval_eq.required"
-    label="月份(等于(=))"
-    style="">
-      <div class="form-editor-container" style="">
-<AppInput
-  name="n_monthval_eq"
-  :disabled="state.detailsModel.n_monthval_eq.disabled"
-  type="text"
-  :value="state.data.n_monthval_eq"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-<a-col
-  :lg="{span: 6, offset: 0 }"
-  :md="{span: 8, offset: 0 }"
-  :sm="{span: 12, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.n_quarterval_eq.visible"
-    name="n_quarterval_eq"
-    :rules="state.rules.n_quarterval_eq"
-    :labelWidth="130"
-    :required="state.detailsModel.n_quarterval_eq.required"
-    label="季度(=)"
-    style="">
-      <div class="form-editor-container" style="">
-<AppInput
-  name="n_quarterval_eq"
-  :disabled="state.detailsModel.n_quarterval_eq.disabled"
-  type="text"
-  :value="state.data.n_quarterval_eq"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-<a-col
-  :lg="{span: 6, offset: 0 }"
-  :md="{span: 8, offset: 0 }"
-  :sm="{span: 12, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.n_yearval_eq.visible"
-    name="n_yearval_eq"
-    :rules="state.rules.n_yearval_eq"
-    :labelWidth="130"
-    :required="state.detailsModel.n_yearval_eq.required"
-    label="年份(等于(=))"
-    style="">
-      <div class="form-editor-container" style="">
-<AppInput
-  name="n_yearval_eq"
-  :disabled="state.detailsModel.n_yearval_eq.disabled"
-  type="text"
-  :value="state.data.n_yearval_eq"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-<a-col
-  :lg="{span: 6, offset: 0 }"
-  :md="{span: 8, offset: 0 }"
-  :sm="{span: 12, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.n_totalval_gtandeq.visible"
-    name="n_totalval_gtandeq"
-    :rules="state.rules.n_totalval_gtandeq"
-    :labelWidth="130"
-    :required="state.detailsModel.n_totalval_gtandeq.required"
-    label="合计(大于等于(>=))"
-    style="">
-      <div class="form-editor-container" style="">
-<AppInput
-  name="n_totalval_gtandeq"
-  :disabled="state.detailsModel.n_totalval_gtandeq.disabled"
-  type="text"
-  :value="state.data.n_totalval_gtandeq"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-    </a-row>
-  </AppFormGroup>
-</a-col>
+          <AppFormGroup 
+            name="grouppanel1"
+            title="分组面板"
+            :visible="state.detailsModel.grouppanel1.visible" 
+            :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+            :infoGroupMode="false"
+            :titleBarCloseMode="0"
+            :showCaption="false"
+            :uIActionGroup="state.detailsModel.grouppanel1.uIActionGroup"
+            @componentEvent="onComponentEvent">
+              <AppFormItem 
+                name="n_customername_like"
+                label="客户名称(%)"
+                labelPos="LEFT"
+                :labelWidth="130"
+                :showLabel="true"
+                :rules="state.rules.n_customername_like"
+                :required="state.detailsModel.n_customername_like.required"
+                :visible="state.detailsModel.n_customername_like.visible" 
+                :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 6,colMD: 8,colSM: 12,}"
+                >
+                <div class="form-editor-container" style="">
+                <AppInput
+                  name="n_customername_like"
+                  :disabled="state.detailsModel.n_customername_like.disabled"
+                  type="text"
+                  :value="state.data.n_customername_like"
+                  @editorEvent="onEditorEvent"
+                />
+                </div>
+              </AppFormItem>
+              <AppFormItem 
+                name="n_monthval_eq"
+                label="月份(等于(=))"
+                labelPos="LEFT"
+                :labelWidth="130"
+                :showLabel="true"
+                :rules="state.rules.n_monthval_eq"
+                :required="state.detailsModel.n_monthval_eq.required"
+                :visible="state.detailsModel.n_monthval_eq.visible" 
+                :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 6,colMD: 8,colSM: 12,}"
+                >
+                <div class="form-editor-container" style="">
+                <AppInput
+                  name="n_monthval_eq"
+                  :disabled="state.detailsModel.n_monthval_eq.disabled"
+                  type="text"
+                  :value="state.data.n_monthval_eq"
+                  @editorEvent="onEditorEvent"
+                />
+                </div>
+              </AppFormItem>
+              <AppFormItem 
+                name="n_quarterval_eq"
+                label="季度(=)"
+                labelPos="LEFT"
+                :labelWidth="130"
+                :showLabel="true"
+                :rules="state.rules.n_quarterval_eq"
+                :required="state.detailsModel.n_quarterval_eq.required"
+                :visible="state.detailsModel.n_quarterval_eq.visible" 
+                :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 6,colMD: 8,colSM: 12,}"
+                >
+                <div class="form-editor-container" style="">
+                <AppInput
+                  name="n_quarterval_eq"
+                  :disabled="state.detailsModel.n_quarterval_eq.disabled"
+                  type="text"
+                  :value="state.data.n_quarterval_eq"
+                  @editorEvent="onEditorEvent"
+                />
+                </div>
+              </AppFormItem>
+              <AppFormItem 
+                name="n_yearval_eq"
+                label="年份(等于(=))"
+                labelPos="LEFT"
+                :labelWidth="130"
+                :showLabel="true"
+                :rules="state.rules.n_yearval_eq"
+                :required="state.detailsModel.n_yearval_eq.required"
+                :visible="state.detailsModel.n_yearval_eq.visible" 
+                :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 6,colMD: 8,colSM: 12,}"
+                >
+                <div class="form-editor-container" style="">
+                <AppInput
+                  name="n_yearval_eq"
+                  :disabled="state.detailsModel.n_yearval_eq.disabled"
+                  type="text"
+                  :value="state.data.n_yearval_eq"
+                  @editorEvent="onEditorEvent"
+                />
+                </div>
+              </AppFormItem>
+              <AppFormItem 
+                name="n_totalval_gtandeq"
+                label="合计(大于等于(>=))"
+                labelPos="LEFT"
+                :labelWidth="130"
+                :showLabel="true"
+                :rules="state.rules.n_totalval_gtandeq"
+                :required="state.detailsModel.n_totalval_gtandeq.required"
+                :visible="state.detailsModel.n_totalval_gtandeq.visible" 
+                :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 6,colMD: 8,colSM: 12,}"
+                >
+                <div class="form-editor-container" style="">
+                <AppInput
+                  name="n_totalval_gtandeq"
+                  :disabled="state.detailsModel.n_totalval_gtandeq.disabled"
+                  type="text"
+                  :value="state.data.n_totalval_gtandeq"
+                  @editorEvent="onEditorEvent"
+                />
+                </div>
+              </AppFormItem>
+          </AppFormGroup>
       </a-row>
       </a-col>
       <a-col class='search-form-footer'>

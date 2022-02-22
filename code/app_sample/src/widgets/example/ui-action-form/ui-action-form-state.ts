@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ExampleService } from '@api/example/example-service';
 
 /**
@@ -61,9 +61,24 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'Example',
+  appDeCodeName:'Example',
+  appDeLogicName: '示例',
   appDeKeyFieldName: 'ExampleId',
   appDeMajorFieldName: 'ExampleName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+    {
+      createDV: "ibiz",
+      createDVT: "",
+      property: "wd",
+    },
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',
@@ -100,7 +115,7 @@ export const ctrlState = {
       detailStyle: 'DEFAULT',
       detailType: 'BUTTON',
       showCaption: true,
-      uIActionTag: 'openModel',
+      uIAction: { caption: '前台界面行为（打开模态）', uIActionMode: "FRONT", disabled: false, visible: true, uIActionTag: 'openModel', showCaption: true,  },
     },
     rawitem2: {
       caption: '',
@@ -128,7 +143,7 @@ export const ctrlState = {
       detailStyle: 'DEFAULT',
       detailType: 'BUTTON',
       showCaption: true,
-      uIActionTag: 'openWindow',
+      uIAction: { caption: '前台界面行为（打开顶级视图）', uIActionMode: "FRONT", disabled: false, visible: true, uIActionTag: 'openWindow', showCaption: true,  },
     },
     rawitem3: {
       caption: '',
@@ -168,7 +183,7 @@ export const ctrlState = {
       detailStyle: 'DEFAULT',
       detailType: 'BUTTON',
       showCaption: true,
-      uIActionTag: 'openHtml',
+      uIAction: { caption: '前台界面行为（打开HTML页面）', uIActionMode: "FRONT", disabled: false, visible: true, uIActionTag: 'openHtml', showCaption: true,  },
     },
     grouppanel3: {
       caption: '界面行为（后续界面行为）',
@@ -196,14 +211,14 @@ export const ctrlState = {
       detailStyle: 'DEFAULT',
       detailType: 'BUTTON',
       showCaption: true,
-      uIActionTag: 'Quick',
+      uIAction: { caption: '快速新建', uIActionMode: "FRONT", disabled: false, visible: true, uIActionTag: 'Quick', showCaption: true,  },
     },
   },
   actionModel: {
-    'openModel': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'NONE' },
-    'openWindow': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'NONE' },
-    'openHtml': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEKEY' },
-    'Quick': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'NONE' },
+      'openModel': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'NONE' },
+      'openWindow': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'NONE' },
+      'openHtml': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEKEY' },
+      'Quick': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'NONE' },
   },
   rules: {
   },

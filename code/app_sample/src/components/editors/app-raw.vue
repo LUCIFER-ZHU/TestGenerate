@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IActionParam } from "@core";
+import { IActionParam, IParam } from "@core";
 interface RawProps {
   /**
    * @description 编辑器名称
@@ -30,6 +30,11 @@ interface RawProps {
    * @description 标题
    */
   caption?: string;
+
+  /**
+   * @description 直接内容样式
+   */
+  rawStyle?: IParam;
 }
 
 interface EditorEmit {
@@ -45,12 +50,12 @@ const emit = defineEmits<EditorEmit>();
 
 <template>
   <div :class="['app-raw-item', 'app-raw', `app-raw-${name}`]">
-    <div class="raw-caption" v-if="caption">{{ caption }}</div>
+    <div class="raw-caption" v-if="caption" :style="rawStyle">{{ caption }}</div>
     <div v-if="Object.is(contentType, 'RAW')">
       {{ value }}
     </div>
-    <div v-else-if="Object.is(contentType, 'HTML')" v-html="value" />
-    <div v-else-if="Object.is(contentType, 'IMAGE')">
+    <div v-else-if="Object.is(contentType, 'HTML')" v-html="value" :style="rawStyle" />
+    <div v-else-if="Object.is(contentType, 'IMAGE')" :style="rawStyle">
       <AppIconText :iconClass="iconClass" :imgPath="imgPath"/>
     </div>
   </div>

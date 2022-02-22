@@ -10,8 +10,8 @@ body{
 // 滚动条样式
 ::-webkit-scrollbar {
   background: transparent;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -27,16 +27,11 @@ body{
   border: 0;
 }
 
-// 飘窗样式
-.app-popover-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  .app-popover {
-      border-radius: 5px;
-      overflow: auto;
-      background: #e8e8e8;
-  }
+// 去除antd 卡片自带样式
+.ant-card-body {
+  padding: 0;
+}
+// 去除antd 表单项自带样式
+.ant-form-horizontal .ant-form-item-control{
+  flex: 1;
 }

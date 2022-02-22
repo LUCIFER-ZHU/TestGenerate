@@ -1,6 +1,53 @@
 import { IParam } from "@core";
 
 export const AppViewConfig:IParam = {
+  "AppIndexView":{
+    "name": "AppIndexView",
+    "codeName": "AppIndexView",
+    "appEntityCodeName":"",
+    "openMode": "INDEXVIEWTAB",
+    "redirectView": false,
+    "deResPaths": [
+    ],
+    "parameters": [
+        { "pathName": "views", "parameterName": "appindexview" }
+    ],
+    "caption": "首页",
+    "imgPath": "",
+    "iconCls": "ribbon",
+    "viewType": "APPINDEXVIEW",
+    "fileDir": "@views/r8mob/app-index-view"
+  },
+  "QuickMenuAppPortalView":{
+    "name": "QuickMenuAppPortalView",
+    "codeName": "QuickMenuAppPortalView",
+    "appEntityCodeName":"",
+    "openMode": "INDEXVIEWTAB",
+    "redirectView": false,
+    "deResPaths": [
+    ],
+    "parameters": [
+        { "pathName": "views", "parameterName": "quickmenuappportalview" }
+    ],
+    "caption": "快捷菜单",
+    "viewType": "APPPORTALVIEW",
+    "fileDir": "@views/r8mob/quick-menu-app-portal-view"
+  },
+  "AppPortalView":{
+    "name": "AppPortalView",
+    "codeName": "AppPortalView",
+    "appEntityCodeName":"",
+    "openMode": "INDEXVIEWTAB",
+    "redirectView": false,
+    "deResPaths": [
+    ],
+    "parameters": [
+        { "pathName": "views", "parameterName": "appportalview" }
+    ],
+    "caption": "移动端应用看板视图",
+    "viewType": "APPPORTALVIEW",
+    "fileDir": "@views/r8mob/app-portal-view"
+  },
   "ProvinceMobPickupMDView":{
     "name": "ProvinceMobPickupMDView",
     "codeName": "ProvinceMobPickupMDView",
@@ -32,23 +79,6 @@ export const AppViewConfig:IParam = {
     "caption": "省份",
     "viewType": "DEMOBPICKUPTREEVIEW",
     "fileDir": "@views/r8mob/province-mob-pickup-tree-view"
-  },
-  "AppIndexView":{
-    "name": "AppIndexView",
-    "codeName": "AppIndexView",
-    "appEntityCodeName":"",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "appindexview" }
-    ],
-    "caption": "首页",
-    "imgPath": "",
-    "iconCls": "ribbon",
-    "viewType": "APPINDEXVIEW",
-    "fileDir": "@views/r8mob/app-index-view"
   },
   "ProvinceForTreeMobMPickupView":{
     "name": "ProvinceForTreeMobMPickupView",
@@ -99,36 +129,6 @@ export const AppViewConfig:IParam = {
     "caption": "图表实体移动端分页导航视图",
     "viewType": "DEMOBTABEXPVIEW",
     "fileDir": "@views/r8mob/chart-data-mob-tab-exp-view"
-  },
-  "QuickMenuAppPortalView":{
-    "name": "QuickMenuAppPortalView",
-    "codeName": "QuickMenuAppPortalView",
-    "appEntityCodeName":"",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "quickmenuappportalview" }
-    ],
-    "caption": "快捷菜单",
-    "viewType": "APPPORTALVIEW",
-    "fileDir": "@views/r8mob/quick-menu-app-portal-view"
-  },
-  "AppPortalView":{
-    "name": "AppPortalView",
-    "codeName": "AppPortalView",
-    "appEntityCodeName":"",
-    "openMode": "INDEXVIEWTAB",
-    "redirectView": false,
-    "deResPaths": [
-    ],
-    "parameters": [
-        { "pathName": "views", "parameterName": "appportalview" }
-    ],
-    "caption": "移动端应用看板视图",
-    "viewType": "APPPORTALVIEW",
-    "fileDir": "@views/r8mob/app-portal-view"
   },
   "ChartDataMobTreeView":{
     "name": "ChartDataMobTreeView",

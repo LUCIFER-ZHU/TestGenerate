@@ -8,7 +8,7 @@ interface CheckboxListProps {
    * @type {*}
    * @memberof CheckboxListProps
    */
-  value: any;
+  value?: any;
 
   /**
    * 属性名称
@@ -56,7 +56,7 @@ interface CheckboxListProps {
    * @type {string}
    * @memberof CheckboxListProps
    */
-  codeListTag: string;
+  codeListTag?: string;
 
   /**
    * 代码表类型
@@ -64,7 +64,7 @@ interface CheckboxListProps {
    * @type {string}
    * @memberof CheckboxListProps
    */
-  codeListType: string;
+  codeListType?: string;
 
   /**
    * 视图上下文

@@ -78,7 +78,7 @@ export class UIUtil {
         let value: string | null = params[name];
         if (value && value.toString().startsWith('%') && value.toString().endsWith('%')) {
           const key = value.substring(1, value.length - 1).toLowerCase();
-          if (activedata && activedata.hasOwnProperty(key)) {
+          if (activedata && (activedata.hasOwnProperty(key) || key in activedata)) {
             value = activedata[key];
           } else if (context && context[key]) {
             value = context[key];

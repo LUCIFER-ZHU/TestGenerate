@@ -13,15 +13,14 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'PersonData',
-  keyPSDEField: 'persondata',
+  appDeKeyFieldName: 'persondataid',
+  appDeMajorFieldName: 'persondataname',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
   enableQuickGroup: false,
   viewLogics: {
   },
-  toolbar: [
-  ],
   grid:{
     action:{
       loadAction: '',
@@ -38,6 +37,5 @@ export const viewState = {
       loadDraftAction: 'FilterGetDraft',
       loadAction: 'FilterGet',
     } 
-  }
-
+  },
 };

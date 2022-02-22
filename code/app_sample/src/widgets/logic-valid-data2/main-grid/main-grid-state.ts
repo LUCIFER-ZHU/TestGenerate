@@ -1,4 +1,4 @@
-import { ControlVOBase, IParam, GridService } from '@core';
+import { ControlVOBase, IParam, GridService, isEmpty, Verify } from '@core';
 import { LogicValidData2Service } from '@api/logic-valid-data2/logic-valid-data2-service';
 
 export class ControlVO extends ControlVOBase {
@@ -6,56 +6,48 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
   }
-
   get region() {
     return this.$DO.region;
   }
   set region(value: any) {
     this.$DO.region = value;
   }
-
   get updateman() {
     return this.$DO.updateman;
   }
   set updateman(value: any) {
     this.$DO.updateman = value;
   }
-
   get code() {
     return this.$DO.code;
   }
   set code(value: any) {
     this.$DO.code = value;
   }
-
   get updatedate() {
     return this.$DO.updatedate;
   }
   set updatedate(value: any) {
     this.$DO.updatedate = value;
   }
-
   get srfmajortext() {
     return this.$DO.logicvaliddata2name;
   }
   set srfmajortext(value: any) {
     this.$DO.logicvaliddata2name = value;
   }
-
   get srfdataaccaction() {
     return this.$DO.logicvaliddata2id;
   }
   set srfdataaccaction(value: any) {
     this.$DO.logicvaliddata2id = value;
   }
-
   get srfkey() {
     return this.$DO.logicvaliddata2id;
   }
   set srfkey(value: any) {
     this.$DO.logicvaliddata2id = value;
   }
-
   get logicvaliddata2name() {
     return this.$DO.logicvaliddata2name;
   }
@@ -68,8 +60,17 @@ export class ControlVO extends ControlVOBase {
 export const ctrlState = {
   controlCodeName: 'Main',
   controlName: 'grid',
-  appEntityCodeName:'LogicValidData2',
+  totalColumnWidth: 660,
+  selectColumnWidth: 50,
+  appEntityCodeName: 'LogicValidData2',
+  appDeCodeName:'LogicValidData2',
+  appDeLogicName: '示例数据（启用逻辑删除）（主键数值）',
+  appDeKeyFieldName: 'LogicValidData2Id',
+  appDeMajorFieldName: 'LogicValidData2Name',
   controlService: new GridService<ControlVO>(ControlVO, new LogicValidData2Service() ),
+  //  新建默认值
+  createDefaultItems: [
+  ],
   items: [],
   selectedRowKeys: [],
   // 多数据部件分组
@@ -101,8 +102,8 @@ export const ctrlState = {
     aggMode: "NONE",
     aggData: [],
   },
-  uAColumnModel:[
-  ],
+  uAColumnModel: {
+  },
   gridEditState:{
     srfkey:{},
   },
@@ -162,9 +163,21 @@ export const ctrlState = {
       enableSort: true,
       aggMode: "NONE",
     },
+    {
+      title: "",
+      columnType: "EMPTYCOLUMN",
+      dataIndex: "autowidthcolumn",
+      align: "center",
+      resizable: true,
+      ellipsis: true,
+      aggMode: "NONE",
+    },
   ],
   // 是否单选
   isSingleSelect:false,
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   rules:{
   }
 };

@@ -9,18 +9,29 @@ import { AppFrontAction, AppBackendAction } from '@core';
  */
 export class CustomerUIServiceBase extends UIServiceBase {
 
-  /**
-    * Creates an instance of CustomerUIServiceBase
-    * 
-    * @param {*} [opts={}]
-    * @memberof CustomerUIServiceBase
-    */
-  constructor(opts: IParam = {}) {
-      super(opts);
-  }
+    /**
+      * Creates an instance of CustomerUIServiceBase
+      * 
+      * @param {*} [opts={}]
+      * @memberof CustomerUIServiceBase
+      */
+    constructor(opts: IParam = {}) {
+        super(opts);
+        this.initBasicData();
+    }
+
+    /**
+     * 初始化基础数据
+     *
+     * @memberof CustomerUIServiceBase
+     */
+    public initBasicData() {
+        // 应用实体主键属性
+        this.appDeKeyFieldName = 'customerid';
+        // 是否启用主状态
+        this.isEnableDEMainState = false;
+    }
 
 
-
-   public uiActionModes = {     };
 
 }

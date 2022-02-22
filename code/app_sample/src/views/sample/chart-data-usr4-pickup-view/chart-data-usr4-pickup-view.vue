@@ -24,7 +24,8 @@ interface ViewEmit {
 const emit = defineEmits<ViewEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onCancel, onConfirm, onCtrlEvent, selectData } = new PickupView(viewState, props, emit).moduleInstall();
+const pickupView = new PickupView(viewState, props, emit).moduleInstall();
+const { state, onCancel, onConfirm, onCtrlEvent, selectData } = pickupView;
 </script>
 
 <template>
@@ -41,7 +42,8 @@ const { state, onCancel, onConfirm, onCtrlEvent, selectData } = new PickupView(v
               :viewParams="state.viewParams"
               :controlAction="state.pickupviewpanel.action"
               :viewSubject="state.viewSubject"
-              :selectData="selectData"                   
+              :selectData="selectData"        
+              :parent="pickupView"           
               @onCtrlEvent="onCtrlEvent"
             ></Usr4PickupViewpickupviewpanelPickupViewPanel>
               <template v-slot:footer>

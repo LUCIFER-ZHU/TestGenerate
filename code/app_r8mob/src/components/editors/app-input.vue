@@ -63,7 +63,12 @@ const props = withDefaults(defineProps<InputProps>(), {
 const emit = defineEmits<EditorEmit>()
 
 const onChange = ($event: any) => {
-  const value = $event.target.value;
+  let value;
+  if (props.type == 'number') {
+    value = $event;
+  } else {
+    value = $event.target.value;
+  }
   emit('editorEvent', { tag: props.name, action: "valueChange", data: value});
 }
 
@@ -87,21 +92,28 @@ const onChange = ($event: any) => {
       @blur="onChange"
       :placeholder="placeholder"/>
     <a-textarea 
-      showCount
       v-else-if="Object.is('textarea', type)"
       v-model:value="value"
       :disabled="disabled"
       :maxlength="maxLength"
       @blur="onChange"
-      :placeholder="showMaxLength ? `最大内容长度为${maxLength}` : placeholder"/>
+      :placeholder="showMaxLength && maxLength ? `最大内容长度为${maxLength}` : placeholder"/>
     <a-input 
       allowClear
-      v-else="Object.is('text', type)"
+      v-else-if="Object.is('text', type)"
       v-model:value="value"
       :disabled="disabled"
       :maxlength="maxLength"
       :type="type"
       @blur="onChange"
-      :placeholder="showMaxLength ? `最大内容长度为${maxLength}` : placeholder" />
+      :placeholder="showMaxLength && maxLength ? `最大内容长度为${maxLength}` : placeholder" />
   </div>
 </template>
+
+<style scoped>
+.app-editor-container,
+.app-editor-container .ant-input {
+  width: 100%;
+  height: 100%;
+}
+</style>

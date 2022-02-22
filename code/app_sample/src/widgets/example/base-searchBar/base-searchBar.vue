@@ -22,7 +22,7 @@ interface CtrlEmit {
 const emit = defineEmits<CtrlEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { name, state } = new SearchBarControl(CtrlConfig).moduleInstall(props, emit);
+const { name, state } = new SearchBarControl(CtrlConfig, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ name, state});

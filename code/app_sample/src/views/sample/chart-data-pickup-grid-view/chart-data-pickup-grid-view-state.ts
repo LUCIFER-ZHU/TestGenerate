@@ -13,7 +13,8 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'ChartData',
-  keyPSDEField: 'chartdata',
+  appDeKeyFieldName: 'chartdataid',
+  appDeMajorFieldName: 'chartdataname',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
@@ -31,8 +32,6 @@ export const viewState = {
   },
   viewLogics: {
   },
-  toolbar: [
-  ],
   grid:{
     action:{
       loadAction: '',
@@ -49,6 +48,5 @@ export const viewState = {
       loadDraftAction: 'FilterGetDraft',
       loadAction: 'FilterGet',
     } 
-  }
-
+  },
 };

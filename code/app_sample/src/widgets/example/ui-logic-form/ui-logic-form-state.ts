@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ExampleService } from '@api/example/example-service';
 
 /**
@@ -66,9 +66,34 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'Example',
+  appDeCodeName:'Example',
+  appDeLogicName: '示例',
   appDeKeyFieldName: 'ExampleId',
   appDeMajorFieldName: 'ExampleName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+    {
+      createDV: "123",
+      createDVT: "",
+      property: "inputtext",
+    },
+    {
+      createDV: "47F720BF-BDF8-4F2F-900C-64DD647156A2",
+      createDVT: "",
+      property: "exampleid",
+    },
+    {
+      createDV: "336",
+      createDVT: "",
+      property: "fieldupdate",
+    }
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',
@@ -117,7 +142,7 @@ export const ctrlState = {
       detailStyle: 'DEFAULT',
       detailType: 'BUTTON',
       showCaption: true,
-      uIActionTag: 'CallUISimple',
+      uIAction: { caption: '执行', uIActionMode: "FRONT", disabled: false, visible: true, uIActionTag: 'CallUISimple', showCaption: true,  },
     },
     rawitem2: {
       caption: '',
@@ -166,7 +191,7 @@ export const ctrlState = {
       detailStyle: 'DEFAULT',
       detailType: 'BUTTON',
       showCaption: true,
-      uIActionTag: 'CallUIActionTest',
+      uIAction: { caption: '执行', uIActionMode: "FRONT", disabled: false, visible: true, uIActionTag: 'CallUIActionTest', showCaption: true,  },
     },
     fieldx: {
       caption: 'X值回显',
@@ -209,7 +234,7 @@ export const ctrlState = {
       detailStyle: 'DEFAULT',
       detailType: 'BUTTON',
       showCaption: true,
-      uIActionTag: 'PrepareCtx',
+      uIAction: { caption: '动态设置上下文并获取数据', uIActionMode: "BACKEND", disabled: false, visible: true, uIActionTag: 'PrepareCtx', showCaption: true,  },
     },
     fieldz: {
       caption: 'Z值回显',
@@ -274,14 +299,14 @@ export const ctrlState = {
       detailStyle: 'DEFAULT',
       detailType: 'BUTTON',
       showCaption: true,
-      uIActionTag: 'CallUpdateFieldy',
+      uIAction: { caption: '执行', uIActionMode: "FRONT", disabled: false, visible: true, uIActionTag: 'CallUpdateFieldy', showCaption: true,  },
     },
   },
   actionModel: {
-    'CallUISimple': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEDATA' },
-    'CallUIActionTest': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEDATA' },
-    'PrepareCtx': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEKEY' },
-    'CallUpdateFieldy': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEDATA' },
+      'CallUISimple': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEDATA' },
+      'CallUIActionTest': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEDATA' },
+      'PrepareCtx': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEKEY' },
+      'CallUpdateFieldy': { disabled: false, visible: true, noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEDATA' },
   },
   rules: {
   },

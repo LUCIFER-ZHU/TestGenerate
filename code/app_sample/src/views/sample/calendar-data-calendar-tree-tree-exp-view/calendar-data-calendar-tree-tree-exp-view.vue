@@ -21,7 +21,8 @@ interface ViewEmit {
 
 const emit = defineEmits<ViewEmit>();
 //  安装功能模块
-const { state, onCtrlEvent, onToolbarEvent } = new TreeExpView(viewState, props, emit).moduleInstall();
+const treeExpView = new TreeExpView(viewState, props, emit).moduleInstall()
+const { state, onCtrlEvent, onToolbarEvent } = treeExpView;
 </script>
 
 <template>
@@ -35,6 +36,7 @@ const { state, onCtrlEvent, onToolbarEvent } = new TreeExpView(viewState, props,
         :showBusyIndicator="true"
         :viewParams="state.viewParams"
         :viewSubject="state.viewSubject"
+        :parent="treeExpView"
         @ctrlEvent="onCtrlEvent"
       ></CalendarTreeTreeExpViewtreeexpbarTreeExpBar>
     </AppTreeExpViewLayout>

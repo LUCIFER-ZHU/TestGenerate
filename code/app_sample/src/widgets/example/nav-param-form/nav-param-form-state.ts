@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { ExampleService } from '@api/example/example-service';
 
 /**
@@ -63,9 +63,34 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new ExampleService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'Example',
+  appDeCodeName:'Example',
+  appDeLogicName: '示例',
   appDeKeyFieldName: 'ExampleId',
   appDeMajorFieldName: 'ExampleName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+    {
+      createDV: "param01",
+      createDVT: "CONTEXT",
+      property: "formitem",
+    },
+    {
+      createDV: "param02",
+      createDVT: "CONTEXT",
+      property: "formitem1",
+    },
+    {
+      createDV: "param03",
+      createDVT: "CONTEXT",
+      property: "formitem2",
+    },
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',
@@ -96,8 +121,6 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
-      createDVT: "CONTEXT",
-      createDV: "param01",
     },
     formitem1: {
       caption: '当前树节点id',
@@ -110,8 +133,6 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
-      createDVT: "CONTEXT",
-      createDV: "param02",
     },
     formitem2: {
       caption: '当前树节点父id',
@@ -124,8 +145,6 @@ export const ctrlState = {
       dataType: '25',
       required: false,
       enableCond: 3,
-      createDVT: "CONTEXT",
-      createDV: "param03",
     },
   },
   actionModel: {

@@ -7,9 +7,9 @@ import PersonDataGridView from '@views/sample/person-data-grid-view';
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
-  controlAction: ControlAction;
   showBusyIndicator?: boolean;
   viewMode?: number;
   viewSubject: Subject<IActionParam>;
@@ -45,11 +45,13 @@ defineExpose({ name, state });
           
           <OrgPersonTreeTree
             ref="xData"
+            name="treeexpbar_tree"
             :context="state.context"
             :viewParams="state.viewParams"
             :viewSubject="state.viewSubject"
             :selectFirstDefault="true"
             :isBranchAvailable="true"
+            :parent="parent"
             @ctrlEvent="onCtrlEvent"
           ></OrgPersonTreeTree>
         </div>
@@ -59,22 +61,22 @@ defineExpose({ name, state });
           v-if="state.selection.viewName && state.selection.viewName === 'PersonDataGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </PersonDataGridView>
         <PersonDataGridView
           v-if="state.selection.viewName && state.selection.viewName === 'PersonDataGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </PersonDataGridView>
         <PersonDataGridView
           v-if="state.selection.viewName && state.selection.viewName === 'PersonDataGridView'"
           class="tree-exp__nav-view"
           :viewDefaultUsage="false"
-          :viewdata="JSON.stringify(state.selection.context)"
-          :viewParams="JSON.stringify(state.selection.viewParams)">
+          :context="state.selection.context"
+          :viewParams="state.selection.viewParams">
         </PersonDataGridView>
       </template>
     </AppSplit>

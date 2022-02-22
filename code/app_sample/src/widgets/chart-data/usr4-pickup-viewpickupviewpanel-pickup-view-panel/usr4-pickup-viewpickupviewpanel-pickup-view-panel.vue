@@ -5,6 +5,7 @@ import { ctrlState } from './usr4-pickup-viewpickupviewpanel-pickup-view-panel-s
 import ChartDataDataView from '@views/sample/chart-data-data-view';
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;

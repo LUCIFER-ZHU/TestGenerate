@@ -9,18 +9,29 @@ import { AppFrontAction, AppBackendAction } from '@core';
  */
 export class KanbanDataUIServiceBase extends UIServiceBase {
 
-  /**
-    * Creates an instance of KanbanDataUIServiceBase
-    * 
-    * @param {*} [opts={}]
-    * @memberof KanbanDataUIServiceBase
-    */
-  constructor(opts: IParam = {}) {
-      super(opts);
-  }
+    /**
+      * Creates an instance of KanbanDataUIServiceBase
+      * 
+      * @param {*} [opts={}]
+      * @memberof KanbanDataUIServiceBase
+      */
+    constructor(opts: IParam = {}) {
+        super(opts);
+        this.initBasicData();
+    }
+
+    /**
+     * 初始化基础数据
+     *
+     * @memberof KanbanDataUIServiceBase
+     */
+    public initBasicData() {
+        // 应用实体主键属性
+        this.appDeKeyFieldName = 'kanbandataid';
+        // 是否启用主状态
+        this.isEnableDEMainState = false;
+    }
 
 
-
-   public uiActionModes = {     };
 
 }

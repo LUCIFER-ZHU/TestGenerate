@@ -5,6 +5,7 @@ import { ctrlState } from './mob-pickup-viewpickupviewpanel-pickup-view-panel-st
 import ProvinceMobPickupMDView from '@views/sample/province-mob-pickup-md-view';
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;

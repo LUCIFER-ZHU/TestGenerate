@@ -4,6 +4,7 @@ import { ctrlState } from './tree-nav-info-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;
@@ -24,58 +25,52 @@ interface CtrlEmit {
 const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { name, state, load, loadDraft, save, remove, refresh, onEditorEvent, onComponentEvent, getData } = new FormControl(ctrlState, props, emit).moduleInstall();
+const { name, state, load, loadDraft, save, remove, refresh, onEditorEvent, onComponentEvent, getData, xDataCtrl } = new FormControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ name, state, load, loadDraft, save, remove, refresh, getData });
 </script>
 <template>
-  <a-form name="TreeNavInfo" class="app-form app-info-form" style="" :model="state.data" :rules="state.rules">
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormGroup 
-    v-show="state.detailsModel.group1.visible" 
-    name="group1" 
-    title="省份基本信息"
+  <a-form
+    name="TreeNavInfo"
+    class="app-form app-info-form"
     style=""
-    :infoGroupMode="true"
-    :titleBarCloseMode="0"
-    :showCaption="false"
-    :uIActionGroup="state.detailsModel.group1.uIActionGroup"
-    @componentEvent="onComponentEvent">
-    <a-row>
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.provincename.visible"
-    name="provincename"
-    :rules="state.rules.provincename"
-    :labelWidth="130"
-    :required="state.detailsModel.provincename.required"
-    label="省份名称"
-    style="">
-      <div class="form-editor-container" style="">
-<AppSpan
-  name="provincename"
-  :disabled="state.detailsModel.provincename.disabled"
-  dataType="25"
-  :value="state.data.provincename"
-  :context="state.context"
-  :viewParams="state.viewParams"/>
-      </div>
-  </AppFormItem>
-</a-col>
-    </a-row>
-  </AppFormGroup>
-</a-col>
+    :model="state.data"
+    :rules="state.rules"
+    ref="xDataCtrl"
+  >
+    <AppFormGroup 
+      name="group1"
+      title="省份基本信息"
+      :visible="state.detailsModel.group1.visible" 
+      :layoutOpts="{selfLayout: 'TABLE_24COL',parentLayout: 'TABLE_24COL',colMD: 24,}"
+      :infoGroupMode="true"
+      :titleBarCloseMode="0"
+      :showCaption="false"
+      :uIActionGroup="state.detailsModel.group1.uIActionGroup"
+      @componentEvent="onComponentEvent">
+        <AppFormItem 
+          name="provincename"
+          label="省份名称"
+          labelPos="LEFT"
+          :labelWidth="130"
+          :showLabel="true"
+          :rules="state.rules.provincename"
+          :required="state.detailsModel.provincename.required"
+          :visible="state.detailsModel.provincename.visible" 
+          :layoutOpts="{parentLayout: 'TABLE_24COL',colMD: 24,}"
+          >
+          <div class="form-editor-container" style="">
+          <AppSpan
+            name="provincename"
+            :disabled="state.detailsModel.provincename.disabled"
+            dataType="25"
+            :value="state.data.provincename"
+            :context="state.context"
+            :viewParams="state.viewParams"/>
+          </div>
+        </AppFormItem>
+    </AppFormGroup>
   </a-form>
 </template>
 <style lang="scss">

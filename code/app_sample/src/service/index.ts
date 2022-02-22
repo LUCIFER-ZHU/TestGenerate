@@ -1,5 +1,5 @@
 export * from './app-open-view-service';
-export * from './app-code-list-service';
+export { AppCodeListService } from './app-code-list-service';
 export { AppActionService } from './app-action-service';
 export { AppAuthService } from './app-auth-service';
 export { AppFuncService } from  './app-func-service';

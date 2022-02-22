@@ -11,14 +11,13 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'Customer',
-  keyPSDEField: 'customer',
+  appDeKeyFieldName: 'customerid',
+  appDeMajorFieldName: 'customername',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
   enableQuickGroup: false,
   viewLogics: {
   },
-  toolbar: [
-  ],
-    /*未找到模板[TABEXPPANEL]*/
+
 };

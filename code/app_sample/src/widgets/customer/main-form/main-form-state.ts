@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { CustomerService } from '@api/customer/customer-service';
 
 /**
@@ -14,7 +14,7 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
     // 记录没有映射的属性
-    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','customername','type','image','pcustomername','provincename','cityname','districtname','street','taxno','phone','mobile','email','website','cityid','provinceid','districtid','memo','customerid','pcustomerid'];  
+    this.$ownKeys =['srfupdatedate','srforikey','srfkey','srfmajortext','srftempmode','srfuf','srfdeid','srfsourcekey','customername','type','image','pcustomername','provincename','cityname','districtname','street','taxno','phone','mobile','email','website','formitem','cityid','provinceid','districtid','memo','customerid','pcustomerid'];  
   }
 
   // 表单里映射了属性的字段
@@ -178,6 +178,7 @@ export class ControlVO extends ControlVOBase {
   srftempmode: any;
   srfdeid: any;
   srfsourcekey: any;
+  formitem: any;
 }
 
 // 部件配置对象
@@ -186,9 +187,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new CustomerService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'Customer',
+  appDeCodeName:'Customer',
+  appDeLogicName: '客户',
   appDeKeyFieldName: 'CustomerId',
   appDeMajorFieldName: 'CustomerName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',
@@ -227,7 +238,7 @@ export const ctrlState = {
       showCaption: false,
     },
     customername: {
-      caption: '',
+      caption: '客户名称',
       name: 'customername',
       disabled: false, 
       visible: true,
@@ -240,7 +251,7 @@ export const ctrlState = {
       enableCond: 3,
     },
     type: {
-      caption: '',
+      caption: '类型',
       name: 'type',
       disabled: false, 
       visible: true,
@@ -345,15 +356,22 @@ export const ctrlState = {
       valueItemName: 'cityid',
       groupLogics: [
         {
-          name: '表单成员[cityname][表单项启用]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[provinceid]',
-          logicCat: 'ITEMENABLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'provinceid',logicType: 'SINGLE',name: 'provinceid 值不为空(NotNil)',value:''},
-          ],
+        	name: '表单成员[cityname][表单项启用]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'ITEMENABLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["provinceid"],
+        	childLogics: [
+        		{
+        			name: 'provinceid 值不为空(NotNil)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "ISNOTNULL",
+        			dEFDName: "provinceid",
+        			value: ""
+        		},
+        	]
         },
       ],
     },
@@ -373,20 +391,27 @@ export const ctrlState = {
       valueItemName: 'districtid',
       groupLogics: [
         {
-          name: '表单成员[districtname][表单项启用]逻辑',
-          groupOP: 'AND',
-          relatedDetailNames: '[cityid]',
-          logicCat: 'ITEMENABLE',
-          logicType: 'GROUP',
-          notMode: 'false',
-          logics: [
-          {condOP: 'ISNOTNULL',dEFDName: 'cityid',logicType: 'SINGLE',name: 'cityid 值不为空(NotNil)',value:''},
-          ],
+        	name: '表单成员[districtname][表单项启用]逻辑',
+        	logicType: 'GROUP',
+        	logicCat: 'ITEMENABLE',
+        	notMode: false,
+        	groupOP: 'AND',
+        	relatedDetailNames: ["cityid"],
+        	childLogics: [
+        		{
+        			name: 'cityid 值不为空(NotNil)',
+        			logicType: 'SINGLE',
+        			logicCat: '',
+        			condOP: "ISNOTNULL",
+        			dEFDName: "cityid",
+        			value: ""
+        		},
+        	]
         },
       ],
     },
     street: {
-      caption: '',
+      caption: '街道',
       name: 'street',
       disabled: false, 
       visible: true,
@@ -468,6 +493,18 @@ export const ctrlState = {
       detailType: 'FORMITEM',
       showCaption: true,
       valueFormat: '',
+      dataType: '25',
+      required: false,
+      enableCond: 3,
+    },
+    formitem: {
+      caption: '主从数据多选',
+      name: 'formitem',
+      disabled: false, 
+      visible: true,
+      detailStyle: 'DEFAULT',
+      detailType: 'FORMITEM',
+      showCaption: true,
       dataType: '25',
       required: false,
       enableCond: 3,

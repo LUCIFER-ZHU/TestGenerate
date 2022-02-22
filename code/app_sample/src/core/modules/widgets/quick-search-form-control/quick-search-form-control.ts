@@ -23,7 +23,7 @@ export class QuickSearchFormControl extends FormControl {
     super.onEditorEvent(actionParam);
     this.emit("ctrlEvent", {
       tag: this.props.name,
-      action: "selectionChange",
+      action: "search",
       data: this.state.data,
     });
   }

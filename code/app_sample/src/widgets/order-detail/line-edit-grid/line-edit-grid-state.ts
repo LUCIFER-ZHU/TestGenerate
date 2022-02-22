@@ -1,4 +1,4 @@
-import { ControlVOBase, IParam, GridService } from '@core';
+import { ControlVOBase, IParam, GridService, isEmpty, Verify } from '@core';
 import { OrderDetailService } from '@api/order-detail/order-detail-service';
 
 export class ControlVO extends ControlVOBase {
@@ -6,63 +6,54 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
   }
-
   get amount() {
     return this.$DO.amount;
   }
   set amount(value: any) {
     this.$DO.amount = value;
   }
-
   get price() {
     return this.$DO.price;
   }
   set price(value: any) {
     this.$DO.price = value;
   }
-
   get productid() {
     return this.$DO.productid;
   }
   set productid(value: any) {
     this.$DO.productid = value;
   }
-
   get qty() {
     return this.$DO.qty;
   }
   set qty(value: any) {
     this.$DO.qty = value;
   }
-
   get orderid() {
     return this.$DO.orderid;
   }
   set orderid(value: any) {
     this.$DO.orderid = value;
   }
-
   get srfmajortext() {
     return this.$DO.orderdetailname;
   }
   set srfmajortext(value: any) {
     this.$DO.orderdetailname = value;
   }
-
   get srfdataaccaction() {
     return this.$DO.orderdetailid;
   }
   set srfdataaccaction(value: any) {
     this.$DO.orderdetailid = value;
   }
-
   get srfkey() {
     return this.$DO.orderdetailid;
   }
   set srfkey(value: any) {
     this.$DO.orderdetailid = value;
   }
-
   get productname() {
     return this.$DO.productname;
   }
@@ -75,8 +66,17 @@ export class ControlVO extends ControlVOBase {
 export const ctrlState = {
   controlCodeName: 'LineEdit',
   controlName: 'grid',
-  appEntityCodeName:'OrderDetail',
+  totalColumnWidth: 510,
+  selectColumnWidth: 50,
+  appEntityCodeName: 'OrderDetail',
+  appDeCodeName:'OrderDetail',
+  appDeLogicName: '订单明细',
+  appDeKeyFieldName: 'OrderDetailId',
+  appDeMajorFieldName: 'OrderDetailName',
   controlService: new GridService<ControlVO>(ControlVO, new OrderDetailService() ),
+  //  新建默认值
+  createDefaultItems: [
+  ],
   items: [],
   selectedRowKeys: [],
   // 多数据部件分组
@@ -102,8 +102,8 @@ export const ctrlState = {
     aggMode: "NONE",
     aggData: [],
   },
-  uAColumnModel:[
-  ],
+  uAColumnModel: {
+  },
   gridEditState:{
     price:{},
     qty:{},
@@ -121,6 +121,7 @@ export const ctrlState = {
       ellipsis: true,
       enableSort: true,
       aggMode: "NONE",
+      valueItemName: "productid",
     },
     {
       title: "单价",
@@ -155,9 +156,21 @@ export const ctrlState = {
       enableSort: true,
       aggMode: "NONE",
     },
+    {
+      title: "",
+      columnType: "EMPTYCOLUMN",
+      dataIndex: "autowidthcolumn",
+      align: "center",
+      resizable: true,
+      ellipsis: true,
+      aggMode: "NONE",
+    },
   ],
   // 是否单选
   isSingleSelect:false,
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   rules:{
   }
 };

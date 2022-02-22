@@ -4,6 +4,7 @@ import { ctrlState } from './info-form-state';
 import { FormControl, IActionParam, IParam, ControlAction, IContext } from '@core';
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;
@@ -24,77 +25,76 @@ interface CtrlEmit {
 const emit = defineEmits <CtrlEmit> ();
 
 // 安装功能模块，提供状态和能力方法
-const { name, state, load, loadDraft, save, remove, refresh, onEditorEvent, onComponentEvent, getData } = new FormControl(ctrlState, props, emit).moduleInstall();
+const { name, state, load, loadDraft, save, remove, refresh, onEditorEvent, onComponentEvent, getData, xDataCtrl } = new FormControl(ctrlState, props, emit).moduleInstall();
 
 // 暴露内部状态及能力
 defineExpose({ name, state, load, loadDraft, save, remove, refresh, getData });
 </script>
 <template>
-  <a-form name="Info" class="app-form formitem-full-height" style="" :model="state.data" :rules="state.rules">
-<a-col
-  :lg="{span: 24, offset: 0 }"
-  :md="{span: 24, offset: 0 }"
-  :sm="{span: 24, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormGroup 
-    v-show="state.detailsModel.group1.visible" 
-    name="group1" 
-    title="示例版本基本信息"
+  <a-form
+    name="Info"
+    class="app-form formitem-full-height"
     style=""
-    :infoGroupMode="false"
-    :titleBarCloseMode="0"
-    :showCaption="false"
-    :uIActionGroup="state.detailsModel.group1.uIActionGroup"
-    @componentEvent="onComponentEvent">
-    <div class="app-form-layout-flex" style="flex-direction: column;">
-<a-col
- >
-  <AppFormItem 
-    v-show="state.detailsModel.samplevername.visible"
-    class="h2-title"
-    name="samplevername"
-    :rules="state.rules.samplevername"
-    :labelWidth="0"
-    :required="state.detailsModel.samplevername.required"
-    label="标题"
-    style="">
-      <div class="form-editor-container" style="">
-<AppSpan
-  name="samplevername"
-  :disabled="state.detailsModel.samplevername.disabled"
-  dataType="25"
-  :value="state.data.samplevername"
-  :context="state.context"
-  :viewParams="state.viewParams"/>
-      </div>
-  </AppFormItem>
-</a-col>
-<a-col
- >
-  <AppFormItem 
-    v-show="state.detailsModel.content.visible"
-    name="content"
-    :rules="state.rules.content"
-    :labelWidth="0"
-    :required="state.detailsModel.content.required"
-    label="内容"
-    style="">
-      <div class="form-editor-container" style="">
-<AppRaw
-  name="content"
-  :date="state.data"
-  :disabled="state.detailsModel.content.disabled"
-  contentType="RAW"
-  :value="state.data.content"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-    </div>
-  </AppFormGroup>
-</a-col>
+    :model="state.data"
+    :rules="state.rules"
+    ref="xDataCtrl"
+  >
+    <AppFormGroup 
+      name="group1"
+      title="示例版本基本信息"
+      :visible="state.detailsModel.group1.visible" 
+      :layoutOpts="{selfLayout: 'FLEX',dir: 'column', 
+parentLayout: 'TABLE_24COL',colMD: 24,}"
+      :infoGroupMode="false"
+      :titleBarCloseMode="0"
+      :showCaption="false"
+      :uIActionGroup="state.detailsModel.group1.uIActionGroup"
+      @componentEvent="onComponentEvent">
+        <AppFormItem 
+          name="samplevername"
+          label="标题"
+          labelPos="NONE"
+          :labelWidth="0"
+          :showLabel="false"
+          :rules="state.rules.samplevername"
+          :required="state.detailsModel.samplevername.required"
+          :visible="state.detailsModel.samplevername.visible" 
+          :layoutOpts="{parentLayout: 'FLEX',grow: -1,}"
+          class="h2-title"
+          >
+          <div class="form-editor-container" style="">
+          <AppSpan
+            name="samplevername"
+            :disabled="state.detailsModel.samplevername.disabled"
+            dataType="25"
+            :value="state.data.samplevername"
+            :context="state.context"
+            :viewParams="state.viewParams"/>
+          </div>
+        </AppFormItem>
+        <AppFormItem 
+          name="content"
+          label="内容"
+          labelPos="NONE"
+          :labelWidth="0"
+          :showLabel="false"
+          :rules="state.rules.content"
+          :required="state.detailsModel.content.required"
+          :visible="state.detailsModel.content.visible" 
+          :layoutOpts="{parentLayout: 'FLEX',grow: 1,}"
+          >
+          <div class="form-editor-container" style="">
+          <AppRaw
+            name="content"
+            :date="state.data"
+            :disabled="state.detailsModel.content.disabled"
+            contentType="RAW"
+            :value="state.data.content"
+            @editorEvent="onEditorEvent"
+          />
+          </div>
+        </AppFormItem>
+    </AppFormGroup>
   </a-form>
 </template>
 <style lang="scss">

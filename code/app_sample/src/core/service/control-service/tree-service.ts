@@ -1,5 +1,4 @@
 import { ControlServiceBase, ControlVOBase, deepCopy, IContext, IParam, isEmpty, TreeNodeRSVO, TreeNodeVO } from "@core";
-import { Environment } from "@/environments/environment";
 
 /**
  * @description 树部件服务
@@ -416,7 +415,7 @@ export class TreeService<T extends ControlVOBase> extends ControlServiceBase<T> 
     }
     if (context && context.srfparentkey) {
       Object.assign(searchFilter, { srfparentkey: deepCopy(context).srfparentkey });
-      if (Environment && Environment.enableIssue) {
+      if (App.getEnvironmentParam() && App.getEnvironmentParam().enableIssue) {
         Object.assign(searchFilter, { nodeid: deepCopy(context).srfparentkey });
       }
     }

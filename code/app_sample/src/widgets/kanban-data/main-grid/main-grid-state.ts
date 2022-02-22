@@ -1,4 +1,4 @@
-import { ControlVOBase, IParam, GridService } from '@core';
+import { ControlVOBase, IParam, GridService, isEmpty, Verify } from '@core';
 import { KanbanDataService } from '@api/kanban-data/kanban-data-service';
 
 export class ControlVO extends ControlVOBase {
@@ -6,56 +6,48 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
   }
-
   get endtime() {
     return this.$DO.endtime;
   }
   set endtime(value: any) {
     this.$DO.endtime = value;
   }
-
   get memo() {
     return this.$DO.memo;
   }
   set memo(value: any) {
     this.$DO.memo = value;
   }
-
   get begintime() {
     return this.$DO.begintime;
   }
   set begintime(value: any) {
     this.$DO.begintime = value;
   }
-
   get taskstatus() {
     return this.$DO.taskstatus;
   }
   set taskstatus(value: any) {
     this.$DO.taskstatus = value;
   }
-
   get kanbandataname() {
     return this.$DO.kanbandataname;
   }
   set kanbandataname(value: any) {
     this.$DO.kanbandataname = value;
   }
-
   get srfmajortext() {
     return this.$DO.kanbandataname;
   }
   set srfmajortext(value: any) {
     this.$DO.kanbandataname = value;
   }
-
   get srfdataaccaction() {
     return this.$DO.kanbandataid;
   }
   set srfdataaccaction(value: any) {
     this.$DO.kanbandataid = value;
   }
-
   get srfkey() {
     return this.$DO.kanbandataid;
   }
@@ -68,8 +60,17 @@ export class ControlVO extends ControlVOBase {
 export const ctrlState = {
   controlCodeName: 'Main',
   controlName: 'grid',
-  appEntityCodeName:'KanbanData',
+  totalColumnWidth: 721,
+  selectColumnWidth: 50,
+  appEntityCodeName: 'KanbanData',
+  appDeCodeName:'KanbanData',
+  appDeLogicName: '看板数据',
+  appDeKeyFieldName: 'KanbanDataId',
+  appDeMajorFieldName: 'KanbanDataName',
   controlService: new GridService<ControlVO>(ControlVO, new KanbanDataService() ),
+  //  新建默认值
+  createDefaultItems: [
+  ],
   items: [],
   selectedRowKeys: [],
   // 多数据部件分组
@@ -101,8 +102,8 @@ export const ctrlState = {
     aggMode: "NONE",
     aggData: [],
   },
-  uAColumnModel:[
-  ],
+  uAColumnModel: {
+  },
   gridEditState:{
     srfkey:{},
   },
@@ -111,7 +112,6 @@ export const ctrlState = {
       title: "任务名称",
       columnType: "DEFGRIDCOLUMN",
       align: "left",
-      width: 1,
       resizable: true,
       dataIndex: "kanbandataname",
       ellipsis: true,
@@ -165,6 +165,9 @@ export const ctrlState = {
   ],
   // 是否单选
   isSingleSelect:false,
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   rules:{
   }
 };

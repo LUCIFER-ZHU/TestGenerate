@@ -1,4 +1,5 @@
-import { MDControlState, MainControl, deepCopy, IActionParam, IParam, UIBase } from '@core';
+import { MDControlState, MainControl, deepCopy, IActionParam, IParam, UIBase, isExistAndNotEmpty, UIUtil, ExportExcel, translateCodeList2Text } from '@core';
+import { Modal } from 'ant-design-vue';
 
 /**
  * @description 多数据部件
@@ -64,8 +65,12 @@ export class MDControl extends MainControl {
         let tempViewParams = deepCopy(viewParams ? viewParams : {});
         const { noSort, minorSortDir, minorSortPSDEF } = mdCtrlSort;
         let { enablePagingBar, current, pageSize } = mdCtrlPaging;
-        if (!noSort && minorSortDir && minorSortPSDEF) {
-          Object.assign(tempViewParams, { sort: `${minorSortPSDEF},${minorSortDir}` });
+        if (!noSort) {
+          if (arg && arg.sort) {
+            Object.assign(tempViewParams, { sort: arg.sort });
+          } else if (minorSortDir && minorSortPSDEF) {
+            Object.assign(tempViewParams, { sort: `${minorSortPSDEF},${minorSortDir}` });
+          }
         }
         if (enablePagingBar) {
           Object.assign(tempViewParams, { page: current - 1, size: pageSize });
@@ -131,6 +136,7 @@ export class MDControl extends MainControl {
     const save = async (opt: any = {}) => {
       try {
         const { controlService, context, viewParams, showBusyIndicator, items, controlAction } = this.state;
+        this.setUpdateDefault();
         // TODO 值规则校验处理
         for (const item of items) {
           const { updateAction, createAction } = controlAction;
@@ -194,7 +200,7 @@ export class MDControl extends MainControl {
     const { viewSubject, controlName } = this.state;
     const remove = async (opt: IParam[] = []) => {
       try {
-        const { controlService, context, viewParams, showBusyIndicator, controlAction, appDeCodeName } = this.state;
+        const { controlService, context, viewParams, showBusyIndicator, controlAction, appDeCodeName, appDeMajorFieldName } = this.state;
         const { items } = toRefs(this.state);
         if (!controlAction.removeAction) {
           return;
@@ -214,23 +220,48 @@ export class MDControl extends MainControl {
         });
         if (_data.length > 0) {
           const keys: string[] = [];
-          _data.forEach((item: IParam) => {
+          //  删除确认信息
+          let confirmInfo: string = '';
+          _data.forEach((item: IParam, index: number) => {
             keys.push(item.srfkey);
+            const text = item[appDeMajorFieldName.toLowerCase()] || item.srfmajortext;
+            if (index < 5) {
+              if (index !== 0 && isExistAndNotEmpty(text)) {
+                confirmInfo += '、';
+              }
+              confirmInfo += text;
+            }
           });
-          const _removeAction = keys.length > 1 ? 'removeBatch' : controlAction.removeAction;
-          let _context = deepCopy(context);
-          Object.assign(_context, { [appDeCodeName]: keys });
-          let _viewParams = deepCopy(viewParams);
-          const arg: IParam = {
-            [appDeCodeName]: keys,
-          };
-          Object.assign(arg, { viewParams: _viewParams });
-          const response = await controlService.remove(_context, arg, {
-            action: _removeAction,
-            isLoading: showBusyIndicator,
-          });
-          if (response.status || response.status == 200) {
+          confirmInfo += ` ${_data.length < 5 ? ' ' : ' ... '}共 ${_data.length} 条数据`;
+          //  移除空白主键信息
+          confirmInfo = confirmInfo.replace(/[null]/g, '').replace(/[undefined]/g, '');
+          const removeData = async () => {
+            const _removeAction = keys.length > 1 ? 'removeBatch' : controlAction.removeAction;
+            let _context = deepCopy(context);
+            Object.assign(_context, { [appDeCodeName.toLowerCase()]: keys });
+            let _viewParams = deepCopy(viewParams);
+            const arg: IParam = {
+              [appDeCodeName.toLowerCase()]: keys,
+            };
+            Object.assign(arg, { viewParams: _viewParams });
+            const response = await controlService.remove(_context, arg, {
+              action: _removeAction,
+              isLoading: showBusyIndicator,
+            });
+            if (response.status || response.status == 200) {
+            }
           }
+          //  弹出提示模态
+          Modal.confirm({
+            title: '删除警告',
+            content: `确认删除 ${confirmInfo} 吗？删除操作将不可恢复`,
+            okText: '确认',
+            cancelText: '取消',
+            onOk: () => {
+              removeData();
+            },
+            onCancel: () => { }
+          });
         }
       } catch (error) {
         // TODO 错误异常处理
@@ -287,8 +318,9 @@ export class MDControl extends MainControl {
           action: controlAction.loadDraftAction,
           isLoading: showBusyIndicator,
         });
+        this.setCreateDefault(response.data);
         if (response.status || response.status == 200) {
-          items.value = [...items.value, [response.data]];
+          items.value.push(response.data);
         }
       } catch (error) {
         // TODO 错误异常处理
@@ -362,6 +394,155 @@ export class MDControl extends MainControl {
   }
 
   /**
+   * @description 导出
+   * @protected
+   * @param {*} [opt={}]
+   * @memberof MDControl
+   */
+  protected async exportExcel(opt: any = {}) { }
+
+  /**
+   * @description 获取导出项
+   * @protected
+   * @return {*}  {IParam[]}
+   * @memberof MDControl
+   */
+  protected getExportItems(): IParam[] {
+    return this.state.exportItems || [];
+  }
+
+  private getExportHeader(exportItems: IParam[]): string[] {
+    const headers: string[] = [];
+    exportItems.forEach((item: IParam) => {
+      headers.push(item.label);
+    });
+    return headers;
+  }
+
+  /**
+   * @description 翻译导出数据
+   * @private
+   * @param {IParam[]} datas
+   * @param {IParam[]} exportItems
+   * @return {*} 
+   * @memberof MDControl
+   */
+  private async formatExcelData(datas: IParam[], exportItems: IParam[]) {
+    const { context, viewParams } = this.state;
+    const codeListService = App.getCodeListService();
+    const codeListColumn: Map<string, IParam[]> = new Map();
+    //  获取代码表
+    for (const item of exportItems) {
+      if (item.codeListTag && !codeListColumn.has(`${item.field},${item.codeListTag}`)) {
+        const codeListItems = await codeListService.getCodeListItems({
+          tag: item.codeListTag,
+          context: context,
+          viewParams: viewParams
+        });
+        codeListColumn.set(`${item.field},${item.codeListTag}`, codeListItems);
+      }
+    }
+    const items: IParam[] = [];
+    if (codeListColumn.size > 0) {
+      datas.forEach((data: IParam) => {
+        const temp = deepCopy(data.$DO);
+        codeListColumn.forEach((codeListItems: IParam[], key: string) => {
+          const values = key.split(',');
+          if (values.length === 2) {
+            Object.assign(temp, { [values[0]]: translateCodeList2Text(values[1], temp[values[0]], codeListItems) });
+          }
+        });
+        items.push(temp);
+      })
+    }
+    return items.map((item: IParam) => exportItems.map((j: IParam) => item[j.field]));
+  }
+
+  /**
+   * @description 执行导出
+   * @private
+   * @param {IParam[]} [_data=[]]
+   * @memberof MDControl
+   */
+  private async doExport(_data: IParam[] = []) {
+    const { appDeLogicName } = this.state;
+    const exportItems = this.getExportItems();
+    if (exportItems && exportItems.length > 0) {
+      const tHeader: string[] = this.getExportHeader(exportItems);
+      const data = await this.formatExcelData(_data, exportItems);
+      const excel = await ExportExcel.getInstance().exportExcel();
+      excel.export_json_to_excel({
+        header: tHeader,
+        data,
+        filename: `${appDeLogicName}表`,
+        authWidth: true,
+        bookType: "xlsx"
+      });
+    }
+  }
+
+  /**
+   * @description 使用导出功能模块
+   * @return {*} 
+   * @memberof MDControl
+   */
+  public useExportExcel() {
+    const exportExcel = async (opt: IParam = {}) => {
+      const {
+        items,
+        mdCtrlPaging,
+        mdCtrlSort,
+        controlService,
+        context,
+        viewParams,
+        controlAction,
+        showBusyIndicator
+      } = this.state;
+      let tempViewParams = deepCopy(viewParams ? viewParams : {});
+      //  最大行
+      if (Object.is(opt.type, 'maxRowCount')) {
+        Object.assign(tempViewParams, { page: 0, size: opt.maxRowCount ? opt.maxRowCount : 1000 });
+      // } else if (Object.is(opt.type, 'activatedPage')) {
+      } else {
+        //  当前激活页
+        const { current, pageSize } = mdCtrlPaging;
+        Object.assign(tempViewParams, { page: current - 1, size: pageSize });
+        this.doExport(items);
+        return;
+      }
+      //  远程获取
+      const { noSort, minorSortDir, minorSortPSDEF } = mdCtrlSort;
+      if (!noSort && minorSortDir && minorSortPSDEF) {
+        Object.assign(tempViewParams, { sort: `${minorSortPSDEF},${minorSortDir}` });
+      }
+      const arg: any = {};
+      Object.assign(arg, tempViewParams);
+      this.emit('ctrlEvent', { tag: this.props.name, action: 'beforeload', data: arg });
+      let tempContext = deepCopy(context ? context : {});
+      try {
+        const response = await controlService.search(tempContext, arg, {
+            action: controlAction.fetchAction,
+            isLoading: showBusyIndicator
+        });
+        if (!response || response.status !== 200) {
+          App.getNotificationService().warning({
+            message: '导出获取数据集失败',
+            description: response.message
+          });
+        }
+        this.doExport(response.data);
+      } catch (error: any) {
+        App.getNotificationService().error({
+          message: '导出数据失败',
+          description: error?.data
+        });
+      }
+    }
+    this.exportExcel = exportExcel;
+    return exportExcel;
+  }
+
+  /**
    * 处理数据状态变化(逻辑数据+UI)
    *
    * @memberof MDControl
@@ -401,6 +582,35 @@ export class MDControl extends MainControl {
   protected codeListGroupData() { }
 
   /**
+   * 新建默认值
+   *
+   * @protected
+   * @param {IParam} [row={}]
+   * @memberof MDControl
+   */
+  protected setCreateDefault(row: IParam = {}): void { }
+
+  /**
+   * 更新默认值
+   *
+   * @protected
+   * @memberof MDControl
+   */
+  protected setUpdateDefault(): void { }
+
+  /**
+   * 获取指定数据的操作权限
+   *
+   * @param {IParam} data 指定数据
+   * @memberof MDControl
+   */
+  public getActionAuthState(data: IParam, tempActionModel: IParam) {
+    const { UIService } = toRefs(this.state);
+    UIUtil.calcActionItemAuthState(data, tempActionModel, UIService);
+    return tempActionModel;
+  }
+
+  /**
    * 获取当前激活数据
    *
    * @memberof MDControl
@@ -423,6 +633,7 @@ export class MDControl extends MainControl {
       remove: this.useRemove(),
       newRow: this.useNewRow(),
       refresh: this.useRefresh(),
+      exportExcel: this.useExportExcel()
     };
   }
 }

@@ -1,14 +1,18 @@
-import { deepCopy } from '@core';
+import { deepCopy, IParam } from '@core';
 
 export class ControlVOBase {
   /**
-   * 后台数据对象
+   * @description 后台数据对象
    * @protected
+   * @type {*}
+   * @memberof ControlVOBase
    */
   protected $DO: any = {};
 
   /**
-   * 自有属性名称集合
+   * @description 自有属性名称集合
+   * @type {string[]}
+   * @memberof ControlVOBase
    */
   public $ownKeys: string[] = [];
 
@@ -89,6 +93,19 @@ export class ControlVOBase {
    */
   public toObject(){
     return {};
+  }
+
+  /**
+   * @description 是否含有属性
+   * @param {string} key 属性名
+   * @return {*}  {boolean}
+   * @memberof ControlVOBase
+   */
+  public hasKey(key: string): boolean {
+    if (this.hasOwnProperty(key) || key in this) {
+      return true;
+    }
+    return false;
   }
 
   /**

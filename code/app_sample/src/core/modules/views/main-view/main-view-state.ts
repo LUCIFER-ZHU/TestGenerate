@@ -24,10 +24,26 @@ export interface MainViewState extends ViewStateBase {
   appEntityCodeName: string;
 
   /**
+   * 视图实体主属性CodeName
+   *
+   * @type {string}
+   * @memberof MainViewState
+   */
+  appDeKeyFieldName: string;
+
+  /**
+   * 视图实体主信息属性CodeName
+   *
+   * @type {string}
+   * @memberof MainViewState
+   */
+  appDeMajorFieldName: string;
+
+  /**
    * 视图逻辑配置
    *
    * @type {*}
    * @memberof MainViewState
    */
-   viewLogics: IViewLogics;
+  viewLogics: IViewLogics;
 }

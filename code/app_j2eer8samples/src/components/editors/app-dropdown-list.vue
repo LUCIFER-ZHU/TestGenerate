@@ -81,10 +81,7 @@ const props = withDefaults(defineProps<DropdownListProps>(), {
 const emit = defineEmits<EditorEmit>()
 const { handleEditorNavParams, loadCodeListData } = new EditorBase();
 const { navContext, navViewParam } = handleEditorNavParams(props);
-let curValue: Ref<any> = ref(
-  props.multiple ? 
-  props.value?.split(props.valueSeparator) : props.value
-);
+let curValue : Ref<any> = computed(() => props.multiple ? props.value?.split(props.valueSeparator) : props.value);
 let items: Ref<IParam[]> = ref([]);
 const onChange = (select: any, option: any) => {
   const value = typeOf(select) == 'array' ? select.join(props.valueSeparator) : select;

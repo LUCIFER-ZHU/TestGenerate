@@ -42,22 +42,6 @@ export class ViewBase {
   public declare xDataControl: IParam;
 
   /**
-   * 界面行为服务
-   *
-   * @type {(IParam | undefined)}
-   * @memberof ViewBase
-   */
-  public appUIService: IParam | undefined;
-
-  /**
-   * 数据服务
-   *
-   * @type {(IParam | undefined)}
-   * @memberof ViewBase
-   */
-  public appDataService: IParam | undefined;
-
-  /**
    * Creates an instance of ViewBase.
    * @param {*} options 配置参数
    * @param {IParam} props 输入参数
@@ -83,6 +67,9 @@ export class ViewBase {
    */
   protected handleReactiveState() {
     this.state.viewSubject = toRef(this.props, 'viewSubject') as any;
+    if (this.props.showCaptionBar === false) {
+      this.state.showCaptionBar = false;
+    }
   }
 
   /**
@@ -127,7 +114,7 @@ export class ViewBase {
       Object.assign(context.value, appData.context ? appData.context : {});
       // 视图应用上下文
       const pageContext = {};
-      const routeParams = useRoute().params;
+      const routeParams = useRoute()?.params;
       if (routeParams && (Object.keys(routeParams).length > 0)) {
         Object.keys(routeParams).forEach((key: string) => {
           if (routeParams[key]) {
@@ -138,7 +125,7 @@ export class ViewBase {
       Object.assign(context.value, pageContext);
       // 视图参数
       const pageViewParams = {};
-      const routeQuerys = useRoute().query;
+      const routeQuerys = useRoute()?.query;
       if (routeQuerys && (Object.keys(routeQuerys).length > 0)) {
         Object.keys(routeQuerys).forEach((key: string) => {
           if (routeQuerys[key]) {
@@ -176,7 +163,8 @@ export class ViewBase {
     // 导航视图参数处理
     this.handleViewContextParams(this.props, context, viewParams);
     watch(context, (newVal: any, oldVal: any) => {
-      this.handleViewContextParams(this.props, newVal, viewParams);
+      //  context转响应式对象
+      this.handleViewContextParams(this.props, isRef(newVal) ? newVal : ref(newVal), viewParams);
     });
     // 把Ref赋值到State上进行解包
     this.state.context = context;
@@ -184,30 +172,26 @@ export class ViewBase {
   }
 
   /**
-   *@description 使用UI服务
+   *@description 获取UI服务
    *
    * @memberof ViewBase
    */
-  public useUIService() {
+  public async getUIService() {
     const { appEntityCodeName, context } = this.state;
     if (appEntityCodeName) {
-      App.getUIService(appEntityCodeName.toLowerCase(), context).then((service: IParam) => {
-        this.appUIService = service;
-      })
+      return await App.getUIService(appEntityCodeName.toLowerCase(), context);
     }
   }
 
   /**
-   *@description 使用数据服务
+   *@description 获取数据服务
    *
    * @memberof ViewBase
    */
-  public useDataService() {
+  public async getDataService() {
     const { appEntityCodeName, context } = this.state;
     if (appEntityCodeName) {
-      App.getDataService(appEntityCodeName.toLowerCase(), context).then((service: IParam) => {
-        this.appDataService = service;
-      })
+      return await App.getDataService(appEntityCodeName.toLowerCase(), context)
     }
   }
 
@@ -243,10 +227,6 @@ export class ViewBase {
     this.useViewContextParams();
     // 使用计数器服务
     this.useCounterService();
-    // 使用数据服务
-    this.useDataService();
-    // 使用UI服务
-    this.useUIService();
     // 处理视图初始化
     this.useViewInit();
     return {

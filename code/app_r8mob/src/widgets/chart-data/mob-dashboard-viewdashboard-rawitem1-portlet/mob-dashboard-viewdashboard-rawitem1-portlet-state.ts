@@ -2,8 +2,6 @@
 export const ctrlState = {
   controlCodeName: 'MobDashboardViewdashboard_rawitem1',
   controlName: 'dashboard_rawitem1',
-  showTitleBar: true,
-  title: '',
   portletType: 'RAWITEM',
   // 部件高度
   height: 200,

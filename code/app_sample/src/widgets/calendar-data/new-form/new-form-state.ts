@@ -1,4 +1,4 @@
-import { ControlVOBase, EditFormService } from '@core';
+import { ControlVOBase, EditFormService, Verify, isEmpty } from '@core';
 import { CalendarDataService } from '@api/calendar-data/calendar-data-service';
 
 /**
@@ -88,9 +88,19 @@ export const ctrlState = {
   controlName: 'form',
   controlService: new EditFormService<ControlVO>(ControlVO, new CalendarDataService() ),
   data: new ControlVO({}),
+  appEntityCodeName: 'CalendarData',
+  appDeCodeName:'CalendarData',
+  appDeLogicName: '日历示例数据',
   appDeKeyFieldName: 'CalendarDataId',
   appDeMajorFieldName: 'CalendarDataName',
   enableAutoSave: false,
+  errorMessage: [],
+  //  新建默认值
+  createDefaultItems: [
+  ],
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   detailsModel: {
     formpage1: {
       caption: '基本信息',

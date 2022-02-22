@@ -15,7 +15,8 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'OrderRepData',
-  keyPSDEField: 'orderrepdata',
+  appDeKeyFieldName: 'orderrepdataid',
+  appDeMajorFieldName: 'orderrepdataname',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
@@ -28,8 +29,6 @@ export const viewState = {
       openDataViewName: 'OrderRepDataEditView',
     },
   },
-  toolbar: [
-  ],
   grid:{
     action:{
       loadAction: '',
@@ -46,6 +45,5 @@ export const viewState = {
       loadDraftAction: 'FilterGetDraft',
       loadAction: 'FilterGet',
     } 
-  }
-
+  },
 };

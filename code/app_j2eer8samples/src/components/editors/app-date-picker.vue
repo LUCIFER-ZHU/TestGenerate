@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { IActionParam } from '@core';
-// import dayjs from 'ant-design-vue/lib/time-picker/dayjs';
 import { computed, Ref } from 'vue';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
+import 'dayjs/locale/zh-cn';
 interface DatePickerProps {
   /**
    * checked选中状态
@@ -72,7 +72,7 @@ const props = withDefaults(defineProps<DatePickerProps>(), {
   placeholder: '请选择日期',
 });
 const emit = defineEmits<EditorEmit>();
-const curValue: Ref<any> = props.value ? ref<Dayjs>(dayjs(props.value, props.dateFormat)) : ref('');
+let curValue : Ref<any> = computed(() => props.value ? (dayjs(props.value, props.dateFormat)) : '');
 const onChange = (date: string, dateString: string) => {
   emit('editorEvent', {
     tag: props.name,
@@ -80,6 +80,11 @@ const onChange = (date: string, dateString: string) => {
     data: dateString,
   });
 };
+
+onMounted(() => {
+  //  设置国际化
+  dayjs.locale('zh-cn');
+})
 </script>
 
 <template>

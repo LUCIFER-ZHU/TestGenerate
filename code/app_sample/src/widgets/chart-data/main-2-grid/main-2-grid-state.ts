@@ -1,4 +1,4 @@
-import { ControlVOBase, IParam, GridService } from '@core';
+import { ControlVOBase, IParam, GridService, isEmpty, Verify } from '@core';
 import { ChartDataService } from '@api/chart-data/chart-data-service';
 
 export class ControlVO extends ControlVOBase {
@@ -6,21 +6,18 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
   }
-
   get srfmajortext() {
     return this.$DO.chartdataname;
   }
   set srfmajortext(value: any) {
     this.$DO.chartdataname = value;
   }
-
   get srfdataaccaction() {
     return this.$DO.chartdataid;
   }
   set srfdataaccaction(value: any) {
     this.$DO.chartdataid = value;
   }
-
   get srfkey() {
     return this.$DO.chartdataid;
   }
@@ -33,8 +30,17 @@ export class ControlVO extends ControlVOBase {
 export const ctrlState = {
   controlCodeName: 'Main_2',
   controlName: 'grid',
-  appEntityCodeName:'ChartData',
+  totalColumnWidth: 1260,
+  selectColumnWidth: 100,
+  appEntityCodeName: 'ChartData',
+  appDeCodeName:'ChartData',
+  appDeLogicName: '图表',
+  appDeKeyFieldName: 'ChartDataId',
+  appDeMajorFieldName: 'ChartDataName',
   controlService: new GridService<ControlVO>(ControlVO, new ChartDataService() ),
+  //  新建默认值
+  createDefaultItems: [
+  ],
   items: [],
   selectedRowKeys: [],
   // 多数据部件分组
@@ -60,10 +66,12 @@ export const ctrlState = {
     aggMode: "PAGE",
     aggData: [],
   },
-  uAColumnModel:[
-    { name: "u953df17", caption: "移动端编辑", showIcon: true, showCaption: true, separator: false, uIActionTag: "MobEdit", noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEKEY', disabled: false, visible: true, },
-    { name: "u0c7ccd3", caption: "刷新", showIcon: true, showCaption: true, separator: true, uIActionTag: "Refresh", noPrivDisplayMode: "", dataAccessAction: '', actionTarget: '', disabled: false, visible: true, iconClass: "fa fa-refresh", },
-  ],
+  uAColumnModel: {
+    uagridcolumn1: [
+      { name: "u953df17", caption: "移动端编辑", showIcon: true, showCaption: true, separator: false, uIActionTag: "MobEdit", noPrivDisplayMode: "", dataAccessAction: '', actionTarget: 'SINGLEKEY', uIActionMode: "FRONT", disabled: false, visible: true, },
+      { name: "u0c7ccd3", caption: "刷新", showIcon: true, showCaption: true, separator: true, uIActionTag: "Refresh", noPrivDisplayMode: "", dataAccessAction: '', actionTarget: '', uIActionMode: "SYS", disabled: false, visible: true, iconClass: "fa fa-refresh", },
+    ],
+  },
   gridEditState:{
     chartdate:{},
     data:{},
@@ -162,6 +170,15 @@ export const ctrlState = {
       aggMode: "NONE",
     },
     {
+      title: "",
+      columnType: "EMPTYCOLUMN",
+      dataIndex: "autowidthcolumn",
+      align: "center",
+      resizable: true,
+      ellipsis: true,
+      aggMode: "NONE",
+    },
+    {
       title: "操作",
       columnType: "UAGRIDCOLUMN",
       align: "right",
@@ -176,11 +193,46 @@ export const ctrlState = {
   ],
   // 是否单选
   isSingleSelect:false,
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   rules:{
-            data: [
-              {
-                  trigger: ['change', 'blur'],
-                 message:''
-            }],
+    data: [
+      {
+        validator: async (rule: any, value: any, callback: any, source: any) => {
+          if (!source || isEmpty(source['data'])) {
+            return Promise.resolve();
+          }
+          const { isPast, infoMessage } = Verify.verifyDeRules(
+            'data',
+            source,
+            {
+              "condOp": "AND",
+              "notMode": false,
+              "condType": "GROUP",
+              "ruleInfo": "数值范围小于10或大于200！",
+            	"keyCond": false,
+              "conditions": [
+                {
+                  "notMode": false,
+                  "condType": "VALUERANGE2",
+                  "ruleInfo": "数值范围小于10或大于200！",
+                	"keyCond": false,
+                	"includeMinValue": false,
+                	"minValue": "10.0",
+                	"includeMaxValue": false,
+                	"maxValue": "200.0",
+                }
+            		
+              ]
+            }
+          );
+          if (!isPast) {
+            return Promise.reject(infoMessage || '数据为空！');
+          }
+          return Promise.resolve();
+        }
+      }
+    ],
   }
 };

@@ -1,4 +1,4 @@
-import { ControlVOBase, IParam, GridService } from '@core';
+import { ControlVOBase, IParam, GridService, isEmpty, Verify } from '@core';
 import { MapDataService } from '@api/map-data/map-data-service';
 
 export class ControlVO extends ControlVOBase {
@@ -6,63 +6,54 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
   }
-
   get grouping() {
     return this.$DO.grouping;
   }
   set grouping(value: any) {
     this.$DO.grouping = value;
   }
-
   get longitude() {
     return this.$DO.longitude;
   }
   set longitude(value: any) {
     this.$DO.longitude = value;
   }
-
   get latitude() {
     return this.$DO.latitude;
   }
   set latitude(value: any) {
     this.$DO.latitude = value;
   }
-
   get mapdataname() {
     return this.$DO.mapdataname;
   }
   set mapdataname(value: any) {
     this.$DO.mapdataname = value;
   }
-
   get type() {
     return this.$DO.type;
   }
   set type(value: any) {
     this.$DO.type = value;
   }
-
   get sortvalue() {
     return this.$DO.sortvalue;
   }
   set sortvalue(value: any) {
     this.$DO.sortvalue = value;
   }
-
   get srfmajortext() {
     return this.$DO.mapdataname;
   }
   set srfmajortext(value: any) {
     this.$DO.mapdataname = value;
   }
-
   get srfdataaccaction() {
     return this.$DO.mapdataid;
   }
   set srfdataaccaction(value: any) {
     this.$DO.mapdataid = value;
   }
-
   get srfkey() {
     return this.$DO.mapdataid;
   }
@@ -75,8 +66,17 @@ export class ControlVO extends ControlVOBase {
 export const ctrlState = {
   controlCodeName: 'Main',
   controlName: 'grid',
-  appEntityCodeName:'MapData',
+  totalColumnWidth: 611,
+  selectColumnWidth: 50,
+  appEntityCodeName: 'MapData',
+  appDeCodeName:'MapData',
+  appDeLogicName: '地图示例数据',
+  appDeKeyFieldName: 'MapDataId',
+  appDeMajorFieldName: 'MapDataName',
   controlService: new GridService<ControlVO>(ControlVO, new MapDataService() ),
+  //  新建默认值
+  createDefaultItems: [
+  ],
   items: [],
   selectedRowKeys: [],
   // 多数据部件分组
@@ -108,8 +108,8 @@ export const ctrlState = {
     aggMode: "NONE",
     aggData: [],
   },
-  uAColumnModel:[
-  ],
+  uAColumnModel: {
+  },
   gridEditState:{
     srfkey:{},
   },
@@ -118,7 +118,6 @@ export const ctrlState = {
       title: "名称",
       columnType: "DEFGRIDCOLUMN",
       align: "left",
-      width: 1,
       resizable: true,
       dataIndex: "mapdataname",
       ellipsis: true,
@@ -183,6 +182,9 @@ export const ctrlState = {
   ],
   // 是否单选
   isSingleSelect:false,
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   rules:{
   }
 };

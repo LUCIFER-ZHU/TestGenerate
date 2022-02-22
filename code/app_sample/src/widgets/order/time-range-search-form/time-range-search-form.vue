@@ -6,6 +6,7 @@ import { SearchFormControl, IActionParam, IParam, ControlAction, IContext } from
 
 interface Props {
   name:string,
+  parent: IParam;
   context: IContext;
   viewParams?: IParam;
   controlAction: ControlAction;
@@ -26,8 +27,8 @@ interface CtrlEmit {
 const emit = defineEmits<CtrlEmit>();
 
 // 安装功能模块，提供状态和能力方法
-const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHistoryItem, onCancel, onRemoveHistoryItem } = new SearchFormControl(ctrlState, props, emit).moduleInstall();
-
+const { name, state, getData, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHistoryItem, onCancel, onRemoveHistoryItem } = new SearchFormControl(ctrlState, props, emit).moduleInstall();
+defineExpose({ name, state, getData });
 </script>
 <template>
   <a-form 
@@ -39,58 +40,50 @@ const { state, onEditorEvent, onComponentEvent, onSearch, loadDraft, onSaveHisto
     <a-row>
       <a-col>
         <a-row>
-<a-col
-  :lg="{span: 8, offset: 0 }"
-  :md="{span: 8, offset: 0 }"
-  :sm="{span: 12, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.n_orderdate_gtandeq.visible"
-    name="n_orderdate_gtandeq"
-    :rules="state.rules.n_orderdate_gtandeq"
-    :labelWidth="130"
-    :required="state.detailsModel.n_orderdate_gtandeq.required"
-    label="订单时间(大于等于(>=))"
-    style="">
-      <div class="form-editor-container" style="">
-<AppDatePicker
-  name="n_orderdate_gtandeq"
-  :disabled="state.detailsModel.n_orderdate_gtandeq.disabled"
-  dateFormat="YYYY-MM-DD"
-  dateType="date"
-  :value="state.data.n_orderdate_gtandeq"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
-<a-col
-  :lg="{span: 8, offset: 0 }"
-  :md="{span: 8, offset: 0 }"
-  :sm="{span: 12, offset: 0 }"
-  :xs="{span: 24, offset: 0 }"
- >
-  <AppFormItem 
-    v-show="state.detailsModel.n_orderdate_ltandeq.visible"
-    name="n_orderdate_ltandeq"
-    :rules="state.rules.n_orderdate_ltandeq"
-    :labelWidth="130"
-    :required="state.detailsModel.n_orderdate_ltandeq.required"
-    label="订单时间(小于等于(<=))"
-    style="">
-      <div class="form-editor-container" style="">
-<AppDatePicker
-  name="n_orderdate_ltandeq"
-  :disabled="state.detailsModel.n_orderdate_ltandeq.disabled"
-  dateFormat="YYYY-MM-DD"
-  dateType="date"
-  :value="state.data.n_orderdate_ltandeq"
-  @editorEvent="onEditorEvent"
-/> 
-      </div>
-  </AppFormItem>
-</a-col>
+          <AppFormItem 
+            name="n_orderdate_gtandeq"
+            label="订单时间(大于等于(>=))"
+            labelPos="LEFT"
+            :labelWidth="130"
+            :showLabel="true"
+            :rules="state.rules.n_orderdate_gtandeq"
+            :required="state.detailsModel.n_orderdate_gtandeq.required"
+            :visible="state.detailsModel.n_orderdate_gtandeq.visible" 
+            :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 8,colMD: 8,colSM: 12,}"
+            >
+            <div class="form-editor-container" style="">
+            <AppDatePicker
+              name="n_orderdate_gtandeq"
+              :disabled="state.detailsModel.n_orderdate_gtandeq.disabled"
+              dateFormat="YYYY-MM-DD"
+              dateType="date"
+              :value="state.data.n_orderdate_gtandeq"
+              @editorEvent="onEditorEvent"
+            />
+            </div>
+          </AppFormItem>
+          <AppFormItem 
+            name="n_orderdate_ltandeq"
+            label="订单时间(小于等于(<=))"
+            labelPos="LEFT"
+            :labelWidth="130"
+            :showLabel="true"
+            :rules="state.rules.n_orderdate_ltandeq"
+            :required="state.detailsModel.n_orderdate_ltandeq.required"
+            :visible="state.detailsModel.n_orderdate_ltandeq.visible" 
+            :layoutOpts="{parentLayout: 'TABLE_24COL',colLG: 8,colMD: 8,colSM: 12,}"
+            >
+            <div class="form-editor-container" style="">
+            <AppDatePicker
+              name="n_orderdate_ltandeq"
+              :disabled="state.detailsModel.n_orderdate_ltandeq.disabled"
+              dateFormat="YYYY-MM-DD"
+              dateType="date"
+              :value="state.data.n_orderdate_ltandeq"
+              @editorEvent="onEditorEvent"
+            />
+            </div>
+          </AppFormItem>
       </a-row>
       </a-col>
       <a-col class='search-form-footer'>

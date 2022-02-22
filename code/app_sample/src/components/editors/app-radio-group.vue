@@ -8,7 +8,7 @@ interface RadioGroupProps {
    * @type {*}
    * @memberof AppCheckBox
    */
-  value: any;
+  value?: any;
 
   /**
    * 属性名称
@@ -32,7 +32,7 @@ interface RadioGroupProps {
    * @type {string}
    * @memberof AppCheckBox
    */
-  codeListTag: string;
+  codeListTag?: string;
 
   /**
    * 代码表类型
@@ -40,7 +40,7 @@ interface RadioGroupProps {
    * @type {string}
    * @memberof AppCheckBox
    */
-  codeListType: string;
+  codeListType?: string;
 
   /**
    * 视图上下文

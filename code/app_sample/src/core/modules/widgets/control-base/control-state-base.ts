@@ -43,6 +43,14 @@ export interface ControlStateBase {
    */
   viewSubject: Subject<IActionParam>;
 
+  /**
+   * 父容器
+   *
+   * @type {*}
+   * @memberof ControlStateBase
+   */
+  parent: any;
+
   // 声明任意属性
   [propName: string]: any;
 }

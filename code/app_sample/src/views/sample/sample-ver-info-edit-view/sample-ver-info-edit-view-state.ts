@@ -11,15 +11,14 @@ export const viewState = {
   height: '0',
   width: '0',
   appEntityCodeName: 'SampleVer',
-  keyPSDEField: 'samplever',
+  appDeKeyFieldName: 'sampleverid',
+  appDeMajorFieldName: 'samplevername',
   isLoadDefault: true,
   appViewNavContexts:{  },
   appViewNavParams:{  },
   enableQuickGroup: false,
   viewLogics: {
   },
-  toolbar: [
-  ],
   form:{
     action:{
       loadAction: 'Get',
@@ -28,5 +27,5 @@ export const viewState = {
       loadDraftAction: 'GetDraft',
       createAction: 'Create'
     }
-  }
+  },
 };

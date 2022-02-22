@@ -1,4 +1,4 @@
-import { ControlVOBase, IParam, GridService } from '@core';
+import { ControlVOBase, IParam, GridService, isEmpty, Verify } from '@core';
 import { CityService } from '@api/city/city-service';
 
 export class ControlVO extends ControlVOBase {
@@ -6,49 +6,42 @@ export class ControlVO extends ControlVOBase {
   constructor(data: any){
     super(data);
   }
-
   get updateman() {
     return this.$DO.updateman;
   }
   set updateman(value: any) {
     this.$DO.updateman = value;
   }
-
   get provinceid() {
     return this.$DO.provinceid;
   }
   set provinceid(value: any) {
     this.$DO.provinceid = value;
   }
-
   get cityname() {
     return this.$DO.cityname;
   }
   set cityname(value: any) {
     this.$DO.cityname = value;
   }
-
   get updatedate() {
     return this.$DO.updatedate;
   }
   set updatedate(value: any) {
     this.$DO.updatedate = value;
   }
-
   get srfmajortext() {
     return this.$DO.cityname;
   }
   set srfmajortext(value: any) {
     this.$DO.cityname = value;
   }
-
   get srfdataaccaction() {
     return this.$DO.cityid;
   }
   set srfdataaccaction(value: any) {
     this.$DO.cityid = value;
   }
-
   get srfkey() {
     return this.$DO.cityid;
   }
@@ -61,8 +54,17 @@ export class ControlVO extends ControlVOBase {
 export const ctrlState = {
   controlCodeName: 'TreeNav',
   controlName: 'grid',
-  appEntityCodeName:'City',
+  totalColumnWidth: 460,
+  selectColumnWidth: 50,
+  appEntityCodeName: 'City',
+  appDeCodeName:'City',
+  appDeLogicName: '市',
+  appDeKeyFieldName: 'CityId',
+  appDeMajorFieldName: 'CityName',
   controlService: new GridService<ControlVO>(ControlVO, new CityService() ),
+  //  新建默认值
+  createDefaultItems: [
+  ],
   items: [],
   selectedRowKeys: [],
   // 多数据部件分组
@@ -94,8 +96,8 @@ export const ctrlState = {
     aggMode: "NONE",
     aggData: [],
   },
-  uAColumnModel:[
-  ],
+  uAColumnModel: {
+  },
   gridEditState:{
     srfkey:{},
   },
@@ -133,9 +135,21 @@ export const ctrlState = {
       enableSort: true,
       aggMode: "NONE",
     },
+    {
+      title: "",
+      columnType: "EMPTYCOLUMN",
+      dataIndex: "autowidthcolumn",
+      align: "center",
+      resizable: true,
+      ellipsis: true,
+      aggMode: "NONE",
+    },
   ],
   // 是否单选
   isSingleSelect:false,
+  //  更新默认值
+  updateDefaultItems: [
+  ],
   rules:{
   }
 };

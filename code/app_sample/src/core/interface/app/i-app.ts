@@ -104,6 +104,13 @@ export interface IApp {
      */
     getViewInfo(codeName: string): ViewDetail | undefined;
 
+    /**
+     * 获取环境参数
+     *
+     * @return {*}  {IParam}
+     * @memberof IApp
+     */
+    getEnvironmentParam(): IParam;
 
     /**
      * 获取实体信息
