@@ -23,4 +23,5 @@ export const viewState = {
   appmenu:{
     loadAction: ''
   },
+  defaultView: 'ProvinceMobMDView',
 };

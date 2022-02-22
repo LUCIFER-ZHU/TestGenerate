@@ -13,6 +13,7 @@ export const ctrlState = {
         funcTag: "AppFunc3",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "ribbon",
         itemSysCss: 'test',
         layoutPos: {
@@ -32,6 +33,7 @@ export const ctrlState = {
         funcTag: "OpenProvince",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "fa fa-cogs",
         layoutPos: {
           layout: 'TABLE_24COL',
@@ -50,6 +52,7 @@ export const ctrlState = {
         funcTag: "AppFunc2",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "fa fa-eye",
         layoutPos: {
           layout: 'TABLE_24COL',
@@ -68,6 +71,7 @@ export const ctrlState = {
         funcTag: "AppFunc6",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "fa fa-cogs",
         layoutPos: {
           layout: 'TABLE_24COL',
@@ -86,6 +90,7 @@ export const ctrlState = {
         funcTag: "AppFunc7",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "fa fa-cogs",
         layoutPos: {
           layout: 'TABLE_24COL',
@@ -104,6 +109,7 @@ export const ctrlState = {
         funcTag: "AppFunc8",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "fa fa-cogs",
         layoutPos: {
           layout: 'TABLE_24COL',
@@ -122,6 +128,7 @@ export const ctrlState = {
         funcTag: "AppFunc9",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "fa fa-heart",
         layoutPos: {
           layout: 'TABLE_24COL',
@@ -140,6 +147,7 @@ export const ctrlState = {
         funcTag: "AppFunc10",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "fa fa-cogs",
         layoutPos: {
           layout: 'TABLE_24COL',
@@ -158,6 +166,7 @@ export const ctrlState = {
         funcTag: "AppFunc11",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "fa fa-cogs",
         layoutPos: {
           layout: 'TABLE_24COL',
@@ -176,6 +185,7 @@ export const ctrlState = {
         funcTag: "AppFunc13",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "fa fa-cogs",
         layoutPos: {
           layout: 'TABLE_24COL',
@@ -194,6 +204,7 @@ export const ctrlState = {
         funcTag: "AppFunc14",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "fa fa-cogs",
         layoutPos: {
           layout: 'TABLE_24COL',
@@ -212,6 +223,7 @@ export const ctrlState = {
         funcTag: "AppFunc12",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "fa fa-cogs",
         layoutPos: {
           layout: 'TABLE_24COL',
@@ -230,6 +242,7 @@ export const ctrlState = {
         funcTag: "AppFunc16",
         hidden: false,
         disableClose: false,
+        openDefault: false,
         iconClass: "fa fa-cogs",
         layoutPos: {
           layout: 'TABLE_24COL',
@@ -240,5 +253,5 @@ export const ctrlState = {
         },
       },
   ],
-  funcs: [],
+  funcs: App.getAllFuncs(),
 };

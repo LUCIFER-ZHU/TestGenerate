@@ -70,15 +70,15 @@ export class MenuControl extends ControlBase {
     const { funcs, defaultView, menuAlign } = this.state;
     const defaultSelectRef = toRef(this.state, 'defaultSelect');
     const dataRef = toRef(this.state, 'menus');
-    if (route.matched?.length == 2) {
+    if (route.matched?.length == 2) { // 存在二级路由
       const [{ }, matched] = route.matched;
-      const appFunc: any = funcs.find((func: any) => Object.is(func.routePath, matched.path) && Object.is(func.funcType, 'APPVIEW'));
+      const appFunc: any = funcs.find((func: any) => Object.is(func.routePath, matched.path) && Object.is(func.appFuncType, 'APPVIEW'));
       if (appFunc) {
         this.computeMenuSelect(dataRef.value, appFunc.funcTag);
       }
       return;
-    } else if (defaultView) {
-      const appFunc: any = funcs.find((func: any) => Object.is(func.appView, defaultView) && Object.is(func.funcType, 'APPVIEW'));
+    } else if (defaultView) { // 存在默认视图
+      const appFunc: any = funcs.find((func: any) => Object.is(func.viewCodeName, defaultView) && Object.is(func.appFuncType, 'APPVIEW'));
       if (appFunc) {
         this.computeMenuSelect(dataRef.value, appFunc.funcTag);
       }
@@ -110,12 +110,12 @@ export class MenuControl extends ControlBase {
       if (Object.is(funcTag, '') && item.funcTag && item.openDefault && !item.hidden) {
         const appFunc = funcs?.find((func: any) => Object.is(func.funcTag, item.funcTag));
         if (appFunc) {
-          defaultSelectRef.value = [item.id];
+          defaultSelectRef.value = [item.name];
           return true;
         }
       }
       if (item.funcTag && Object.is(item.funcTag, funcTag)) {
-        defaultSelectRef.value = [item.id];
+        defaultSelectRef.value = [item.name];
         return true;
       }
       if (item.items?.length > 0) {
@@ -123,7 +123,7 @@ export class MenuControl extends ControlBase {
         if (state) {
           const defaultOpen = defaultOpensRef.value?.find((open: string) => Object.is(item.id, open));
           if (!defaultOpen) {
-            defaultOpensRef.value = [...defaultOpensRef.value, item.id];
+            defaultOpensRef.value = [...defaultOpensRef.value, item.name];
           }
           return true;
         }
